@@ -17,7 +17,7 @@ from macho_inventory import inventory
 
 exe = Path(os.environ.get('REMAKLAR_EXECUTOR', root / 'build/qemu-linux32/ppc-darwin-user/qemu-ppc'))
 guest = root / 'research/samples-local'
-logs = root / 'logs/dynamic-regression'
+logs = Path(os.environ.get('REMAKLAR_DYNAMIC_LOGDIR', root / 'logs/dynamic-regression'))
 logs.mkdir(parents=True, exist_ok=True)
 paths = ['usr/bin/true', 'usr/bin/false', 'usr/lib/dyld',
          'usr/lib/libSystem.B.dylib', 'usr/lib/system/libmathCommon.A.dylib']

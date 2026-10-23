@@ -1,9 +1,12 @@
-/* Linux laboratory capability probe; no persistent sysctl change.
+/* Laboratory capability probe; link at a high address on Darwin.
  * SPDX-License-Identifier: MIT */
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
 #include <sys/mman.h>
+#ifndef MAP_ANONYMOUS
+#define MAP_ANONYMOUS MAP_ANON
+#endif
 int main(void) {
     void *p = mmap((void *)0x1000, 4096, PROT_READ | PROT_WRITE,
                    MAP_PRIVATE | MAP_ANONYMOUS | MAP_FIXED, -1, 0);

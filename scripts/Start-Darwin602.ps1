@@ -1,4 +1,4 @@
-param([switch]$Headless)
+param([switch]$Headless, [switch]$BootDisk, [switch]$Network, [switch]$SerialTcp, [switch]$Exchange)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $qemu = 'C:\Program Files\qemu\qemu-system-i386.exe'
@@ -13,11 +13,19 @@ if (!(Test-Path $disk)) {
     if ($LASTEXITCODE -ne 0) { throw 'Could not create virtual disk' }
 }
 $display = if ($Headless) { 'none' } else { 'sdl' }
+$boot = if ($BootDisk) { 'c' } else { 'd' }
+$nic = if ($Network) { 'user,model=i82557b' } else { 'none' }
+$serial = if ($SerialTcp) { 'tcp:127.0.0.1:4446,server=on,wait=off' } else { "file:$projectRoot/logs/serial.log" }
 $qemuArgs = @('-machine','pc-i440fx-5.0','-accel','tcg','-cpu','pentium3','-m','128','-smp','1',
     '-drive',"file=$($disk.Replace('\','/')),format=qcow2,if=ide,index=0",
     '-drive',"file=$($iso.Replace('\','/')),media=cdrom,readonly=on,if=ide,index=2",
-    '-boot','d','-nic','none','-vga','std','-display',$display,
+    '-boot',$boot,'-nic',$nic,'-vga','std','-display',$display,
     '-monitor','tcp:127.0.0.1:4444,server=on,wait=off',
-    '-serial',"file:$projectRoot/logs/serial.log",'-no-reboot')
+    '-serial',$serial,'-no-reboot')
+if ($Exchange) {
+    $exchangeDisk = Join-Path $projectRoot 'build/darwin-exchange.img'
+    if (!(Test-Path $exchangeDisk)) { throw "Missing exchange disk: $exchangeDisk" }
+    $qemuArgs += @('-drive',"file=$($exchangeDisk.Replace('\','/')),format=raw,if=ide,index=1,cache=directsync")
+}
 & $qemu @qemuArgs
 exit $LASTEXITCODE
