@@ -1,0 +1,143 @@
+{
+  "host_uid": 0,
+  "executor_sha256": "8de877608e43ddd897438a8f2ba23a02670511aa340ae96a843171e4a30e2e06",
+  "inputs_sha256": {
+    "usr/bin/true": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+    "usr/bin/false": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+    "usr/lib/dyld": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea",
+    "usr/lib/libSystem.B.dylib": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787",
+    "usr/lib/system/libmathCommon.A.dylib": "0282375f09bad0cdff42e98b6a1c44ae025fa49ba930052a3a37e5619906a5b1"
+  },
+  "inputs_unchanged": true,
+  "results": [
+    {
+      "program": "true",
+      "command": [
+        "/mnt/h/ReMaklar/build/qemu-linux32-dyld-clean/ppc-darwin-user/qemu-ppc",
+        "--root",
+        "/mnt/h/ReMaklar/research/samples-local",
+        "/mnt/h/ReMaklar/research/samples-local/usr/bin/true"
+      ],
+      "entry": "0x195c",
+      "exit": 0,
+      "checks": {
+        "exit": true,
+        "stdout_empty": true,
+        "original_entry": true,
+        "no_main_bridge": true,
+        "bsd_exit": true,
+        "libsystem_loaded": true,
+        "math_loaded": true,
+        "no_unsupported": true
+      },
+      "pass": true
+    },
+    {
+      "program": "false",
+      "command": [
+        "/mnt/h/ReMaklar/build/qemu-linux32-dyld-clean/ppc-darwin-user/qemu-ppc",
+        "--root",
+        "/mnt/h/ReMaklar/research/samples-local",
+        "/mnt/h/ReMaklar/research/samples-local/usr/bin/false"
+      ],
+      "entry": "0x195c",
+      "exit": 1,
+      "checks": {
+        "exit": true,
+        "stdout_empty": true,
+        "original_entry": true,
+        "no_main_bridge": true,
+        "bsd_exit": true,
+        "libsystem_loaded": true,
+        "math_loaded": true,
+        "no_unsupported": true
+      },
+      "pass": true
+    },
+    {
+      "program": "missing-dyld",
+      "exit": 125,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "checkpoint": "0.02-dyld",
+  "source": {
+    "base_commit": "8fedcc15ebe5ad48d831f97c8006ce50bbee04be",
+    "experimental_commit": "df60a2e0f20ccbeb9c37868b23cdf1f4f2edcedf",
+    "branch": "remaklar/0.02-dyld",
+    "patch_sha256": "23835689c8c24e86db6f0d3aa382413c0edbdb553fbacf803466962e6e3088ae"
+  },
+  "incremental_pass": true,
+  "static_fixtures": [
+    {
+      "name": "exit42",
+      "pass": true,
+      "exit": 42,
+      "sha256": "1a0296d1efce95c5bbccafc07c6709ef05ef7b964ec828459be17459c9b69199"
+    },
+    {
+      "name": "write",
+      "pass": true,
+      "exit": 0,
+      "sha256": "7b0bf8d2a763ca011f95b8776161fb1555ea7f493f62c0503eca5da8c252948f"
+    },
+    {
+      "name": "write-ebadf",
+      "pass": true,
+      "exit": 0,
+      "sha256": "fb1f13acfc13d4a9dc49b6b5e6632f736cfdf1ac28b18f10dcb99c8b666a05f6"
+    },
+    {
+      "name": "write-efault",
+      "pass": true,
+      "exit": 0,
+      "sha256": "a0744dddc87a8267f522a052d452cf44ca7ca96a4451bceb5b9f36460bb4d4d8"
+    },
+    {
+      "name": "load-be",
+      "pass": true,
+      "exit": 0,
+      "sha256": "0ada0ee34999f05854751bdf325f07a4b4845d8f85ac842e426d6ce62469d9ab"
+    },
+    {
+      "name": "unsupported-syscall",
+      "pass": true,
+      "exit": 125,
+      "sha256": "5921478dedd93454a79f630fc2d2bb70125fac273a1d234c5426d81d474ff43d"
+    },
+    {
+      "name": "illegal-instruction",
+      "pass": true,
+      "exit": 125,
+      "sha256": "0e1fe10fa3b9c27088b443f1f67960c83764972de9169d342006d13120e7ef83"
+    },
+    {
+      "name": "memory-fault",
+      "pass": true,
+      "exit": 125,
+      "sha256": "83a6380fadd99857d587beab564b144e352bbd12071f744239ecd2b3b782ad6b"
+    },
+    {
+      "name": "truncated",
+      "pass": true,
+      "exit": 125,
+      "sha256": "3684d4581255ca55e94c2cb89affc7d0dc914b7462c1f496780d7f2214877709"
+    },
+    {
+      "name": "bad-command",
+      "pass": true,
+      "exit": 125,
+      "sha256": "2b80744f101920c3b55de73daaca9f04ba4489b3e63dd7deb977e40468774f14"
+    },
+    {
+      "name": "needs-dyld",
+      "pass": true,
+      "exit": 125,
+      "sha256": "3ec90283246479f5f6e60601d76598c01eb8fc16b5a52d92713c53c4e3d57637"
+    }
+  ],
+  "previous_main_only_regression": "logs/regression-clean-0.02-console.txt",
+  "scope": "Linux i386 on WSL; root low-address lab; Darwin port pending",
+  "sample_source": "Apple Darwin 6.0.2 CD, not a verified retail Jaguar image"
+}

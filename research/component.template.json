@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "component_id": null,
+  "system_build": null,
+  "original": {"path": null, "sha256": null, "provenance": null},
+  "slices": [],
+  "macho": {"filetype": null, "entry": null, "install_name": null, "load_commands_report": null, "dependencies": [], "imports_report": null, "exports_report": null, "initializers": []},
+  "source": {"status": "unknown", "repository": null, "tag": null, "commit": null, "license": null, "evidence": []},
+  "contracts": [],
+  "providers": [],
+  "comparison_cases": [],
+  "open_questions": []
+}

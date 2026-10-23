@@ -1,0 +1,11 @@
+﻿{
+    "source":  "https://opensource.apple.com/static/iso/darwinx86-602.iso.gz",
+    "download_date":  "2026-10-23",
+    "gzip_bytes":  330284411,
+    "gzip_md5":  "d4e9a94c48d900736fa9f77d42707d50",
+    "gzip_sha256":  "db18cb67aab1caab3bd420faf4f956f909be9ead9f2b5e19757429321084b807",
+    "iso_bytes":  558481408,
+    "iso_sha256":  "d2c4668dcd4ca4a7498acffaf703a19862f53ab9b58b06c51745bd33e58a584f",
+    "qemu_version":  "QEMU emulator version 10.1.94 (v10.2.0-rc4-12104-gb2a6201393)",
+    "qemu_exe_sha256":  "B84DCD6CDDA3747BB410601C0349B8FF94332D0DCF10CCDBCC107669AA4E838C"
+}

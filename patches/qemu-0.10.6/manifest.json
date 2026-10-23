@@ -1,0 +1,7 @@
+{
+  "upstream": "https://github.com/qemu/qemu.git",
+  "tag": "v0.10.6",
+  "base_commit": "9eab386edbf8cf002a731f8204a156f243a47a57",
+  "experimental_commit": "8fedcc15ebe5ad48d831f97c8006ce50bbee04be",
+  "patch_sha256": "90f33de2c5ae6f4ca71c44e0621948d69572e75ecfa2d86b6b942ce02101426f"
+}

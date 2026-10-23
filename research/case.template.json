@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "case_id": null,
+  "component_id": null,
+  "invocation": {"argv": [], "stdin_fixture": null, "environment": {}, "filesystem_fixture": null},
+  "observations": ["stdout-bytes", "stderr-bytes", "exit-status", "filesystem-effects"],
+  "normalization_rules": [],
+  "runs": {"jaguar_ppc": null, "translated_ppc_on_darwin_i386": null, "native_i386": null},
+  "oracle_status": "pending",
+  "evidence": []
+}

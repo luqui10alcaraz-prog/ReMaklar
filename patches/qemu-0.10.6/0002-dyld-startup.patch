@@ -1,0 +1,542 @@
+diff --git a/Makefile.target b/Makefile.target
+index 57407bc..182c577 100644
+--- a/Makefile.target
++++ b/Makefile.target
+@@ -381,7 +381,7 @@ else
+ # ReMaklar bootstrap: Darwin guests on an i386 Linux host, not Linux guests.
+ VPATH+=:$(SRC_PATH)/darwin-user/remaklar
+ CPPFLAGS+=-I$(SRC_PATH)/darwin-user/remaklar/include -DREMAKLAR_BOOTSTRAP
+-OBJS= bootstrap-main.o machload.o mmap.o thunk.o
++OBJS= bootstrap-main.o darwin-kernel.o machload.o mmap.o thunk.o
+ endif
+ 
+ OBJS+= libqemu.a qemu-malloc.o osdep.o
+diff --git a/darwin-user/machload.c b/darwin-user/machload.c
+index a006674..511518e 100644
+--- a/darwin-user/machload.c
++++ b/darwin-user/machload.c
+@@ -440,7 +440,7 @@ int load_segment(struct mach_header *mh, struct segment_command *sc, int fd, int
+     {
+         addr += sc->filesize;
+         size = sc->vmsize-sc->filesize;
+-        addr = target_mmap(addr, size, sc->initprot, MAP_ANONYMOUS | MAP_FIXED, -1, 0);
++        addr = target_mmap(addr, size, sc->initprot, MAP_PRIVATE | MAP_ANONYMOUS | MAP_FIXED, -1, 0);
+         if(addr==-1)
+             qerror("load_segment: can't mmap at 0x%x\n", sc->vmaddr+slide);
+     }
+@@ -683,7 +683,8 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+                     fprintf(stderr, "probe-main: skipping dyld/startup explicitly\n");
+                     break;
+                 }
+-                qerror("dynamic Mach-O requires unimplemented dyld integration");
++                if (!remaklar_dynamic)
++                    qerror("dynamic Mach-O requires unimplemented dyld integration (use --root)");
+ #endif
+                 dyld_entry_point = load_dylinker( &mach_hdr, (struct dylinker_command*)lc, fd, mach_hdr_pos, need_bswap );
+                 break;
+@@ -794,6 +795,9 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+         }
+     }
+     close(fd);
++#ifdef REMAKLAR_BOOTSTRAP
++    if (mach_hdr.filetype == MH_EXECUTE) remaklar_program_entry = entry_point;
++#endif
+     if(mach_hdr.filetype == MH_EXECUTE && dyld_entry_point)
+         return dyld_entry_point;
+     else
+diff --git a/darwin-user/qemu.h b/darwin-user/qemu.h
+index 21a4518..d4f74e1 100644
+--- a/darwin-user/qemu.h
++++ b/darwin-user/qemu.h
+@@ -154,6 +154,8 @@ int target_msync(unsigned long start, unsigned long len, int flags);
+ extern unsigned long last_brk;
+ #ifdef REMAKLAR_BOOTSTRAP
+ extern unsigned long remaklar_probe_slide;
++extern int remaklar_dynamic;
++extern uint32_t remaklar_program_entry;
+ #endif
+ 
+ /* Mac OS X ABI arguments processing */
+diff --git a/darwin-user/remaklar/bootstrap-main.c b/darwin-user/remaklar/bootstrap-main.c
+index c47db90..4f9a6ca 100644
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -9,13 +9,18 @@
+ #include <unistd.h>
+ #include <signal.h>
+ #include "qemu.h"
++#include "exec-all.h"
++#include "bootstrap.h"
+ 
+ const char *interp_prefix = "";
+ unsigned long stack_size = 512 * 1024;
+ CPUState *global_env;
+ TaskState *first_task_state;
+ unsigned long remaklar_probe_slide;
++int remaklar_dynamic;
++uint32_t remaklar_program_entry;
+ static uint32_t exit_bridge;
++static int startup_observed;
+ 
+ void qerror(const char *fmt, ...)
+ {
+@@ -55,14 +60,14 @@ static void host_signal(int sig, siginfo_t *info, void *context)
+     _exit(126);
+ }
+ 
+-static int guest_readable(uint32_t addr, uint32_t len)
++int remaklar_guest_access(uint32_t addr, uint32_t len, int prot)
+ {
+     uint64_t end = (uint64_t)addr + len;
+     uint64_t page;
+     if (end > 0x100000000ULL) return 0;
+     for (page = addr & TARGET_PAGE_MASK; page < end; page += TARGET_PAGE_SIZE)
+-        if ((page_get_flags(page) & (PAGE_VALID | PAGE_READ)) !=
+-            (PAGE_VALID | PAGE_READ)) return 0;
++        if ((page_get_flags(page) & (PAGE_VALID | prot)) !=
++            (PAGE_VALID | prot)) return 0;
+     return 1;
+ }
+ 
+@@ -73,11 +78,15 @@ static void darwin_syscall(CPUState *env)
+     fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x\n",
+             (unsigned)env->nip, number, (unsigned)env->gpr[3],
+             (unsigned)env->gpr[4], (unsigned)env->gpr[5]);
++    if ((int32_t)number < 0 || (number >= 0x7ff1 && number <= 0x7ff3)) {
++        env->gpr[3] = remaklar_mach(env);
++        return;
++    }
+     switch (number) {
+     case 1: /* Darwin SYS_exit */
+         exit(env->gpr[3] & 255);
+     case 4: /* Darwin SYS_write: buffers contain bytes, no word swapping. */
+-        if (!guest_readable(env->gpr[4], env->gpr[5])) {
++        if (!remaklar_guest_access(env->gpr[4], env->gpr[5], PAGE_READ)) {
+             result = -1; guest_errno = 14; /* Darwin EFAULT */
+         } else {
+             result = write(env->gpr[3], g2h(env->gpr[4]), env->gpr[5]);
+@@ -92,8 +101,9 @@ static void darwin_syscall(CPUState *env)
+         }
+         break;
+     default:
+-        qerror("unsupported Darwin syscall/trap %d at %08x",
+-               (int32_t)number, (unsigned)env->nip);
++        if (!remaklar_bsd(env, &result, &guest_errno))
++            qerror("unsupported Darwin syscall/trap %d at %08x",
++                   (int32_t)number, (unsigned)env->nip);
+     }
+     /* QEMU resumes just after sc. Jaguar skips the cerror branch on success. */
+     env->gpr[3] = guest_errno ? guest_errno : result;
+@@ -111,6 +121,15 @@ void cpu_loop(CPUState *env)
+         case POWERPC_EXCP_SYSCALL_USER: darwin_syscall(env); break;
+         case EXCP_INTERRUPT: break;
+         case EXCP_DEBUG:
++            if (remaklar_dynamic && env->nip == remaklar_program_entry) {
++                if (startup_observed || cpu_breakpoint_remove(env, remaklar_program_entry, BP_GDB))
++                    qerror("startup observation breakpoint did not clear");
++                startup_observed = 1;
++                /* The old PPC zero-length breakpoint TB must not be reused. */
++                tb_flush(env);
++                fprintf(stderr, "startup: entered original executable at %08x\n", remaklar_program_entry);
++                break;
++            }
+             if (exit_bridge && env->nip == exit_bridge) {
+                 fprintf(stderr, "probe-main: original PPC reached _exit bridge, status=%u\n",
+                         (unsigned)env->gpr[3]);
+@@ -133,14 +152,19 @@ int main(int argc, char **argv)
+     int i;
+     uint32_t probe_entry = 0;
+     int filearg = 1;
+-    if (argc == 5 && !strcmp(argv[1], "--probe-main")) {
++    if (argc >= 4 && !strcmp(argv[1], "--root")) {
++        interp_prefix = argv[2];
++        remaklar_dynamic = 1;
++        filearg = 3;
++    } else if (argc == 5 && !strcmp(argv[1], "--probe-main")) {
+         remaklar_probe_slide = 0x10000000;
+         probe_entry = strtoul(argv[2], NULL, 16) + remaklar_probe_slide;
+         exit_bridge = strtoul(argv[3], NULL, 16) + remaklar_probe_slide;
+         filearg = 4;
+     } else if (argc != 2) {
+         fprintf(stderr, "ReMaklar 0.01 bootstrap (Linux i386)\nusage: %s static-ppc.macho\n"
+-                "or: %s --probe-main entry-hex exit-stub-hex original.macho\n", argv[0], argv[0]);
++                "or: %s --probe-main entry-hex exit-stub-hex original.macho\n"
++                "or: %s --root guest-root original.macho [arguments...]\n", argv[0], argv[0], argv[0]);
+         return 125;
+     }
+     cpu_set_log_filename("remaklar-tcg.log");
+@@ -162,6 +186,8 @@ int main(int argc, char **argv)
+     for (i = 0; i < 32; i++) env->gpr[i] = regs.gpr[i];
+     if (probe_entry && cpu_breakpoint_insert(env, exit_bridge, BP_GDB, NULL))
+         qerror("cannot install _exit bridge breakpoint");
++    if (remaklar_dynamic && cpu_breakpoint_insert(env, remaklar_program_entry, BP_GDB, NULL))
++        qerror("cannot install startup observation breakpoint");
+     fprintf(stderr, "loaded entry=%08x stack=%08x cpu=750 host=i386\n",
+             (unsigned)env->nip, (unsigned)env->gpr[1]);
+     cpu_loop(env);
+diff --git a/darwin-user/remaklar/bootstrap.h b/darwin-user/remaklar/bootstrap.h
+new file mode 100644
+index 0000000..2d9f0c6
+--- /dev/null
++++ b/darwin-user/remaklar/bootstrap.h
+@@ -0,0 +1,8 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#ifndef REMAKLAR_BOOTSTRAP_H
++#define REMAKLAR_BOOTSTRAP_H
++extern const char *interp_prefix;
++int remaklar_guest_access(uint32_t address, uint32_t length, int prot);
++uint32_t remaklar_mach(CPUState *env);
++int remaklar_bsd(CPUState *env, int *result, int *error);
++#endif
+diff --git a/darwin-user/remaklar/darwin-kernel.c b/darwin-user/remaklar/darwin-kernel.c
+new file mode 100644
+index 0000000..efae6a4
+--- /dev/null
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -0,0 +1,346 @@
++/* Minimal Darwin 6 personality for Linux-hosted process execution.
++ * SPDX-License-Identifier: GPL-2.0-or-later */
++#include <stdio.h>
++#include <stdint.h>
++#include <string.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <errno.h>
++#include <fcntl.h>
++#include <sys/stat.h>
++#include <sys/mman.h>
++#include "qemu.h"
++#include "bootstrap.h"
++
++/* Names designate endpoints in this process model, never Linux handles. */
++enum { TASK_SELF = 0x101, THREAD_SELF = 0x102, HOST_SELF = 0x103, BOOTSTRAP = 0x104, SYSTEM_CLOCK_PORT = 0x105 };
++static uint32_t next_reply = 0x200;
++static uint32_t thread_self_pointer;
++static uint32_t thread_base_priority = 31;
++static uint32_t send_refs[4096];
++static unsigned char receive_rights[4096];
++static uint32_t next_port = 0x400;
++static int descriptors[256], descriptors_ready;
++
++static int host_fd(uint32_t fd)
++{
++    int i;
++    if (!descriptors_ready) {
++        for (i = 0; i < 256; i++) descriptors[i] = -1;
++        for (i = 0; i < 3; i++) descriptors[i] = i;
++        descriptors_ready = 1;
++    }
++    return fd < 256 ? descriptors[fd] : -1;
++}
++
++static int darwin_errno(int err)
++{
++    switch (err) {
++    case 0: return 0;
++    case EPERM: return 1; case ENOENT: return 2; case EINTR: return 4;
++    case EIO: return 5; case EBADF: return 9; case ENOMEM: return 12;
++    case EACCES: return 13; case EFAULT: return 14; case EEXIST: return 17;
++    case ENOTDIR: return 20; case EISDIR: return 21; case EINVAL: return 22;
++    case EMFILE: return 24; case EPIPE: return 32;
++    default: qerror("unmapped host errno %d", err);
++    }
++    return 22;
++}
++
++static const char *guest_path(uint32_t p, char *buffer, size_t capacity)
++{
++    char input[4096]; unsigned int i;
++    for (i = 0; i < sizeof(input); i++) {
++        if (!remaklar_guest_access(p + i, 1, PAGE_READ)) { errno = EFAULT; return NULL; }
++        input[i] = *(char *)g2h(p + i);
++        if (!input[i]) break;
++    }
++    if (i == sizeof(input)) { errno = ENAMETOOLONG; return NULL; }
++    if (strstr(input, "/../") || !strcmp(input, ".."))
++        qerror("parent traversal not supported in guest root");
++    if (input[0] == '/' && strncmp(input, interp_prefix, strlen(interp_prefix)))
++        snprintf(buffer, capacity, "%s%s", interp_prefix, input);
++    else snprintf(buffer, capacity, "%s", input);
++    return buffer;
++}
++
++static void encode_stat(uint32_t address, const struct stat *s)
++{
++    unsigned char wire[96];
++    if (!remaklar_guest_access(address, sizeof(wire), PAGE_WRITE))
++        qerror("stat destination is not writable");
++    memset(wire, 0, sizeof(wire));
++    stl(wire, s->st_dev); stl(wire + 4, s->st_ino);
++    stw(wire + 8, s->st_mode); stw(wire + 10, s->st_nlink);
++    stl(wire + 12, s->st_uid); stl(wire + 16, s->st_gid); stl(wire + 20, s->st_rdev);
++    stl(wire + 24, s->st_atim.tv_sec); stl(wire + 28, s->st_atim.tv_nsec);
++    stl(wire + 32, s->st_mtim.tv_sec); stl(wire + 36, s->st_mtim.tv_nsec);
++    stl(wire + 40, s->st_ctim.tv_sec); stl(wire + 44, s->st_ctim.tv_nsec);
++    stq(wire + 48, s->st_size); stq(wire + 56, s->st_blocks); stl(wire + 64, s->st_blksize);
++    memcpy(g2h(address), wire, sizeof(wire));
++}
++
++int remaklar_bsd(CPUState *env, int *result, int *error)
++{
++    uint32_t n = env->gpr[0], a = env->gpr[3], b = env->gpr[4], c = env->gpr[5];
++    int r = -1, i; char path[8192]; const char *p; struct stat st;
++    errno = 0;
++    switch (n) {
++    case 202: /* sysctl, fixed-width PPC32 result */
++        if (b > 16 || !remaklar_guest_access(a, b * 4, PAGE_READ))
++            qerror("invalid sysctl MIB");
++        for (i = 0; i < b; i++) fprintf(stderr, "sysctl mib[%d]=%u\n", i, ldl(g2h(a + i * 4)));
++        if (b != 2 || ldl(g2h(a)) != 6 ||
++            (ldl(g2h(a + 4)) != 3 && ldl(g2h(a + 4)) != 13) ||
++            env->gpr[7] || env->gpr[8]) qerror("unsupported sysctl");
++        /* HW_NCPU=1; HW_VECTORUNIT=0 for the emulated PPC750. */
++        if (!remaklar_guest_access(env->gpr[6], 4, PAGE_READ | PAGE_WRITE)) {
++            errno = EFAULT; r = -1;
++        } else if (c && (ldl(g2h(env->gpr[6])) < 4 || !remaklar_guest_access(c, 4, PAGE_WRITE))) {
++            errno = ENOMEM; r = -1;
++        } else {
++            if (c) stl(g2h(c), ldl(g2h(a + 4)) == 3 ? 1 : 0);
++            stl(g2h(env->gpr[6]), 4); r = 0;
++        }
++        break;
++    case 3: /* read */
++        if (!remaklar_guest_access(b, c, PAGE_WRITE)) { errno = EFAULT; r = -1; }
++        else r = read(host_fd(a), g2h(b), c);
++        break;
++    case 5: /* open: loader only needs read-only files at this stage */
++        if (b) qerror("unsupported Darwin open flags %x", b);
++        p = guest_path(a, path, sizeof(path));
++        if (!p) { r = -1; break; }
++        fprintf(stderr, "guest open %s\n", p);
++        r = open(p, O_RDONLY);
++        if (r >= 0) {
++            host_fd(0);
++            for (i = 3; i < 256 && descriptors[i] >= 0; i++);
++            if (i == 256) { close(r); errno = EMFILE; r = -1; }
++            else { descriptors[i] = r; r = i; }
++        }
++        break;
++    case 6:
++        r = close(host_fd(a));
++        if (!r && a < 256) descriptors[a] = -1;
++        break;
++    case 20: r = getpid(); env->gpr[4] = getppid(); break;
++    case 24: r = getuid(); env->gpr[4] = geteuid(); break;
++    case 25: r = geteuid(); break;
++    case 43: r = getegid(); break;
++    case 47: r = getgid(); env->gpr[4] = getegid(); break;
++    case 188:
++    case 189:
++    case 190:
++        if (n == 189) r = fstat(host_fd(a), &st);
++        else {
++            p = guest_path(a, path, sizeof(path));
++            r = p ? (n == 188 ? stat(p, &st) : lstat(p, &st)) : -1;
++        }
++        if (!r) encode_stat(b, &st);
++        break;
++    case 327: r = getuid() != geteuid() || getgid() != getegid(); break;
++    case 296: /* load_shared_file query: this personality uses private mappings */
++        if (a || b || c || env->gpr[7] || env->gpr[8])
++            qerror("shared-file mapping operation not supported");
++        if (!remaklar_guest_access(env->gpr[9], 4, PAGE_READ | PAGE_WRITE) ||
++            !remaklar_guest_access(env->gpr[6], 4, PAGE_READ)) { errno = EFAULT; r = -1; }
++        else if (!(ldl(g2h(env->gpr[9])) & 4)) qerror("expected shared-region query flag");
++        else { stl(g2h(env->gpr[9]), 0); r = 0; }
++        break;
++    default: return 0;
++    }
++    *result = r;
++    *error = r < 0 ? darwin_errno(errno) : 0;
++    return 1;
++}
++
++static uint32_t rpc(CPUState *env)
++{
++    uint32_t a = env->gpr[3], size = env->gpr[5], cap = env->gpr[6];
++    uint32_t out = env->gpr[0] == (uint32_t)-32 && env->gpr[10] ? env->gpr[10] : a;
++    uint32_t id, destination, reply_port, length = 36, code = 0, i, complex = 0;
++    uint8_t answer[128];
++    if (size < 24 || size > 4096 || !remaklar_guest_access(a, size, PAGE_READ))
++        qerror("invalid Mach message request");
++    id = ldl(g2h(a + 20));
++    destination = ldl(g2h(a + 8));
++    reply_port = ldl(g2h(a + 12));
++    fprintf(stderr, "mach_rpc id=%u destination=%x send=%u recv=%u:", id, destination, size, cap);
++    for (i = 0; i + 4 <= size && i < 128; i += 4)
++        fprintf(stderr, " %08x", ldl(g2h(a + i)));
++    fputc('\n', stderr);
++    if ((env->gpr[4] & 3) != 3)
++        qerror("only synchronous send/receive Mach RPC supported");
++    memset(answer, 0, sizeof(answer));
++    switch (id) {
++    case 3616: /* thread_policy: single virtual thread, POLICY_TIMESHARE */
++        if (destination != THREAD_SELF || size != 48 ||
++            ldl(g2h(a + 32)) != 1 || ldl(g2h(a + 36)) != 1 ||
++            ldl(g2h(a + 40)) > 63 || ldl(g2h(a + 44)) > 1)
++            qerror("unsupported thread_policy request");
++        thread_base_priority = ldl(g2h(a + 40));
++        /* Virtual priority only: there is no competing guest thread yet. */
++        break;
++    case 202: /* host_page_size */
++        if (destination != HOST_SELF) qerror("host_page_size on wrong endpoint");
++        stl(answer + 36, 4096); length = 40; break;
++    case 200: /* host_info(HOST_BASIC_INFO) */
++        if (destination != HOST_SELF || size < 40)
++            qerror("unsupported host_info request");
++        if (ldl(g2h(a + 32)) == 8) { /* HOST_MACH_MSG_TRAP */
++            stl(answer + 36, 0); length = 40; break;
++        }
++        if (ldl(g2h(a + 32)) == 5) { /* HOST_PRIORITY_INFO, XNU sched.h */
++            static const uint32_t priority[8] = {80, 80, 64, 31, 0, 0, 0, 79};
++            stl(answer + 36, 8);
++            for (i = 0; i < 8; i++) stl(answer + 40 + i * 4, priority[i]);
++            length = 72; break;
++        }
++        if (ldl(g2h(a + 32)) != 1) qerror("unsupported host_info flavor");
++        stl(answer + 36, 5); /* number of integer_t words */
++        stl(answer + 40, 1); stl(answer + 44, 1);
++        stl(answer + 48, 128 * 1024 * 1024);
++        stl(answer + 52, 18); stl(answer + 56, 9); /* PPC 750 */
++        length = 60; break;
++    case 3206: /* mach_port_deallocate */
++        if (destination != TASK_SELF || size < 36) qerror("invalid port_deallocate");
++        i = ldl(g2h(a + 32));
++        if (i >= 4096 || !send_refs[i]) code = 15; /* KERN_INVALID_NAME */
++        else send_refs[i]--;
++        break;
++    case 3204: /* mach_port_allocate: receive right in current IPC namespace */
++        if (destination != TASK_SELF || size < 36 || ldl(g2h(a + 32)) != 1 || next_port >= 4096)
++            qerror("unsupported mach_port_allocate");
++        i = next_port++; receive_rights[i] = 1;
++        stl(answer + 36, i); length = 40;
++        break;
++    case 3801: { /* vm_allocate */
++        uint32_t address, bytes, flags;
++        long mapped;
++        if (destination != TASK_SELF || size < 44) qerror("invalid vm_allocate");
++        address = ldl(g2h(a + 32)); bytes = ldl(g2h(a + 36)); flags = ldl(g2h(a + 40));
++        mapped = target_mmap(address, bytes, PROT_READ | PROT_WRITE,
++                 MAP_PRIVATE | MAP_ANONYMOUS | ((flags & 1) ? 0 : MAP_FIXED), -1, 0);
++        if (mapped == -1) code = 3;
++        else { stl(answer + 36, mapped); length = 40; }
++        break;
++    }
++    case 3812: { /* vm_map: anonymous memory object, fixed-width MIG wire */
++        uint32_t address, bytes, flags, prot;
++        long mapped;
++        if (destination != TASK_SELF || size != 84 || ldl(g2h(a + 24)) != 1 ||
++            ldl(g2h(a + 28)) || ldl(g2h(a + 56)) || ldl(g2h(a + 64)))
++            qerror("unsupported vm_map object/mask/offset");
++        address = ldl(g2h(a + 48)); bytes = ldl(g2h(a + 52));
++        flags = ldl(g2h(a + 60)); prot = ldl(g2h(a + 72));
++        if (flags & ~1) qerror("unsupported vm_map flags %x", flags);
++        mapped = target_mmap(address, bytes, prot,
++                 MAP_PRIVATE | MAP_ANONYMOUS | ((flags & 1) ? 0 : MAP_FIXED), -1, 0);
++        if (mapped == -1) code = 3;
++        else { stl(answer + 36, mapped); length = 40; }
++        break;
++    }
++    case 3800: { /* vm_region(VM_REGION_BASIC_INFO) over guest page mappings */
++        uint64_t start, end;
++        int flags, next, prot;
++        if (destination != TASK_SELF || size < 44 || ldl(g2h(a + 36)) != 10 ||
++            ldl(g2h(a + 40)) < 8) qerror("unsupported vm_region flavor");
++        start = ldl(g2h(a + 32)) & TARGET_PAGE_MASK;
++        while (start < 0x100000000ULL && !(page_get_flags(start) & PAGE_VALID)) start += 4096;
++        if (start == 0x100000000ULL) { code = 3; break; }
++        flags = page_get_flags(start);
++        prot = flags & 7;
++        if (flags & PAGE_WRITE_ORG) prot |= PROT_WRITE;
++        for (end = start + 4096; end < 0x100000000ULL; end += 4096) {
++            next = page_get_flags(end);
++            if (!(next & PAGE_VALID) || (next & (7 | PAGE_WRITE_ORG)) != (flags & (7 | PAGE_WRITE_ORG))) break;
++        }
++        complex = 0x80000000;
++        stl(answer + 24, 1); answer[38] = 17; /* object-name is null */
++        stl(answer + 48, start); stl(answer + 52, end - start); stl(answer + 56, 8);
++        stl(answer + 60, prot); stl(answer + 64, prot); stl(answer + 68, 1);
++        length = 92;
++        break;
++    }
++    case 3409: /* task_get_special_port(TASK_BOOTSTRAP_PORT) */
++        if (destination != TASK_SELF || size < 36 || ldl(g2h(a + 32)) != 4)
++            qerror("unsupported task special port");
++        complex = 0x80000000;
++        stl(answer + 24, 1); stl(answer + 28, BOOTSTRAP);
++        answer[38] = 17; /* received send-right descriptor */
++        send_refs[BOOTSTRAP]++;
++        length = 40;
++        break;
++    case 206: /* host_get_clock_service(SYSTEM_CLOCK) */
++        if (destination != HOST_SELF || size < 36 || ldl(g2h(a + 32)) != 0)
++            qerror("unsupported host clock request");
++        complex = 0x80000000;
++        stl(answer + 24, 1); stl(answer + 28, SYSTEM_CLOCK_PORT);
++        answer[38] = 17; send_refs[SYSTEM_CLOCK_PORT]++;
++        length = 40;
++        break;
++    case 3404: { /* mach_ports_lookup: three initially unregistered slots */
++        long ports;
++        if (destination != TASK_SELF || size != 24) qerror("invalid mach_ports_lookup");
++        ports = target_mmap(0, 4096, PROT_READ | PROT_WRITE,
++                            MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
++        if (ports == -1) qerror("cannot allocate registered port array");
++        complex = 0x80000000;
++        stl(answer + 24, 1); stl(answer + 28, ports); stl(answer + 32, 3);
++        answer[37] = 1; answer[38] = 17; answer[39] = 2;
++        stl(answer + 48, 3);
++        length = 52;
++        break;
++    }
++    case 3802: /* vm_deallocate */
++        if (destination != TASK_SELF || size < 40) qerror("invalid vm_deallocate");
++        if (target_munmap(ldl(g2h(a + 32)), ldl(g2h(a + 36)))) code = 4;
++        break;
++    case 3803: /* vm_protect */
++        if (destination != TASK_SELF || size < 48 || ldl(g2h(a + 40)))
++            qerror("unsupported vm_protect request");
++        if (target_mprotect(ldl(g2h(a + 32)), ldl(g2h(a + 36)), ldl(g2h(a + 44)))) code = 4;
++        break;
++    default: qerror("unsupported Mach RPC id %u", id);
++    }
++    if (length > cap || !remaklar_guest_access(out, length, PAGE_WRITE))
++        qerror("Mach reply does not fit receive buffer");
++    stl(answer, complex | 18); stl(answer + 4, length);
++    stl(answer + 8, reply_port); stl(answer + 20, id + 100);
++    /* NDR bytes remain zero: PPC big-endian, ASCII, IEEE, protocol 2.0. */
++    if (!complex) stl(answer + 32, code);
++    memcpy(g2h(out), answer, length);
++    return 0;
++}
++
++uint32_t remaklar_mach(CPUState *env)
++{
++    int32_t trap = env->gpr[0];
++    switch (trap) {
++    case 0x7ff1: thread_self_pointer = env->gpr[3]; return env->gpr[3];
++    case 0x7ff2: return thread_self_pointer;
++    /* Conservatively preserve FPRs across dyld initializers. PPC750 has no
++     * vector unit. XNU ppc/thread_act.h: floatUsed = 1 << (31 - 1). */
++    case 0x7ff3: return 0x40000000;
++    case -26: return next_reply++;
++    case -27: send_refs[THREAD_SELF]++; return THREAD_SELF;
++    case -28: send_refs[TASK_SELF]++; return TASK_SELF;
++    case -29: send_refs[HOST_SELF]++; return HOST_SELF;
++    case -31:
++    case -32: return rpc(env);
++    case -43: { /* map_fd(fd, offset, address*, anywhere, size) */
++        uint32_t ptr = env->gpr[5], address;
++        long mapped;
++        if (!remaklar_guest_access(ptr, 4, PAGE_READ | PAGE_WRITE)) return 1;
++        address = ldl(g2h(ptr));
++        mapped = target_mmap(address, env->gpr[7], PROT_READ | PROT_WRITE | PROT_EXEC,
++                 MAP_PRIVATE | (env->gpr[6] ? 0 : MAP_FIXED), host_fd(env->gpr[3]), env->gpr[4]);
++        if (mapped == -1) return 3;
++        stl(g2h(ptr), mapped);
++        return 0;
++    }
++    default: qerror("unsupported Mach trap %d", trap);
++    }
++    return 0;
++}

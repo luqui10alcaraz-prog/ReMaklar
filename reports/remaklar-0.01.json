@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-23",
+  "qemu": {
+    "upstream": "https://github.com/qemu/qemu.git",
+    "tag": "v0.10.6",
+    "base_commit": "9eab386edbf8cf002a731f8204a156f243a47a57",
+    "experimental_commit": "8fedcc15ebe5ad48d831f97c8006ce50bbee04be",
+    "patch_sha256": "90f33de2c5ae6f4ca71c44e0621948d69572e75ecfa2d86b6b942ce02101426f"
+  },
+  "host": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "executables": [
+    {
+      "path": "build/qemu-linux32/ppc-darwin-user/qemu-ppc",
+      "sha256": "112b1861ade4ddb6a9735f8a8e17bd4fb3e10976ecab7c24d25f5182e208c9a6",
+      "bytes": 6197384,
+      "format": "ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, BuildID[sha1]=45c23b5e4710d9bcfac0cd0cbf6997dd8cb406d6, for GNU/Linux 3.2.0, with debug_info, not stripped"
+    },
+    {
+      "path": "build/qemu-linux32-clean/ppc-darwin-user/qemu-ppc",
+      "sha256": "5cff2a3986ed70e6a642fc01fc041550e57b7f9886e62c979448945b6cdc6dc6",
+      "bytes": 6197396,
+      "format": "ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, BuildID[sha1]=6c7cd595450b97f3ddc54675f1669e44a8365057, for GNU/Linux 3.2.0, with debug_info, not stripped"
+    }
+  ],
+  "fixture_results": [
+    {
+      "name": "exit42",
+      "pass": true,
+      "exit": 42,
+      "sha256": "1a0296d1efce95c5bbccafc07c6709ef05ef7b964ec828459be17459c9b69199"
+    },
+    {
+      "name": "write",
+      "pass": true,
+      "exit": 0,
+      "sha256": "7b0bf8d2a763ca011f95b8776161fb1555ea7f493f62c0503eca5da8c252948f"
+    },
+    {
+      "name": "write-ebadf",
+      "pass": true,
+      "exit": 0,
+      "sha256": "fb1f13acfc13d4a9dc49b6b5e6632f736cfdf1ac28b18f10dcb99c8b666a05f6"
+    },
+    {
+      "name": "write-efault",
+      "pass": true,
+      "exit": 0,
+      "sha256": "a0744dddc87a8267f522a052d452cf44ca7ca96a4451bceb5b9f36460bb4d4d8"
+    },
+    {
+      "name": "load-be",
+      "pass": true,
+      "exit": 0,
+      "sha256": "0ada0ee34999f05854751bdf325f07a4b4845d8f85ac842e426d6ce62469d9ab"
+    },
+    {
+      "name": "unsupported-syscall",
+      "pass": true,
+      "exit": 125,
+      "sha256": "5921478dedd93454a79f630fc2d2bb70125fac273a1d234c5426d81d474ff43d"
+    },
+    {
+      "name": "illegal-instruction",
+      "pass": true,
+      "exit": 125,
+      "sha256": "0e1fe10fa3b9c27088b443f1f67960c83764972de9169d342006d13120e7ef83"
+    },
+    {
+      "name": "memory-fault",
+      "pass": true,
+      "exit": 125,
+      "sha256": "83a6380fadd99857d587beab564b144e352bbd12071f744239ecd2b3b782ad6b"
+    },
+    {
+      "name": "truncated",
+      "pass": true,
+      "exit": 125,
+      "sha256": "3684d4581255ca55e94c2cb89affc7d0dc914b7462c1f496780d7f2214877709"
+    },
+    {
+      "name": "bad-command",
+      "pass": true,
+      "exit": 125,
+      "sha256": "2b80744f101920c3b55de73daaca9f04ba4489b3e63dd7deb977e40468774f14"
+    },
+    {
+      "name": "needs-dyld",
+      "pass": true,
+      "exit": 125,
+      "sha256": "3ec90283246479f5f6e60601d76598c01eb8fc16b5a52d92713c53c4e3d57637"
+    }
+  ],
+  "original_main_results": [
+    {
+      "name": "true",
+      "pass": true,
+      "scope": "main-only, native exit bridge, no dyld/startup",
+      "exit": 0,
+      "main": "0x1d60",
+      "exit_stub": "0x1d74",
+      "original_fat_sha256": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+      "original_ppc_slice_sha256": "9775ffe63f16a5b1fc89c599efe6d75e6a7749611cce06c25660a19457714653",
+      "command": [
+        "/mnt/h/ReMaklar/build/qemu-linux32/ppc-darwin-user/qemu-ppc",
+        "--probe-main",
+        "1d60",
+        "1d74",
+        "/mnt/h/ReMaklar/research/samples-local/usr/bin/true"
+      ]
+    },
+    {
+      "name": "false",
+      "pass": true,
+      "scope": "main-only, native exit bridge, no dyld/startup",
+      "exit": 1,
+      "main": "0x1d60",
+      "exit_stub": "0x1d74",
+      "original_fat_sha256": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+      "original_ppc_slice_sha256": "a6773165fcb5124a8f230c7ad90714db1cfb9b1e14760fff4caf0bbf755bdfba",
+      "command": [
+        "/mnt/h/ReMaklar/build/qemu-linux32/ppc-darwin-user/qemu-ppc",
+        "--probe-main",
+        "1d60",
+        "1d74",
+        "/mnt/h/ReMaklar/research/samples-local/usr/bin/false"
+      ]
+    }
+  ],
+  "full_original_process_supported": false,
+  "darwin6_host_validated": false
+}

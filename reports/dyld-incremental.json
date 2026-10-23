@@ -1,0 +1,64 @@
+{
+  "host_uid": 0,
+  "executor_sha256": "ecf96b51c67b8340a09591b2b25ef846bf2bec64f77e5f6d3d6cf42366283f97",
+  "inputs_sha256": {
+    "usr/bin/true": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+    "usr/bin/false": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+    "usr/lib/dyld": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea",
+    "usr/lib/libSystem.B.dylib": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787",
+    "usr/lib/system/libmathCommon.A.dylib": "0282375f09bad0cdff42e98b6a1c44ae025fa49ba930052a3a37e5619906a5b1"
+  },
+  "inputs_unchanged": true,
+  "results": [
+    {
+      "program": "true",
+      "command": [
+        "/mnt/h/ReMaklar/build/qemu-linux32/ppc-darwin-user/qemu-ppc",
+        "--root",
+        "/mnt/h/ReMaklar/research/samples-local",
+        "/mnt/h/ReMaklar/research/samples-local/usr/bin/true"
+      ],
+      "entry": "0x195c",
+      "exit": 0,
+      "checks": {
+        "exit": true,
+        "stdout_empty": true,
+        "original_entry": true,
+        "no_main_bridge": true,
+        "bsd_exit": true,
+        "libsystem_loaded": true,
+        "math_loaded": true,
+        "no_unsupported": true
+      },
+      "pass": true
+    },
+    {
+      "program": "false",
+      "command": [
+        "/mnt/h/ReMaklar/build/qemu-linux32/ppc-darwin-user/qemu-ppc",
+        "--root",
+        "/mnt/h/ReMaklar/research/samples-local",
+        "/mnt/h/ReMaklar/research/samples-local/usr/bin/false"
+      ],
+      "entry": "0x195c",
+      "exit": 1,
+      "checks": {
+        "exit": true,
+        "stdout_empty": true,
+        "original_entry": true,
+        "no_main_bridge": true,
+        "bsd_exit": true,
+        "libsystem_loaded": true,
+        "math_loaded": true,
+        "no_unsupported": true
+      },
+      "pass": true
+    },
+    {
+      "program": "missing-dyld",
+      "exit": 125,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

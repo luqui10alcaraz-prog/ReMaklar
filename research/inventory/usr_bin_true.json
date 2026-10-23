@@ -1,0 +1,783 @@
+{
+  "original_path": "/usr/bin/true",
+  "distribution": "Apple Darwin x86 6.0.2 ISO; not yet compared with Jaguar retail",
+  "iso_sha256": "d2c4668dcd4ca4a7498acffaf703a19862f53ab9b58b06c51745bd33e58a584f",
+  "analysis": {
+    "format": "FAT",
+    "sha256": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+    "slices": [
+      {
+        "offset": 4096,
+        "size": 9484,
+        "cputype": 18,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "9775ffe63f16a5b1fc89c599efe6d75e6a7749611cce06c25660a19457714653",
+          "cputype": 18,
+          "cpusubtype": 0,
+          "filetype": 2,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__PAGEZERO",
+              "vmaddr": 0,
+              "vmsize": 4096,
+              "fileoff": 0,
+              "filesize": 0
+            },
+            {
+              "name": "__TEXT",
+              "vmaddr": 4096,
+              "vmsize": 4096,
+              "fileoff": 0,
+              "filesize": 4096
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 8192,
+              "vmsize": 4096,
+              "fileoff": 4096,
+              "filesize": 4096
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 12288,
+              "vmsize": 1292,
+              "fileoff": 8192,
+              "filesize": 1292
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 6492,
+              "size": 1048,
+              "fileoff": 2396,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 7540,
+              "size": 396,
+              "fileoff": 3444,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 36
+            },
+            {
+              "name": "__symbol_stub",
+              "addr": 7936,
+              "size": 0,
+              "fileoff": 3840,
+              "flags": 2147483656,
+              "reserved1": 11,
+              "reserved2": 20
+            },
+            {
+              "name": "__cstring",
+              "addr": 7936,
+              "size": 256,
+              "fileoff": 3840,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 8192,
+              "size": 32,
+              "fileoff": 4096,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 8224,
+              "size": 44,
+              "fileoff": 4128,
+              "flags": 7,
+              "reserved1": 11,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 8268,
+              "size": 16,
+              "fileoff": 4172,
+              "flags": 6,
+              "reserved1": 22,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 8284,
+              "size": 28,
+              "fileoff": 4188,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 8320,
+              "size": 60,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dyld",
+              "path": "/usr/lib/dyld"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "_NXArgc",
+              "type": 15,
+              "value": 8192
+            },
+            {
+              "index": 1,
+              "name": "_NXArgv",
+              "type": 15,
+              "value": 8196
+            },
+            {
+              "index": 2,
+              "name": "___progname",
+              "type": 15,
+              "value": 8204
+            },
+            {
+              "index": 3,
+              "name": "__mh_execute_header",
+              "type": 3,
+              "value": 4096
+            },
+            {
+              "index": 4,
+              "name": "_catch_exception_raise",
+              "type": 15,
+              "value": 8328
+            },
+            {
+              "index": 5,
+              "name": "_catch_exception_raise_state",
+              "type": 15,
+              "value": 8332
+            },
+            {
+              "index": 6,
+              "name": "_catch_exception_raise_state_identity",
+              "type": 15,
+              "value": 8336
+            },
+            {
+              "index": 7,
+              "name": "_clock_alarm_reply",
+              "type": 15,
+              "value": 8340
+            },
+            {
+              "index": 8,
+              "name": "_do_mach_notify_dead_name",
+              "type": 15,
+              "value": 8344
+            },
+            {
+              "index": 9,
+              "name": "_do_mach_notify_no_senders",
+              "type": 15,
+              "value": 8348
+            },
+            {
+              "index": 10,
+              "name": "_do_mach_notify_port_deleted",
+              "type": 15,
+              "value": 8352
+            },
+            {
+              "index": 11,
+              "name": "_do_mach_notify_send_once",
+              "type": 15,
+              "value": 8356
+            },
+            {
+              "index": 12,
+              "name": "_do_seqnos_mach_notify_dead_name",
+              "type": 15,
+              "value": 8360
+            },
+            {
+              "index": 13,
+              "name": "_do_seqnos_mach_notify_no_senders",
+              "type": 15,
+              "value": 8364
+            },
+            {
+              "index": 14,
+              "name": "_do_seqnos_mach_notify_port_deleted",
+              "type": 15,
+              "value": 8368
+            },
+            {
+              "index": 15,
+              "name": "_do_seqnos_mach_notify_send_once",
+              "type": 15,
+              "value": 8372
+            },
+            {
+              "index": 16,
+              "name": "_environ",
+              "type": 15,
+              "value": 8200
+            },
+            {
+              "index": 17,
+              "name": "_receive_samples",
+              "type": 15,
+              "value": 8376
+            },
+            {
+              "index": 18,
+              "name": "___keymgr_dwarf2_register_sections",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 19,
+              "name": "___keymgr_global",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 20,
+              "name": "__cthread_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 21,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 22,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 23,
+              "name": "__init_keymgr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 24,
+              "name": "__keymgr_get_and_lock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 25,
+              "name": "__keymgr_set_and_unlock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 26,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 27,
+              "name": "_atexit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 28,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 29,
+              "name": "_errno",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 30,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 31,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 32,
+              "name": "_mach_init_routine",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 7540,
+              "symbol": "_exit"
+            },
+            {
+              "address": 7576,
+              "symbol": "_atexit"
+            },
+            {
+              "address": 7612,
+              "symbol": "___keymgr_dwarf2_register_sections"
+            },
+            {
+              "address": 7648,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 7684,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 7720,
+              "symbol": "__init_keymgr"
+            },
+            {
+              "address": 7756,
+              "symbol": "_free"
+            },
+            {
+              "address": 7792,
+              "symbol": "_abort"
+            },
+            {
+              "address": 7828,
+              "symbol": "__keymgr_set_and_unlock_processwide_ptr"
+            },
+            {
+              "address": 7864,
+              "symbol": "__keymgr_get_and_lock_processwide_ptr"
+            },
+            {
+              "address": 7900,
+              "symbol": "_calloc"
+            }
+          ],
+          "entry": 6492
+        }
+      },
+      {
+        "offset": 16384,
+        "size": 17676,
+        "cputype": 7,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "c764091e72f05e3d3241fa3a906901151636da3a9861a706c4a9672a5bbd3279",
+          "cputype": 7,
+          "cpusubtype": 3,
+          "filetype": 2,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__PAGEZERO",
+              "vmaddr": 0,
+              "vmsize": 8192,
+              "fileoff": 0,
+              "filesize": 0
+            },
+            {
+              "name": "__TEXT",
+              "vmaddr": 8192,
+              "vmsize": 8192,
+              "fileoff": 0,
+              "filesize": 8192
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 16384,
+              "vmsize": 8192,
+              "fileoff": 8192,
+              "filesize": 8192
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 24576,
+              "vmsize": 1292,
+              "fileoff": 16384,
+              "filesize": 1292
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 15032,
+              "size": 706,
+              "fileoff": 6840,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 15738,
+              "size": 286,
+              "fileoff": 7546,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 26
+            },
+            {
+              "name": "__symbol_stub",
+              "addr": 16024,
+              "size": 0,
+              "fileoff": 7832,
+              "flags": 2147483656,
+              "reserved1": 11,
+              "reserved2": 16
+            },
+            {
+              "name": "__cstring",
+              "addr": 16032,
+              "size": 352,
+              "fileoff": 7840,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 16384,
+              "size": 32,
+              "fileoff": 8192,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 16416,
+              "size": 44,
+              "fileoff": 8224,
+              "flags": 7,
+              "reserved1": 11,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 16460,
+              "size": 16,
+              "fileoff": 8268,
+              "flags": 6,
+              "reserved1": 22,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 16476,
+              "size": 28,
+              "fileoff": 8284,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 16512,
+              "size": 60,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dyld",
+              "path": "/usr/lib/dyld"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "_NXArgc",
+              "type": 15,
+              "value": 16384
+            },
+            {
+              "index": 1,
+              "name": "_NXArgv",
+              "type": 15,
+              "value": 16388
+            },
+            {
+              "index": 2,
+              "name": "___progname",
+              "type": 15,
+              "value": 16396
+            },
+            {
+              "index": 3,
+              "name": "__mh_execute_header",
+              "type": 3,
+              "value": 8192
+            },
+            {
+              "index": 4,
+              "name": "_catch_exception_raise",
+              "type": 15,
+              "value": 16520
+            },
+            {
+              "index": 5,
+              "name": "_catch_exception_raise_state",
+              "type": 15,
+              "value": 16524
+            },
+            {
+              "index": 6,
+              "name": "_catch_exception_raise_state_identity",
+              "type": 15,
+              "value": 16528
+            },
+            {
+              "index": 7,
+              "name": "_clock_alarm_reply",
+              "type": 15,
+              "value": 16532
+            },
+            {
+              "index": 8,
+              "name": "_do_mach_notify_dead_name",
+              "type": 15,
+              "value": 16536
+            },
+            {
+              "index": 9,
+              "name": "_do_mach_notify_no_senders",
+              "type": 15,
+              "value": 16540
+            },
+            {
+              "index": 10,
+              "name": "_do_mach_notify_port_deleted",
+              "type": 15,
+              "value": 16544
+            },
+            {
+              "index": 11,
+              "name": "_do_mach_notify_send_once",
+              "type": 15,
+              "value": 16548
+            },
+            {
+              "index": 12,
+              "name": "_do_seqnos_mach_notify_dead_name",
+              "type": 15,
+              "value": 16552
+            },
+            {
+              "index": 13,
+              "name": "_do_seqnos_mach_notify_no_senders",
+              "type": 15,
+              "value": 16556
+            },
+            {
+              "index": 14,
+              "name": "_do_seqnos_mach_notify_port_deleted",
+              "type": 15,
+              "value": 16560
+            },
+            {
+              "index": 15,
+              "name": "_do_seqnos_mach_notify_send_once",
+              "type": 15,
+              "value": 16564
+            },
+            {
+              "index": 16,
+              "name": "_environ",
+              "type": 15,
+              "value": 16392
+            },
+            {
+              "index": 17,
+              "name": "_receive_samples",
+              "type": 15,
+              "value": 16568
+            },
+            {
+              "index": 18,
+              "name": "___keymgr_dwarf2_register_sections",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 19,
+              "name": "___keymgr_global",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 20,
+              "name": "__cthread_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 21,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 22,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 23,
+              "name": "__init_keymgr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 24,
+              "name": "__keymgr_get_and_lock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 25,
+              "name": "__keymgr_set_and_unlock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 26,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 27,
+              "name": "_atexit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 28,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 29,
+              "name": "_errno",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 30,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 31,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 32,
+              "name": "_mach_init_routine",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 15738,
+              "symbol": "_exit"
+            },
+            {
+              "address": 15764,
+              "symbol": "_atexit"
+            },
+            {
+              "address": 15790,
+              "symbol": "___keymgr_dwarf2_register_sections"
+            },
+            {
+              "address": 15816,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 15842,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 15868,
+              "symbol": "__init_keymgr"
+            },
+            {
+              "address": 15894,
+              "symbol": "_free"
+            },
+            {
+              "address": 15920,
+              "symbol": "_abort"
+            },
+            {
+              "address": 15946,
+              "symbol": "__keymgr_set_and_unlock_processwide_ptr"
+            },
+            {
+              "address": 15972,
+              "symbol": "__keymgr_get_and_lock_processwide_ptr"
+            },
+            {
+              "address": 15998,
+              "symbol": "_calloc"
+            }
+          ],
+          "entry": null
+        }
+      }
+    ]
+  },
+  "source_correspondence": {
+    "status": "candidate",
+    "project": "shell_cmds",
+    "tag": "shell_cmds-34",
+    "evidence": "ISO contains shell_cmds-34-1.ppc.rpm and cctools-435-1.ppc.rpm; binary identity with source build not proven"
+  }
+}

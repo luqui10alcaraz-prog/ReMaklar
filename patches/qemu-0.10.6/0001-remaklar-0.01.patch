@@ -1,0 +1,670 @@
+diff --git a/Makefile.target b/Makefile.target
+index f33f762..57407bc 100644
+--- a/Makefile.target
++++ b/Makefile.target
+@@ -371,23 +371,32 @@ VPATH+=:$(SRC_PATH)/darwin-user
+ CPPFLAGS+=-I$(SRC_PATH)/darwin-user -I$(SRC_PATH)/darwin-user/$(TARGET_ARCH)
+ 
+ # Leave some space for the regular program loading zone
++ifdef CONFIG_DARWIN
+ LDFLAGS+=-Wl,-segaddr,__STD_PROG_ZONE,0x1000 -image_base 0x0e000000
+ 
+ LIBS+=-lmx
+ 
+ OBJS= main.o commpage.o machload.o mmap.o signal.o syscall.o thunk.o
++else
++# ReMaklar bootstrap: Darwin guests on an i386 Linux host, not Linux guests.
++VPATH+=:$(SRC_PATH)/darwin-user/remaklar
++CPPFLAGS+=-I$(SRC_PATH)/darwin-user/remaklar/include -DREMAKLAR_BOOTSTRAP
++OBJS= bootstrap-main.o machload.o mmap.o thunk.o
++endif
+ 
+-OBJS+= libqemu.a
++OBJS+= libqemu.a qemu-malloc.o osdep.o
+ 
+ ifdef CONFIG_GDBSTUB
++ifdef CONFIG_DARWIN
+ OBJS+=gdbstub.o gdbstub-xml.o
+ endif
++endif
+ 
+ # Note: this is a workaround. The real fix is to avoid compiling
+ # cpu_signal_handler() in cpu-exec.c.
+ signal.o: CFLAGS += $(HELPER_CFLAGS)
+ 
+-$(QEMU_PROG): $(OBJS)
++$(QEMU_PROG): $(OBJS) ../libqemu_user.a
+ 	$(LINK)
+ 
+ endif #CONFIG_DARWIN_USER
+diff --git a/cpu-exec.c b/cpu-exec.c
+index 7607e24..17694e8 100644
+--- a/cpu-exec.c
++++ b/cpu-exec.c
+@@ -66,7 +66,7 @@ void cpu_resume_from_signal(CPUState *env1, void *puc)
+ {
+ #if !defined(CONFIG_SOFTMMU)
+ #ifdef __linux__
+-    struct ucontext *uc = puc;
++    ucontext_t *uc = puc;
+ #elif defined(__OpenBSD__)
+     struct sigcontext *uc = puc;
+ #endif
+@@ -1166,7 +1166,7 @@ int cpu_signal_handler(int host_signum, void *pinfo,
+                        void *puc)
+ {
+     siginfo_t *info = pinfo;
+-    struct ucontext *uc = puc;
++    ucontext_t *uc = puc;
+     unsigned long pc;
+     int trapno;
+ 
+diff --git a/darwin-user/machload.c b/darwin-user/machload.c
+index 794aefa..a006674 100644
+--- a/darwin-user/machload.c
++++ b/darwin-user/machload.c
+@@ -19,6 +19,7 @@
+  */
+ #include <stdio.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
+ #include <errno.h>
+@@ -78,6 +79,17 @@ struct nlist_extended
+     unsigned long st_size;
+ };
+ 
++static const char *macho_lookup_symbol(struct syminfo *s, target_ulong addr)
++{
++    struct nlist_extended *sym = s->disas_symtab.macho;
++    unsigned int i;
++    for (i = 0; i < s->disas_num_syms; i++, sym++)
++        if (!(sym->n_type & N_STAB) && addr >= sym->st_value &&
++            addr - sym->st_value < sym->st_size)
++            return s->disas_strtab + sym->n_un.n_strx;
++    return "";
++}
++
+ /* Print symbols in gdb */
+ void *macho_text_sect = 0;
+ int   macho_offset = 0;
+@@ -382,6 +394,10 @@ int load_segment(struct mach_header *mh, struct segment_command *sc, int fd, int
+     if(need_bswap)
+         bswap_segcmd(sc);
+ 
++    if (sc->filesize > sc->vmsize ||
++        (uint64_t)sc->vmaddr + sc->vmsize > 0xffffffffULL)
++        qerror("invalid segment range");
++
+     if(sc->vmaddr == 0)
+     {
+         DPRINTF("load_segment: sc->vmaddr == 0 returning\n");
+@@ -400,7 +416,7 @@ int load_segment(struct mach_header *mh, struct segment_command *sc, int fd, int
+ 
+     if(sc->filesize > 0)
+     {
+-        int opt = 0;
++        int opt = MAP_PRIVATE;
+ 
+         if(fixed)
+             opt |= MAP_FIXED;
+@@ -460,6 +476,9 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+     unsigned int i, magic;
+     int mach_hdr_pos = 0;
+     struct mach_header mach_hdr;
++    struct stat file_stat;
++    uint64_t slice_end;
++    unsigned int commands_used = 0;
+ 
+     /* for symbol lookup whith -d flag. */
+     struct symtab_command *    symtabcmd = 0;
+@@ -470,6 +489,9 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+     fd = open(filename, O_RDONLY);
+     if (fd < 0)
+         qerror("can't open file '%s'", filename);
++    if (fstat(fd, &file_stat) || file_stat.st_size < sizeof(struct mach_header))
++        qerror("truncated Mach-O header");
++    slice_end = file_stat.st_size;
+ 
+     /* Read magic header.  */
+     if (read(fd, &magic, sizeof (magic)) != sizeof (magic))
+@@ -511,6 +533,9 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+ 
+         if(need_bswap)
+             bswap_fh(&fh);
++        if (fh.nfat_arch > 32 ||
++            sizeof(fh) + (uint64_t)fh.nfat_arch * sizeof(struct fat_arch) > slice_end)
++            qerror("invalid FAT architecture table");
+ 
+         /* Read Fat Arch.  */
+         fa = malloc(sizeof(struct fat_arch)*fh.nfat_arch);
+@@ -524,6 +549,10 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+                 bswap_fa(fa);
+             if(fa->cputype == TARGET_CPU_TYPE)
+             {
++                if ((uint64_t)fa->offset + fa->size > slice_end ||
++                    fa->size < sizeof(struct mach_header))
++                    qerror("invalid FAT slice range");
++                slice_end = (uint64_t)fa->offset + fa->size;
+                 mach_hdr_pos = fa->offset;
+                 lseek(fd, mach_hdr_pos, SEEK_SET);
+ 
+@@ -555,6 +584,10 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+ 
+     if(need_bswap)
+         bswap_mh(&mach_hdr);
++    if (mach_hdr.sizeofcmds > 16 * 1024 * 1024 ||
++        mach_hdr.ncmds > mach_hdr.sizeofcmds / sizeof(struct load_command) ||
++        (uint64_t)mach_hdr_pos + sizeof(mach_hdr) + mach_hdr.sizeofcmds > slice_end)
++        qerror("invalid Mach-O load command region");
+ 
+     if ((mach_hdr.cputype) != TARGET_CPU_TYPE)
+         qerror("%s: Unsupported CPU 0x%x (only 0x%x(%s) supported)", filename, mach_hdr.cputype, TARGET_CPU_TYPE, TARGET_CPU_NAME);
+@@ -576,15 +609,32 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+     if(read(fd, lcmds, mach_hdr.sizeofcmds) != mach_hdr.sizeofcmds)
+             qerror("%s: unable to read load_command", filename);
+     slide = 0;
++#ifdef REMAKLAR_BOOTSTRAP
++    slide = remaklar_probe_slide;
++#endif
+     mmapfixed = 0;
+     for(i=0, lc = lcmds; i < (mach_hdr.ncmds) ; i++)
+     {
++        if (commands_used + sizeof(*lc) > mach_hdr.sizeofcmds)
++            qerror("truncated load command");
+ 
+         if(need_bswap)
+             bswap_lc(lc);
++        if (lc->cmdsize < sizeof(*lc) || (lc->cmdsize & 3) ||
++            lc->cmdsize > mach_hdr.sizeofcmds - commands_used)
++            qerror("invalid load command size");
+         switch(lc->cmd)
+         {
+             case LC_SEGMENT:
++                if (lc->cmdsize < sizeof(struct segment_command))
++                    qerror("truncated segment command");
++                {
++                    struct segment_command *seg = (void *)lc;
++                    uint32_t off = need_bswap ? bswap_32(seg->fileoff) : seg->fileoff;
++                    uint32_t len = need_bswap ? bswap_32(seg->filesize) : seg->filesize;
++                    if ((uint64_t)mach_hdr_pos + off + len > slice_end)
++                        qerror("segment outside file");
++                }
+                 /* The main_exe can't be relocated */
+                 if(mach_hdr.filetype == MH_EXECUTE)
+                     mmapfixed = 1;
+@@ -595,9 +645,19 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+                 if(slide != -1)
+                     mmapfixed = 1;
+                 else
++#ifdef REMAKLAR_BOOTSTRAP
++                    slide = remaklar_probe_slide;
++#else
+                     slide = 0; /* load_segment didn't map the segment */
++#endif
+ 
+-                if(mach_hdr.filetype == MH_EXECUTE && slide != 0)
++                if(mach_hdr.filetype == MH_EXECUTE && slide !=
++#ifdef REMAKLAR_BOOTSTRAP
++                   remaklar_probe_slide
++#else
++                   0
++#endif
++                  )
+                     qerror("%s: Warning executable can't be mapped at the right address (offset: 0x%x)\n", filename, slide);
+ 
+                 if(strcmp(((struct segment_command*)(lc))->segname, "__TEXT") == 0)
+@@ -618,6 +678,13 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+                 }
+                 break;
+             case LC_LOAD_DYLINKER:
++#ifdef REMAKLAR_BOOTSTRAP
++                if (remaklar_probe_slide) {
++                    fprintf(stderr, "probe-main: skipping dyld/startup explicitly\n");
++                    break;
++                }
++                qerror("dynamic Mach-O requires unimplemented dyld integration");
++#endif
+                 dyld_entry_point = load_dylinker( &mach_hdr, (struct dylinker_command*)lc, fd, mach_hdr_pos, need_bswap );
+                 break;
+             case LC_LOAD_DYLIB:
+@@ -625,6 +692,8 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+                 break;
+             case LC_THREAD:
+             case LC_UNIXTHREAD:
++                if (lc->cmdsize < sizeof(struct target_thread_command))
++                    qerror("truncated thread state command");
+                 {
+                 struct target_pt_regs * _regs;
+                 if(mach_hdr.filetype == MH_DYLINKER)
+@@ -635,6 +704,8 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+                 }
+                 break;
+             case LC_SYMTAB:
++                if (lc->cmdsize < sizeof(struct symtab_command))
++                    qerror("truncated symbol table command");
+                 /* Save the symtab and strtab */
+                 symtabcmd = (struct symtab_command *)lc;
+                 break;
+@@ -648,13 +719,18 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+                 break;
+             default: fprintf(stderr, "warning: unkown command 0x%x in '%s'\n", lc->cmd, filename);
+         }
+-        lc = (struct load_command*)((int)(lc)+(lc->cmdsize));
++        commands_used += lc->cmdsize;
++        lc = (struct load_command*)((char *)lc + lc->cmdsize);
+     }
+ 
+     if(symtabcmd)
+     {
+         if(need_bswap)
+             bswap_symtabcmd(symtabcmd);
++        if ((uint64_t)mach_hdr_pos + symtabcmd->symoff +
++                (uint64_t)symtabcmd->nsyms * sizeof(struct nlist) > slice_end ||
++            (uint64_t)mach_hdr_pos + symtabcmd->stroff + symtabcmd->strsize > slice_end)
++            qerror("symbol table outside file");
+ 
+         symtab_std = load_data(fd, symtabcmd->symoff+mach_hdr_pos, symtabcmd->nsyms * sizeof(struct nlist));
+         strtab = load_data(fd, symtabcmd->stroff+mach_hdr_pos, symtabcmd->strsize);
+@@ -674,6 +750,10 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+             memset(sym, 0, sizeof(*sym));
+ 
+             sym->n_type = syment->n_type;
++            if (syment->n_un.n_strx >= symtabcmd->strsize ||
++                !memchr(strtab + syment->n_un.n_strx, 0,
++                        symtabcmd->strsize - syment->n_un.n_strx))
++                qerror("invalid symbol string");
+             if ( syment->n_type & N_STAB ) /* Debug symbols are skipped */
+                 continue;
+ 
+@@ -705,7 +785,8 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+             DPRINTF("saving symtab of %s (%d symbol(s))\n", filename, symtabcmd->nsyms);
+             struct syminfo *s;
+             s = malloc(sizeof(*s));
+-            s->disas_symtab = symtab;
++            s->disas_symtab.macho = symtab;
++            s->lookup_symbol = macho_lookup_symbol;
+             s->disas_strtab = strtab;
+             s->disas_num_syms = symtabcmd->nsyms;
+             s->next = syminfos;
+diff --git a/darwin-user/main.c b/darwin-user/main.c
+index 9b8a3dc..d1b67b5 100644
+--- a/darwin-user/main.c
++++ b/darwin-user/main.c
+@@ -776,7 +776,7 @@ int main(int argc, char **argv)
+     int optind;
+     short use_gdbstub = 0;
+     const char *r;
+-    const char *cpu_model;
++    const char *cpu_model = NULL;
+ 
+     if (argc <= 1)
+         usage();
+diff --git a/darwin-user/mmap.c b/darwin-user/mmap.c
+index f803066..eab3965 100644
+--- a/darwin-user/mmap.c
++++ b/darwin-user/mmap.c
+@@ -27,6 +27,7 @@
+ #include <sys/mman.h>
+ 
+ #include "qemu.h"
++unsigned long last_brk;
+ 
+ //#define DEBUG_MMAP
+ 
+@@ -380,6 +381,7 @@ long target_mremap(unsigned long old_addr, unsigned long old_size,
+ {
+ #ifndef __APPLE__
+     /* XXX: use 5 args syscall */
++    int prot;
+     new_addr = (long)mremap((void *)old_addr, old_size, new_size, flags);
+     if (new_addr == -1)
+         return new_addr;
+diff --git a/darwin-user/qemu-types.h b/darwin-user/qemu-types.h
+new file mode 100644
+index 0000000..eadd88c
+--- /dev/null
++++ b/darwin-user/qemu-types.h
+@@ -0,0 +1,10 @@
++/* ReMaklar Darwin user ABI types. SPDX-License-Identifier: GPL-2.0-or-later */
++#ifndef QEMU_TYPES_H
++#define QEMU_TYPES_H
++typedef uint32_t abi_ulong;
++typedef int32_t abi_long;
++#define TARGET_ABI_FMT_lx "%08x"
++#define TARGET_ABI_FMT_ld "%d"
++#define TARGET_ABI_FMT_lu "%u"
++#define TARGET_ABI_BITS 32
++#endif
+diff --git a/darwin-user/qemu.h b/darwin-user/qemu.h
+index 462bbda..21a4518 100644
+--- a/darwin-user/qemu.h
++++ b/darwin-user/qemu.h
+@@ -141,8 +141,20 @@ int target_msync(unsigned long start, unsigned long len, int flags);
+ /* user access */
+ 
+ /* XXX: todo protect every memory access */
+-#define lock_user(x,y,z)    (void*)(x)
++#define VERIFY_READ 0
++#define VERIFY_WRITE 1
++#define lock_user(type,addr,len,copy) \
++    (page_check_range((addr), (len), \
++      (type) == VERIFY_READ ? PAGE_READ : PAGE_READ | PAGE_WRITE) == 0 \
++      ? g2h(addr) : NULL)
+ #define unlock_user(x,y,z)
++/* Darwin user execution is single-threaded in this bring-up. */
++#define mmap_lock() ((void)0)
++#define mmap_unlock() ((void)0)
++extern unsigned long last_brk;
++#ifdef REMAKLAR_BOOTSTRAP
++extern unsigned long remaklar_probe_slide;
++#endif
+ 
+ /* Mac OS X ABI arguments processing */
+ #ifdef TARGET_I386
+diff --git a/darwin-user/remaklar/bootstrap-main.c b/darwin-user/remaklar/bootstrap-main.c
+new file mode 100644
+index 0000000..c47db90
+--- /dev/null
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -0,0 +1,169 @@
++/* ReMaklar 0.01 Linux/i386 bring-up of QEMU's PPC Darwin user target.
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ * Deliberately limited: no Mach IPC, dynamic linkage, commpage or guest signals.
++ */
++#include <stdio.h>
++#include <stdlib.h>
++#include <stdarg.h>
++#include <errno.h>
++#include <unistd.h>
++#include <signal.h>
++#include "qemu.h"
++
++const char *interp_prefix = "";
++unsigned long stack_size = 512 * 1024;
++CPUState *global_env;
++TaskState *first_task_state;
++unsigned long remaklar_probe_slide;
++static uint32_t exit_bridge;
++
++void qerror(const char *fmt, ...)
++{
++    va_list ap;
++    va_start(ap, fmt); vfprintf(stderr, fmt, ap); va_end(ap);
++    fputc('\n', stderr); exit(125);
++}
++void gemu_log(const char *fmt, ...)
++{
++    va_list ap;
++    va_start(ap, fmt); vfprintf(stderr, fmt, ap); va_end(ap);
++}
++
++/* User-only CPU model hooks: no board or devices are instantiated. */
++uint32_t cpu_ppc_load_tbl(CPUState *env) { qerror("unsupported timebase read"); return 0; }
++uint32_t cpu_ppc_load_tbu(CPUState *env) { qerror("unsupported timebase read"); return 0; }
++uint32_t cpu_ppc_load_atbl(CPUState *env) { qerror("unsupported timebase read"); return 0; }
++uint32_t cpu_ppc_load_atbu(CPUState *env) { qerror("unsupported timebase read"); return 0; }
++uint32_t cpu_ppc601_load_rtcu(CPUState *env) { qerror("unsupported timebase read"); return 0; }
++uint32_t cpu_ppc601_load_rtcl(CPUState *env) { qerror("unsupported timebase read"); return 0; }
++int ppc_dcr_read(ppc_dcr_t *d, int n, target_ulong *v) { return -1; }
++int ppc_dcr_write(ppc_dcr_t *d, int n, target_ulong v) { return -1; }
++/* Debug register descriptions are unused: the bootstrap has no GDB server. */
++void gdb_register_coprocessor(CPUState *env, gdb_reg_cb get, gdb_reg_cb set,
++                              int count, const char *xml, int position) { }
++
++static void host_signal(int sig, siginfo_t *info, void *context)
++{
++    if (cpu_signal_handler(sig, info, context))
++        return;
++    /* No synthesized guest signal support in 0.01. Async-safe diagnostic. */
++    {
++        static const char message[] = "remaklar: unhandled host memory fault\n";
++        int ignored = write(2, message, sizeof(message) - 1);
++        (void)ignored;
++    }
++    _exit(126);
++}
++
++static int guest_readable(uint32_t addr, uint32_t len)
++{
++    uint64_t end = (uint64_t)addr + len;
++    uint64_t page;
++    if (end > 0x100000000ULL) return 0;
++    for (page = addr & TARGET_PAGE_MASK; page < end; page += TARGET_PAGE_SIZE)
++        if ((page_get_flags(page) & (PAGE_VALID | PAGE_READ)) !=
++            (PAGE_VALID | PAGE_READ)) return 0;
++    return 1;
++}
++
++static void darwin_syscall(CPUState *env)
++{
++    uint32_t number = env->gpr[0];
++    int result, guest_errno = 0;
++    fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x\n",
++            (unsigned)env->nip, number, (unsigned)env->gpr[3],
++            (unsigned)env->gpr[4], (unsigned)env->gpr[5]);
++    switch (number) {
++    case 1: /* Darwin SYS_exit */
++        exit(env->gpr[3] & 255);
++    case 4: /* Darwin SYS_write: buffers contain bytes, no word swapping. */
++        if (!guest_readable(env->gpr[4], env->gpr[5])) {
++            result = -1; guest_errno = 14; /* Darwin EFAULT */
++        } else {
++            result = write(env->gpr[3], g2h(env->gpr[4]), env->gpr[5]);
++            if (result < 0) {
++                switch (errno) {
++                case EBADF: guest_errno = 9; break;
++                case EINTR: guest_errno = 4; break;
++                case EPIPE: guest_errno = 32; break;
++                default: qerror("unsupported host write errno %d", errno);
++                }
++            }
++        }
++        break;
++    default:
++        qerror("unsupported Darwin syscall/trap %d at %08x",
++               (int32_t)number, (unsigned)env->nip);
++    }
++    /* QEMU resumes just after sc. Jaguar skips the cerror branch on success. */
++    env->gpr[3] = guest_errno ? guest_errno : result;
++    if (!guest_errno) env->nip += 4;
++    fprintf(stderr, "return r3=%u error=%d resume=%08x\n",
++            (unsigned)env->gpr[3], guest_errno, (unsigned)env->nip);
++}
++
++void cpu_loop(CPUState *env)
++{
++    int trap;
++    for (;;) {
++        trap = cpu_exec(env);
++        switch (trap) {
++        case POWERPC_EXCP_SYSCALL_USER: darwin_syscall(env); break;
++        case EXCP_INTERRUPT: break;
++        case EXCP_DEBUG:
++            if (exit_bridge && env->nip == exit_bridge) {
++                fprintf(stderr, "probe-main: original PPC reached _exit bridge, status=%u\n",
++                        (unsigned)env->gpr[3]);
++                exit(env->gpr[3] & 255);
++            }
++            qerror("unexpected debug event at %08x", (unsigned)env->nip);
++            break;
++        default:
++            qerror("unsupported PPC exception %x pc=%08x", trap,
++                   (unsigned)env->nip);
++        }
++    }
++}
++
++int main(int argc, char **argv)
++{
++    struct target_pt_regs regs;
++    struct sigaction sa;
++    CPUState *env;
++    int i;
++    uint32_t probe_entry = 0;
++    int filearg = 1;
++    if (argc == 5 && !strcmp(argv[1], "--probe-main")) {
++        remaklar_probe_slide = 0x10000000;
++        probe_entry = strtoul(argv[2], NULL, 16) + remaklar_probe_slide;
++        exit_bridge = strtoul(argv[3], NULL, 16) + remaklar_probe_slide;
++        filearg = 4;
++    } else if (argc != 2) {
++        fprintf(stderr, "ReMaklar 0.01 bootstrap (Linux i386)\nusage: %s static-ppc.macho\n"
++                "or: %s --probe-main entry-hex exit-stub-hex original.macho\n", argv[0], argv[0]);
++        return 125;
++    }
++    cpu_set_log_filename("remaklar-tcg.log");
++    if (getenv("REMAKLAR_TRACE"))
++        cpu_set_log(cpu_str_to_log_mask("in_asm,out_asm,exec"));
++    cpu_exec_init_all(0);
++    env = cpu_init("750");
++    if (!env) qerror("cannot create PPC750 CPU");
++    global_env = cpu_single_env = env;
++    memset(&sa, 0, sizeof(sa));
++    sa.sa_sigaction = host_signal;
++    sigemptyset(&sa.sa_mask);
++    sa.sa_flags = SA_SIGINFO;
++    sigaction(SIGSEGV, &sa, NULL);
++    sigaction(SIGBUS, &sa, NULL);
++    memset(&regs, 0, sizeof(regs));
++    mach_exec(argv[filearg], argv + filearg, environ, &regs);
++    env->nip = probe_entry ? probe_entry : regs.nip;
++    for (i = 0; i < 32; i++) env->gpr[i] = regs.gpr[i];
++    if (probe_entry && cpu_breakpoint_insert(env, exit_bridge, BP_GDB, NULL))
++        qerror("cannot install _exit bridge breakpoint");
++    fprintf(stderr, "loaded entry=%08x stack=%08x cpu=750 host=i386\n",
++            (unsigned)env->nip, (unsigned)env->gpr[1]);
++    cpu_loop(env);
++    return 125;
++}
+diff --git a/darwin-user/remaklar/include/mach-o/fat.h b/darwin-user/remaklar/include/mach-o/fat.h
+new file mode 100644
+index 0000000..b5c7045
+--- /dev/null
++++ b/darwin-user/remaklar/include/mach-o/fat.h
+@@ -0,0 +1,6 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#include <stdint.h>
++#define FAT_MAGIC 0xcafebabe
++#define FAT_CIGAM 0xbebafeca
++struct fat_header { uint32_t magic, nfat_arch; };
++struct fat_arch { uint32_t cputype, cpusubtype, offset, size, align; };
+diff --git a/darwin-user/remaklar/include/mach-o/loader.h b/darwin-user/remaklar/include/mach-o/loader.h
+new file mode 100644
+index 0000000..77c5740
+--- /dev/null
++++ b/darwin-user/remaklar/include/mach-o/loader.h
+@@ -0,0 +1,37 @@
++/* Minimal fixed-width Mach-O wire definitions for the Linux bootstrap.
++ * ReMaklar, SPDX-License-Identifier: GPL-2.0-or-later.
++ * These are not substitutes for the Darwin SDK used by a native build.
++ */
++#ifndef REMAKLAR_MACH_LOADER_H
++#define REMAKLAR_MACH_LOADER_H
++#include <stdint.h>
++#define MH_MAGIC 0xfeedface
++#define MH_CIGAM 0xcefaedfe
++#define CPU_TYPE_I386 7
++#define CPU_TYPE_POWERPC 18
++#define MH_EXECUTE 2
++#define MH_FVMLIB 3
++#define MH_DYLIB 6
++#define MH_DYLINKER 7
++#define LC_SEGMENT 1
++#define LC_SYMTAB 2
++#define LC_THREAD 4
++#define LC_UNIXTHREAD 5
++#define LC_DYSYMTAB 0xb
++#define LC_LOAD_DYLIB 0xc
++#define LC_ID_DYLIB 0xd
++#define LC_LOAD_DYLINKER 0xe
++#define LC_ID_DYLINKER 0xf
++#define LC_SUB_LIBRARY 0x15
++#define LC_TWOLEVEL_HINTS 0x16
++#define LC_PREBIND_CKSUM 0x17
++#define LC_UUID 0x1b
++struct mach_header { uint32_t magic, cputype, cpusubtype, filetype, ncmds, sizeofcmds, flags; };
++struct load_command { uint32_t cmd, cmdsize; };
++struct segment_command {
++    uint32_t cmd, cmdsize; char segname[16];
++    uint32_t vmaddr, vmsize, fileoff, filesize, maxprot, initprot, nsects, flags;
++};
++struct dylinker_command { uint32_t cmd, cmdsize; union { uint32_t offset; } name; };
++struct symtab_command { uint32_t cmd, cmdsize, symoff, nsyms, stroff, strsize; };
++#endif
+diff --git a/darwin-user/remaklar/include/mach-o/nlist.h b/darwin-user/remaklar/include/mach-o/nlist.h
+new file mode 100644
+index 0000000..71c3847
+--- /dev/null
++++ b/darwin-user/remaklar/include/mach-o/nlist.h
+@@ -0,0 +1,7 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#include <stdint.h>
++#define N_STAB 0xe0
++struct nlist {
++    union { uint32_t n_strx; } n_un;
++    uint8_t n_type, n_sect; int16_t n_desc; uint32_t n_value;
++};
+diff --git a/darwin-user/remaklar/include/mach-o/ppc/reloc.h b/darwin-user/remaklar/include/mach-o/ppc/reloc.h
+new file mode 100644
+index 0000000..e4e99d2
+--- /dev/null
++++ b/darwin-user/remaklar/include/mach-o/ppc/reloc.h
+@@ -0,0 +1,2 @@
++/* No relocation definitions needed by the original machload.c.
++ * SPDX-License-Identifier: GPL-2.0-or-later */
+diff --git a/darwin-user/remaklar/include/mach-o/reloc.h b/darwin-user/remaklar/include/mach-o/reloc.h
+new file mode 100644
+index 0000000..e4e99d2
+--- /dev/null
++++ b/darwin-user/remaklar/include/mach-o/reloc.h
+@@ -0,0 +1,2 @@
++/* No relocation definitions needed by the original machload.c.
++ * SPDX-License-Identifier: GPL-2.0-or-later */
+diff --git a/darwin-user/syscall.c b/darwin-user/syscall.c
+index 130d33c..5b2186c 100644
+--- a/darwin-user/syscall.c
++++ b/darwin-user/syscall.c
+@@ -703,25 +703,25 @@ static long do_ioctl(long fd, long cmd, long arg)
+         case IOC_R:
+             ret = get_errno(ioctl(fd, ie->host_cmd, buf_temp));
+             if (!is_error(ret)) {
+-                argptr = lock_user(arg, target_size, 0);
++                argptr = lock_user(VERIFY_WRITE, arg, target_size, 0);
+                 thunk_convert(argptr, buf_temp, arg_type, THUNK_TARGET);
+                 unlock_user(argptr, arg, target_size);
+             }
+             break;
+         case IOC_W:
+-            argptr = lock_user(arg, target_size, 1);
++            argptr = lock_user(VERIFY_READ, arg, target_size, 1);
+             thunk_convert(buf_temp, argptr, arg_type, THUNK_HOST);
+             unlock_user(argptr, arg, 0);
+             ret = get_errno(ioctl(fd, ie->host_cmd, buf_temp));
+             break;
+         default:
+         case IOC_RW:
+-            argptr = lock_user(arg, target_size, 1);
++            argptr = lock_user(VERIFY_READ, arg, target_size, 1);
+             thunk_convert(buf_temp, argptr, arg_type, THUNK_HOST);
+             unlock_user(argptr, arg, 0);
+             ret = get_errno(ioctl(fd, ie->host_cmd, buf_temp));
+             if (!is_error(ret)) {
+-                argptr = lock_user(arg, target_size, 0);
++                argptr = lock_user(VERIFY_WRITE, arg, target_size, 0);
+                 thunk_convert(argptr, buf_temp, arg_type, THUNK_TARGET);
+                 unlock_user(argptr, arg, target_size);
+             }
+diff --git a/disas.h b/disas.h
+index 13c2aa3..baec660 100644
+--- a/disas.h
++++ b/disas.h
+@@ -20,6 +20,7 @@ struct syminfo {
+     lookup_symbol_t lookup_symbol;
+     unsigned int disas_num_syms;
+     union {
++      void *macho;
+       struct elf32_sym *elf32;
+       struct elf64_sym *elf64;
+     } disas_symtab;
