@@ -1,0 +1,598 @@
+diff --git a/Makefile b/Makefile
+index 4f7a55a..499dd20 100644
+--- a/Makefile
++++ b/Makefile
+@@ -12,7 +12,11 @@ VPATH=$(SRC_PATH):$(SRC_PATH)/hw
+ CFLAGS += $(OS_CFLAGS) $(ARCH_CFLAGS)
+ LDFLAGS += $(OS_LDFLAGS) $(ARCH_LDFLAGS)
+ 
++ifeq ($(CONFIG_DARWIN):$(CONFIG_REMAKLAR_BOOTSTRAP),yes:yes)
++CPPFLAGS += -I. -I$(SRC_PATH) -MMD
++else
+ CPPFLAGS += -I. -I$(SRC_PATH) -MMD -MP -MT $@
++endif
+ CPPFLAGS += -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+ LIBS=
+ ifdef CONFIG_STATIC
+diff --git a/Makefile.target b/Makefile.target
+index 182c577..7b46126 100644
+--- a/Makefile.target
++++ b/Makefile.target
+@@ -25,7 +25,11 @@ TARGET_BASE_ARCH:=sparc
+ endif
+ TARGET_PATH=$(SRC_PATH)/target-$(TARGET_BASE_ARCH)
+ VPATH=$(SRC_PATH):$(TARGET_PATH):$(SRC_PATH)/hw
++ifeq ($(CONFIG_DARWIN):$(CONFIG_REMAKLAR_BOOTSTRAP),yes:yes)
++CPPFLAGS=-I. -I.. -I$(TARGET_PATH) -I$(SRC_PATH) -MMD -DNEED_CPU_H
++else
+ CPPFLAGS=-I. -I.. -I$(TARGET_PATH) -I$(SRC_PATH) -MMD -MT $@ -MP -DNEED_CPU_H
++endif
+ #CFLAGS+=-Werror
+ LIBS=
+ # user emulator name
+@@ -370,27 +374,35 @@ ifdef CONFIG_DARWIN_USER
+ VPATH+=:$(SRC_PATH)/darwin-user
+ CPPFLAGS+=-I$(SRC_PATH)/darwin-user -I$(SRC_PATH)/darwin-user/$(TARGET_ARCH)
+ 
+-# Leave some space for the regular program loading zone
+-ifdef CONFIG_DARWIN
++# Preserve upstream's native runner unless the experimental bootstrap is selected.
++ifeq ($(CONFIG_DARWIN):$(CONFIG_REMAKLAR_BOOTSTRAP),yes:)
+ LDFLAGS+=-Wl,-segaddr,__STD_PROG_ZONE,0x1000 -image_base 0x0e000000
+ 
+ LIBS+=-lmx
+ 
+ OBJS= main.o commpage.o machload.o mmap.o signal.o syscall.o thunk.o
+ else
+-# ReMaklar bootstrap: Darwin guests on an i386 Linux host, not Linux guests.
++# ReMaklar bootstrap: explicit Darwin process personality on either host.
+ VPATH+=:$(SRC_PATH)/darwin-user/remaklar
+ CPPFLAGS+=-I$(SRC_PATH)/darwin-user/remaklar/include -DREMAKLAR_BOOTSTRAP
+ OBJS= bootstrap-main.o darwin-kernel.o machload.o mmap.o thunk.o
++ifdef CONFIG_DARWIN
++LDFLAGS+=-Wl,-segalign,0x1000 -Wl,-segaddr,__STD_PROG_ZONE,0x1000 -Wl,-seg1addr,0x20000000
++# GCC 2.95's optimizer is prohibitively slow on the large PPC decoder.
++# This changes the host decoder build only, not the guest TCG optimization.
++translate.o: CFLAGS += -O0
++endif
+ endif
+ 
+ OBJS+= libqemu.a qemu-malloc.o osdep.o
+ 
+ ifdef CONFIG_GDBSTUB
+ ifdef CONFIG_DARWIN
++ifndef CONFIG_REMAKLAR_BOOTSTRAP
+ OBJS+=gdbstub.o gdbstub-xml.o
+ endif
+ endif
++endif
+ 
+ # Note: this is a workaround. The real fix is to avoid compiling
+ # cpu_signal_handler() in cpu-exec.c.
+diff --git a/configure b/configure
+index 6164241..a517d6e 100755
+--- a/configure
++++ b/configure
+@@ -18,12 +18,13 @@ TMPS="${TMPDIR1}/qemu-conf-${RANDOM}-$$-${RANDOM}.S"
+ TMPI="${TMPDIR1}/qemu-conf-${RANDOM}-$$-${RANDOM}.i"
+ TMPSDLLOG="${TMPDIR1}/qemu-conf-sdl-$$-${RANDOM}.log"
+ 
+-trap "rm -f $TMPC $TMPO $TMPE $TMPS $TMPI $TMPSDLLOG; exit" 0 2 3 15
++trap 'configure_status=$?; rm -f "$TMPC" "$TMPO" "$TMPE" "$TMPS" "$TMPI" "$TMPSDLLOG"; exit $configure_status' 0 2 3 15
+ 
+ # default parameters
+ prefix=""
+ interp_prefix="/usr/gnemul/qemu-%M"
+ static="no"
++remaklar_bootstrap="no"
+ cross_prefix=""
+ cc="gcc"
+ audio_drv_list=""
+@@ -402,6 +403,8 @@ for opt do
+   ;;
+   --enable-profiler) profiler="yes"
+   ;;
++  --enable-remaklar-bootstrap) remaklar_bootstrap="yes"
++  ;;
+   --enable-cocoa)
+       cocoa="yes" ;
+       sdl="no" ;
+@@ -460,9 +463,20 @@ for opt do
+   esac
+ done
+ 
++if test "$remaklar_bootstrap" = "yes" -a "$darwin" = "yes" ; then
++    # Darwin 6 i386/GCC 2.95: no Cocoa, frameworks or PPC-only compiler flag.
++    cocoa="no"
++    OS_CFLAGS=""
++    OS_LDFLAGS=""
++fi
++
+ # default flags for all hosts
+ CFLAGS="$CFLAGS -O2 -g -fno-strict-aliasing"
+-CFLAGS="$CFLAGS -Wall -Wundef -Wendif-labels -Wwrite-strings -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls"
++endif_warning="-Wendif-labels"
++if test "$remaklar_bootstrap" = "yes" -a "$darwin" = "yes" ; then
++    endif_warning=""
++fi
++CFLAGS="$CFLAGS -Wall -Wundef $endif_warning -Wwrite-strings -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls"
+ LDFLAGS="$LDFLAGS -g"
+ if test "$werror" = "yes" ; then
+ CFLAGS="$CFLAGS -Werror"
+@@ -507,6 +521,10 @@ case "$cpu" in
+            ARCH_LDFLAGS="-m64"
+            ;;
+ esac
++if test "$remaklar_bootstrap" = "yes" -a "$darwin" = "yes" -a "$cpu" = "i386" ; then
++    ARCH_CFLAGS="-arch i386"
++    ARCH_LDFLAGS="-arch i386"
++fi
+ 
+ if test x"$show_help" = x"yes" ; then
+ cat << EOF
+@@ -1313,6 +1331,15 @@ if [ "$openbsd" = "yes" ] ; then
+   echo "#define ENOTSUP 4096" >> $config_h
+ fi
+ 
++if test "$remaklar_bootstrap" = "yes" ; then
++  echo "CONFIG_REMAKLAR_BOOTSTRAP=yes" >> $config_mak
++  echo "#define CONFIG_REMAKLAR_BOOTSTRAP 1" >> $config_h
++  if test "$darwin" = "yes" ; then
++    case `uname -r` in
++      6.*) echo "#define CONFIG_REMAKLAR_DARWIN6 1" >> $config_h ;;
++    esac
++  fi
++fi
+ if test "$darwin" = "yes" ; then
+   echo "CONFIG_DARWIN=yes" >> $config_mak
+   echo "#define CONFIG_DARWIN 1" >> $config_h
+diff --git a/cpu-exec.c b/cpu-exec.c
+index 17694e8..384228b 100644
+--- a/cpu-exec.c
++++ b/cpu-exec.c
+@@ -1165,6 +1165,12 @@ static inline int handle_cpu_signal(unsigned long pc, unsigned long address,
+ int cpu_signal_handler(int host_signum, void *pinfo,
+                        void *puc)
+ {
++#ifdef CONFIG_REMAKLAR_DARWIN6
++    /* Darwin 6 i386 delivers sigcontext without fault address/error. The
++     * bootstrap's legacy trampoline recovers verified TCG MOV stores and
++     * fails explicitly for other faults; this modern-ucontext path is unused. */
++    return 0;
++#else
+     siginfo_t *info = pinfo;
+     ucontext_t *uc = puc;
+     unsigned long pc;
+@@ -1182,6 +1188,7 @@ int cpu_signal_handler(int host_signum, void *pinfo,
+                              trapno == 0xe ?
+                              (ERROR_sig(uc) >> 1) & 1 : 0,
+                              &uc->uc_sigmask, puc);
++#endif
+ }
+ 
+ #elif defined(__x86_64__)
+diff --git a/darwin-user/machload.c b/darwin-user/machload.c
+index 511518e..fe3f9a5 100644
+--- a/darwin-user/machload.c
++++ b/darwin-user/machload.c
+@@ -783,8 +783,8 @@ int load_object(const char *filename, struct target_pt_regs * regs, void ** mh)
+         free((void*)symtab_std);
+ 
+         {
+-            DPRINTF("saving symtab of %s (%d symbol(s))\n", filename, symtabcmd->nsyms);
+             struct syminfo *s;
++            DPRINTF("saving symtab of %s (%d symbol(s))\n", filename, symtabcmd->nsyms);
+             s = malloc(sizeof(*s));
+             s->disas_symtab.macho = symtab;
+             s->lookup_symbol = macho_lookup_symbol;
+diff --git a/darwin-user/remaklar/bootstrap-main.c b/darwin-user/remaklar/bootstrap-main.c
+index 4f9a6ca..796d6db 100644
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -1,6 +1,6 @@
+-/* ReMaklar 0.01 Linux/i386 bring-up of QEMU's PPC Darwin user target.
++/* ReMaklar experimental i386 runner for QEMU's PPC Darwin user target.
+  * SPDX-License-Identifier: GPL-2.0-or-later
+- * Deliberately limited: no Mach IPC, dynamic linkage, commpage or guest signals.
++ * Minimal single-thread Darwin personality; unsupported interfaces fail.
+  */
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -11,6 +11,16 @@
+ #include "qemu.h"
+ #include "exec-all.h"
+ #include "bootstrap.h"
++#ifdef CONFIG_REMAKLAR_DARWIN6
++#include <sys/syscall.h>
++#endif
++
++#if defined(__APPLE__) && defined(__i386__)
++/* Reserve guest addresses before native dyld/libSystem allocate host objects.
++ * This is upstream darwin-user's zerofill technique, extended to leave the
++ * unchanged 0x10000000 static fixtures outside the host's text/TCG buffer. */
++asm(".zerofill __STD_PROG_ZONE, __STD_PROG_ZONE, __std_prog_zone, 0x1ffff000");
++#endif
+ 
+ const char *interp_prefix = "";
+ unsigned long stack_size = 512 * 1024;
+@@ -47,6 +57,95 @@ int ppc_dcr_write(ppc_dcr_t *d, int n, target_ulong v) { return -1; }
+ void gdb_register_coprocessor(CPUState *env, gdb_reg_cb get, gdb_reg_cb set,
+                               int count, const char *xml, int position) { }
+ 
++#ifdef CONFIG_REMAKLAR_DARWIN6
++static void legacy_dump_word(const char *name, int length, unsigned long value)
++{
++    char hex[9];
++    int i, ignored;
++    for (i = 0; i < 8; i++) hex[i] = "0123456789abcdef"[(value >> (28 - 4 * i)) & 15];
++    hex[8] = '\n';
++    ignored = write(2, name, length);
++    ignored = write(2, hex, sizeof(hex));
++    (void)ignored;
++}
++static void legacy_host_signal(int sig, int code, struct sigcontext *context)
++{
++    static const char message[] = "remaklar: unhandled host memory fault (Darwin 6 legacy signal)\n";
++    int ignored = write(2, message, sizeof(message) - 1);
++    if (context) {
++        legacy_dump_word("legacy host pc=", 15, context->sc_eip);
++        legacy_dump_word("eax=", 4, context->sc_eax);
++        legacy_dump_word("ebx=", 4, context->sc_ebx);
++        legacy_dump_word("ecx=", 4, context->sc_ecx);
++        legacy_dump_word("edx=", 4, context->sc_edx);
++        legacy_dump_word("ebp=", 4, context->sc_ebp);
++        legacy_dump_word("esp=", 4, context->sc_esp);
++        legacy_dump_word("esi=", 4, context->sc_esi);
++        legacy_dump_word("edi=", 4, context->sc_edi);
++    }
++    (void)ignored;
++    _exit(126);
++}
++static unsigned long legacy_register(struct sigcontext *s, unsigned int index)
++{
++    switch (index) {
++    case 0: return s->sc_eax; case 1: return s->sc_ecx;
++    case 2: return s->sc_edx; case 3: return s->sc_ebx;
++    case 4: return s->sc_esp; case 5: return s->sc_ebp;
++    case 6: return s->sc_esi; default: return s->sc_edi;
++    }
++}
++static uint32_t legacy_displacement(const unsigned char *p)
++{
++    return (uint32_t)p[0] | ((uint32_t)p[1] << 8) |
++           ((uint32_t)p[2] << 16) | ((uint32_t)p[3] << 24);
++}
++static int legacy_smc_write(struct sigcontext *s)
++{
++    const unsigned char *p;
++    uint32_t address = 0;
++    unsigned int opcode, modrm, mod, rm, sib, base;
++    int flags;
++    /* Only decode the MOV stores emitted by this i386 TCG backend, inside a
++     * known translated block. This recovers an address absent from Darwin 6's
++     * legacy signal frame; it is not a general x86 instruction interpreter. */
++    if (!s || !tb_find_pc(s->sc_eip)) return 0;
++    p = (const unsigned char *)s->sc_eip;
++    if (*p == 0x66) p++;
++    opcode = *p++;
++    if (opcode != 0x88 && opcode != 0x89) return 0;
++    modrm = *p++; mod = modrm >> 6; rm = modrm & 7;
++    if (mod == 3) return 0;
++    if (rm == 4) {
++        sib = *p++; base = sib & 7;
++        if (((sib >> 3) & 7) != 4)
++            address += legacy_register(s, (sib >> 3) & 7) << (sib >> 6);
++        if (mod == 0 && base == 5) { address += legacy_displacement(p); p += 4; }
++        else address += legacy_register(s, base);
++    } else if (mod == 0 && rm == 5) { address = legacy_displacement(p); p += 4; }
++    else address = legacy_register(s, rm);
++    if (mod == 1) address += (int8_t)*p;
++    else if (mod == 2) address += legacy_displacement(p);
++    flags = page_get_flags(address);
++    if ((flags & (PAGE_VALID | PAGE_WRITE_ORG | PAGE_WRITE)) !=
++        (PAGE_VALID | PAGE_WRITE_ORG)) return 0;
++    if (!page_unprotect(address, s->sc_eip, NULL)) return 0;
++    legacy_dump_word("smc restored=", 13, address);
++    return 1;
++}
++static void legacy_signal_trampoline(void *catcher, int style, int sig,
++                                     siginfo_t *code, void *context)
++{
++    /* XNU 6 i386 pushes sigcontext directly. Libc-262's _sigtramp calls only
++     * handler(sig), so install our trampoline at the same native boundary.
++     * Resume only QEMU's originally writable, cache-protected code pages. */
++    if (legacy_smc_write((struct sigcontext *)context)) {
++        syscall(SYS_sigreturn, context);
++        /* A successful sigreturn restores the faulting instruction directly. */
++    }
++    legacy_host_signal(sig, (int)code, (struct sigcontext *)context);
++}
++#else
+ static void host_signal(int sig, siginfo_t *info, void *context)
+ {
+     if (cpu_signal_handler(sig, info, context))
+@@ -59,6 +158,7 @@ static void host_signal(int sig, siginfo_t *info, void *context)
+     }
+     _exit(126);
+ }
++#endif
+ 
+ int remaklar_guest_access(uint32_t addr, uint32_t len, int prot)
+ {
+@@ -144,7 +244,7 @@ void cpu_loop(CPUState *env)
+     }
+ }
+ 
+-int main(int argc, char **argv)
++int main(int argc, char **argv, char **envp)
+ {
+     struct target_pt_regs regs;
+     struct sigaction sa;
+@@ -162,7 +262,7 @@ int main(int argc, char **argv)
+         exit_bridge = strtoul(argv[3], NULL, 16) + remaklar_probe_slide;
+         filearg = 4;
+     } else if (argc != 2) {
+-        fprintf(stderr, "ReMaklar 0.01 bootstrap (Linux i386)\nusage: %s static-ppc.macho\n"
++        fprintf(stderr, "ReMaklar experimental i386 bootstrap\nusage: %s static-ppc.macho\n"
+                 "or: %s --probe-main entry-hex exit-stub-hex original.macho\n"
+                 "or: %s --root guest-root original.macho [arguments...]\n", argv[0], argv[0], argv[0]);
+         return 125;
+@@ -175,21 +275,34 @@ int main(int argc, char **argv)
+     if (!env) qerror("cannot create PPC750 CPU");
+     global_env = cpu_single_env = env;
+     memset(&sa, 0, sizeof(sa));
++#ifdef CONFIG_REMAKLAR_DARWIN6
++    {
++        struct __sigaction native_action;
++        memset(&native_action, 0, sizeof(native_action));
++        native_action.sa_handler = (void (*)(int))legacy_host_signal;
++        native_action.sa_tramp = legacy_signal_trampoline;
++        sigemptyset(&native_action.sa_mask);
++        if (syscall(SYS_sigaction, SIGSEGV, &native_action, NULL) ||
++            syscall(SYS_sigaction, SIGBUS, &native_action, NULL))
++            qerror("cannot install Darwin 6 legacy signal trampoline");
++    }
++#else
+     sa.sa_sigaction = host_signal;
+-    sigemptyset(&sa.sa_mask);
+     sa.sa_flags = SA_SIGINFO;
++    sigemptyset(&sa.sa_mask);
+     sigaction(SIGSEGV, &sa, NULL);
+     sigaction(SIGBUS, &sa, NULL);
++#endif
+     memset(&regs, 0, sizeof(regs));
+-    mach_exec(argv[filearg], argv + filearg, environ, &regs);
++    mach_exec(argv[filearg], argv + filearg, envp, &regs);
+     env->nip = probe_entry ? probe_entry : regs.nip;
+     for (i = 0; i < 32; i++) env->gpr[i] = regs.gpr[i];
+     if (probe_entry && cpu_breakpoint_insert(env, exit_bridge, BP_GDB, NULL))
+         qerror("cannot install _exit bridge breakpoint");
+     if (remaklar_dynamic && cpu_breakpoint_insert(env, remaklar_program_entry, BP_GDB, NULL))
+         qerror("cannot install startup observation breakpoint");
+-    fprintf(stderr, "loaded entry=%08x stack=%08x cpu=750 host=i386\n",
+-            (unsigned)env->nip, (unsigned)env->gpr[1]);
++    fprintf(stderr, "loaded entry=%08x stack=%08x cpu=750 host=i386 env=%p\n",
++            (unsigned)env->nip, (unsigned)env->gpr[1], env);
+     cpu_loop(env);
+     return 125;
+ }
+diff --git a/darwin-user/remaklar/darwin-kernel.c b/darwin-user/remaklar/darwin-kernel.c
+index efae6a4..11d655f 100644
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -73,9 +73,15 @@ static void encode_stat(uint32_t address, const struct stat *s)
+     stl(wire, s->st_dev); stl(wire + 4, s->st_ino);
+     stw(wire + 8, s->st_mode); stw(wire + 10, s->st_nlink);
+     stl(wire + 12, s->st_uid); stl(wire + 16, s->st_gid); stl(wire + 20, s->st_rdev);
++#ifdef __APPLE__
++    stl(wire + 24, s->st_atimespec.tv_sec); stl(wire + 28, s->st_atimespec.tv_nsec);
++    stl(wire + 32, s->st_mtimespec.tv_sec); stl(wire + 36, s->st_mtimespec.tv_nsec);
++    stl(wire + 40, s->st_ctimespec.tv_sec); stl(wire + 44, s->st_ctimespec.tv_nsec);
++#else
+     stl(wire + 24, s->st_atim.tv_sec); stl(wire + 28, s->st_atim.tv_nsec);
+     stl(wire + 32, s->st_mtim.tv_sec); stl(wire + 36, s->st_mtim.tv_nsec);
+     stl(wire + 40, s->st_ctim.tv_sec); stl(wire + 44, s->st_ctim.tv_nsec);
++#endif
+     stq(wire + 48, s->st_size); stq(wire + 56, s->st_blocks); stl(wire + 64, s->st_blksize);
+     memcpy(g2h(address), wire, sizeof(wire));
+ }
+diff --git a/darwin-user/remaklar/include/mach-o/loader.h b/darwin-user/remaklar/include/mach-o/loader.h
+index 77c5740..3bf930c 100644
+--- a/darwin-user/remaklar/include/mach-o/loader.h
++++ b/darwin-user/remaklar/include/mach-o/loader.h
+@@ -1,14 +1,18 @@
+-/* Minimal fixed-width Mach-O wire definitions for the Linux bootstrap.
++/* Minimal fixed-width Mach-O wire definitions for the process bootstrap.
+  * ReMaklar, SPDX-License-Identifier: GPL-2.0-or-later.
+- * These are not substitutes for the Darwin SDK used by a native build.
++ * These describe guest files; host system interfaces still use the host SDK.
+  */
+ #ifndef REMAKLAR_MACH_LOADER_H
+ #define REMAKLAR_MACH_LOADER_H
+ #include <stdint.h>
+ #define MH_MAGIC 0xfeedface
+ #define MH_CIGAM 0xcefaedfe
++#ifndef CPU_TYPE_I386
+ #define CPU_TYPE_I386 7
++#endif
++#ifndef CPU_TYPE_POWERPC
+ #define CPU_TYPE_POWERPC 18
++#endif
+ #define MH_EXECUTE 2
+ #define MH_FVMLIB 3
+ #define MH_DYLIB 6
+diff --git a/osdep.h b/osdep.h
+index ffbf221..ed2361b 100644
+--- a/osdep.h
++++ b/osdep.h
+@@ -2,6 +2,10 @@
+ #define QEMU_OSDEP_H
+ 
+ #include <stdarg.h>
++#if defined(__APPLE__) && defined(__i386__) && __GNUC__ < 3 && !defined(va_copy)
++/* Darwin 6 i386 va_list is a pointer, not the later array ABI. */
++#define va_copy(dst, src) ((dst) = (src))
++#endif
+ #ifdef __OpenBSD__
+ #include <sys/types.h>
+ #include <sys/signal.h>
+diff --git a/target-ppc/exec.h b/target-ppc/exec.h
+index d89698c..10603e2 100644
+--- a/target-ppc/exec.h
++++ b/target-ppc/exec.h
+@@ -24,13 +24,21 @@
+ 
+ #include "dyngen-exec.h"
+ 
++#if __GNUC__ < 3
++/* GCC 2.95 requires a global register before any inline header definition. */
++struct CPUPPCState;
++register struct CPUPPCState *env asm(AREG0);
++#endif
++
+ #include "cpu.h"
+ #include "exec-all.h"
+ 
+ /* Precise emulation is needed to correctly emulate exception flags */
+ #define USE_PRECISE_EMULATION 1
+ 
++#if __GNUC__ >= 3
+ register struct CPUPPCState *env asm(AREG0);
++#endif
+ 
+ #if !defined(CONFIG_USER_ONLY)
+ #include "softmmu_exec.h"
+diff --git a/target-ppc/op_helper.c b/target-ppc/op_helper.c
+index 3afd217..e292a43 100644
+--- a/target-ppc/op_helper.c
++++ b/target-ppc/op_helper.c
+@@ -349,8 +349,8 @@ void helper_stsw(target_ulong addr, uint32_t nb, uint32_t reg)
+ 
+ static void do_dcbz(target_ulong addr, int dcache_line_size)
+ {
+-    addr &= ~(dcache_line_size - 1);
+     int i;
++    addr &= ~(dcache_line_size - 1);
+     for (i = 0 ; i < dcache_line_size ; i += 4) {
+         stl(addr + i , 0);
+     }
+diff --git a/target-ppc/translate.c b/target-ppc/translate.c
+index 489ba09..610c06d 100644
+--- a/target-ppc/translate.c
++++ b/target-ppc/translate.c
+@@ -1418,10 +1418,11 @@ GEN_INT_ARITH_SUBF_CONST(subfzeo, 0x16, 0, 1, 1, 1)
+ /* subfic */
+ GEN_HANDLER(subfic, 0x08, 0xFF, 0xFF, 0x00000000, PPC_INTEGER)
+ {
++    TCGv t0, t1;
+     /* Start with XER CA and OV disabled, the most likely case */
+     tcg_gen_andi_tl(cpu_xer, cpu_xer, ~(1 << XER_CA));
+-    TCGv t0 = tcg_temp_local_new();
+-    TCGv t1 = tcg_const_local_tl(SIMM(ctx->opcode));
++    t0 = tcg_temp_local_new();
++    t1 = tcg_const_local_tl(SIMM(ctx->opcode));
+     tcg_gen_sub_tl(t0, t1, cpu_gpr[rA(ctx->opcode)]);
+     gen_op_arith_compute_ca(ctx, t0, t1, 1);
+     tcg_temp_free(t1);
+@@ -5323,8 +5324,8 @@ GEN_HANDLER(lfqux, 0x1F, 0x17, 0x19, 0x00000001, PPC_POWER2)
+ {
+     int ra = rA(ctx->opcode);
+     int rd = rD(ctx->opcode);
+-    gen_set_access_type(ctx, ACCESS_FLOAT);
+     TCGv t0, t1;
++    gen_set_access_type(ctx, ACCESS_FLOAT);
+     t0 = tcg_temp_new();
+     gen_addr_reg_index(ctx, t0);
+     gen_qemu_ld64(ctx, cpu_fpr[rd], t0);
+@@ -6994,14 +6995,15 @@ static always_inline void gen_##name (DisasContext *ctx)                      \
+ #define GEN_SPEOP_COMP(name, tcg_cond)                                        \
+ static always_inline void gen_##name (DisasContext *ctx)                      \
+ {                                                                             \
++    int l1, l2, l3, l4;                                                      \
+     if (unlikely(!ctx->spe_enabled)) {                                        \
+         gen_exception(ctx, POWERPC_EXCP_APU);                                 \
+         return;                                                               \
+     }                                                                         \
+-    int l1 = gen_new_label();                                                 \
+-    int l2 = gen_new_label();                                                 \
+-    int l3 = gen_new_label();                                                 \
+-    int l4 = gen_new_label();                                                 \
++    l1 = gen_new_label();                                                     \
++    l2 = gen_new_label();                                                     \
++    l3 = gen_new_label();                                                     \
++    l4 = gen_new_label();                                                     \
+                                                                               \
+     tcg_gen_brcond_i32(tcg_cond, cpu_gpr[rA(ctx->opcode)],                    \
+                        cpu_gpr[rB(ctx->opcode)], l1);                         \
+diff --git a/tcg/i386/tcg-target.c b/tcg/i386/tcg-target.c
+index fc9c8a1..adef071 100644
+--- a/tcg/i386/tcg-target.c
++++ b/tcg/i386/tcg-target.c
+@@ -183,6 +183,11 @@ static inline int tcg_target_const_match(tcg_target_long val,
+ #define P_EXT   0x100 /* 0x0f opcode prefix */
+ 
+ static const uint8_t tcg_cond_to_jcc[10] = {
++#if __GNUC__ < 3
++    /* GCC 2.95 lacks C99 designators; retain the order of TCGCond. */
++    JCC_JE, JCC_JNE, JCC_JL, JCC_JGE, JCC_JLE,
++    JCC_JG, JCC_JB, JCC_JAE, JCC_JBE, JCC_JA,
++#else
+     [TCG_COND_EQ] = JCC_JE,
+     [TCG_COND_NE] = JCC_JNE,
+     [TCG_COND_LT] = JCC_JL,
+@@ -193,6 +198,7 @@ static const uint8_t tcg_cond_to_jcc[10] = {
+     [TCG_COND_GEU] = JCC_JAE,
+     [TCG_COND_LEU] = JCC_JBE,
+     [TCG_COND_GTU] = JCC_JA,
++#endif
+ };
+ 
+ static inline void tcg_out_opc(TCGContext *s, int opc)
+diff --git a/tcg/tcg.c b/tcg/tcg.c
+index e550850..1597eb4 100644
+--- a/tcg/tcg.c
++++ b/tcg/tcg.c
+@@ -759,6 +759,10 @@ static TCGHelperInfo *tcg_find_helper(TCGContext *s, tcg_target_ulong val)
+ 
+ static const char * const cond_name[] =
+ {
++#if __GNUC__ < 3
++    /* Same TCGCond order as the designated initializer below. */
++    "eq", "ne", "lt", "ge", "le", "gt", "ltu", "geu", "leu", "gtu"
++#else
+     [TCG_COND_EQ] = "eq",
+     [TCG_COND_NE] = "ne",
+     [TCG_COND_LT] = "lt",
+@@ -769,6 +773,7 @@ static const char * const cond_name[] =
+     [TCG_COND_GEU] = "geu",
+     [TCG_COND_LEU] = "leu",
+     [TCG_COND_GTU] = "gtu"
++#endif
+ };
+ 
+ void tcg_dump_ops(TCGContext *s, FILE *outfile)
+diff --git a/tcg/tcg.h b/tcg/tcg.h
+index 622c0c5..73b1aa6 100644
+--- a/tcg/tcg.h
++++ b/tcg/tcg.h
+@@ -454,7 +454,19 @@ uint64_t tcg_helper_divu_i64(uint64_t arg1, uint64_t arg2);
+ uint64_t tcg_helper_remu_i64(uint64_t arg1, uint64_t arg2);
+ 
+ extern uint8_t code_gen_prologue[];
+-#if defined(_ARCH_PPC) && !defined(_ARCH_PPC64)
++#if defined(CONFIG_REMAKLAR_DARWIN6) && __GNUC__ < 3
++/* Apple GCC 2.95 does not honor regparm on the function-pointer cast below.
++ * The generated i386 entry trampoline requires the TB address in EAX. */
++static inline long tcg_qemu_tb_exec(void *tb_ptr)
++{
++    long result;
++    asm volatile("call *%1"
++                 : "=a" (result)
++                 : "r" (code_gen_prologue), "0" (tb_ptr)
++                 : "ecx", "edx", "cc", "memory");
++    return result;
++}
++#elif defined(_ARCH_PPC) && !defined(_ARCH_PPC64)
+ #define tcg_qemu_tb_exec(tb_ptr) \
+     ((long REGPARM __attribute__ ((longcall)) (*)(void *))code_gen_prologue)(tb_ptr)
+ #else

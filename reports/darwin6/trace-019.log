@@ -1,0 +1,37 @@
+mach_exec at 0x20004a58
+loading /var/tmp/remaklar/build/fixtures/exit42.macho [REGULAR]...
+load_segment: mmaping __TEXT to 0x10000000-(0x1000|0x1000) + 0x0
+sc->vmaddr 0x0 slide 0x10000000 add 0x10000000
+load_thread: entry 0x10000200
+pushing apple /var/tmp/remaklar/build/fixtures/exit42.macho (0xbfffff16)
+pushing env _=/var/tmp/remaklar/build/qemu-darwin6/ppc-darwin-user/qemu-ppc (0xbfffffb9)
+pushing env REMAKLAR_TRACE=1 (0xbfffffa8)
+pushing env PATH=/bin:/sbin:/usr/bin:/usr/sbin (0xbfffff85)
+pushing env TERM=vt100 (0xbfffff7a)
+pushing env SHLVL=2 (0xbfffff72)
+pushing env OLDPWD=/var/tmp (0xbfffff62)
+pushing env PWD=/var/tmp/remaklar-results (0xbfffff44)
+pushing arg /var/tmp/remaklar/build/fixtures/exit42.macho (0xbfffff16)
+pushing argc 1 
+pushing mh 0x10000000 
+mach_exec returns eip set to 0x10000200 esp 0x22362fc4 mh 0x10000000
+IN: 
+0x10000200:  li      r3,42
+0x10000204:  li      r0,1
+0x10000208:  sc      
+
+OUT: [size=53]
+0x200bcca0:  mov    $0x203,%eax
+0x200bcca5:  mov    %eax,(%esp,1)
+0x200bcca8:  xor    %eax,%eax
+0x200bccaa:  mov    %eax,0x4(%esp,1)
+0x200bccae:  mov    $0x1,%eax
+0x200bccb3:  mov    %eax,0x0(%ebp)
+0x200bccb6:  mov    $0x2a,%eax
+0x200bccbb:  mov    %eax,0xc(%ebp)
+0x200bccbe:  mov    $0x1000020c,%eax
+0x200bccc3:  mov    %eax,0xc34c(%ebp)
+0x200bccc9:  call   0x2004e2bc
+0x200bccce:  xor    %eax,%eax
+0x200bccd0:  jmp    0x220becc8
+

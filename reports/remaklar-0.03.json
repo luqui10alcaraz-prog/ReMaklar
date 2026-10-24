@@ -1,0 +1,72 @@
+{
+  "checkpoint": "0.03-darwin6",
+  "native_pass": true,
+  "source": {
+    "base_commit": "df60a2e0f20ccbeb9c37868b23cdf1f4f2edcedf",
+    "experimental_commit": "f80cd4a91e77dbc132eb0d974003851847b3cd39",
+    "branch": "remaklar/0.03-darwin6",
+    "patch_sha256": "f7e938fa278952f6ee3809e037b05c0ef1040f21e77d71896ce649b0b5de7e7e"
+  },
+  "host": "Darwin 6.0 i386, installed from Darwin 6.0.2 CD; QEMU pentium3",
+  "compiler": "gcc2 -no-cpp-precomp (GCC 2.95.2)",
+  "clean_native_build": 19,
+  "cold_boot_repeat_pass": true,
+  "offline_snapshot": "vm/darwin602-native-003-verified.qcow2 (not distributed)",
+  "offline_snapshot_sha256": "24b64365b67a7fd1d038e5d0b51d3bd82c1d70bda8a5a58cee416cd8186b4ee7",
+  "qcow2_check": "No errors were found on the image after final halt",
+  "fixtures": 11,
+  "true_exit": 0,
+  "false_exit": 1,
+  "original_entry": "0x195c",
+  "kernel_modified": false,
+  "samples": {
+    "usr/bin/true": {
+      "sha256": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+      "guest_verified_md5": "d119021408e82f53d364885c48a531d5"
+    },
+    "usr/bin/false": {
+      "sha256": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+      "guest_verified_md5": "8e4abd690dee60e0864da5258feea575"
+    },
+    "usr/lib/dyld": {
+      "sha256": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea",
+      "guest_verified_md5": "d649719fc14a4aed760acaf0842c4b6a"
+    },
+    "usr/lib/libSystem.B.dylib": {
+      "sha256": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787",
+      "guest_verified_md5": "3db0bc003df278f2b9489df95a7aec64"
+    },
+    "usr/lib/system/libmathCommon.A.dylib": {
+      "sha256": "0282375f09bad0cdff42e98b6a1c44ae025fa49ba930052a3a37e5619906a5b1",
+      "guest_verified_md5": "33f58fa614ce3c72d41cb12cfb13b90d"
+    }
+  },
+  "sample_source": "Apple Darwin 6.0.2 CD; not verified retail Jaguar",
+  "native_executor_sha256": "aa1aae65b758075be6539503fc2d0ca56584cd7521daa6d74fbde760e5db3721",
+  "linux_regression": "13 static/main-only and 3 dynamic checks passed",
+  "limits": [
+    "single-user laboratory",
+    "guest signals and general threading not implemented",
+    "legacy host SMC recovery restricted to verified TCG MOV stores",
+    "unsupported host faults fail with 126; no general application compatibility claim"
+  ],
+  "evidence": {
+    "build-019.log": "fd1ae7e700f77360b6d979e37d92a1aac4b5a973bae840cc3a8d8f20d9ea3ab8",
+    "compiler-compat.log": "34045b6dccccbd7fc785bafa8705930f40ddecefc446cd1db8e7e9c2cc5d3267",
+    "configure-019.log": "855b7e50d2aaa50581b70bc157aa6d5ed7b9fb1cc131467a2551746b27b7651c",
+    "executor-load-commands.log": "f47456d1948829274eb21e26b7313f897e7ac71f8ff407cd23713ac0656cc7d1",
+    "false-019.stderr": "4f8767cab61464f88eb3296a0dead39d18961fc99ad8239c7c8d08ebcb937492",
+    "linux-final-dynamic-0.03-console.txt": "cf3955588c83a3b527d227f194b3b146391172bcf92a24eb3fbe171ca7c578ee",
+    "linux-final-static-0.03-console.txt": "327c960b05c98d8c85bc623ba6857be4693e38c69d7cde80a03fcd1f251fd9c6",
+    "sample-md5.log": "3d2ca107dbfb805883ec485dbf22fc16e3d0bf2bdc30ea3f67ef6843b61b5287",
+    "tests-016.log": "3395e90e63d6d48bad807ac256bd14235aa5c28ce04b6556fa6002cfcaeb38cf",
+    "tests-017.log": "481d45c0449aac283b87df49dee17a459d60cfcc9cb0dfb54122a651a55631f2",
+    "tests-018.log": "c369e6608da21aadf451961b87c3391b1caaffda3079cd6ef2b78e1cc2e48da2",
+    "tests-019.log": "4bcd00dc9e5c9970b25291f3cf852e763a6a41588b9488f89caf5a5b6ef2990b",
+    "tests-coldboot.log": "4bcd00dc9e5c9970b25291f3cf852e763a6a41588b9488f89caf5a5b6ef2990b",
+    "trace-019.log": "ac736dcdb29404ebf10d043af3656aba65fc2503793b47ea4a8eb7ed75168413",
+    "trace-019.status": "2376b4e40d1616275940e55f60d00d880564194674ac925b7c3adcd833e4cc42",
+    "true-019.stderr": "26477c53269ad3bde887403e357e6d7aa7517688f7134898100d85948de21a86",
+    "true-trace-017.log": "cfd40d08593bb6b76dea759c983932b38ae66348e580ce95764dd9477c6d3427"
+  }
+}

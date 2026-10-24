@@ -1,0 +1,15 @@
+/var/tmp/remaklar/build/qemu-darwin6/ppc-darwin-user/qemu-ppc: Mach-O executable i386
+exit42 exit=126 expected=42
+write exit=126 expected=0
+write-ebadf exit=126 expected=0
+write-efault exit=126 expected=0
+load-be exit=126 expected=0
+unsupported-syscall exit=126 expected=125
+illegal-instruction exit=126 expected=125
+memory-fault exit=126 expected=126
+truncated exit=125 expected=125
+bad-command exit=125 expected=125
+needs-dyld exit=125 expected=125
+true exit=126 expected=0
+false exit=126 expected=1
+failed=1

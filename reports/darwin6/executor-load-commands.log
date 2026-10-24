@@ -1,0 +1,306 @@
+/var/tmp/remaklar/build/qemu-darwin6/ppc-darwin-user/qemu-ppc:
+Load command 0
+      cmd LC_SEGMENT
+  cmdsize 56
+  segname __PAGEZERO
+   vmaddr 0x00000000
+   vmsize 0x00001000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000000
+ initprot 0x00000000
+   nsects 0
+    flags 0x4
+Load command 1
+      cmd LC_SEGMENT
+  cmdsize 600
+  segname __TEXT
+   vmaddr 0x20000000
+   vmsize 0x00098000
+  fileoff 0
+ filesize 622592
+  maxprot 0x00000007
+ initprot 0x00000005
+   nsects 8
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x2000074c
+      size 0x0006ec52
+    offset 1868
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __picsymbol_stub
+   segname __TEXT
+      addr 0x2006f39e
+      size 0x000006b4
+    offset 455582
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x80000008
+ reserved1 0 (index into indirect symbol table)
+ reserved2 26 (size of stubs)
+Section
+  sectname __symbol_stub
+   segname __TEXT
+      addr 0x2006fa52
+      size 0x00000000
+    offset 457298
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x80000008
+ reserved1 66 (index into indirect symbol table)
+ reserved2 16 (size of stubs)
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x2006fa60
+      size 0x00024400
+    offset 457312
+     align 2^5 (32)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __const
+   segname __TEXT
+      addr 0x20093e60
+      size 0x000005ec
+    offset 605792
+     align 2^5 (32)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __literal8
+   segname __TEXT
+      addr 0x20094450
+      size 0x00000128
+    offset 607312
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000004
+ reserved1 0
+ reserved2 0
+Section
+  sectname __opcodes
+   segname __TEXT
+      addr 0x20094578
+      size 0x000037f8
+    offset 607608
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __eh_frame
+   segname __TEXT
+      addr 0x20097d70
+      size 0x00000260
+    offset 621936
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x4000000b
+ reserved1 0
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT
+  cmdsize 532
+  segname __DATA
+   vmaddr 0x20098000
+   vmsize 0x02053000
+  fileoff 622592
+ filesize 122880
+  maxprot 0x00000007
+ initprot 0x00000003
+   nsects 7
+    flags 0x0
+Section
+  sectname __data
+   segname __DATA
+      addr 0x20098000
+      size 0x00000b40
+    offset 622592
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __la_symbol_ptr
+   segname __DATA
+      addr 0x20098b40
+      size 0x00000108
+    offset 625472
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000007
+ reserved1 66 (index into indirect symbol table)
+ reserved2 0
+Section
+  sectname __nl_symbol_ptr
+   segname __DATA
+      addr 0x20098c48
+      size 0x00000538
+    offset 625736
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 132 (index into indirect symbol table)
+ reserved2 0
+Section
+  sectname __dyld
+   segname __DATA
+      addr 0x20099180
+      size 0x0000001c
+    offset 627072
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __const
+   segname __DATA
+      addr 0x2009919c
+      size 0x0001c664
+    offset 627100
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __bss
+   segname __DATA
+      addr 0x200b5800
+      size 0x02007e31 (past end of file)
+    offset 0
+     align 2^5 (32)
+    reloff 0
+    nreloc 0
+     flags 0x00000001
+ reserved1 0
+ reserved2 0
+Section
+  sectname __common
+   segname __DATA
+      addr 0x220bd640
+      size 0x0002cd38
+    offset 0
+     align 2^4 (16)
+    reloff 0
+    nreloc 0
+     flags 0x00000001
+ reserved1 0
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT
+  cmdsize 124
+  segname __STD_PROG_ZONE
+   vmaddr 0x00001000
+   vmsize 0x1ffff000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000007
+ initprot 0x00000003
+   nsects 1
+    flags 0x4
+Section
+  sectname __STD_PROG_ZONE
+   segname __STD_PROG_ZONE
+      addr 0x00001000
+      size 0x1ffff000 (past end of file)
+    offset 0
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000001
+ reserved1 0
+ reserved2 0
+Load command 4
+      cmd LC_SEGMENT
+  cmdsize 56
+  segname __LINKEDIT
+   vmaddr 0x220eb000
+   vmsize 0x00159000
+  fileoff 745472
+ filesize 1411668
+  maxprot 0x00000007
+ initprot 0x00000001
+   nsects 0
+    flags 0x4
+Load command 5
+          cmd LC_LOAD_DYLINKER
+      cmdsize 28
+         name /usr/lib/dyld (offset 12)
+Load command 6
+          cmd LC_LOAD_DYLIB
+      cmdsize 52
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 1032049567 Sat Sep 14 17:26:07 2002
+      current version 60.0.0
+compatibility version 1.0.0
+Load command 7
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 745472
+   nsyms 65734
+  stroff 1536432
+ strsize 620708
+Load command 8
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 64402
+     iextdefsym 64402
+     nextdefsym 1260
+      iundefsym 65662
+      nundefsym 72
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 1534568
+  nindirectsyms 466
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 9
+     cmd LC_TWOLEVEL_HINTS
+ cmdsize 16
+  offset 1534280
+  nhints 72
+Load command 10
+        cmd LC_UNIXTHREAD
+    cmdsize 80
+     flavor i386_THREAD_STATE
+      count i386_THREAD_STATE_COUNT
+	    eax 0x00000000 ebx    0x00000000 ecx 0x00000000 edx 0x00000000
+	    edi 0x00000000 esi    0x00000000 ebp 0x00000000 esp 0x00000000
+	    ss  0x0000001f eflags 0x00000000 eip 0x2000074c cs  0x00000017
+	    ds  0x0000001f es     0x0000001f fs  0x00000000 gs  0x00000000

@@ -2,7 +2,17 @@
 
 Investigación independiente de Mac OS X Jaguar 10.2 sobre Intel x86 de 32 bits, partiendo de Darwin 6. El objetivo es conservar comportamiento y componentes originales cuando sea posible. Aqua queda para etapas posteriores.
 
-## Estado inicial — 23 de octubre de 2026
+## Avance 0.03: ejecución dentro de Darwin i386
+
+Los mismos `true` y `false` PPC de 0.02 funcionan dentro del Darwin instalado
+en disco: entradas originales, dyld y bibliotecas originales, salidas 0 y 1.
+El ejecutor se compiló en Darwin con GCC 2.95.2. Pasan once fixtures nativas
+y las regresiones Linux (trece estáticas/main-only y tres dinámicas).
+No se modificó XNU. Es un laboratorio monousuario, no un Jaguar completo.
+Ver [reproducción y límites](docs/darwin6-native.md) e
+[informe verificable](reports/remaklar-0.03.json).
+
+## Estado inicial histórico — 23 de octubre de 2026
 
 - Descargado el manifiesto oficial `mac-os-x-102` de Apple.
 - Descargado XNU `xnu-344`, sin modificaciones.

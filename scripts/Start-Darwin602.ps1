@@ -17,7 +17,7 @@ $boot = if ($BootDisk) { 'c' } else { 'd' }
 $nic = if ($Network) { 'user,model=i82557b' } else { 'none' }
 $serial = if ($SerialTcp) { 'tcp:127.0.0.1:4446,server=on,wait=off' } else { "file:$projectRoot/logs/serial.log" }
 $qemuArgs = @('-machine','pc-i440fx-5.0','-accel','tcg','-cpu','pentium3','-m','128','-smp','1',
-    '-drive',"file=$($disk.Replace('\','/')),format=qcow2,if=ide,index=0",
+    '-drive',"file=$($disk.Replace('\','/')),format=qcow2,if=ide,index=0,cache=writethrough",
     '-drive',"file=$($iso.Replace('\','/')),media=cdrom,readonly=on,if=ide,index=2",
     '-boot',$boot,'-nic',$nic,'-vga','std','-display',$display,
     '-monitor','tcp:127.0.0.1:4444,server=on,wait=off',
