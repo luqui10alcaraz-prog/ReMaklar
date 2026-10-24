@@ -2,6 +2,15 @@
 
 Investigación independiente de Mac OS X Jaguar 10.2 sobre Intel x86 de 32 bits, partiendo de Darwin 6. El objetivo es conservar comportamiento y componentes originales cuando sea posible. Aqua queda para etapas posteriores.
 
+## Avance 0.04: echo y cat originales
+
+Pasan 23 casos compartidos en Linux y Darwin 6 i386: argumentos vacíos,
+espacios, cadenas largas, stdio, lectura binaria de archivos, concatenación
+y errores ENOENT. Se conservan las once fixtures nativas y las 16 regresiones
+Linux. Funciona con el mismo ejecutor de 0.03, sin excepciones para estos
+programas. Ver [resultados y reproducción](docs/remaklar-0.04.md) y
+[registro de servicios y proveedores](research/services.md).
+
 ## Avance 0.03: ejecución dentro de Darwin i386
 
 Los mismos `true` y `false` PPC de 0.02 funcionan dentro del Darwin instalado

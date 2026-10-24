@@ -1,0 +1,1 @@
+MD5 (/var/tmp/remaklar/build/qemu-darwin6/ppc-darwin-user/qemu-ppc) = 3e775f367e9556ce959a70e1606afc9a

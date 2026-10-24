@@ -1,0 +1,3 @@
+PASS true 0 {'exit': True, 'stdout_empty': True, 'original_entry': True, 'no_main_bridge': True, 'bsd_exit': True, 'libsystem_loaded': True, 'math_loaded': True, 'no_unsupported': True}
+PASS false 1 {'exit': True, 'stdout_empty': True, 'original_entry': True, 'no_main_bridge': True, 'bsd_exit': True, 'libsystem_loaded': True, 'math_loaded': True, 'no_unsupported': True}
+PASS missing-dyld

@@ -1,0 +1,2 @@
+MD5 (/var/tmp/remaklar/research/samples-local/bin/echo) = 47cebba0473128f5dcb94ac280f70d70
+MD5 (/var/tmp/remaklar/research/samples-local/bin/cat) = 9331e44512d9efa0b9dffaf7f27f29dc

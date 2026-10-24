@@ -1,0 +1,549 @@
+{
+  "checkpoint": "0.04-utilities",
+  "runtime_commit": "f80cd4a91e77dbc132eb0d974003851847b3cd39",
+  "runtime_modified": false,
+  "samples": {
+    "bin/echo": {
+      "sha256": "1fd8720f4390be436270363264e85ad9b71dd76d8e48fbe8f9f6c0bae8ac9f42",
+      "guest_verified_md5": "47cebba0473128f5dcb94ac280f70d70"
+    },
+    "bin/cat": {
+      "sha256": "5aca8d19a4f7442a5cb10d4941c718b23fb1ccfffcb45c63063d186ae5ba9a83",
+      "guest_verified_md5": "9331e44512d9efa0b9dffaf7f27f29dc"
+    },
+    "usr/bin/true": {
+      "sha256": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+      "guest_verified_md5": "d119021408e82f53d364885c48a531d5"
+    },
+    "usr/bin/false": {
+      "sha256": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+      "guest_verified_md5": "8e4abd690dee60e0864da5258feea575"
+    },
+    "usr/lib/dyld": {
+      "sha256": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea",
+      "guest_verified_md5": "d649719fc14a4aed760acaf0842c4b6a"
+    },
+    "usr/lib/libSystem.B.dylib": {
+      "sha256": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787",
+      "guest_verified_md5": "3db0bc003df278f2b9489df95a7aec64"
+    },
+    "usr/lib/system/libmathCommon.A.dylib": {
+      "sha256": "0282375f09bad0cdff42e98b6a1c44ae025fa49ba930052a3a37e5619906a5b1",
+      "guest_verified_md5": "33f58fa614ce3c72d41cb12cfb13b90d"
+    }
+  },
+  "cases": [
+    {
+      "case": "echo-none",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 1,
+      "argument_bytes": 0,
+      "stdout_bytes": 1,
+      "stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "01e9cbbee10efd012c820c8725f5b41ed255041558cd8eb86fde77de33b795d9"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "afa64546114302937aea5427db3fcbff190e56aa829a0a09d338cc4c3ba7893f"
+        }
+      }
+    },
+    {
+      "case": "echo-empty",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 2,
+      "argument_bytes": 0,
+      "stdout_bytes": 1,
+      "stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "11f899eeec66093ae9e51b19482cdff9c9021bcca31ef4e636a57711a359d908"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "6a73df8159ec35818fd5b2203c80bdc0dc56a869b302914816219d1e43431f9f"
+        }
+      }
+    },
+    {
+      "case": "echo-multiple",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 4,
+      "argument_bytes": 11,
+      "stdout_bytes": 14,
+      "stdout_sha256": "ef5b05a961b4c934b17999593e4b7253614d6c99d26d6e50b843e546d79e57e5",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "50a0fd70b8660122941638b07cea3756951a085332c485d84069516050b784fd"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "7a590499c0247088b960a54693f64993e0e84a01f564723ee68d21e6c3c955a7"
+        }
+      }
+    },
+    {
+      "case": "echo-empty-between",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 6,
+      "argument_bytes": 6,
+      "stdout_bytes": 11,
+      "stdout_sha256": "b2f4afb3a44a4833217dc5d9b6ffdb1ad5a8d6104dac323400a790372adbb0cb",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "fc2e34bcb15a07395360831923888071e66fcdc20a0e152d03d46d1a87365c42"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "a6d9240173aae5e427a6bf00d53b1107179daaacf598b2ca75ef25c81d2bbf60"
+        }
+      }
+    },
+    {
+      "case": "echo-spaces",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 4,
+      "argument_bytes": 23,
+      "stdout_bytes": 26,
+      "stdout_sha256": "4550eba7ef757114b1809ab81bc8fad915c1909736ada1ef2a05ad4baac44b93",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "f940922794861916446686613f208ab7749023ea6b56af32a0080ed837ff1b78"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "d1f74d4e54a2502900124c1cc08b904f635522fe95410cdf20edb6a8ef39eac5"
+        }
+      }
+    },
+    {
+      "case": "echo-literal",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 6,
+      "argument_bytes": 24,
+      "stdout_bytes": 29,
+      "stdout_sha256": "c65d430663179cc2bac7c86f2a2569f726bbfec89cd2c884fb021fd8bcc2bff2",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "1715fdfc1cf44ed6e3e9c3c873a992a1eaf4d0798943a7bb38618bf794f66ea0"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "2f6f2e2954cc9315c8299f1536478279b23172c73ef7e6500800b8a8dce17803"
+        }
+      }
+    },
+    {
+      "case": "echo-controls",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 3,
+      "argument_bytes": 6,
+      "stdout_bytes": 8,
+      "stdout_sha256": "5017e1c5bfdccdf0eb22e9a1e90bb5c98f2281a5389642c5886e1d3672c900b4",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "c881565501c79e3ee346ff269f971aee66ca14050c86fc0c1d8dc1faafd0bbc2"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "55dc857cf864fd467badfad825ccd8050c0d7234f53a0cd0751be1aed5a7ccba"
+        }
+      }
+    },
+    {
+      "case": "echo-utf8",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 2,
+      "argument_bytes": 17,
+      "stdout_bytes": 18,
+      "stdout_sha256": "d0824cbe1305f5cea51f3120b1bf284c06d66bf2e3c6283a9a59bfa4a281414d",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "99c4da779850ab98f13f3d74a4955969f3df4ec2dab056f8f70157bc648690ab"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "42804c40fe33dfef023b93c9fd5abfa0933bbda8b5d403d404224355424965fc"
+        }
+      }
+    },
+    {
+      "case": "echo-long",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 2,
+      "argument_bytes": 32768,
+      "stdout_bytes": 32769,
+      "stdout_sha256": "b1de6f515002ae0f026308ca3d300a592f9dfed807eafcb4eff27b44d675ea3e",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "9776c9671b68d75e89cf55d0e1bc9530ce2b21a512dfd0c29ff8c4bb0921702a"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "2aaf2efbc871c489d62104dabe6e7d10ac09a8932ffadaabad588f24effe14bf"
+        }
+      }
+    },
+    {
+      "case": "echo-many",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 514,
+      "argument_bytes": 3078,
+      "stdout_bytes": 3591,
+      "stdout_sha256": "19d36e3653e0e18479902a84c7409aff1f27819bc5690c7dc0bc16bd8ca56ab1",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "53079822b89c5b298f86bd7f7b6dc7177fb5ad242d86f7cfd8d2a0b8ac631c0c"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "75e07c916411a5b68cdd4a188190b746907625b046a4a9b782c24ff734225dac"
+        }
+      }
+    },
+    {
+      "case": "echo-long-many",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 6,
+      "argument_bytes": 40960,
+      "stdout_bytes": 40965,
+      "stdout_sha256": "ef2ea11d52b7e6a101bc3900442dcf993b05a8a4fec6e0527a3f7407cd3c0429",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "a39574c1941116a1eb49eacb8e97467ca0410b17d8a355ee9d9e98a9bbbd1941"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "e1ef4452fca828d8b0891634f039f57760c4285726501efd5e2d906ddf2059f2"
+        }
+      }
+    },
+    {
+      "case": "echo-no-newline",
+      "program": "echo",
+      "expected_exit": 0,
+      "original_entry": "0x00001744",
+      "argc": 5,
+      "argument_bytes": 4,
+      "stdout_bytes": 4,
+      "stdout_sha256": "6e12db73209a66d147a67a15868bdb4b8ae57b884d4731310b62f82a7d67611e",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "3fd6f33692a5c77876da2643ac6b01385870d88e6c962d32927eac435b11cfd1"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "57707e6c56692603f3f7e9a95bc52d0f951ed98b20d5670f09599918c85554bf"
+        }
+      }
+    },
+    {
+      "case": "cat-stdin-empty",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 1,
+      "argument_bytes": 0,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "59029078dab2239b072c5f6559c029c0961ae86073dd0d5a0d2c98d64b843187"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "6d5af31c8d79885bfa40d76179f8542fe03a850299dd3d1bcbc3fe1167c9f700"
+        }
+      }
+    },
+    {
+      "case": "cat-stdin-binary",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 1,
+      "argument_bytes": 0,
+      "stdout_bytes": 131328,
+      "stdout_sha256": "91f86bc16210e6eab1715b5e77465cc1a906243e758bcecb884060dbe9a26fe3",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "576a3edf682a31e3562769dbcfc00b18eb056dcf518fe5974fd7bb4502dc3601"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "a1c4c71a964ca05a6d5cfe516e31921c4948ee781e7fd6c4d491b70207417d24"
+        }
+      }
+    },
+    {
+      "case": "cat-file-empty",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 2,
+      "argument_bytes": 15,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "72742fb0cb94403544b858bb2f38c2e729d7b82a36890f72d58432d1cc5e34c9"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "8db5f3c14c107e2e303dd275bfdfbdd6d93771ec929708a8146f119eea6e3a6f"
+        }
+      }
+    },
+    {
+      "case": "cat-file-text",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 2,
+      "argument_bytes": 14,
+      "stdout_bytes": 23,
+      "stdout_sha256": "c2097f55f01fc297fc7f4acf21438123e06e4d409a818524428534e850642f4f",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "6db5c30a6667da3176f45a8ff8a8bf88ff7b62b2ba99cbf76db59d3dcee77e47"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "30b5d182815ab608acd91ecf7e0cf57740a962e781f2843aefec2609030c51f2"
+        }
+      }
+    },
+    {
+      "case": "cat-file-spaces",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 2,
+      "argument_bytes": 20,
+      "stdout_bytes": 7,
+      "stdout_sha256": "15975b05f745127a6b5616e6bb7c7ee8c8bb2a75f443745ec03061444ad9216a",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "76ae29e17594129c215fee15a40166895d0d64ca5e6889759464240abd3b373b"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "a25607a81948c9b177a7b51755c1f353ce7477f740730700787b2f588b32663b"
+        }
+      }
+    },
+    {
+      "case": "cat-files",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 4,
+      "argument_bytes": 49,
+      "stdout_bytes": 30,
+      "stdout_sha256": "4f4f1cfbe3ccce304aaf4a7761bfa8145dacf2443de1d2b958ebf8e8397fb23e",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "a4f765a0e9460e3ffa9a85b9a883089b78fdee7806f783f174f2d30d56d93dfa"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "28f9dc5c529cfc92b020d9f927fb7d0b0da7996e57c3263fef0938b35f9daaf1"
+        }
+      }
+    },
+    {
+      "case": "cat-file-large",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 2,
+      "argument_bytes": 15,
+      "stdout_bytes": 131328,
+      "stdout_sha256": "91f86bc16210e6eab1715b5e77465cc1a906243e758bcecb884060dbe9a26fe3",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "5292ca1c3edbaaa069e036ec0f35cc84282db6ca7345a3e69e5554a23ae5a209"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "4de12966eb76e8822b60c35e3cd820529a0d9cc09551d84767869f3415507056"
+        }
+      }
+    },
+    {
+      "case": "cat-mixed-stdin",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 4,
+      "argument_bytes": 29,
+      "stdout_bytes": 53,
+      "stdout_sha256": "6771e54c5b7a23c7c3da7eebf203572f59588b3b3e3e98d2e9686f57fa7c6851",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "a07416b842d86eaaeb5f0577ea817fc7f72540ed61ef347172f31869450d433c"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "611fe757496c2bac285e75ca1f0cc2e5c9382b274d9a345f7145575081ff728d"
+        }
+      }
+    },
+    {
+      "case": "cat-missing",
+      "program": "cat",
+      "expected_exit": 1,
+      "original_entry": "0x00001ab0",
+      "argc": 2,
+      "argument_bytes": 16,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "26b1452a44d9eaab985f10787a1beb9cea54c9159b3a54f41658cc1a7d4361bd"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "b530f4287f819122547f8bcbbcd92b6582bfb514d499b97d79ac7f343ed4bf98"
+        }
+      }
+    },
+    {
+      "case": "cat-missing-continues",
+      "program": "cat",
+      "expected_exit": 1,
+      "original_entry": "0x00001ab0",
+      "argc": 3,
+      "argument_bytes": 30,
+      "stdout_bytes": 23,
+      "stdout_sha256": "c2097f55f01fc297fc7f4acf21438123e06e4d409a818524428534e850642f4f",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "cd9320f24ff84a6e474f9ae4b819fd1b2f10502bb4cb6b972f7a2ad65f271fca"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "e825d2bcf802c140accf6d50cddc48aef3fe1193b0d43672980ba37e4f161bc9"
+        }
+      }
+    },
+    {
+      "case": "cat-number",
+      "program": "cat",
+      "expected_exit": 0,
+      "original_entry": "0x00001ab0",
+      "argc": 3,
+      "argument_bytes": 16,
+      "stdout_bytes": 37,
+      "stdout_sha256": "726810c7cac331a9021d884fd975f76f258f7148e8e618b802befaedf8e1eb67",
+      "hosts": {
+        "linux": {
+          "pass": true,
+          "stderr_sha256": "7961d6ce82dd77bdc2edd6a1aa5872d837d7917b66d71a6528b57bf09a8b8036"
+        },
+        "darwin6": {
+          "pass": true,
+          "stderr_sha256": "546102056dc35c1429201c1ac0b81f1126947e0f52046763696da0157300508c"
+        }
+      }
+    }
+  ],
+  "utility_cases_each_host": 23,
+  "preserved_native_checks": 13,
+  "preserved_linux_checks": 16,
+  "kernel_modified": false,
+  "native_executor_sha256": "aa1aae65b758075be6539503fc2d0ca56584cd7521daa6d74fbde760e5db3721",
+  "linux_executor_sha256": "dac0e634c994519e5e90ecdd33c967b0bbaff37d4492804ae15ed660edc745fd",
+  "vector_sha256": "e8dae08e494e62fb9128470511478b8c6f124d1a6a117a06723e1ad6cd9fb6fc",
+  "backup_003_unchanged_sha256": "24b64365b67a7fd1d038e5d0b51d3bd82c1d70bda8a5a58cee416cd8186b4ee7",
+  "sample_source": "Apple Darwin 6.0.2 CD; not compared with retail Jaguar",
+  "evidence": {
+    "linux-cat-file-large.stderr": "5292ca1c3edbaaa069e036ec0f35cc84282db6ca7345a3e69e5554a23ae5a209",
+    "linux-cat-missing-continues.stderr": "cd9320f24ff84a6e474f9ae4b819fd1b2f10502bb4cb6b972f7a2ad65f271fca",
+    "linux-cat-number.stderr": "7961d6ce82dd77bdc2edd6a1aa5872d837d7917b66d71a6528b57bf09a8b8036",
+    "linux-echo-empty-between.stderr": "fc2e34bcb15a07395360831923888071e66fcdc20a0e152d03d46d1a87365c42",
+    "linux-echo-long.stderr": "9776c9671b68d75e89cf55d0e1bc9530ce2b21a512dfd0c29ff8c4bb0921702a",
+    "linux-regression-dynamic.txt": "cf3955588c83a3b527d227f194b3b146391172bcf92a24eb3fbe171ca7c578ee",
+    "linux-regression-fixtures.txt": "53f152aee9de13995bbb67fdeabb1e79189937b375b632802be6708b409fede0",
+    "linux-regression-main-only.txt": "f080153a48712c8e091c7b68840b8c5009176d05fa5ec7cc177ace5987b31dc5",
+    "linux-results.tsv": "b2c1ca4366e15217fb5c578abb79219518186ab4501a09eb3fb1a8ea30847899",
+    "native-baseline.txt": "4bcd00dc9e5c9970b25291f3cf852e763a6a41588b9488f89caf5a5b6ef2990b",
+    "native-cat-file-large.stderr": "4de12966eb76e8822b60c35e3cd820529a0d9cc09551d84767869f3415507056",
+    "native-cat-missing-continues.stderr": "e825d2bcf802c140accf6d50cddc48aef3fe1193b0d43672980ba37e4f161bc9",
+    "native-cat-number.stderr": "546102056dc35c1429201c1ac0b81f1126947e0f52046763696da0157300508c",
+    "native-console.png": "4f3956d8fd5c5ddb3719844c311abe591cb87791190a69f90aa8129eca5f216d",
+    "native-console.txt": "035a716aa086b20c6a5ac1e534d8d6730dfaa318cc12437ccfa6dec162048f7e",
+    "native-echo-empty-between.stderr": "a6d9240173aae5e427a6bf00d53b1107179daaacf598b2ca75ef25c81d2bbf60",
+    "native-echo-long.stderr": "2aaf2efbc871c489d62104dabe6e7d10ac09a8932ffadaabad588f24effe14bf",
+    "native-host.txt": "e5c759aa0c3019f4a62967a67c5e29eff97c38bfb9776f8b28d13a937784e8cd",
+    "native-md5.txt": "b42d0a79e234897e4e8a6c65bf3dc72c5cd20ea4dad883d59da72e900ee9086a",
+    "native-original-md5.txt": "3d2ca107dbfb805883ec485dbf22fc16e3d0bf2bdc30ea3f67ef6843b61b5287",
+    "native-results.tsv": "b2c1ca4366e15217fb5c578abb79219518186ab4501a09eb3fb1a8ea30847899",
+    "native-runner-md5.txt": "29c632a6fc756bea937dcdc5b96efb1b6a095df13161cd6c691b4e3b312527f5"
+  },
+  "pass": true,
+  "offline_snapshot": "vm/darwin602-utilities-004-verified.qcow2 (not distributed)",
+  "offline_snapshot_sha256": "d1743b76c634c3a4393eed55fea8f9f1aade4144419fb3587afee2428209fb35",
+  "qcow2_check": "No errors were found on the image after clean halt",
+  "payload_manifest": {
+    "qemu_commit": "f80cd4a91e77dbc132eb0d974003851847b3cd39",
+    "qemu_working_overlay": [],
+    "qemu_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source_tgz_sha256": "0689d2c3fcb9833f4950708af691c58e306190db466d4c19514f361a65e0ce4e",
+    "samples": {
+      "usr/bin/true": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+      "usr/bin/false": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+      "bin/echo": "1fd8720f4390be436270363264e85ad9b71dd76d8e48fbe8f9f6c0bae8ac9f42",
+      "bin/cat": "5aca8d19a4f7442a5cb10d4941c718b23fb1ccfffcb45c63063d186ae5ba9a83",
+      "usr/lib/dyld": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea",
+      "usr/lib/libSystem.B.dylib": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787",
+      "usr/lib/system/libmathCommon.A.dylib": "0282375f09bad0cdff42e98b6a1c44ae025fa49ba930052a3a37e5619906a5b1"
+    }
+  }
+}

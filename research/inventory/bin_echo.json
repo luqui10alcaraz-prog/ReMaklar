@@ -840,6 +840,6 @@
     "status": "candidate",
     "project": "shell_cmds",
     "tag": "shell_cmds-34",
-    "evidence": "ISO contains shell_cmds-34-1.ppc.rpm and cctools-435-1.ppc.rpm; binary identity with source build not proven"
+    "evidence": "ISO contains shell_cmds-34-1.ppc.rpm; binary identity with source build not proven"
   }
 }

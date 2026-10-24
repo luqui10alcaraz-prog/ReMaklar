@@ -1,0 +1,1207 @@
+{
+  "original_path": "/bin/cat",
+  "distribution": "Apple Darwin x86 6.0.2 ISO; not yet compared with Jaguar retail",
+  "iso_sha256": "d2c4668dcd4ca4a7498acffaf703a19862f53ab9b58b06c51745bd33e58a584f",
+  "analysis": {
+    "format": "FAT",
+    "sha256": "5aca8d19a4f7442a5cb10d4941c718b23fb1ccfffcb45c63063d186ae5ba9a83",
+    "slices": [
+      {
+        "offset": 4096,
+        "size": 14280,
+        "cputype": 18,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "968edad0ed0542f33ea92cd392d8836e82837be73eb60fc5b23a9ab631b31563",
+          "cputype": 18,
+          "cpusubtype": 0,
+          "filetype": 2,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__PAGEZERO",
+              "vmaddr": 0,
+              "vmsize": 4096,
+              "fileoff": 0,
+              "filesize": 0
+            },
+            {
+              "name": "__TEXT",
+              "vmaddr": 4096,
+              "vmsize": 8192,
+              "fileoff": 0,
+              "filesize": 8192
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 12288,
+              "vmsize": 4096,
+              "fileoff": 8192,
+              "filesize": 4096
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 16384,
+              "vmsize": 1992,
+              "fileoff": 12288,
+              "filesize": 1992
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 6832,
+              "size": 3852,
+              "fileoff": 2736,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 10684,
+              "size": 1080,
+              "fileoff": 6588,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 36
+            },
+            {
+              "name": "__symbol_stub",
+              "addr": 11764,
+              "size": 0,
+              "fileoff": 7668,
+              "flags": 2147483656,
+              "reserved1": 30,
+              "reserved2": 20
+            },
+            {
+              "name": "__cstring",
+              "addr": 11764,
+              "size": 524,
+              "fileoff": 7668,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 12288,
+              "size": 32,
+              "fileoff": 8192,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 12320,
+              "size": 120,
+              "fileoff": 8224,
+              "flags": 7,
+              "reserved1": 30,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 12440,
+              "size": 28,
+              "fileoff": 8344,
+              "flags": 6,
+              "reserved1": 60,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 12468,
+              "size": 28,
+              "fileoff": 8372,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__bss",
+              "addr": 12496,
+              "size": 8,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 12512,
+              "size": 92,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dyld",
+              "path": "/usr/lib/dyld"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "_NXArgc",
+              "type": 15,
+              "value": 12288
+            },
+            {
+              "index": 1,
+              "name": "_NXArgv",
+              "type": 15,
+              "value": 12292
+            },
+            {
+              "index": 2,
+              "name": "___progname",
+              "type": 15,
+              "value": 12300
+            },
+            {
+              "index": 3,
+              "name": "__mh_execute_header",
+              "type": 3,
+              "value": 4096
+            },
+            {
+              "index": 4,
+              "name": "_catch_exception_raise",
+              "type": 15,
+              "value": 12552
+            },
+            {
+              "index": 5,
+              "name": "_catch_exception_raise_state",
+              "type": 15,
+              "value": 12556
+            },
+            {
+              "index": 6,
+              "name": "_catch_exception_raise_state_identity",
+              "type": 15,
+              "value": 12560
+            },
+            {
+              "index": 7,
+              "name": "_clock_alarm_reply",
+              "type": 15,
+              "value": 12564
+            },
+            {
+              "index": 8,
+              "name": "_do_mach_notify_dead_name",
+              "type": 15,
+              "value": 12568
+            },
+            {
+              "index": 9,
+              "name": "_do_mach_notify_no_senders",
+              "type": 15,
+              "value": 12572
+            },
+            {
+              "index": 10,
+              "name": "_do_mach_notify_port_deleted",
+              "type": 15,
+              "value": 12576
+            },
+            {
+              "index": 11,
+              "name": "_do_mach_notify_send_once",
+              "type": 15,
+              "value": 12580
+            },
+            {
+              "index": 12,
+              "name": "_do_seqnos_mach_notify_dead_name",
+              "type": 15,
+              "value": 12584
+            },
+            {
+              "index": 13,
+              "name": "_do_seqnos_mach_notify_no_senders",
+              "type": 15,
+              "value": 12588
+            },
+            {
+              "index": 14,
+              "name": "_do_seqnos_mach_notify_port_deleted",
+              "type": 15,
+              "value": 12592
+            },
+            {
+              "index": 15,
+              "name": "_do_seqnos_mach_notify_send_once",
+              "type": 15,
+              "value": 12596
+            },
+            {
+              "index": 16,
+              "name": "_environ",
+              "type": 15,
+              "value": 12296
+            },
+            {
+              "index": 17,
+              "name": "_receive_samples",
+              "type": 15,
+              "value": 12600
+            },
+            {
+              "index": 18,
+              "name": "__CurrentRuneLocale",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 19,
+              "name": "____runetype",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 20,
+              "name": "___keymgr_dwarf2_register_sections",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 21,
+              "name": "___keymgr_global",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 22,
+              "name": "___sF",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 23,
+              "name": "___srget",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 24,
+              "name": "___swbuf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 25,
+              "name": "__cthread_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 26,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 27,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 28,
+              "name": "__init_keymgr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 29,
+              "name": "__keymgr_get_and_lock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 30,
+              "name": "__keymgr_set_and_unlock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 31,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 32,
+              "name": "_atexit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 33,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 34,
+              "name": "_close",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 35,
+              "name": "_err",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 36,
+              "name": "_errno",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 37,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 38,
+              "name": "_fclose",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 39,
+              "name": "_fopen",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 40,
+              "name": "_fprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 41,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 42,
+              "name": "_fstat",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 43,
+              "name": "_fwrite",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 44,
+              "name": "_getopt",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 45,
+              "name": "_mach_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 46,
+              "name": "_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 47,
+              "name": "_memcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 48,
+              "name": "_open",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 49,
+              "name": "_optind",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 50,
+              "name": "_read",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 51,
+              "name": "_setbuf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 52,
+              "name": "_setlocale",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 53,
+              "name": "_warn",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 54,
+              "name": "_write",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 10684,
+              "symbol": "_exit"
+            },
+            {
+              "address": 10720,
+              "symbol": "_atexit"
+            },
+            {
+              "address": 10756,
+              "symbol": "___keymgr_dwarf2_register_sections"
+            },
+            {
+              "address": 10792,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 10828,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 10864,
+              "symbol": "__init_keymgr"
+            },
+            {
+              "address": 10900,
+              "symbol": "_free"
+            },
+            {
+              "address": 10936,
+              "symbol": "_abort"
+            },
+            {
+              "address": 10972,
+              "symbol": "__keymgr_set_and_unlock_processwide_ptr"
+            },
+            {
+              "address": 11008,
+              "symbol": "__keymgr_get_and_lock_processwide_ptr"
+            },
+            {
+              "address": 11044,
+              "symbol": "_calloc"
+            },
+            {
+              "address": 11080,
+              "symbol": "_write"
+            },
+            {
+              "address": 11116,
+              "symbol": "_read"
+            },
+            {
+              "address": 11152,
+              "symbol": "_malloc"
+            },
+            {
+              "address": 11188,
+              "symbol": "_fstat"
+            },
+            {
+              "address": 11224,
+              "symbol": "_close"
+            },
+            {
+              "address": 11260,
+              "symbol": "_open"
+            },
+            {
+              "address": 11296,
+              "symbol": "____runetype"
+            },
+            {
+              "address": 11332,
+              "symbol": "_fprintf"
+            },
+            {
+              "address": 11368,
+              "symbol": "___swbuf"
+            },
+            {
+              "address": 11404,
+              "symbol": "___srget"
+            },
+            {
+              "address": 11440,
+              "symbol": "_warn"
+            },
+            {
+              "address": 11476,
+              "symbol": "_fopen"
+            },
+            {
+              "address": 11512,
+              "symbol": "_memcmp"
+            },
+            {
+              "address": 11548,
+              "symbol": "_err"
+            },
+            {
+              "address": 11584,
+              "symbol": "_fclose"
+            },
+            {
+              "address": 11620,
+              "symbol": "_fwrite"
+            },
+            {
+              "address": 11656,
+              "symbol": "_setbuf"
+            },
+            {
+              "address": 11692,
+              "symbol": "_getopt"
+            },
+            {
+              "address": 11728,
+              "symbol": "_setlocale"
+            }
+          ],
+          "entry": 6832
+        }
+      },
+      {
+        "offset": 24576,
+        "size": 18344,
+        "cputype": 7,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "1aa7c94245cbf9506f2bdbbb3e7f6923a6acc30c81b239c76625960172eeb174",
+          "cputype": 7,
+          "cpusubtype": 3,
+          "filetype": 2,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__PAGEZERO",
+              "vmaddr": 0,
+              "vmsize": 8192,
+              "fileoff": 0,
+              "filesize": 0
+            },
+            {
+              "name": "__TEXT",
+              "vmaddr": 8192,
+              "vmsize": 8192,
+              "fileoff": 0,
+              "filesize": 8192
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 16384,
+              "vmsize": 8192,
+              "fileoff": 8192,
+              "filesize": 8192
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 24576,
+              "vmsize": 1960,
+              "fileoff": 16384,
+              "filesize": 1960
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 11772,
+              "size": 2958,
+              "fileoff": 3580,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 14730,
+              "size": 754,
+              "fileoff": 6538,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 26
+            },
+            {
+              "name": "__symbol_stub",
+              "addr": 15484,
+              "size": 0,
+              "fileoff": 7292,
+              "flags": 2147483656,
+              "reserved1": 29,
+              "reserved2": 16
+            },
+            {
+              "name": "__cstring",
+              "addr": 15488,
+              "size": 896,
+              "fileoff": 7296,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 16384,
+              "size": 32,
+              "fileoff": 8192,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 16416,
+              "size": 116,
+              "fileoff": 8224,
+              "flags": 7,
+              "reserved1": 29,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 16532,
+              "size": 28,
+              "fileoff": 8340,
+              "flags": 6,
+              "reserved1": 58,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 16560,
+              "size": 28,
+              "fileoff": 8368,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__bss",
+              "addr": 16588,
+              "size": 8,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 16608,
+              "size": 92,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dyld",
+              "path": "/usr/lib/dyld"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "_NXArgc",
+              "type": 15,
+              "value": 16384
+            },
+            {
+              "index": 1,
+              "name": "_NXArgv",
+              "type": 15,
+              "value": 16388
+            },
+            {
+              "index": 2,
+              "name": "___progname",
+              "type": 15,
+              "value": 16396
+            },
+            {
+              "index": 3,
+              "name": "__mh_execute_header",
+              "type": 3,
+              "value": 8192
+            },
+            {
+              "index": 4,
+              "name": "_catch_exception_raise",
+              "type": 15,
+              "value": 16648
+            },
+            {
+              "index": 5,
+              "name": "_catch_exception_raise_state",
+              "type": 15,
+              "value": 16652
+            },
+            {
+              "index": 6,
+              "name": "_catch_exception_raise_state_identity",
+              "type": 15,
+              "value": 16656
+            },
+            {
+              "index": 7,
+              "name": "_clock_alarm_reply",
+              "type": 15,
+              "value": 16660
+            },
+            {
+              "index": 8,
+              "name": "_do_mach_notify_dead_name",
+              "type": 15,
+              "value": 16664
+            },
+            {
+              "index": 9,
+              "name": "_do_mach_notify_no_senders",
+              "type": 15,
+              "value": 16668
+            },
+            {
+              "index": 10,
+              "name": "_do_mach_notify_port_deleted",
+              "type": 15,
+              "value": 16672
+            },
+            {
+              "index": 11,
+              "name": "_do_mach_notify_send_once",
+              "type": 15,
+              "value": 16676
+            },
+            {
+              "index": 12,
+              "name": "_do_seqnos_mach_notify_dead_name",
+              "type": 15,
+              "value": 16680
+            },
+            {
+              "index": 13,
+              "name": "_do_seqnos_mach_notify_no_senders",
+              "type": 15,
+              "value": 16684
+            },
+            {
+              "index": 14,
+              "name": "_do_seqnos_mach_notify_port_deleted",
+              "type": 15,
+              "value": 16688
+            },
+            {
+              "index": 15,
+              "name": "_do_seqnos_mach_notify_send_once",
+              "type": 15,
+              "value": 16692
+            },
+            {
+              "index": 16,
+              "name": "_environ",
+              "type": 15,
+              "value": 16392
+            },
+            {
+              "index": 17,
+              "name": "_receive_samples",
+              "type": 15,
+              "value": 16696
+            },
+            {
+              "index": 18,
+              "name": "__CurrentRuneLocale",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 19,
+              "name": "____runetype",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 20,
+              "name": "___keymgr_dwarf2_register_sections",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 21,
+              "name": "___keymgr_global",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 22,
+              "name": "___sF",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 23,
+              "name": "___srget",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 24,
+              "name": "___swbuf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 25,
+              "name": "__cthread_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 26,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 27,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 28,
+              "name": "__init_keymgr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 29,
+              "name": "__keymgr_get_and_lock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 30,
+              "name": "__keymgr_set_and_unlock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 31,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 32,
+              "name": "_atexit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 33,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 34,
+              "name": "_close",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 35,
+              "name": "_err",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 36,
+              "name": "_errno",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 37,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 38,
+              "name": "_fclose",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 39,
+              "name": "_fopen",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 40,
+              "name": "_fprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 41,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 42,
+              "name": "_fstat",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 43,
+              "name": "_fwrite",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 44,
+              "name": "_getopt",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 45,
+              "name": "_mach_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 46,
+              "name": "_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 47,
+              "name": "_open",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 48,
+              "name": "_optind",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 49,
+              "name": "_read",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 50,
+              "name": "_setbuf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 51,
+              "name": "_setlocale",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 52,
+              "name": "_warn",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 53,
+              "name": "_write",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 14730,
+              "symbol": "_exit"
+            },
+            {
+              "address": 14756,
+              "symbol": "_atexit"
+            },
+            {
+              "address": 14782,
+              "symbol": "___keymgr_dwarf2_register_sections"
+            },
+            {
+              "address": 14808,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 14834,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 14860,
+              "symbol": "__init_keymgr"
+            },
+            {
+              "address": 14886,
+              "symbol": "_free"
+            },
+            {
+              "address": 14912,
+              "symbol": "_abort"
+            },
+            {
+              "address": 14938,
+              "symbol": "__keymgr_set_and_unlock_processwide_ptr"
+            },
+            {
+              "address": 14964,
+              "symbol": "__keymgr_get_and_lock_processwide_ptr"
+            },
+            {
+              "address": 14990,
+              "symbol": "_calloc"
+            },
+            {
+              "address": 15016,
+              "symbol": "_write"
+            },
+            {
+              "address": 15042,
+              "symbol": "_read"
+            },
+            {
+              "address": 15068,
+              "symbol": "_malloc"
+            },
+            {
+              "address": 15094,
+              "symbol": "_fstat"
+            },
+            {
+              "address": 15120,
+              "symbol": "_close"
+            },
+            {
+              "address": 15146,
+              "symbol": "_open"
+            },
+            {
+              "address": 15172,
+              "symbol": "____runetype"
+            },
+            {
+              "address": 15198,
+              "symbol": "_fprintf"
+            },
+            {
+              "address": 15224,
+              "symbol": "___swbuf"
+            },
+            {
+              "address": 15250,
+              "symbol": "___srget"
+            },
+            {
+              "address": 15276,
+              "symbol": "_warn"
+            },
+            {
+              "address": 15302,
+              "symbol": "_fopen"
+            },
+            {
+              "address": 15328,
+              "symbol": "_err"
+            },
+            {
+              "address": 15354,
+              "symbol": "_fclose"
+            },
+            {
+              "address": 15380,
+              "symbol": "_fwrite"
+            },
+            {
+              "address": 15406,
+              "symbol": "_setbuf"
+            },
+            {
+              "address": 15432,
+              "symbol": "_getopt"
+            },
+            {
+              "address": 15458,
+              "symbol": "_setlocale"
+            }
+          ],
+          "entry": null
+        }
+      }
+    ]
+  },
+  "source_correspondence": {
+    "status": "candidate",
+    "project": "text_cmds",
+    "tag": "text_cmds-18",
+    "evidence": "ISO contains text_cmds-18-1.ppc.rpm; binary identity with source build not proven"
+  }
+}
