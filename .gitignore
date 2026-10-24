@@ -5,4 +5,5 @@ sources/
 build/
 experiments/qemu-0.10.6/
 research/samples-local/
+research/jaguar-local/
 __pycache__/
