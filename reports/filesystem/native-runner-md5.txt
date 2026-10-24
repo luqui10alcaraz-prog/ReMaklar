@@ -1,0 +1,1 @@
+MD5 (build/qemu-darwin6/ppc-darwin-user/qemu-ppc) = f36d145228daf2c9ea2b5271de21d18e

@@ -1,0 +1,12 @@
+PASS pwd-root exit=0 expected=0 bytes=2
+PASS pwd-nested exit=0 expected=0 bytes=28
+PASS pwd-parent exit=0 expected=0 bytes=18
+PASS ls-names exit=0 expected=0 bytes=34
+PASS ls-hidden exit=0 expected=0 bytes=39
+PASS ls-types exit=0 expected=0 bytes=36
+PASS ls-many exit=0 expected=0 bytes=2400
+PASS ls-metadata exit=0 expected=0 bytes=67
+FAIL ls-link exit=0 expected=0 bytes=67
+PASS ls-missing exit=0 expected=0 bytes=0
+PASS filesystem-probe exit=0 expected=0 bytes=18
+cases=11 failed=1 leftover=0

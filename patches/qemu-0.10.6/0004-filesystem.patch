@@ -1,0 +1,352 @@
+diff --git a/darwin-user/remaklar/bootstrap-main.c b/darwin-user/remaklar/bootstrap-main.c
+index 796d6db..bfdad96 100644
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -165,9 +165,16 @@ int remaklar_guest_access(uint32_t addr, uint32_t len, int prot)
+     uint64_t end = (uint64_t)addr + len;
+     uint64_t page;
+     if (end > 0x100000000ULL) return 0;
+-    for (page = addr & TARGET_PAGE_MASK; page < end; page += TARGET_PAGE_SIZE)
+-        if ((page_get_flags(page) & (PAGE_VALID | prot)) !=
+-            (PAGE_VALID | prot)) return 0;
++    for (page = addr & TARGET_PAGE_MASK; page < end; page += TARGET_PAGE_SIZE) {
++        int flags = page_get_flags(page);
++        /* Kernel/bridge writes must obey guest permissions, not a temporary
++         * read-only TCG cache protection. Invalidate translations first. */
++        if ((prot & PAGE_WRITE) && (flags & PAGE_WRITE_ORG) && !(flags & PAGE_WRITE)) {
++            if (!page_unprotect(page, 0, NULL)) return 0;
++            flags = page_get_flags(page);
++        }
++        if ((flags & (PAGE_VALID | prot)) != (PAGE_VALID | prot)) return 0;
++    }
+     return 1;
+ }
+ 
+@@ -175,9 +182,10 @@ static void darwin_syscall(CPUState *env)
+ {
+     uint32_t number = env->gpr[0];
+     int result, guest_errno = 0;
+-    fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x\n",
++    fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x r6=%08x r7=%08x r8=%08x\n",
+             (unsigned)env->nip, number, (unsigned)env->gpr[3],
+-            (unsigned)env->gpr[4], (unsigned)env->gpr[5]);
++            (unsigned)env->gpr[4], (unsigned)env->gpr[5],
++            (unsigned)env->gpr[6], (unsigned)env->gpr[7], (unsigned)env->gpr[8]);
+     if ((int32_t)number < 0 || (number >= 0x7ff1 && number <= 0x7ff3)) {
+         env->gpr[3] = remaklar_mach(env);
+         return;
+@@ -185,21 +193,11 @@ static void darwin_syscall(CPUState *env)
+     switch (number) {
+     case 1: /* Darwin SYS_exit */
+         exit(env->gpr[3] & 255);
+-    case 4: /* Darwin SYS_write: buffers contain bytes, no word swapping. */
+-        if (!remaklar_guest_access(env->gpr[4], env->gpr[5], PAGE_READ)) {
+-            result = -1; guest_errno = 14; /* Darwin EFAULT */
+-        } else {
+-            result = write(env->gpr[3], g2h(env->gpr[4]), env->gpr[5]);
+-            if (result < 0) {
+-                switch (errno) {
+-                case EBADF: guest_errno = 9; break;
+-                case EINTR: guest_errno = 4; break;
+-                case EPIPE: guest_errno = 32; break;
+-                default: qerror("unsupported host write errno %d", errno);
+-                }
+-            }
+-        }
++    case 4: /* All I/O uses the same virtual descriptor table. */
++        if (!remaklar_bsd(env, &result, &guest_errno))
++            qerror("write bridge unavailable");
+         break;
++
+     default:
+         if (!remaklar_bsd(env, &result, &guest_errno))
+             qerror("unsupported Darwin syscall/trap %d at %08x",
+@@ -238,6 +236,9 @@ void cpu_loop(CPUState *env)
+             qerror("unexpected debug event at %08x", (unsigned)env->nip);
+             break;
+         default:
++            fprintf(stderr, "PPC fault dar=%08x r3=%08x r12=%08x r30=%08x\n",
++                    (unsigned)env->spr[SPR_DAR], (unsigned)env->gpr[3],
++                    (unsigned)env->gpr[12], (unsigned)env->gpr[30]);
+             qerror("unsupported PPC exception %x pc=%08x", trap,
+                    (unsigned)env->nip);
+         }
+@@ -256,6 +257,10 @@ int main(int argc, char **argv, char **envp)
+         interp_prefix = argv[2];
+         remaklar_dynamic = 1;
+         filearg = 3;
++        if (argc >= 6 && !strcmp(argv[3], "--cwd")) {
++            if (remaklar_set_cwd(argv[4])) qerror("invalid guest cwd: %s", argv[4]);
++            filearg = 5;
++        }
+     } else if (argc == 5 && !strcmp(argv[1], "--probe-main")) {
+         remaklar_probe_slide = 0x10000000;
+         probe_entry = strtoul(argv[2], NULL, 16) + remaklar_probe_slide;
+diff --git a/darwin-user/remaklar/bootstrap.h b/darwin-user/remaklar/bootstrap.h
+index 2d9f0c6..b56fa84 100644
+--- a/darwin-user/remaklar/bootstrap.h
++++ b/darwin-user/remaklar/bootstrap.h
+@@ -2,6 +2,7 @@
+ #ifndef REMAKLAR_BOOTSTRAP_H
+ #define REMAKLAR_BOOTSTRAP_H
+ extern const char *interp_prefix;
++int remaklar_set_cwd(const char *path);
+ int remaklar_guest_access(uint32_t address, uint32_t length, int prot);
+ uint32_t remaklar_mach(CPUState *env);
+ int remaklar_bsd(CPUState *env, int *result, int *error);
+diff --git a/darwin-user/remaklar/darwin-kernel.c b/darwin-user/remaklar/darwin-kernel.c
+index 11d655f..4326085 100644
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -7,6 +7,14 @@
+ #include <unistd.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <dirent.h>
++#include <sys/ioctl.h>
++#include <sys/time.h>
++#ifdef __APPLE__
++#include <sys/mount.h>
++#else
++#include <sys/statvfs.h>
++#endif
+ #include <sys/stat.h>
+ #include <sys/mman.h>
+ #include "qemu.h"
+@@ -21,6 +29,10 @@ static uint32_t send_refs[4096];
+ static unsigned char receive_rights[4096];
+ static uint32_t next_port = 0x400;
+ static int descriptors[256], descriptors_ready;
++static DIR *directories[256];
++static char *descriptor_paths[256];
++static uint32_t directory_positions[256];
++static char guest_cwd[4096] = "/";
+ 
+ static int host_fd(uint32_t fd)
+ {
+@@ -42,11 +54,55 @@ static int darwin_errno(int err)
+     case EACCES: return 13; case EFAULT: return 14; case EEXIST: return 17;
+     case ENOTDIR: return 20; case EISDIR: return 21; case EINVAL: return 22;
+     case EMFILE: return 24; case EPIPE: return 32;
++    case ENOTTY: return 25; case ENOSPC: return 28; case EROFS: return 30;
++    case ENAMETOOLONG: return 63; case ENOTEMPTY: return 66; case ELOOP: return 62;
+     default: qerror("unmapped host errno %d", err);
+     }
+     return 22;
+ }
+ 
++static const char *translate_path(const char *input, char *buffer, size_t capacity)
++{
++    char joined[8192], normalized[4096];
++    const char *start, *end;
++    size_t length = strlen(interp_prefix), used = 1, n;
++    char *slash;
++    if (length && !strncmp(input, interp_prefix, length) &&
++        (!input[length] || input[length] == '/')) input += length;
++    if (!*input) { errno = ENOENT; return NULL; }
++    if (snprintf(joined, sizeof(joined), "%s/%s", input[0] == '/' ? "" : guest_cwd, input) >= sizeof(joined)) {
++        errno = ENAMETOOLONG; return NULL;
++    }
++    normalized[0] = '/'; normalized[1] = 0;
++    for (start = joined; *start; start = end) {
++        while (*start == '/') start++;
++        end = start; while (*end && *end != '/') end++;
++        n = end - start;
++        if (!n || (n == 1 && *start == '.')) continue;
++        if (n == 2 && start[0] == '.' && start[1] == '.') {
++            slash = strrchr(normalized, '/');
++            used = slash == normalized ? 1 : slash - normalized;
++            normalized[used] = 0; continue;
++        }
++        if (used + n + 2 > sizeof(normalized)) { errno = ENAMETOOLONG; return NULL; }
++        if (used > 1) normalized[used++] = '/';
++        memcpy(normalized + used, start, n); used += n; normalized[used] = 0;
++    }
++    if (snprintf(buffer, capacity, "%s%s", interp_prefix, normalized) >= capacity) {
++        errno = ENAMETOOLONG; return NULL;
++    }
++    return buffer;
++}
++
++int remaklar_set_cwd(const char *input)
++{
++    char path[8192]; struct stat st;
++    if (!translate_path(input, path, sizeof(path)) || stat(path, &st)) return -1;
++    if (!S_ISDIR(st.st_mode)) { errno = ENOTDIR; return -1; }
++    strcpy(guest_cwd, path + strlen(interp_prefix));
++    return 0;
++}
++
+ static const char *guest_path(uint32_t p, char *buffer, size_t capacity)
+ {
+     char input[4096]; unsigned int i;
+@@ -56,12 +112,7 @@ static const char *guest_path(uint32_t p, char *buffer, size_t capacity)
+         if (!input[i]) break;
+     }
+     if (i == sizeof(input)) { errno = ENAMETOOLONG; return NULL; }
+-    if (strstr(input, "/../") || !strcmp(input, ".."))
+-        qerror("parent traversal not supported in guest root");
+-    if (input[0] == '/' && strncmp(input, interp_prefix, strlen(interp_prefix)))
+-        snprintf(buffer, capacity, "%s%s", interp_prefix, input);
+-    else snprintf(buffer, capacity, "%s", input);
+-    return buffer;
++    return translate_path(input, buffer, capacity);
+ }
+ 
+ static void encode_stat(uint32_t address, const struct stat *s)
+@@ -109,27 +160,150 @@ int remaklar_bsd(CPUState *env, int *result, int *error)
+             stl(g2h(env->gpr[6]), 4); r = 0;
+         }
+         break;
++    case 4: /* write, including virtual descriptors opened by the guest */
++        if (!remaklar_guest_access(b, c, PAGE_READ)) { errno = EFAULT; r = -1; }
++        else r = write(host_fd(a), g2h(b), c);
++        break;
+     case 3: /* read */
+         if (!remaklar_guest_access(b, c, PAGE_WRITE)) { errno = EFAULT; r = -1; }
+         else r = read(host_fd(a), g2h(b), c);
+         break;
+-    case 5: /* open: loader only needs read-only files at this stage */
+-        if (b) qerror("unsupported Darwin open flags %x", b);
++    case 5: { /* Translate Darwin flags instead of passing Linux bit values. */
++        int flags = b & 3;
++        if (b & ~(3 | 4 | 8 | 0x200 | 0x400 | 0x800)) qerror("unsupported Darwin open flags %x", b);
++        if (b & 4) flags |= O_NONBLOCK;
++        if (b & 8) flags |= O_APPEND;
++        if (b & 0x200) flags |= O_CREAT;
++        if (b & 0x400) flags |= O_TRUNC;
++        if (b & 0x800) flags |= O_EXCL;
+         p = guest_path(a, path, sizeof(path));
+         if (!p) { r = -1; break; }
+         fprintf(stderr, "guest open %s\n", p);
+-        r = open(p, O_RDONLY);
++        r = open(p, flags, c);
+         if (r >= 0) {
+             host_fd(0);
+             for (i = 3; i < 256 && descriptors[i] >= 0; i++);
+             if (i == 256) { close(r); errno = EMFILE; r = -1; }
+-            else { descriptors[i] = r; r = i; }
++            else {
++                descriptors[i] = r; descriptor_paths[i] = strdup(p);
++                if (!fstat(r, &st) && S_ISDIR(st.st_mode)) directories[i] = opendir(p);
++                directory_positions[i] = 0; r = i;
++            }
+         }
+         break;
++    }
+     case 6:
+         r = close(host_fd(a));
+-        if (!r && a < 256) descriptors[a] = -1;
++        if (!r && a < 256) {
++            descriptors[a] = -1;
++            if (directories[a]) closedir(directories[a]);
++            directories[a] = NULL; free(descriptor_paths[a]); descriptor_paths[a] = NULL;
++        }
++        break;
++    case 10: case 12: case 15: case 136: case 137:
++        p = guest_path(a, path, sizeof(path));
++        if (!p) break;
++        if (n == 10) r = unlink(p);
++        else if (n == 12) r = remaklar_set_cwd(p);
++        else if (n == 15) r = chmod(p, b);
++        else if (n == 136) r = mkdir(p, b);
++        else r = rmdir(p);
+         break;
++    case 13:
++        if (host_fd(a) < 0) errno = EBADF;
++        else if (!descriptor_paths[a]) errno = ENOTDIR;
++        else r = remaklar_set_cwd(descriptor_paths[a]);
++        break;
++    case 54: { /* Terminal query has a fixed PPC wire format. */
++        struct winsize ws;
++        if (b != 0x402c7413 && b != 0x40087468) qerror("unsupported ioctl %x", b);
++        if (b == 0x402c7413) { /* TIOCGETA: no termios conversion yet. */
++            if (host_fd(a) < 0) errno = EBADF;
++            else if (!isatty(host_fd(a))) errno = ENOTTY;
++            else qerror("terminal termios not implemented");
++            break;
++        }
++        if (!remaklar_guest_access(c, 8, PAGE_WRITE)) { errno = EFAULT; break; }
++        r = ioctl(host_fd(a), TIOCGWINSZ, &ws);
++        if (!r) { stw(g2h(c), ws.ws_row); stw(g2h(c+2), ws.ws_col); stw(g2h(c+4), ws.ws_xpixel); stw(g2h(c+6), ws.ws_ypixel); }
++        break;
++    }
++    case 58:
++        p = guest_path(a, path, sizeof(path));
++        if (!p) break;
++        if (!remaklar_guest_access(b, c, PAGE_WRITE)) errno = EFAULT;
++        else r = readlink(p, g2h(b), c);
++        break;
++    case 60: r = umask(a); break;
++    case 92: /* fcntl descriptor flags; other commands fail explicitly. */
++        if (b != 1 && b != 2) qerror("unsupported fcntl %u", b);
++        r = fcntl(host_fd(a), b == 1 ? F_GETFD : F_SETFD, c & 1);
++        break;
++    case 116: {
++        struct timeval tv;
++        if (b) qerror("gettimeofday timezone output not implemented");
++        if (!remaklar_guest_access(a, 8, PAGE_WRITE)) { errno = EFAULT; break; }
++        r = gettimeofday(&tv, NULL);
++        if (!r) { stl(g2h(a), tv.tv_sec); stl(g2h(a+4), tv.tv_usec); }
++        break;
++    }
++    case 128: {
++        char second[8192]; const char *q;
++        p = guest_path(a, path, sizeof(path)); q = guest_path(b, second, sizeof(second));
++        if (p && q) r = rename(p, q);
++        break;
++    }
++    case 158: { /* Mounted guest filesystem model; explicitly not a union FS. */
++        unsigned char wire[272];
++#ifdef __APPLE__
++        struct statfs fs;
++        r = fstatfs(host_fd(a), &fs);
++#else
++        struct statvfs fs;
++        r = fstatvfs(host_fd(a), &fs);
++#endif
++        if (r) break;
++        if (!remaklar_guest_access(b, sizeof(wire), PAGE_WRITE)) { r = -1; errno = EFAULT; break; }
++        memset(wire, 0, sizeof(wire)); stl(wire+4, fs.f_bsize); stl(wire+8, fs.f_bsize);
++        stl(wire+12, fs.f_blocks); stl(wire+16, fs.f_bfree); stl(wire+20, fs.f_bavail);
++        stl(wire+24, fs.f_files); stl(wire+28, fs.f_ffree);
++        strcpy((char *)wire+60, "remaklar"); strcpy((char *)wire+75, "/");
++        memcpy(g2h(b), wire, sizeof(wire)); break;
++    }
++    case 196: { /* Fixed PPC32 dirent records, independent of host layout. */
++        struct dirent *de; uint32_t used = 0, len, length, base;
++        if (host_fd(a) < 0) { errno = EBADF; break; }
++        if (!directories[a]) { errno = ENOTDIR; break; }
++        if (!remaklar_guest_access(b, c, PAGE_WRITE) || !remaklar_guest_access(env->gpr[6], 4, PAGE_WRITE)) { errno = EFAULT; break; }
++        base = directory_positions[a];
++        while (1) {
++            long position = telldir(directories[a]);
++            de = readdir(directories[a]); if (!de) break;
++            length = strlen(de->d_name); len = (8 + length + 1 + 3) & ~3;
++            if (used + len > c) { seekdir(directories[a], position); if (!used) errno = EINVAL; break; }
++            memset(g2h(b+used), 0, len);
++#ifdef __APPLE__
++            stl(g2h(b+used), de->d_fileno);
++#else
++            stl(g2h(b+used), de->d_ino);
++#endif
++            stw(g2h(b+used+4), len);
++            stb(g2h(b+used+6), de->d_type); stb(g2h(b+used+7), length);
++            memcpy(g2h(b+used+8), de->d_name, length);
++            used += len; directory_positions[a]++;
++        }
++        stl(g2h(env->gpr[6]), base); r = used ? used : (errno ? -1 : 0); break;
++    }
++    case 199: { /* Jaguar PPC32 packs off_t in r4:r5, returns r3:r4. */
++        int64_t offset = ((uint64_t)b << 32) | c;
++        off_t value;
++        if (a < 256 && directories[a]) {
++            if (offset || env->gpr[6] != SEEK_SET) { errno = EINVAL; break; }
++            rewinddir(directories[a]); directory_positions[a] = 0; value = 0;
++        } else value = lseek(host_fd(a), offset, env->gpr[6]);
++        if (value == (off_t)-1) break;
++        env->gpr[4] = (uint32_t)value; r = (uint64_t)value >> 32; break;
++    }
+     case 20: r = getpid(); env->gpr[4] = getppid(); break;
+     case 24: r = getuid(); env->gpr[4] = geteuid(); break;
+     case 25: r = geteuid(); break;

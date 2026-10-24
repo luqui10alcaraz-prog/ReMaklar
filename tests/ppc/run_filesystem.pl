@@ -58,7 +58,11 @@ run('ls-many','ls','/',0,join('',map {sprintf("item%03d\n",$_)} 0..299),'-1','/f
 my @st=stat "$list/alpha";
 my $metadata=qr/\A-rw-r-----\s+$st[3]\s+$st[4]\s+$st[5]\s+4\s+Jan\s+1\s+00:00:00\s+2001\s+\/fixtures\/fs-list\/alpha\n\z/;
 run('ls-metadata','ls','/',0,$metadata,'-lnT','/fixtures/fs-list/alpha');
-run('ls-link','ls','/',0,qr/\Alrwxrwxrwx\s+.*\/fixtures\/fs-list\/link -> alpha\n\z/,'-ldn','/fixtures/fs-list/link');
+my @link=lstat "$list/link";
+my $mode='l';my $mask=0400;
+for my $character (split //,'rwxrwxrwx') { $mode.=($link[2]&$mask)?$character:'-';$mask>>=1; }
+my $link_metadata=qr/\A\Q$mode\E\s+$link[3]\s+$link[4]\s+$link[5]\s+$link[7]\s+.*\/fixtures\/fs-list\/link -> alpha\n\z/;
+run('ls-link','ls','/',0,$link_metadata,'-ldn','/fixtures/fs-list/link');
 run('ls-missing','ls','/',0,'','-1','/fixtures/fs-list/absent');
 run('filesystem-probe','probe','/',0,"filesystem PPC OK\n");
 my $left=-e "$root/fixtures/fs-work/created";

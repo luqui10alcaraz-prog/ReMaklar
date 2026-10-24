@@ -38,7 +38,7 @@ with tarfile.open(out / 'source.tgz', 'w:gz', format=tarfile.GNU_FORMAT) as dest
     for path in (root / 'build/fixtures').glob('*.macho'):
         dest.add(path, arcname='remaklar/build/fixtures/' + path.name)
     dest.add(root / 'build/utility-cases.tsv', arcname='remaklar/build/utility-cases.tsv')
-    for name in ['filesystem-probe.macho', 'objc-runtime-probe.macho']:
+    for name in ['filesystem-probe.macho']:
         dest.add(root / 'build' / name, arcname='remaklar/build/' + name)
     dest.add(root / 'research/samples-local/fixtures',
              arcname='remaklar/research/samples-local/fixtures')

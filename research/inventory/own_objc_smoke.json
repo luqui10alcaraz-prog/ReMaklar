@@ -1,0 +1,1010 @@
+{
+  "format": "Mach-O32",
+  "sha256": "ac762daf1f3f4dff3080fb390d67f1b64e9a20ef2f54649d2401b3f3c5d93740",
+  "cputype": 18,
+  "cpusubtype": 0,
+  "filetype": 2,
+  "flags": 133,
+  "segments": [
+    {
+      "name": "__PAGEZERO",
+      "vmaddr": 0,
+      "vmsize": 4096,
+      "fileoff": 0,
+      "filesize": 0
+    },
+    {
+      "name": "__TEXT",
+      "vmaddr": 4096,
+      "vmsize": 4096,
+      "fileoff": 0,
+      "filesize": 4096
+    },
+    {
+      "name": "__DATA",
+      "vmaddr": 8192,
+      "vmsize": 4096,
+      "fileoff": 4096,
+      "filesize": 4096
+    },
+    {
+      "name": "__OBJC",
+      "vmaddr": 12288,
+      "vmsize": 4096,
+      "fileoff": 8192,
+      "filesize": 4096
+    },
+    {
+      "name": "__LINKEDIT",
+      "vmaddr": 16384,
+      "vmsize": 4096,
+      "fileoff": 12288,
+      "filesize": 3104
+    }
+  ],
+  "sections": [
+    {
+      "name": "__text",
+      "addr": 6940,
+      "size": 828,
+      "fileoff": 2844,
+      "flags": 2147484672,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__picsymbol_stub",
+      "addr": 7768,
+      "size": 180,
+      "fileoff": 3672,
+      "flags": 2147483656,
+      "reserved1": 0,
+      "reserved2": 36
+    },
+    {
+      "name": "__symbol_stub",
+      "addr": 7948,
+      "size": 0,
+      "fileoff": 3852,
+      "flags": 2147483656,
+      "reserved1": 5,
+      "reserved2": 20
+    },
+    {
+      "name": "__cstring",
+      "addr": 7948,
+      "size": 244,
+      "fileoff": 3852,
+      "flags": 2,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__data",
+      "addr": 8192,
+      "size": 24,
+      "fileoff": 4096,
+      "flags": 512,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__la_symbol_ptr",
+      "addr": 8216,
+      "size": 20,
+      "fileoff": 4120,
+      "flags": 7,
+      "reserved1": 5,
+      "reserved2": 0
+    },
+    {
+      "name": "__nl_symbol_ptr",
+      "addr": 8236,
+      "size": 12,
+      "fileoff": 4140,
+      "flags": 6,
+      "reserved1": 10,
+      "reserved2": 0
+    },
+    {
+      "name": "__dyld",
+      "addr": 8248,
+      "size": 28,
+      "fileoff": 4152,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__common",
+      "addr": 8288,
+      "size": 60,
+      "fileoff": 0,
+      "flags": 1,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__cat_cls_meth",
+      "addr": 12288,
+      "size": 0,
+      "fileoff": 8192,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__cat_inst_meth",
+      "addr": 12288,
+      "size": 0,
+      "fileoff": 8192,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__string_object",
+      "addr": 12288,
+      "size": 0,
+      "fileoff": 8192,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__cstring_object",
+      "addr": 12288,
+      "size": 0,
+      "fileoff": 8192,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__message_refs",
+      "addr": 12288,
+      "size": 12,
+      "fileoff": 8192,
+      "flags": 5,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__sel_fixup",
+      "addr": 12300,
+      "size": 0,
+      "fileoff": 8204,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__cls_refs",
+      "addr": 12300,
+      "size": 4,
+      "fileoff": 8204,
+      "flags": 5,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__class",
+      "addr": 12304,
+      "size": 48,
+      "fileoff": 8208,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__meta_class",
+      "addr": 12352,
+      "size": 48,
+      "fileoff": 8256,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__cls_meth",
+      "addr": 12400,
+      "size": 0,
+      "fileoff": 8304,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__inst_meth",
+      "addr": 12400,
+      "size": 20,
+      "fileoff": 8304,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__protocol",
+      "addr": 12420,
+      "size": 0,
+      "fileoff": 8324,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__category",
+      "addr": 12420,
+      "size": 0,
+      "fileoff": 8324,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__class_vars",
+      "addr": 12420,
+      "size": 0,
+      "fileoff": 8324,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__instance_vars",
+      "addr": 12420,
+      "size": 0,
+      "fileoff": 8324,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__module_info",
+      "addr": 12420,
+      "size": 16,
+      "fileoff": 8324,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__symbols",
+      "addr": 12436,
+      "size": 16,
+      "fileoff": 8340,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    }
+  ],
+  "dependencies": [
+    {
+      "kind": "dyld",
+      "path": "/usr/lib/dyld"
+    },
+    {
+      "kind": "dylib",
+      "path": "/usr/lib/libobjc.A.dylib"
+    },
+    {
+      "kind": "dylib",
+      "path": "/usr/lib/libSystem.B.dylib"
+    }
+  ],
+  "symbols": [
+    {
+      "index": 0,
+      "name": "start.s",
+      "type": 100,
+      "value": 6940
+    },
+    {
+      "index": 1,
+      "name": "int:t1=r1;-2147483648;2147483647;",
+      "type": 128,
+      "value": 0
+    },
+    {
+      "index": 2,
+      "name": "char:t2=r2;0;127;",
+      "type": 128,
+      "value": 0
+    },
+    {
+      "index": 3,
+      "name": "",
+      "type": 100,
+      "value": 6992
+    },
+    {
+      "index": 4,
+      "name": "/data/zarzycki/src/src-opensource/BUILD/Csu-45/",
+      "type": 100,
+      "value": 6992
+    },
+    {
+      "index": 5,
+      "name": "/data/zarzycki/src/src-opensource/BUILD/Csu-45/crt.c",
+      "type": 100,
+      "value": 6992
+    },
+    {
+      "index": 6,
+      "name": "gcc2_compiled.",
+      "type": 60,
+      "value": 0
+    },
+    {
+      "index": 7,
+      "name": "/data/zarzycki/src/src-opensource/BUILD/Csu-45/crt.c",
+      "type": 130,
+      "value": 0
+    },
+    {
+      "index": 8,
+      "name": "_pointer_to_objcInit",
+      "type": 14,
+      "value": 8208
+    },
+    {
+      "index": 9,
+      "name": "_pointer_to__darwin_gcc3_preregister_frame_info",
+      "type": 14,
+      "value": 8212
+    },
+    {
+      "index": 10,
+      "name": "",
+      "type": 68,
+      "value": 6992
+    },
+    {
+      "index": 11,
+      "name": "",
+      "type": 68,
+      "value": 7028
+    },
+    {
+      "index": 12,
+      "name": "",
+      "type": 68,
+      "value": 7032
+    },
+    {
+      "index": 13,
+      "name": "",
+      "type": 68,
+      "value": 7040
+    },
+    {
+      "index": 14,
+      "name": "",
+      "type": 68,
+      "value": 7048
+    },
+    {
+      "index": 15,
+      "name": "",
+      "type": 68,
+      "value": 7056
+    },
+    {
+      "index": 16,
+      "name": "",
+      "type": 68,
+      "value": 7076
+    },
+    {
+      "index": 17,
+      "name": "",
+      "type": 68,
+      "value": 7084
+    },
+    {
+      "index": 18,
+      "name": "",
+      "type": 68,
+      "value": 7104
+    },
+    {
+      "index": 19,
+      "name": "",
+      "type": 68,
+      "value": 7112
+    },
+    {
+      "index": 20,
+      "name": "",
+      "type": 68,
+      "value": 7116
+    },
+    {
+      "index": 21,
+      "name": "",
+      "type": 68,
+      "value": 7136
+    },
+    {
+      "index": 22,
+      "name": "",
+      "type": 68,
+      "value": 7144
+    },
+    {
+      "index": 23,
+      "name": "",
+      "type": 68,
+      "value": 7148
+    },
+    {
+      "index": 24,
+      "name": "",
+      "type": 68,
+      "value": 7168
+    },
+    {
+      "index": 25,
+      "name": "",
+      "type": 68,
+      "value": 7176
+    },
+    {
+      "index": 26,
+      "name": "",
+      "type": 68,
+      "value": 7192
+    },
+    {
+      "index": 27,
+      "name": "",
+      "type": 68,
+      "value": 7204
+    },
+    {
+      "index": 28,
+      "name": "",
+      "type": 68,
+      "value": 7208
+    },
+    {
+      "index": 29,
+      "name": "",
+      "type": 68,
+      "value": 7224
+    },
+    {
+      "index": 30,
+      "name": "",
+      "type": 68,
+      "value": 7240
+    },
+    {
+      "index": 31,
+      "name": "",
+      "type": 68,
+      "value": 7244
+    },
+    {
+      "index": 32,
+      "name": "",
+      "type": 68,
+      "value": 7260
+    },
+    {
+      "index": 33,
+      "name": "",
+      "type": 68,
+      "value": 7272
+    },
+    {
+      "index": 34,
+      "name": "",
+      "type": 68,
+      "value": 7276
+    },
+    {
+      "index": 35,
+      "name": "",
+      "type": 68,
+      "value": 7296
+    },
+    {
+      "index": 36,
+      "name": "",
+      "type": 68,
+      "value": 7304
+    },
+    {
+      "index": 37,
+      "name": "",
+      "type": 68,
+      "value": 7312
+    },
+    {
+      "index": 38,
+      "name": "",
+      "type": 68,
+      "value": 7324
+    },
+    {
+      "index": 39,
+      "name": "",
+      "type": 68,
+      "value": 7352
+    },
+    {
+      "index": 40,
+      "name": "",
+      "type": 68,
+      "value": 7376
+    },
+    {
+      "index": 41,
+      "name": "_start:F(1,1)=(1,1)",
+      "type": 36,
+      "value": 6992
+    },
+    {
+      "index": 42,
+      "name": "void:t(1,1)",
+      "type": 128,
+      "value": 0
+    },
+    {
+      "index": 43,
+      "name": "argc:P(1,2)=r(1,2);-2147483648;2147483647;",
+      "type": 64,
+      "value": 28
+    },
+    {
+      "index": 44,
+      "name": "argv:P(1,3)=*(1,4)=*(1,5)=r(1,5);0;127;",
+      "type": 64,
+      "value": 30
+    },
+    {
+      "index": 45,
+      "name": "envp:P(1,3)",
+      "type": 64,
+      "value": 29
+    },
+    {
+      "index": 46,
+      "name": "int:t(1,2)",
+      "type": 128,
+      "value": 0
+    },
+    {
+      "index": 47,
+      "name": "char:t(1,5)",
+      "type": 128,
+      "value": 0
+    },
+    {
+      "index": 48,
+      "name": "i:r(1,2)",
+      "type": 64,
+      "value": 10
+    },
+    {
+      "index": 49,
+      "name": "p:r(1,4)",
+      "type": 64,
+      "value": 8
+    },
+    {
+      "index": 50,
+      "name": "q:r(1,3)",
+      "type": 64,
+      "value": 6
+    },
+    {
+      "index": 51,
+      "name": "term:(1,6)=*(1,7)=f(1,1)",
+      "type": 128,
+      "value": 64
+    },
+    {
+      "index": 52,
+      "name": "",
+      "type": 192,
+      "value": 7028
+    },
+    {
+      "index": 53,
+      "name": "",
+      "type": 224,
+      "value": 7376
+    },
+    {
+      "index": 54,
+      "name": "",
+      "type": 36,
+      "value": 384
+    },
+    {
+      "index": 55,
+      "name": "__call_mod_init_funcs",
+      "type": 14,
+      "value": 7376
+    },
+    {
+      "index": 56,
+      "name": "",
+      "type": 68,
+      "value": 7376
+    },
+    {
+      "index": 57,
+      "name": "",
+      "type": 68,
+      "value": 7400
+    },
+    {
+      "index": 58,
+      "name": "",
+      "type": 68,
+      "value": 7416
+    },
+    {
+      "index": 59,
+      "name": "",
+      "type": 68,
+      "value": 7428
+    },
+    {
+      "index": 60,
+      "name": "_call_mod_init_funcs:f(1,1)",
+      "type": 36,
+      "value": 7376
+    },
+    {
+      "index": 61,
+      "name": "p:(1,6)",
+      "type": 128,
+      "value": 64
+    },
+    {
+      "index": 62,
+      "name": "",
+      "type": 192,
+      "value": 7376
+    },
+    {
+      "index": 63,
+      "name": "",
+      "type": 224,
+      "value": 7448
+    },
+    {
+      "index": 64,
+      "name": "",
+      "type": 36,
+      "value": 72
+    },
+    {
+      "index": 65,
+      "name": "NXArgc:G(1,2)",
+      "type": 32,
+      "value": 0
+    },
+    {
+      "index": 66,
+      "name": "NXArgv:G(1,3)",
+      "type": 32,
+      "value": 0
+    },
+    {
+      "index": 67,
+      "name": "environ:G(1,3)",
+      "type": 32,
+      "value": 0
+    },
+    {
+      "index": 68,
+      "name": "__progname:G(1,4)",
+      "type": 32,
+      "value": 0
+    },
+    {
+      "index": 69,
+      "name": "mach_init_routine:G(1,8)=*(1,9)=f(1,2)",
+      "type": 32,
+      "value": 0
+    },
+    {
+      "index": 70,
+      "name": "_cthread_init_routine:G(1,8)",
+      "type": 32,
+      "value": 0
+    },
+    {
+      "index": 71,
+      "name": "pointer_to_objcInit:S(1,6)",
+      "type": 38,
+      "value": 8208
+    },
+    {
+      "index": 72,
+      "name": "pointer_to__darwin_gcc3_preregister_frame_info:S(1,6)",
+      "type": 38,
+      "value": 8212
+    },
+    {
+      "index": 73,
+      "name": "",
+      "type": 100,
+      "value": 7448
+    },
+    {
+      "index": 74,
+      "name": "dyld_lazy_symbol_binding_entry_point",
+      "type": 14,
+      "value": 8248
+    },
+    {
+      "index": 75,
+      "name": "error_message",
+      "type": 14,
+      "value": 8024
+    },
+    {
+      "index": 76,
+      "name": "dyld_func_lookup_pointer",
+      "type": 14,
+      "value": 8252
+    },
+    {
+      "index": 77,
+      "name": "__dyld_func_lookup",
+      "type": 30,
+      "value": 7532
+    },
+    {
+      "index": 78,
+      "name": "__dyld_init_check",
+      "type": 30,
+      "value": 7448
+    },
+    {
+      "index": 79,
+      "name": "__start",
+      "type": 30,
+      "value": 6992
+    },
+    {
+      "index": 80,
+      "name": "dyld_stub_binding_helper",
+      "type": 30,
+      "value": 7508
+    },
+    {
+      "index": 81,
+      "name": "-[ReMaklarProbe value]",
+      "type": 14,
+      "value": 7548
+    },
+    {
+      "index": 82,
+      "name": ".objc_class_name_ReMaklarProbe",
+      "type": 3,
+      "value": 0
+    },
+    {
+      "index": 83,
+      "name": "_NXArgc",
+      "type": 15,
+      "value": 8192
+    },
+    {
+      "index": 84,
+      "name": "_NXArgv",
+      "type": 15,
+      "value": 8196
+    },
+    {
+      "index": 85,
+      "name": "___darwin_gcc3_preregister_frame_info",
+      "type": 15,
+      "value": 8288
+    },
+    {
+      "index": 86,
+      "name": "___progname",
+      "type": 15,
+      "value": 8204
+    },
+    {
+      "index": 87,
+      "name": "__cplus_init",
+      "type": 15,
+      "value": 8292
+    },
+    {
+      "index": 88,
+      "name": "__mh_execute_header",
+      "type": 3,
+      "value": 4096
+    },
+    {
+      "index": 89,
+      "name": "_catch_exception_raise",
+      "type": 15,
+      "value": 8296
+    },
+    {
+      "index": 90,
+      "name": "_catch_exception_raise_state",
+      "type": 15,
+      "value": 8300
+    },
+    {
+      "index": 91,
+      "name": "_catch_exception_raise_state_identity",
+      "type": 15,
+      "value": 8304
+    },
+    {
+      "index": 92,
+      "name": "_clock_alarm_reply",
+      "type": 15,
+      "value": 8308
+    },
+    {
+      "index": 93,
+      "name": "_do_mach_notify_dead_name",
+      "type": 15,
+      "value": 8312
+    },
+    {
+      "index": 94,
+      "name": "_do_mach_notify_no_senders",
+      "type": 15,
+      "value": 8316
+    },
+    {
+      "index": 95,
+      "name": "_do_mach_notify_port_deleted",
+      "type": 15,
+      "value": 8320
+    },
+    {
+      "index": 96,
+      "name": "_do_mach_notify_send_once",
+      "type": 15,
+      "value": 8324
+    },
+    {
+      "index": 97,
+      "name": "_do_seqnos_mach_notify_dead_name",
+      "type": 15,
+      "value": 8328
+    },
+    {
+      "index": 98,
+      "name": "_do_seqnos_mach_notify_no_senders",
+      "type": 15,
+      "value": 8332
+    },
+    {
+      "index": 99,
+      "name": "_do_seqnos_mach_notify_port_deleted",
+      "type": 15,
+      "value": 8336
+    },
+    {
+      "index": 100,
+      "name": "_do_seqnos_mach_notify_send_once",
+      "type": 15,
+      "value": 8340
+    },
+    {
+      "index": 101,
+      "name": "_environ",
+      "type": 15,
+      "value": 8200
+    },
+    {
+      "index": 102,
+      "name": "_main",
+      "type": 15,
+      "value": 7588
+    },
+    {
+      "index": 103,
+      "name": "_receive_samples",
+      "type": 15,
+      "value": 8344
+    },
+    {
+      "index": 104,
+      "name": "start",
+      "type": 15,
+      "value": 6940
+    },
+    {
+      "index": 105,
+      "name": ".objc_class_name_Object",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 106,
+      "name": "___keymgr_dwarf2_register_sections",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 107,
+      "name": "__cthread_init_routine",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 108,
+      "name": "__objcInit",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 109,
+      "name": "_atexit",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 110,
+      "name": "_errno",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 111,
+      "name": "_exit",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 112,
+      "name": "_mach_init_routine",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 113,
+      "name": "_objc_msgSend",
+      "type": 1,
+      "value": 0
+    },
+    {
+      "index": 114,
+      "name": "_puts",
+      "type": 1,
+      "value": 0
+    }
+  ],
+  "stubs": [
+    {
+      "address": 7768,
+      "symbol": "_exit"
+    },
+    {
+      "address": 7804,
+      "symbol": "_atexit"
+    },
+    {
+      "address": 7840,
+      "symbol": "___keymgr_dwarf2_register_sections"
+    },
+    {
+      "address": 7876,
+      "symbol": "_puts"
+    },
+    {
+      "address": 7912,
+      "symbol": "_objc_msgSend"
+    }
+  ],
+  "entry": 6940
+}

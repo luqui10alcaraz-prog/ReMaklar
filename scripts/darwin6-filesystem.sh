@@ -23,11 +23,14 @@ if [ "$status" = 0 ]; then
     utilities=$?
     perl tests/ppc/run_filesystem.pl "$exe" "$root" build/filesystem-probe.macho "$out/filesystem" > "$out/filesystem.txt" 2>&1
     filesystem=$?
-    { gcc2 -no-cpp-precomp -arch ppc -o build/objc-smoke tests/ppc/objc-smoke.m -lobjc; echo compiler_status=$?; } > "$out/objc-compiler.txt" 2>&1
-    perl -e 'alarm 90; exec @ARGV' "$exe" --root "$root" build/objc-runtime-probe.macho > "$out/objc.stdout" 2> "$out/objc.stderr"
-    echo runtime_probe_status=$? > "$out/objc-status.txt"
+    sh scripts/darwin6-objc-probe.sh "$out"
     { md5 "$exe" "$root/bin/ls" "$root/bin/pwd" "$root/usr/lib/libobjc.A.dylib" "$root/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"; } > "$out/md5.txt"
+    (cd "$root" && md5 bin/ls bin/pwd bin/echo bin/cat usr/bin/true usr/bin/false usr/lib/dyld usr/lib/libSystem.B.dylib usr/lib/system/libmathCommon.A.dylib usr/lib/libobjc.A.dylib System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation) > "$out/original-md5.txt"
+    md5 "$exe" > "$out/runner-md5.txt"
+    cp "$exe" /exchange/run05
+    if [ -f build/objc-smoke ]; then cp build/objc-smoke /exchange/objc2; fi
     echo baseline=$baseline utilities=$utilities filesystem=$filesystem > "$out/status.txt"
+    cp "$out/status.txt" "$out/final-status.txt"
 else
     echo build_failed=$status > "$out/status.txt"
 fi

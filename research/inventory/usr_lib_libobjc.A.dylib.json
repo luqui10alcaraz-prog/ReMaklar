@@ -1,0 +1,3898 @@
+{
+  "original_path": "/usr/lib/libobjc.A.dylib",
+  "distribution": "Apple Darwin x86 6.0.2 ISO; not yet compared with Jaguar retail",
+  "iso_sha256": "d2c4668dcd4ca4a7498acffaf703a19862f53ab9b58b06c51745bd33e58a584f",
+  "analysis": {
+    "format": "FAT",
+    "sha256": "bee1d39f2e22a3a6340dd8b781582520a2960ea05ad236d43b00621f96162a32",
+    "slices": [
+      {
+        "offset": 4096,
+        "size": 571972,
+        "cputype": 18,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "91ad953d65e0c417577b7d044a9173459d40f92e18c9f3be93dbf0a12cdf535c",
+          "cputype": 18,
+          "cpusubtype": 0,
+          "filetype": 6,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__TEXT",
+              "vmaddr": 0,
+              "vmsize": 389120,
+              "fileoff": 0,
+              "filesize": 389120
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 389120,
+              "vmsize": 57344,
+              "fileoff": 389120,
+              "filesize": 57344
+            },
+            {
+              "name": "__OBJC",
+              "vmaddr": 446464,
+              "vmsize": 4096,
+              "fileoff": 446464,
+              "filesize": 4096
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 450560,
+              "vmsize": 121412,
+              "fileoff": 450560,
+              "filesize": 121412
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 6164,
+              "size": 44872,
+              "fileoff": 6164,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 51036,
+              "size": 2700,
+              "fileoff": 51036,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 36
+            },
+            {
+              "name": "__cstring",
+              "addr": 53736,
+              "size": 335356,
+              "fileoff": 53736,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__const",
+              "addr": 389092,
+              "size": 12,
+              "fileoff": 389092,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__literal8",
+              "addr": 389104,
+              "size": 8,
+              "fileoff": 389104,
+              "flags": 4,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 389120,
+              "size": 984,
+              "fileoff": 389120,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 390104,
+              "size": 8,
+              "fileoff": 390104,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 390112,
+              "size": 300,
+              "fileoff": 390112,
+              "flags": 263,
+              "reserved1": 75,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 390412,
+              "size": 84,
+              "fileoff": 390412,
+              "flags": 6,
+              "reserved1": 150,
+              "reserved2": 0
+            },
+            {
+              "name": "__const",
+              "addr": 390496,
+              "size": 54328,
+              "fileoff": 390496,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 444824,
+              "size": 4,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cat_cls_meth",
+              "addr": 446464,
+              "size": 0,
+              "fileoff": 446464,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cat_inst_meth",
+              "addr": 446464,
+              "size": 0,
+              "fileoff": 446464,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__string_object",
+              "addr": 446464,
+              "size": 0,
+              "fileoff": 446464,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cstring_object",
+              "addr": 446464,
+              "size": 0,
+              "fileoff": 446464,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__message_refs",
+              "addr": 446464,
+              "size": 136,
+              "fileoff": 446464,
+              "flags": 261,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__sel_fixup",
+              "addr": 446600,
+              "size": 0,
+              "fileoff": 446600,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cls_refs",
+              "addr": 446600,
+              "size": 4,
+              "fileoff": 446600,
+              "flags": 261,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__class",
+              "addr": 446604,
+              "size": 144,
+              "fileoff": 446604,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__meta_class",
+              "addr": 446748,
+              "size": 144,
+              "fileoff": 446748,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cls_meth",
+              "addr": 446892,
+              "size": 288,
+              "fileoff": 446892,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__inst_meth",
+              "addr": 447180,
+              "size": 852,
+              "fileoff": 447180,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__protocol",
+              "addr": 448032,
+              "size": 0,
+              "fileoff": 448032,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__category",
+              "addr": 448032,
+              "size": 0,
+              "fileoff": 448032,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__class_vars",
+              "addr": 448032,
+              "size": 148,
+              "fileoff": 448032,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__instance_vars",
+              "addr": 448180,
+              "size": 108,
+              "fileoff": 448180,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__module_info",
+              "addr": 448288,
+              "size": 96,
+              "fileoff": 448288,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__symbols",
+              "addr": 448384,
+              "size": 84,
+              "fileoff": 448384,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dylib",
+              "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "dyld_stub_binding_helper",
+              "type": 30,
+              "value": 6164
+            },
+            {
+              "index": 1,
+              "name": "__mh_dylib_header",
+              "type": 30,
+              "value": 0
+            },
+            {
+              "index": 2,
+              "name": "_sel_registerName",
+              "type": 15,
+              "value": 45288
+            },
+            {
+              "index": 3,
+              "name": ".objc_class_name_Object",
+              "type": 3,
+              "value": 0
+            },
+            {
+              "index": 4,
+              "name": ".objc_class_name_Protocol",
+              "type": 3,
+              "value": 0
+            },
+            {
+              "index": 5,
+              "name": "_NXCompareHashTables",
+              "type": 15,
+              "value": 13324
+            },
+            {
+              "index": 6,
+              "name": "_NXCompareMapTables",
+              "type": 15,
+              "value": 18232
+            },
+            {
+              "index": 7,
+              "name": "_NXCopyHashTable",
+              "type": 15,
+              "value": 13488
+            },
+            {
+              "index": 8,
+              "name": "_NXCopyStringBuffer",
+              "type": 15,
+              "value": 17276
+            },
+            {
+              "index": 9,
+              "name": "_NXCopyStringBufferFromZone",
+              "type": 15,
+              "value": 17212
+            },
+            {
+              "index": 10,
+              "name": "_NXCountHashTable",
+              "type": 15,
+              "value": 13660
+            },
+            {
+              "index": 11,
+              "name": "_NXCountMapTable",
+              "type": 15,
+              "value": 18400
+            },
+            {
+              "index": 12,
+              "name": "_NXCreateHashTable",
+              "type": 15,
+              "value": 12212
+            },
+            {
+              "index": 13,
+              "name": "_NXCreateHashTableFromZone",
+              "type": 15,
+              "value": 12304
+            },
+            {
+              "index": 14,
+              "name": "_NXCreateMapTable",
+              "type": 15,
+              "value": 17952
+            },
+            {
+              "index": 15,
+              "name": "_NXCreateMapTableFromZone",
+              "type": 15,
+              "value": 17556
+            },
+            {
+              "index": 16,
+              "name": "_NXEmptyHashTable",
+              "type": 15,
+              "value": 13048
+            },
+            {
+              "index": 17,
+              "name": "_NXFreeHashTable",
+              "type": 15,
+              "value": 12988
+            },
+            {
+              "index": 18,
+              "name": "_NXFreeMapTable",
+              "type": 15,
+              "value": 18036
+            },
+            {
+              "index": 19,
+              "name": "_NXHashGet",
+              "type": 15,
+              "value": 13936
+            },
+            {
+              "index": 20,
+              "name": "_NXHashInsert",
+              "type": 15,
+              "value": 14456
+            },
+            {
+              "index": 21,
+              "name": "_NXHashInsertIfAbsent",
+              "type": 15,
+              "value": 14932
+            },
+            {
+              "index": 22,
+              "name": "_NXHashMember",
+              "type": 15,
+              "value": 13668
+            },
+            {
+              "index": 23,
+              "name": "_NXHashRemove",
+              "type": 15,
+              "value": 15396
+            },
+            {
+              "index": 24,
+              "name": "_NXInitHashState",
+              "type": 15,
+              "value": 16024
+            },
+            {
+              "index": 25,
+              "name": "_NXInitMapState",
+              "type": 15,
+              "value": 20128
+            },
+            {
+              "index": 26,
+              "name": "_NXMapGet",
+              "type": 15,
+              "value": 18412
+            },
+            {
+              "index": 27,
+              "name": "_NXMapInsert",
+              "type": 15,
+              "value": 18744
+            },
+            {
+              "index": 28,
+              "name": "_NXMapMember",
+              "type": 15,
+              "value": 18408
+            },
+            {
+              "index": 29,
+              "name": "_NXMapRemove",
+              "type": 15,
+              "value": 19432
+            },
+            {
+              "index": 30,
+              "name": "_NXNextHashState",
+              "type": 15,
+              "value": 16044
+            },
+            {
+              "index": 31,
+              "name": "_NXNextMapState",
+              "type": 15,
+              "value": 20140
+            },
+            {
+              "index": 32,
+              "name": "_NXNoEffectFree",
+              "type": 15,
+              "value": 12020
+            },
+            {
+              "index": 33,
+              "name": "_NXObjectMapPrototype",
+              "type": 15,
+              "value": 390592
+            },
+            {
+              "index": 34,
+              "name": "_NXPtrHash",
+              "type": 15,
+              "value": 16172
+            },
+            {
+              "index": 35,
+              "name": "_NXPtrIsEqual",
+              "type": 15,
+              "value": 12196
+            },
+            {
+              "index": 36,
+              "name": "_NXPtrPrototype",
+              "type": 15,
+              "value": 390496
+            },
+            {
+              "index": 37,
+              "name": "_NXPtrStructKeyPrototype",
+              "type": 15,
+              "value": 390528
+            },
+            {
+              "index": 38,
+              "name": "_NXPtrValueMapPrototype",
+              "type": 15,
+              "value": 390560
+            },
+            {
+              "index": 39,
+              "name": "_NXReallyFree",
+              "type": 15,
+              "value": 16400
+            },
+            {
+              "index": 40,
+              "name": "_NXResetHashTable",
+              "type": 15,
+              "value": 13104
+            },
+            {
+              "index": 41,
+              "name": "_NXResetMapTable",
+              "type": 15,
+              "value": 18092
+            },
+            {
+              "index": 42,
+              "name": "_NXStrHash",
+              "type": 15,
+              "value": 16184
+            },
+            {
+              "index": 43,
+              "name": "_NXStrIsEqual",
+              "type": 15,
+              "value": 16280
+            },
+            {
+              "index": 44,
+              "name": "_NXStrPrototype",
+              "type": 15,
+              "value": 390512
+            },
+            {
+              "index": 45,
+              "name": "_NXStrStructKeyPrototype",
+              "type": 15,
+              "value": 390544
+            },
+            {
+              "index": 46,
+              "name": "_NXStrValueMapPrototype",
+              "type": 15,
+              "value": 390576
+            },
+            {
+              "index": 47,
+              "name": "_NXUniqueString",
+              "type": 15,
+              "value": 16732
+            },
+            {
+              "index": 48,
+              "name": "_NXUniqueStringNoCopy",
+              "type": 15,
+              "value": 16944
+            },
+            {
+              "index": 49,
+              "name": "_NXUniqueStringWithLength",
+              "type": 15,
+              "value": 17080
+            },
+            {
+              "index": 50,
+              "name": "__alloc",
+              "type": 15,
+              "value": 389452
+            },
+            {
+              "index": 51,
+              "name": "__class_printDuplicateCacheEntries",
+              "type": 15,
+              "value": 33088
+            },
+            {
+              "index": 52,
+              "name": "__class_printMethodCacheStatistics",
+              "type": 15,
+              "value": 33680
+            },
+            {
+              "index": 53,
+              "name": "__class_printMethodCaches",
+              "type": 15,
+              "value": 32868
+            },
+            {
+              "index": 54,
+              "name": "__copy",
+              "type": 15,
+              "value": 389124
+            },
+            {
+              "index": 55,
+              "name": "__dealloc",
+              "type": 15,
+              "value": 389132
+            },
+            {
+              "index": 56,
+              "name": "__dummy",
+              "type": 15,
+              "value": 23472
+            },
+            {
+              "index": 57,
+              "name": "__error",
+              "type": 15,
+              "value": 389144
+            },
+            {
+              "index": 58,
+              "name": "__objcInit",
+              "type": 15,
+              "value": 43380
+            },
+            {
+              "index": 59,
+              "name": "__objc_create_zone",
+              "type": 15,
+              "value": 31544
+            },
+            {
+              "index": 60,
+              "name": "__objc_debug_class_hash",
+              "type": 15,
+              "value": 389592
+            },
+            {
+              "index": 61,
+              "name": "__objc_error",
+              "type": 15,
+              "value": 36040
+            },
+            {
+              "index": 62,
+              "name": "__objc_flush_caches",
+              "type": 15,
+              "value": 23204
+            },
+            {
+              "index": 63,
+              "name": "__objc_msgForward",
+              "type": 15,
+              "value": 49140
+            },
+            {
+              "index": 64,
+              "name": "__realloc",
+              "type": 15,
+              "value": 389128
+            },
+            {
+              "index": 65,
+              "name": "__zoneAlloc",
+              "type": 15,
+              "value": 389456
+            },
+            {
+              "index": 66,
+              "name": "__zoneCopy",
+              "type": 15,
+              "value": 389148
+            },
+            {
+              "index": 67,
+              "name": "__zoneRealloc",
+              "type": 15,
+              "value": 389152
+            },
+            {
+              "index": 68,
+              "name": "_class_addMethods",
+              "type": 15,
+              "value": 23484
+            },
+            {
+              "index": 69,
+              "name": "_class_createInstance",
+              "type": 15,
+              "value": 21308
+            },
+            {
+              "index": 70,
+              "name": "_class_createInstanceFromZone",
+              "type": 15,
+              "value": 21276
+            },
+            {
+              "index": 71,
+              "name": "_class_getClassMethod",
+              "type": 15,
+              "value": 22316
+            },
+            {
+              "index": 72,
+              "name": "_class_getInstanceMethod",
+              "type": 15,
+              "value": 22104
+            },
+            {
+              "index": 73,
+              "name": "_class_getInstanceVariable",
+              "type": 15,
+              "value": 22708
+            },
+            {
+              "index": 74,
+              "name": "_class_getVersion",
+              "type": 15,
+              "value": 21348
+            },
+            {
+              "index": 75,
+              "name": "_class_lookupMethod",
+              "type": 15,
+              "value": 25512
+            },
+            {
+              "index": 76,
+              "name": "_class_nextMethodList",
+              "type": 15,
+              "value": 23224
+            },
+            {
+              "index": 77,
+              "name": "_class_poseAs",
+              "type": 15,
+              "value": 24080
+            },
+            {
+              "index": 78,
+              "name": "_class_removeMethods",
+              "type": 15,
+              "value": 23552
+            },
+            {
+              "index": 79,
+              "name": "_class_respondsToMethod",
+              "type": 15,
+              "value": 25196
+            },
+            {
+              "index": 80,
+              "name": "_class_setVersion",
+              "type": 15,
+              "value": 21340
+            },
+            {
+              "index": 81,
+              "name": "_do_not_remove_this_dummy_function",
+              "type": 15,
+              "value": 23212
+            },
+            {
+              "index": 82,
+              "name": "_instrumentObjcMessageSends",
+              "type": 15,
+              "value": 26788
+            },
+            {
+              "index": 83,
+              "name": "_method_getArgumentInfo",
+              "type": 15,
+              "value": 31052
+            },
+            {
+              "index": 84,
+              "name": "_method_getNumberOfArguments",
+              "type": 15,
+              "value": 30668
+            },
+            {
+              "index": 85,
+              "name": "_method_getSizeOfArguments",
+              "type": 15,
+              "value": 30848
+            },
+            {
+              "index": 86,
+              "name": "_objc_addClass",
+              "type": 15,
+              "value": 38508
+            },
+            {
+              "index": 87,
+              "name": "_objc_getClass",
+              "type": 15,
+              "value": 38140
+            },
+            {
+              "index": 88,
+              "name": "_objc_getClassList",
+              "type": 15,
+              "value": 37900
+            },
+            {
+              "index": 89,
+              "name": "_objc_getClasses",
+              "type": 15,
+              "value": 38076
+            },
+            {
+              "index": 90,
+              "name": "_objc_getMetaClass",
+              "type": 15,
+              "value": 38420
+            },
+            {
+              "index": 91,
+              "name": "_objc_getOrigClass",
+              "type": 15,
+              "value": 23772
+            },
+            {
+              "index": 92,
+              "name": "_objc_loadModule",
+              "type": 15,
+              "value": 37156
+            },
+            {
+              "index": 93,
+              "name": "_objc_loadModules",
+              "type": 15,
+              "value": 37368
+            },
+            {
+              "index": 94,
+              "name": "_objc_lookUpClass",
+              "type": 15,
+              "value": 38320
+            },
+            {
+              "index": 95,
+              "name": "_objc_msgSend",
+              "type": 15,
+              "value": 47536
+            },
+            {
+              "index": 96,
+              "name": "_objc_msgSendSuper",
+              "type": 15,
+              "value": 48416
+            },
+            {
+              "index": 97,
+              "name": "_objc_msgSendSuper_stret",
+              "type": 15,
+              "value": 48776
+            },
+            {
+              "index": 98,
+              "name": "_objc_msgSend_stret",
+              "type": 15,
+              "value": 47972
+            },
+            {
+              "index": 99,
+              "name": "_objc_msgSendv",
+              "type": 15,
+              "value": 49432
+            },
+            {
+              "index": 100,
+              "name": "_objc_msgSendv_stret",
+              "type": 15,
+              "value": 49628
+            },
+            {
+              "index": 101,
+              "name": "_objc_setClassHandler",
+              "type": 15,
+              "value": 38112
+            },
+            {
+              "index": 102,
+              "name": "_objc_setMultithreaded",
+              "type": 15,
+              "value": 43300
+            },
+            {
+              "index": 103,
+              "name": "_objc_unloadModules",
+              "type": 15,
+              "value": 37508
+            },
+            {
+              "index": 104,
+              "name": "_object_copy",
+              "type": 15,
+              "value": 10264
+            },
+            {
+              "index": 105,
+              "name": "_object_copyFromZone",
+              "type": 15,
+              "value": 10300
+            },
+            {
+              "index": 106,
+              "name": "_object_dispose",
+              "type": 15,
+              "value": 10336
+            },
+            {
+              "index": 107,
+              "name": "_object_getClassName",
+              "type": 15,
+              "value": 21008
+            },
+            {
+              "index": 108,
+              "name": "_object_getIndexedIvars",
+              "type": 15,
+              "value": 21056
+            },
+            {
+              "index": 109,
+              "name": "_object_getInstanceVariable",
+              "type": 15,
+              "value": 10528
+            },
+            {
+              "index": 110,
+              "name": "_object_realloc",
+              "type": 15,
+              "value": 10372
+            },
+            {
+              "index": 111,
+              "name": "_object_reallocFromZone",
+              "type": 15,
+              "value": 10408
+            },
+            {
+              "index": 112,
+              "name": "_object_setInstanceVariable",
+              "type": 15,
+              "value": 10444
+            },
+            {
+              "index": 113,
+              "name": "_sel_getName",
+              "type": 15,
+              "value": 44792
+            },
+            {
+              "index": 114,
+              "name": "_sel_getUid",
+              "type": 15,
+              "value": 45304
+            },
+            {
+              "index": 115,
+              "name": "_sel_isMapped",
+              "type": 15,
+              "value": 44828
+            },
+            {
+              "index": 116,
+              "name": ".objc_class_name_List",
+              "type": 3,
+              "value": 0
+            },
+            {
+              "index": 117,
+              "name": "_CFDictionaryAddValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 118,
+              "name": "_CFDictionaryCreateMutable",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 119,
+              "name": "_CFDictionaryGetValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 120,
+              "name": "_CFDictionarySetValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 121,
+              "name": "_CFSetAddValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 122,
+              "name": "_CFSetCreateMutable",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 123,
+              "name": "_CFSetGetValueIfPresent",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 124,
+              "name": "_NSCreateObjectFileImageFromFile",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 125,
+              "name": "_NSIsSymbolNameDefinedInImage",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 126,
+              "name": "_NSLinkEditError",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 127,
+              "name": "_NSLinkModule",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 128,
+              "name": "_NSLookupSymbolInImage",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 129,
+              "name": "__NSGetArgv",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 130,
+              "name": "__NSGetMachExecuteHeader",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 131,
+              "name": "___CFInitialize",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 132,
+              "name": "___sF",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 133,
+              "name": "__dyld_get_image_header",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 134,
+              "name": "__dyld_get_image_name",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 135,
+              "name": "__dyld_image_count",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 136,
+              "name": "__dyld_present",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 137,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 138,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 139,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 140,
+              "name": "_bcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 141,
+              "name": "_bcopy",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 142,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 143,
+              "name": "_close",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 144,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 145,
+              "name": "_fputc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 146,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 147,
+              "name": "_fsync",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 148,
+              "name": "_fwrite",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 149,
+              "name": "_getenv",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 150,
+              "name": "_getpid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 151,
+              "name": "_getsectdatafromheader",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 152,
+              "name": "_kCFAllocatorDefault",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 153,
+              "name": "_mach_port_deallocate",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 154,
+              "name": "_mach_task_self_",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 155,
+              "name": "_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 156,
+              "name": "_malloc_create_zone",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 157,
+              "name": "_malloc_default_zone",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 158,
+              "name": "_malloc_set_zone_name",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 159,
+              "name": "_malloc_size",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 160,
+              "name": "_malloc_zone_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 161,
+              "name": "_malloc_zone_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 162,
+              "name": "_malloc_zone_from_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 163,
+              "name": "_malloc_zone_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 164,
+              "name": "_malloc_zone_realloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 165,
+              "name": "_memcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 166,
+              "name": "_memmove",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 167,
+              "name": "_memset",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 168,
+              "name": "_open",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 169,
+              "name": "_printf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 170,
+              "name": "_pthread_cond_broadcast",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 171,
+              "name": "_pthread_cond_wait",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 172,
+              "name": "_pthread_getspecific",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 173,
+              "name": "_pthread_key_create",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 174,
+              "name": "_pthread_mach_thread_np",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 175,
+              "name": "_pthread_mutex_init",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 176,
+              "name": "_pthread_mutex_lock",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 177,
+              "name": "_pthread_mutex_unlock",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 178,
+              "name": "_pthread_self",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 179,
+              "name": "_pthread_setspecific",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 180,
+              "name": "_ptrace",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 181,
+              "name": "_puts",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 182,
+              "name": "_realloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 183,
+              "name": "_snprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 184,
+              "name": "_strcat",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 185,
+              "name": "_strchr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 186,
+              "name": "_strcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 187,
+              "name": "_strcpy",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 188,
+              "name": "_strlen",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 189,
+              "name": "_syslog",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 190,
+              "name": "_task_threads",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 191,
+              "name": "_thread_get_state",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 192,
+              "name": "_vm_deallocate",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 193,
+              "name": "_vm_page_size",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 194,
+              "name": "_vsnprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 195,
+              "name": "_write",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 51036,
+              "symbol": "_malloc_zone_realloc"
+            },
+            {
+              "address": 51072,
+              "symbol": "_free"
+            },
+            {
+              "address": 51108,
+              "symbol": "_bcopy"
+            },
+            {
+              "address": 51144,
+              "symbol": "_memmove"
+            },
+            {
+              "address": 51180,
+              "symbol": "_malloc_zone_malloc"
+            },
+            {
+              "address": 51216,
+              "symbol": "_strcmp"
+            },
+            {
+              "address": 51252,
+              "symbol": "_malloc_zone_from_ptr"
+            },
+            {
+              "address": 51288,
+              "symbol": "_malloc_default_zone"
+            },
+            {
+              "address": 51324,
+              "symbol": "_strcpy"
+            },
+            {
+              "address": 51360,
+              "symbol": "_pthread_mutex_unlock"
+            },
+            {
+              "address": 51396,
+              "symbol": "_pthread_mutex_lock"
+            },
+            {
+              "address": 51432,
+              "symbol": "_pthread_mutex_init"
+            },
+            {
+              "address": 51468,
+              "symbol": "_calloc"
+            },
+            {
+              "address": 51504,
+              "symbol": "_strlen"
+            },
+            {
+              "address": 51540,
+              "symbol": "_malloc_zone_calloc"
+            },
+            {
+              "address": 51576,
+              "symbol": "_malloc"
+            },
+            {
+              "address": 51612,
+              "symbol": "_memset"
+            },
+            {
+              "address": 51648,
+              "symbol": "_printf"
+            },
+            {
+              "address": 51684,
+              "symbol": "_puts"
+            },
+            {
+              "address": 51720,
+              "symbol": "_malloc_size"
+            },
+            {
+              "address": 51756,
+              "symbol": "_vm_deallocate"
+            },
+            {
+              "address": 51792,
+              "symbol": "_mach_port_deallocate"
+            },
+            {
+              "address": 51828,
+              "symbol": "_exit"
+            },
+            {
+              "address": 51864,
+              "symbol": "_task_threads"
+            },
+            {
+              "address": 51900,
+              "symbol": "_pthread_mach_thread_np"
+            },
+            {
+              "address": 51936,
+              "symbol": "_pthread_self"
+            },
+            {
+              "address": 51972,
+              "symbol": "_thread_get_state"
+            },
+            {
+              "address": 52008,
+              "symbol": "_malloc_set_zone_name"
+            },
+            {
+              "address": 52044,
+              "symbol": "_malloc_create_zone"
+            },
+            {
+              "address": 52080,
+              "symbol": "_getenv"
+            },
+            {
+              "address": 52116,
+              "symbol": "_pthread_cond_wait"
+            },
+            {
+              "address": 52152,
+              "symbol": "_pthread_cond_broadcast"
+            },
+            {
+              "address": 52188,
+              "symbol": "_strchr"
+            },
+            {
+              "address": 52224,
+              "symbol": "_memcmp"
+            },
+            {
+              "address": 52260,
+              "symbol": "_pthread_setspecific"
+            },
+            {
+              "address": 52296,
+              "symbol": "_pthread_getspecific"
+            },
+            {
+              "address": 52332,
+              "symbol": "_malloc_zone_free"
+            },
+            {
+              "address": 52368,
+              "symbol": "_fsync"
+            },
+            {
+              "address": 52404,
+              "symbol": "_write"
+            },
+            {
+              "address": 52440,
+              "symbol": "_open"
+            },
+            {
+              "address": 52476,
+              "symbol": "_snprintf"
+            },
+            {
+              "address": 52512,
+              "symbol": "_getpid"
+            },
+            {
+              "address": 52548,
+              "symbol": "_strcat"
+            },
+            {
+              "address": 52584,
+              "symbol": "_realloc"
+            },
+            {
+              "address": 52620,
+              "symbol": "_CFDictionaryAddValue"
+            },
+            {
+              "address": 52656,
+              "symbol": "_CFDictionaryGetValue"
+            },
+            {
+              "address": 52692,
+              "symbol": "_CFDictionaryCreateMutable"
+            },
+            {
+              "address": 52728,
+              "symbol": "_CFDictionarySetValue"
+            },
+            {
+              "address": 52764,
+              "symbol": "_abort"
+            },
+            {
+              "address": 52800,
+              "symbol": "_syslog"
+            },
+            {
+              "address": 52836,
+              "symbol": "_fputc"
+            },
+            {
+              "address": 52872,
+              "symbol": "_fwrite"
+            },
+            {
+              "address": 52908,
+              "symbol": "_vsnprintf"
+            },
+            {
+              "address": 52944,
+              "symbol": "_close"
+            },
+            {
+              "address": 52980,
+              "symbol": "__dyld_get_image_name"
+            },
+            {
+              "address": 53016,
+              "symbol": "__dyld_get_image_header"
+            },
+            {
+              "address": 53052,
+              "symbol": "__dyld_image_count"
+            },
+            {
+              "address": 53088,
+              "symbol": "__NSGetArgv"
+            },
+            {
+              "address": 53124,
+              "symbol": "_getsectdatafromheader"
+            },
+            {
+              "address": 53160,
+              "symbol": "__NSGetMachExecuteHeader"
+            },
+            {
+              "address": 53196,
+              "symbol": "_NSLinkEditError"
+            },
+            {
+              "address": 53232,
+              "symbol": "_NSLinkModule"
+            },
+            {
+              "address": 53268,
+              "symbol": "_NSCreateObjectFileImageFromFile"
+            },
+            {
+              "address": 53304,
+              "symbol": "__dyld_present"
+            },
+            {
+              "address": 53340,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 53376,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 53412,
+              "symbol": "_pthread_key_create"
+            },
+            {
+              "address": 53448,
+              "symbol": "___CFInitialize"
+            },
+            {
+              "address": 53484,
+              "symbol": "_ptrace"
+            },
+            {
+              "address": 53520,
+              "symbol": "_NSLookupSymbolInImage"
+            },
+            {
+              "address": 53556,
+              "symbol": "_NSIsSymbolNameDefinedInImage"
+            },
+            {
+              "address": 53592,
+              "symbol": "_CFSetAddValue"
+            },
+            {
+              "address": 53628,
+              "symbol": "_CFSetCreateMutable"
+            },
+            {
+              "address": 53664,
+              "symbol": "_CFSetGetValueIfPresent"
+            },
+            {
+              "address": 53700,
+              "symbol": "_bcmp"
+            }
+          ],
+          "entry": null,
+          "install_name": "/usr/lib/libobjc.A.dylib",
+          "current_version": "218.0.0",
+          "compatibility_version": "1.0.0"
+        }
+      },
+      {
+        "offset": 581632,
+        "size": 746392,
+        "cputype": 7,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "0f9d4f48ba75e00986da59c5d60b5d412a5bd204c5ddc51b64bc095648ff9a31",
+          "cputype": 7,
+          "cpusubtype": 3,
+          "filetype": 6,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__TEXT",
+              "vmaddr": 0,
+              "vmsize": 557056,
+              "fileoff": 0,
+              "filesize": 557056
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 557056,
+              "vmsize": 57344,
+              "fileoff": 557056,
+              "filesize": 57344
+            },
+            {
+              "name": "__OBJC",
+              "vmaddr": 614400,
+              "vmsize": 8192,
+              "fileoff": 614400,
+              "filesize": 8192
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 622592,
+              "vmsize": 123800,
+              "fileoff": 622592,
+              "filesize": 123800
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 9856,
+              "size": 31344,
+              "fileoff": 9856,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 41200,
+              "size": 1846,
+              "fileoff": 41200,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 26
+            },
+            {
+              "name": "__cstring",
+              "addr": 43072,
+              "size": 513952,
+              "fileoff": 43072,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__const",
+              "addr": 557024,
+              "size": 12,
+              "fileoff": 557024,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 557056,
+              "size": 1164,
+              "fileoff": 557056,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 558220,
+              "size": 8,
+              "fileoff": 558220,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 558228,
+              "size": 284,
+              "fileoff": 558228,
+              "flags": 263,
+              "reserved1": 71,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 558512,
+              "size": 84,
+              "fileoff": 558512,
+              "flags": 6,
+              "reserved1": 142,
+              "reserved2": 0
+            },
+            {
+              "name": "__const",
+              "addr": 558624,
+              "size": 54400,
+              "fileoff": 558624,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 613024,
+              "size": 4,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cat_cls_meth",
+              "addr": 614400,
+              "size": 0,
+              "fileoff": 614400,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cat_inst_meth",
+              "addr": 614400,
+              "size": 0,
+              "fileoff": 614400,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__string_object",
+              "addr": 614400,
+              "size": 0,
+              "fileoff": 614400,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cstring_object",
+              "addr": 614400,
+              "size": 0,
+              "fileoff": 614400,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__message_refs",
+              "addr": 614400,
+              "size": 136,
+              "fileoff": 614400,
+              "flags": 261,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__sel_fixup",
+              "addr": 614536,
+              "size": 0,
+              "fileoff": 614536,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cls_refs",
+              "addr": 614536,
+              "size": 4,
+              "fileoff": 614536,
+              "flags": 261,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__class",
+              "addr": 614560,
+              "size": 176,
+              "fileoff": 614560,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__meta_class",
+              "addr": 614752,
+              "size": 176,
+              "fileoff": 614752,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__cls_meth",
+              "addr": 614944,
+              "size": 300,
+              "fileoff": 614944,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__inst_meth",
+              "addr": 615264,
+              "size": 872,
+              "fileoff": 615264,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__protocol",
+              "addr": 616136,
+              "size": 0,
+              "fileoff": 616136,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__category",
+              "addr": 616136,
+              "size": 0,
+              "fileoff": 616136,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__class_vars",
+              "addr": 616160,
+              "size": 148,
+              "fileoff": 616160,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__instance_vars",
+              "addr": 616320,
+              "size": 136,
+              "fileoff": 616320,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__module_info",
+              "addr": 616456,
+              "size": 96,
+              "fileoff": 616456,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__symbols",
+              "addr": 616552,
+              "size": 84,
+              "fileoff": 616552,
+              "flags": 256,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dylib",
+              "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "dyld_stub_binding_helper",
+              "type": 30,
+              "value": 9856
+            },
+            {
+              "index": 1,
+              "name": "__mh_dylib_header",
+              "type": 30,
+              "value": 0
+            },
+            {
+              "index": 2,
+              "name": "_sel_registerNameNoCopy",
+              "type": 15,
+              "value": 38730
+            },
+            {
+              "index": 3,
+              "name": ".objc_class_name_Object",
+              "type": 3,
+              "value": 0
+            },
+            {
+              "index": 4,
+              "name": ".objc_class_name_Protocol",
+              "type": 3,
+              "value": 0
+            },
+            {
+              "index": 5,
+              "name": "_NXCompareHashTables",
+              "type": 15,
+              "value": 14922
+            },
+            {
+              "index": 6,
+              "name": "_NXCompareMapTables",
+              "type": 15,
+              "value": 18384
+            },
+            {
+              "index": 7,
+              "name": "_NXCopyHashTable",
+              "type": 15,
+              "value": 15036
+            },
+            {
+              "index": 8,
+              "name": "_NXCopyStringBuffer",
+              "type": 15,
+              "value": 17778
+            },
+            {
+              "index": 9,
+              "name": "_NXCopyStringBufferFromZone",
+              "type": 15,
+              "value": 17738
+            },
+            {
+              "index": 10,
+              "name": "_NXCountHashTable",
+              "type": 15,
+              "value": 15162
+            },
+            {
+              "index": 11,
+              "name": "_NXCountMapTable",
+              "type": 15,
+              "value": 18492
+            },
+            {
+              "index": 12,
+              "name": "_NXCreateHashTable",
+              "type": 15,
+              "value": 14234
+            },
+            {
+              "index": 13,
+              "name": "_NXCreateHashTableFromZone",
+              "type": 15,
+              "value": 14268
+            },
+            {
+              "index": 14,
+              "name": "_NXCreateMapTable",
+              "type": 15,
+              "value": 18230
+            },
+            {
+              "index": 15,
+              "name": "_NXCreateMapTableFromZone",
+              "type": 15,
+              "value": 17938
+            },
+            {
+              "index": 16,
+              "name": "_NXEmptyHashTable",
+              "type": 15,
+              "value": 14752
+            },
+            {
+              "index": 17,
+              "name": "_NXFreeHashTable",
+              "type": 15,
+              "value": 14718
+            },
+            {
+              "index": 18,
+              "name": "_NXFreeMapTable",
+              "type": 15,
+              "value": 18262
+            },
+            {
+              "index": 19,
+              "name": "_NXHashGet",
+              "type": 15,
+              "value": 15326
+            },
+            {
+              "index": 20,
+              "name": "_NXHashInsert",
+              "type": 15,
+              "value": 15670
+            },
+            {
+              "index": 21,
+              "name": "_NXHashInsertIfAbsent",
+              "type": 15,
+              "value": 16016
+            },
+            {
+              "index": 22,
+              "name": "_NXHashMember",
+              "type": 15,
+              "value": 15174
+            },
+            {
+              "index": 23,
+              "name": "_NXHashRemove",
+              "type": 15,
+              "value": 16352
+            },
+            {
+              "index": 24,
+              "name": "_NXInitHashState",
+              "type": 15,
+              "value": 16822
+            },
+            {
+              "index": 25,
+              "name": "_NXInitMapState",
+              "type": 15,
+              "value": 19826
+            },
+            {
+              "index": 26,
+              "name": "_NXIsEqualHashTable",
+              "type": 15,
+              "value": 14808
+            },
+            {
+              "index": 27,
+              "name": "_NXMapGet",
+              "type": 15,
+              "value": 18514
+            },
+            {
+              "index": 28,
+              "name": "_NXMapInsert",
+              "type": 15,
+              "value": 18762
+            },
+            {
+              "index": 29,
+              "name": "_NXMapMember",
+              "type": 15,
+              "value": 18504
+            },
+            {
+              "index": 30,
+              "name": "_NXMapRemove",
+              "type": 15,
+              "value": 19200
+            },
+            {
+              "index": 31,
+              "name": "_NXNextHashState",
+              "type": 15,
+              "value": 16850
+            },
+            {
+              "index": 32,
+              "name": "_NXNextMapState",
+              "type": 15,
+              "value": 19838
+            },
+            {
+              "index": 33,
+              "name": "_NXNoEffectFree",
+              "type": 15,
+              "value": 14074
+            },
+            {
+              "index": 34,
+              "name": "_NXObjectMapPrototype",
+              "type": 15,
+              "value": 558720
+            },
+            {
+              "index": 35,
+              "name": "_NXPtrHash",
+              "type": 15,
+              "value": 16934
+            },
+            {
+              "index": 36,
+              "name": "_NXPtrIsEqual",
+              "type": 15,
+              "value": 14216
+            },
+            {
+              "index": 37,
+              "name": "_NXPtrPrototype",
+              "type": 15,
+              "value": 558624
+            },
+            {
+              "index": 38,
+              "name": "_NXPtrStructKeyPrototype",
+              "type": 15,
+              "value": 558656
+            },
+            {
+              "index": 39,
+              "name": "_NXPtrValueMapPrototype",
+              "type": 15,
+              "value": 558688
+            },
+            {
+              "index": 40,
+              "name": "_NXReallyFree",
+              "type": 15,
+              "value": 17090
+            },
+            {
+              "index": 41,
+              "name": "_NXResetHashTable",
+              "type": 15,
+              "value": 14780
+            },
+            {
+              "index": 42,
+              "name": "_NXResetMapTable",
+              "type": 15,
+              "value": 18294
+            },
+            {
+              "index": 43,
+              "name": "_NXStrHash",
+              "type": 15,
+              "value": 16946
+            },
+            {
+              "index": 44,
+              "name": "_NXStrIsEqual",
+              "type": 15,
+              "value": 17018
+            },
+            {
+              "index": 45,
+              "name": "_NXStrPrototype",
+              "type": 15,
+              "value": 558640
+            },
+            {
+              "index": 46,
+              "name": "_NXStrStructKeyPrototype",
+              "type": 15,
+              "value": 558672
+            },
+            {
+              "index": 47,
+              "name": "_NXStrValueMapPrototype",
+              "type": 15,
+              "value": 558704
+            },
+            {
+              "index": 48,
+              "name": "_NXUniqueString",
+              "type": 15,
+              "value": 17418
+            },
+            {
+              "index": 49,
+              "name": "_NXUniqueStringNoCopy",
+              "type": 15,
+              "value": 17558
+            },
+            {
+              "index": 50,
+              "name": "_NXUniqueStringWithLength",
+              "type": 15,
+              "value": 17636
+            },
+            {
+              "index": 51,
+              "name": "___objc_error",
+              "type": 15,
+              "value": 31610
+            },
+            {
+              "index": 52,
+              "name": "__alloc",
+              "type": 15,
+              "value": 557484
+            },
+            {
+              "index": 53,
+              "name": "__cache_create",
+              "type": 15,
+              "value": 23938
+            },
+            {
+              "index": 54,
+              "name": "__cache_getImp",
+              "type": 15,
+              "value": 40288
+            },
+            {
+              "index": 55,
+              "name": "__cache_getMethod",
+              "type": 15,
+              "value": 40208
+            },
+            {
+              "index": 56,
+              "name": "__classIMPTables",
+              "type": 15,
+              "value": 557448
+            },
+            {
+              "index": 57,
+              "name": "__class_install_relationships",
+              "type": 15,
+              "value": 23270
+            },
+            {
+              "index": 58,
+              "name": "__class_lookupMethodAndLoadCache",
+              "type": 15,
+              "value": 26262
+            },
+            {
+              "index": 59,
+              "name": "__class_printDuplicateCacheEntries",
+              "type": 15,
+              "value": 28906
+            },
+            {
+              "index": 60,
+              "name": "__class_printMethodCacheStatistics",
+              "type": 15,
+              "value": 29344
+            },
+            {
+              "index": 61,
+              "name": "__class_printMethodCaches",
+              "type": 15,
+              "value": 28746
+            },
+            {
+              "index": 62,
+              "name": "__copy",
+              "type": 15,
+              "value": 557088
+            },
+            {
+              "index": 63,
+              "name": "__cvtToId",
+              "type": 15,
+              "value": 557100
+            },
+            {
+              "index": 64,
+              "name": "__cvtToSel",
+              "type": 15,
+              "value": 557104
+            },
+            {
+              "index": 65,
+              "name": "__dealloc",
+              "type": 15,
+              "value": 557096
+            },
+            {
+              "index": 66,
+              "name": "__destroyInitializingClassList",
+              "type": 15,
+              "value": 25394
+            },
+            {
+              "index": 67,
+              "name": "__dummy",
+              "type": 15,
+              "value": 22206
+            },
+            {
+              "index": 68,
+              "name": "__error",
+              "type": 15,
+              "value": 557108
+            },
+            {
+              "index": 69,
+              "name": "__getClassIMPTable",
+              "type": 15,
+              "value": 21124
+            },
+            {
+              "index": 70,
+              "name": "__getObjcClassRefs",
+              "type": 15,
+              "value": 32054
+            },
+            {
+              "index": 71,
+              "name": "__getObjcHeaderData",
+              "type": 15,
+              "value": 32108
+            },
+            {
+              "index": 72,
+              "name": "__getObjcHeaderName",
+              "type": 15,
+              "value": 32248
+            },
+            {
+              "index": 73,
+              "name": "__getObjcHeaders",
+              "type": 15,
+              "value": 31824
+            },
+            {
+              "index": 74,
+              "name": "__getObjcMessageRefs",
+              "type": 15,
+              "value": 31912
+            },
+            {
+              "index": 75,
+              "name": "__getObjcModules",
+              "type": 15,
+              "value": 31858
+            },
+            {
+              "index": 76,
+              "name": "__getObjcProtocols",
+              "type": 15,
+              "value": 31966
+            },
+            {
+              "index": 77,
+              "name": "__getObjcStringObjects",
+              "type": 15,
+              "value": 32038
+            },
+            {
+              "index": 78,
+              "name": "__nameForHeader",
+              "type": 15,
+              "value": 34590
+            },
+            {
+              "index": 79,
+              "name": "__objcInit",
+              "type": 15,
+              "value": 37188
+            },
+            {
+              "index": 80,
+              "name": "__objc_bindClassIfNeeded",
+              "type": 15,
+              "value": 36526
+            },
+            {
+              "index": 81,
+              "name": "__objc_bindModuleContainingClass",
+              "type": 15,
+              "value": 36268
+            },
+            {
+              "index": 82,
+              "name": "__objc_bindModuleContainingList",
+              "type": 15,
+              "value": 35808
+            },
+            {
+              "index": 83,
+              "name": "__objc_create_zone",
+              "type": 15,
+              "value": 27856
+            },
+            {
+              "index": 84,
+              "name": "__objc_debug_class_hash",
+              "type": 15,
+              "value": 557672
+            },
+            {
+              "index": 85,
+              "name": "__objc_error",
+              "type": 15,
+              "value": 31660
+            },
+            {
+              "index": 86,
+              "name": "__objc_fatal",
+              "type": 15,
+              "value": 31730
+            },
+            {
+              "index": 87,
+              "name": "__objc_flush_caches",
+              "type": 15,
+              "value": 21980
+            },
+            {
+              "index": 88,
+              "name": "__objc_getFreedObjectClass",
+              "type": 15,
+              "value": 25214
+            },
+            {
+              "index": 89,
+              "name": "__objc_getNonexistentClass",
+              "type": 15,
+              "value": 25234
+            },
+            {
+              "index": 90,
+              "name": "__objc_headerStart",
+              "type": 15,
+              "value": 35788
+            },
+            {
+              "index": 91,
+              "name": "__objc_inform",
+              "type": 15,
+              "value": 31762
+            },
+            {
+              "index": 92,
+              "name": "__objc_init_class_hash",
+              "type": 15,
+              "value": 32868
+            },
+            {
+              "index": 93,
+              "name": "__objc_insertMethods",
+              "type": 15,
+              "value": 33546
+            },
+            {
+              "index": 94,
+              "name": "__objc_msgForward",
+              "type": 15,
+              "value": 41008
+            },
+            {
+              "index": 95,
+              "name": "__objc_msgNil",
+              "type": 15,
+              "value": 557568
+            },
+            {
+              "index": 96,
+              "name": "__objc_pthread_destroyspecific",
+              "type": 15,
+              "value": 37156
+            },
+            {
+              "index": 97,
+              "name": "__objc_pthread_key",
+              "type": 15,
+              "value": 613024
+            },
+            {
+              "index": 98,
+              "name": "__objc_removeMethods",
+              "type": 15,
+              "value": 33690
+            },
+            {
+              "index": 99,
+              "name": "__objc_resolve_categories_for_class",
+              "type": 15,
+              "value": 33906
+            },
+            {
+              "index": 100,
+              "name": "__objc_syslog",
+              "type": 15,
+              "value": 31414
+            },
+            {
+              "index": 101,
+              "name": "__poseAs",
+              "type": 15,
+              "value": 557480
+            },
+            {
+              "index": 102,
+              "name": "__realloc",
+              "type": 15,
+              "value": 557092
+            },
+            {
+              "index": 103,
+              "name": "__zoneAlloc",
+              "type": 15,
+              "value": 557488
+            },
+            {
+              "index": 104,
+              "name": "__zoneCopy",
+              "type": 15,
+              "value": 557112
+            },
+            {
+              "index": 105,
+              "name": "__zoneRealloc",
+              "type": 15,
+              "value": 557116
+            },
+            {
+              "index": 106,
+              "name": "_callbackFunction",
+              "type": 15,
+              "value": 557572
+            },
+            {
+              "index": 107,
+              "name": "_checkUniqueness",
+              "type": 15,
+              "value": 31104
+            },
+            {
+              "index": 108,
+              "name": "_classInitLock",
+              "type": 15,
+              "value": 557376
+            },
+            {
+              "index": 109,
+              "name": "_classInitWaitCond",
+              "type": 15,
+              "value": 557420
+            },
+            {
+              "index": 110,
+              "name": "_classLock",
+              "type": 15,
+              "value": 557600
+            },
+            {
+              "index": 111,
+              "name": "_class_addClassMethods",
+              "type": 15,
+              "value": 22260
+            },
+            {
+              "index": 112,
+              "name": "_class_addMethods",
+              "type": 15,
+              "value": 22220
+            },
+            {
+              "index": 113,
+              "name": "_class_createInstance",
+              "type": 15,
+              "value": 20604
+            },
+            {
+              "index": 114,
+              "name": "_class_createInstanceFromZone",
+              "type": 15,
+              "value": 20574
+            },
+            {
+              "index": 115,
+              "name": "_class_getClassMethod",
+              "type": 15,
+              "value": 21366
+            },
+            {
+              "index": 116,
+              "name": "_class_getInstanceMethod",
+              "type": 15,
+              "value": 21236
+            },
+            {
+              "index": 117,
+              "name": "_class_getInstanceVariable",
+              "type": 15,
+              "value": 21604
+            },
+            {
+              "index": 118,
+              "name": "_class_getVersion",
+              "type": 15,
+              "value": 20646
+            },
+            {
+              "index": 119,
+              "name": "_class_lookupMethod",
+              "type": 15,
+              "value": 23670
+            },
+            {
+              "index": 120,
+              "name": "_class_lookupMethodInMethodList",
+              "type": 15,
+              "value": 23742
+            },
+            {
+              "index": 121,
+              "name": "_class_lookupNamedMethodInMethodList",
+              "type": 15,
+              "value": 23800
+            },
+            {
+              "index": 122,
+              "name": "_class_nextMethodList",
+              "type": 15,
+              "value": 22010
+            },
+            {
+              "index": 123,
+              "name": "_class_poseAs",
+              "type": 15,
+              "value": 22662
+            },
+            {
+              "index": 124,
+              "name": "_class_removeMethods",
+              "type": 15,
+              "value": 22278
+            },
+            {
+              "index": 125,
+              "name": "_class_respondsToMethod",
+              "type": 15,
+              "value": 23462
+            },
+            {
+              "index": 126,
+              "name": "_class_setVersion",
+              "type": 15,
+              "value": 20632
+            },
+            {
+              "index": 127,
+              "name": "_do_not_remove_this_dummy_function",
+              "type": 15,
+              "value": 21996
+            },
+            {
+              "index": 128,
+              "name": "_emptyCache",
+              "type": 15,
+              "value": 557024
+            },
+            {
+              "index": 129,
+              "name": "_getOriginalClassForPosingClass",
+              "type": 15,
+              "value": 22398
+            },
+            {
+              "index": 130,
+              "name": "_get_base_method_list",
+              "type": 15,
+              "value": 32380
+            },
+            {
+              "index": 131,
+              "name": "_instrumentObjcMessageSends",
+              "type": 15,
+              "value": 24516
+            },
+            {
+              "index": 132,
+              "name": "_logObjcMessageSends",
+              "type": 15,
+              "value": 24594
+            },
+            {
+              "index": 133,
+              "name": "_method_getArgumentInfo",
+              "type": 15,
+              "value": 27506
+            },
+            {
+              "index": 134,
+              "name": "_method_getNumberOfArguments",
+              "type": 15,
+              "value": 27346
+            },
+            {
+              "index": 135,
+              "name": "_method_getSizeOfArguments",
+              "type": 15,
+              "value": 27450
+            },
+            {
+              "index": 136,
+              "name": "_objc_addClass",
+              "type": 15,
+              "value": 33374
+            },
+            {
+              "index": 137,
+              "name": "_objc_dump_class_hash",
+              "type": 15,
+              "value": 32686
+            },
+            {
+              "index": 138,
+              "name": "_objc_entryPoints",
+              "type": 15,
+              "value": 558164
+            },
+            {
+              "index": 139,
+              "name": "_objc_exitPoints",
+              "type": 15,
+              "value": 558192
+            },
+            {
+              "index": 140,
+              "name": "_objc_getClass",
+              "type": 15,
+              "value": 33118
+            },
+            {
+              "index": 141,
+              "name": "_objc_getClassList",
+              "type": 15,
+              "value": 32942
+            },
+            {
+              "index": 142,
+              "name": "_objc_getClasses",
+              "type": 15,
+              "value": 33068
+            },
+            {
+              "index": 143,
+              "name": "_objc_getMetaClass",
+              "type": 15,
+              "value": 33322
+            },
+            {
+              "index": 144,
+              "name": "_objc_getNilObjectMsgHandler",
+              "type": 15,
+              "value": 37964
+            },
+            {
+              "index": 145,
+              "name": "_objc_getOrigClass",
+              "type": 15,
+              "value": 22428
+            },
+            {
+              "index": 146,
+              "name": "_objc_loadModule",
+              "type": 15,
+              "value": 32418
+            },
+            {
+              "index": 147,
+              "name": "_objc_loadModules",
+              "type": 15,
+              "value": 32590
+            },
+            {
+              "index": 148,
+              "name": "_objc_lookUpClass",
+              "type": 15,
+              "value": 33252
+            },
+            {
+              "index": 149,
+              "name": "_objc_msgSend",
+              "type": 15,
+              "value": 40352
+            },
+            {
+              "index": 150,
+              "name": "_objc_msgSendSuper",
+              "type": 15,
+              "value": 40480
+            },
+            {
+              "index": 151,
+              "name": "_objc_msgSendSuper_stret",
+              "type": 15,
+              "value": 40800
+            },
+            {
+              "index": 152,
+              "name": "_objc_msgSend_stret",
+              "type": 15,
+              "value": 40672
+            },
+            {
+              "index": 153,
+              "name": "_objc_msgSendv",
+              "type": 15,
+              "value": 40624
+            },
+            {
+              "index": 154,
+              "name": "_objc_msgSendv_stret",
+              "type": 15,
+              "value": 40944
+            },
+            {
+              "index": 155,
+              "name": "_objc_pendClassInstallation",
+              "type": 15,
+              "value": 34882
+            },
+            {
+              "index": 156,
+              "name": "_objc_pendClassReference",
+              "type": 15,
+              "value": 34750
+            },
+            {
+              "index": 157,
+              "name": "_objc_setClassHandler",
+              "type": 15,
+              "value": 33096
+            },
+            {
+              "index": 158,
+              "name": "_objc_setMultithreaded",
+              "type": 15,
+              "value": 37150
+            },
+            {
+              "index": 159,
+              "name": "_objc_setNilObjectMsgHandler",
+              "type": 15,
+              "value": 37942
+            },
+            {
+              "index": 160,
+              "name": "_objc_unloadModules",
+              "type": 15,
+              "value": 32676
+            },
+            {
+              "index": 161,
+              "name": "_object_copy",
+              "type": 15,
+              "value": 12874
+            },
+            {
+              "index": 162,
+              "name": "_object_copyFromZone",
+              "type": 15,
+              "value": 12904
+            },
+            {
+              "index": 163,
+              "name": "_object_dispose",
+              "type": 15,
+              "value": 12936
+            },
+            {
+              "index": 164,
+              "name": "_object_getClassName",
+              "type": 15,
+              "value": 20412
+            },
+            {
+              "index": 165,
+              "name": "_object_getIndexedIvars",
+              "type": 15,
+              "value": 20444
+            },
+            {
+              "index": 166,
+              "name": "_object_getInstanceVariable",
+              "type": 15,
+              "value": 13076
+            },
+            {
+              "index": 167,
+              "name": "_object_realloc",
+              "type": 15,
+              "value": 12962
+            },
+            {
+              "index": 168,
+              "name": "_object_reallocFromZone",
+              "type": 15,
+              "value": 12992
+            },
+            {
+              "index": 169,
+              "name": "_object_setInstanceVariable",
+              "type": 15,
+              "value": 13024
+            },
+            {
+              "index": 170,
+              "name": "_sel_getName",
+              "type": 15,
+              "value": 38330
+            },
+            {
+              "index": 171,
+              "name": "_sel_getUid",
+              "type": 15,
+              "value": 38746
+            },
+            {
+              "index": 172,
+              "name": "_sel_isMapped",
+              "type": 15,
+              "value": 38358
+            },
+            {
+              "index": 173,
+              "name": "_sel_registerName",
+              "type": 15,
+              "value": 38714
+            },
+            {
+              "index": 174,
+              "name": ".objc_class_name_List",
+              "type": 3,
+              "value": 0
+            },
+            {
+              "index": 175,
+              "name": "_CFDictionaryAddValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 176,
+              "name": "_CFDictionaryCreateMutable",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 177,
+              "name": "_CFDictionaryGetValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 178,
+              "name": "_CFDictionarySetValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 179,
+              "name": "_CFSetAddValue",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 180,
+              "name": "_CFSetCreateMutable",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 181,
+              "name": "_CFSetGetValueIfPresent",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 182,
+              "name": "_NSCreateObjectFileImageFromFile",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 183,
+              "name": "_NSIsSymbolNameDefinedInImage",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 184,
+              "name": "_NSLinkEditError",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 185,
+              "name": "_NSLinkModule",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 186,
+              "name": "_NSLookupSymbolInImage",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 187,
+              "name": "__NSGetArgv",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 188,
+              "name": "__NSGetMachExecuteHeader",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 189,
+              "name": "___CFInitialize",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 190,
+              "name": "___sF",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 191,
+              "name": "__dyld_get_image_header",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 192,
+              "name": "__dyld_get_image_name",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 193,
+              "name": "__dyld_image_count",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 194,
+              "name": "__dyld_present",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 195,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 196,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 197,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 198,
+              "name": "_bcopy",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 199,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 200,
+              "name": "_close",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 201,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 202,
+              "name": "_fputc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 203,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 204,
+              "name": "_fsync",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 205,
+              "name": "_fwrite",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 206,
+              "name": "_getenv",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 207,
+              "name": "_getpid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 208,
+              "name": "_getsectdatafromheader",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 209,
+              "name": "_kCFAllocatorDefault",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 210,
+              "name": "_mach_port_deallocate",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 211,
+              "name": "_mach_task_self_",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 212,
+              "name": "_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 213,
+              "name": "_malloc_create_zone",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 214,
+              "name": "_malloc_default_zone",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 215,
+              "name": "_malloc_set_zone_name",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 216,
+              "name": "_malloc_size",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 217,
+              "name": "_malloc_zone_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 218,
+              "name": "_malloc_zone_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 219,
+              "name": "_malloc_zone_from_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 220,
+              "name": "_malloc_zone_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 221,
+              "name": "_malloc_zone_realloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 222,
+              "name": "_memmove",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 223,
+              "name": "_open",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 224,
+              "name": "_printf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 225,
+              "name": "_pthread_cond_broadcast",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 226,
+              "name": "_pthread_cond_wait",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 227,
+              "name": "_pthread_getspecific",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 228,
+              "name": "_pthread_key_create",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 229,
+              "name": "_pthread_mach_thread_np",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 230,
+              "name": "_pthread_mutex_init",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 231,
+              "name": "_pthread_mutex_lock",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 232,
+              "name": "_pthread_mutex_unlock",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 233,
+              "name": "_pthread_self",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 234,
+              "name": "_pthread_setspecific",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 235,
+              "name": "_ptrace",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 236,
+              "name": "_puts",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 237,
+              "name": "_realloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 238,
+              "name": "_snprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 239,
+              "name": "_strcat",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 240,
+              "name": "_strchr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 241,
+              "name": "_strcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 242,
+              "name": "_strcpy",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 243,
+              "name": "_syslog",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 244,
+              "name": "_task_threads",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 245,
+              "name": "_thread_get_state",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 246,
+              "name": "_vm_deallocate",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 247,
+              "name": "_vm_page_size",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 248,
+              "name": "_vsnprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 249,
+              "name": "_write",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 41200,
+              "symbol": "_malloc_zone_realloc"
+            },
+            {
+              "address": 41226,
+              "symbol": "_free"
+            },
+            {
+              "address": 41252,
+              "symbol": "_bcopy"
+            },
+            {
+              "address": 41278,
+              "symbol": "_memmove"
+            },
+            {
+              "address": 41304,
+              "symbol": "_malloc_zone_malloc"
+            },
+            {
+              "address": 41330,
+              "symbol": "_strcmp"
+            },
+            {
+              "address": 41356,
+              "symbol": "_malloc_zone_from_ptr"
+            },
+            {
+              "address": 41382,
+              "symbol": "_malloc_default_zone"
+            },
+            {
+              "address": 41408,
+              "symbol": "_strcpy"
+            },
+            {
+              "address": 41434,
+              "symbol": "_pthread_mutex_unlock"
+            },
+            {
+              "address": 41460,
+              "symbol": "_pthread_mutex_lock"
+            },
+            {
+              "address": 41486,
+              "symbol": "_pthread_mutex_init"
+            },
+            {
+              "address": 41512,
+              "symbol": "_calloc"
+            },
+            {
+              "address": 41538,
+              "symbol": "_malloc_zone_calloc"
+            },
+            {
+              "address": 41564,
+              "symbol": "_malloc"
+            },
+            {
+              "address": 41590,
+              "symbol": "_printf"
+            },
+            {
+              "address": 41616,
+              "symbol": "_puts"
+            },
+            {
+              "address": 41642,
+              "symbol": "_malloc_size"
+            },
+            {
+              "address": 41668,
+              "symbol": "_vm_deallocate"
+            },
+            {
+              "address": 41694,
+              "symbol": "_mach_port_deallocate"
+            },
+            {
+              "address": 41720,
+              "symbol": "_exit"
+            },
+            {
+              "address": 41746,
+              "symbol": "_task_threads"
+            },
+            {
+              "address": 41772,
+              "symbol": "_pthread_mach_thread_np"
+            },
+            {
+              "address": 41798,
+              "symbol": "_pthread_self"
+            },
+            {
+              "address": 41824,
+              "symbol": "_thread_get_state"
+            },
+            {
+              "address": 41850,
+              "symbol": "_malloc_set_zone_name"
+            },
+            {
+              "address": 41876,
+              "symbol": "_malloc_create_zone"
+            },
+            {
+              "address": 41902,
+              "symbol": "_getenv"
+            },
+            {
+              "address": 41928,
+              "symbol": "_pthread_cond_wait"
+            },
+            {
+              "address": 41954,
+              "symbol": "_pthread_cond_broadcast"
+            },
+            {
+              "address": 41980,
+              "symbol": "_strchr"
+            },
+            {
+              "address": 42006,
+              "symbol": "_pthread_setspecific"
+            },
+            {
+              "address": 42032,
+              "symbol": "_pthread_getspecific"
+            },
+            {
+              "address": 42058,
+              "symbol": "_malloc_zone_free"
+            },
+            {
+              "address": 42084,
+              "symbol": "_fsync"
+            },
+            {
+              "address": 42110,
+              "symbol": "_write"
+            },
+            {
+              "address": 42136,
+              "symbol": "_open"
+            },
+            {
+              "address": 42162,
+              "symbol": "_snprintf"
+            },
+            {
+              "address": 42188,
+              "symbol": "_getpid"
+            },
+            {
+              "address": 42214,
+              "symbol": "_strcat"
+            },
+            {
+              "address": 42240,
+              "symbol": "_realloc"
+            },
+            {
+              "address": 42266,
+              "symbol": "_CFDictionaryAddValue"
+            },
+            {
+              "address": 42292,
+              "symbol": "_CFDictionaryGetValue"
+            },
+            {
+              "address": 42318,
+              "symbol": "_CFDictionaryCreateMutable"
+            },
+            {
+              "address": 42344,
+              "symbol": "_CFDictionarySetValue"
+            },
+            {
+              "address": 42370,
+              "symbol": "_abort"
+            },
+            {
+              "address": 42396,
+              "symbol": "_syslog"
+            },
+            {
+              "address": 42422,
+              "symbol": "_fputc"
+            },
+            {
+              "address": 42448,
+              "symbol": "_fwrite"
+            },
+            {
+              "address": 42474,
+              "symbol": "_vsnprintf"
+            },
+            {
+              "address": 42500,
+              "symbol": "_close"
+            },
+            {
+              "address": 42526,
+              "symbol": "__dyld_get_image_name"
+            },
+            {
+              "address": 42552,
+              "symbol": "__dyld_get_image_header"
+            },
+            {
+              "address": 42578,
+              "symbol": "__dyld_image_count"
+            },
+            {
+              "address": 42604,
+              "symbol": "__NSGetArgv"
+            },
+            {
+              "address": 42630,
+              "symbol": "_getsectdatafromheader"
+            },
+            {
+              "address": 42656,
+              "symbol": "__NSGetMachExecuteHeader"
+            },
+            {
+              "address": 42682,
+              "symbol": "_NSLinkEditError"
+            },
+            {
+              "address": 42708,
+              "symbol": "_NSLinkModule"
+            },
+            {
+              "address": 42734,
+              "symbol": "_NSCreateObjectFileImageFromFile"
+            },
+            {
+              "address": 42760,
+              "symbol": "__dyld_present"
+            },
+            {
+              "address": 42786,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 42812,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 42838,
+              "symbol": "_pthread_key_create"
+            },
+            {
+              "address": 42864,
+              "symbol": "___CFInitialize"
+            },
+            {
+              "address": 42890,
+              "symbol": "_ptrace"
+            },
+            {
+              "address": 42916,
+              "symbol": "_NSLookupSymbolInImage"
+            },
+            {
+              "address": 42942,
+              "symbol": "_NSIsSymbolNameDefinedInImage"
+            },
+            {
+              "address": 42968,
+              "symbol": "_CFSetAddValue"
+            },
+            {
+              "address": 42994,
+              "symbol": "_CFSetCreateMutable"
+            },
+            {
+              "address": 43020,
+              "symbol": "_CFSetGetValueIfPresent"
+            }
+          ],
+          "entry": null,
+          "install_name": "/usr/lib/libobjc.A.dylib",
+          "current_version": "218.0.0",
+          "compatibility_version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "source_correspondence": {
+    "status": "candidate",
+    "project": "objc4",
+    "tag": "objc4-222",
+    "evidence": "ISO contains objc4-222-1.ppc.rpm; binary identity with source build not proven"
+  }
+}

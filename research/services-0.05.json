@@ -1,0 +1,204 @@
+{
+  "checkpoint": "0.05-filesystem",
+  "previous": "services-0.04.json",
+  "additional_services": [
+    {
+      "number": 10,
+      "name": "unlink",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 12,
+      "name": "chdir",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 13,
+      "name": "fchdir",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "ls-hidden",
+        "ls-many",
+        "ls-metadata",
+        "ls-missing",
+        "ls-names",
+        "ls-types"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 15,
+      "name": "chmod",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 54,
+      "name": "ioctl terminal subset",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "ls-hidden",
+        "ls-link",
+        "ls-many",
+        "ls-metadata",
+        "ls-missing",
+        "ls-names",
+        "ls-types"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 58,
+      "name": "readlink",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "ls-link"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 60,
+      "name": "umask",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 92,
+      "name": "fcntl descriptor flags",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "ls-hidden",
+        "ls-many",
+        "ls-names",
+        "ls-types",
+        "pwd-nested",
+        "pwd-parent"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 116,
+      "name": "gettimeofday",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "ls-link",
+        "ls-metadata"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 128,
+      "name": "rename",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 136,
+      "name": "mkdir",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 137,
+      "name": "rmdir",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 158,
+      "name": "fstatfs guest profile",
+      "provider": "filesystem-profile-emulation",
+      "cases": [
+        "ls-hidden",
+        "ls-many",
+        "ls-names",
+        "ls-types",
+        "pwd-nested",
+        "pwd-parent"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 196,
+      "name": "getdirentries",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "ls-hidden",
+        "ls-many",
+        "ls-names",
+        "ls-types",
+        "pwd-nested",
+        "pwd-parent"
+      ],
+      "status": "tested subset"
+    },
+    {
+      "number": 199,
+      "name": "lseek",
+      "provider": "bsd-host-bridge",
+      "cases": [
+        "filesystem-probe",
+        "ls-hidden",
+        "ls-many",
+        "ls-names",
+        "ls-types",
+        "pwd-nested",
+        "pwd-parent"
+      ],
+      "status": "tested subset"
+    }
+  ],
+  "original_ppc": [
+    "ls",
+    "pwd",
+    "fts/getcwd/stdio in libSystem",
+    "dyld",
+    "echo",
+    "cat"
+  ],
+  "shared_bridges": [
+    "virtual descriptor table including write",
+    "bounded path normalization and virtual cwd",
+    "PPC32 big-endian stat/dirent/timeval encoding",
+    "TCG cache unprotection before bridge writes"
+  ],
+  "blocked": [
+    {
+      "number": 26,
+      "name": "ptrace",
+      "request": "0xc000",
+      "status": "not implemented",
+      "evidence": "compiled ObjC probe on both hosts"
+    }
+  ],
+  "limits": [
+    "lexical cwd model; full symlink-directory resolution not implemented",
+    "directory lseek supports rewind only; cursors are process-local",
+    "fstatfs is a synthetic non-union guest profile backed by host capacity",
+    "termios only returns ENOTTY for nonterminals; terminal settings unsupported",
+    "no complete fcntl/open flags, locking, threading, signals or Mach service coverage"
+  ]
+}

@@ -1,0 +1,2 @@
+PASS true main-only exit=0
+PASS false main-only exit=1

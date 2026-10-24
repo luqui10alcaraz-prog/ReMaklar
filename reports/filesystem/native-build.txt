@@ -1,0 +1,271 @@
+  CC    cutils.o
+  CC    cache-utils.o
+  AR    libqemu_user.a
+  CC    ppc-darwin-user/bootstrap-main.o
+  CC    ppc-darwin-user/darwin-kernel.o
+  CC    ppc-darwin-user/machload.o
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:98: warning: redundant redeclaration of `qerror' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/qemu.h:103: warning: previous declaration of `qerror'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:190: warning: no previous prototype for `bswap_ppc_thread_state'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:249: warning: no previous prototype for `bswap_tc'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:262: warning: no previous prototype for `bswap_mh'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:273: warning: no previous prototype for `bswap_lc'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:280: warning: no previous prototype for `bswap_fh'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:286: warning: no previous prototype for `bswap_fa'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:295: warning: no previous prototype for `bswap_segcmd'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:307: warning: no previous prototype for `bswap_symtabcmd'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:317: warning: no previous prototype for `bswap_sym'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:324: warning: no previous prototype for `load_thread'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:367: warning: no previous prototype for `load_dylinker'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:389: warning: no previous prototype for `load_segment'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:452: warning: no previous prototype for `load_data'
+  CC    ppc-darwin-user/mmap.o
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/mmap.c:103: warning: no previous prototype for `mmap_frag'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/machload.c:810: warning: no previous prototype for `setup_arg_pages'
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/mmap.c: In function `target_mremap':
+/var/tmp/remaklar/experiments/qemu-0.10.6/darwin-user/mmap.c:396: warning: control reaches end of non-void function
+  CC    ppc-darwin-user/thunk.o
+  CC    ppc-darwin-user/exec.o
+  CC    ppc-darwin-user/kqemu.o
+  CC    ppc-darwin-user/translate-all.o
+  CC    ppc-darwin-user/cpu-exec.o
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/cpu.h:24,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/cpu-exec.c:22:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:88: warning: `INT8_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:76: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:89: warning: `INT16_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:77: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:90: warning: `INT32_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:78: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:91: warning: `INT64_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:79: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:93: warning: `INT8_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:72: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:94: warning: `INT16_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:73: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:101: warning: `INT32_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:74: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:102: warning: `INT64_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:75: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:104: warning: `UINT8_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:80: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:105: warning: `UINT16_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:81: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:106: warning: `UINT32_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:82: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:107: warning: `UINT64_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:83: warning: this is the location of the previous definition
+In file included from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:25,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/cpu-exec.c:22:
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:55: warning: redefinition of `int8_t'
+/usr/include/i386/types.h:69: warning: `int8_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:55: warning: redundant redeclaration of `int8_t' in same scope
+/usr/include/i386/types.h:69: warning: previous declaration of `int8_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:57: warning: redefinition of `int16_t'
+/usr/include/i386/types.h:71: warning: `int16_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:57: warning: redundant redeclaration of `int16_t' in same scope
+/usr/include/i386/types.h:71: warning: previous declaration of `int16_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:58: warning: redefinition of `int32_t'
+/usr/include/i386/types.h:73: warning: `int32_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:58: warning: redundant redeclaration of `int32_t' in same scope
+/usr/include/i386/types.h:73: warning: previous declaration of `int32_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:64: warning: redefinition of `int64_t'
+/usr/include/i386/types.h:75: warning: `int64_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:64: warning: redundant redeclaration of `int64_t' in same scope
+/usr/include/i386/types.h:75: warning: previous declaration of `int64_t'
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/cpu.h:24,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/cpu-exec.c:22:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redefinition of `uint8_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:38: warning: `uint8_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redundant redeclaration of `uint8_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:38: warning: previous declaration of `uint8_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redefinition of `uint16_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:39: warning: `uint16_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redundant redeclaration of `uint16_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:39: warning: previous declaration of `uint16_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redefinition of `uint32_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:40: warning: `uint32_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redundant redeclaration of `uint32_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:40: warning: previous declaration of `uint32_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redefinition of `uint64_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:47: warning: `uint64_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redundant redeclaration of `uint64_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:47: warning: previous declaration of `uint64_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/cpu-exec.c: In function `cpu_ppc_exec':
+/var/tmp/remaklar/experiments/qemu-0.10.6/hostregs_helper.h:49: warning: variable `reg_AREG0' might be clobbered by `longjmp' or `vfork'
+/var/tmp/remaklar/experiments/qemu-0.10.6/hostregs_helper.h:53: warning: variable `reg_AREG1' might be clobbered by `longjmp' or `vfork'
+/var/tmp/remaklar/experiments/qemu-0.10.6/exec.c: In function `cpu_abort':
+/var/tmp/remaklar/experiments/qemu-0.10.6/exec.c:1646: warning: `noreturn' function does return
+  CC    ppc-darwin-user/translate.o
+  CC    ppc-darwin-user/host-utils.o
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/cpu.h:24,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/host-utils.c:26:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:88: warning: `INT8_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:76: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:89: warning: `INT16_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:77: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:90: warning: `INT32_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:78: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:91: warning: `INT64_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:79: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:93: warning: `INT8_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:72: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:94: warning: `INT16_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:73: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:101: warning: `INT32_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:74: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:102: warning: `INT64_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:75: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:104: warning: `UINT8_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:80: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:105: warning: `UINT16_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:81: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:106: warning: `UINT32_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:82: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:107: warning: `UINT64_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:83: warning: this is the location of the previous definition
+In file included from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:25,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/host-utils.c:26:
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:55: warning: redefinition of `int8_t'
+/usr/include/i386/types.h:69: warning: `int8_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:55: warning: redundant redeclaration of `int8_t' in same scope
+/usr/include/i386/types.h:69: warning: previous declaration of `int8_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:57: warning: redefinition of `int16_t'
+/usr/include/i386/types.h:71: warning: `int16_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:57: warning: redundant redeclaration of `int16_t' in same scope
+/usr/include/i386/types.h:71: warning: previous declaration of `int16_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:58: warning: redefinition of `int32_t'
+/usr/include/i386/types.h:73: warning: `int32_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:58: warning: redundant redeclaration of `int32_t' in same scope
+/usr/include/i386/types.h:73: warning: previous declaration of `int32_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:64: warning: redefinition of `int64_t'
+/usr/include/i386/types.h:75: warning: `int64_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:64: warning: redundant redeclaration of `int64_t' in same scope
+/usr/include/i386/types.h:75: warning: previous declaration of `int64_t'
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/cpu.h:24,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/host-utils.c:26:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redefinition of `uint8_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:38: warning: `uint8_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redundant redeclaration of `uint8_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:38: warning: previous declaration of `uint8_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redefinition of `uint16_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:39: warning: `uint16_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redundant redeclaration of `uint16_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:39: warning: previous declaration of `uint16_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redefinition of `uint32_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:40: warning: `uint32_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redundant redeclaration of `uint32_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:40: warning: previous declaration of `uint32_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redefinition of `uint64_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:47: warning: `uint64_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redundant redeclaration of `uint64_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:47: warning: previous declaration of `uint64_t'
+  CC    ppc-darwin-user/tcg/tcg.o
+In file included from /var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c:152:
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/i386/tcg-target.c: In function `tcg_target_get_call_iarg_regs_count':
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/i386/tcg-target.c:83: warning: control reaches end of non-void function
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c: In function `tcg_dump_ops':
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c:824: warning: long unsigned int format, unsigned int arg (arg 3)
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c:900: warning: long unsigned int format, unsigned int arg (arg 3)
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c:909: warning: long unsigned int format, TCGArg arg (arg 3)
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c: In function `tcg_reg_alloc':
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c:1366: warning: control reaches end of non-void function
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c: In function `tcg_reg_alloc_mov':
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c:1463: warning: `reg' might be used uninitialized in this function
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c: In function `tcg_reg_alloc_call':
+/var/tmp/remaklar/experiments/qemu-0.10.6/tcg/tcg.c:1688: warning: `nb_regs' might be used uninitialized in this function
+  CC    ppc-darwin-user/tcg/tcg-runtime.o
+  CC    ppc-darwin-user/fpu/softfloat.o
+  CC    ppc-darwin-user/op_helper.o
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/cpu.h:24,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/op_helper.c:21:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:88: warning: `INT8_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:76: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:89: warning: `INT16_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:77: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:90: warning: `INT32_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:78: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:91: warning: `INT64_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:79: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:93: warning: `INT8_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:72: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:94: warning: `INT16_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:73: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:101: warning: `INT32_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:74: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:102: warning: `INT64_MIN' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:75: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:104: warning: `UINT8_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:80: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:105: warning: `UINT16_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:81: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:106: warning: `UINT32_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:82: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:107: warning: `UINT64_MAX' redefined
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:83: warning: this is the location of the previous definition
+In file included from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:25,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/op_helper.c:21:
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:55: warning: redefinition of `int8_t'
+/usr/include/i386/types.h:69: warning: `int8_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:55: warning: redundant redeclaration of `int8_t' in same scope
+/usr/include/i386/types.h:69: warning: previous declaration of `int8_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:57: warning: redefinition of `int16_t'
+/usr/include/i386/types.h:71: warning: `int16_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:57: warning: redundant redeclaration of `int16_t' in same scope
+/usr/include/i386/types.h:71: warning: previous declaration of `int16_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:58: warning: redefinition of `int32_t'
+/usr/include/i386/types.h:73: warning: `int32_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:58: warning: redundant redeclaration of `int32_t' in same scope
+/usr/include/i386/types.h:73: warning: previous declaration of `int32_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:64: warning: redefinition of `int64_t'
+/usr/include/i386/types.h:75: warning: `int64_t' previously declared here
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:64: warning: redundant redeclaration of `int64_t' in same scope
+/usr/include/i386/types.h:75: warning: previous declaration of `int64_t'
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/cpu.h:24,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/exec.h:33,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/op_helper.c:21:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redefinition of `uint8_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:38: warning: `uint8_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redundant redeclaration of `uint8_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:38: warning: previous declaration of `uint8_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redefinition of `uint16_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:39: warning: `uint16_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redundant redeclaration of `uint16_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:39: warning: previous declaration of `uint16_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redefinition of `uint32_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:40: warning: `uint32_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redundant redeclaration of `uint32_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:40: warning: previous declaration of `uint32_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redefinition of `uint64_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:47: warning: `uint64_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redundant redeclaration of `uint64_t' in same scope
+/var/tmp/remaklar/experiments/qemu-0.10.6/dyngen-exec.h:47: warning: previous declaration of `uint64_t'
+/var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/op_helper.c: In function `cvtuhub':
+/var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/op_helper.c:2001: warning: comparison is always false due to limited range of data type
+  CC    ppc-darwin-user/helper.o
+In file included from /var/tmp/remaklar/experiments/qemu-0.10.6/cpu-all.h:626,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/cpu.h:819,
+                 from /var/tmp/remaklar/experiments/qemu-0.10.6/target-ppc/helper.c:28:
+/usr/include/gcc/darwin/2.95.2/g++/../assert.h:31: warning: redundant redeclaration of `__eprintf' in same scope
+/usr/include/gcc/darwin/2.95.2/g++/../assert.h:31: warning: previous declaration of `__eprintf'
+  CC    ppc-darwin-user/disas.o
+  CC    ppc-darwin-user/i386-dis.o
+  CC    ppc-darwin-user/ppc-dis.o
+  CC    ppc-darwin-user/qemu-malloc.o
+  CC    ppc-darwin-user/osdep.o
+/var/tmp/remaklar/experiments/qemu-0.10.6/osdep.c: In function `qemu_create_pidfile':
+/var/tmp/remaklar/experiments/qemu-0.10.6/osdep.c:228: warning: implicit declaration of function `lockf'
+  AR    ppc-darwin-user/libqemu.a
+  LINK  ppc-darwin-user/qemu-ppc
+build_status=0

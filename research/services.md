@@ -1,5 +1,10 @@
 # Registro inicial de compatibilidad
 
+Actualización 0.05: [filesystem y servicios añadidos](services-0.05.json),
+[resultados](../docs/remaklar-0.05.md) y
+[CoreFoundation/Objective-C](jaguar-runtimes.md). El registro 0.04 permanece
+como evidencia histórica; no se cambian sus resultados.
+
 El registro [services-0.04.json](services-0.04.json) se genera desde los logs
 de los 23 casos que pasan en Linux y Darwin. Relaciona cada syscall/trap o
 RPC observado con su proveedor y los casos que lo ejercitan. Una aparición

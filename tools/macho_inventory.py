@@ -57,12 +57,19 @@ def inventory(data):
             symtab = unpack(endian + '4I', off + 8)
         elif cmd == 0xb:
             dysymtab = unpack(endian + '18I', off + 8)
-        elif cmd in (0xc, 0xe):
+        elif cmd in (0xc, 0xd, 0xe):
             noff, = unpack(endian + 'I', off + 8)
             if noff >= length:
                 raise ValueError('invalid library name')
             name = data[off + noff:off + length].split(b'\0')[0].decode()
-            report['dependencies'].append({'kind': 'dyld' if cmd == 0xe else 'dylib', 'path': name})
+            if cmd == 0xd:
+                timestamp, current, compatibility = unpack(endian + '3I', off + 12)
+                version = lambda value: '%d.%d.%d' % (value >> 16, (value >> 8) & 255, value & 255)
+                report['install_name'] = name
+                report['current_version'] = version(current)
+                report['compatibility_version'] = version(compatibility)
+            else:
+                report['dependencies'].append({'kind': 'dyld' if cmd == 0xe else 'dylib', 'path': name})
         elif cmd in (4, 5) and cpu == 18:
             flavor, nwords = unpack(endian + '2I', off + 8)
             if flavor == 1 and nwords >= 40 and length >= 176:

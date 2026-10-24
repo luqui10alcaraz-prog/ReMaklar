@@ -1,0 +1,1574 @@
+{
+  "original_path": "/bin/ls",
+  "distribution": "Apple Darwin x86 6.0.2 ISO; not yet compared with Jaguar retail",
+  "iso_sha256": "d2c4668dcd4ca4a7498acffaf703a19862f53ab9b58b06c51745bd33e58a584f",
+  "analysis": {
+    "format": "FAT",
+    "sha256": "112d03e87ce37381e240ed7b43247604c57225d6d71cf3cc512b52f820ad819f",
+    "slices": [
+      {
+        "offset": 4096,
+        "size": 27284,
+        "cputype": 18,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "48cc366fb60321f56a0bdefed72b187ff30e9f06ef493a569d45abaf32d0030c",
+          "cputype": 18,
+          "cpusubtype": 0,
+          "filetype": 2,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__PAGEZERO",
+              "vmaddr": 0,
+              "vmsize": 4096,
+              "fileoff": 0,
+              "filesize": 0
+            },
+            {
+              "name": "__TEXT",
+              "vmaddr": 4096,
+              "vmsize": 20480,
+              "fileoff": 0,
+              "filesize": 20480
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 24576,
+              "vmsize": 4096,
+              "fileoff": 20480,
+              "filesize": 4096
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 28672,
+              "vmsize": 2708,
+              "fileoff": 24576,
+              "filesize": 2708
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 6480,
+              "size": 14888,
+              "fileoff": 2384,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 21368,
+              "size": 1728,
+              "fileoff": 17272,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 36
+            },
+            {
+              "name": "__symbol_stub",
+              "addr": 23096,
+              "size": 0,
+              "fileoff": 19000,
+              "flags": 2147483656,
+              "reserved1": 48,
+              "reserved2": 20
+            },
+            {
+              "name": "__cstring",
+              "addr": 23096,
+              "size": 1072,
+              "fileoff": 19000,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__eh_frame",
+              "addr": 24168,
+              "size": 152,
+              "fileoff": 20072,
+              "flags": 1610612747,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__const",
+              "addr": 24320,
+              "size": 256,
+              "fileoff": 20224,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 24576,
+              "size": 60,
+              "fileoff": 20480,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 24636,
+              "size": 192,
+              "fileoff": 20540,
+              "flags": 7,
+              "reserved1": 48,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 24828,
+              "size": 132,
+              "fileoff": 20732,
+              "flags": 6,
+              "reserved1": 96,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 24960,
+              "size": 28,
+              "fileoff": 20864,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 24992,
+              "size": 140,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__bss",
+              "addr": 25132,
+              "size": 148,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dyld",
+              "path": "/usr/lib/dyld"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "_NXArgc",
+              "type": 15,
+              "value": 24576
+            },
+            {
+              "index": 1,
+              "name": "_NXArgv",
+              "type": 15,
+              "value": 24580
+            },
+            {
+              "index": 2,
+              "name": "___progname",
+              "type": 15,
+              "value": 24588
+            },
+            {
+              "index": 3,
+              "name": "__mh_execute_header",
+              "type": 3,
+              "value": 4096
+            },
+            {
+              "index": 4,
+              "name": "_catch_exception_raise",
+              "type": 15,
+              "value": 25080
+            },
+            {
+              "index": 5,
+              "name": "_catch_exception_raise_state",
+              "type": 15,
+              "value": 25084
+            },
+            {
+              "index": 6,
+              "name": "_catch_exception_raise_state_identity",
+              "type": 15,
+              "value": 25088
+            },
+            {
+              "index": 7,
+              "name": "_clock_alarm_reply",
+              "type": 15,
+              "value": 25092
+            },
+            {
+              "index": 8,
+              "name": "_do_mach_notify_dead_name",
+              "type": 15,
+              "value": 25096
+            },
+            {
+              "index": 9,
+              "name": "_do_mach_notify_no_senders",
+              "type": 15,
+              "value": 25100
+            },
+            {
+              "index": 10,
+              "name": "_do_mach_notify_port_deleted",
+              "type": 15,
+              "value": 25104
+            },
+            {
+              "index": 11,
+              "name": "_do_mach_notify_send_once",
+              "type": 15,
+              "value": 25108
+            },
+            {
+              "index": 12,
+              "name": "_do_seqnos_mach_notify_dead_name",
+              "type": 15,
+              "value": 25112
+            },
+            {
+              "index": 13,
+              "name": "_do_seqnos_mach_notify_no_senders",
+              "type": 15,
+              "value": 25116
+            },
+            {
+              "index": 14,
+              "name": "_do_seqnos_mach_notify_port_deleted",
+              "type": 15,
+              "value": 25120
+            },
+            {
+              "index": 15,
+              "name": "_do_seqnos_mach_notify_send_once",
+              "type": 15,
+              "value": 25124
+            },
+            {
+              "index": 16,
+              "name": "_environ",
+              "type": 15,
+              "value": 24584
+            },
+            {
+              "index": 17,
+              "name": "_receive_samples",
+              "type": 15,
+              "value": 25128
+            },
+            {
+              "index": 18,
+              "name": "__CurrentRuneLocale",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 19,
+              "name": "____runetype",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 20,
+              "name": "___error",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 21,
+              "name": "___keymgr_dwarf2_register_sections",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 22,
+              "name": "___keymgr_global",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 23,
+              "name": "___sF",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 24,
+              "name": "___swbuf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 25,
+              "name": "__cthread_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 26,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 27,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 28,
+              "name": "__init_keymgr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 29,
+              "name": "__keymgr_get_and_lock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 30,
+              "name": "__keymgr_set_and_unlock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 31,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 32,
+              "name": "_atexit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 33,
+              "name": "_atoi",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 34,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 35,
+              "name": "_ctime",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 36,
+              "name": "_err",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 37,
+              "name": "_errno",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 38,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 39,
+              "name": "_fprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 40,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 41,
+              "name": "_fts_children",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 42,
+              "name": "_fts_open",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 43,
+              "name": "_fts_read",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 44,
+              "name": "_fts_set",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 45,
+              "name": "_fwrite",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 46,
+              "name": "_getbsize",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 47,
+              "name": "_getenv",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 48,
+              "name": "_getopt",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 49,
+              "name": "_getuid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 50,
+              "name": "_group_from_gid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 51,
+              "name": "_ioctl",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 52,
+              "name": "_isatty",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 53,
+              "name": "_mach_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 54,
+              "name": "_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 55,
+              "name": "_memcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 56,
+              "name": "_memset",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 57,
+              "name": "_optind",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 58,
+              "name": "_printf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 59,
+              "name": "_readlink",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 60,
+              "name": "_realloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 61,
+              "name": "_snprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 62,
+              "name": "_strcat",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 63,
+              "name": "_strcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 64,
+              "name": "_strcpy",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 65,
+              "name": "_strerror",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 66,
+              "name": "_strlen",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 67,
+              "name": "_strmode",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 68,
+              "name": "_strsep",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 69,
+              "name": "_time",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 70,
+              "name": "_user_from_uid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 71,
+              "name": "_warn",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 72,
+              "name": "_warnx",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 21368,
+              "symbol": "_exit"
+            },
+            {
+              "address": 21404,
+              "symbol": "_atexit"
+            },
+            {
+              "address": 21440,
+              "symbol": "___keymgr_dwarf2_register_sections"
+            },
+            {
+              "address": 21476,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 21512,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 21548,
+              "symbol": "__init_keymgr"
+            },
+            {
+              "address": 21584,
+              "symbol": "_free"
+            },
+            {
+              "address": 21620,
+              "symbol": "_abort"
+            },
+            {
+              "address": 21656,
+              "symbol": "__keymgr_set_and_unlock_processwide_ptr"
+            },
+            {
+              "address": 21692,
+              "symbol": "__keymgr_get_and_lock_processwide_ptr"
+            },
+            {
+              "address": 21728,
+              "symbol": "_calloc"
+            },
+            {
+              "address": 21764,
+              "symbol": "_strcmp"
+            },
+            {
+              "address": 21800,
+              "symbol": "_strcpy"
+            },
+            {
+              "address": 21836,
+              "symbol": "_malloc"
+            },
+            {
+              "address": 21872,
+              "symbol": "_strlen"
+            },
+            {
+              "address": 21908,
+              "symbol": "_group_from_gid"
+            },
+            {
+              "address": 21944,
+              "symbol": "_user_from_uid"
+            },
+            {
+              "address": 21980,
+              "symbol": "_snprintf"
+            },
+            {
+              "address": 22016,
+              "symbol": "_memset"
+            },
+            {
+              "address": 22052,
+              "symbol": "___error"
+            },
+            {
+              "address": 22088,
+              "symbol": "_fts_set"
+            },
+            {
+              "address": 22124,
+              "symbol": "_printf"
+            },
+            {
+              "address": 22160,
+              "symbol": "_strerror"
+            },
+            {
+              "address": 22196,
+              "symbol": "_warnx"
+            },
+            {
+              "address": 22232,
+              "symbol": "_fts_read"
+            },
+            {
+              "address": 22268,
+              "symbol": "_fts_children"
+            },
+            {
+              "address": 22304,
+              "symbol": "_err"
+            },
+            {
+              "address": 22340,
+              "symbol": "_fts_open"
+            },
+            {
+              "address": 22376,
+              "symbol": "_getbsize"
+            },
+            {
+              "address": 22412,
+              "symbol": "_getopt"
+            },
+            {
+              "address": 22448,
+              "symbol": "_getuid"
+            },
+            {
+              "address": 22484,
+              "symbol": "_ioctl"
+            },
+            {
+              "address": 22520,
+              "symbol": "_atoi"
+            },
+            {
+              "address": 22556,
+              "symbol": "_getenv"
+            },
+            {
+              "address": 22592,
+              "symbol": "_isatty"
+            },
+            {
+              "address": 22628,
+              "symbol": "_fprintf"
+            },
+            {
+              "address": 22664,
+              "symbol": "_readlink"
+            },
+            {
+              "address": 22700,
+              "symbol": "_ctime"
+            },
+            {
+              "address": 22736,
+              "symbol": "_warn"
+            },
+            {
+              "address": 22772,
+              "symbol": "_realloc"
+            },
+            {
+              "address": 22808,
+              "symbol": "_strmode"
+            },
+            {
+              "address": 22844,
+              "symbol": "_time"
+            },
+            {
+              "address": 22880,
+              "symbol": "___swbuf"
+            },
+            {
+              "address": 22916,
+              "symbol": "_memcmp"
+            },
+            {
+              "address": 22952,
+              "symbol": "_strsep"
+            },
+            {
+              "address": 22988,
+              "symbol": "_strcat"
+            },
+            {
+              "address": 23024,
+              "symbol": "_fwrite"
+            },
+            {
+              "address": 23060,
+              "symbol": "____runetype"
+            }
+          ],
+          "entry": 6480
+        }
+      },
+      {
+        "offset": 32768,
+        "size": 35376,
+        "cputype": 7,
+        "analysis": {
+          "format": "Mach-O32",
+          "sha256": "49066e7b10ef3a8f3333d3783e29c9471de589f3a5658b4bd4c740f16b1f5fce",
+          "cputype": 7,
+          "cpusubtype": 3,
+          "filetype": 2,
+          "flags": 133,
+          "segments": [
+            {
+              "name": "__PAGEZERO",
+              "vmaddr": 0,
+              "vmsize": 8192,
+              "fileoff": 0,
+              "filesize": 0
+            },
+            {
+              "name": "__TEXT",
+              "vmaddr": 8192,
+              "vmsize": 24576,
+              "fileoff": 0,
+              "filesize": 24576
+            },
+            {
+              "name": "__DATA",
+              "vmaddr": 32768,
+              "vmsize": 8192,
+              "fileoff": 24576,
+              "filesize": 8192
+            },
+            {
+              "name": "__LINKEDIT",
+              "vmaddr": 40960,
+              "vmsize": 2608,
+              "fileoff": 32768,
+              "filesize": 2608
+            }
+          ],
+          "sections": [
+            {
+              "name": "__text",
+              "addr": 9608,
+              "size": 11434,
+              "fileoff": 1416,
+              "flags": 2147484672,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__picsymbol_stub",
+              "addr": 21042,
+              "size": 1170,
+              "fileoff": 12850,
+              "flags": 2147483656,
+              "reserved1": 0,
+              "reserved2": 26
+            },
+            {
+              "name": "__symbol_stub",
+              "addr": 22212,
+              "size": 0,
+              "fileoff": 14020,
+              "flags": 2147483656,
+              "reserved1": 45,
+              "reserved2": 16
+            },
+            {
+              "name": "__cstring",
+              "addr": 22240,
+              "size": 2080,
+              "fileoff": 14048,
+              "flags": 2,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__eh_frame",
+              "addr": 24320,
+              "size": 304,
+              "fileoff": 16128,
+              "flags": 1073741835,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__data",
+              "addr": 32768,
+              "size": 60,
+              "fileoff": 24576,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__la_symbol_ptr",
+              "addr": 32828,
+              "size": 180,
+              "fileoff": 24636,
+              "flags": 7,
+              "reserved1": 45,
+              "reserved2": 0
+            },
+            {
+              "name": "__nl_symbol_ptr",
+              "addr": 33008,
+              "size": 128,
+              "fileoff": 24816,
+              "flags": 6,
+              "reserved1": 90,
+              "reserved2": 0
+            },
+            {
+              "name": "__dyld",
+              "addr": 33136,
+              "size": 28,
+              "fileoff": 24944,
+              "flags": 0,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__common",
+              "addr": 33168,
+              "size": 140,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            },
+            {
+              "name": "__bss",
+              "addr": 33312,
+              "size": 160,
+              "fileoff": 0,
+              "flags": 1,
+              "reserved1": 0,
+              "reserved2": 0
+            }
+          ],
+          "dependencies": [
+            {
+              "kind": "dyld",
+              "path": "/usr/lib/dyld"
+            },
+            {
+              "kind": "dylib",
+              "path": "/usr/lib/libSystem.B.dylib"
+            }
+          ],
+          "symbols": [
+            {
+              "index": 0,
+              "name": "_NXArgc",
+              "type": 15,
+              "value": 32768
+            },
+            {
+              "index": 1,
+              "name": "_NXArgv",
+              "type": 15,
+              "value": 32772
+            },
+            {
+              "index": 2,
+              "name": "___progname",
+              "type": 15,
+              "value": 32780
+            },
+            {
+              "index": 3,
+              "name": "__mh_execute_header",
+              "type": 3,
+              "value": 8192
+            },
+            {
+              "index": 4,
+              "name": "_catch_exception_raise",
+              "type": 15,
+              "value": 33256
+            },
+            {
+              "index": 5,
+              "name": "_catch_exception_raise_state",
+              "type": 15,
+              "value": 33260
+            },
+            {
+              "index": 6,
+              "name": "_catch_exception_raise_state_identity",
+              "type": 15,
+              "value": 33264
+            },
+            {
+              "index": 7,
+              "name": "_clock_alarm_reply",
+              "type": 15,
+              "value": 33268
+            },
+            {
+              "index": 8,
+              "name": "_do_mach_notify_dead_name",
+              "type": 15,
+              "value": 33272
+            },
+            {
+              "index": 9,
+              "name": "_do_mach_notify_no_senders",
+              "type": 15,
+              "value": 33276
+            },
+            {
+              "index": 10,
+              "name": "_do_mach_notify_port_deleted",
+              "type": 15,
+              "value": 33280
+            },
+            {
+              "index": 11,
+              "name": "_do_mach_notify_send_once",
+              "type": 15,
+              "value": 33284
+            },
+            {
+              "index": 12,
+              "name": "_do_seqnos_mach_notify_dead_name",
+              "type": 15,
+              "value": 33288
+            },
+            {
+              "index": 13,
+              "name": "_do_seqnos_mach_notify_no_senders",
+              "type": 15,
+              "value": 33292
+            },
+            {
+              "index": 14,
+              "name": "_do_seqnos_mach_notify_port_deleted",
+              "type": 15,
+              "value": 33296
+            },
+            {
+              "index": 15,
+              "name": "_do_seqnos_mach_notify_send_once",
+              "type": 15,
+              "value": 33300
+            },
+            {
+              "index": 16,
+              "name": "_environ",
+              "type": 15,
+              "value": 32776
+            },
+            {
+              "index": 17,
+              "name": "_receive_samples",
+              "type": 15,
+              "value": 33304
+            },
+            {
+              "index": 18,
+              "name": "__CurrentRuneLocale",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 19,
+              "name": "____runetype",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 20,
+              "name": "___error",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 21,
+              "name": "___keymgr_dwarf2_register_sections",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 22,
+              "name": "___keymgr_global",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 23,
+              "name": "___sF",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 24,
+              "name": "___swbuf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 25,
+              "name": "__cthread_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 26,
+              "name": "__dyld_register_func_for_add_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 27,
+              "name": "__dyld_register_func_for_remove_image",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 28,
+              "name": "__init_keymgr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 29,
+              "name": "__keymgr_get_and_lock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 30,
+              "name": "__keymgr_set_and_unlock_processwide_ptr",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 31,
+              "name": "_abort",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 32,
+              "name": "_atexit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 33,
+              "name": "_atoi",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 34,
+              "name": "_calloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 35,
+              "name": "_ctime",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 36,
+              "name": "_err",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 37,
+              "name": "_errno",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 38,
+              "name": "_exit",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 39,
+              "name": "_fprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 40,
+              "name": "_free",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 41,
+              "name": "_fts_children",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 42,
+              "name": "_fts_open",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 43,
+              "name": "_fts_read",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 44,
+              "name": "_fts_set",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 45,
+              "name": "_fwrite",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 46,
+              "name": "_getbsize",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 47,
+              "name": "_getenv",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 48,
+              "name": "_getopt",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 49,
+              "name": "_getuid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 50,
+              "name": "_group_from_gid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 51,
+              "name": "_ioctl",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 52,
+              "name": "_isatty",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 53,
+              "name": "_mach_init_routine",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 54,
+              "name": "_malloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 55,
+              "name": "_optind",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 56,
+              "name": "_printf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 57,
+              "name": "_readlink",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 58,
+              "name": "_realloc",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 59,
+              "name": "_snprintf",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 60,
+              "name": "_strcat",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 61,
+              "name": "_strcmp",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 62,
+              "name": "_strcpy",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 63,
+              "name": "_strerror",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 64,
+              "name": "_strmode",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 65,
+              "name": "_strsep",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 66,
+              "name": "_time",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 67,
+              "name": "_user_from_uid",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 68,
+              "name": "_warn",
+              "type": 1,
+              "value": 0
+            },
+            {
+              "index": 69,
+              "name": "_warnx",
+              "type": 1,
+              "value": 0
+            }
+          ],
+          "stubs": [
+            {
+              "address": 21042,
+              "symbol": "_exit"
+            },
+            {
+              "address": 21068,
+              "symbol": "_atexit"
+            },
+            {
+              "address": 21094,
+              "symbol": "___keymgr_dwarf2_register_sections"
+            },
+            {
+              "address": 21120,
+              "symbol": "__dyld_register_func_for_remove_image"
+            },
+            {
+              "address": 21146,
+              "symbol": "__dyld_register_func_for_add_image"
+            },
+            {
+              "address": 21172,
+              "symbol": "__init_keymgr"
+            },
+            {
+              "address": 21198,
+              "symbol": "_free"
+            },
+            {
+              "address": 21224,
+              "symbol": "_abort"
+            },
+            {
+              "address": 21250,
+              "symbol": "__keymgr_set_and_unlock_processwide_ptr"
+            },
+            {
+              "address": 21276,
+              "symbol": "__keymgr_get_and_lock_processwide_ptr"
+            },
+            {
+              "address": 21302,
+              "symbol": "_calloc"
+            },
+            {
+              "address": 21328,
+              "symbol": "_strcmp"
+            },
+            {
+              "address": 21354,
+              "symbol": "_strcpy"
+            },
+            {
+              "address": 21380,
+              "symbol": "_malloc"
+            },
+            {
+              "address": 21406,
+              "symbol": "_group_from_gid"
+            },
+            {
+              "address": 21432,
+              "symbol": "_user_from_uid"
+            },
+            {
+              "address": 21458,
+              "symbol": "_snprintf"
+            },
+            {
+              "address": 21484,
+              "symbol": "___error"
+            },
+            {
+              "address": 21510,
+              "symbol": "_fts_set"
+            },
+            {
+              "address": 21536,
+              "symbol": "_printf"
+            },
+            {
+              "address": 21562,
+              "symbol": "_strerror"
+            },
+            {
+              "address": 21588,
+              "symbol": "_warnx"
+            },
+            {
+              "address": 21614,
+              "symbol": "_fts_read"
+            },
+            {
+              "address": 21640,
+              "symbol": "_fts_children"
+            },
+            {
+              "address": 21666,
+              "symbol": "_err"
+            },
+            {
+              "address": 21692,
+              "symbol": "_fts_open"
+            },
+            {
+              "address": 21718,
+              "symbol": "_getbsize"
+            },
+            {
+              "address": 21744,
+              "symbol": "_getopt"
+            },
+            {
+              "address": 21770,
+              "symbol": "_getuid"
+            },
+            {
+              "address": 21796,
+              "symbol": "_ioctl"
+            },
+            {
+              "address": 21822,
+              "symbol": "_atoi"
+            },
+            {
+              "address": 21848,
+              "symbol": "_getenv"
+            },
+            {
+              "address": 21874,
+              "symbol": "_isatty"
+            },
+            {
+              "address": 21900,
+              "symbol": "_fprintf"
+            },
+            {
+              "address": 21926,
+              "symbol": "_readlink"
+            },
+            {
+              "address": 21952,
+              "symbol": "_ctime"
+            },
+            {
+              "address": 21978,
+              "symbol": "_warn"
+            },
+            {
+              "address": 22004,
+              "symbol": "_realloc"
+            },
+            {
+              "address": 22030,
+              "symbol": "_strmode"
+            },
+            {
+              "address": 22056,
+              "symbol": "_time"
+            },
+            {
+              "address": 22082,
+              "symbol": "___swbuf"
+            },
+            {
+              "address": 22108,
+              "symbol": "_strsep"
+            },
+            {
+              "address": 22134,
+              "symbol": "_strcat"
+            },
+            {
+              "address": 22160,
+              "symbol": "_fwrite"
+            },
+            {
+              "address": 22186,
+              "symbol": "____runetype"
+            }
+          ],
+          "entry": null
+        }
+      }
+    ]
+  },
+  "source_correspondence": {
+    "status": "candidate",
+    "project": "file_cmds",
+    "tag": "file_cmds-60",
+    "evidence": "ISO contains file_cmds-60-1.ppc.rpm; binary identity with source build not proven"
+  }
+}

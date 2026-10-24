@@ -11,12 +11,17 @@ root = Path(__file__).resolve().parents[1]
 dest = root / 'research/inventory'
 dest.mkdir(parents=True, exist_ok=True)
 parser = argparse.ArgumentParser()
-parser.add_argument('items', nargs='*', default=['usr/bin/true', 'usr/bin/false', 'bin/echo', 'bin/cat', 'usr/lib/dyld'])
+known = ['usr/bin/true', 'usr/bin/false', 'bin/echo', 'bin/cat', 'usr/lib/dyld', 'bin/ls', 'bin/pwd',
+         'usr/lib/libobjc.A.dylib', 'System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation']
+parser.add_argument('items', nargs='*', default=known)
 for item in parser.parse_args().items:
-    if item not in ('usr/bin/true', 'usr/bin/false', 'bin/echo', 'bin/cat', 'usr/lib/dyld'):
+    if item not in known:
         raise ValueError('Unknown sample: ' + item)
     project, tag = ('text_cmds', 'text_cmds-18') if item == 'bin/cat' else (
         ('cctools', 'cctools-435') if item == 'usr/lib/dyld' else ('shell_cmds', 'shell_cmds-34'))
+    if item == 'bin/ls': project, tag = 'file_cmds', 'file_cmds-60'
+    if item == 'usr/lib/libobjc.A.dylib': project, tag = 'objc4', 'objc4-222'
+    if item.endswith('/CoreFoundation'): project, tag = 'CF', None
     data = (root / 'research/samples-local' / item).read_bytes()
     result = {
         'original_path': '/' + item,
@@ -27,8 +32,10 @@ for item in parser.parse_args().items:
             'status': 'candidate',
             'project': project,
             'tag': tag,
-            'evidence': 'ISO contains ' + tag + '-1.ppc.rpm; binary identity with source build not proven'
+            'evidence': 'ISO package version candidate ' + str(tag) + '; binary identity with source build not proven'
         }
     }
+    if tag is None:
+        result['source_correspondence'].update(status='unknown', evidence='ISO RPM CoreFoundation-262; exact CF-262 source tag not found in Apple CF repository')
     (dest / (item.replace('/', '_') + '.json')).write_text(json.dumps(result, indent=2) + '\n')
     print(item, result['analysis']['sha256'])

@@ -2,6 +2,16 @@
 
 Investigación independiente de Mac OS X Jaguar 10.2 sobre Intel x86 de 32 bits, partiendo de Darwin 6. El objetivo es conservar comportamiento y componentes originales cuando sea posible. Aqua queda para etapas posteriores.
 
+## Avance 0.05: filesystem y preparación Objective-C
+
+`ls`, `pwd` y un probe PPC propio pasan once casos nuevos en Linux y Darwin,
+manteniendo todas las regresiones. Se añadieron puentes de directorios,
+metadatos, cwd virtual y operaciones controladas de archivos. El primer
+programa Objective-C propio ya compila como PPC con el toolchain original;
+su ejecución sigue bloqueada en `ptrace(0xc000)`, sin saltarse la llamada.
+Ver [resultados](docs/remaklar-0.05.md) y
+[dependencias de CoreFoundation/libobjc](research/jaguar-runtimes.md).
+
 ## Avance 0.04: echo y cat originales
 
 Pasan 23 casos compartidos en Linux y Darwin 6 i386: argumentos vacíos,

@@ -1,0 +1,5 @@
+build/objc-smoke: Mach-O executable ppc
+build/objc-smoke:
+	/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 218.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 60.0.0)
+MD5 (build/objc-smoke) = 2324edf8eacc9a226147dbf5cd00bb30

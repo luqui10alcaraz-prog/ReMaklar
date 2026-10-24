@@ -1,0 +1,294 @@
+{
+  "checkpoint": "0.05-filesystem",
+  "filesystem_pass": true,
+  "source": {
+    "base_commit": "f80cd4a91e77dbc132eb0d974003851847b3cd39",
+    "experimental_commit": "f8744f2a5146b78bf22f217ff18808844bd81460",
+    "branch": "remaklar/0.05-filesystem",
+    "patch_sha256": "41493cb421444803acecaf63467fbe5ab2f1ff191e67fa1aefd6893fae5cb120"
+  },
+  "filesystem_cases_each_host": 11,
+  "prior_utility_cases_each_host": 23,
+  "linux_prior_regressions": 16,
+  "native_prior_regressions": 13,
+  "results": [
+    {
+      "case": "pwd-root",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "f465c3739385890c221dff1a05e578c6cae0d0430e46996d319db7439f884336",
+          "stdout_bytes": 2,
+          "stderr_sha256": "430612432fa57fc3047197977a18e2709a9d5e9d7e8279e4eb98e27ebc708ff9"
+        },
+        "darwin6": {
+          "stdout_sha256": "f465c3739385890c221dff1a05e578c6cae0d0430e46996d319db7439f884336",
+          "stdout_bytes": 2,
+          "stderr_sha256": "0d3ac77ff7a3c5fd5d0e68e945892807f086174c8fe07039a7df4476c894435f"
+        }
+      }
+    },
+    {
+      "case": "pwd-nested",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "93a8f8c96f4f7f02247063a280a5237923312f003a0bb0116a72fff274d0c55a",
+          "stdout_bytes": 28,
+          "stderr_sha256": "98ea56356b2fcbb0034ff2cf1cbe6e06f623a09b4e6a969d441e1118cd7749e0"
+        },
+        "darwin6": {
+          "stdout_sha256": "93a8f8c96f4f7f02247063a280a5237923312f003a0bb0116a72fff274d0c55a",
+          "stdout_bytes": 28,
+          "stderr_sha256": "812e8eb683f1801a98a9945e66eb00f577b5975aea7040fcca25a8e04896f902"
+        }
+      }
+    },
+    {
+      "case": "pwd-parent",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "78df16e772c8fe9251954d2641338ceb30ce437052391613485df9c836d531ee",
+          "stdout_bytes": 18,
+          "stderr_sha256": "10fbe8cda4c6e97d70635cf31131206a4b0967ebe4b0aa19a516a2623dfda7b6"
+        },
+        "darwin6": {
+          "stdout_sha256": "78df16e772c8fe9251954d2641338ceb30ce437052391613485df9c836d531ee",
+          "stdout_bytes": 18,
+          "stderr_sha256": "8bdb01530bc71d1b05521305b4d9d796a8ec0ffa2528ff62bf304838d922115a"
+        }
+      }
+    },
+    {
+      "case": "ls-names",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "576968a9661d9faf5dfaa2f678189eb49f575b69f7b2cbccb3c2d3d1c92f8588",
+          "stdout_bytes": 34,
+          "stderr_sha256": "fac2ecedd75a2e976551be4ec86e1c1c0b1ae0754d88407753df2eee2ebee701"
+        },
+        "darwin6": {
+          "stdout_sha256": "576968a9661d9faf5dfaa2f678189eb49f575b69f7b2cbccb3c2d3d1c92f8588",
+          "stdout_bytes": 34,
+          "stderr_sha256": "6721f9f0941e8eb6481cce4b12348e4f38883bec04e3ce3e80d795612c2cb2c6"
+        }
+      }
+    },
+    {
+      "case": "ls-hidden",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "728d2da71085a81641074a3e5319e012209d96c71d8db0163f021604b7eb60a4",
+          "stdout_bytes": 39,
+          "stderr_sha256": "b0616953819d70c668faca664a57b20362d7230990d59c6fb89707d92621ad13"
+        },
+        "darwin6": {
+          "stdout_sha256": "728d2da71085a81641074a3e5319e012209d96c71d8db0163f021604b7eb60a4",
+          "stdout_bytes": 39,
+          "stderr_sha256": "68eeaa32ab6496cc6b2f2158427ddb10cf5b18d91a1e5c43d3f3527ede72ecbe"
+        }
+      }
+    },
+    {
+      "case": "ls-types",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "2fe7acf282e3623f90fd595cb3675c6c1972cfec65b9c0d887adc114059442b0",
+          "stdout_bytes": 36,
+          "stderr_sha256": "61d31e40ebe45a5ae8098288bf2bb7b8381848ad7ef86814ef10ecd3024c36d5"
+        },
+        "darwin6": {
+          "stdout_sha256": "2fe7acf282e3623f90fd595cb3675c6c1972cfec65b9c0d887adc114059442b0",
+          "stdout_bytes": 36,
+          "stderr_sha256": "780e9bff0e63181fc130750efc85bf8e048d1fcc54694c1dd18cc33183613676"
+        }
+      }
+    },
+    {
+      "case": "ls-many",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "157e3c8a4985b590488e6907b6e30f31b0cbab1c785242049890966721a6d982",
+          "stdout_bytes": 2400,
+          "stderr_sha256": "d39858c31e408033a44484899825238d344fdf3bfda5d4be0392e6f0b74767ae"
+        },
+        "darwin6": {
+          "stdout_sha256": "157e3c8a4985b590488e6907b6e30f31b0cbab1c785242049890966721a6d982",
+          "stdout_bytes": 2400,
+          "stderr_sha256": "1273c70a1907d9db03906d7a963884ae720b9e77dcd05dda6d638068ca9a3ab3"
+        }
+      }
+    },
+    {
+      "case": "ls-metadata",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "927fa3c72113594d693ee022a0fb46f5ab1d9799bd3e775196b0ca4bf3b6ccb5",
+          "stdout_bytes": 67,
+          "stderr_sha256": "a605bc26f9999905181a53de14cb22a787a808ed2bd4e31aad7ed6f9234b2137"
+        },
+        "darwin6": {
+          "stdout_sha256": "927fa3c72113594d693ee022a0fb46f5ab1d9799bd3e775196b0ca4bf3b6ccb5",
+          "stdout_bytes": 67,
+          "stderr_sha256": "0a0b6e7d4096954dad9aa1b7ec775ce7ec94bfc1ca42897bf98e53dc1f986301"
+        }
+      }
+    },
+    {
+      "case": "ls-link",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "b7cc73f04390cee9ef88b7d2a57142e8e4efc2f06a27cc7dbb6ed5fbba005194",
+          "stdout_bytes": 67,
+          "stderr_sha256": "ffaa71e1806d0079af4e2b560d717e7b26872b9052819cf0db33680e2a77e488"
+        },
+        "darwin6": {
+          "stdout_sha256": "d879f77fbb3b41412abc003138a7cd9fb837e3a87ca9d232989ff30c198d988d",
+          "stdout_bytes": 67,
+          "stderr_sha256": "9a659c48014ff1c75b615ca0ad977c943112813395f349f1741d6bdc11718c57"
+        }
+      }
+    },
+    {
+      "case": "ls-missing",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 0,
+          "stderr_sha256": "11d9cc21e61622d64be9137c91faa36abab164bb90c2a1fd56c2aeb1fad4d8ae"
+        },
+        "darwin6": {
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 0,
+          "stderr_sha256": "040d5b1acc7540e81f589aa8891548c0bb9b84c13765ebce718b3f56bc8460ba"
+        }
+      }
+    },
+    {
+      "case": "filesystem-probe",
+      "hosts": {
+        "linux": {
+          "stdout_sha256": "8b7af97f073a74551f2d273db14f4298e94ee83587d0270b2caf154c56b3d8e4",
+          "stdout_bytes": 18,
+          "stderr_sha256": "aa0b02d25e0cf779c233a57ce14b840135e3f40e8b689460e9dbee3fef69cf5a"
+        },
+        "darwin6": {
+          "stdout_sha256": "8b7af97f073a74551f2d273db14f4298e94ee83587d0270b2caf154c56b3d8e4",
+          "stdout_bytes": 18,
+          "stderr_sha256": "71d37d0efc737761e812f7e032acbfb4beef4cb3fb0cbd65de6316eeee333f03"
+        }
+      }
+    }
+  ],
+  "samples": {
+    "usr/bin/true": {
+      "sha256": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+      "guest_verified_md5": "d119021408e82f53d364885c48a531d5"
+    },
+    "usr/bin/false": {
+      "sha256": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+      "guest_verified_md5": "8e4abd690dee60e0864da5258feea575"
+    },
+    "bin/echo": {
+      "sha256": "1fd8720f4390be436270363264e85ad9b71dd76d8e48fbe8f9f6c0bae8ac9f42",
+      "guest_verified_md5": "47cebba0473128f5dcb94ac280f70d70"
+    },
+    "bin/cat": {
+      "sha256": "5aca8d19a4f7442a5cb10d4941c718b23fb1ccfffcb45c63063d186ae5ba9a83",
+      "guest_verified_md5": "9331e44512d9efa0b9dffaf7f27f29dc"
+    },
+    "bin/ls": {
+      "sha256": "112d03e87ce37381e240ed7b43247604c57225d6d71cf3cc512b52f820ad819f",
+      "guest_verified_md5": "53e3c605340a282920841bbb1e54781e"
+    },
+    "bin/pwd": {
+      "sha256": "18d11d40bbebccf567b4326f478bc62687dcebce3658c6c1541cc3b702c6799a",
+      "guest_verified_md5": "b34b7eefe92b367e6f604b73302946d6"
+    },
+    "usr/lib/dyld": {
+      "sha256": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea",
+      "guest_verified_md5": "d649719fc14a4aed760acaf0842c4b6a"
+    },
+    "usr/lib/libSystem.B.dylib": {
+      "sha256": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787",
+      "guest_verified_md5": "3db0bc003df278f2b9489df95a7aec64"
+    },
+    "usr/lib/system/libmathCommon.A.dylib": {
+      "sha256": "0282375f09bad0cdff42e98b6a1c44ae025fa49ba930052a3a37e5619906a5b1",
+      "guest_verified_md5": "33f58fa614ce3c72d41cb12cfb13b90d"
+    },
+    "usr/lib/libobjc.A.dylib": {
+      "sha256": "bee1d39f2e22a3a6340dd8b781582520a2960ea05ad236d43b00621f96162a32",
+      "guest_verified_md5": "07200f99452b0964a8382715e4d82a9a"
+    },
+    "System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation": {
+      "sha256": "9fb64fbbf0b02d9ab57e5ccb389361986902e9cde5ea4ed765021c26d43d7f40",
+      "guest_verified_md5": "5505b0626ccb269b8886a186ba2abc32"
+    }
+  },
+  "kernel_modified": false,
+  "backups_preserved": {
+    "darwin602-native-003-verified.qcow2": "24b64365b67a7fd1d038e5d0b51d3bd82c1d70bda8a5a58cee416cd8186b4ee7",
+    "darwin602-utilities-004-verified.qcow2": "d1743b76c634c3a4393eed55fea8f9f1aade4144419fb3587afee2428209fb35"
+  },
+  "snapshot": "vm/darwin602-filesystem-005-verified.qcow2 (not distributed)",
+  "snapshot_sha256": "a624142c4b2f4989c5529f5ab5479cb748ae637790efaf478647145ba3c80d16",
+  "qcow2_check": "No errors were found on the image after clean halt",
+  "native_executor_sha256": "a3ac10c344b923beab9fff1aff5ee3f551d2c9057ed38b9ad8b6cbc9046ac88f",
+  "objc": {
+    "compiler": "Darwin gcc2 -no-cpp-precomp -arch ppc -lobjc",
+    "compiler_pass": true,
+    "program_sha256": "ac762daf1f3f4dff3080fb390d67f1b64e9a20ef2f54649d2401b3f3c5d93740",
+    "entry": "0x1b1c",
+    "execution_pass": false,
+    "exit": 125,
+    "blocker": "Darwin syscall 26 ptrace request 0xc000",
+    "note": "original dyld/CRT/libs; no main or syscall bypass"
+  },
+  "evidence": {
+    "cf-source-tags.txt": "c9a622bd7deec7ba457594c197df79145887ee4ef6366300ecf41779dedb375e",
+    "darwin6-filesystem-probe.stderr": "71d37d0efc737761e812f7e032acbfb4beef4cb3fb0cbd65de6316eeee333f03",
+    "darwin6-filesystem-probe.stdout": "8b7af97f073a74551f2d273db14f4298e94ee83587d0270b2caf154c56b3d8e4",
+    "darwin6-ls-link.stderr": "9a659c48014ff1c75b615ca0ad977c943112813395f349f1741d6bdc11718c57",
+    "darwin6-ls-link.stdout": "d879f77fbb3b41412abc003138a7cd9fb837e3a87ca9d232989ff30c198d988d",
+    "darwin6-ls-many.stderr": "1273c70a1907d9db03906d7a963884ae720b9e77dcd05dda6d638068ca9a3ab3",
+    "darwin6-ls-many.stdout": "157e3c8a4985b590488e6907b6e30f31b0cbab1c785242049890966721a6d982",
+    "darwin6-ls-metadata.stderr": "0a0b6e7d4096954dad9aa1b7ec775ce7ec94bfc1ca42897bf98e53dc1f986301",
+    "darwin6-ls-metadata.stdout": "927fa3c72113594d693ee022a0fb46f5ab1d9799bd3e775196b0ca4bf3b6ccb5",
+    "darwin6-ls-missing.stderr": "040d5b1acc7540e81f589aa8891548c0bb9b84c13765ebce718b3f56bc8460ba",
+    "darwin6-ls-missing.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "darwin6-pwd-nested.stderr": "812e8eb683f1801a98a9945e66eb00f577b5975aea7040fcca25a8e04896f902",
+    "darwin6-pwd-nested.stdout": "93a8f8c96f4f7f02247063a280a5237923312f003a0bb0116a72fff274d0c55a",
+    "linux-dynamic.txt": "cf3955588c83a3b527d227f194b3b146391172bcf92a24eb3fbe171ca7c578ee",
+    "linux-filesystem-probe.stderr": "aa0b02d25e0cf779c233a57ce14b840135e3f40e8b689460e9dbee3fef69cf5a",
+    "linux-filesystem-probe.stdout": "8b7af97f073a74551f2d273db14f4298e94ee83587d0270b2caf154c56b3d8e4",
+    "linux-fixtures.txt": "53f152aee9de13995bbb67fdeabb1e79189937b375b632802be6708b409fede0",
+    "linux-ls-link.stderr": "ffaa71e1806d0079af4e2b560d717e7b26872b9052819cf0db33680e2a77e488",
+    "linux-ls-link.stdout": "b7cc73f04390cee9ef88b7d2a57142e8e4efc2f06a27cc7dbb6ed5fbba005194",
+    "linux-ls-many.stderr": "d39858c31e408033a44484899825238d344fdf3bfda5d4be0392e6f0b74767ae",
+    "linux-ls-many.stdout": "157e3c8a4985b590488e6907b6e30f31b0cbab1c785242049890966721a6d982",
+    "linux-ls-metadata.stderr": "a605bc26f9999905181a53de14cb22a787a808ed2bd4e31aad7ed6f9234b2137",
+    "linux-ls-metadata.stdout": "927fa3c72113594d693ee022a0fb46f5ab1d9799bd3e775196b0ca4bf3b6ccb5",
+    "linux-ls-missing.stderr": "11d9cc21e61622d64be9137c91faa36abab164bb90c2a1fd56c2aeb1fad4d8ae",
+    "linux-ls-missing.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "linux-main-only.txt": "f080153a48712c8e091c7b68840b8c5009176d05fa5ec7cc177ace5987b31dc5",
+    "linux-objc-real.stderr": "5cd7a9975b88828ddfb6bcf12efe62769004db1ab856583589fbc3217b105257",
+    "linux-pwd-nested.stderr": "98ea56356b2fcbb0034ff2cf1cbe6e06f623a09b4e6a969d441e1118cd7749e0",
+    "linux-pwd-nested.stdout": "93a8f8c96f4f7f02247063a280a5237923312f003a0bb0116a72fff274d0c55a",
+    "linux-utilities.txt": "b2c1ca4366e15217fb5c578abb79219518186ab4501a09eb3fb1a8ea30847899",
+    "native-baseline.txt": "4bcd00dc9e5c9970b25291f3cf852e763a6a41588b9488f89caf5a5b6ef2990b",
+    "native-build.txt": "6eb57673f9bdb1a38d840a9bfc86f8f6a3475c54457a54d47c12f0c670a8f688",
+    "native-configure.txt": "28dfeffe4d6905ad3a646ae5a5a3984390900c2739392983a3b5d20577f55bfc",
+    "native-filesystem.txt": "63fd8c863b5b128a9f66562610f9e346cd3c36c080382d236e78d6a1334cbd74",
+    "native-final-status.txt": "30c2f7563b381c6f910fa7a6007e0937291fff48bea042f87dc10fafbe2c224f",
+    "native-host.txt": "980358500d78418ecaa1b3d58648d4873a9d68a8142c44d3e2d2759e89640d7b",
+    "native-initial-expectation-failure.txt": "f1dcebe2159a63b3bab03c66b36db40149fe1315be2114aae141b4b6c8fda160",
+    "native-initial-symlink-metadata.txt": "d879f77fbb3b41412abc003138a7cd9fb837e3a87ca9d232989ff30c198d988d",
+    "native-objc-compiler.txt": "1e6fe3fc37724eb55448f25813205a09ac2ee880caa9614c4875e1c418653c73",
+    "native-objc-image.txt": "4224077bb9c8b3ecf207ed2f4651dc9dfa40def7930e321af1a7ebbd9f300b5e",
+    "native-objc-real-status.txt": "7cc601ba489f88dce391ca34ddbace7941b5ff5d5575f2f786b1697470e8d7b9",
+    "native-objc-real.stderr": "b4cf0ec6f224e6c7026dc21723c95052f16530a38cd35e91068e6c2d7f45c8b8",
+    "native-objc-real.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-original-md5.txt": "d32c188e471f055cb99f96e68b7d10ea14fe812bf1240021feb1dc0e041d39fb",
+    "native-runner-md5.txt": "dbf3c1eed74471ff83238c035521b5d1b4b52a38addbd0ec6ee31e7ad13c9691",
+    "native-utilities.txt": "b2c1ca4366e15217fb5c578abb79219518186ab4501a09eb3fb1a8ea30847899"
+  }
+}
