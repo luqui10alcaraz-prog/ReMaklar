@@ -17,7 +17,7 @@ archive = subprocess.check_output(['git', '-C', str(repo), 'archive', '--format=
                                    '--prefix=remaklar/experiments/qemu-0.10.6/', 'HEAD'])
 changed = subprocess.check_output(['git', '-C', str(repo), 'diff', '--name-only', '-z', 'HEAD']).decode().split('\0')
 changed += subprocess.check_output(['git', '-C', str(repo), 'ls-files', '--others', '--exclude-standard', '-z']).decode().split('\0')
-samples = ['usr/bin/true', 'usr/bin/false', 'usr/lib/dyld',
+samples = ['usr/bin/true', 'usr/bin/false', 'bin/echo', 'bin/cat', 'usr/lib/dyld',
            'usr/lib/libSystem.B.dylib', 'usr/lib/system/libmathCommon.A.dylib']
 with tarfile.open(out / 'source.tgz', 'w:gz', format=tarfile.GNU_FORMAT) as dest:
     with tarfile.open(fileobj=io.BytesIO(archive)) as src:
@@ -36,6 +36,9 @@ with tarfile.open(out / 'source.tgz', 'w:gz', format=tarfile.GNU_FORMAT) as dest
                  arcname='remaklar/research/samples-local/' + name)
     for path in (root / 'build/fixtures').glob('*.macho'):
         dest.add(path, arcname='remaklar/build/fixtures/' + path.name)
+    dest.add(root / 'build/utility-cases.tsv', arcname='remaklar/build/utility-cases.tsv')
+    dest.add(root / 'research/samples-local/fixtures',
+             arcname='remaklar/research/samples-local/fixtures')
 manifest = {'qemu_commit': subprocess.check_output(['git', '-C', str(repo), 'rev-parse', 'HEAD'], text=True).strip(),
             'qemu_working_overlay': sorted(set(changed) - {''}),
             'qemu_diff_sha256': hashlib.sha256(subprocess.check_output(['git', '-C', str(repo), 'diff', '--binary', 'HEAD'])).hexdigest(),
