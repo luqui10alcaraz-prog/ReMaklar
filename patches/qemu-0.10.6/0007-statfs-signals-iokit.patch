@@ -1,0 +1,515 @@
+diff --git a/darwin-user/remaklar/bootstrap-main.c b/darwin-user/remaklar/bootstrap-main.c
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -141,6 +141,10 @@
+     /* XNU 6 i386 pushes sigcontext directly. Libc-262's _sigtramp calls only
+      * handler(sig), so install our trampoline at the same native boundary.
+      * Resume only QEMU's originally writable, cache-protected code pages. */
++    if(sig!=SIGSEGV && sig!=SIGBUS) {
++        remaklar_signal_caught(sig);syscall(SYS_sigreturn,context);
++        _exit(126);
++    }
+     if (legacy_smc_write((struct sigcontext *)context)) {
+         syscall(SYS_sigreturn, context);
+         /* A successful sigreturn restores the faulting instruction directly. */
+@@ -161,6 +165,23 @@
+     _exit(126);
+ }
+ #endif
++
++int remaklar_host_action(int sig,uint32_t handler,uint32_t flags)
++{
++#ifdef CONFIG_REMAKLAR_DARWIN6
++    struct __sigaction sa;
++    memset(&sa,0,sizeof(sa));
++    sa.sa_handler=handler>1?remaklar_signal_caught:(void (*)(int))(unsigned long)handler;
++    sa.sa_tramp=legacy_signal_trampoline;
++    sigfillset(&sa.sa_mask);sa.sa_flags=((flags&2)?SA_RESTART:0)|((flags&8)?SA_NOCLDSTOP:0);
++    return syscall(SYS_sigaction,sig,&sa,NULL);
++#else
++    struct sigaction sa;
++    memset(&sa,0,sizeof(sa));sa.sa_handler=handler>1?remaklar_signal_caught:(void (*)(int))(unsigned long)handler;
++    sigfillset(&sa.sa_mask);sa.sa_flags=((flags&2)?SA_RESTART:0)|((flags&8)?SA_NOCLDSTOP:0);
++    return sigaction(sig,&sa,NULL);
++#endif
++}
+ 
+ int remaklar_guest_access(uint32_t addr, uint32_t len, int prot)
+ {
+@@ -183,7 +204,7 @@
+ static void darwin_syscall(CPUState *env)
+ {
+     uint32_t number = env->gpr[0];
+-    int result, guest_errno = 0;
++    int result, handled, guest_errno = 0;
+     fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x r6=%08x r7=%08x r8=%08x\n",
+             (unsigned)env->nip, number, (unsigned)env->gpr[3],
+             (unsigned)env->gpr[4], (unsigned)env->gpr[5],
+@@ -201,7 +222,9 @@
+         break;
+ 
+     default:
+-        if (!remaklar_bsd(env, &result, &guest_errno))
++        handled=remaklar_bsd(env, &result, &guest_errno);
++        if(handled==2)return;
++        if (!handled)
+             qerror("unsupported Darwin syscall/trap %d at %08x",
+                    (int32_t)number, (unsigned)env->nip);
+     }
+@@ -216,6 +239,7 @@
+ {
+     int trap;
+     for (;;) {
++        remaklar_deliver_signals(env);
+         trap = cpu_exec(env);
+         switch (trap) {
+         case POWERPC_EXCP_SYSCALL_USER: darwin_syscall(env); break;
+diff --git a/darwin-user/remaklar/bootstrap.h b/darwin-user/remaklar/bootstrap.h
+--- a/darwin-user/remaklar/bootstrap.h
++++ b/darwin-user/remaklar/bootstrap.h
+@@ -11,4 +11,8 @@
+ int remaklar_guest_access(uint32_t address, uint32_t length, int prot);
+ uint32_t remaklar_mach(CPUState *env);
+ int remaklar_bsd(CPUState *env, int *result, int *error);
++extern CPUState *global_env;
++void remaklar_signal_caught(int sig);
++int remaklar_host_action(int sig,uint32_t handler,uint32_t flags);
++void remaklar_deliver_signals(CPUState *env);
+ #endif
+diff --git a/darwin-user/remaklar/darwin-kernel.c b/darwin-user/remaklar/darwin-kernel.c
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -16,6 +16,7 @@
+ #include <net/if.h>
+ #ifdef __APPLE__
+ #include <sys/mount.h>
++#include <sys/attr.h>
+ #include <mach/mach_time.h>
+ #include <mach/mach.h>
+ #else
+@@ -25,6 +26,7 @@
+ #include <sys/stat.h>
+ #include <sys/mman.h>
+ #include <sys/wait.h>
++#include <signal.h>
+ #include "qemu.h"
+ #include "bootstrap.h"
+ 
+@@ -173,6 +175,7 @@
+     case EACCES: return 13; case EFAULT: return 14; case EEXIST: return 17;
+     case ENOTDIR: return 20; case EISDIR: return 21; case EINVAL: return 22;
+     case EMFILE: return 24; case EPIPE: return 32;
++    case ENOTSUP: return 45;
+     case ENOTTY: return 25; case ENOSPC: return 28; case EROFS: return 30;
+     case ENAMETOOLONG: return 63; case ENOTEMPTY: return 66; case ELOOP: return 62;
+     default: qerror("unmapped host errno %d", err);
+@@ -272,11 +275,119 @@
+     return 0;
+ }
+ 
++/* Jaguar PPC750 signal ABI. Async host handlers only queue and interrupt TCG;
++ * frames and original libSystem's trampoline execute on the translated CPU. */
++static struct guest_action { uint32_t handler,tramp,mask,flags; } signal_actions[32];
++static volatile sig_atomic_t signal_pending[32];
++static uint32_t signal_mask;
++static struct { uint32_t context,msr; } signal_frames[16];
++static unsigned int signal_depth;
++static int signal_host(int s)
++{
++#ifdef __APPLE__
++    return s>0 && s<32?s:0;
++#else
++    static const int map[32]={0,SIGHUP,SIGINT,SIGQUIT,SIGILL,SIGTRAP,SIGABRT,0,SIGFPE,SIGKILL,SIGBUS,SIGSEGV,SIGSYS,SIGPIPE,SIGALRM,SIGTERM,SIGURG,SIGSTOP,SIGTSTP,SIGCONT,SIGCHLD,SIGTTIN,SIGTTOU,SIGIO,SIGXCPU,SIGXFSZ,SIGVTALRM,SIGPROF,SIGWINCH,0,SIGUSR1,SIGUSR2};
++    return s>0 && s<32?map[s]:0;
++#endif
++}
++void remaklar_signal_caught(int host)
++{
++    int s;
++    for(s=1;s<32;s++)if(signal_host(s)==host) {
++        signal_pending[s]=1;
++        if(global_env)cpu_interrupt(global_env,CPU_INTERRUPT_EXIT);
++        break;
++    }
++}
++static uint32_t unmaskable(uint32_t mask) {return mask & ~((1U<<8)|(1U<<16));}
++static int signal_set_mask(uint32_t mask)
++{
++    sigset_t native;int s;
++    sigemptyset(&native);mask=unmaskable(mask);
++    for(s=1;s<32;s++)if((mask&(1U<<(s-1))) && s!=10 && s!=11 && signal_host(s))sigaddset(&native,signal_host(s));
++    if(sigprocmask(SIG_SETMASK,&native,NULL))return -1;
++    signal_mask=mask;return 0;
++}
++static int signal_action(uint32_t sig,uint32_t act,uint32_t old)
++{
++    struct guest_action next;
++    if(!sig || sig>=32 || sig==9 || sig==17 || !signal_host(sig)){errno=EINVAL;return -1;}
++    if((act && !remaklar_guest_access(act,16,PAGE_READ)) || (old && !remaklar_guest_access(old,12,PAGE_WRITE))){errno=EFAULT;return -1;}
++    next=signal_actions[sig];
++    if(act) {
++        next.handler=ldl(g2h(act));next.tramp=ldl(g2h(act+4));next.mask=unmaskable(ldl(g2h(act+8)));next.flags=ldl(g2h(act+12));
++        /* Alternate stacks/no-zombie semantics need additional ABI work. */
++        if(next.flags&~(2U|4U|8U|16U|64U|256U)){errno=ENOTSUP;return -1;}
++        if(next.handler>1 && (!remaklar_guest_access(next.handler,4,PAGE_EXEC) || !remaklar_guest_access(next.tramp,4,PAGE_EXEC))){errno=EFAULT;return -1;}
++        if((sig==10 || sig==11) && next.handler>1){errno=ENOTSUP;return -1;}
++        if(sig!=10 && sig!=11 && remaklar_host_action(signal_host(sig),next.handler,next.flags))return -1;
++    }
++    if(old){stl(g2h(old),signal_actions[sig].handler);stl(g2h(old+4),signal_actions[sig].mask);stl(g2h(old+8),signal_actions[sig].flags);}
++    if(act){signal_actions[sig]=next;if(next.handler==1)signal_pending[sig]=0;}
++    fprintf(stderr,"signal action sig=%u handler=%x trampoline=%x flags=%x\n",sig,next.handler,next.tramp,next.flags);
++    return 0;
++}
++void remaklar_deliver_signals(CPUState *env)
++{
++    int s,i;uint32_t top,uc,si,mc,ss,fs,sp,cr=0,oldmask=signal_mask;struct guest_action action;
++    for(s=1;s<32;s++)if(signal_pending[s] && !(signal_mask&(1U<<(s-1))))break;
++    if(s==32)return;
++    signal_pending[s]=0;action=signal_actions[s];
++    if(action.handler==1)return;
++    if(!action.handler) { /* Restore a genuine default disposition and re-raise. */
++        remaklar_host_action(signal_host(s),0,0);kill(getpid(),signal_host(s));return;
++    }
++    if(signal_depth==16)qerror("PPC signal nesting limit");
++    top=(env->gpr[1]-224)&~15U;uc=top-32;si=uc-64;mc=si-1040;sp=(mc-112)&~15U;
++    if(!remaklar_guest_access(sp,top-sp,PAGE_WRITE))qerror("PPC signal frame outside writable stack");
++    memset(g2h(sp),0,top-sp);ss=mc+32;fs=ss+160;
++    stl(g2h(uc+4),oldmask);stl(g2h(uc+8),sp);stl(g2h(uc+24),456);stl(g2h(uc+28),mc);
++    /* XNU 344 sends zero code/pid for these asynchronous signals; Darwin 6
++     * i386's legacy frame does not expose sender siginfo. */
++    stl(g2h(si),s);
++    stl(g2h(mc),env->spr[SPR_DAR]);stl(g2h(mc+4),env->spr[SPR_DSISR]);
++    stl(g2h(ss),env->nip);stl(g2h(ss+4),env->msr);
++    for(i=0;i<32;i++)stl(g2h(ss+8+i*4),env->gpr[i]);
++    for(i=0;i<8;i++)cr|=(env->crf[i]&15)<<(28-i*4);
++    stl(g2h(ss+136),cr);stl(g2h(ss+140),env->xer);stl(g2h(ss+144),env->lr);stl(g2h(ss+148),env->ctr);stl(g2h(ss+156),env->spr[SPR_VRSAVE]);
++    for(i=0;i<32;i++)stq(g2h(fs+i*8),float64_val(env->fpr[i]));
++    stl(g2h(fs+260),env->fpscr);
++    signal_frames[signal_depth].context=uc;signal_frames[signal_depth++].msr=env->msr;
++    if(signal_set_mask(oldmask|action.mask|((action.flags&16)?0:(1U<<(s-1)))))qerror("native signal mask failed");
++    if(action.flags&4){signal_actions[s].handler=0;remaklar_host_action(signal_host(s),0,0);}
++    env->gpr[1]=sp;env->gpr[3]=action.handler;env->gpr[4]=(action.flags&64)?2:1;env->gpr[5]=s;env->gpr[6]=si;env->gpr[7]=uc;env->nip=action.tramp;
++    fprintf(stderr,"signal deliver PPC sig=%d context=%x resume=%x trampoline=%x depth=%u\n",s,uc,ldl(g2h(ss)),action.tramp,signal_depth);
++}
++static int signal_return(CPUState *env,uint32_t uc)
++{
++    uint32_t mc,ss,fs,pc,cr,fpscr;int i,rounding;
++    if(!signal_depth || uc!=signal_frames[signal_depth-1].context){errno=EINVAL;return -1;}
++    if(!remaklar_guest_access(uc,32,PAGE_READ)){errno=EFAULT;return -1;}
++    mc=ldl(g2h(uc+28));ss=mc+32;fs=ss+160;
++    if(ldl(g2h(uc+24))!=456){errno=EINVAL;return -1;}
++    if(!remaklar_guest_access(mc,456,PAGE_READ)){errno=EFAULT;return -1;}
++    pc=ldl(g2h(ss));if((pc&3) || !remaklar_guest_access(pc,4,PAGE_EXEC)){errno=EINVAL;return -1;}
++    if(ldl(g2h(ss+4))!=signal_frames[signal_depth-1].msr){errno=EINVAL;return -1;}
++    if(signal_set_mask(ldl(g2h(uc+4))))return -1;
++    for(i=0;i<32;i++)env->gpr[i]=ldl(g2h(ss+8+i*4));
++    cr=ldl(g2h(ss+136));for(i=0;i<8;i++)env->crf[i]=(cr>>(28-i*4))&15;
++    env->xer=ldl(g2h(ss+140));env->lr=ldl(g2h(ss+144));env->ctr=ldl(g2h(ss+148));env->spr[SPR_VRSAVE]=ldl(g2h(ss+156));
++    for(i=0;i<32;i++)env->fpr[i]=make_float64(ldq(g2h(fs+i*8)));
++    fpscr=ldl(g2h(fs+260));env->fpscr=fpscr;
++    switch(fpscr&3){case 0:rounding=float_round_nearest_even;break;case 1:rounding=float_round_to_zero;break;case 2:rounding=float_round_up;break;default:rounding=float_round_down;}
++    set_float_rounding_mode(rounding,&env->fp_status);
++    env->reserve=(target_ulong)-1;env->nip=pc;signal_depth--;
++    fprintf(stderr,"signal sigreturn PPC context=%x resume=%x depth=%u\n",uc,pc,signal_depth);return 0;
++}
++
+ /* exec preserves a task's IPC namespace even though the address space is new.
+  * Carry this process model's actual state through an unlinked host file. This
+  * does not add message delivery or turn modeled receive rights into XNU ports. */
+ struct exec_ports {
+-    uint32_t magic,reply,port,priority,io_master;
++    uint32_t magic,reply,port,priority,io_master,signals_mask;
++    struct guest_action actions[32];
++    uint32_t pending[32];
+     uint32_t send[4096],membership[4096],once[4096],notification[4096],limits[4096];
+     unsigned char receive[4096],sets[4096];
+     uint32_t native_iokit[4096];
+@@ -286,7 +397,9 @@
+     struct exec_ports *s=calloc(1,sizeof(*s));size_t done=0;int n,result=-1;
+     if(!s){errno=ENOMEM;return -1;}
+     if(writing) {
+-        s->magic=0x524d3038;s->reply=next_reply;s->port=next_port;s->priority=thread_base_priority;s->io_master=native_io_master;
++        s->signals_mask=signal_mask;
++        for(n=1;n<32;n++){s->actions[n]=signal_actions[n];if(s->actions[n].handler>1)memset(&s->actions[n],0,sizeof(s->actions[n]));s->pending[n]=signal_pending[n];}
++        s->magic=0x524d3039;s->reply=next_reply;s->port=next_port;s->priority=thread_base_priority;s->io_master=native_io_master;
+         memcpy(s->send,send_refs,sizeof(send_refs));memcpy(s->membership,port_membership,sizeof(port_membership));
+         memcpy(s->once,send_once_target,sizeof(send_once_target));memcpy(s->notification,dead_name_notification,sizeof(dead_name_notification));
+         memcpy(s->limits,queue_limits,sizeof(queue_limits));memcpy(s->receive,receive_rights,sizeof(receive_rights));memcpy(s->sets,port_sets,sizeof(port_sets));
+@@ -299,7 +412,9 @@
+         done+=n;
+     }
+     if(!writing) {
+-        if(s->magic!=0x524d3038 || s->port<0x400 || s->port>4096){errno=EINVAL;goto finished;}
++        if(s->magic!=0x524d3039 || s->port<0x400 || s->port>4096){errno=EINVAL;goto finished;}
++        signal_mask=s->signals_mask;memcpy(signal_actions,s->actions,sizeof(signal_actions));
++        for(n=1;n<32;n++)signal_pending[n]=s->pending[n];
+         next_reply=s->reply;next_port=s->port;thread_base_priority=s->priority;native_io_master=s->io_master;
+         memcpy(send_refs,s->send,sizeof(send_refs));memcpy(port_membership,s->membership,sizeof(port_membership));
+         memcpy(send_once_target,s->once,sizeof(send_once_target));memcpy(dead_name_notification,s->notification,sizeof(dead_name_notification));
+@@ -395,6 +510,28 @@
+     saved=errno;if(ipc_fd>=0)close(ipc_fd);for(i=0;i<256;i++){free(args[i]);free(variables[i]);}errno=saved;return -1;
+ }
+ 
++#ifdef __APPLE__
++static void pack_statfs(unsigned char *wire,const struct statfs *native)
++{
++    struct statfs fs=*native;int i;
++        memset(wire, 0, 272); stl(wire+4, fs.f_bsize);
++#ifdef __APPLE__
++        stw(wire,fs.f_otype);stw(wire+2,fs.f_oflags);stl(wire+8,fs.f_iosize);
++        stl(wire+32,fs.f_fsid.val[0]);stl(wire+36,fs.f_fsid.val[1]);stl(wire+40,fs.f_owner);
++        stw(wire+44,fs.f_reserved1);stw(wire+46,fs.f_type);stl(wire+48,fs.f_flags);
++        stl(wire+52,fs.f_reserved2[0]);stl(wire+56,fs.f_reserved2[1]);
++        memcpy(wire+60,fs.f_fstypename,15);memcpy(wire+75,fs.f_mntonname,90);
++        memcpy(wire+165,fs.f_mntfromname,90);
++        for(i=0;i<4;i++)stl(wire+256+i*4,fs.f_reserved4[i]);
++#else
++        stl(wire+8,fs.f_bsize);
++        strcpy((char *)wire+60, "remaklar"); strcpy((char *)wire+75, "/");
++#endif
++        stl(wire+12, fs.f_blocks); stl(wire+16, fs.f_bfree); stl(wire+20, fs.f_bavail);
++        stl(wire+24, fs.f_files); stl(wire+28, fs.f_ffree);
++}
++#endif
++
+ int remaklar_bsd(CPUState *env, int *result, int *error)
+ {
+     uint32_t n = env->gpr[0], a = env->gpr[3], b = env->gpr[4], c = env->gpr[5];
+@@ -407,6 +544,48 @@
+         return remaklar_bsd(env,result,error);
+     }
+     switch (n) {
++    case 18: { /* Jaguar getfsstat: real mounted-volume list, PPC32 records. */
++#ifdef __APPLE__
++        struct statfs *list;unsigned char wire[272];uint32_t count=b/272;
++        if(!a){r=getfsstat(NULL,0,c);break;}
++        if((int32_t)b<0 || count>65536){errno=EINVAL;break;}
++        if(count && !remaklar_guest_access(a,count*272,PAGE_WRITE)){errno=EFAULT;break;}
++        list=calloc(count?count:1,sizeof(*list));if(!list){errno=ENOMEM;break;}
++        r=getfsstat(list,count*sizeof(*list),c);
++        if(r>=0)for(i=0;i<r && i<count;i++){pack_statfs(wire,&list[i]);memcpy(g2h(a+i*272),wire,272);}
++        {int saved=errno;free(list);errno=saved;}
++#else
++        errno=ENOTSUP;
++#endif
++        break;
++    }
++    case 50: /* Session login name; use the real BSD implementation. */
++#ifdef __APPLE__
++        if(!a){errno=EFAULT;break;}
++        for(i=0;i<256;i++){if(!remaklar_guest_access(a+i,1,PAGE_READ)){errno=EFAULT;break;}path[i]=ldub(g2h(a+i));if(!path[i])break;}
++        if(errno)break;if(i==256){errno=EINVAL;break;}r=setlogin(path);
++#else
++        errno=ENOTSUP;
++#endif
++        break;
++    case 46:r=signal_action(a,b,c);break;
++    case 48: {
++        uint32_t old=signal_mask,mask=old;
++        if((b && !remaklar_guest_access(b,4,PAGE_READ)) || (c && !remaklar_guest_access(c,4,PAGE_WRITE))){errno=EFAULT;break;}
++        if(b){mask=ldl(g2h(b));if(a==1)mask|=old;else if(a==2)mask=old&~mask;else if(a!=3){errno=EINVAL;break;}r=signal_set_mask(mask);}else r=0;
++        if(!r && c)stl(g2h(c),old);
++        break;
++    }
++    case 52: {
++        sigset_t pending;uint32_t bits=0;
++        if(!remaklar_guest_access(a,4,PAGE_WRITE)){errno=EFAULT;break;}
++        r=sigpending(&pending);if(!r){for(i=1;i<32;i++)if(signal_pending[i] || (signal_host(i) && sigismember(&pending,signal_host(i))))bits|=1U<<(i-1);stl(g2h(a),bits);}break;
++    }
++    case 37:
++        if(b>=32 || (b && !signal_host(b)))errno=EINVAL;else r=kill((pid_t)a,b?signal_host(b):0);break;
++    case 103: /* Jaguar SYS_sigreturn, used by original PPC sigtramp. */
++        if(!signal_return(env,a))return 2;
++        break;
+     case 33:
+         p=guest_path(a,path,sizeof(path));if(!p)break;
+         if(b & ~7U)errno=EINVAL;else r=access(p,b);
+@@ -430,6 +609,7 @@
+                 memset(dead_name_notification,0,sizeof(dead_name_notification));
+                 memset(queue_limits,0,sizeof(queue_limits));
+                 next_port=0x400;next_reply=0x200;
++                for(i=1;i<32;i++)signal_pending[i]=0;
+                 native_io_master=0;
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
+             }
+@@ -671,21 +851,68 @@
+         if (p && q) r = rename(p, q);
+         break;
+     }
+-    case 158: { /* Mounted guest filesystem model; explicitly not a union FS. */
++    case 220: { /* Native getattrlist errors are significant on UFS. Never leak
++                 * native packed results into the PPC address space. */
++#ifdef __APPLE__
++        struct attrlist attrs;void *buffer;uint32_t size=env->gpr[6];
++        p=guest_path(a,path,sizeof(path));if(!p)break;
++        if(!remaklar_guest_access(b,24,PAGE_READ) || !remaklar_guest_access(c,size,PAGE_WRITE)){errno=EFAULT;break;}
++        if(size>65536){errno=EINVAL;break;}
++        memset(&attrs,0,sizeof(attrs));attrs.bitmapcount=lduw(g2h(b));attrs.reserved=lduw(g2h(b+2));
++        attrs.commonattr=ldl(g2h(b+4));attrs.volattr=ldl(g2h(b+8));attrs.dirattr=ldl(g2h(b+12));attrs.fileattr=ldl(g2h(b+16));attrs.forkattr=ldl(g2h(b+20));
++        buffer=malloc(size?size:1);if(!buffer){errno=ENOMEM;break;}
++        r=getattrlist(p,&attrs,buffer,size,env->gpr[7]);i=errno;
++        fprintf(stderr,"native getattrlist masks=%x/%x/%x/%x/%x result=%d errno=%d\n",attrs.commonattr,attrs.volattr,attrs.dirattr,attrs.fileattr,attrs.forkattr,r,r?i:0);
++        if(!r){
++            uint32_t bytes=*(uint32_t *)buffer;
++            if(attrs.commonattr==1 && !attrs.volattr && !attrs.dirattr && !attrs.fileattr && !attrs.forkattr && bytes>=12 && bytes<=size) {
++                memcpy(g2h(c),buffer,bytes);stl(g2h(c),bytes);stl(g2h(c+4),((uint32_t *)buffer)[1]);stl(g2h(c+8),((uint32_t *)buffer)[2]);
++            } else {free(buffer);qerror("successful getattrlist packed-result conversion not implemented for these attribute masks");}
++        }
++        free(buffer);errno=i;
++#else
++        errno=ENOSYS;
++#endif
++        break;
++    }
++    case 191:
++    case 192: /* Jaguar pathconf/fpathconf values come from the real filesystem. */
++#ifdef __APPLE__
++        if(n==191){p=guest_path(a,path,sizeof(path));if(p)r=pathconf(p,b);}
++        else r=fpathconf(host_fd(a),b);
++#else
++        errno=ENOTSUP;
++#endif
++        break;
++    case 157:
++    case 158: { /* Jaguar PPC32 statfs, from the real mounted host volume. */
+         unsigned char wire[272];
+ #ifdef __APPLE__
+         struct statfs fs;
+-        r = fstatfs(host_fd(a), &fs);
++        if(n==157) {p=guest_path(a,path,sizeof(path));if(!p)break;r=statfs(p,&fs);}
++        else r = fstatfs(host_fd(a), &fs);
+ #else
+         struct statvfs fs;
++        if(n==157) {errno=ENOSYS;break;}
+         r = fstatvfs(host_fd(a), &fs);
+ #endif
+         if (r) break;
+         if (!remaklar_guest_access(b, sizeof(wire), PAGE_WRITE)) { r = -1; errno = EFAULT; break; }
+-        memset(wire, 0, sizeof(wire)); stl(wire+4, fs.f_bsize); stl(wire+8, fs.f_bsize);
++        memset(wire, 0, sizeof(wire)); stl(wire+4, fs.f_bsize);
++#ifdef __APPLE__
++        stw(wire,fs.f_otype);stw(wire+2,fs.f_oflags);stl(wire+8,fs.f_iosize);
++        stl(wire+32,fs.f_fsid.val[0]);stl(wire+36,fs.f_fsid.val[1]);stl(wire+40,fs.f_owner);
++        stw(wire+44,fs.f_reserved1);stw(wire+46,fs.f_type);stl(wire+48,fs.f_flags);
++        stl(wire+52,fs.f_reserved2[0]);stl(wire+56,fs.f_reserved2[1]);
++        memcpy(wire+60,fs.f_fstypename,15);memcpy(wire+75,fs.f_mntonname,90);
++        memcpy(wire+165,fs.f_mntfromname,90);
++        for(i=0;i<4;i++)stl(wire+256+i*4,fs.f_reserved4[i]);
++#else
++        stl(wire+8,fs.f_bsize);
++        strcpy((char *)wire+60, "remaklar"); strcpy((char *)wire+75, "/");
++#endif
+         stl(wire+12, fs.f_blocks); stl(wire+16, fs.f_bfree); stl(wire+20, fs.f_bavail);
+         stl(wire+24, fs.f_files); stl(wire+28, fs.f_ffree);
+-        strcpy((char *)wire+60, "remaklar"); strcpy((char *)wire+75, "/");
+         memcpy(g2h(b), wire, sizeof(wire)); break;
+     }
+     case 196: { /* Fixed PPC32 dirent records, independent of host layout. */
+@@ -771,8 +998,35 @@
+     fputc('\n', stderr);
+     if ((env->gpr[4] & 3) != 3)
+         qerror("only synchronous send/receive Mach RPC supported");
++    if(!destination || destination==0xffffffffU) {
++        fprintf(stderr,"mach send invalid destination=%x\n",destination);
++        return 0x10000003U; /* MACH_SEND_INVALID_DEST; no fabricated reply. */
++    }
+     memset(answer, 0, sizeof(answer));
+     switch (id) {
++    case 2822: /* io_connect_method_scalarI_scalarO: counted 32-bit scalars. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*scalar_fn)(mach_port_t,int,const uint32_t *,uint32_t,uint32_t *,uint32_t *);
++            uint32_t input[16],output[16],in_count,out_count,endpoint;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]))qerror("IOKit scalar request has no native capability");
++            if(size<44)qerror("invalid IOKit scalar request");
++            in_count=ldl(g2h(a+36));
++            if(in_count>16 || size!=44+4*in_count)qerror("invalid IOKit scalar input count");
++            out_count=ldl(g2h(a+40+4*in_count));if(out_count>16)qerror("invalid IOKit scalar output count");
++            for(i=0;i<in_count;i++)input[i]=ldl(g2h(a+40+4*i));
++            code=((scalar_fn)native_iokit_symbol("_io_connect_method_scalarI_scalarO"))(endpoint,ldl(g2h(a+32)),input,in_count,output,&out_count);
++            fprintf(stderr,"native IOKit scalar selector=%u result=%u output_count=%u\n",ldl(g2h(a+32)),code,out_count);
++            if(code)break;
++            if(out_count>16)qerror("native IOKit scalar output overflow");
++            stl(answer+36,out_count);for(i=0;i<out_count;i++)stl(answer+40+i*4,output[i]);length=40+4*out_count;
++        }
++#else
++        qerror("IOKit scalar RPC requires real Darwin services");
++#endif
++        break;
++    case 2815: /* io_service_open: explicit task capability conversion. */
++    case 2816: /* io_service_close: real user-client termination. */
+     case 2809: /* device.defs: io_registry_entry_from_path(io_string_t). */
+     case 2804: /* io_service_get_matching_services: serialized XML bytes. */
+     case 2802: /* io_iterator_next: a real kernel iterator, not an array mock. */
+@@ -785,7 +1039,19 @@
+             endpoint=destination==IO_MASTER_PORT ? native_io_master :
+                 (destination<4096 ? native_iokit_ports[destination] : 0);
+             if(!endpoint)qerror("IOKit request has no native capability");
+-            if(id==2802) {
++            if(id==2815) {
++                typedef kern_return_t (*open_fn)(mach_port_t,mach_port_t,int,mach_port_t *);
++                if(size!=52 || !(ldl(g2h(a))&0x80000000) || ldl(g2h(a+24))!=1 ||
++                   ldl(g2h(a+28))!=TASK_SELF || ldub(g2h(a+38))!=19 || ldub(g2h(a+39)))
++                    qerror("invalid io_service_open task descriptor");
++                code=((open_fn)native_iokit_symbol("_io_service_open"))(endpoint,mach_task_self(),ldl(g2h(a+48)),&native);
++            } else if(id==2816) {
++                typedef kern_return_t (*close_fn)(mach_port_t);
++                if(size!=24)qerror("invalid io_service_close request");
++                code=((close_fn)native_iokit_symbol("_io_service_close"))(endpoint);
++                fprintf(stderr,"native IOKit close result=%u connection=%u\n",code,endpoint);
++                break;
++            } else if(id==2802) {
+                 if(size!=24)qerror("invalid io_iterator_next request");
+                 code=((next_fn)native_iokit_symbol("_io_iterator_next"))(endpoint,&native);
+             } else {
+@@ -918,6 +1184,18 @@
+             for (i = 0; i < 8; i++) stl(answer + 40 + i * 4, priority[i]);
+             length = 72; break;
+         }
++        if (ldl(g2h(a + 32)) == 3) { /* HOST_SCHED_INFO: real native kernel. */
++#ifdef __APPLE__
++            host_sched_info_data_t info;mach_msg_type_number_t count=HOST_SCHED_INFO_COUNT;
++            mach_port_t host=mach_host_self();
++            code=host_info(host,HOST_SCHED_INFO,(host_info_t)&info,&count);
++            mach_port_deallocate(mach_task_self(),host);
++            if(!code){if(count!=2)qerror("native HOST_SCHED_INFO count %u",count);stl(answer+36,count);stl(answer+40,info.min_timeout);stl(answer+44,info.min_quantum);length=48;}
++#else
++            code=4;
++#endif
++            break;
++        }
+         if (ldl(g2h(a + 32)) != 1) qerror("unsupported host_info flavor");
+         stl(answer + 36, 5); /* number of integer_t words */
+         stl(answer + 40, 1); stl(answer + 44, 1);
+@@ -970,11 +1248,15 @@
+         uint32_t address, bytes, flags, prot;
+         long mapped;
+         if (destination != TASK_SELF || size != 84 || ldl(g2h(a + 24)) != 1 ||
+-            ldl(g2h(a + 28)) || ldl(g2h(a + 56)) || ldl(g2h(a + 64)))
++            ldl(g2h(a + 28)) || (ldl(g2h(a + 56)) & ~4095U) || ldl(g2h(a + 64)))
+             qerror("unsupported vm_map object/mask/offset");
+         address = ldl(g2h(a + 48)); bytes = ldl(g2h(a + 52));
+         flags = ldl(g2h(a + 60)); prot = ldl(g2h(a + 72));
+-        if (flags & ~1) qerror("unsupported vm_map flags %x", flags);
++        /* XNU VM_FLAGS_ALIAS_MASK is a memory-accounting tag; it does
++         * not alter anonymous mapping contents or protections. Page-sized
++         * alignment masks are satisfied by target_mmap's page alignment. */
++        if (flags & ~0xff000001U) qerror("unsupported vm_map flags %x", flags);
++        fprintf(stderr,"vm_map anonymous bytes=%u mask=%x alias=%u\n",bytes,ldl(g2h(a+56)),flags>>24);
+         mapped = target_mmap(address, bytes, prot,
+                  MAP_PRIVATE | MAP_ANONYMOUS | ((flags & 1) ? 0 : MAP_FIXED), -1, 0);
+         if (mapped == -1) code = 3;
+@@ -1073,6 +1355,13 @@
+ {
+     int32_t trap = env->gpr[0];
+     switch (trap) {
++    case -61: /* thread_switch: hand off to the actual native scheduler. */
++#ifdef __APPLE__
++        if(env->gpr[3])return 4; /* No cross-task native thread capability yet. */
++        return thread_switch(MACH_PORT_NULL,env->gpr[4],env->gpr[5]);
++#else
++        return 4;
++#endif
+     case -89: /* mach_timebase_info, PPC32 wire. XNU ignores copyout failure. */
+         if (remaklar_guest_access(env->gpr[3], 8, PAGE_WRITE)) {
+             stl(g2h(env->gpr[3]), 1); stl(g2h(env->gpr[3] + 4), 1);

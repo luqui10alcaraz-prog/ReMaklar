@@ -1,0 +1,2 @@
+signal exec caught-reset ignored-mask-preserved OK
+signals real masked pending fork exec legacy sigreturn OK

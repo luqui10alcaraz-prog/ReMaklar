@@ -1,0 +1,9 @@
+{
+  "base_project_commit": "4cf7b57a13d4674ca8ade1493ff6b22717789a41",
+  "base_qemu_commit": "2e4ce5b0d163c2a6882e43c20869f4363916cd48",
+  "requires_patch": "0006-processes-iokit.patch",
+  "requires_patch_sha256": "cebbc5d49fdcaa22250c4acf6c0737a626df3f7e9fecd5734ae78a2bb0955071",
+  "patch_sha256": "74fcc3dec736ddb89c82a82fd75b7d37a403fe8366d9af930031648ba51f0f75",
+  "experimental_commit": null,
+  "scope": "0.09 real statfs/getfsstat/pathconf PPC32, PPC750 signals/sigreturn 103, setlogin, typed original IOKit user-client/scalar, native scheduler and invalid Mach destination errors"
+}

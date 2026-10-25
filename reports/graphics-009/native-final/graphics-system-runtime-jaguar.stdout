@@ -1,0 +1,3 @@
+PATHCONF name_max=255
+HOST_SCHED_INFO kr=0 count=2 timeout=10 quantum=10
+pathconf fpathconf native scheduler OK

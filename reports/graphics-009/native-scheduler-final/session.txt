@@ -1,0 +1,17 @@
++ src=/var/tmp/graphics009-run2/source
++ build=/var/tmp/graphics009-run2/build
++ cp /var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics009-run12/prior-darwin-kernel.c
++ cp /var/tmp/graphics009-r12/darwin-kernel.c /var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c
++ rm -f /var/tmp/graphics009-run2/build/ppc-darwin-user/darwin-kernel.o
++ make -C /var/tmp/graphics009-run2/build SRC_PATH=/var/tmp/graphics009-run2/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics009-run12/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics009-r12/graphics-system-runtime.c -o /var/tmp/graphics009-run12/system-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r12/graphics-system-runtime.c -o /var/tmp/graphics009-run12/system-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run12/system-native /var/tmp/graphics009-run12/system-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run12/system-jaguar /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run12/system-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run12/splash /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Installation/CDIS/splash /Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ ps -axww
++ echo RUN12_COMPLETE
+RUN12_COMPLETE

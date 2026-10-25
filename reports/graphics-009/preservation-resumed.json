@@ -1,0 +1,12 @@
+[
+  {
+    "path": "media/Mac OS X Jaguar Install CD.iso",
+    "sha256": "e0891480aa027069fafb94f8a951a2c115e52551efdd2b6b6e7e3212139d25d2",
+    "unchanged": true
+  },
+  {
+    "path": "vm/darwin602.qcow2",
+    "sha256": "9d5ecfd3753747777d7b34baee475036a46f0b75b9018c8c6136d2e591aad72f",
+    "unchanged": true
+  }
+]

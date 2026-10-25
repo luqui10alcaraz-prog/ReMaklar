@@ -1,0 +1,14 @@
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:31:
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/bootstrap.h:14: warning: redundant redeclaration of `global_env' in same scope
+/var/tmp/graphics009-run2/source/darwin-user/qemu.h:107: warning: previous declaration of `global_env'
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c: In function `exec_ppc':
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:497: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:498: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:499: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:500: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:501: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:502: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c: In function `rpc':
+/var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c:1007: warning: `endpoint' might be used uninitialized in this function
+  LINK  ppc-darwin-user/qemu-ppc

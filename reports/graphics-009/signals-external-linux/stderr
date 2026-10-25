@@ -1,0 +1,10 @@
+loaded entry=10000200 stack=f4aeeea8 cpu=750 host=i386 env=0xbaf5010
+syscall pc=10000220 r0=46 r3=0000001e r4=10000800 r5=00000000 r6=00000000 r7=00000000 r8=00000000
+signal action sig=30 handler=10000400 trampoline=10000380 flags=0
+return r3=0 error=0 resume=10000224
+signal deliver PPC sig=30 context=f4aeeda0 resume=10000224 trampoline=10000380 depth=1
+syscall pc=100003a0 r0=184 r3=f4aeeda0 r4=00000001 r5=0000001e r6=f4aeed60 r7=f4aeeda0 r8=00000000
+signal sigreturn PPC context=f4aeeda0 resume=10000224 depth=0
+syscall pc=10000258 r0=4 r3=00000001 r4=10000840 r5=0000001a r6=00000000 r7=00000000 r8=00000000
+return r3=26 error=0 resume=1000025c
+syscall pc=10000268 r0=1 r3=00000000 r4=10000840 r5=0000001a r6=00000000 r7=00000000 r8=00000000

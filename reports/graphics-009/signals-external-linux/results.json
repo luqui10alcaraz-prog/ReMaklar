@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "exit": 0,
+  "signal": "real external SIGUSR1 during PPC compute loop",
+  "context_restored": true
+}

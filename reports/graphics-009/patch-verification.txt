@@ -1,0 +1,1 @@
+PASS: complete 0001..0007 series applies to upstream QEMU v0.10.6 and reproduces all three modified runtime files byte for byte.

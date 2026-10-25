@@ -1,0 +1,1 @@
+PASS: original Jaguar ISO and Darwin base image still match 0.08 SHA-256. Existing VM/overlay reused; no image created.

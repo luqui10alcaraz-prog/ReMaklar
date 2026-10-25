@@ -1,0 +1,75 @@
++ mkdir -p /var/tmp/remaklar/experiments
++ test -e /var/tmp/remaklar/experiments/qemu-0.10.6
++ src=/var/tmp/graphics009-run2/source
++ build=/var/tmp/graphics009-run2/build
++ cp /var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics009-run10/prior-darwin-kernel.c
++ cp /var/tmp/graphics009-r10/darwin-kernel.c /var/tmp/graphics009-run2/source/darwin-user/remaklar/darwin-kernel.c
++ rm -f /var/tmp/graphics009-run2/build/ppc-darwin-user/darwin-kernel.o
++ make -C /var/tmp/graphics009-run2/build SRC_PATH=/var/tmp/graphics009-run2/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics009-run10/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ extra=
++ '[' signals-runtime = iokit-open-runtime ']'
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics009-r8/signals-runtime.c -o /var/tmp/graphics009-run10/signals-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/signals-runtime.c -o /var/tmp/graphics009-run10/signals-runtime-ppc
++ '[' signals-runtime = signals-runtime ']'
++ cp /var/tmp/graphics009-run10/signals-runtime-ppc /var/tmp/jaguar/tmp/signals-009-r10.ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/signals-runtime-native /var/tmp/graphics009-run10/signals-runtime-i386 /var/tmp/graphics009-run10/signals-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/signals-runtime-jaguar /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/signals-runtime-ppc /tmp/signals-009-r10.ppc
++ extra=
++ '[' statfs-runtime = iokit-open-runtime ']'
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics009-r8/statfs-runtime.c -o /var/tmp/graphics009-run10/statfs-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/statfs-runtime.c -o /var/tmp/graphics009-run10/statfs-runtime-ppc
++ '[' statfs-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/statfs-runtime-native /var/tmp/graphics009-run10/statfs-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/statfs-runtime-jaguar /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/statfs-runtime-ppc
++ extra=
++ '[' graphics-system-runtime = iokit-open-runtime ']'
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics009-r8/graphics-system-runtime.c -o /var/tmp/graphics009-run10/graphics-system-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/graphics-system-runtime.c -o /var/tmp/graphics009-run10/graphics-system-runtime-ppc
++ '[' graphics-system-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/graphics-system-runtime-native /var/tmp/graphics009-run10/graphics-system-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/graphics-system-runtime-jaguar /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/graphics-system-runtime-ppc
++ extra=
++ '[' iokit-open-runtime = iokit-open-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics009-r8/iokit-open-runtime.c -framework IOKit -o /var/tmp/graphics009-run10/iokit-open-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/iokit-open-runtime.c -framework IOKit -o /var/tmp/graphics009-run10/iokit-open-runtime-ppc
++ '[' iokit-open-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/iokit-open-runtime-native /var/tmp/graphics009-run10/iokit-open-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/iokit-open-runtime-jaguar /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/iokit-open-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/windowserver /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/installer /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/splash /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Installation/CDIS/splash /Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ extra=
++ '[' process-runtime = iokit-runtime ']'
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/process-runtime.c -o /var/tmp/graphics009-run10/process-runtime-ppc
++ '[' process-runtime = exec-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/process-runtime /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/process-runtime-ppc
++ extra=
++ '[' access-runtime = iokit-runtime ']'
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/access-runtime.c -o /var/tmp/graphics009-run10/access-runtime-ppc
++ '[' access-runtime = exec-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/access-runtime /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/access-runtime-ppc
++ extra=
++ '[' exec-runtime = iokit-runtime ']'
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/exec-runtime.c -o /var/tmp/graphics009-run10/exec-runtime-ppc
++ '[' exec-runtime = exec-runtime ']'
++ cp /var/tmp/graphics009-run10/exec-runtime-ppc /var/tmp/jaguar/tmp/exec-009-r10.ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/exec-runtime /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/exec-runtime-ppc /tmp/exec-009-r10.ppc
++ extra=
++ '[' iokit-runtime = iokit-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics009-r8/iokit-runtime.c -framework IOKit -o /var/tmp/graphics009-run10/iokit-runtime-ppc
++ '[' iokit-runtime = exec-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/iokit-runtime /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/iokit-runtime-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics009-r8/native/objc.m -lobjc -o /var/tmp/graphics009-run10/objc-i386
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics009-r8/native/cf.c -framework CoreFoundation -o /var/tmp/graphics009-run10/cf-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/objc-native /var/tmp/graphics009-run10/objc-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics009-run10/cf-native /var/tmp/graphics009-run10/cf-i386
++ perl /var/tmp/graphics009-r8/run_utilities.pl /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics009-r8/samples /var/tmp/graphics009-r8/utility-cases.tsv /var/tmp/graphics009-run10/utilities
++ perl /var/tmp/graphics009-r8/run_filesystem.pl /var/tmp/graphics009-run2/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics009-r8/samples /var/tmp/graphics009-r8/filesystem-probe.macho /var/tmp/graphics009-run10/filesystem
++ ps -axww
++ echo RUN10_COMPLETE
+RUN10_COMPLETE

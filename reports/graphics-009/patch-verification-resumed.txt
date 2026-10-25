@@ -1,0 +1,1 @@
+PASS complete 0001..0007 series applies to upstream v0.10.6; runtime sources reproduced byte for byte (LF).

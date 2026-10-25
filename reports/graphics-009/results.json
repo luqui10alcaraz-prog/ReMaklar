@@ -1,0 +1,221 @@
+{
+  "access-runtime": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "cf-native": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "exec-runtime": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "graphics-system-runtime-jaguar": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "graphics-system-runtime-native": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "installer": {
+    "status": {
+      "leader_exit": "125",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": false,
+    "classification": "BLOCKED; see final stderr, not leader exit alone"
+  },
+  "iokit-open-runtime-jaguar": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "iokit-open-runtime-native": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "iokit-runtime": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "objc-native": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "process-runtime": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "signals-runtime-jaguar": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "signals-runtime-native": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "splash": {
+    "status": {
+      "leader_exit": "125",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": false,
+    "classification": "BLOCKED; see final stderr, not leader exit alone"
+  },
+  "statfs-runtime-jaguar": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "statfs-runtime-native": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "pass": true
+  },
+  "windowserver": {
+    "status": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "6",
+      "remaining_detached_children": "0"
+    },
+    "pass": false,
+    "classification": "BLOCKED; see final stderr, not leader exit alone"
+  },
+  "utilities": {
+    "summary": "cases=23 failed=0"
+  },
+  "filesystem": {
+    "summary": "cases=11 failed=0 leftover=0"
+  },
+  "final_runtime": "logs/graphics-009/native-run12/graphics009-run12/qemu-ppc",
+  "full_regressions_runtime": "logs/graphics-009/native-run10/graphics009-run10/qemu-ppc",
+  "final_focused_checks": {
+    "system-native": {
+      "status": {
+        "leader_exit": "0",
+        "timeout": "0",
+        "remaining_group_after_leader": "0",
+        "descendant_seconds": "0",
+        "remaining_detached_children": "0"
+      },
+      "pass": true
+    },
+    "system-jaguar": {
+      "status": {
+        "leader_exit": "0",
+        "timeout": "0",
+        "remaining_group_after_leader": "0",
+        "descendant_seconds": "0",
+        "remaining_detached_children": "0"
+      },
+      "pass": true
+    },
+    "splash": {
+      "status": {
+        "leader_exit": "125",
+        "timeout": "0",
+        "remaining_group_after_leader": "0",
+        "descendant_seconds": "0",
+        "remaining_detached_children": "0"
+      },
+      "pass": false,
+      "blocker": "Original Installer child: RPC 3226, multiple port-set membership; WindowServer bootstrap service still absent"
+    }
+  },
+  "blockers": {
+    "windowserver": "RPC 3825 mach_make_memory_entry_64",
+    "installer": "RPC 3226 multiple port-set membership",
+    "splash": "launches original Installer through real fork/exec; same RPC 3226 blocker in child; no WindowServer endpoint"
+  }
+}
