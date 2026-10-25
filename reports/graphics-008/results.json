@@ -1,0 +1,124 @@
+{
+  "integrated_run": "graphics008-run5",
+  "results": {
+    "exec-native": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "exec-darwin": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "exec-jaguar": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "iokit-native": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "iokit-jaguar": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "process-regression": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "quartz-regression": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "native007-objc": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "native007-cf": {
+      "status": "PASS",
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0"
+    },
+    "utilities": {
+      "status": "PASS",
+      "cases": 23
+    },
+    "filesystem": {
+      "status": "PASS",
+      "cases": 11
+    },
+    "iokit-darwin": {
+      "status": "BLOCKED",
+      "cause": "Darwin PPC sample root lacks original SystemConfiguration framework"
+    },
+    "windowserver": {
+      "status": "BLOCKED",
+      "cause": "PPC sigaction, BSD 46 through indirect syscall 0; outer diagnostic still names trap 0",
+      "leader_exit": 0,
+      "descendant_seconds": 14,
+      "remaining_detached_children": 0
+    },
+    "splash": {
+      "status": "BLOCKED",
+      "cause": "real IOPMrootDomain obtained; unsupported IOKit RPC 2815 io_service_open"
+    },
+    "installer": {
+      "status": "BLOCKED",
+      "cause": "original entry 0x46ec reached; access passed; unsupported BSD 157 statfs",
+      "exit": 125
+    },
+    "setsid-native": {
+      "status": "PASS"
+    },
+    "setsid-jaguar": {
+      "status": "PASS"
+    },
+    "access-native": {
+      "status": "PASS"
+    },
+    "access-jaguar": {
+      "status": "PASS"
+    }
+  },
+  "graphical_installer_displayed": false,
+  "native_i386_components_execute_without_ppc_translation": true,
+  "followup_run": "graphics008-run6",
+  "latest_run": "graphics008-run7",
+  "native_i386_IOKit_fat_file_md5": "c95d76ef4ac6690e048fdd60e05dac35",
+  "latest_native_runner_md5": "97545406ca149728385b0db865dbe4ee",
+  "original_006_runner_unchanged_md5": "90df4430f3f07be336d1f0e2387cb1c8",
+  "remaining_translated_processes": 0,
+  "historical_failures": [
+    {
+      "status": "FAIL",
+      "resolved": true,
+      "cause": "DesktopServicesPriv missing after selective extraction",
+      "fix": "explicit copy of original, matching MD5; Installer original entry reached"
+    }
+  ]
+}

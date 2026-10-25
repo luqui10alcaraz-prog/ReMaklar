@@ -1,0 +1,52 @@
+[
+  {
+    "path": "Applications/Utilities/Installer.app/Contents/MacOS/Installer",
+    "size": 103408,
+    "sha256": "394dc7dd891a5904c360f1f8fb2e7e566e54974e496c18bcf0cc9f1a0e3467a7",
+    "cputype": 18,
+    "filetype": 2,
+    "dependencies": [
+      "/usr/lib/dyld",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+      "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/usr/lib/libobjc.A.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ]
+  },
+  {
+    "path": "System/Installation/CDIS/splash",
+    "size": 30768,
+    "sha256": "f793d1fc54a7d9924d41cb9fddea3f7060addce9df8410ec18173010b7a7be69",
+    "cputype": 18,
+    "filetype": 2,
+    "dependencies": [
+      "/usr/lib/dyld",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ]
+  },
+  {
+    "path": "System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "empty placeholder in the install medium"
+  },
+  {
+    "path": "System/Library/CoreServices/pbs",
+    "size": 61264,
+    "sha256": "2e12b16898a599a957c90dec1a08e9b108ebcf7a403cb1acffbe786df584b847",
+    "cputype": 18,
+    "filetype": 2,
+    "dependencies": [
+      "/usr/lib/dyld",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/usr/lib/libSystem.B.dylib"
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+PASS: patch applies to 0.06 commit 2e4ce5b and reproduces all three runtime source files byte for byte.
+PASS: complete 0001..0006 patch series applies to upstream v0.10.6 and reproduces the modified sources.
+PASS: final patch including real setsid applies and reproduces all three modified sources.
+PASS: final patch including access/indirect syscall applies and reproduces all three modified sources.

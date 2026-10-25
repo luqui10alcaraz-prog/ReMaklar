@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "exit": 0,
+  "tested": [
+    "fork",
+    "wait4",
+    "getppid",
+    "COW",
+    "setsid success",
+    "setsid EPERM"
+  ]
+}

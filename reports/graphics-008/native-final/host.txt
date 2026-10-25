@@ -1,0 +1,3 @@
+Darwin localhost 6.0 Darwin Kernel Version 6.0: Mon Oct 21 12:45:40 PDT 2002; root:tmp/xnu-10-2-root.obj/RELEASE_I386  x86 i386
+/var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc: Mach-O executable i386
+MD5 (/var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc) = 59b197c577cb4369f0742d3fe6148039

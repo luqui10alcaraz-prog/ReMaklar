@@ -11,7 +11,7 @@ git -C "$dest" config core.autocrlf false
 test "$(git -C "$dest" rev-parse HEAD)" = 9eab386edbf8cf002a731f8204a156f243a47a57
 checkpoint=${REMAKLAR_CHECKPOINT:-0.05-filesystem}
 case "$checkpoint" in
-    0.01|0.02-dyld|0.03-darwin6|0.05-filesystem|0.06-runtime) ;;
+    0.01|0.02-dyld|0.03-darwin6|0.05-filesystem|0.06-runtime|0.08-graphics) ;;
     *) echo "Unknown checkpoint: $checkpoint" >&2; exit 1 ;;
 esac
 git -C "$dest" switch -c "remaklar/$checkpoint"
@@ -21,15 +21,19 @@ if [ "$checkpoint" != 0.01 ]; then
     git -C "$dest" apply --check "$project/patches/qemu-0.10.6/0002-dyld-startup.patch"
     git -C "$dest" apply "$project/patches/qemu-0.10.6/0002-dyld-startup.patch"
 fi
-if [ "$checkpoint" = 0.03-darwin6 ] || [ "$checkpoint" = 0.05-filesystem ] || [ "$checkpoint" = 0.06-runtime ]; then
+if [ "$checkpoint" = 0.03-darwin6 ] || [ "$checkpoint" = 0.05-filesystem ] || [ "$checkpoint" = 0.06-runtime ] || [ "$checkpoint" = 0.08-graphics ]; then
     git -C "$dest" apply --check "$project/patches/qemu-0.10.6/0003-darwin6-i386.patch"
     git -C "$dest" apply "$project/patches/qemu-0.10.6/0003-darwin6-i386.patch"
 fi
-if [ "$checkpoint" = 0.05-filesystem ] || [ "$checkpoint" = 0.06-runtime ]; then
+if [ "$checkpoint" = 0.05-filesystem ] || [ "$checkpoint" = 0.06-runtime ] || [ "$checkpoint" = 0.08-graphics ]; then
     git -C "$dest" apply --check "$project/patches/qemu-0.10.6/0004-filesystem.patch"
     git -C "$dest" apply "$project/patches/qemu-0.10.6/0004-filesystem.patch"
 fi
-if [ "$checkpoint" = 0.06-runtime ]; then
+if [ "$checkpoint" = 0.06-runtime ] || [ "$checkpoint" = 0.08-graphics ]; then
     git -C "$dest" apply --check "$project/patches/qemu-0.10.6/0005-runtime-quartz.patch"
     git -C "$dest" apply "$project/patches/qemu-0.10.6/0005-runtime-quartz.patch"
+fi
+if [ "$checkpoint" = 0.08-graphics ]; then
+    git -C "$dest" apply --check "$project/patches/qemu-0.10.6/0006-processes-iokit.patch"
+    git -C "$dest" apply "$project/patches/qemu-0.10.6/0006-processes-iokit.patch"
 fi

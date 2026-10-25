@@ -1,0 +1,11 @@
+{
+  "base_commit": "2e4ce5b0d163c2a6882e43c20869f4363916cd48",
+  "patch_sha256": "cebbc5d49fdcaa22250c4acf6c0737a626df3f7e9fecd5734ae78a2bb0955071",
+  "experimental_commit": null,
+  "scope": "0.08 fork/wait4/setsid/access/indirect syscall, self-exec and typed native Darwin IOKit bridge",
+  "files": [
+    "darwin-user/remaklar/bootstrap-main.c",
+    "darwin-user/remaklar/bootstrap.h",
+    "darwin-user/remaklar/darwin-kernel.c"
+  ]
+}

@@ -1,0 +1,8 @@
+Darwin localhost 6.0 Darwin Kernel Version 6.0: Mon Oct 21 12:45:40 PDT 2002; root:tmp/xnu-10-2-root.obj/RELEASE_I386  x86 i386
+/var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc: Mach-O executable i386
+MD5 (/var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc) = 97545406ca149728385b0db865dbe4ee
+/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit: Mach-O fat file with 2 architectures
+/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit (for architecture i386):	Mach-O dynamically linked shared library i386
+/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit (for architecture ppc):	Mach-O dynamically linked shared library ppc
+MD5 (/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit) = c95d76ef4ac6690e048fdd60e05dac35
+MD5 (/var/tmp/remaklar/build/qemu-darwin6/ppc-darwin-user/qemu-ppc) = 90df4430f3f07be336d1f0e2387cb1c8

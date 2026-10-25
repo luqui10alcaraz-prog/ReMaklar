@@ -1,0 +1,427 @@
+diff --git a/darwin-user/remaklar/bootstrap-main.c b/darwin-user/remaklar/bootstrap-main.c
+index 69308be..6115dd9 100644
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -23,6 +23,8 @@ asm(".zerofill __STD_PROG_ZONE, __STD_PROG_ZONE, __std_prog_zone, 0x1ffff000");
+ #endif
+ 
+ const char *interp_prefix = "";
++char *remaklar_self_path;
++char **remaklar_host_environment;
+ unsigned long stack_size = 512 * 1024;
+ CPUState *global_env;
+ TaskState *first_task_state;
+@@ -251,16 +253,39 @@ int main(int argc, char **argv, char **envp)
+     struct sigaction sa;
+     CPUState *env;
+     int i;
++    char *exec_argv0 = NULL;
++    char **guest_environment = envp;
++    const char *program;
+     uint32_t probe_entry = 0;
+     int filearg = 1;
++    remaklar_self_path = argv[0];
++    remaklar_host_environment = envp;
+     if (argc >= 4 && !strcmp(argv[1], "--root")) {
+         interp_prefix = argv[2];
+         remaklar_dynamic = 1;
+         filearg = 3;
+-        if (argc >= 6 && !strcmp(argv[3], "--cwd")) {
+-            if (remaklar_set_cwd(argv[4])) qerror("invalid guest cwd: %s", argv[4]);
+-            filearg = 5;
++        while (filearg < argc) {
++            if (!strcmp(argv[filearg], "--cwd") && filearg+1 < argc) {
++                if (remaklar_set_cwd(argv[filearg+1])) qerror("invalid guest cwd");
++                filearg += 2;
++            } else if (!strcmp(argv[filearg], "--exec-argv0") && filearg+1 < argc) {
++                exec_argv0=argv[filearg+1];filearg+=2;
++            } else if (!strcmp(argv[filearg], "--inherit-fds") && filearg+1 < argc) {
++                if(remaklar_inherit_fds(argv[filearg+1])) qerror("invalid inherited descriptor map");
++                filearg+=2;
++            } else if (!strcmp(argv[filearg], "--inherit-ports") && filearg+1 < argc) {
++                if(remaklar_inherit_ports(atoi(argv[filearg+1])))qerror("invalid exec IPC snapshot");
++                filearg+=2;
++            } else if (!strcmp(argv[filearg], "--exec-env-count") && filearg+1 < argc) {
++                int count=atoi(argv[filearg+1]),j;
++                filearg+=2;
++                if(count<0 || count>256 || filearg+count>=argc) qerror("invalid exec environment count");
++                guest_environment=calloc(count+1,sizeof(char *));
++                if(!guest_environment) qerror("exec environment allocation failed");
++                for(j=0;j<count;j++)guest_environment[j]=argv[filearg++];
++            } else break;
+         }
++        if(filearg>=argc) qerror("missing original executable");
+     } else if (argc == 5 && !strcmp(argv[1], "--probe-main")) {
+         remaklar_probe_slide = 0x10000000;
+         probe_entry = strtoul(argv[2], NULL, 16) + remaklar_probe_slide;
+@@ -299,7 +324,9 @@ int main(int argc, char **argv, char **envp)
+     sigaction(SIGBUS, &sa, NULL);
+ #endif
+     memset(&regs, 0, sizeof(regs));
+-    mach_exec(argv[filearg], argv + filearg, envp, &regs);
++    program=argv[filearg];
++    if(exec_argv0)argv[filearg]=exec_argv0;
++    mach_exec(program, argv + filearg, guest_environment, &regs);
+     env->nip = probe_entry ? probe_entry : regs.nip;
+     for (i = 0; i < 32; i++) env->gpr[i] = regs.gpr[i];
+     if (probe_entry && cpu_breakpoint_insert(env, exit_bridge, BP_GDB, NULL))
+diff --git a/darwin-user/remaklar/bootstrap.h b/darwin-user/remaklar/bootstrap.h
+index da80f3a..716f8e6 100644
+--- a/darwin-user/remaklar/bootstrap.h
++++ b/darwin-user/remaklar/bootstrap.h
+@@ -2,6 +2,10 @@
+ #ifndef REMAKLAR_BOOTSTRAP_H
+ #define REMAKLAR_BOOTSTRAP_H
+ extern const char *interp_prefix;
++extern char *remaklar_self_path;
++extern char **remaklar_host_environment;
++int remaklar_inherit_fds(const char *map);
++int remaklar_inherit_ports(int fd);
+ int remaklar_set_cwd(const char *path);
+ uint64_t remaklar_timebase(void);
+ int remaklar_guest_access(uint32_t address, uint32_t length, int prot);
+diff --git a/darwin-user/remaklar/darwin-kernel.c b/darwin-user/remaklar/darwin-kernel.c
+index 9c8c8a7..105ef8f 100644
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -17,17 +17,41 @@
+ #ifdef __APPLE__
+ #include <sys/mount.h>
+ #include <mach/mach_time.h>
++#include <mach/mach.h>
+ #else
+ #include <sys/statvfs.h>
+ #include <time.h>
+ #endif
+ #include <sys/stat.h>
+ #include <sys/mman.h>
++#include <sys/wait.h>
+ #include "qemu.h"
+ #include "bootstrap.h"
+ 
+ /* Names designate endpoints in this process model, never Linux handles. */
+-enum { TASK_SELF = 0x101, THREAD_SELF = 0x102, HOST_SELF = 0x103, BOOTSTRAP = 0x104, SYSTEM_CLOCK_PORT = 0x105 };
++enum { TASK_SELF = 0x101, THREAD_SELF = 0x102, HOST_SELF = 0x103, BOOTSTRAP = 0x104, SYSTEM_CLOCK_PORT = 0x105, IO_MASTER_PORT = 0x106 };
++static uint32_t native_io_master;
++static uint32_t native_iokit_ports[4096];
++#ifdef __APPLE__
++struct mach_header;
++extern const struct mach_header *NSAddImage(const char *,unsigned long);
++extern void *NSLookupSymbolInImage(const struct mach_header *,const char *,unsigned long);
++extern void *NSAddressOfSymbol(void *);
++static void *native_iokit_symbol(const char *name)
++{
++    static const struct mach_header *image;
++    void *symbol;
++    if(!image) {
++        image=NSAddImage("/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",1);
++        if(!image || ((const uint32_t *)image)[0]!=0xfeedface || ((const uint32_t *)image)[1]!=7)
++            qerror("native i386 IOKit image could not be loaded");
++        fprintf(stderr,"native bridge loaded ORIGINAL IOKit image cpu=7\n");
++    }
++    symbol=NSLookupSymbolInImage(image,name,5);
++    if(!symbol)qerror("native IOKit symbol missing: %s",name);
++    return NSAddressOfSymbol(symbol);
++}
++#endif
+ static uint32_t next_reply = 0x200;
+ static uint32_t thread_self_pointer;
+ static uint32_t thread_base_priority = 31;
+@@ -144,6 +168,8 @@ static int darwin_errno(int err)
+     case 0: return 0;
+     case EPERM: return 1; case ENOENT: return 2; case EINTR: return 4;
+     case EIO: return 5; case EBADF: return 9; case ENOMEM: return 12;
++    case ESRCH: return 3; case ECHILD: return 10; case EAGAIN: return 35;
++    case E2BIG: return 7; case ENOEXEC: return 8;
+     case EACCES: return 13; case EFAULT: return 14; case EEXIST: return 17;
+     case ENOTDIR: return 20; case EISDIR: return 21; case EINVAL: return 22;
+     case EMFILE: return 24; case EPIPE: return 32;
+@@ -230,12 +256,199 @@ static void encode_stat(uint32_t address, const struct stat *s)
+     memcpy(g2h(address), wire, sizeof(wire));
+ }
+ 
++int remaklar_inherit_fds(const char *map)
++{
++    const char *p=map;
++    unsigned int i;
++    for(i=0;i<256;i++)descriptors[i]=-1;
++    descriptors_ready=1;
++    while(*p) {
++        unsigned int guest,host;int used=0;
++        if(sscanf(p,"%u:%u,%n",&guest,&host,&used)!=2 || used<=0 || guest>=256 || host>0x7fffffff)
++            return -1;
++        if(fcntl(host,F_GETFD)<0) return -1;
++        descriptors[guest]=host;p+=used;
++    }
++    return 0;
++}
++
++/* exec preserves a task's IPC namespace even though the address space is new.
++ * Carry this process model's actual state through an unlinked host file. This
++ * does not add message delivery or turn modeled receive rights into XNU ports. */
++struct exec_ports {
++    uint32_t magic,reply,port,priority,io_master;
++    uint32_t send[4096],membership[4096],once[4096],notification[4096],limits[4096];
++    unsigned char receive[4096],sets[4096];
++    uint32_t native_iokit[4096];
++};
++static int transfer_ports(int fd,int writing)
++{
++    struct exec_ports *s=calloc(1,sizeof(*s));size_t done=0;int n,result=-1;
++    if(!s){errno=ENOMEM;return -1;}
++    if(writing) {
++        s->magic=0x524d3038;s->reply=next_reply;s->port=next_port;s->priority=thread_base_priority;s->io_master=native_io_master;
++        memcpy(s->send,send_refs,sizeof(send_refs));memcpy(s->membership,port_membership,sizeof(port_membership));
++        memcpy(s->once,send_once_target,sizeof(send_once_target));memcpy(s->notification,dead_name_notification,sizeof(dead_name_notification));
++        memcpy(s->limits,queue_limits,sizeof(queue_limits));memcpy(s->receive,receive_rights,sizeof(receive_rights));memcpy(s->sets,port_sets,sizeof(port_sets));
++        memcpy(s->native_iokit,native_iokit_ports,sizeof(native_iokit_ports));
++    }
++    while(done<sizeof(*s)) {
++        n=writing?write(fd,(char *)s+done,sizeof(*s)-done):read(fd,(char *)s+done,sizeof(*s)-done);
++        if(n<0 && errno==EINTR)continue;
++        if(n<=0)goto finished;
++        done+=n;
++    }
++    if(!writing) {
++        if(s->magic!=0x524d3038 || s->port<0x400 || s->port>4096){errno=EINVAL;goto finished;}
++        next_reply=s->reply;next_port=s->port;thread_base_priority=s->priority;native_io_master=s->io_master;
++        memcpy(send_refs,s->send,sizeof(send_refs));memcpy(port_membership,s->membership,sizeof(port_membership));
++        memcpy(send_once_target,s->once,sizeof(send_once_target));memcpy(dead_name_notification,s->notification,sizeof(dead_name_notification));
++        memcpy(queue_limits,s->limits,sizeof(queue_limits));memcpy(receive_rights,s->receive,sizeof(receive_rights));memcpy(port_sets,s->sets,sizeof(port_sets));
++        memcpy(native_iokit_ports,s->native_iokit,sizeof(native_iokit_ports));
++    }
++    result=0;
++finished:free(s);return result;
++}
++int remaklar_inherit_ports(int fd)
++{
++    int result=transfer_ports(fd,0);close(fd);return result;
++}
++
++static char *exec_string(uint32_t ptr)
++{
++    char *value=malloc(4096);unsigned int i;
++    if(!value) { errno=ENOMEM;return NULL; }
++    for(i=0;i<4096;i++) {
++        if(!remaklar_guest_access(ptr+i,1,PAGE_READ)) { errno=EFAULT;break; }
++        value[i]=*(char *)g2h(ptr+i);
++        if(!value[i]) return value;
++    }
++    free(value);if(i==4096)errno=E2BIG;return NULL;
++}
++
++static int exec_vector(uint32_t ptr,char **values,unsigned int *total)
++{
++    unsigned int i,address;
++    if(!ptr)return 0;
++    for(i=0;i<256;i++) {
++        if(!remaklar_guest_access(ptr+i*4,4,PAGE_READ)) { errno=EFAULT;return -1; }
++        address=ldl(g2h(ptr+i*4));if(!address)return i;
++        values[i]=exec_string(address);if(!values[i])return -1;
++        *total+=strlen(values[i])+1;
++        if(*total>65536) { errno=E2BIG;return -1; }
++    }
++    errno=E2BIG;return -1;
++}
++
++static int exec_ppc(CPUState *env)
++{
++    char *args[257]={0},*variables[257]={0},*launch[530];
++    char target[8192],fdmap[4096],count[16],ports_fd[16],temporary[]="/tmp/remaklar-exec-XXXXXX";
++    const char *path;unsigned int total=0;int argc,envc,i,j=0,used=0,saved,ipc_fd=-1;
++    struct stat st;
++    path=guest_path(env->gpr[3],target,sizeof(target));
++    if(!path)return -1;
++    fprintf(stderr,"execve requested path=%s\n",path);
++    if(stat(path,&st) || access(path,X_OK))return -1;
++    {
++        unsigned char header[512];int fd,n,valid=0,k;
++        fd=open(path,O_RDONLY);if(fd<0)return -1;
++        n=read(fd,header,sizeof(header));saved=errno;close(fd);errno=saved;
++        if(n>=28 && !memcmp(header,"\xfe\xed\xfa\xce\0\0\0\x12",8))valid=1;
++        if(n>=8 && !memcmp(header,"\xca\xfe\xba\xbe",4) && !header[4] && !header[5] && !header[6] && header[7]<=16) {
++            for(k=0;k<header[7] && 8+20*(k+1)<=n;k++)
++                if(!memcmp(header+8+20*k,"\0\0\0\x12",4))valid=1;
++        }
++        if(!valid){errno=ENOEXEC;return -1;}
++    }
++    /* Directory cursors still require a separate serialized host DIR state. */
++    for(i=0;i<256;i++)if(directories[i])qerror("execve with open directory cursor not implemented");
++    argc=exec_vector(env->gpr[4],args,&total);
++    envc=exec_vector(env->gpr[5],variables,&total);
++    if(argc<0 || envc<0)goto failed;
++    if(!argc){errno=EINVAL;goto failed;}
++    host_fd(0);
++    fdmap[0]=0;
++    for(i=0;i<256;i++)if(descriptors[i]>=0) {
++        int flags=fcntl(descriptors[i],F_GETFD);
++        if(flags>=0 && !(flags&FD_CLOEXEC))used+=snprintf(fdmap+used,sizeof(fdmap)-used,"%u:%u,",i,descriptors[i]);
++        if(used>=sizeof(fdmap)-32){errno=E2BIG;goto failed;}
++    }
++    snprintf(count,sizeof(count),"%d",envc);
++    ipc_fd=mkstemp(temporary);if(ipc_fd<0)goto failed;
++    unlink(temporary);
++    if(transfer_ports(ipc_fd,1) || lseek(ipc_fd,0,SEEK_SET)<0)goto failed;
++    snprintf(ports_fd,sizeof(ports_fd),"%d",ipc_fd);
++    launch[j++]=remaklar_self_path;launch[j++]="--root";launch[j++]=(char *)interp_prefix;
++    launch[j++]="--cwd";launch[j++]=guest_cwd;
++    launch[j++]="--exec-argv0";launch[j++]=args[0];
++    launch[j++]="--inherit-fds";launch[j++]=fdmap;
++    launch[j++]="--inherit-ports";launch[j++]=ports_fd;
++    launch[j++]="--exec-env-count";launch[j++]=count;
++    for(i=0;i<envc;i++)launch[j++]=variables[i];
++    launch[j++]=target;for(i=1;i<argc;i++)launch[j++]=args[i];launch[j]=NULL;
++    fprintf(stderr,"execve real replacement host_pid=%ld argc=%d envc=%d cwd=%s\n",(long)getpid(),argc,envc,guest_cwd);
++    /* Guest DYLD_* must never configure the native i386 loader. Its environment
++     * travels as explicit launch arguments and is given only to PPC startup. */
++    execve(remaklar_self_path,launch,remaklar_host_environment);
++failed:
++    saved=errno;if(ipc_fd>=0)close(ipc_fd);for(i=0;i<256;i++){free(args[i]);free(variables[i]);}errno=saved;return -1;
++}
++
+ int remaklar_bsd(CPUState *env, int *result, int *error)
+ {
+     uint32_t n = env->gpr[0], a = env->gpr[3], b = env->gpr[4], c = env->gpr[5];
+     int r = -1, i; char path[8192]; const char *p; struct stat st;
+     errno = 0;
++    if(!n) { /* Darwin PPC syscall(number, ...): shift the register arguments. */
++        if(!a)qerror("recursive indirect syscall not supported");
++        env->gpr[0]=a;
++        for(i=3;i<10;i++)env->gpr[i]=env->gpr[i+1];
++        return remaklar_bsd(env,result,error);
++    }
+     switch (n) {
++    case 33:
++        p=guest_path(a,path,sizeof(path));if(!p)break;
++        if(b & ~7U)errno=EINVAL;else r=access(p,b);
++        break;
++    case 2: { /* Single-thread bootstrap: host fork preserves COW guest/TCG
++               * mappings and file descriptions. Called outside cpu_exec/TB locks.
++               * Original PPC libSystem performs its own dyld/cthread hooks. */
++        pid_t pid = fork();
++        r = pid;
++        if (pid >= 0) {
++            env->gpr[4] = pid == 0 ? 1 : 0; /* Jaguar's second fork result. */
++            if (!pid) {
++                /* XNU gives the new task its own port namespace. Registered,
++                 * exception and bootstrap endpoints are special inheritance;
++                 * this model has no registered servers or exception ports. */
++                memset(send_refs,0,sizeof(send_refs));
++                memset(receive_rights,0,sizeof(receive_rights));
++                memset(port_sets,0,sizeof(port_sets));
++                memset(port_membership,0,sizeof(port_membership));
++                memset(send_once_target,0,sizeof(send_once_target));
++                memset(dead_name_notification,0,sizeof(dead_name_notification));
++                memset(queue_limits,0,sizeof(queue_limits));
++                next_port=0x400;next_reply=0x200;
++                native_io_master=0;
++                memset(native_iokit_ports,0,sizeof(native_iokit_ports));
++            }
++            fprintf(stderr,"fork real host_pid=%ld child_pid=%ld branch=%s\n",
++                    (long)getpid(),(long)pid,pid ? "parent" : "child");
++        }
++        break;
++    }
++    case 7: { /* wait4: real child lifecycle, PPC32 status; rusage not bridged. */
++        int status=0;
++        if (env->gpr[6] || (c & ~3)) qerror("unsupported wait4 rusage/options");
++        if (b && !remaklar_guest_access(b,4,PAGE_WRITE)) { errno=EFAULT;break; }
++        r=waitpid((pid_t)a,&status,c);
++        if (r>0 && b) stl(g2h(b),status);
++        break;
++    }
++    case 39: r=getppid();break;
++    case 147: r=setsid();break; /* Real session creation; host errors retained. */
++    case 59: r=exec_ppc(env);break;
+     case 133: /* sendto on a connected local socket, no explicit destination. */
+         if(env->gpr[6] || env->gpr[7] || env->gpr[8]) qerror("unsupported sendto flags/address");
+         if(!remaklar_guest_access(b,c,PAGE_READ)) errno=EFAULT;
+@@ -560,6 +773,45 @@ static uint32_t rpc(CPUState *env)
+         qerror("only synchronous send/receive Mach RPC supported");
+     memset(answer, 0, sizeof(answer));
+     switch (id) {
++    case 2809: /* device.defs: io_registry_entry_from_path(io_string_t). */
++    case 2804: /* io_service_get_matching_services: serialized XML bytes. */
++    case 2802: /* io_iterator_next: a real kernel iterator, not an array mock. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*string_fn)(mach_port_t,const char *,mach_port_t *);
++            typedef kern_return_t (*next_fn)(mach_port_t,mach_port_t *);
++            mach_port_t native=0,endpoint;
++            uint32_t count=0,guest=0;
++            endpoint=destination==IO_MASTER_PORT ? native_io_master :
++                (destination<4096 ? native_iokit_ports[destination] : 0);
++            if(!endpoint)qerror("IOKit request has no native capability");
++            if(id==2802) {
++                if(size!=24)qerror("invalid io_iterator_next request");
++                code=((next_fn)native_iokit_symbol("_io_iterator_next"))(endpoint,&native);
++            } else {
++                if(size<40 || ldl(g2h(a+32)))qerror("invalid IOKit string offset");
++                count=ldl(g2h(a+36));
++                if(!count || count>512 || size<40+((count+3)&~3) || ldub(g2h(a+40+count-1)))
++                    qerror("invalid IOKit bounded string");
++                code=((string_fn)native_iokit_symbol(id==2809 ? "_io_registry_entry_from_path" :
++                    "_io_service_get_matching_services"))(endpoint,(const char *)g2h(a+40),&native);
++            }
++            fprintf(stderr,"native IOKit rpc=%u native_result=%u object=%u\n",id,code,native);
++            if(code)break;
++            if(native) {
++                for(guest=0x400;guest<next_port;guest++)if(native_iokit_ports[guest]==native)break;
++                if(guest==next_port) {
++                    if(next_port>=4096){mach_port_deallocate(mach_task_self(),native);code=3;break;}
++                    next_port++;native_iokit_ports[guest]=native;
++                }
++                send_refs[guest]++;
++            }
++            complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;length=40;
++        }
++#else
++        qerror("IOKit object RPC requires real Darwin services");
++#endif
++        break;
+     case 3213: { /* mach_port_request_notification(MACH_NOTIFY_DEAD_NAME).
+                   * Registration stores a real capability in this namespace;
+                   * port destruction/event delivery is not implemented yet. */
+@@ -677,7 +929,19 @@ static uint32_t rpc(CPUState *env)
+         i = ldl(g2h(a + 32));
+         if (i >= 4096 || (!send_refs[i] && !send_once_target[i])) code = 15;
+         else if(send_once_target[i]) send_once_target[i]=0;
+-        else send_refs[i]--;
++        else {
++#ifdef __APPLE__
++            if(i==IO_MASTER_PORT) {
++                code=mach_port_deallocate(mach_task_self(),native_io_master);
++                if(code)break;
++            } else if(native_iokit_ports[i]) {
++                code=mach_port_deallocate(mach_task_self(),native_iokit_ports[i]);
++                if(code)break;
++                if(send_refs[i]==1)native_iokit_ports[i]=0;
++            }
++#endif
++            send_refs[i]--;
++        }
+         break;
+     case 3204: /* mach_port_allocate: receive right in current IPC namespace */
+         if (destination != TASK_SELF || size < 36 ||
+@@ -748,6 +1012,21 @@ static uint32_t rpc(CPUState *env)
+         send_refs[BOOTSTRAP]++;
+         length = 40;
+         break;
++    case 205: /* host_get_io_master: real Darwin capability, explicit PPC descriptor. */
++        if(destination!=HOST_SELF || size!=24)qerror("invalid host_get_io_master");
++#ifdef __APPLE__
++        {
++            mach_port_t native;
++            code=host_get_io_master(mach_host_self(),&native);
++            if(code)break;
++            native_io_master=native;send_refs[IO_MASTER_PORT]++;
++            complex=0x80000000;stl(answer+24,1);stl(answer+28,IO_MASTER_PORT);answer[38]=17;length=40;
++            fprintf(stderr,"native IOKit master obtained host_port=%u guest_port=%x\n",native,IO_MASTER_PORT);
++        }
++#else
++        qerror("host_get_io_master requires a real Darwin IOKit service");
++#endif
++        break;
+     case 206: /* host_get_clock_service(SYSTEM_CLOCK) */
+         if (destination != HOST_SELF || size < 36 || ldl(g2h(a + 32)) != 0)
+             qerror("unsupported host clock request");

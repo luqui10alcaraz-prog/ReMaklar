@@ -1,0 +1,9 @@
+  CC    ppc-darwin-user/darwin-kernel.o
+/var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c: In function `exec_ppc':
+/var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c:382: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c:383: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c:384: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c:385: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c:386: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c:387: warning: assignment discards qualifiers from pointer target type
+  LINK  ppc-darwin-user/qemu-ppc

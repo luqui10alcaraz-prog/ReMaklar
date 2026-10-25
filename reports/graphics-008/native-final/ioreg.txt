@@ -1,0 +1,743 @@
++-o Root  <class IORegistryEntry>
+  | {
+  |   "IOCatalogue" = ({"IOProviderClass"="IOPlatformExpertDevice","IOClass"="I$
+  |   "IOKitDiagnostics" = {"Instance allocation"=170044,"IOMalloc allocation"=$
+  |   "IOKitBuildVersion" = "IOKit Component Version 6.0: Mon Oct 21 12:39:31 P$
+  |   "IORegistryPlanes" = {"IOPower"="IOPower","IODeviceTree"="IODeviceTree","$
+  | }
+  | 
+  +-o X86PC  <class IOPlatformExpertDevice>
+    | {
+    |   "IOPlatformArgs" = <00ea1f08e0f638000000000000000000>
+    |   "compatible" = <"X86PC">
+    |   "name" = <"device-tree">
+    |   "clock-frequency" = <00e1f505>
+    | }
+    | 
+    +-o AppleI386PlatformExpert  <class AppleI386PlatformExpert>
+    | | {
+    | |   "IOProviderClass" = "IOPlatformExpertDevice"
+    | |   "top-level" = []
+    | |   "IOProbeScore" = 2000
+    | |   "Platform Memory Ranges" = (0,2147483647,18446744073692774400,1844674$
+    | |   "IOClass" = "AppleI386PlatformExpert"
+    | |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | | }
+    | | 
+    | +-o IOPMrootDomain  <class IOPMrootDomain>
+    | | | {
+    | | |   "Power Management protected data" = "{ theNumberOfPowerStates = 5, $
+    | | |   "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializa$
+    | | |   "Supported Features" = {}
+    | | |   "Power Management private data" = "{ this object = 08262d80, intere$
+    | | |   "IOPriorityPowerStateInterest" = ("_IOServiceInterestNotifier is no$
+    | | |   "IOSleepSupported" = ""
+    | | | }
+    | | | 
+    | | +-o IORootParent  <class IORootParent>
+    | |     {
+    | |       "Power Management private data" = "{ this object = 08262d00 (root$
+    | |       "Power Management protected data" = "{ theNumberOfPowerStates = 5$
+    | |     }
+    | |     
+    | +-o cpu  <class IOPlatformDevice>
+    | | | {
+    | | |   "timebase-frequency" = <40787d01>
+    | | |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","in$
+    | | |   "clock-frequency" = <00a3e111>
+    | | |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<030000$
+    | | |   "bus-frequency" = <00e1f505>
+    | | |   "IOName" = "cpu"
+    | | | }
+    | | | 
+    | | +-o AppleI386CPU  <class AppleI386CPU>
+    | |   | {
+    | |   |   "IONameMatch" = "cpu"
+    | |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   "IOCPUID" = 136718208
+    | |   |   "IOClass" = "AppleI386CPU"
+    | |   |   "IOProviderClass" = "IOPlatformDevice"
+    | |   |   "IOProbeScore" = 100
+    | |   |   "IOCPUState" = "Running"
+    | |   |   "IONameMatched" = "cpu"
+    | |   |   "IOCPUNumber" = 0
+    | |   | }
+    | |   | 
+    | |   +-o AppleI386CPUInterruptController  <class AppleI386CPUInterruptCont$
+    | |       {
+    | |       }
+    | |       
+    | +-o intel-pic  <class IOPlatformDevice>
+    | | | {
+    | | |   "IOInterruptControllers" = ("IOPlatformInterruptController")
+    | | |   "IOInterruptSpecifiers" = (<00000000>)
+    | | |   "IOName" = "intel-pic"
+    | | | }
+    | | | 
+    | | +-o AppleIntelClassicPIC  <class AppleIntelClassicPIC>
+    | |     {
+    | |       "IOProviderClass" = "IOPlatformDevice"
+    | |       "IONameMatch" = "intel-pic"
+    | |       "IOProbeScore" = 0
+    | |       "IONameMatched" = "intel-pic"
+    | |       "IOClass" = "AppleIntelClassicPIC"
+    | |       "IOMatchCategory" = "IODefaultMatchCategory"
+    | |     }
+    | |     
+    | +-o intel-clock  <class IOPlatformDevice>
+    | | | {
+    | | |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","in$
+    | | |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<030000$
+    | | |   "IOName" = "intel-clock"
+    | | | }
+    | | | 
+    | | +-o AppleIntelClock  <class AppleIntelClock>
+    | |     {
+    | |       "IOProviderClass" = "IOPlatformDevice"
+    | |       "IONameMatch" = "intel-clock"
+    | |       "IOProbeScore" = 0
+    | |       "IONameMatched" = "intel-clock"
+    | |       "IOClass" = "AppleIntelClock"
+    | |       "IOMatchCategory" = "IODefaultMatchCategory"
+    | |     }
+    | |     
+    | +-o ps2controller  <class IOPlatformDevice>
+    | | | {
+    | | |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","in$
+    | | |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<030000$
+    | | |   "IOName" = "ps2controller"
+    | | | }
+    | | | 
+    | | +-o ApplePS2Controller  <class ApplePS2Controller>
+    | |   | {
+    | |   |   "IONameMatch" = "ps2controller"
+    | |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   "IOClass" = "ApplePS2Controller"
+    | |   |   "IOProviderClass" = "IOPlatformDevice"
+    | |   |   "IOProbeScore" = 0
+    | |   |   "CFBundleIdentifier" = "com.apple.driver.ApplePS2Controller"
+    | |   |   "IONameMatched" = "ps2controller"
+    | |   | }
+    | |   | 
+    | |   +-o ApplePS2KeyboardDevice  <class ApplePS2KeyboardDevice>
+    | |   | | {
+    | |   | | }
+    | |   | | 
+    | |   | +-o ApplePS2Keyboard  <class ApplePS2Keyboard>
+    | |   |   | {
+    | |   |   |   "HIDInterfaceID" = 2
+    | |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   "IOClass" = "ApplePS2Keyboard"
+    | |   |   |   "HIDKeyMapping" = <00000601013802013b03013a040137051552414c53$
+    | |   |   |   "IOProviderClass" = "ApplePS2KeyboardDevice"
+    | |   |   |   "IOProbeScore" = 0
+    | |   |   |   "HIDSubinterfaceID" = 1
+    | |   |   |   "CFBundleIdentifier" = "com.apple.driver.ApplePS2Keyboard"
+    | |   |   |   "HIDKind" = 1
+    | |   |   | }
+    | |   |   | 
+    | |   |   +-o IOHIDSystem  <class IOHIDSystem>
+    | |   |   |   {
+    | |   |   |     "HIDAutoDimTime" = <0000000000000000>
+    | |   |   |     "IOMatchCategory" = "IOHID"
+    | |   |   |     "IOClass" = "IOHIDSystem"
+    | |   |   |     "HIDParameters" = {"HIDStickyKeysDisabled"=<00000000>,"HIDS$
+    | |   |   |     "HIDBrightness" = <00000000>
+    | |   |   |     "IOProviderClass" = "IOResources"
+    | |   |   |     "IOProbeScore" = 0
+    | |   |   |     "HIDAutoDimState" = <00000000>
+    | |   |   |     "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+    | |   |   |     "IOResourceMatch" = "IOKit"
+    | |   |   |     "HIDIdleTime" = <0000000000000000>
+    | |   |   |   }
+    | |   |   |   
+    | |   |   +-o IOBSDConsole  <class IOBSDConsole>
+    | |   |   |   {
+    | |   |   |     "IOProviderClass" = "IOResources"
+    | |   |   |     "IOProbeScore" = 0
+    | |   |   |     "IOMatchCategory" = "IOBSDConsole"
+    | |   |   |     "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+    | |   |   |     "IOResourceMatch" = "IOBSD"
+    | |   |   |     "IOClass" = "IOBSDConsole"
+    | |   |   |   }
+    | |   |   |   
+    | |   |   +-o IOHIDKeyboardDevice  <class IOHIDKeyboardDevice>
+    | |   |       {
+    | |   |       }
+    | |   |       
+    | |   +-o ApplePS2MouseDevice  <class ApplePS2MouseDevice>
+    | |       {
+    | |       }
+    | |       
+    | +-o pci  <class IOPlatformDevice>
+    | | | {
+    | | |   "pci-bus-info" = <0100021001>
+    | | |   "IODTPersist" = <66a694119ea69411>
+    | | |   "IOName" = "pci"
+    | | | }
+    | | | 
+    | | +-o AppleI386PCI  <class AppleI386PCI>
+    | |   | {
+    | |   |   "Bridge IO Ranges" = (0,65535)
+    | |   |   "IONameMatch" = "pci"
+    | |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   "Power Management protected data" = "{ theNumberOfPowerStates = 3$
+    | |   |   "IOClass" = "AppleI386PCI"
+    | |   |   "Bridge Memory Ranges" = (18446744071562067968,184467440736927743$
+    | |   |   "IOProviderClass" = "IOPlatformDevice"
+    | |   |   "IOProbeScore" = 0
+    | |   |   "CFBundleIdentifier" = "com.apple.driver.AppleI386PCI"
+    | |   |   "IONameMatched" = "pci"
+    | |   |   "Power Management private data" = "{ this object = 0829cc00, inte$
+    | |   | }
+    | |   | 
+    | |   +-o pci8086,1237@0  <class IOPCIDevice>
+    | |   |   {
+    | |   |     "name" = "pci8086,1237"
+    | |   |     "subsystem-vendor-id" = <f41a0000>
+    | |   |     "class-code" = <00000600>
+    | |   |     "reg" = <00000000>
+    | |   |     "compatible" = <"pci1af4,1100","pci8086,1237","pciclass,060000"$
+    | |   |     "IOInterruptSpecifiers" = (<00000000>)
+    | |   |     "Power Management private data" = "{ this object = 0829b000, in$
+    | |   |     "vendor-id" = <86800000>
+    | |   |     "device-id" = <37120000>
+    | |   |     "revision-id" = <02000000>
+    | |   |     "subsystem-id" = <00110000>
+    | |   |     "Power Management protected data" = "{ theNumberOfPowerStates =$
+    | |   |     "IOInterruptControllers" = ("intel-pic")
+    | |   |     "IOName" = "pci8086,1237"
+    | |   |   }
+    | |   |   
+    | |   +-o pci8086,7000@1  <class IOPCIDevice>
+    | |   |   {
+    | |   |     "name" = "pci8086,7000"
+    | |   |     "subsystem-vendor-id" = <f41a0000>
+    | |   |     "class-code" = <00010600>
+    | |   |     "reg" = <00080000>
+    | |   |     "compatible" = <"pci1af4,1100","pci8086,7000","pciclass,060100"$
+    | |   |     "IOInterruptSpecifiers" = (<00000000>)
+    | |   |     "Power Management private data" = "{ this object = 082a0e80, in$
+    | |   |     "vendor-id" = <86800000>
+    | |   |     "device-id" = <00700000>
+    | |   |     "revision-id" = <00000000>
+    | |   |     "subsystem-id" = <00110000>
+    | |   |     "Power Management protected data" = "{ theNumberOfPowerStates =$
+    | |   |     "IOInterruptControllers" = ("intel-pic")
+    | |   |     "IOName" = "pci8086,7000"
+    | |   |   }
+    | |   |   
+    | |   +-o pci8086,7010@1,1  <class IOPCIDevice>
+    | |   | | {
+    | |   | |   "name" = "pci8086,7010"
+    | |   | |   "subsystem-vendor-id" = <f41a0000>
+    | |   | |   "class-code" = <80010100>
+    | |   | |   "reg" = <00090000>
+    | |   | |   "compatible" = <"pci1af4,1100","pci8086,7010","pciclass,010180"$
+    | |   | |   "IOInterruptSpecifiers" = (<00000000>)
+    | |   | |   "Power Management private data" = "{ this object = 082a0c80, in$
+    | |   | |   "IODeviceMemory" = ({"length"=16,"offset"=49152,"parent"=({"len$
+    | |   | |   "vendor-id" = <86800000>
+    | |   | |   "device-id" = <10700000>
+    | |   | |   "revision-id" = <00000000>
+    | |   | |   "subsystem-id" = <00110000>
+    | |   | |   "Power Management protected data" = "{ theNumberOfPowerStates =$
+    | |   | |   "IOInterruptControllers" = ("intel-pic")
+    | |   | |   "assigned-addresses" = <200900010000000000c00000000000001000000$
+    | |   | |   "IOName" = "pci8086,7010"
+    | |   | | }
+    | |   | | 
+    | |   | +-o AppleIntelPIIXMultiATADriver  <class AppleIntelPIIXMultiATADriv$
+    | |   |   | {
+    | |   |   |   "PCI Timing Registers" = "0x40=8000e377 0x44=0000e10b 0x48=00$
+    | |   |   |   "IOPCIMatch" = "0x70108086"
+    | |   |   |   "DMA Modes" = 6
+    | |   |   |   "IOClass" = "AppleIntelPIIXMultiATADriver"
+    | |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   "IOProbeScore" = 2000
+    | |   |   |   "IOProviderClass" = "IOPCIDevice"
+    | |   |   |   "CFBundleIdentifier" = "com.apple.driver.AppleIntelPIIXATA"
+    | |   |   |   "Device Name" = "PIIX3"
+    | |   |   |   "ATA Channels" = ({"Channel Number"=0,"IOInterruptControllers$
+    | |   |   |   "PIO Modes" = 29
+    | |   |   | }
+    | |   |   | 
+    | |   |   +-o AppleIntelPIIXATAController  <class AppleIntelPIIXATAControll$
+    | |   |   | | {
+    | |   |   | |   "Channel Number" = 0
+    | |   |   | |   "IOInterruptControllers" = ("intel-pic")
+    | |   |   | |   "IOInterruptSpecifiers" = (<0e000000>)
+    | |   |   | |   "Interrupt" = 14
+    | |   |   | |   "Port Address" = 496
+    | |   |   | | }
+    | |   |   | | 
+    | |   |   | +-o AppleIntelPIIXATADriver  <class AppleIntelPIIXATADriver>
+    | |   |   |   | {
+    | |   |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   |   "IOClass" = "AppleIntelPIIXATADriver"
+    | |   |   |   |   "Drive 0 PIO Mode" = 4
+    | |   |   |   |   "IOProviderClass" = "AppleIntelPIIXATAController"
+    | |   |   |   |   "IOProbeScore" = 0
+    | |   |   |   |   "Drive 1 PIO Mode" = 4
+    | |   |   |   |   "CFBundleIdentifier" = "com.apple.driver.AppleIntelPIIXAT$
+    | |   |   |   |   "Drive 0 Multi-Word DMA Mode" = 2
+    | |   |   |   |   "Drive 1 Multi-Word DMA Mode" = 2
+    | |   |   |   | }
+    | |   |   |   | 
+    | |   |   |   +-o ATADeviceNub@0  <class ATADeviceNub>
+    | |   |   |   | | {
+    | |   |   |   | |   "device serial" = "QM00001             "
+    | |   |   |   | |   "unit number" = 0
+    | |   |   |   | |   "socket type" = "internal"
+    | |   |   |   | |   "ata device type" = "ata"
+    | |   |   |   | |   "device model" = "QEMU HARDDISK                        $
+    | |   |   |   | |   "device revision" = "2.5+    "
+    | |   |   |   | |   "extended LBA capacity" = 4194304
+    | |   |   |   | |   "IOUnit" = 0
+    | |   |   |   | | }
+    | |   |   |   | | 
+    | |   |   |   | +-o IOATABlockStorageDriver  <class IOATABlockStorageDriver$
+    | |   |   |   |   | {
+    | |   |   |   |   |   "ATA Features" = 34
+    | |   |   |   |   |   "IOMaximumBlockCountRead" = 256
+    | |   |   |   |   |   "IOMaximumBlockCountWrite" = 256
+    | |   |   |   |   |   "IOMaximumSegmentCountRead" = 32
+    | |   |   |   |   |   "IOMaximumSegmentCountWrite" = 32
+    | |   |   |   |   |   "IOProviderClass" = "IOATADevice"
+    | |   |   |   |   |   "CFBundleIdentifier" = "com.apple.iokit.IOATABlockSto$
+    | |   |   |   |   |   "Power Management private data" = "{ this object = 08$
+    | |   |   |   |   |   "Physical Interconnect" = "ATA"
+    | |   |   |   |   |   "Power Management protected data" = "{ theNumberOfPow$
+    | |   |   |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   |   |   "Physical Interconnect Location" = "Internal"
+    | |   |   |   |   |   "IOClass" = "IOATABlockStorageDriver"
+    | |   |   |   |   |   "ata device type" = "ata"
+    | |   |   |   |   |   "IOProbeScore" = 0
+    | |   |   |   |   |   "IOCommandPoolSize" = 32
+    | |   |   |   |   | }
+    | |   |   |   |   | 
+    | |   |   |   |   +-o IOATABlockStorageDevice  <class IOATABlockStorageDevi$
+    | |   |   |   |     | {
+    | |   |   |   |     |   "Protocol Characteristics" = {"Physical Interconnec$
+    | |   |   |   |     |   "device-type" = "Generic"
+    | |   |   |   |     |   "IOUserClientClass" = "ATASMARTUserClient"
+    | |   |   |   |     |   "IOCFPlugInTypes" = {"24514B7A-2804-11D6-8A02-00306$
+    | |   |   |   |     |   "Device Characteristics" = {"Product Revision Level$
+    | |   |   |   |     | }
+    | |   |   |   |     | 
+    | |   |   |   |     +-o IOBlockStorageDriver  <class IOBlockStorageDriver>
+    | |   |   |   |       | {
+    | |   |   |   |       |   "Statistics" = {"Bytes (Read)"=444773376,"Latency$
+    | |   |   |   |       |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   |       |   "IOClass" = "IOBlockStorageDriver"
+    | |   |   |   |       |   "IOProviderClass" = "IOBlockStorageDevice"
+    | |   |   |   |       |   "IOPropertyMatch" = {"device-type"="Generic"}
+    | |   |   |   |       |   "IOProbeScore" = 0
+    | |   |   |   |       |   "CFBundleIdentifier" = "com.apple.iokit.IOStorage$
+    | |   |   |   |       |   "IOGeneralInterest" = ("_IOServiceInterestNotifie$
+    | |   |   |   |       | }
+    | |   |   |   |       | 
+    | |   |   |   |       +-o QEMU HARDDISK Media  <class IOMedia>
+    | |   |   |   |         | {
+    | |   |   |   |         |   "BSD Unit" = 0
+    | |   |   |   |         |   "Content" = "FDisk_partition_scheme"
+    | |   |   |   |         |   "Whole" = Yes
+    | |   |   |   |         |   "IOMediaIcon" = {"IOBundleResourceFile"="Intern$
+    | |   |   |   |         |   "Removable" = No
+    | |   |   |   |         |   "Preferred Block Size" = 512
+    | |   |   |   |         |   "Ejectable" = No
+    | |   |   |   |         |   "Writable" = Yes
+    | |   |   |   |         |   "Size" = 2147483648
+    | |   |   |   |         |   "BSD Name" = "disk0"
+    | |   |   |   |         |   "BSD Minor" = 0
+    | |   |   |   |         |   "Content Hint" = ""
+    | |   |   |   |         |   "BSD Major" = 14
+    | |   |   |   |         |   "Leaf" = No
+    | |   |   |   |         | }
+    | |   |   |   |         | 
+    | |   |   |   |         +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |   |         |   {
+    | |   |   |   |         |     "IOProbeScore" = 30000
+    | |   |   |   |         |     "IOProviderClass" = "IOMedia"
+    | |   |   |   |         |     "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |   |         |     "CFBundleIdentifier" = "com.apple.iokit.IOSto$
+    | |   |   |   |         |     "IOResourceMatch" = "IOBSD"
+    | |   |   |   |         |     "IOClass" = "IOMediaBSDClient"
+    | |   |   |   |         |   }
+    | |   |   |   |         |   
+    | |   |   |   |         +-o IOFDiskPartitionScheme  <class IOFDiskPartition$
+    | |   |   |   |           | {
+    | |   |   |   |           |   "Content Table" = {"0x0F"="Windows_Extended",$
+    | |   |   |   |           |   "IOMatchCategory" = "IOStorage"
+    | |   |   |   |           |   "Content Mask" = "FDisk_partition_scheme"
+    | |   |   |   |           |   "IOClass" = "IOFDiskPartitionScheme"
+    | |   |   |   |           |   "IOProbeScore" = 3000
+    | |   |   |   |           |   "IOPropertyMatch" = {"Whole"=Yes}
+    | |   |   |   |           |   "IOProviderClass" = "IOMedia"
+    | |   |   |   |           |   "CFBundleIdentifier" = "com.apple.iokit.IOSto$
+    | |   |   |   |           | }
+    | |   |   |   |           | 
+    | |   |   |   |           +-o Untitled 1@1  <class IOMedia>
+    | |   |   |   |           | | {
+    | |   |   |   |           | |   "BSD Unit" = 0
+    | |   |   |   |           | |   "Content" = "Apple_Boot"
+    | |   |   |   |           | |   "Whole" = No
+    | |   |   |   |           | |   "Removable" = No
+    | |   |   |   |           | |   "Preferred Block Size" = 512
+    | |   |   |   |           | |   "Ejectable" = No
+    | |   |   |   |           | |   "Writable" = Yes
+    | |   |   |   |           | |   "Size" = 8372224
+    | |   |   |   |           | |   "BSD Name" = "disk0s1"
+    | |   |   |   |           | |   "Partition ID" = 1
+    | |   |   |   |           | |   "BSD Minor" = 1
+    | |   |   |   |           | |   "Content Hint" = "Apple_Boot"
+    | |   |   |   |           | |   "BSD Major" = 14
+    | |   |   |   |           | |   "Leaf" = Yes
+    | |   |   |   |           | | }
+    | |   |   |   |           | | 
+    | |   |   |   |           | +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |   |           |     {
+    | |   |   |   |           |       "IOProbeScore" = 30000
+    | |   |   |   |           |       "IOProviderClass" = "IOMedia"
+    | |   |   |   |           |       "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |   |           |       "CFBundleIdentifier" = "com.apple.iokit.I$
+    | |   |   |   |           |       "IOResourceMatch" = "IOBSD"
+    | |   |   |   |           |       "IOClass" = "IOMediaBSDClient"
+    | |   |   |   |           |     }
+    | |   |   |   |           |     
+    | |   |   |   |           +-o Untitled 2@2  <class IOMedia>
+    | |   |   |   |             | {
+    | |   |   |   |             |   "BSD Unit" = 0
+    | |   |   |   |             |   "Content" = "Apple_UFS"
+    | |   |   |   |             |   "Whole" = No
+    | |   |   |   |             |   "Removable" = No
+    | |   |   |   |             |   "Preferred Block Size" = 512
+    | |   |   |   |             |   "Ejectable" = No
+    | |   |   |   |             |   "Writable" = Yes
+    | |   |   |   |             |   "Size" = 2139095040
+    | |   |   |   |             |   "BSD Name" = "disk0s2"
+    | |   |   |   |             |   "Partition ID" = 2
+    | |   |   |   |             |   "BSD Minor" = 2
+    | |   |   |   |             |   "Content Hint" = "Apple_UFS"
+    | |   |   |   |             |   "BSD Major" = 14
+    | |   |   |   |             |   "Leaf" = Yes
+    | |   |   |   |             | }
+    | |   |   |   |             | 
+    | |   |   |   |             +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |   |                 {
+    | |   |   |   |                   "IOProbeScore" = 30000
+    | |   |   |   |                   "IOProviderClass" = "IOMedia"
+    | |   |   |   |                   "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |   |                   "CFBundleIdentifier" = "com.apple.iokit.I$
+    | |   |   |   |                   "IOResourceMatch" = "IOBSD"
+    | |   |   |   |                   "IOClass" = "IOMediaBSDClient"
+    | |   |   |   |                 }
+    | |   |   |   |                 
+    | |   |   |   +-o ATADeviceNub@1  <class ATADeviceNub>
+    | |   |   |     | {
+    | |   |   |     |   "device serial" = "QM00002             "
+    | |   |   |     |   "unit number" = 1
+    | |   |   |     |   "socket type" = "internal"
+    | |   |   |     |   "ata device type" = "ata"
+    | |   |   |     |   "device model" = "QEMU HARDDISK                        $
+    | |   |   |     |   "device revision" = "2.5+    "
+    | |   |   |     |   "extended LBA capacity" = 131072
+    | |   |   |     |   "IOUnit" = 1
+    | |   |   |     | }
+    | |   |   |     | 
+    | |   |   |     +-o IOATABlockStorageDriver  <class IOATABlockStorageDriver$
+    | |   |   |       | {
+    | |   |   |       |   "ATA Features" = 34
+    | |   |   |       |   "IOMaximumBlockCountRead" = 256
+    | |   |   |       |   "IOMaximumBlockCountWrite" = 256
+    | |   |   |       |   "IOMaximumSegmentCountRead" = 32
+    | |   |   |       |   "IOMaximumSegmentCountWrite" = 32
+    | |   |   |       |   "IOProviderClass" = "IOATADevice"
+    | |   |   |       |   "CFBundleIdentifier" = "com.apple.iokit.IOATABlockSto$
+    | |   |   |       |   "Power Management private data" = "{ this object = 08$
+    | |   |   |       |   "Physical Interconnect" = "ATA"
+    | |   |   |       |   "Power Management protected data" = "{ theNumberOfPow$
+    | |   |   |       |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |       |   "Physical Interconnect Location" = "Internal"
+    | |   |   |       |   "IOClass" = "IOATABlockStorageDriver"
+    | |   |   |       |   "ata device type" = "ata"
+    | |   |   |       |   "IOProbeScore" = 0
+    | |   |   |       |   "IOCommandPoolSize" = 32
+    | |   |   |       | }
+    | |   |   |       | 
+    | |   |   |       +-o IOATABlockStorageDevice  <class IOATABlockStorageDevi$
+    | |   |   |         | {
+    | |   |   |         |   "Protocol Characteristics" = {"Physical Interconnec$
+    | |   |   |         |   "device-type" = "Generic"
+    | |   |   |         |   "IOUserClientClass" = "ATASMARTUserClient"
+    | |   |   |         |   "IOCFPlugInTypes" = {"24514B7A-2804-11D6-8A02-00306$
+    | |   |   |         |   "Device Characteristics" = {"Product Revision Level$
+    | |   |   |         | }
+    | |   |   |         | 
+    | |   |   |         +-o IOBlockStorageDriver  <class IOBlockStorageDriver>
+    | |   |   |           | {
+    | |   |   |           |   "Statistics" = {"Bytes (Read)"=17205248,"Latency $
+    | |   |   |           |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |           |   "IOClass" = "IOBlockStorageDriver"
+    | |   |   |           |   "IOProviderClass" = "IOBlockStorageDevice"
+    | |   |   |           |   "IOPropertyMatch" = {"device-type"="Generic"}
+    | |   |   |           |   "IOProbeScore" = 0
+    | |   |   |           |   "CFBundleIdentifier" = "com.apple.iokit.IOStorage$
+    | |   |   |           |   "IOGeneralInterest" = ("_IOServiceInterestNotifie$
+    | |   |   |           | }
+    | |   |   |           | 
+    | |   |   |           +-o QEMU HARDDISK Media  <class IOMedia>
+    | |   |   |             | {
+    | |   |   |             |   "BSD Unit" = 1
+    | |   |   |             |   "Content" = ""
+    | |   |   |             |   "Whole" = Yes
+    | |   |   |             |   "IOMediaIcon" = {"IOBundleResourceFile"="Intern$
+    | |   |   |             |   "Removable" = No
+    | |   |   |             |   "Preferred Block Size" = 512
+    | |   |   |             |   "Ejectable" = No
+    | |   |   |             |   "Writable" = Yes
+    | |   |   |             |   "Size" = 67108864
+    | |   |   |             |   "BSD Name" = "disk1"
+    | |   |   |             |   "BSD Minor" = 3
+    | |   |   |             |   "Content Hint" = ""
+    | |   |   |             |   "BSD Major" = 14
+    | |   |   |             |   "Leaf" = Yes
+    | |   |   |             | }
+    | |   |   |             | 
+    | |   |   |             +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |                 {
+    | |   |   |                   "IOProbeScore" = 30000
+    | |   |   |                   "IOProviderClass" = "IOMedia"
+    | |   |   |                   "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |                   "CFBundleIdentifier" = "com.apple.iokit.IOSto$
+    | |   |   |                   "IOResourceMatch" = "IOBSD"
+    | |   |   |                   "IOClass" = "IOMediaBSDClient"
+    | |   |   |                 }
+    | |   |   |                 
+    | |   |   +-o AppleIntelPIIXATAController  <class AppleIntelPIIXATAControll$
+    | |   |     | {
+    | |   |     |   "Channel Number" = 1
+    | |   |     |   "IOInterruptControllers" = ("intel-pic")
+    | |   |     |   "IOInterruptSpecifiers" = (<0f000000>)
+    | |   |     |   "Interrupt" = 15
+    | |   |     |   "Port Address" = 368
+    | |   |     | }
+    | |   |     | 
+    | |   |     +-o AppleIntelPIIXATADriver  <class AppleIntelPIIXATADriver>
+    | |   |       | {
+    | |   |       |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |       |   "IOClass" = "AppleIntelPIIXATADriver"
+    | |   |       |   "Drive 0 PIO Mode" = 3
+    | |   |       |   "IOProviderClass" = "AppleIntelPIIXATAController"
+    | |   |       |   "IOProbeScore" = 0
+    | |   |       |   "CFBundleIdentifier" = "com.apple.driver.AppleIntelPIIXAT$
+    | |   |       |   "Drive 0 Multi-Word DMA Mode" = 1
+    | |   |       | }
+    | |   |       | 
+    | |   |       +-o ATADeviceNub@0  <class ATADeviceNub>
+    | |   |         | {
+    | |   |         |   "unit number" = 0
+    | |   |         |   "socket type" = "internal"
+    | |   |         |   "ata device type" = "atapi"
+    | |   |         |   "device serial" = "QM00003             "
+    | |   |         |   "device revision" = "2.5+    "
+    | |   |         |   "device model" = "QEMU DVD-ROM                         $
+    | |   |         |   "IOUnit" = 0
+    | |   |         | }
+    | |   |         | 
+    | |   |         +-o IOATAPIProtocolTransport  <class IOATAPIProtocolTranspo$
+    | |   |           | {
+    | |   |           |   "Protocol Characteristics" = {"unit number"=0,"Physic$
+    | |   |           |   "Power Management protected data" = "{ theNumberOfPow$
+    | |   |           |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |           |   "Physical Interconnect Location" = "Internal"
+    | |   |           |   "IOClass" = "IOATAPIProtocolTransport"
+    | |   |           |   "ata device type" = "atapi"
+    | |   |           |   "IOProviderClass" = "IOATADevice"
+    | |   |           |   "IOProbeScore" = 0
+    | |   |           |   "CFBundleIdentifier" = "com.apple.iokit.IOATAPIProtoc$
+    | |   |           |   "Power Management private data" = "{ this object = 08$
+    | |   |           |   "Physical Interconnect" = "ATAPI"
+    | |   |           | }
+    | |   |           | 
+    | |   |           +-o IOSCSIPeripheralDeviceNub  <class IOSCSIPeripheralDev$
+    | |   |             | {
+    | |   |             |   "Protocol Characteristics" = {"unit number"=0,"Phys$
+    | |   |             |   "IOMatchCategory" = "SCSITaskUserClientIniter"
+    | |   |             |   "Product Identification" = "QEMU DVD-ROM"
+    | |   |             |   "IOClass" = "IOSCSIPeripheralDeviceNub"
+    | |   |             |   "IOProviderClass" = "IOSCSIProtocolServices"
+    | |   |             |   "IOProbeScore" = 0
+    | |   |             |   "Peripheral Device Type" = 5
+    | |   |             |   "CFBundleIdentifier" = "com.apple.iokit.IOSCSIArchi$
+    | |   |             |   "Vendor Identification" = "QEMU"
+    | |   |             |   "Product Revision Level" = "2.5+"
+    | |   |             | }
+    | |   |             | 
+    | |   |             +-o IOSCSIPeripheralDeviceType05  <class IOSCSIPeripher$
+    | |   |               | {
+    | |   |               |   "CD Features" = 3
+    | |   |               |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |               |   "Power Management protected data" = "{ theNumberO$
+    | |   |               |   "IOClass" = "IOSCSIPeripheralDeviceType05"
+    | |   |               |   "IOProviderClass" = "IOSCSIPeripheralDeviceNub"
+    | |   |               |   "Peripheral Device Type" = 5
+    | |   |               |   "IOProbeScore" = 5000
+    | |   |               |   "CFBundleIdentifier" = "com.apple.iokit.IOSCSIMul$
+    | |   |               |   "DVD Features" = 3
+    | |   |               |   "Power Management private data" = "{ this object $
+    | |   |               | }
+    | |   |               | 
+    | |   |               +-o IODVDServices  <class IODVDServices>
+    | |   |                 | {
+    | |   |                 |   "Protocol Characteristics" = {"unit number"=0,"$
+    | |   |                 |   "IOMaximumBlockCountRead" = 256
+    | |   |                 |   "IOMaximumBlockCountWrite" = 256
+    | |   |                 |   "IOMaximumSegmentCountRead" = 48
+    | |   |                 |   "IOMaximumSegmentCountWrite" = 48
+    | |   |                 |   "device-type" = "DVD"
+    | |   |                 |   "Device Characteristics" = {"CD Features"=3,"Ve$
+    | |   |                 | }
+    | |   |                 | 
+    | |   |                 +-o IODVDBlockStorageDriver  <class IODVDBlockStora$
+    | |   |                     {
+    | |   |                       "Statistics" = {"Bytes (Read)"=0,"Latency Tim$
+    | |   |                       "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |                       "IOClass" = "IODVDBlockStorageDriver"
+    | |   |                       "IOProviderClass" = "IODVDBlockStorageDevice"
+    | |   |                       "IOPropertyMatch" = {"device-type"="DVD"}
+    | |   |                       "IOProbeScore" = 0
+    | |   |                       "CFBundleIdentifier" = "com.apple.iokit.IODVD$
+    | |   |                     }
+    | |   |                     
+    | |   +-o pci8086,7113@1,3  <class IOPCIDevice>
+    | |   |   {
+    | |   |     "name" = "pci8086,7113"
+    | |   |     "subsystem-vendor-id" = <f41a0000>
+    | |   |     "class-code" = <00800600>
+    | |   |     "reg" = <000b0000>
+    | |   |     "compatible" = <"pci1af4,1100","pci8086,7113","pciclass,068000"$
+    | |   |     "IOInterruptSpecifiers" = (<09000000>)
+    | |   |     "Power Management private data" = "{ this object = 082a0b00, in$
+    | |   |     "vendor-id" = <86800000>
+    | |   |     "device-id" = <13710000>
+    | |   |     "revision-id" = <03000000>
+    | |   |     "subsystem-id" = <00110000>
+    | |   |     "Power Management protected data" = "{ theNumberOfPowerStates =$
+    | |   |     "IOInterruptControllers" = ("intel-pic")
+    | |   |     "IOName" = "pci8086,7113"
+    | |   |   }
+    | |   |   
+    | |   +-o display@2  <class IOPCIDevice>
+    | |     | {
+    | |     |   "name" = "display"
+    | |     |   "AAPL,iokit-ndrv" = <203eac11>
+    | |     |   "subsystem-vendor-id" = <f41a0000>
+    | |     |   "class-code" = <00000300>
+    | |     |   "reg" = <00100000>
+    | |     |   "compatible" = <"pci1af4,1100","pci1234,1111","pciclass,030000"$
+    | |     |   "IOInterruptSpecifiers" = (<00000000>)
+    | |     |   "Power Management private data" = "{ this object = 082a0900, in$
+    | |     |   "IODeviceMemory" = (({"length"=16777216,"address"=1844674407365$
+    | |     |   "vendor-id" = <34120000>
+    | |     |   "device-id" = <11110000>
+    | |     |   "revision-id" = <02000000>
+    | |     |   "subsystem-id" = <00110000>
+    | |     |   "AAPL,RegEntryID" = <00092a08fff6d5f7656d69537a6c7552>
+    | |     |   "Power Management protected data" = "{ theNumberOfPowerStates =$
+    | |     |   "IOInterruptControllers" = ("intel-pic")
+    | |     |   "assigned-addresses" = <1010004200000000000000fd000000000000000$
+    | |     |   "IOName" = "display"
+    | |     | }
+    | |     | 
+    | |     +-o IONDRVFramebuffer  <class IONDRVFramebuffer>
+    | |         {
+    | |           "IONameMatch" = "display"
+    | |           "IOMatchCategory" = "IOFramebuffer"
+    | |           "Power Management protected data" = "{ theNumberOfPowerStates$
+    | |           "IOClass" = "IONDRVFramebuffer"
+    | |           "IOProbeScore" = 20000
+    | |           "IOProviderClass" = "IOPCIDevice"
+    | |           "CFBundleIdentifier" = "com.apple.iokit.IONDRVSupport"
+    | |           "IONameMatched" = "display"
+    | |           "Power Management private data" = "{ this object = 082af800, $
+    | |         }
+    | |         
+    | +-o display  <class IOPlatformDevice>
+    |   | {
+    |   |   "AAPL,iokit-ndrv" = <203eac11>
+    |   |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","in$
+    |   |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<030000$
+    |   |   "AAPL,RegEntryID" = <80b229087f4dd6f7656d69537a6c7552>
+    |   |   "AAPL,boot-display" = "Yes"
+    |   |   "IOName" = "display"
+    |   | }
+    |   | 
+    |   +-o IONDRVFramebuffer  <class IONDRVFramebuffer>
+    |       {
+    |         "IONameMatch" = "display"
+    |         "IOMatchCategory" = "IOFramebuffer"
+    |         "Power Management protected data" = "{ theNumberOfPowerStates = 0$
+    |         "IOClass" = "IONDRVFramebuffer"
+    |         "IOProbeScore" = 20000
+    |         "IOProviderClass" = "IOPlatformDevice"
+    |         "CFBundleIdentifier" = "com.apple.iokit.IONDRVSupport"
+    |         "IONameMatched" = "display"
+    |         "Power Management private data" = "{ this object = 082a3c00, driv$
+    |       }
+    |       
+    +-o IOResources  <class IOResources>
+      | {
+      |   "IOKit" = "IOService"
+      |   "IORTC" = "AppleIntelClock is not serializable"
+      |   "IOBSD" = "IOService"
+      | }
+      | 
+      +-o com_apple_BootCache  <class com_apple_BootCache>
+      |   {
+      |     "IOProviderClass" = "IOResources"
+      |     "IOProbeScore" = 0
+      |     "IOMatchCategory" = "BootCache"
+      |     "CFBundleIdentifier" = "com.apple.BootCache"
+      |     "IOResourceMatch" = "IOKit"
+      |     "IOClass" = "com_apple_BootCache"
+      |   }
+      |   
+      +-o IOHIDSystem  <class IOHIDSystem>
+      |   {
+      |     "HIDAutoDimTime" = <0000000000000000>
+      |     "IOMatchCategory" = "IOHID"
+      |     "IOClass" = "IOHIDSystem"
+      |     "HIDParameters" = {"HIDStickyKeysDisabled"=<00000000>,"HIDStickyKey$
+      |     "HIDBrightness" = <00000000>
+      |     "IOProviderClass" = "IOResources"
+      |     "IOProbeScore" = 0
+      |     "HIDAutoDimState" = <00000000>
+      |     "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+      |     "IOResourceMatch" = "IOKit"
+      |     "HIDIdleTime" = <0000000000000000>
+      |   }
+      |   
+      +-o IODisplayWrangler  <class IODisplayWrangler>
+      |   {
+      |     "Power Management protected data" = "{ theNumberOfPowerStates = 5, $
+      |     "IOMatchCategory" = "IOGraphics"
+      |     "IOClass" = "IODisplayWrangler"
+      |     "IOProviderClass" = "IOResources"
+      |     "IOProbeScore" = 0
+      |     "CFBundleIdentifier" = "com.apple.iokit.IOGraphicsFamily"
+      |     "IOResourceMatch" = "IOKit"
+      |     "Power Management private data" = "{ this object = 08262a80, intere$
+      |     "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializa$
+      |   }
+      |   
+      +-o IOBSDConsole  <class IOBSDConsole>
+          {
+            "IOProviderClass" = "IOResources"
+            "IOProbeScore" = 0
+            "IOMatchCategory" = "IOBSDConsole"
+            "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+            "IOResourceMatch" = "IOBSD"
+            "IOClass" = "IOBSDConsole"
+          }
+          

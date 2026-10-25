@@ -1,0 +1,1 @@
+ls: /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv: No such file or directory

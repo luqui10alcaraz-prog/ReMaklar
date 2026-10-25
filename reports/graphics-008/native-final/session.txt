@@ -1,0 +1,418 @@
++ cp -Rp /var/tmp/remaklar/experiments/qemu-0.10.6 /var/tmp/graphics008-run5/source
++ cp -Rp /var/tmp/remaklar/build/qemu-darwin6 /var/tmp/graphics008-run5/build
++ cp /var/tmp/graphics008-final/darwin-kernel.c /var/tmp/graphics008-run5/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics008-final/bootstrap-main.c /var/tmp/graphics008-run5/source/darwin-user/remaklar/bootstrap-main.c
++ cp /var/tmp/graphics008-final/bootstrap.h /var/tmp/graphics008-run5/source/darwin-user/remaklar/bootstrap.h
++ rm /var/tmp/graphics008-run5/build/ppc-darwin-user/darwin-kernel.o /var/tmp/graphics008-run5/build/ppc-darwin-user/bootstrap-main.o
++ make -C /var/tmp/graphics008-run5/build SRC_PATH=/var/tmp/graphics008-run5/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc
++ uname -a
++ file /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc
++ md5 /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc
++ '[' '!' -e /var/tmp/jaguar/Applications/Utilities/Installer.app ']'
++ '[' '!' -e /var/tmp/jaguar/System/Installation/CDIS/splash ']'
++ '[' '!' -L /var/tmp/jaguar/System/Library/CoreServices/WindowServer ']'
++ :
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/Security.framework/Versions/A/Security ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Printers/Libraries/libLW8Utils.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/Printers/Libraries/libPPDLib.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv ']'
++ echo System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/dyld ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/libSystem.B.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/libcrypto.0.9.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/libcups.2.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/libobjc.A.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/libssl.0.9.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/libz.1.1.3.dylib ']'
++ IFS=
++ read -r path
++ '[' '!' -e /var/tmp/jaguar/usr/lib/system/libmathCommon.A.dylib ']'
++ IFS=
++ read -r path
++ '[' -s /var/tmp/graphics008-run5/libraries-added.txt ']'
++ gnutar xzf /var/tmp/graphics008-final/libraries.tgz -C /var/tmp/jaguar -T /var/tmp/graphics008-run5/libraries-added.txt
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/Security.framework/Versions/A/Security
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Printers/Libraries/libLW8Utils.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/Printers/Libraries/libPPDLib.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+md5: /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv: No such file or directory
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/dyld
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/libSystem.B.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/libcrypto.0.9.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/libcups.2.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/libobjc.A.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/libssl.0.9.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/libz.1.1.3.dylib
++ IFS=
++ read -r path
++ md5 /var/tmp/jaguar/usr/lib/system/libmathCommon.A.dylib
++ IFS=
++ read -r path
++ old=/var/tmp/remaklar/research/samples-local
++ '[' '!' -e /var/tmp/remaklar/research/samples-local/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit ']'
++ mkdir -p /var/tmp/remaklar/research/samples-local/System/Library/Frameworks/IOKit.framework/Versions/A
++ cp -p /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit /var/tmp/remaklar/research/samples-local/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
++ extra=
++ '[' exec-runtime = iokit-runtime ']'
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics008-final/exec-runtime.c -o /var/tmp/graphics008-run5/exec-runtime-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics008-final/exec-runtime.c -o /var/tmp/graphics008-run5/exec-runtime-i386
++ extra=
++ '[' iokit-runtime = iokit-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics008-final/iokit-runtime.c -framework IOKit -o /var/tmp/graphics008-run5/iokit-runtime-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics008-final/iokit-runtime.c -framework IOKit -o /var/tmp/graphics008-run5/iokit-runtime-i386
++ cp /var/tmp/graphics008-run5/exec-runtime-ppc /var/tmp/remaklar/research/samples-local/tmp/exec-008-final.ppc
++ cp /var/tmp/graphics008-run5/exec-runtime-ppc /var/tmp/jaguar/tmp/exec-008-final.ppc
++ probe=/var/tmp/graphics008-final/run_graphics_008.pl
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/exec-native /var/tmp/graphics008-run5/exec-runtime-i386 /var/tmp/graphics008-run5/exec-runtime-i386
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/exec-darwin /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/remaklar/research/samples-local /var/tmp/graphics008-run5/exec-runtime-ppc /tmp/exec-008-final.ppc
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/exec-jaguar /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics008-run5/exec-runtime-ppc /tmp/exec-008-final.ppc
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/iokit-native /var/tmp/graphics008-run5/iokit-runtime-i386
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/iokit-darwin /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/remaklar/research/samples-local /var/tmp/graphics008-run5/iokit-runtime-ppc
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/iokit-jaguar /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics008-run5/iokit-runtime-ppc
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/process-regression /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics008-run1/process-ppc
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/windowserver /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/splash /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Installation/CDIS/splash /Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/installer /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/quartz-regression /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/remaklar/build/quartz-ppc /tmp/quartz-008-regression.ppm
++ '[' -f /var/tmp/jaguar/tmp/quartz-008-regression.ppm ']'
++ cp /var/tmp/jaguar/tmp/quartz-008-regression.ppm /var/tmp/graphics008-run5/quartz.ppm
++ mkdir /var/tmp/graphics008-run5/utilities /var/tmp/graphics008-run5/filesystem
++ set +e
++ perl /var/tmp/remaklar/tests/ppc/run_utilities.pl /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc /var/tmp/remaklar/research/samples-local /var/tmp/remaklar/build/utility-cases.tsv /var/tmp/graphics008-run5/utilities
++ echo 0
++ perl /var/tmp/remaklar/tests/ppc/run_filesystem.pl /var/tmp/graphics008-run5/build/ppc-darwin-user/qemu-ppc /var/tmp/remaklar/research/samples-local /var/tmp/remaklar/build/filesystem-probe.macho /var/tmp/graphics008-run5/filesystem
++ echo 0
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/native007-objc /var/tmp/native007-run3/objc
++ perl /var/tmp/graphics008-final/run_graphics_008.pl /var/tmp/graphics008-run5/native007-cf /var/tmp/native007-run3/cf
++ ioreg -l
++ ps -axww
++ echo GRAPHICS_008_FINAL_COMPLETE
+GRAPHICS_008_FINAL_COMPLETE

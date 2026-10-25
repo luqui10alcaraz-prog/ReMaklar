@@ -1,0 +1,695 @@
+{
+  "files": {
+    "/Applications/Utilities/Installer.app/Contents/MacOS/Installer": {
+      "source": "build/jaguar-installer-008/Mac OS X Install Disc 1/Applications/Utilities/Installer.app/Contents/MacOS/Installer",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/dyld",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "394dc7dd891a5904c360f1f8fb2e7e566e54974e496c18bcf0cc9f1a0e3467a7"
+    },
+    "/usr/lib/libSystem.B.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/libSystem.B.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/system/libmathCommon.A.dylib"
+      ],
+      "sha256": "ff16c324f52f73bcce6f9f692180dc71322ca0081dcf2bc9449c5c472631b3c9"
+    },
+    "/usr/lib/system/libmathCommon.A.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/system/libmathCommon.A.dylib",
+      "cputype": 18,
+      "dependencies": [],
+      "sha256": "5f92fb3a1020f87cfaa89da7c4e10176adfa506cce68a02b7ca3e710d69ba0cf"
+    },
+    "/usr/lib/libobjc.A.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/libobjc.A.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "04fba974582a8831480792060074368c918316315edcec8385afbdf55a7a6df3"
+    },
+    "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "5f6e0abed8c77cac639d49c08d34414e1ce5e4aff10d5b5ef056236238f6da76"
+    },
+    "/System/Library/Frameworks/Security.framework/Versions/A/Security": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "0d96432f4bc2a69fc4a3248ff3dbb6491927c0086630c8b946030269d47ca77d"
+    },
+    "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libz.1.1.3.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "66f8d66958d1d0dba14afb87bda685eb60b4bb5caa7c2c84303bf0b204bdf153"
+    },
+    "/usr/lib/libz.1.1.3.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/libz.1.1.3.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "fec95424bf9ba5f7f548a20d0a4374e847ab7885591a92033442bceec6d78222"
+    },
+    "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "e7536cc2d65f29a53be4c1d3d4b03b7fe6716c8bb4bebc5b149cd985182b4b16"
+    },
+    "/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo",
+        "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "4ae7e548e054d1b31c93b3048b9e9229c73282da0fa2fb849eee2c9eb3d38f4f"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "53366f08545299b54a84532ebee0eaf23e782bfd2887d35649ffe82484624058"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "69665708733e72cdb308a3551b456269675edee145c700b2e798cff21b26927b"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libz.1.1.3.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "b31e811093f3e93f7660f2b940563ca3f7a6d0d884d9b268e3fc8c8360aa1f8e"
+    },
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore",
+        "/usr/lib/system/libmathCommon.A.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "10903bb66426f957f21d8104b0a26a5bcb90509b44f9e41ed9166b713da9b872"
+    },
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "3bd5705e9ee98bb9532b75d8b679c950f91fc78893c8a88fc7429d42260d2b99"
+    },
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "2e2293f5818bafda005951f952565b5d47927b796c50a5045f7c5706bf04a5ac"
+    },
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "be2bacf420249a1312949d7278719f2fd61a30033c2e27e97bb825a4417839fa"
+    },
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/system/libmathCommon.A.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "befebb3061fc4d7a0e222b30a22352cfe37f9d49244fd04a5630ff389ac54da1"
+    },
+    "/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "cc3344277b65b5410826f347a45021df8ffa68c33c7ed9e97a1f070990161b96"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "8ae9b4a80fb16f754861504ab66a1cc879ccd68d92f133c2584c6e0e3f8c605e"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "51684c00cecdd494fd5bf0daa6dbe7f48385c07ec49dd3a20a96dbb15e8d7abf"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "e8acbe6a92aaee25223ff336c9246cdc1b43dba3ca57f13f7f51a7bb720819c6"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "b62ae83a731a2d0c100a1f3f4278aefde54b30ee561199baf0af2a44cb663404"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "387bd61aa4c1bd832343545eed1ba11c1525538c8fcfe44f15991552feb821f7"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "557217362765f7f1ea7349a005b751d296e54357f1e8d1af30a7c288179ab551"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "0941258e32be05cfebd2080fb2781d8689f4586a6b1f4a4cb2f797e922ce2180"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "05832a4254d682ea38bff78e37ac0c634976d9d83a16fc77560e76c9f7558bc3"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libcups.2.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "d00eed9703fc65913ef5c400cb20c3f5c567d53f6fe3aadf8c40de175085c0eb"
+    },
+    "/usr/lib/libcups.2.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/libcups.2.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libssl.0.9.dylib",
+        "/usr/lib/libcrypto.0.9.dylib"
+      ],
+      "sha256": "31becd85ad44cb957700fac746e83d12fa9ccf4074b20f7a302b299e4bc15236"
+    },
+    "/usr/lib/libcrypto.0.9.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/libcrypto.0.9.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "9e74aee46a5e831c4af60ebd1704347c2c51daf0f672532afd87e67d411faac4"
+    },
+    "/usr/lib/libssl.0.9.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/libssl.0.9.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libcrypto.0.9.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "7fa1c9ae2c56a833a44c1e95b64e3580d5ef715edee5c6a9146b35d9db02b553"
+    },
+    "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "b8b6281d25a64e2ee306cc54b9724b37938e2f3ad7cc3ebdb8031dbcaa5bda49"
+    },
+    "/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "a8c80f0035ee23ef807bf0cf7e656c5a4a7e0a21b7ce3ba11397d21de1f619bf"
+    },
+    "/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+      ],
+      "sha256": "0375ebd36fca277599fcce6abd1a46288b754f9a83bb9563eda4d8b466ee295e"
+    },
+    "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "cf0c75341133d572574b7570a2032154badb022fdce5ed9fb9ac8776b4752949"
+    },
+    "/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libz.1.1.3.dylib"
+      ],
+      "sha256": "1a5bcc740f0642542256c2fefa59970451d3368a908671782cd8cbc8800fde17"
+    },
+    "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "c3f3612e06581b6949423ea6f08a6216874d71d78d4caf5990b81053f62647e1"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "914faacc0b7a9be64c28fbfeb70006b18e10d64913e87cd846ea164bb4e304c7"
+    },
+    "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "1db590854f54edc7fcbeee47ea3f8157f1857338a1e2325198320e7565ad6173"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "8fc183bc660f199e2a3e76dff25a1a96d86c69d9c71ef219844590edbf636926"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "e8fde7ceb32d5e9cc957bf01f72435a5be257a772cb06c454cdaae1671cb7acc"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "f65a4098623279a5461b72872321d3b6a3fcd4a80c0efcbc6503dbdbed531d6e"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "c1cae1f22f1b839d432b599975f9e8366ed4a44f8e14f13b9ae9f009ad9e74d3"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "70ec1e80217a8c5af76576da51e3fa914ff866bb580f622a1ad7ce030d15dd35"
+    },
+    "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "a1ea7812cef450246db338848c9251817bcb5c055ab88d5c2abeda5203b11edd"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "d88fa1e87a0d9335ca63b2fe393e9f1e7f1335807a45e265657ccd8353da5ab2"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "0efc20cdeda24ef1e3d410758171cb2180a0617b50eb2fd8a0ceab34dac4c153"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "51664696dd48a2e926fb68471dd5444f0d48c3f71821366ddb285c7a92635acd"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "8788239ff081b94c3c06814f0fa355bb62713fbec63ad0d08b2581e8c940b5ba"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox"
+      ],
+      "sha256": "93a9114e9a031dc2bdb0e6d096be2ad9defd95ce295169510db7739e40ff8b94"
+    },
+    "/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "4c36c283bc376a5e6b1e0f168898f948c43b2003555420570cf885cd727716d6"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering",
+      "cputype": 18,
+      "dependencies": [
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+      ],
+      "sha256": "8c590c3a7c13787667a086cbc48d926c805fce0aec4c4285372f9f3aae027071"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Printers/Libraries/libPPDLib.dylib",
+        "/usr/lib/libcups.2.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "bd5d1fa4b824d9cc0b859f2326d8894b51e3c9204d315ca8260debfa91ef94d8"
+    },
+    "/System/Library/Printers/Libraries/libPPDLib.dylib": {
+      "source": "build/jaguar-deps-008/Mac OS X Install Disc 1/System/Library/Printers/Libraries/libPPDLib.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Printers/Libraries/libLW8Utils.dylib",
+        "/usr/lib/libcups.2.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "f25e76830d6c8c375893c5880be743a4b8d00b2981b24b8454f8e227b95ecd89"
+    },
+    "/System/Library/Printers/Libraries/libLW8Utils.dylib": {
+      "source": "build/jaguar-deps-008/Mac OS X Install Disc 1/System/Library/Printers/Libraries/libLW8Utils.dylib",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libcups.2.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "d1dac2a56907f3e34207543cb1856e46c8146f5c6c373866410d682ecbac3cb1"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "852887f72ab638e4cdf751eb9b76305bbf49f7db297744a519b40ef59c55fc9f"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "3225744e2973156aac7f83104b9db1cb74e5e8148712b6a31451c3dffbe58661"
+    },
+    "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture",
+      "cputype": 18,
+      "dependencies": [
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+        "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "sha256": "bf01d7c60728a881bf18c15786ae5ff400b2c52ffee622fc837814566494fbb9"
+    },
+    "/usr/lib/dyld": {
+      "source": "research/jaguar-local/Mac OS X Install Disc 1/usr/lib/dyld",
+      "cputype": 18,
+      "dependencies": [],
+      "sha256": "20605cb20eae5694dfcc21a31af2c54a12464d1e8878b4d4bc0b4ce52a89fa90"
+    }
+  },
+  "missing": []
+}

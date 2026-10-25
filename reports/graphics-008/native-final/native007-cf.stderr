@@ -1,0 +1,5 @@
+IMAGE cpu=7 magic=feedface path=/var/tmp/native007-run3/cf
+IMAGE cpu=7 magic=feedface path=/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+IMAGE cpu=7 magic=feedface path=/usr/lib/libSystem.B.dylib
+IMAGE cpu=7 magic=feedface path=/usr/lib/system/libmathCommon.A.dylib
+DYLD_MEMORY address=8fe00000 cpu=7 filetype=7

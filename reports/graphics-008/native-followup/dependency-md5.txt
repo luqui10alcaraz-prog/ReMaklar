@@ -1,0 +1,1 @@
+MD5 (/var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv) = f482c51a2544408f9cffbc823e1a5081

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "exit": 23,
+  "same_host_pid": 11519,
+  "originals_modified": false,
+  "kernel_mapping_policy_changed": false,
+  "generated_images_sha256": {
+    "source": "cf7e004bb996a97044d384af8ec9ef9fde6d18061a00251e9f9b335dc00d6365",
+    "target": "1a95d17f0b0d039a6fd8fa4c3c8bbc463df707292a355d7f14ea670c984e9853"
+  }
+}

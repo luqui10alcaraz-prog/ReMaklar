@@ -1,0 +1,28 @@
++ cp -Rp /var/tmp/graphics008-run5/source /var/tmp/graphics008-run6/source
++ cp -Rp /var/tmp/graphics008-run5/build /var/tmp/graphics008-run6/build
++ cp /var/tmp/graphics008-followup/darwin-kernel.c /var/tmp/graphics008-run6/source/darwin-user/remaklar/darwin-kernel.c
++ rm /var/tmp/graphics008-run6/build/ppc-darwin-user/darwin-kernel.o
++ make -C /var/tmp/graphics008-run6/build SRC_PATH=/var/tmp/graphics008-run6/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics008-run6/build/ppc-darwin-user/qemu-ppc
++ uname -a
++ file /var/tmp/graphics008-run6/build/ppc-darwin-user/qemu-ppc
++ md5 /var/tmp/graphics008-run6/build/ppc-darwin-user/qemu-ppc
++ path=System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
++ ls -ld /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
++ '[' '!' -e /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv ']'
+++ dirname System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
++ mkdir -p /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A
++ cp -p /var/tmp/graphics008-followup/DesktopServicesPriv /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
++ ls -ld /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
++ md5 /var/tmp/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics008-followup/process-runtime.c -o /var/tmp/graphics008-run6/process-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics008-followup/process-runtime.c -o /var/tmp/graphics008-run6/process-native
++ probe=/var/tmp/graphics008-followup/run_graphics_008.pl
++ perl /var/tmp/graphics008-followup/run_graphics_008.pl /var/tmp/graphics008-run6/process-native /var/tmp/graphics008-run6/process-native
++ perl /var/tmp/graphics008-followup/run_graphics_008.pl /var/tmp/graphics008-run6/process-jaguar /var/tmp/graphics008-run6/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics008-run6/process-ppc
++ perl /var/tmp/graphics008-followup/run_graphics_008.pl /var/tmp/graphics008-run6/windowserver /var/tmp/graphics008-run6/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ perl /var/tmp/graphics008-followup/run_graphics_008.pl /var/tmp/graphics008-run6/splash /var/tmp/graphics008-run6/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Installation/CDIS/splash /Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ perl /var/tmp/graphics008-followup/run_graphics_008.pl /var/tmp/graphics008-run6/installer /var/tmp/graphics008-run6/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ ps -axww
++ echo GRAPHICS_008_FOLLOWUP_COMPLETE
+GRAPHICS_008_FOLLOWUP_COMPLETE

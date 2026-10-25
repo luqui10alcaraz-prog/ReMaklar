@@ -1,0 +1,22 @@
++ cp -Rp /var/tmp/graphics008-run6/source /var/tmp/graphics008-run7/source
++ cp -Rp /var/tmp/graphics008-run6/build /var/tmp/graphics008-run7/build
++ cp /var/tmp/graphics008-access/darwin-kernel.c /var/tmp/graphics008-run7/source/darwin-user/remaklar/darwin-kernel.c
++ rm /var/tmp/graphics008-run7/build/ppc-darwin-user/darwin-kernel.o
++ make -C /var/tmp/graphics008-run7/build SRC_PATH=/var/tmp/graphics008-run7/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc
++ uname -a
++ file /var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc
++ md5 /var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc
++ file /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
++ md5 /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
++ md5 /var/tmp/remaklar/build/qemu-darwin6/ppc-darwin-user/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics008-access/access-runtime.c -o /var/tmp/graphics008-run7/access-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics008-access/access-runtime.c -o /var/tmp/graphics008-run7/access-native
++ probe=/var/tmp/graphics008-access/run_graphics_008.pl
++ perl /var/tmp/graphics008-access/run_graphics_008.pl /var/tmp/graphics008-run7/access-native /var/tmp/graphics008-run7/access-native
++ perl /var/tmp/graphics008-access/run_graphics_008.pl /var/tmp/graphics008-run7/access-jaguar /var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics008-run7/access-ppc
++ perl /var/tmp/graphics008-access/run_graphics_008.pl /var/tmp/graphics008-run7/windowserver /var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ perl /var/tmp/graphics008-access/run_graphics_008.pl /var/tmp/graphics008-run7/installer /var/tmp/graphics008-run7/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ ps -axww
++ echo GRAPHICS_008_ACCESS_COMPLETE
+GRAPHICS_008_ACCESS_COMPLETE

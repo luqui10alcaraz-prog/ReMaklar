@@ -1,0 +1,9 @@
+{
+  "matching_guest_library_md5_count": 58,
+  "closure_count": 59,
+  "missing_at_integrated_run": [
+    "/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv"
+  ],
+  "matching_originals_after_followup": 59,
+  "DesktopServicesPriv_md5": "f482c51a2544408f9cffbc823e1a5081"
+}
