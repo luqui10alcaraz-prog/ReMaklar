@@ -8,6 +8,7 @@ int main(void)
     mach_port_limits_t limits;
     mach_msg_type_number_t count;
     mach_port_urefs_t refs;
+    mach_port_t notify,previous;
     kern_return_t r;
     mach_timebase_info_data_t info;
     unsigned long long before,after;
@@ -24,6 +25,11 @@ int main(void)
     if (mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_PORT_SET,&set)) return 7;
     if (mach_port_insert_member(mach_task_self(),port,set)) return 8;
     if (mach_port_insert_member(mach_task_self(),port,set)!=KERN_ALREADY_IN_SET) return 9;
+    if (mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&notify)) return 11;
+    if (mach_port_request_notification(mach_task_self(),port,MACH_NOTIFY_DEAD_NAME,0,notify,MACH_MSG_TYPE_MAKE_SEND_ONCE,&previous) || previous!=MACH_PORT_NULL) return 12;
+    if (mach_port_request_notification(mach_task_self(),port,MACH_NOTIFY_DEAD_NAME,0,notify,MACH_MSG_TYPE_MAKE_SEND_ONCE,&previous) || previous==MACH_PORT_NULL) return 13;
+    if (mach_port_get_refs(mach_task_self(),previous,MACH_PORT_RIGHT_SEND_ONCE,&refs) || refs!=1) return 14;
+    if (mach_port_deallocate(mach_task_self(),previous)) return 15;
     before=mach_absolute_time();
     do { after=mach_absolute_time(); } while(after==before);
     if (after<before || mach_timebase_info(&info) || !info.numer || !info.denom) return 10;

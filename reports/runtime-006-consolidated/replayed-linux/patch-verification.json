@@ -1,0 +1,8 @@
+{
+  "patches": 5,
+  "bytes_and_git_executable_bits_equal": true,
+  "notes": [
+    "initial git apply skipped paths due parent git repository; repeated in isolated git repository",
+    "full permission mode comparison differed by umask group write; Git executable bits and bytes match"
+  ]
+}

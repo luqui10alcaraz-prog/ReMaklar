@@ -1,0 +1,5 @@
+mach_exec at 0x804fa70
+loading /home/lucas/Escritorio/ReMaklar/research/samples-local/usr/bin/true [FAT]...
+load_segment: sc->vmaddr == 0 returning
+load_segment: mmaping __TEXT to 0x1000-(0x1000|0x1000) + 0x0
+sc->vmaddr 0x0 slide 0x1000 add 0x1000

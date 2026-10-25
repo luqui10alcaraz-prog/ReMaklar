@@ -1,0 +1,53 @@
++ uname -a
+Darwin localhost 6.0 Darwin Kernel Version 6.0: Mon Oct 21 12:45:40 PDT 2002; root:tmp/xnu-10-2-root.obj/RELEASE_I386  x86 i386
++ arch
+i386
++ gcc2 -v
+Reading specs from /usr/libexec/gcc/darwin/i386/2.95.2/specs
+Apple Computer, Inc. version gcc-7, based on gcc version 2.95.2 19991024 (release)
++ ld -v
+ld: unknown flag: -v
++ true
++ ls -l /usr/lib/crt1.o /usr/include/objc/Object.h
+-r--r--r--  1 root  wheel   3958 Sep 14  2002 /usr/include/objc/Object.h
+-r--r--r--  1 root  wheel  10892 Sep 14  2002 /usr/lib/crt1.o
++ ls -l /System/Library/Frameworks/CoreFoundation.framework/Headers
+lr-xr-xr-x  1 root  wheel  24 Oct 23 16:14 /System/Library/Frameworks/CoreFoundation.framework/Headers -> Versions/Current/Headers
++ ps -axww
++ '[' --runtimes-only = all ']'
++ build_case objc /var/tmp/native007c/tests/native-i386/objc.m -lobjc
++ name=objc
++ shift
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/native007c/tests/native-i386 /var/tmp/native007c/tests/native-i386/objc.m -lobjc -o objc
++ file objc
++ otool -arch i386 -hv -L objc
++ md5 objc
++ run_case objc ./objc
++ name=objc
++ shift
++ echo 'DIRECT COMMAND: ./objc'
++ set +e
++ DYLD_PRINT_LIBRARIES=1
++ perl -e 'alarm 30;exec @ARGV; die $!' ./objc
++ status=0
++ set -e
++ echo 0
++ build_case cf /var/tmp/native007c/tests/native-i386/cf.c -framework CoreFoundation
++ name=cf
++ shift
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/native007c/tests/native-i386 /var/tmp/native007c/tests/native-i386/cf.c -framework CoreFoundation -o cf
++ file cf
++ otool -arch i386 -hv -L cf
++ md5 cf
++ run_case cf ./cf
++ name=cf
++ shift
++ echo 'DIRECT COMMAND: ./cf'
++ set +e
++ DYLD_PRINT_LIBRARIES=1
++ perl -e 'alarm 30;exec @ARGV; die $!' ./cf
++ status=0
++ set -e
++ echo 0
++ echo NATIVE_007_RUN_COMPLETE
+NATIVE_007_RUN_COMPLETE

@@ -1,0 +1,22 @@
+{
+  "/usr/lib/dyld": {
+    "matches_preserved_original": true,
+    "md5": "d649719fc14a4aed760acaf0842c4b6a",
+    "sha256": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea"
+  },
+  "/usr/lib/libSystem.B.dylib": {
+    "matches_preserved_original": true,
+    "md5": "3db0bc003df278f2b9489df95a7aec64",
+    "sha256": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787"
+  },
+  "/usr/lib/libobjc.A.dylib": {
+    "matches_preserved_original": true,
+    "md5": "07200f99452b0964a8382715e4d82a9a",
+    "sha256": "bee1d39f2e22a3a6340dd8b781582520a2960ea05ad236d43b00621f96162a32"
+  },
+  "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation": {
+    "matches_preserved_original": true,
+    "md5": "5505b0626ccb269b8886a186ba2abc32",
+    "sha256": "9fb64fbbf0b02d9ab57e5ccb389361986902e9cde5ea4ed765021c26d43d7f40"
+  }
+}

@@ -4,7 +4,7 @@ project=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 build_dir=${REMAKLAR_BUILD_DIR:-$project/build/qemu-linux32}
 mkdir -p "$build_dir" "$project/logs"
 cd "$build_dir"
-sh "$project/experiments/qemu-0.10.6/configure" \
+sh "${REMAKLAR_QEMU_DIR:-$project/experiments/qemu-0.10.6}/configure" \
   --target-list=ppc-darwin-user --enable-darwin-user \
   --disable-system --disable-linux-user --disable-bsd-user \
   --cpu=i386 --disable-sdl --disable-curses --disable-kvm --disable-kqemu \

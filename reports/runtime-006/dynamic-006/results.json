@@ -1,0 +1,64 @@
+{
+  "host_uid": 1000,
+  "executor_sha256": "eb2afaf8aee7d78892c7862a39cad1f9faca5050dc7bf67e5cd491472ca89406",
+  "inputs_sha256": {
+    "usr/bin/true": "34be59c505ccfe07e3837c3cbce98e7159f4059c3e68cb40ffa9c458d6df8b42",
+    "usr/bin/false": "7ad0ed5b3dc31385846faf3a7fef605f80428929c119063fb802ca8d21139fba",
+    "usr/lib/dyld": "387c2564fc2efb580e407c8a1a5b1053cc56910fc8637dac2b6273c28cdc81ea",
+    "usr/lib/libSystem.B.dylib": "ecdc5061c942077f0bfa7ce1d903fc486a785c6335a072b7509ea36c91b29787",
+    "usr/lib/system/libmathCommon.A.dylib": "0282375f09bad0cdff42e98b6a1c44ae025fa49ba930052a3a37e5619906a5b1"
+  },
+  "inputs_unchanged": true,
+  "results": [
+    {
+      "program": "true",
+      "command": [
+        "/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-build/ppc-darwin-user/qemu-ppc",
+        "--root",
+        "/home/lucas/Escritorio/ReMaklar/research/samples-local",
+        "/home/lucas/Escritorio/ReMaklar/research/samples-local/usr/bin/true"
+      ],
+      "entry": "0x195c",
+      "exit": 125,
+      "checks": {
+        "exit": false,
+        "stdout_empty": true,
+        "original_entry": false,
+        "no_main_bridge": true,
+        "bsd_exit": false,
+        "libsystem_loaded": false,
+        "math_loaded": false,
+        "no_unsupported": true
+      },
+      "pass": false
+    },
+    {
+      "program": "false",
+      "command": [
+        "/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-build/ppc-darwin-user/qemu-ppc",
+        "--root",
+        "/home/lucas/Escritorio/ReMaklar/research/samples-local",
+        "/home/lucas/Escritorio/ReMaklar/research/samples-local/usr/bin/false"
+      ],
+      "entry": "0x195c",
+      "exit": 125,
+      "checks": {
+        "exit": false,
+        "stdout_empty": true,
+        "original_entry": false,
+        "no_main_bridge": true,
+        "bsd_exit": false,
+        "libsystem_loaded": false,
+        "math_loaded": false,
+        "no_unsupported": true
+      },
+      "pass": false
+    },
+    {
+      "program": "missing-dyld",
+      "exit": 125,
+      "pass": true
+    }
+  ],
+  "pass": false
+}

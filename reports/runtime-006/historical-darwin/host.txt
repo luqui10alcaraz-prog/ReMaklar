@@ -1,0 +1,4 @@
+Darwin localhost 6.0 Darwin Kernel Version 6.0: Mon Oct 21 12:45:40 PDT 2002; root:tmp/xnu-10-2-root.obj/RELEASE_I386  x86 i386
+i386
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk0s2   2023918   885220  1037503    46%    /

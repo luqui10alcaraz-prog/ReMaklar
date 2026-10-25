@@ -1,0 +1,55 @@
+{
+  "scope": "Objective-C and CoreFoundation native i386 only",
+  "environment": "Darwin 6.0 RELEASE_I386 under QEMU system x86 TCG",
+  "ppc_translation_used": false,
+  "results": {
+    "objc": {
+      "status": "PASS",
+      "exit": 0,
+      "cpu": 7,
+      "cpusubtype": 3,
+      "sha256": "605ed20a3a271e9b09aa85f6703f1d2d6eb9e12ebb15f3c9bf1ea99906763869",
+      "direct_command": "DIRECT COMMAND: ./objc",
+      "loaded_images": [
+        "./objc",
+        "/usr/lib/libobjc.A.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/system/libmathCommon.A.dylib"
+      ],
+      "dyld_i386_observed_in_memory": true
+    },
+    "cf": {
+      "status": "PASS",
+      "exit": 0,
+      "cpu": 7,
+      "cpusubtype": 3,
+      "sha256": "d2d53e406c129072863ade75df8037d3462487e7e5c25bc1b9a4427cab41631d",
+      "direct_command": "DIRECT COMMAND: ./cf",
+      "loaded_images": [
+        "./cf",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/system/libmathCommon.A.dylib"
+      ],
+      "dyld_i386_observed_in_memory": true
+    }
+  },
+  "evidence_sha256": {
+    "objc.build": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "objc.stderr": "d14e83fb63a3807fd5346bd8adef870452e81e69cdaa4a44edd9a71a2f76dc67",
+    "objc.stdout": "ae76d1ef53a4c14a9cb7560be732bfc12777e710a06c2c2894edc3c93f309f18",
+    "objc.status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "cf.status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "objc.command": "0480fca8d405ccf7f67dde9802c6b2a76ab4b57164ffca58fe2d692393f23c9b",
+    "cf.build": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cf.stdout": "f25e26472c0d699e69ea5033f17e016813b8a21a8276583d7060e32bbcda3cf0",
+    "cf.images": "70fa3aea0afd204c78d2019843b96f3b4c1d1a9c7508694698caf13b01c56818",
+    "objc.images": "76eba66127a69c77cb120926227e8f25fc50bd3a52e5893ba96f60612a7b8d7b",
+    "installed-images.txt": "e8c65448d7a50d5c9d573618f5d30b4340d17ccbc99857e4bb2efff681e3f589",
+    "cf.command": "6c4c18c4b01efa32b66613cac724d125d4a5f37232728bc791f71361e9f8c60c",
+    "processes.txt": "fdba44a9c5c13f519a82583563b91649e16613984339bac15c47fc692b5844a9",
+    "session.txt": "087d86244b936c7151f9c863f2c331d2471b2737ffde1146a7c44d150497d46a",
+    "cf.stderr": "814e256f2a4547e4a3aacb30811fda34d83261e5b4a8f5104bb2a9174e622eba"
+  }
+}

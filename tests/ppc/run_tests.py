@@ -11,7 +11,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
 exe = Path(os.environ.get('REMAKLAR_EXECUTOR', root / 'build/qemu-linux32/ppc-darwin-user/qemu-ppc'))
-logdir = root / 'logs/ppc-fixtures'
+logdir = Path(os.environ.get('REMAKLAR_FIXTURE_LOGDIR', root / 'logs/ppc-fixtures'))
 logdir.mkdir(parents=True, exist_ok=True)
 manifest = json.loads((root / 'build/fixtures/manifest.json').read_text())
 results = []

@@ -1,0 +1,66 @@
+[
+  {
+    "component": "IOGraphicsFamily",
+    "cputype": 18,
+    "slices": [],
+    "filetype": 1,
+    "sha256": "fe0d2786a8b509dd0ca8562bf19d1c68b2d83d868ba49731117d963ff8e0e6ab",
+    "bundle_id": "com.apple.iokit.IOGraphicsFamily",
+    "dependencies": {
+      "com.apple.iokit.IOPCIFamily": "1.1",
+      "com.apple.kernel.iokit": "1.1"
+    },
+    "personalities": {
+      "AppleBacklightDisplay": {
+        "CFBundleIdentifier": "com.apple.iokit.IOGraphicsFamily",
+        "IOClass": "AppleBacklightDisplay",
+        "IOProbeScore": 3000,
+        "IOProviderClass": "IODisplayConnect"
+      },
+      "AppleDisplay": {
+        "CFBundleIdentifier": "com.apple.iokit.IOGraphicsFamily",
+        "IOClass": "AppleDisplay",
+        "IOProbeScore": 2000,
+        "IOProviderClass": "IODisplayConnect"
+      },
+      "IODisplayWrangler": {
+        "CFBundleIdentifier": "com.apple.iokit.IOGraphicsFamily",
+        "IOClass": "IODisplayWrangler",
+        "IOMatchCategory": "IOGraphics",
+        "IOProviderClass": "IOResources",
+        "IOResourceMatch": "IOKit"
+      }
+    },
+    "status": "inspected only, never loaded"
+  },
+  {
+    "component": "ATIRage128",
+    "cputype": 18,
+    "slices": [],
+    "filetype": 1,
+    "sha256": "7d1b62adabf03e7101cf955d120e07a6ac0a24529045019365f2b7035c23a214",
+    "bundle_id": "com.apple.ATIRage128",
+    "dependencies": {
+      "com.apple.iokit.IOGraphicsFamily": "1.0.0b1",
+      "com.apple.iokit.IONDRVSupport": "1.0.0b1",
+      "com.apple.iokit.IOPCIFamily": "1.0.0b1",
+      "com.apple.kernel.iokit": "1.0.0b1"
+    },
+    "personalities": {
+      "ATIRage128": {
+        "CFBundleIdentifier": "com.apple.ATIRage128",
+        "IOCFPlugInTypes": {
+          "ACCF0000-0000-0000-0000-000a2789904e": "ATIRage128GA.plugin"
+        },
+        "IOClass": "ATIRage128",
+        "IODVDBundleName": "ATIRage128DVDDriver",
+        "IOGLBundleName": "ATIRage128GLDriver",
+        "IOMatchCategory": "IOAccelerator",
+        "IOPCIMatch": "0x52451002 0x52461002 0x524b1002 0x524c1002 0x50451002 0x50461002 0x50521002 0x4c451002 0x4c461002 0x54521002",
+        "IOProviderClass": "IOPCIDevice",
+        "IOSourceVersion": "1.2.0.31.0"
+      }
+    },
+    "status": "inspected only, never loaded"
+  }
+]

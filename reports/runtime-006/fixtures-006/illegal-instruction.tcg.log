@@ -1,0 +1,30 @@
+mach_exec at 0x804fa70
+loading /home/lucas/Escritorio/ReMaklar/build/fixtures/illegal-instruction.macho [REGULAR]...
+load_segment: mmaping __TEXT to 0x10000000-(0x1000|0x1000) + 0x0
+sc->vmaddr 0x0 slide 0x10000000 add 0x10000000
+load_thread: entry 0x10000200
+pushing apple /home/lucas/Escritorio/ReMaklar/build/fixtures/illegal-instruction.macho (0xffd4cf20)
+pushing env REMAKLAR_TRACE=1 (0xffd4cf93)
+pushing env TZ=UTC (0xffd4cf8c)
+pushing env LC_ALL=C (0xffd4cf83)
+pushing env LANG=C (0xffd4cf7c)
+pushing env PATH=/bin:/usr/bin (0xffd4cf69)
+pushing arg /home/lucas/Escritorio/ReMaklar/build/fixtures/illegal-instruction.macho (0xffd4cf20)
+pushing argc 1 
+pushing mh 0x10000000 
+mach_exec returns eip set to 0x10000200 esp 0xe8572fcc mh 0x10000000
+invalid/unsupported opcode: 00 - 00 - 00 (00000000) 10000200 0
+IN: 
+0x10000200:  .long 0x0
+
+OUT: [size=40]
+0x08199e80:  mov    $0x6,%eax
+0x08199e85:  mov    %eax,(%esp,1)
+0x08199e88:  mov    $0x21,%eax
+0x08199e8d:  mov    %eax,0x4(%esp,1)
+0x08199e91:  mov    $0x10000204,%eax
+0x08199e96:  mov    %eax,0xc3a0(%ebp)
+0x08199e9c:  call   0x811b3c0
+0x08199ea1:  xor    %eax,%eax
+0x08199ea3:  jmp    0xa1bcea8
+

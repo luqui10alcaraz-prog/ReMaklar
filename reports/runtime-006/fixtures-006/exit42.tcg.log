@@ -1,0 +1,35 @@
+mach_exec at 0x804fa70
+loading /home/lucas/Escritorio/ReMaklar/build/fixtures/exit42.macho [REGULAR]...
+load_segment: mmaping __TEXT to 0x10000000-(0x1000|0x1000) + 0x0
+sc->vmaddr 0x0 slide 0x10000000 add 0x10000000
+load_thread: entry 0x10000200
+pushing apple /home/lucas/Escritorio/ReMaklar/build/fixtures/exit42.macho (0xfff18f2d)
+pushing env REMAKLAR_TRACE=1 (0xfff18f93)
+pushing env TZ=UTC (0xfff18f8c)
+pushing env LC_ALL=C (0xfff18f83)
+pushing env LANG=C (0xfff18f7c)
+pushing env PATH=/bin:/usr/bin (0xfff18f69)
+pushing arg /home/lucas/Escritorio/ReMaklar/build/fixtures/exit42.macho (0xfff18f2d)
+pushing argc 1 
+pushing mh 0x10000000 
+mach_exec returns eip set to 0x10000200 esp 0xecd48fcc mh 0x10000000
+IN: 
+0x10000200:  li      r3,42
+0x10000204:  li      r0,1
+0x10000208:  sc      
+
+OUT: [size=53]
+0x08199e80:  mov    $0x203,%eax
+0x08199e85:  mov    %eax,(%esp,1)
+0x08199e88:  xor    %eax,%eax
+0x08199e8a:  mov    %eax,0x4(%esp,1)
+0x08199e8e:  mov    $0x1,%eax
+0x08199e93:  mov    %eax,0x0(%ebp)
+0x08199e96:  mov    $0x2a,%eax
+0x08199e9b:  mov    %eax,0xc(%ebp)
+0x08199e9e:  mov    $0x1000020c,%eax
+0x08199ea3:  mov    %eax,0xc3a0(%ebp)
+0x08199ea9:  call   0x811b3c0
+0x08199eae:  xor    %eax,%eax
+0x08199eb0:  jmp    0xa1bcea8
+

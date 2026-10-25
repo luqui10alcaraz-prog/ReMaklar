@@ -1,0 +1,104 @@
+mach_exec at 0x804fa70
+loading /home/lucas/Escritorio/ReMaklar/build/fixtures/load-be.macho [REGULAR]...
+load_segment: mmaping __TEXT to 0x10000000-(0x1000|0x1000) + 0x0
+sc->vmaddr 0x0 slide 0x10000000 add 0x10000000
+load_thread: entry 0x10000200
+pushing apple /home/lucas/Escritorio/ReMaklar/build/fixtures/load-be.macho (0xfffe4f2c)
+pushing env REMAKLAR_TRACE=1 (0xfffe4f93)
+pushing env TZ=UTC (0xfffe4f8c)
+pushing env LC_ALL=C (0xfffe4f83)
+pushing env LANG=C (0xfffe4f7c)
+pushing env PATH=/bin:/usr/bin (0xfffe4f69)
+pushing arg /home/lucas/Escritorio/ReMaklar/build/fixtures/load-be.macho (0xfffe4f2c)
+pushing argc 1 
+pushing mh 0x10000000 
+mach_exec returns eip set to 0x10000200 esp 0xe6ec7fcc mh 0x10000000
+IN: 
+0x10000200:  lis     r4,4096
+0x10000204:  lwz     r4,2048(r4)
+0x10000208:  lis     r5,21093
+0x1000020c:  ori     r5,r5,19809
+0x10000210:  cmpw    r4,r5
+0x10000214:  bne-    0x10000220
+
+OUT: [size=216]
+0x08199e80:  mov    $0x10000000,%eax
+0x08199e85:  mov    %eax,%edx
+0x08199e87:  add    $0x800,%edx
+0x08199e8d:  mov    %edx,%ecx
+0x08199e8f:  mov    %eax,0x10(%ebp)
+0x08199e92:  mov    $0x20,%eax
+0x08199e97:  mov    %eax,0x8154(%ebp)
+0x08199e9d:  mov    (%ecx),%eax
+0x08199e9f:  bswap  %eax
+0x08199ea1:  mov    $0x52650000,%edx
+0x08199ea6:  or     $0x4d61,%edx
+0x08199eac:  mov    0x128(%ebp),%ecx
+0x08199eb2:  shr    $0x1f,%ecx
+0x08199eb5:  and    $0x1,%ecx
+0x08199eb8:  mov    %ecx,0x108(%ebp)
+0x08199ebe:  mov    %eax,0x10(%ebp)
+0x08199ec1:  mov    %edx,0x14(%ebp)
+0x08199ec4:  cmp    %edx,%eax
+0x08199ec6:  jl     0x8199eee
+0x08199ecc:  mov    0x10(%ebp),%eax
+0x08199ecf:  mov    0x14(%ebp),%edx
+0x08199ed2:  cmp    %edx,%eax
+0x08199ed4:  jg     0x8199f02
+0x08199eda:  mov    0x108(%ebp),%eax
+0x08199ee0:  or     $0x2,%eax
+0x08199ee3:  mov    %eax,0x108(%ebp)
+0x08199ee9:  jmp    0x8199f11
+0x08199eee:  mov    0x108(%ebp),%eax
+0x08199ef4:  or     $0x8,%eax
+0x08199ef7:  mov    %eax,0x108(%ebp)
+0x08199efd:  jmp    0x8199f11
+0x08199f02:  mov    0x108(%ebp),%eax
+0x08199f08:  or     $0x4,%eax
+0x08199f0b:  mov    %eax,0x108(%ebp)
+0x08199f11:  mov    0x108(%ebp),%eax
+0x08199f17:  mov    %eax,%edx
+0x08199f19:  and    $0x2,%edx
+0x08199f1c:  test   %edx,%edx
+0x08199f1e:  jne    0x8199f3e
+0x08199f24:  jmp    0x8199f29
+0x08199f29:  mov    $0x10000220,%eax
+0x08199f2e:  mov    %eax,0xc3a0(%ebp)
+0x08199f34:  mov    $0xe6efd010,%eax
+0x08199f39:  jmp    0xa1bcea8
+0x08199f3e:  jmp    0x8199f43
+0x08199f43:  mov    $0x10000218,%eax
+0x08199f48:  mov    %eax,0xc3a0(%ebp)
+0x08199f4e:  mov    $0xe6efd011,%eax
+0x08199f53:  jmp    0xa1bcea8
+
+IN: 
+0x10000218:  li      r3,0
+0x1000021c:  b       0x10000224
+
+OUT: [size=31]
+0x08199f60:  xor    %eax,%eax
+0x08199f62:  mov    %eax,0xc(%ebp)
+0x08199f65:  jmp    0x8199f6a
+0x08199f6a:  mov    $0x10000224,%eax
+0x08199f6f:  mov    %eax,0xc3a0(%ebp)
+0x08199f75:  mov    $0xe6efd058,%eax
+0x08199f7a:  jmp    0xa1bcea8
+
+IN: 
+0x10000224:  li      r0,1
+0x10000228:  sc      
+
+OUT: [size=45]
+0x08199f80:  mov    $0x203,%eax
+0x08199f85:  mov    %eax,(%esp,1)
+0x08199f88:  xor    %eax,%eax
+0x08199f8a:  mov    %eax,0x4(%esp,1)
+0x08199f8e:  mov    $0x1,%eax
+0x08199f93:  mov    %eax,0x0(%ebp)
+0x08199f96:  mov    $0x1000022c,%eax
+0x08199f9b:  mov    %eax,0xc3a0(%ebp)
+0x08199fa1:  call   0x811b3c0
+0x08199fa6:  xor    %eax,%eax
+0x08199fa8:  jmp    0xa1bcea8
+

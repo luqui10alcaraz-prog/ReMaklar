@@ -1,0 +1,3 @@
+  CC    ppc-darwin-user/darwin-kernel.o
+  LINK  ppc-darwin-user/qemu-ppc
+build_status=0

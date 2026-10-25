@@ -1,0 +1,5 @@
+mach_exec at 0x804fa70
+loading /home/lucas/Escritorio/ReMaklar/build/fixtures/needs-dyld.macho [REGULAR]...
+load_segment: mmaping __TEXT to 0x10000000-(0x1000|0x1000) + 0x0
+sc->vmaddr 0x0 slide 0x10000000 add 0x10000000
+load_thread: entry 0x10000200

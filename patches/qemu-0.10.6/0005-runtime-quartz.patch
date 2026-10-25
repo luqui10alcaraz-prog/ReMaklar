@@ -1,0 +1,430 @@
+diff --git a/darwin-user/remaklar/bootstrap-main.c b/darwin-user/remaklar/bootstrap-main.c
+index bfdad96..69308be 100644
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -45,8 +45,8 @@ void gemu_log(const char *fmt, ...)
+ }
+ 
+ /* User-only CPU model hooks: no board or devices are instantiated. */
+-uint32_t cpu_ppc_load_tbl(CPUState *env) { qerror("unsupported timebase read"); return 0; }
+-uint32_t cpu_ppc_load_tbu(CPUState *env) { qerror("unsupported timebase read"); return 0; }
++uint32_t cpu_ppc_load_tbl(CPUState *env) { return remaklar_timebase(); }
++uint32_t cpu_ppc_load_tbu(CPUState *env) { return remaklar_timebase() >> 32; }
+ uint32_t cpu_ppc_load_atbl(CPUState *env) { qerror("unsupported timebase read"); return 0; }
+ uint32_t cpu_ppc_load_atbu(CPUState *env) { qerror("unsupported timebase read"); return 0; }
+ uint32_t cpu_ppc601_load_rtcu(CPUState *env) { qerror("unsupported timebase read"); return 0; }
+diff --git a/darwin-user/remaklar/bootstrap.h b/darwin-user/remaklar/bootstrap.h
+index b56fa84..da80f3a 100644
+--- a/darwin-user/remaklar/bootstrap.h
++++ b/darwin-user/remaklar/bootstrap.h
+@@ -3,6 +3,7 @@
+ #define REMAKLAR_BOOTSTRAP_H
+ extern const char *interp_prefix;
+ int remaklar_set_cwd(const char *path);
++uint64_t remaklar_timebase(void);
+ int remaklar_guest_access(uint32_t address, uint32_t length, int prot);
+ uint32_t remaklar_mach(CPUState *env);
+ int remaklar_bsd(CPUState *env, int *result, int *error);
+diff --git a/darwin-user/remaklar/darwin-kernel.c b/darwin-user/remaklar/darwin-kernel.c
+index 4326085..9c8c8a7 100644
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -10,10 +10,16 @@
+ #include <dirent.h>
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
++#include <sys/uio.h>
++#include <sys/socket.h>
++#include <sys/un.h>
++#include <net/if.h>
+ #ifdef __APPLE__
+ #include <sys/mount.h>
++#include <mach/mach_time.h>
+ #else
+ #include <sys/statvfs.h>
++#include <time.h>
+ #endif
+ #include <sys/stat.h>
+ #include <sys/mman.h>
+@@ -27,12 +33,89 @@ static uint32_t thread_self_pointer;
+ static uint32_t thread_base_priority = 31;
+ static uint32_t send_refs[4096];
+ static unsigned char receive_rights[4096];
++static unsigned char port_sets[4096];
++static uint32_t port_membership[4096];
++static uint32_t send_once_target[4096], dead_name_notification[4096];
++static uint32_t queue_limits[4096];
+ static uint32_t next_port = 0x400;
+ static int descriptors[256], descriptors_ready;
+ static DIR *directories[256];
+ static char *descriptor_paths[256];
+ static uint32_t directory_positions[256];
+ static char guest_cwd[4096] = "/";
++static uint32_t split_region;
++
++/* Split-segment Jaguar libraries keep their relative RO/RW geometry in one
++ * PRIVATE guest region. Never MAP_FIXED over host mappings or claim the
++ * system's shared region. sf_mapping is five PPC32 big-endian words. */
++static int private_shared_file(CPUState *env)
++{
++    uint32_t file=env->gpr[4], bytes=env->gpr[5], ptr=env->gpr[6];
++    uint32_t count=env->gpr[7], table=env->gpr[8], flags=env->gpr[9];
++    uint32_t preferred, base, i, j, page, end, protection;
++    struct { uint32_t start,size,offset,prot; } maps[64];
++    long mapped;
++    if (!count || count>64 || !remaklar_guest_access(ptr,4,PAGE_READ|PAGE_WRITE) ||
++        !remaklar_guest_access(flags,4,PAGE_READ|PAGE_WRITE) ||
++        !remaklar_guest_access(table,count*20,PAGE_READ)) { errno=EFAULT; return -1; }
++    if (ldl(g2h(flags)) & ~3) qerror("unsupported split-region flags");
++    preferred=ldl(g2h(ptr));
++    if (preferred<0x90000000 || preferred>=0xa0000000) qerror("unsupported split-region base %x",preferred);
++    if (!split_region) {
++        mapped=target_mmap(0x50000000,0x20000000,PROT_NONE,MAP_PRIVATE|MAP_ANONYMOUS,-1,0);
++        if (mapped==-1 || (uint64_t)(unsigned long)mapped+0x20000000ULL>0x100000000ULL) { errno=ENOMEM;return -1; }
++        split_region=mapped;
++    }
++    base=split_region+(preferred-0x90000000);
++    for(i=0;i<count;i++) {
++        uint32_t off=ldl(g2h(table+i*20)), size=ldl(g2h(table+i*20+4));
++        maps[i].size=size;maps[i].offset=ldl(g2h(table+i*20+8));maps[i].prot=ldl(g2h(table+i*20+12));
++        if ((uint64_t)(preferred-0x90000000)+off+size>0x20000000ULL || maps[i].prot & ~31)
++            qerror("invalid split mapping geometry/protection");
++        if (!(maps[i].prot&16) && ((uint64_t)maps[i].offset+size>bytes ||
++            !remaklar_guest_access(file+maps[i].offset,size,PAGE_READ))) { errno=EFAULT;return -1; }
++        maps[i].start=base+off;
++        end=(maps[i].start+size+4095)&~4095;
++        for(page=maps[i].start&~4095;size && page<end;page+=4096)
++            if (page_get_flags(page)&7) { errno=ENOMEM;return -1; }
++    }
++    for(i=0;i<count;i++) {
++        end=(maps[i].start+maps[i].size+4095)&~4095;
++        for(page=maps[i].start&~4095;maps[i].size && page<end;page+=4096)
++            if (!(page_get_flags(page)&7) && target_mmap(page,4096,PROT_READ|PROT_WRITE,
++                MAP_PRIVATE|MAP_ANONYMOUS|MAP_FIXED,-1,0)==-1) { errno=ENOMEM;return -1; }
++        if (maps[i].prot&16) memset(g2h(maps[i].start),0,maps[i].size);
++        else memcpy(g2h(maps[i].start),g2h(file+maps[i].offset),maps[i].size);
++    }
++    for(i=0;i<count;i++) {
++        end=(maps[i].start+maps[i].size+4095)&~4095;
++        for(page=maps[i].start&~4095;maps[i].size && page<end;page+=4096) {
++            protection=0;
++            for(j=0;j<count;j++) if(maps[j].size && page+4096>maps[j].start &&
++                page<maps[j].start+maps[j].size) protection|=maps[j].prot&7;
++            if(target_mprotect(page,4096,protection)) { errno=ENOMEM;return -1; }
++        }
++    }
++    stl(g2h(ptr),base);stl(g2h(flags),0);
++    fprintf(stderr,"split-private preferred=%08x base=%08x mappings=%u\n",preferred,base,count);
++    return 0;
++}
++
++/* Virtual PPC timebase in nanoseconds, matched by mach_timebase_info(1/1).
++ * Host monotonic clock, independent of calendar time and guest CPU speed. */
++uint64_t remaklar_timebase(void)
++{
++#ifdef __APPLE__
++    mach_timebase_info_data_t info;
++    uint64_t ticks = mach_absolute_time();
++    if (mach_timebase_info(&info) || !info.denom) qerror("host timebase unavailable");
++    return (ticks / info.denom) * info.numer + ((ticks % info.denom) * info.numer) / info.denom;
++#else
++    struct timespec now;
++    if (clock_gettime(CLOCK_MONOTONIC, &now)) qerror("host monotonic clock unavailable");
++    return (uint64_t)now.tv_sec * 1000000000ULL + now.tv_nsec;
++#endif
++}
+ 
+ static int host_fd(uint32_t fd)
+ {
+@@ -45,6 +128,16 @@ static int host_fd(uint32_t fd)
+     return fd < 256 ? descriptors[fd] : -1;
+ }
+ 
++static int register_fd(int fd)
++{
++    int i;
++    if(fd<0) return -1;
++    host_fd(0);
++    for(i=3;i<256 && descriptors[i]>=0;i++);
++    if(i==256) { close(fd);errno=EMFILE;return -1; }
++    descriptors[i]=fd;return i;
++}
++
+ static int darwin_errno(int err)
+ {
+     switch (err) {
+@@ -143,10 +236,96 @@ int remaklar_bsd(CPUState *env, int *result, int *error)
+     int r = -1, i; char path[8192]; const char *p; struct stat st;
+     errno = 0;
+     switch (n) {
++    case 133: /* sendto on a connected local socket, no explicit destination. */
++        if(env->gpr[6] || env->gpr[7] || env->gpr[8]) qerror("unsupported sendto flags/address");
++        if(!remaklar_guest_access(b,c,PAGE_READ)) errno=EFAULT;
++        else r=send(host_fd(a),g2h(b),c,0);
++        break;
++    case 97: /* Datagram socket objects. Network destinations remain bounded
++              * by the address bridge; creating a socket sends no packets. */
++        if((a!=1 && a!=2) || b!=2 || c) qerror("unsupported socket domain/type/protocol");
++        r=register_fd(socket(a==1?AF_UNIX:AF_INET,SOCK_DGRAM,0));break;
++    case 98: { /* Darwin sockaddr_un len/family -> host sockaddr_un. */
++        struct sockaddr_un address;
++        char guest_name[105],resolved[8192];
++        if(c<3 || c>106 || !remaklar_guest_access(b,c,PAGE_READ)) { errno=EFAULT;break; }
++        if(ldub(g2h(b+1))!=1) qerror("unsupported connect address family");
++        for(i=0;i<c-2 && i<sizeof(guest_name)-1;i++) {
++            guest_name[i]=*(char *)g2h(b+2+i);if(!guest_name[i])break;
++        }
++        guest_name[i]=0;
++        if(!translate_path(guest_name,resolved,sizeof(resolved))) break;
++        if(strlen(resolved)>=sizeof(address.sun_path)) { errno=ENAMETOOLONG;break; }
++        memset(&address,0,sizeof(address));address.sun_family=AF_UNIX;strcpy(address.sun_path,resolved);
++#ifdef __APPLE__
++        address.sun_len=sizeof(address);
++#endif
++        fprintf(stderr,"guest unix connect %s\n",resolved);
++        r=connect(host_fd(a),(struct sockaddr *)&address,sizeof(address));break;
++    }
++    case 266: { /* shm_open lookup in the initially empty guest namespace.
++                * No host-global shared objects are exposed as guest objects. */
++        char name[1024];
++        for(i=0;i<sizeof(name);i++) {
++            if(!remaklar_guest_access(a+i,1,PAGE_READ)) { errno=EFAULT;break; }
++            name[i]=*(char *)g2h(a+i);if(!name[i]) break;
++        }
++        if(errno) break;
++        if(i==sizeof(name)) { errno=ENAMETOOLONG;break; }
++        fprintf(stderr,"shm lookup name=%s flags=%x\n",name,b);
++        if(b&0x200) qerror("guest shared-memory creation not implemented");
++        errno=ENOENT;break;
++    }
++    case 121: { /* writev: fixed-width PPC iovec, bytes stay unswapped. */
++        struct iovec *vectors;
++        uint64_t total=0;
++        if (c>1024) { errno=EINVAL;break; }
++        if (!remaklar_guest_access(b,c*8,PAGE_READ)) { errno=EFAULT;break; }
++        vectors=calloc(c?c:1,sizeof(*vectors));
++        if (!vectors) { errno=ENOMEM;break; }
++        for(i=0;i<c;i++) {
++            uint32_t address=ldl(g2h(b+i*8)),size=ldl(g2h(b+i*8+4));
++            if (!remaklar_guest_access(address,size,PAGE_READ)) break;
++            vectors[i].iov_base=g2h(address);vectors[i].iov_len=size;total+=size;
++        }
++        if(i<c) errno=EFAULT;
++        else if(total>0x7fffffff) errno=EINVAL;
++        else r=writev(host_fd(a),vectors,c);
++        free(vectors);break;
++    }
++    case 49: { /* Session login, not passwd identity. Empty for a session with
++               * no login on the host, as in XNU's zero-initialized s_login. */
++        char login[255]; const char *name = getlogin();
++        uint32_t length = b < sizeof(login) ? b : sizeof(login);
++        memset(login,0,sizeof(login));
++        if (name) strncpy(login,name,sizeof(login)-1);
++        if (!remaklar_guest_access(a,length,PAGE_WRITE)) errno=EFAULT;
++        else { memcpy(g2h(a),login,length);r=0; }
++        break;
++    }
++    case 26: /* XNU 344 ptrace: pfind(0)==kernproc, then pid<=2 => EPERM.
++              * High private tracing markers are NOT successful debugging ops.
++              * Do not forward guest requests to ptrace on the host. */
++        if (a >= 32 && b == 0 && c == 0 && env->gpr[6] == 0) {
++            errno = EPERM; r = -1;
++        } else qerror("unsupported ptrace request=%x pid=%u", a, b);
++        break;
+     case 202: /* sysctl, fixed-width PPC32 result */
+         if (b > 16 || !remaklar_guest_access(a, b * 4, PAGE_READ))
+             qerror("invalid sysctl MIB");
+         for (i = 0; i < b; i++) fprintf(stderr, "sysctl mib[%d]=%u\n", i, ldl(g2h(a + i * 4)));
++        if(b==2 && ldl(g2h(a))==1 && ldl(g2h(a+4))==10 && !env->gpr[7] && !env->gpr[8]) {
++            char hostname[256];uint32_t needed,capacity;
++            if(!remaklar_guest_access(env->gpr[6],4,PAGE_READ|PAGE_WRITE)) { errno=EFAULT;break; }
++            if(gethostname(hostname,sizeof(hostname))) break;
++            hostname[sizeof(hostname)-1]=0;needed=strlen(hostname)+1;capacity=ldl(g2h(env->gpr[6]));
++            if(c && capacity<needed) { errno=ENOMEM;break; }
++            if(c && !remaklar_guest_access(c,needed,PAGE_WRITE)) { errno=EFAULT;break; }
++            if(c) memcpy(g2h(c),hostname,needed);
++            /* XNU sysctl_string copies the NUL but reports strlen, unlike
++             * sysctl_rdstring. The native contract probe caught this detail. */
++            stl(g2h(env->gpr[6]),needed-1);r=0;break;
++        }
+         if (b != 2 || ldl(g2h(a)) != 6 ||
+             (ldl(g2h(a + 4)) != 3 && ldl(g2h(a + 4)) != 13) ||
+             env->gpr[7] || env->gpr[8]) qerror("unsupported sysctl");
+@@ -216,6 +395,32 @@ int remaklar_bsd(CPUState *env, int *result, int *error)
+         break;
+     case 54: { /* Terminal query has a fixed PPC wire format. */
+         struct winsize ws;
++        if(b==0xc0086924) { /* SIOCGIFCONF: host IPv4 addresses -> BSD32 ifreq. */
++            struct ifconf conf;
++            char storage[16384],*cursor;
++            uint32_t capacity,buffer,used=0,step;
++            if(!remaklar_guest_access(c,8,PAGE_READ|PAGE_WRITE)) { errno=EFAULT;break; }
++            capacity=ldl(g2h(c));buffer=ldl(g2h(c+4));
++            if(buffer && !remaklar_guest_access(buffer,capacity,PAGE_WRITE)) { errno=EFAULT;break; }
++            conf.ifc_len=sizeof(storage);conf.ifc_buf=storage;
++            r=ioctl(host_fd(a),SIOCGIFCONF,&conf);if(r) break;
++            for(cursor=storage;cursor+sizeof(struct ifreq)<=storage+conf.ifc_len;cursor+=step) {
++                struct ifreq *entry=(struct ifreq *)cursor;
++                step=sizeof(struct ifreq);
++#ifdef __APPLE__
++                if(entry->ifr_addr.sa_len>sizeof(struct sockaddr)) step+=entry->ifr_addr.sa_len-sizeof(struct sockaddr);
++#endif
++                if(entry->ifr_addr.sa_family!=AF_INET) continue;
++                if(buffer && used+32>capacity) break;
++                if(buffer) {
++                    memset(g2h(buffer+used),0,32);memcpy(g2h(buffer+used),entry->ifr_name,16);
++                    stb(g2h(buffer+used+16),16);stb(g2h(buffer+used+17),2);
++                    memcpy(g2h(buffer+used+18),entry->ifr_addr.sa_data,14);
++                }
++                used+=32;
++            }
++            stl(g2h(c),used);break;
++        }
+         if (b != 0x402c7413 && b != 0x40087468) qerror("unsupported ioctl %x", b);
+         if (b == 0x402c7413) { /* TIOCGETA: no termios conversion yet. */
+             if (host_fd(a) < 0) errno = EBADF;
+@@ -321,8 +526,9 @@ int remaklar_bsd(CPUState *env, int *result, int *error)
+         break;
+     case 327: r = getuid() != geteuid() || getgid() != getegid(); break;
+     case 296: /* load_shared_file query: this personality uses private mappings */
+-        if (a || b || c || env->gpr[7] || env->gpr[8])
+-            qerror("shared-file mapping operation not supported");
++        if (a || b || c || env->gpr[7] || env->gpr[8]) {
++            r=private_shared_file(env); break;
++        }
+         if (!remaklar_guest_access(env->gpr[9], 4, PAGE_READ | PAGE_WRITE) ||
+             !remaklar_guest_access(env->gpr[6], 4, PAGE_READ)) { errno = EFAULT; r = -1; }
+         else if (!(ldl(g2h(env->gpr[9])) & 4)) qerror("expected shared-region query flag");
+@@ -354,6 +560,89 @@ static uint32_t rpc(CPUState *env)
+         qerror("only synchronous send/receive Mach RPC supported");
+     memset(answer, 0, sizeof(answer));
+     switch (id) {
++    case 3213: { /* mach_port_request_notification(MACH_NOTIFY_DEAD_NAME).
++                  * Registration stores a real capability in this namespace;
++                  * port destruction/event delivery is not implemented yet. */
++        uint32_t name, notify, previous, capability=0;
++        if(destination!=TASK_SELF || size!=60 || ldl(g2h(a+24))!=1 ||
++           ldub(g2h(a+38))!=21 || ldl(g2h(a+52))!=72 || ldl(g2h(a+56)))
++            qerror("unsupported port notification request");
++        name=ldl(g2h(a+48));notify=ldl(g2h(a+28));
++        if(name>=4096 || (!receive_rights[name] && !send_refs[name])) { code=15;break; }
++        if(notify && (notify>=4096 || !receive_rights[notify])) { code=17;break; }
++        if(notify) {
++            if(next_port>=4096) { code=3;break; }
++            capability=next_port++;send_once_target[capability]=notify;
++        }
++        previous=dead_name_notification[name];dead_name_notification[name]=capability;
++        complex=0x80000000;stl(answer+24,1);stl(answer+28,previous);answer[38]=18;length=40;
++        break;
++    }
++    case 404: /* bootstrap_look_up: the modeled namespace has no servers. */
++        if (destination != BOOTSTRAP || size != 160 || !memchr(g2h(a+32),0,128))
++            qerror("invalid bootstrap_look_up");
++        fprintf(stderr,"bootstrap unavailable service=%s\n",(char *)g2h(a+32));
++        code=1102; /* BOOTSTRAP_UNKNOWN_SERVICE, not a fabricated send right */
++        break;
++    case 3207: /* mach_port_get_refs for rights represented by this namespace. */
++        if (destination != TASK_SELF || size != 40) qerror("invalid mach_port_get_refs");
++        i = ldl(g2h(a+32));
++        if (!i || i >= 4096 || (!receive_rights[i] && !port_sets[i] && !send_refs[i] && !send_once_target[i])) code = 15;
++        else {
++            uint32_t right = ldl(g2h(a+36)), refs=0;
++            if (right == 0) refs = send_refs[i];
++            else if (right == 1) refs = receive_rights[i];
++            else if (right == 2) refs = send_once_target[i] ? 1 : 0;
++            else if (right == 3) refs = port_sets[i];
++            else qerror("unsupported port right %u", right);
++            if(!refs) code=17;
++            else { stl(answer+36, refs); length = 40; }
++        }
++        break;
++    case 3217: /* mach_port_get_attributes(MACH_PORT_LIMITS_INFO). */
++        if (destination != TASK_SELF || size != 44 || ldl(g2h(a+36)) != 1 || ldl(g2h(a+40)) < 1)
++            qerror("unsupported mach_port_get_attributes request");
++        i = ldl(g2h(a+32));
++        if (!i || i >= 4096 || (!receive_rights[i] && !port_sets[i] && !send_refs[i])) code = 15;
++        else if (!receive_rights[i]) code = 17;
++        else { stl(answer+36, 1); stl(answer+40, queue_limits[i]); length = 44; }
++        break;
++    case 3226: /* mach_port_insert_member, maintain receive-port membership. */
++        if (destination != TASK_SELF || size != 40) qerror("invalid mach_port_insert_member");
++        i = ldl(g2h(a+32));
++        if (!i || i == 0xffffffff) code = 17;
++        else if (i >= 4096 || (!receive_rights[i] && !port_sets[i] && !send_refs[i])) code = 15;
++        else if (!receive_rights[i]) code = 17;
++        else {
++            uint32_t set = ldl(g2h(a+36));
++            if (!set || set == 0xffffffff) code = 17;
++            else if (set >= 4096 || (!port_sets[set] && !receive_rights[set] && !send_refs[set])) code = 15;
++            else if (!port_sets[set]) code = 17;
++            else if (port_membership[i] == set) code = 11;
++            else if (port_membership[i]) qerror("multiple port-set membership not implemented");
++            else port_membership[i] = set;
++        }
++        break;
++    case 3218: /* mach_port_set_attributes(MACH_PORT_LIMITS_INFO). */
++        if (destination != TASK_SELF || size != 48 || ldl(g2h(a+36)) != 1 || ldl(g2h(a+40)) != 1)
++            qerror("unsupported mach_port_set_attributes request");
++        i = ldl(g2h(a+32));
++        if (ldl(g2h(a+44)) > 16) code = 18;
++        else if (!i || i == 0xffffffff) code = 17;
++        else if (i >= 4096 || (!receive_rights[i] && !port_sets[i] && !send_refs[i])) code = 15;
++        else if (!receive_rights[i]) code = 17;
++        else queue_limits[i] = ldl(g2h(a+44));
++        break;
++    case 3214: { /* mach_port_insert_right, same-name MAKE_SEND receive right. */
++        uint32_t name, right;
++        if (destination != TASK_SELF || size != 52 || ldl(g2h(a+24)) != 1 ||
++            ldub(g2h(a+38)) != 20 || ldub(g2h(a+39)) != 0)
++            qerror("unsupported mach_port_insert_right request");
++        name = ldl(g2h(a+48)); right = ldl(g2h(a+28));
++        if (name != right || name >= 4096 || !receive_rights[name]) code = 17;
++        else send_refs[name]++;
++        break;
++    }
+     case 3616: /* thread_policy: single virtual thread, POLICY_TIMESHARE */
+         if (destination != THREAD_SELF || size != 48 ||
+             ldl(g2h(a + 32)) != 1 || ldl(g2h(a + 36)) != 1 ||
+@@ -386,13 +675,17 @@ static uint32_t rpc(CPUState *env)
+     case 3206: /* mach_port_deallocate */
+         if (destination != TASK_SELF || size < 36) qerror("invalid port_deallocate");
+         i = ldl(g2h(a + 32));
+-        if (i >= 4096 || !send_refs[i]) code = 15; /* KERN_INVALID_NAME */
++        if (i >= 4096 || (!send_refs[i] && !send_once_target[i])) code = 15;
++        else if(send_once_target[i]) send_once_target[i]=0;
+         else send_refs[i]--;
+         break;
+     case 3204: /* mach_port_allocate: receive right in current IPC namespace */
+-        if (destination != TASK_SELF || size < 36 || ldl(g2h(a + 32)) != 1 || next_port >= 4096)
++        if (destination != TASK_SELF || size < 36 ||
++            (ldl(g2h(a + 32)) != 1 && ldl(g2h(a + 32)) != 3) || next_port >= 4096)
+             qerror("unsupported mach_port_allocate");
+-        i = next_port++; receive_rights[i] = 1;
++        i = next_port++;
++        if (ldl(g2h(a+32)) == 1) { receive_rights[i] = 1; queue_limits[i] = 5; }
++        else port_sets[i] = 1;
+         stl(answer + 36, i); length = 40;
+         break;
+     case 3801: { /* vm_allocate */
+@@ -400,6 +693,9 @@ static uint32_t rpc(CPUState *env)
+         long mapped;
+         if (destination != TASK_SELF || size < 44) qerror("invalid vm_allocate");
+         address = ldl(g2h(a + 32)); bytes = ldl(g2h(a + 36)); flags = ldl(g2h(a + 40));
++        /* Jaguar malloc probes an impossible fixed address near 0xff000000.
++         * Darwin user VM ends at 0xc0000000; never overwrite host high pages. */
++        if (!(flags & 1) && (address < 4096 || (uint64_t)address + bytes > 0xc0000000ULL)) { code = 3; break; }
+         mapped = target_mmap(address, bytes, PROT_READ | PROT_WRITE,
+                  MAP_PRIVATE | MAP_ANONYMOUS | ((flags & 1) ? 0 : MAP_FIXED), -1, 0);
+         if (mapped == -1) code = 3;
+@@ -498,6 +794,11 @@ uint32_t remaklar_mach(CPUState *env)
+ {
+     int32_t trap = env->gpr[0];
+     switch (trap) {
++    case -89: /* mach_timebase_info, PPC32 wire. XNU ignores copyout failure. */
++        if (remaklar_guest_access(env->gpr[3], 8, PAGE_WRITE)) {
++            stl(g2h(env->gpr[3]), 1); stl(g2h(env->gpr[3] + 4), 1);
++        }
++        return 0;
+     case 0x7ff1: thread_self_pointer = env->gpr[3]; return env->gpr[3];
+     case 0x7ff2: return thread_self_pointer;
+     /* Conservatively preserve FPRs across dyld initializers. PPC750 has no

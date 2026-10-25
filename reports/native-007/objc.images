@@ -1,0 +1,10 @@
+objc: Mach-O executable i386
+objc:
+Mach header
+      magic cputype cpusubtype   filetype ncmds sizeofcmds      flags
+   MH_MAGIC    I386        ALL    EXECUTE    12       2448   NOUNDEFS DYLDLINK TWOLEVEL
+	/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 218.0.0)
+	time stamp 1032062447 Sat Sep 14 21:00:47 2002
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 60.0.0)
+	time stamp 1032049567 Sat Sep 14 17:26:07 2002
+MD5 (objc) = e3ee157970c6655639509fa515287a9e

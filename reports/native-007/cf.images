@@ -1,0 +1,10 @@
+cf: Mach-O executable i386
+cf:
+Mach header
+      magic cputype cpusubtype   filetype ncmds sizeofcmds      flags
+   MH_MAGIC    I386        ALL    EXECUTE    11       1220   NOUNDEFS DYLDLINK TWOLEVEL
+	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 262.0.0)
+	time stamp 1032049953 Sat Sep 14 17:32:33 2002
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 60.0.0)
+	time stamp 1032049567 Sat Sep 14 17:26:07 2002
+MD5 (cf) = 990161ae0e0d80f1389829c1c3972474

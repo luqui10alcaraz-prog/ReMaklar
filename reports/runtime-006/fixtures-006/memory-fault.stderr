@@ -1,0 +1,3 @@
+loaded entry=10000200 stack=eedc5fcc cpu=750 host=i386 env=0xb550010
+PPC fault dar=00000000 r3=00000000 r12=00000000 r30=00000000
+unsupported PPC exception 2 pc=10000200

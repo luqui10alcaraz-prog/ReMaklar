@@ -1,0 +1,2 @@
+Graphics boundary contracts OK
+status=0

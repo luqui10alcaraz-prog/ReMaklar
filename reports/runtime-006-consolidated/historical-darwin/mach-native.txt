@@ -1,0 +1,2 @@
+Mach runtime contracts OK
+status=0

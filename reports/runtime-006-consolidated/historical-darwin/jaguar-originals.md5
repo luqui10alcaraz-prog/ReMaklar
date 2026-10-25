@@ -1,0 +1,10 @@
+MD5 (usr/lib/dyld) = 2c9b7aa555b237911d22732201c07c15
+MD5 (usr/lib/libSystem.B.dylib) = ba78bf22b0c0e6187a792d019f5e5a77
+MD5 (usr/lib/libobjc.A.dylib) = a15dd364a2444513a9532abbe35aeaef
+MD5 (usr/lib/system/libmathCommon.A.dylib) = 3fce6aae8e309082127db7f422f19b3c
+MD5 (System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation) = 4fc4290ced5611600a46e6a823a8e5d6
+MD5 (System/Library/Frameworks/Foundation.framework/Versions/C/Foundation) = 379f1b95b8dac221c5a2a049cbb69421
+MD5 (System/Library/Frameworks/AppKit.framework/Versions/C/AppKit) = e374e82118f50ab695ede1174ef1c5f3
+MD5 (System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics) = 3f1cdac45fe22f5bbf323938aa1b81e4
+MD5 (System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/Window Manager) = 73f050b64396a4df4b17fc6acd3f3b32
+MD5 (System/Library/ColorSync/Profiles/Generic RGB Profile.icc) = ffc1c4542fb10433ac31338e4f81f1f1

@@ -1,0 +1,904 @@
+[
+  {
+    "path": "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+    "install_name": "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+    "dependencies": [
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "c3f3612e06581b6949423ea6f08a6216874d71d78d4caf5990b81053f62647e1"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "53366f08545299b54a84532ebee0eaf23e782bfd2887d35649ffe82484624058"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "8ae9b4a80fb16f754861504ab66a1cc879ccd68d92f133c2584c6e0e3f8c605e"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "387bd61aa4c1bd832343545eed1ba11c1525538c8fcfe44f15991552feb821f7"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "0941258e32be05cfebd2080fb2781d8689f4586a6b1f4a4cb2f797e922ce2180"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+    "dependencies": [
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libz.1.1.3.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "b31e811093f3e93f7660f2b940563ca3f7a6d0d884d9b268e3fc8c8360aa1f8e"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "a1ea7812cef450246db338848c9251817bcb5c055ab88d5c2abeda5203b11edd"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "70ec1e80217a8c5af76576da51e3fa914ff866bb580f622a1ad7ce030d15dd35"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "c1cae1f22f1b839d432b599975f9e8366ed4a44f8e14f13b9ae9f009ad9e74d3"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "f65a4098623279a5461b72872321d3b6a3fcd4a80c0efcbc6503dbdbed531d6e"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "e8fde7ceb32d5e9cc957bf01f72435a5be257a772cb06c454cdaae1671cb7acc"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "51684c00cecdd494fd5bf0daa6dbe7f48385c07ec49dd3a20a96dbb15e8d7abf"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+      "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "b62ae83a731a2d0c100a1f3f4278aefde54b30ee561199baf0af2a44cb663404"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "05832a4254d682ea38bff78e37ac0c634976d9d83a16fc77560e76c9f7558bc3"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "69665708733e72cdb308a3551b456269675edee145c700b2e798cff21b26927b"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/usr/lib/libcups.2.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "d00eed9703fc65913ef5c400cb20c3f5c567d53f6fe3aadf8c40de175085c0eb"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "557217362765f7f1ea7349a005b751d296e54357f1e8d1af30a7c288179ab551"
+  },
+  {
+    "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis",
+    "install_name": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "e8acbe6a92aaee25223ff336c9246cdc1b43dba3ca57f13f7f51a7bb720819c6"
+  },
+  {
+    "path": "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+    "install_name": "/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "17d911a521bf9b2e4ac0a508a23699dfd91572dba317141f418eb5f010869100"
+  },
+  {
+    "path": "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+    "install_name": "/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "c3e477db5615987e3481371ae41b5625734936f763f0e8c2178f195471e16f25"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+    "dependencies": [
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "d88fa1e87a0d9335ca63b2fe393e9f1e7f1335807a45e265657ccd8353da5ab2"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "914faacc0b7a9be64c28fbfeb70006b18e10d64913e87cd846ea164bb4e304c7"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "0efc20cdeda24ef1e3d410758171cb2180a0617b50eb2fd8a0ceab34dac4c153"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox"
+    ],
+    "sha256": "93a9114e9a031dc2bdb0e6d096be2ad9defd95ce295169510db7739e40ff8b94"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "8fc183bc660f199e2a3e76dff25a1a96d86c69d9c71ef219844590edbf636926"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+    ],
+    "sha256": "8c590c3a7c13787667a086cbc48d926c805fce0aec4c4285372f9f3aae027071"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "bf01d7c60728a881bf18c15786ae5ff400b2c52ffee622fc837814566494fbb9"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "51664696dd48a2e926fb68471dd5444f0d48c3f71821366ddb285c7a92635acd"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "852887f72ab638e4cdf751eb9b76305bbf49f7db297744a519b40ef59c55fc9f"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Printers/Libraries/libPPDLib.dylib",
+      "/usr/lib/libcups.2.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "bd5d1fa4b824d9cc0b859f2326d8894b51e3c9204d315ca8260debfa91ef94d8"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "8788239ff081b94c3c06814f0fa355bb62713fbec63ad0d08b2581e8c940b5ba"
+  },
+  {
+    "path": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition",
+    "install_name": "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "3225744e2973156aac7f83104b9db1cb74e5e8148712b6a31451c3dffbe58661"
+  },
+  {
+    "path": "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+    "install_name": "/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa",
+    "dependencies": [
+      "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "04120729907c11e94f6aac010a0e70ebd8d4915fe3805bd89c0c8385135bdaee"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+    "install_name": "/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio",
+    "dependencies": [
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "1db590854f54edc7fcbeee47ea3f8157f1857338a1e2325198320e7565ad6173"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+    "install_name": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "5f6e0abed8c77cac639d49c08d34414e1ce5e4aff10d5b5ef056236238f6da76"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI",
+    "install_name": "/System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "a40fbcc1ec4c648af9fdaaf6f0e7a4570a8fbd6646643aafb052687d2d5d0f78"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreMIDIServer.framework/Versions/A/CoreMIDIServer",
+    "install_name": "/System/Library/Frameworks/CoreMIDIServer.framework/Versions/A/CoreMIDIServer",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "2767c3c6fc9f5618e88835cc1741d68e7de8ae79f8ed45b51dbd62f43ec988e2"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+    "install_name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore",
+      "/usr/lib/system/libmathCommon.A.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "10903bb66426f957f21d8104b0a26a5bcb90509b44f9e41ed9166b713da9b872"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore",
+    "install_name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/system/libmathCommon.A.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "befebb3061fc4d7a0e222b30a22352cfe37f9d49244fd04a5630ff389ac54da1"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/Support/libGDBCFMHelper.dylib",
+    "install_name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/Support/libGDBCFMHelper.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "26df6deb7de483edbe4b8379b45b13e8131f866426b3f516e546fef85e72753c"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+    "install_name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "2e2293f5818bafda005951f952565b5d47927b796c50a5045f7c5706bf04a5ac"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices",
+    "install_name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices",
+    "dependencies": [
+      "/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "be2bacf420249a1312949d7278719f2fd61a30033c2e27e97bb825a4417839fa"
+  },
+  {
+    "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore",
+    "install_name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "3bd5705e9ee98bb9532b75d8b679c950f91fc78893c8a88fc7429d42260d2b99"
+  },
+  {
+    "path": "/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService",
+    "install_name": "/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService",
+    "dependencies": [
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "cc3344277b65b5410826f347a45021df8ffa68c33c7ed9e97a1f070990161b96"
+  },
+  {
+    "path": "/System/Library/Frameworks/DiscRecording.framework/Versions/A/DiscRecording",
+    "install_name": "/System/Library/Frameworks/DiscRecording.framework/Versions/A/DiscRecording",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/usr/lib/libSystem.B.dylib",
+      "/usr/lib/libz.1.1.3.dylib",
+      "/usr/lib/libobjc.A.dylib"
+    ],
+    "sha256": "511fd513fa4ffd2c617760ef65bb3a8e754fd882b0f3a50969f7c341a35d7ff7"
+  },
+  {
+    "path": "/System/Library/Frameworks/DiscRecordingUI.framework/Versions/A/DiscRecordingUI",
+    "install_name": "/System/Library/Frameworks/DiscRecordingUI.framework/Versions/A/DiscRecordingUI",
+    "dependencies": [
+      "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "/System/Library/Frameworks/DiscRecording.framework/Versions/A/DiscRecording",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "9f6258675c085cb9629da02b7b3e4fb6eedc6586a63a8801438a9c68ea189178"
+  },
+  {
+    "path": "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+    "install_name": "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "/usr/lib/libobjc.A.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "cf0c75341133d572574b7570a2032154badb022fdce5ed9fb9ac8776b4752949"
+  },
+  {
+    "path": "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+    "install_name": "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "/usr/lib/libz.1.1.3.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "66f8d66958d1d0dba14afb87bda685eb60b4bb5caa7c2c84303bf0b204bdf153"
+  },
+  {
+    "path": "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+    "install_name": "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "0d96432f4bc2a69fc4a3248ff3dbb6491927c0086630c8b946030269d47ca77d"
+  },
+  {
+    "path": "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+    "install_name": "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "e7536cc2d65f29a53be4c1d3d4b03b7fe6716c8bb4bebc5b149cd985182b4b16"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom",
+    "install_name": "/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib",
+      "/usr/lib/libz.1.1.3.dylib"
+    ],
+    "sha256": "1a5bcc740f0642542256c2fefa59970451d3368a908671782cd8cbc8800fde17"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv",
+    "install_name": "/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv",
+    "dependencies": [
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox",
+      "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "4c36c283bc376a5e6b1e0f168898f948c43b2003555420570cf885cd727716d6"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/DirectoryServiceCore.framework/Versions/A/DirectoryServiceCore",
+    "install_name": "/System/Library/PrivateFrameworks/DirectoryServiceCore.framework/Versions/A/DirectoryServiceCore",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "8d3ddfea5b5e1720905c6d00e6b561b25f74ddeb5cd2e2f5da3b199e02eed400"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+    "install_name": "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "b8b6281d25a64e2ee306cc54b9724b37938e2f3ad7cc3ebdb8031dbcaa5bda49"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation",
+    "install_name": "/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation",
+    "dependencies": [
+      "/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo",
+      "/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "4ae7e548e054d1b31c93b3048b9e9229c73282da0fa2fb849eee2c9eb3d38f4f"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit",
+    "install_name": "/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib",
+      "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+    ],
+    "sha256": "0375ebd36fca277599fcce6abd1a46288b754f9a83bb9563eda4d8b466ee295e"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo",
+    "install_name": "/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "a8c80f0035ee23ef807bf0cf7e656c5a4a7e0a21b7ce3ba11397d21de1f619bf"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/NIAccess.framework/Versions/B/NIAccess",
+    "install_name": "/System/Library/PrivateFrameworks/NIAccess.framework/Versions/B/NIAccess",
+    "dependencies": [
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo",
+      "/usr/lib/libobjc.A.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "3002fcb088a6009919c5854feb2bf02a770a30c701ee69257eafcb2d3358c6c9"
+  },
+  {
+    "path": "/System/Library/PrivateFrameworks/NIInterface.framework/Versions/B/NIInterface",
+    "install_name": "/System/Library/PrivateFrameworks/NIInterface.framework/Versions/B/NIInterface",
+    "dependencies": [
+      "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "/System/Library/PrivateFrameworks/NIAccess.framework/Versions/B/NIAccess",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo",
+      "/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon",
+      "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices",
+      "/usr/lib/libobjc.A.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "db1b2b847e28011a9a7c98b5fdbf961a3e71c75702aafedba30cda0f0b14d031"
+  },
+  {
+    "path": "/usr/lib/libalias.A.dylib",
+    "install_name": "/usr/lib/libalias.A.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "0968ac4ed6eb5b4b4c872cb0bbecf21bc3cf2c9e54c4cffea46c4d0f0e1614a2"
+  },
+  {
+    "path": "/usr/lib/libBSDPClient.A.dylib",
+    "install_name": "/usr/lib/libBSDPClient.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "e51cc2aa091e3ce307d8fd3ff8d2622c18fd22df2110a71afeeb5fabb9dd801c"
+  },
+  {
+    "path": "/usr/lib/libcrypto.0.9.dylib",
+    "install_name": "/usr/lib/libcrypto.0.9.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "9e74aee46a5e831c4af60ebd1704347c2c51daf0f672532afd87e67d411faac4"
+  },
+  {
+    "path": "/usr/lib/libcups.2.dylib",
+    "install_name": "/usr/lib/libcups.2.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib",
+      "/usr/lib/libssl.0.9.dylib",
+      "/usr/lib/libcrypto.0.9.dylib"
+    ],
+    "sha256": "31becd85ad44cb957700fac746e83d12fa9ccf4074b20f7a302b299e4bc15236"
+  },
+  {
+    "path": "/usr/lib/libcupsimage.2.dylib",
+    "install_name": "/usr/lib/libcupsimage.2.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib",
+      "/usr/lib/libz.1.1.3.dylib",
+      "/usr/lib/libcups.2.dylib"
+    ],
+    "sha256": "3499d78db48f8de3cb8cb6739c69cad1c6c93b4819f69581738460b2492c61f3"
+  },
+  {
+    "path": "/usr/lib/libDHCPServer.A.dylib",
+    "install_name": "/usr/lib/libDHCPServer.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "4159f99bc0f0a465c9d733faf1071824739ee19649e4f106214658e13883e2b6"
+  },
+  {
+    "path": "/usr/lib/libedit.2.dylib",
+    "install_name": "/usr/lib/libedit.2.dylib",
+    "dependencies": [
+      "/usr/lib/libncurses.5.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "8336063b16d644920d82d5be52f353330888044d1fb8a115affcbf09de0338dc"
+  },
+  {
+    "path": "/usr/lib/libform.5.dylib",
+    "install_name": "/usr/lib/libform.5.dylib",
+    "dependencies": [
+      "/usr/lib/libncurses.5.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "a928c885e2d04d4bfc72cc1c9f05bd3c2c42ff87ea2880cac7de72b9703aaaa7"
+  },
+  {
+    "path": "/usr/lib/libiodbc.2.1.6.dylib",
+    "install_name": "/usr/lib/libiodbc.2.1.6.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "0e6d57b0771777498a5043450280577977234237018f5f4cdfdc3a25156cd7fb"
+  },
+  {
+    "path": "/usr/lib/libiodbcinst.2.1.6.dylib",
+    "install_name": "/usr/lib/libiodbcinst.2.1.6.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "089ca53449ac8c6dedded584873bbd8637956087febd84f4f55aaebe6c1faaf8"
+  },
+  {
+    "path": "/usr/lib/libipsec.A.dylib",
+    "install_name": "/usr/lib/libipsec.A.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "7359affb85041b5ef34efe1be3a1583c0fffa79ee40fdd215a604c78d6e1396f"
+  },
+  {
+    "path": "/usr/lib/libmenu.5.dylib",
+    "install_name": "/usr/lib/libmenu.5.dylib",
+    "dependencies": [
+      "/usr/lib/libncurses.5.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "e6d19cd57a004aba603fb9c9aef8a5949013d2a8bed1a47d90ce2963903981df"
+  },
+  {
+    "path": "/usr/lib/libncurses.5.dylib",
+    "install_name": "/usr/lib/libncurses.5.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "bc8cf9517ba59baea6009f87208f584737932024cb2ae20b15af238cad2ec001"
+  },
+  {
+    "path": "/usr/lib/libobjc.A.dylib",
+    "install_name": "/usr/lib/libobjc.A.dylib",
+    "dependencies": [
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "04fba974582a8831480792060074368c918316315edcec8385afbdf55a7a6df3"
+  },
+  {
+    "path": "/usr/lib/libpam.1.0.dylib",
+    "install_name": "/usr/lib/libpam.1.0.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "e768e4a74703471d02da0a612bdf5399a16f204a16900579ebec93047166cefe"
+  },
+  {
+    "path": "/usr/lib/libpanel.5.dylib",
+    "install_name": "/usr/lib/libpanel.5.dylib",
+    "dependencies": [
+      "/usr/lib/libncurses.5.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "83e640a6961cf9579b5c286cb3f1be5400085dfc4b3fed5d25407f7288c20141"
+  },
+  {
+    "path": "/usr/lib/libpcap.A.dylib",
+    "install_name": "/usr/lib/libpcap.A.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "07bbbfdf4ce07bde70cb744833a154f87abb91270dea39657a11c5e3d70469d4"
+  },
+  {
+    "path": "/usr/lib/libsasl2.2.0.1.dylib",
+    "install_name": "/usr/lib/libsasl2.2.0.1.dylib",
+    "dependencies": [
+      "/usr/lib/libcrypto.0.9.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "82bac36003dffc6e19b0750c186d1b19b4a423ae387b08d2517f65cbd750558e"
+  },
+  {
+    "path": "/usr/lib/libssl.0.9.dylib",
+    "install_name": "/usr/lib/libssl.0.9.dylib",
+    "dependencies": [
+      "/usr/lib/libcrypto.0.9.dylib",
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "7fa1c9ae2c56a833a44c1e95b64e3580d5ef715edee5c6a9146b35d9db02b553"
+  },
+  {
+    "path": "/usr/lib/libSystem.B.dylib",
+    "install_name": "/usr/lib/libSystem.B.dylib",
+    "dependencies": [
+      "/usr/lib/system/libmathCommon.A.dylib"
+    ],
+    "sha256": "ff16c324f52f73bcce6f9f692180dc71322ca0081dcf2bc9449c5c472631b3c9"
+  },
+  {
+    "path": "/usr/lib/libtcl8.3.dylib",
+    "install_name": "/usr/lib/libtcl8.3.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "3229d7310f1f7bb10a5b17112381be22dfe6007ea53b18dafcf1c8b9219cdb36"
+  },
+  {
+    "path": "/usr/lib/libz.1.1.3.dylib",
+    "install_name": "/usr/lib/libz.1.1.3.dylib",
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "sha256": "fec95424bf9ba5f7f548a20d0a4374e847ab7885591a92033442bceec6d78222"
+  },
+  {
+    "path": "/usr/lib/system/libmathCommon.A.dylib",
+    "install_name": "/usr/lib/system/libmathCommon.A.dylib",
+    "dependencies": [],
+    "sha256": "5f92fb3a1020f87cfaa89da7c4e10176adfa506cce68a02b7ca3e710d69ba0cf"
+  }
+]

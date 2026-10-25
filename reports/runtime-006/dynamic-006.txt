@@ -1,0 +1,3 @@
+FAIL true 125 {'exit': False, 'stdout_empty': True, 'original_entry': False, 'no_main_bridge': True, 'bsd_exit': False, 'libsystem_loaded': False, 'math_loaded': False, 'no_unsupported': True}
+FAIL false 125 {'exit': False, 'stdout_empty': True, 'original_entry': False, 'no_main_bridge': True, 'bsd_exit': False, 'libsystem_loaded': False, 'math_loaded': False, 'no_unsupported': True}
+PASS missing-dyld

@@ -9,7 +9,7 @@ my @overrides;
 while (<MAP>) { chomp;my ($install,$relative)=split /\t/;push @overrides,"-Wl,-dylib_file,$install:$root$relative"; }
 my @base=('gcc2','-no-cpp-precomp','-arch','ppc',"-F$root/System/Library/Frameworks",
  "-F$root/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks");
-for my $item (['quartz','tests/ppc/quartz-bitmap.c','CoreGraphics'],['foundation','tests/ppc/foundation-smoke.m','Foundation']) {
+for my $item (['quartz','tests/ppc/quartz-bitmap.c','ApplicationServices'],['foundation','tests/ppc/foundation-smoke.m','Foundation']) {
     my ($name,$source,$framework)=@$item;
     my $pid=fork();die $! unless defined $pid;
     if (!$pid) {

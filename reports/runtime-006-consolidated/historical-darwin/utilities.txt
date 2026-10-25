@@ -1,0 +1,24 @@
+PASS	echo-none	exit=0 expected=0	bytes=1
+PASS	echo-empty	exit=0 expected=0	bytes=1
+PASS	echo-multiple	exit=0 expected=0	bytes=14
+PASS	echo-empty-between	exit=0 expected=0	bytes=11
+PASS	echo-spaces	exit=0 expected=0	bytes=26
+PASS	echo-literal	exit=0 expected=0	bytes=29
+PASS	echo-controls	exit=0 expected=0	bytes=8
+PASS	echo-utf8	exit=0 expected=0	bytes=18
+PASS	echo-long	exit=0 expected=0	bytes=32769
+PASS	echo-many	exit=0 expected=0	bytes=3591
+PASS	echo-long-many	exit=0 expected=0	bytes=40965
+PASS	echo-no-newline	exit=0 expected=0	bytes=4
+PASS	cat-stdin-empty	exit=0 expected=0	bytes=0
+PASS	cat-stdin-binary	exit=0 expected=0	bytes=131328
+PASS	cat-file-empty	exit=0 expected=0	bytes=0
+PASS	cat-file-text	exit=0 expected=0	bytes=23
+PASS	cat-file-spaces	exit=0 expected=0	bytes=7
+PASS	cat-files	exit=0 expected=0	bytes=30
+PASS	cat-file-large	exit=0 expected=0	bytes=131328
+PASS	cat-mixed-stdin	exit=0 expected=0	bytes=53
+PASS	cat-missing	exit=1 expected=1	bytes=0
+PASS	cat-missing-continues	exit=1 expected=1	bytes=23
+PASS	cat-number	exit=0 expected=0	bytes=37
+cases=23 failed=0

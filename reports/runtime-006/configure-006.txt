@@ -1,0 +1,35 @@
+Install prefix    /usr/local
+BIOS directory    /usr/local/share/qemu
+binary directory  /usr/local/bin
+Manual directory  /usr/local/share/man
+ELF interp prefix /usr/gnemul/qemu-%M
+Source path       /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean
+C compiler        gcc
+Host C compiler   gcc
+ARCH_CFLAGS       -m32
+make              make
+install           install
+host CPU          i386
+host big endian   no
+target list       ppc-darwin-user
+gprof enabled     no
+sparse enabled    no
+profiler          no
+static build      no
+-Werror enabled   no
+SDL support       no
+curses support    no
+mingw32 support   no
+Audio drivers     oss
+Extra audio cards ac97 es1370 sb16
+Mixer emulation   no
+VNC TLS support   no
+kqemu support     no
+brlapi support    no
+Documentation     no
+NPTL support      no
+vde support       no
+AIO support       no
+Install blobs     yes
+KVM support       no
+fdt support       no

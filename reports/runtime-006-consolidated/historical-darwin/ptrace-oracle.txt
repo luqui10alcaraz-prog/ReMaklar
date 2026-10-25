@@ -1,0 +1,3 @@
+request=c000 result=-1 errno=1
+request=b000 result=-1 errno=1
+oracle_status=0

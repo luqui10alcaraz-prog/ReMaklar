@@ -1,0 +1,536 @@
+{
+  "format": "Mach-O32",
+  "sha256": "a1a215d14ecaca9f0cb58afabfc6ee7bb22e719eaca7f078863d8d411fb83c65",
+  "cputype": 18,
+  "cpusubtype": 0,
+  "filetype": 2,
+  "flags": 149,
+  "segments": [
+    {
+      "name": "__PAGEZERO",
+      "vmaddr": 0,
+      "vmsize": 4096,
+      "fileoff": 0,
+      "filesize": 0
+    },
+    {
+      "name": "__TEXT",
+      "vmaddr": 4096,
+      "vmsize": 8192,
+      "fileoff": 0,
+      "filesize": 8192
+    },
+    {
+      "name": "__DATA",
+      "vmaddr": 12288,
+      "vmsize": 4096,
+      "fileoff": 8192,
+      "filesize": 4096
+    },
+    {
+      "name": "__CGSERVER",
+      "vmaddr": 16384,
+      "vmsize": 4096,
+      "fileoff": 12288,
+      "filesize": 4096
+    },
+    {
+      "name": "__LINKEDIT",
+      "vmaddr": 20480,
+      "vmsize": 2012,
+      "fileoff": 16384,
+      "filesize": 2012
+    }
+  ],
+  "sections": [
+    {
+      "name": "__text",
+      "addr": 10648,
+      "size": 1052,
+      "fileoff": 6552,
+      "flags": 2147484672,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__picsymbol_stub",
+      "addr": 11700,
+      "size": 432,
+      "fileoff": 7604,
+      "flags": 2147483656,
+      "reserved1": 0,
+      "reserved2": 36
+    },
+    {
+      "name": "__symbol_stub",
+      "addr": 12132,
+      "size": 0,
+      "fileoff": 8036,
+      "flags": 2147483656,
+      "reserved1": 12,
+      "reserved2": 20
+    },
+    {
+      "name": "__cstring",
+      "addr": 12132,
+      "size": 156,
+      "fileoff": 8036,
+      "flags": 2,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__data",
+      "addr": 12288,
+      "size": 32,
+      "fileoff": 8192,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__la_symbol_ptr",
+      "addr": 12320,
+      "size": 48,
+      "fileoff": 8224,
+      "flags": 263,
+      "reserved1": 12,
+      "reserved2": 0
+    },
+    {
+      "name": "__nl_symbol_ptr",
+      "addr": 12368,
+      "size": 16,
+      "fileoff": 8272,
+      "flags": 6,
+      "reserved1": 24,
+      "reserved2": 0
+    },
+    {
+      "name": "__dyld",
+      "addr": 12384,
+      "size": 28,
+      "fileoff": 8288,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__common",
+      "addr": 12416,
+      "size": 60,
+      "fileoff": 0,
+      "flags": 1,
+      "reserved1": 0,
+      "reserved2": 0
+    },
+    {
+      "name": "__cgserver",
+      "addr": 16384,
+      "size": 16,
+      "fileoff": 12288,
+      "flags": 0,
+      "reserved1": 0,
+      "reserved2": 0
+    }
+  ],
+  "dependencies": [
+    {
+      "kind": "dyld",
+      "path": "/usr/lib/dyld"
+    },
+    {
+      "kind": "dylib",
+      "path": "/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices"
+    },
+    {
+      "kind": "dylib",
+      "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+    },
+    {
+      "kind": "dylib",
+      "path": "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit"
+    },
+    {
+      "kind": "dylib",
+      "path": "/usr/lib/libSystem.B.dylib"
+    }
+  ],
+  "symbols": [
+    {
+      "index": 0,
+      "name": "_pointer_to_objcInit",
+      "type": 14,
+      "value": 12304
+    },
+    {
+      "index": 1,
+      "name": "_pointer_to__darwin_gcc3_preregister_frame_info",
+      "type": 14,
+      "value": 12308
+    },
+    {
+      "index": 2,
+      "name": "__call_mod_init_funcs",
+      "type": 14,
+      "value": 11084
+    },
+    {
+      "index": 3,
+      "name": "dyld_lazy_symbol_binding_entry_point",
+      "type": 14,
+      "value": 12384
+    },
+    {
+      "index": 4,
+      "name": "error_message",
+      "type": 14,
+      "value": 12208
+    },
+    {
+      "index": 5,
+      "name": "dyld_func_lookup_pointer",
+      "type": 14,
+      "value": 12388
+    },
+    {
+      "index": 6,
+      "name": "__dyld_func_lookup",
+      "type": 30,
+      "value": 11240
+    },
+    {
+      "index": 7,
+      "name": "__dyld_init_check",
+      "type": 30,
+      "value": 11156
+    },
+    {
+      "index": 8,
+      "name": "__start",
+      "type": 30,
+      "value": 10700
+    },
+    {
+      "index": 9,
+      "name": "dyld_stub_binding_helper",
+      "type": 30,
+      "value": 11216
+    },
+    {
+      "index": 10,
+      "name": "_darwin_unwind_dyld_add_image_hook",
+      "type": 14,
+      "value": 11256
+    },
+    {
+      "index": 11,
+      "name": "_darwin_unwind_dyld_remove_image_hook",
+      "type": 14,
+      "value": 11352
+    },
+    {
+      "index": 12,
+      "name": "_NXArgc",
+      "type": 15,
+      "value": 12288
+    },
+    {
+      "index": 13,
+      "name": "_NXArgv",
+      "type": 15,
+      "value": 12292
+    },
+    {
+      "index": 14,
+      "name": "___darwin_gcc3_preregister_frame_info",
+      "type": 15,
+      "value": 11556
+    },
+    {
+      "index": 15,
+      "name": "___progname",
+      "type": 15,
+      "value": 12300
+    },
+    {
+      "index": 16,
+      "name": "__cplus_init",
+      "type": 15,
+      "value": 12416
+    },
+    {
+      "index": 17,
+      "name": "__mh_execute_header",
+      "type": 3,
+      "value": 4096
+    },
+    {
+      "index": 18,
+      "name": "__objcInit",
+      "type": 15,
+      "value": 12420
+    },
+    {
+      "index": 19,
+      "name": "_catch_exception_raise",
+      "type": 15,
+      "value": 12424
+    },
+    {
+      "index": 20,
+      "name": "_catch_exception_raise_state",
+      "type": 15,
+      "value": 12428
+    },
+    {
+      "index": 21,
+      "name": "_catch_exception_raise_state_identity",
+      "type": 15,
+      "value": 12432
+    },
+    {
+      "index": 22,
+      "name": "_clock_alarm_reply",
+      "type": 15,
+      "value": 12436
+    },
+    {
+      "index": 23,
+      "name": "_do_mach_notify_dead_name",
+      "type": 15,
+      "value": 12440
+    },
+    {
+      "index": 24,
+      "name": "_do_mach_notify_no_senders",
+      "type": 15,
+      "value": 12444
+    },
+    {
+      "index": 25,
+      "name": "_do_mach_notify_port_deleted",
+      "type": 15,
+      "value": 12448
+    },
+    {
+      "index": 26,
+      "name": "_do_mach_notify_send_once",
+      "type": 15,
+      "value": 12452
+    },
+    {
+      "index": 27,
+      "name": "_do_seqnos_mach_notify_dead_name",
+      "type": 15,
+      "value": 12456
+    },
+    {
+      "index": 28,
+      "name": "_do_seqnos_mach_notify_no_senders",
+      "type": 15,
+      "value": 12460
+    },
+    {
+      "index": 29,
+      "name": "_do_seqnos_mach_notify_port_deleted",
+      "type": 15,
+      "value": 12464
+    },
+    {
+      "index": 30,
+      "name": "_do_seqnos_mach_notify_send_once",
+      "type": 15,
+      "value": 12468
+    },
+    {
+      "index": 31,
+      "name": "_environ",
+      "type": 15,
+      "value": 12296
+    },
+    {
+      "index": 32,
+      "name": "_main",
+      "type": 15,
+      "value": 11676
+    },
+    {
+      "index": 33,
+      "name": "_receive_samples",
+      "type": 15,
+      "value": 12472
+    },
+    {
+      "index": 34,
+      "name": "start",
+      "type": 15,
+      "value": 10648
+    },
+    {
+      "index": 35,
+      "name": "_CGXServer",
+      "type": 13,
+      "value": 2475035608
+    },
+    {
+      "index": 36,
+      "name": "___keymgr_dwarf2_register_sections",
+      "type": 13,
+      "value": 2415957728
+    },
+    {
+      "index": 37,
+      "name": "___keymgr_global",
+      "type": 13,
+      "value": 2684362424
+    },
+    {
+      "index": 38,
+      "name": "__cthread_init_routine",
+      "type": 13,
+      "value": 2684358808
+    },
+    {
+      "index": 39,
+      "name": "__dyld_register_func_for_add_image",
+      "type": 13,
+      "value": 2415957824
+    },
+    {
+      "index": 40,
+      "name": "__dyld_register_func_for_remove_image",
+      "type": 13,
+      "value": 2415963168
+    },
+    {
+      "index": 41,
+      "name": "__init_keymgr",
+      "type": 13,
+      "value": 2415960192
+    },
+    {
+      "index": 42,
+      "name": "__keymgr_get_and_lock_processwide_ptr",
+      "type": 13,
+      "value": 2415960128
+    },
+    {
+      "index": 43,
+      "name": "__keymgr_set_and_unlock_processwide_ptr",
+      "type": 13,
+      "value": 2415962720
+    },
+    {
+      "index": 44,
+      "name": "_abort",
+      "type": 13,
+      "value": 2416301444
+    },
+    {
+      "index": 45,
+      "name": "_atexit",
+      "type": 13,
+      "value": 2415963296
+    },
+    {
+      "index": 46,
+      "name": "_calloc",
+      "type": 13,
+      "value": 2415958624
+    },
+    {
+      "index": 47,
+      "name": "_errno",
+      "type": 13,
+      "value": 2684389720
+    },
+    {
+      "index": 48,
+      "name": "_exit",
+      "type": 13,
+      "value": 2415943264
+    },
+    {
+      "index": 49,
+      "name": "_free",
+      "type": 13,
+      "value": 2415935712
+    },
+    {
+      "index": 50,
+      "name": "_mach_init_routine",
+      "type": 13,
+      "value": 2684358868
+    }
+  ],
+  "stubs": [
+    {
+      "address": 11700,
+      "symbol": "_exit"
+    },
+    {
+      "address": 11736,
+      "symbol": "_atexit"
+    },
+    {
+      "address": 11772,
+      "symbol": "___keymgr_dwarf2_register_sections"
+    },
+    {
+      "address": 11808,
+      "symbol": "__dyld_register_func_for_remove_image"
+    },
+    {
+      "address": 11844,
+      "symbol": "__dyld_register_func_for_add_image"
+    },
+    {
+      "address": 11880,
+      "symbol": "__init_keymgr"
+    },
+    {
+      "address": 11916,
+      "symbol": "_free"
+    },
+    {
+      "address": 11952,
+      "symbol": "_abort"
+    },
+    {
+      "address": 11988,
+      "symbol": "__keymgr_set_and_unlock_processwide_ptr"
+    },
+    {
+      "address": 12024,
+      "symbol": "__keymgr_get_and_lock_processwide_ptr"
+    },
+    {
+      "address": 12060,
+      "symbol": "_calloc"
+    },
+    {
+      "address": 12096,
+      "symbol": "_CGXServer"
+    }
+  ],
+  "entry": 10648,
+  "imports": [
+    "_CGXServer",
+    "___keymgr_dwarf2_register_sections",
+    "___keymgr_global",
+    "__cthread_init_routine",
+    "__dyld_register_func_for_add_image",
+    "__dyld_register_func_for_remove_image",
+    "__init_keymgr",
+    "__keymgr_get_and_lock_processwide_ptr",
+    "__keymgr_set_and_unlock_processwide_ptr",
+    "_abort",
+    "_atexit",
+    "_calloc",
+    "_errno",
+    "_exit",
+    "_free",
+    "_mach_init_routine"
+  ]
+}

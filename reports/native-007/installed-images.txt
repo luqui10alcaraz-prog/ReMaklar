@@ -1,0 +1,70 @@
++ file /mach_kernel
+/mach_kernel: Mach-O executable i386
++ md5 /mach_kernel
+MD5 (/mach_kernel) = 56da829d60b6b4353c25cca8b060b5f8
++ otool -arch i386 -hv /mach_kernel
+/mach_kernel:
+Mach header
+      magic cputype cpusubtype   filetype ncmds sizeofcmds      flags
+   MH_MAGIC    I386        ALL    EXECUTE     8       1732   NOUNDEFS
++ otool -arch i386 -L /mach_kernel
+/mach_kernel:
++ file /usr/lib/dyld
+/usr/lib/dyld: Mach-O fat file with 2 architectures
+/usr/lib/dyld (for architecture ppc):	Mach-O dynamic linker ppc
+/usr/lib/dyld (for architecture i386):	Mach-O dynamic linker i386
++ md5 /usr/lib/dyld
+MD5 (/usr/lib/dyld) = d649719fc14a4aed760acaf0842c4b6a
++ otool -arch i386 -hv /usr/lib/dyld
+/usr/lib/dyld:
+Mach header
+      magic cputype cpusubtype   filetype ncmds sizeofcmds      flags
+   MH_MAGIC    I386        ALL   DYLINKER     9       1540   NOUNDEFS DYLDLINK TWOLEVEL
++ otool -arch i386 -L /usr/lib/dyld
+/usr/lib/dyld:
++ file /usr/lib/libSystem.B.dylib
+/usr/lib/libSystem.B.dylib: Mach-O fat file with 2 architectures
+/usr/lib/libSystem.B.dylib (for architecture ppc):	Mach-O dynamically linked shared library ppc
+/usr/lib/libSystem.B.dylib (for architecture i386):	Mach-O dynamically linked shared library i386
++ md5 /usr/lib/libSystem.B.dylib
+MD5 (/usr/lib/libSystem.B.dylib) = 3db0bc003df278f2b9489df95a7aec64
++ otool -arch i386 -hv /usr/lib/libSystem.B.dylib
+/usr/lib/libSystem.B.dylib:
+Mach header
+      magic cputype cpusubtype   filetype ncmds sizeofcmds      flags
+   MH_MAGIC    I386        ALL      DYLIB     9       1452   NOUNDEFS DYLDLINK TWOLEVEL
++ otool -arch i386 -L /usr/lib/libSystem.B.dylib
+/usr/lib/libSystem.B.dylib:
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 60.0.0)
+	/usr/lib/system/libmathCommon.A.dylib (compatibility version 1.0.0, current version 40.1.0)
++ file /usr/lib/libobjc.A.dylib
+/usr/lib/libobjc.A.dylib: Mach-O fat file with 2 architectures
+/usr/lib/libobjc.A.dylib (for architecture ppc):	Mach-O dynamically linked shared library ppc
+/usr/lib/libobjc.A.dylib (for architecture i386):	Mach-O dynamically linked shared library i386
++ md5 /usr/lib/libobjc.A.dylib
+MD5 (/usr/lib/libobjc.A.dylib) = 07200f99452b0964a8382715e4d82a9a
++ otool -arch i386 -hv /usr/lib/libobjc.A.dylib
+/usr/lib/libobjc.A.dylib:
+Mach header
+      magic cputype cpusubtype   filetype ncmds sizeofcmds      flags
+   MH_MAGIC    I386        ALL      DYLIB    11       2428   NOUNDEFS DYLDLINK TWOLEVEL
++ otool -arch i386 -L /usr/lib/libobjc.A.dylib
+/usr/lib/libobjc.A.dylib:
+	/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 218.0.0)
+	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 263.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 60.0.0)
++ file /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation: Mach-O fat file with 2 architectures
+/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (for architecture ppc):	Mach-O dynamically linked shared library ppc
+/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (for architecture i386):	Mach-O dynamically linked shared library i386
++ md5 /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+MD5 (/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation) = 5505b0626ccb269b8886a186ba2abc32
++ otool -arch i386 -hv /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation:
+Mach header
+      magic cputype cpusubtype   filetype ncmds sizeofcmds      flags
+   MH_MAGIC    I386        ALL      DYLIB     9       1300   NOUNDEFS DYLDLINK TWOLEVEL
++ otool -arch i386 -L /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation:
+	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 262.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 60.0.0)

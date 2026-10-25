@@ -1,0 +1,171 @@
+[
+  {
+    "program": "objc-smoke",
+    "cohort": "darwin",
+    "exit": 0,
+    "entry": "0x1b1c",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "objc-smoke",
+    "cohort": "jaguar",
+    "exit": 0,
+    "entry": "0x1b1c",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "cf-smoke",
+    "cohort": "darwin",
+    "exit": 0,
+    "entry": "0x190c",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "cf-smoke",
+    "cohort": "jaguar",
+    "exit": 0,
+    "entry": "0x190c",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "mach-runtime",
+    "cohort": "darwin",
+    "exit": 0,
+    "entry": "0x1690",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "mach-runtime",
+    "cohort": "jaguar",
+    "exit": 0,
+    "entry": "0x1690",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "ptrace-host",
+    "cohort": "darwin",
+    "exit": 0,
+    "entry": "0x1aec",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "ptrace-host",
+    "cohort": "jaguar",
+    "exit": 0,
+    "entry": "0x1aec",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "graphics-contracts",
+    "cohort": "darwin",
+    "exit": 0,
+    "entry": "0x16b0",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "graphics-contracts",
+    "cohort": "jaguar",
+    "exit": 0,
+    "entry": "0x16b0",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "foundation",
+    "cohort": "jaguar",
+    "exit": 0,
+    "entry": "0x29a8",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true
+    },
+    "pass": true
+  },
+  {
+    "program": "quartz",
+    "cohort": "jaguar",
+    "exit": 0,
+    "entry": "0x1808",
+    "checks": {
+      "exit": true,
+      "stdout": true,
+      "original_entry": true,
+      "no_bypass": true,
+      "no_unhandled": true,
+      "all_pixels": true
+    },
+    "pass": true
+  }
+]

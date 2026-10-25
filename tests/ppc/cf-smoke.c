@@ -1,5 +1,18 @@
 /* Original CF string/array and coherent timebase checks. SPDX-License-Identifier: MIT */
-#include <CoreFoundation/CoreFoundation.h>
+/* Public PPC32 declarations: the Darwin CD's umbrella headers reference SDK
+ * files it does not ship. These declarations contain no implementation. */
+typedef const void *CFStringRef;
+typedef void *CFMutableArrayRef;
+typedef long CFIndex;
+extern const struct { long version; void *retain,*release,*description,*equal; } kCFTypeArrayCallBacks;
+extern CFStringRef CFStringCreateWithCString(const void *,const char *,unsigned long);
+extern CFMutableArrayRef CFArrayCreateMutable(const void *,CFIndex,const void *);
+extern void CFArrayAppendValue(CFMutableArrayRef,const void *);
+extern CFIndex CFArrayGetCount(const void *);
+extern const void *CFArrayGetValueAtIndex(const void *,CFIndex);
+extern unsigned char CFStringGetCString(CFStringRef,char *,CFIndex,unsigned long);
+extern void CFRelease(const void *);
+#define kCFStringEncodingUTF8 0x08000100UL
 #include <mach/mach_time.h>
 #include <stdio.h>
 #include <string.h>

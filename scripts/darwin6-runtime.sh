@@ -22,7 +22,10 @@ if [ "$status" = 0 ]; then
     gcc2 -no-cpp-precomp tests/ppc/mach-runtime.c -o build/mach-native > "$out/mach-native-build.txt" 2>&1
     build/mach-native > "$out/mach-native.txt" 2>&1
     echo status=$? >> "$out/mach-native.txt"
-    for name in objc-smoke cf-smoke mach-runtime ptrace-host; do
+    gcc2 -no-cpp-precomp tests/ppc/graphics-contracts.c -o build/graphics-native > "$out/graphics-native-build.txt" 2>&1
+    perl -e 'alarm 30;exec @ARGV' build/graphics-native > "$out/graphics-native.txt" 2>&1
+    echo status=$? >> "$out/graphics-native.txt"
+    for name in objc-smoke cf-smoke mach-runtime ptrace-host graphics-contracts; do
         extra=''
         if [ "$name" = objc-smoke ]; then source=tests/ppc/objc-smoke.m;extra=-lobjc; else source=tests/ppc/$name.c; fi
         if [ "$name" = cf-smoke ]; then extra='-framework CoreFoundation'; fi
@@ -39,6 +42,7 @@ if [ "$status" = 0 ]; then
     perl scripts/build-jaguar-probes.pl "$jaguar" "$out"
     for name in quartz foundation; do
         if [ -f build/$name-ppc ]; then
+            if [ "$name" = quartz ]; then rm -f "$jaguar/tmp/quartz.ppm"; fi
             perl -e 'alarm 120;exec @ARGV' "$exe" --root "$jaguar" build/$name-ppc /tmp/quartz.ppm > "$out/$name.stdout" 2> "$out/$name.stderr"
             echo status=$? > "$out/$name.status"
             cp build/$name-ppc /exchange/$name

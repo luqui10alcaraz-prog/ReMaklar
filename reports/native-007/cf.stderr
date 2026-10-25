@@ -1,0 +1,19 @@
+loading libraries for image: perl
+loading library: /System/Library/Perl/darwin/CORE/libperl.dylib
+loading library: /usr/lib/libSystem.B.dylib
+loading libraries for image: /System/Library/Perl/darwin/CORE/libperl.dylib
+loading libraries for image: /usr/lib/libSystem.B.dylib
+loading library: /usr/lib/system/libmathCommon.A.dylib
+loading libraries for image: /usr/lib/system/libmathCommon.A.dylib
+loading libraries for image: ./cf
+loading library: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+loading library: /usr/lib/libSystem.B.dylib
+loading libraries for image: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+loading libraries for image: /usr/lib/libSystem.B.dylib
+loading library: /usr/lib/system/libmathCommon.A.dylib
+loading libraries for image: /usr/lib/system/libmathCommon.A.dylib
+IMAGE cpu=7 magic=feedface path=./cf
+IMAGE cpu=7 magic=feedface path=/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+IMAGE cpu=7 magic=feedface path=/usr/lib/libSystem.B.dylib
+IMAGE cpu=7 magic=feedface path=/usr/lib/system/libmathCommon.A.dylib
+DYLD_MEMORY address=8fe00000 cpu=7 filetype=7

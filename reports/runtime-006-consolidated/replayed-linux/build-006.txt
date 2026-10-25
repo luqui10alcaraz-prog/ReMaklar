@@ -1,0 +1,155 @@
+  CC    cutils.o
+  CC    cache-utils.o
+  AR    libqemu_user.a
+make[1]: Entering directory '/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-build/ppc-darwin-user'
+  CC    ppc-darwin-user/bootstrap-main.o
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/remaklar/bootstrap-main.c:11:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/qemu.h:100:33: warning: ‘struct sigaltstack’ declared inside parameter list will not be visible outside of this definition or declaration
+  100 | int do_sigaltstack(const struct sigaltstack *ss, struct sigaltstack *oss);
+      |                                 ^~~~~~~~~~~
+  CC    ppc-darwin-user/machload.o
+In file included from /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/remaklar/darwin-kernel.c:26:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/qemu.h:100:33: warning: ‘struct sigaltstack’ declared inside parameter list will not be visible outside of this definition or declaration
+  100 | int do_sigaltstack(const struct sigaltstack *ss, struct sigaltstack *oss);
+      |                                 ^~~~~~~~~~~
+In file included from /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:31:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/qemu.h:100:33: warning: ‘struct sigaltstack’ declared inside parameter list will not be visible outside of this definition or declaration
+  100 | int do_sigaltstack(const struct sigaltstack *ss, struct sigaltstack *oss);
+      |                                 ^~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:98:6: warning: redundant redeclaration of ‘qerror’ [-Wredundant-decls]
+   98 | void qerror(const char *format, ...);
+      |      ^~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/qemu.h:103:6: note: previous declaration of ‘qerror’ with type ‘void(const char *, ...)’
+  103 | void qerror(const char *fmt, ...);
+      |      ^~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:189:6: warning: no previous prototype for ‘bswap_ppc_thread_state’ [-Wmissing-prototypes]
+  189 | void bswap_ppc_thread_state(struct mach_ppc_thread_state *ts)
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:248:6: warning: no previous prototype for ‘bswap_tc’ [-Wmissing-prototypes]
+  248 | void bswap_tc(struct target_thread_command *tc)
+      |      ^~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:261:6: warning: no previous prototype for ‘bswap_mh’ [-Wmissing-prototypes]
+  261 | void bswap_mh(struct mach_header *mh)
+      |      ^~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:272:6: warning: no previous prototype for ‘bswap_lc’ [-Wmissing-prototypes]
+  272 | void bswap_lc(struct load_command *lc)
+      |      ^~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:279:6: warning: no previous prototype for ‘bswap_fh’ [-Wmissing-prototypes]
+  279 | void bswap_fh(struct fat_header *fh)
+      |      ^~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:285:6: warning: no previous prototype for ‘bswap_fa’ [-Wmissing-prototypes]
+  285 | void bswap_fa(struct fat_arch *fa)
+      |      ^~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:294:6: warning: no previous prototype for ‘bswap_segcmd’ [-Wmissing-prototypes]
+  294 | void bswap_segcmd(struct segment_command *sc)
+      |      ^~~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:306:6: warning: no previous prototype for ‘bswap_symtabcmd’ [-Wmissing-prototypes]
+  306 | void bswap_symtabcmd(struct symtab_command *stc)
+      |      ^~~~~~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:316:6: warning: no previous prototype for ‘bswap_sym’ [-Wmissing-prototypes]
+  316 | void bswap_sym(struct nlist *n)
+      |      ^~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:323:5: warning: no previous prototype for ‘load_thread’ [-Wmissing-prototypes]
+  323 | int load_thread(struct mach_header *mh, struct target_thread_command *tc, struct target_pt_regs * regs, int fd, int mh_pos, int need_bswap)
+      |     ^~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:366:5: warning: no previous prototype for ‘load_dylinker’ [-Wmissing-prototypes]
+  366 | int load_dylinker(struct mach_header *mh, struct dylinker_command *dc, int fd, int mh_pos, int need_bswap)
+      |     ^~~~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c: In function ‘load_dylinker’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:368:9: warning: variable ‘size’ set but not used [-Wunused-but-set-variable]
+  368 |     int size;
+      |         ^~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c: At top level:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:388:5: warning: no previous prototype for ‘load_segment’ [-Wmissing-prototypes]
+  388 | int load_segment(struct mach_header *mh, struct segment_command *sc, int fd, int mh_pos, int need_bswap, int fixed, int slide)
+      |     ^~~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:451:7: warning: no previous prototype for ‘load_data’ [-Wmissing-prototypes]
+  451 | void *load_data(int fd, long offset, unsigned int size)
+      |       ^~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/machload.c:809:15: warning: no previous prototype for ‘setup_arg_pages’ [-Wmissing-prototypes]
+  809 | unsigned long setup_arg_pages(void * mh, char ** argv, char ** env)
+      |               ^~~~~~~~~~~~~~~
+  CC    ppc-darwin-user/mmap.o
+In file included from /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/mmap.c:29:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/qemu.h:100:33: warning: ‘struct sigaltstack’ declared inside parameter list will not be visible outside of this definition or declaration
+  100 | int do_sigaltstack(const struct sigaltstack *ss, struct sigaltstack *oss);
+      |                                 ^~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/mmap.c:100:5: warning: no previous prototype for ‘mmap_frag’ [-Wmissing-prototypes]
+  100 | int mmap_frag(unsigned long host_start,
+      |     ^~~~~~~~~
+  CC    ppc-darwin-user/thunk.o
+In file included from /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/thunk.c:24:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/qemu.h:100:33: warning: ‘struct sigaltstack’ declared inside parameter list will not be visible outside of this definition or declaration
+  100 | int do_sigaltstack(const struct sigaltstack *ss, struct sigaltstack *oss);
+      |                                 ^~~~~~~~~~~
+  CC    ppc-darwin-user/exec.o
+In file included from /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/exec.c:44:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/darwin-user/qemu.h:100:33: warning: ‘struct sigaltstack’ declared inside parameter list will not be visible outside of this definition or declaration
+  100 | int do_sigaltstack(const struct sigaltstack *ss, struct sigaltstack *oss);
+      |                                 ^~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/exec.c: In function ‘tb_alloc_page’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/exec.c:1090:23: warning: variable ‘last_first_tb’ set but not used [-Wunused-but-set-variable]
+ 1090 |     TranslationBlock *last_first_tb;
+      |                       ^~~~~~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/exec.c: In function ‘cpu_interrupt’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/exec.c:1503:9: warning: variable ‘old_mask’ set but not used [-Wunused-but-set-variable]
+ 1503 |     int old_mask;
+      |         ^~~~~~~~
+  CC    ppc-darwin-user/kqemu.o
+  CC    ppc-darwin-user/translate-all.o
+  CC    ppc-darwin-user/cpu-exec.o
+  CC    ppc-darwin-user/translate.o
+  CC    ppc-darwin-user/host-utils.o
+  CC    ppc-darwin-user/tcg/tcg.o
+In file included from /home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/tcg/tcg.c:152:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/tcg/i386/tcg-target.c: In function ‘tcg_out_qemu_ld’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/tcg/i386/tcg-target.c:440:59: warning: variable ‘s_bits’ set but not used [-Wunused-but-set-variable]
+  440 |     int addr_reg, data_reg, data_reg2, r0, r1, mem_index, s_bits, bswap;
+      |                                                           ^~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/tcg/i386/tcg-target.c:440:48: warning: variable ‘mem_index’ set but not used [-Wunused-but-set-variable]
+  440 |     int addr_reg, data_reg, data_reg2, r0, r1, mem_index, s_bits, bswap;
+      |                                                ^~~~~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/tcg/i386/tcg-target.c: In function ‘tcg_out_qemu_st’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/tcg/i386/tcg-target.c:651:59: warning: variable ‘s_bits’ set but not used [-Wunused-but-set-variable]
+  651 |     int addr_reg, data_reg, data_reg2, r0, r1, mem_index, s_bits, bswap;
+      |                                                           ^~~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/tcg/i386/tcg-target.c:651:48: warning: variable ‘mem_index’ set but not used [-Wunused-but-set-variable]
+  651 |     int addr_reg, data_reg, data_reg2, r0, r1, mem_index, s_bits, bswap;
+      |                                                ^~~~~~~~~
+  CC    ppc-darwin-user/tcg/tcg-runtime.o
+  CC    ppc-darwin-user/fpu/softfloat.o
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c: In function ‘float32_rem’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c:1913:17: warning: variable ‘bSign’ set but not used [-Wunused-but-set-variable]
+ 1913 |     flag aSign, bSign, zSign;
+      |                 ^~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c: In function ‘float64_rem’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c:2927:17: warning: variable ‘bSign’ set but not used [-Wunused-but-set-variable]
+ 2927 |     flag aSign, bSign, zSign;
+      |                 ^~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c: In function ‘floatx80_rem’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c:3897:17: warning: variable ‘bSign’ set but not used [-Wunused-but-set-variable]
+ 3897 |     flag aSign, bSign, zSign;
+      |                 ^~~~~
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c: In function ‘float128_rem’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/fpu/softfloat.c:5009:17: warning: variable ‘bSign’ set but not used [-Wunused-but-set-variable]
+ 5009 |     flag aSign, bSign, zSign;
+      |                 ^~~~~
+  CC    ppc-darwin-user/op_helper.o
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/target-ppc/op_helper.c: In function ‘helper_icbi’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/target-ppc/op_helper.c:376:14: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+  376 |     uint32_t tmp;
+      |              ^~~
+  CC    ppc-darwin-user/helper.o
+  CC    ppc-darwin-user/disas.o
+  CC    ppc-darwin-user/i386-dis.o
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/i386-dis.c: In function ‘OP_sI’:
+/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-clean/i386-dis.c:3571:18: warning: variable ‘mask’ set but not used [-Wunused-but-set-variable]
+ 3571 |   bfd_signed_vma mask = -1;
+      |                  ^~~~
+  CC    ppc-darwin-user/ppc-dis.o
+  CC    ppc-darwin-user/qemu-malloc.o
+  CC    ppc-darwin-user/osdep.o
+  AR    ppc-darwin-user/libqemu.a
+  LINK  ppc-darwin-user/qemu-ppc
+make[1]: Leaving directory '/home/lucas/Escritorio/ReMaklar/build/checkpoint-006-build/ppc-darwin-user'

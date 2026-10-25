@@ -1,0 +1,38 @@
+second level name optional in hw.optional.x86_64 is invalid
+/usr/bin/ld: can't locate file for: -lfdt
+Install prefix    /usr/local
+BIOS directory    /usr/local/share/qemu
+binary directory  /usr/local/bin
+Manual directory  /usr/local/share/man
+ELF interp prefix /usr/gnemul/qemu-%M
+Source path       /var/tmp/remaklar/experiments/qemu-0.10.6
+C compiler        gcc2 -no-cpp-precomp
+Host C compiler   gcc2 -no-cpp-precomp
+ARCH_CFLAGS       -arch i386
+make              make
+install           install
+host CPU          i386
+host big endian   no
+target list       ppc-darwin-user
+gprof enabled     no
+sparse enabled    no
+profiler          no
+static build      no
+-Werror enabled   no
+Cocoa support     no
+SDL support       no
+curses support    no
+mingw32 support   no
+Audio drivers     coreaudio
+Extra audio cards ac97 es1370 sb16
+Mixer emulation   no
+VNC TLS support   no
+kqemu support     no
+brlapi support    no
+Documentation     yes
+NPTL support      no
+vde support       no
+AIO support       no
+Install blobs     yes
+KVM support       no
+fdt support       no
