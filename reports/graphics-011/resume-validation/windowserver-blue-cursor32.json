@@ -1,0 +1,46 @@
+{
+  "sha256": "c66670f9e3adbb2aa89adad833251343c1be27d01173c7771ae17b6521a8766c",
+  "bytes": 3145728,
+  "physical_address": "0xfd000000",
+  "words": [
+    [
+      "00000000",
+      786055
+    ],
+    [
+      "ffffff00",
+      249
+    ],
+    [
+      "ffffffff",
+      128
+    ]
+  ],
+  "screen_colors": [
+    [
+      43,
+      [
+        255,
+        255,
+        255
+      ]
+    ],
+    [
+      786335,
+      [
+        66,
+        107,
+        173
+      ]
+    ],
+    [
+      54,
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  ],
+  "sampling_limitation": "Screenshot shows original blue background and cursor. Physical dump was taken after bounded process cleanup and shows restored console; samples are NOT simultaneous."
+}

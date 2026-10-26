@@ -1,0 +1,19 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/ready36.tgz graphics011-ready36-results/*.txt graphics011-ready36-results/*.status graphics011-ready36-results/*.stdout graphics011-ready36-results/*.stderr graphics011-joint36 graphics011-regression36;sync;umount /exchange' 0
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-ready36/indirect011-runtime.c -o /var/tmp/graphics011-ready36-results/indirect-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-ready36/indirect011-runtime.c -o /var/tmp/graphics011-ready36-results/indirect-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-ready36-results/indirect-native /var/tmp/graphics011-ready36-results/indirect-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-ready36-results/indirect-jaguar /var/tmp/graphics011-run32/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-ready36-results/indirect-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-ready36-results/indirect-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-ready36-results/indirect-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-ready36-results/indirect-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-ready36-results/indirect-jaguar.status
++ cmp /var/tmp/graphics011-ready36-results/indirect-native.stdout /var/tmp/graphics011-ready36-results/indirect-jaguar.stdout
++ sh /var/tmp/graphics011-ready36/regression.sh
++ perl /var/tmp/graphics011-ready36/joint.pl /var/tmp/graphics011-joint36 /var/tmp/graphics011-run32/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/ready36.tgz graphics011-ready36-results/indirect-i386-build.txt graphics011-ready36-results/indirect-ppc-build.txt graphics011-ready36-results/script-status.txt graphics011-ready36-results/session.txt graphics011-ready36-results/indirect-jaguar.status graphics011-ready36-results/indirect-native.status graphics011-ready36-results/indirect-jaguar.stdout graphics011-ready36-results/indirect-native.stdout graphics011-ready36-results/indirect-jaguar.stderr graphics011-ready36-results/indirect-native.stderr graphics011-joint36 graphics011-regression36

@@ -1,0 +1,21 @@
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -114,7 +114,17 @@
+             if(length!=48 || (h->msgh_bits&MACH_MSGH_BITS_COMPLEX))qerror("unexpected native mk_timer message layout");
+             for(j=24;j<48;j+=8){uint64_t value;memcpy(&value,buffer+j,8);stq(buffer+j,value);}
+         }
+-        memcpy(g2h(out),buffer,length);
++        {
++            uint32_t offset=(length+3)&~3U,type,trailerbytes,j,expected;
++            memcpy(&type,buffer+offset,4);memcpy(&trailerbytes,buffer+offset+4,4);
++            expected=((options>>24)&15)==0?8:(((options>>24)&15)==1?12:20);
++            if(type || trailerbytes!=expected || trailerbytes>20 || offset>cap || trailerbytes>cap-offset)qerror("unverified native Mach trailer type=%u bytes=%u cap=%u body=%u",type,trailerbytes,cap,length);
++            /* Mach trailers are kernel-owned metadata, not application bytes.
++             * Preserve the actual sequence and sender credential words. */
++            for(j=0;j<trailerbytes;j+=4){uint32_t value;memcpy(&value,buffer+offset+j,4);stl(buffer+offset+j,value);}
++            memcpy(g2h(out),buffer,offset+trailerbytes);
++            fprintf(stderr,"native Mach trailer bytes=%u elements=%u\n",trailerbytes,(options>>24)&15);
++        }
+         fprintf(stderr,"native Mach receive port=%x bytes=%u id=%u\n",local,length,ldl(g2h(out+20)));
+     }
+     free(buffer);return kr;

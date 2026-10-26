@@ -1,0 +1,10 @@
+patching file cpu-all.h
+patching file target-ppc/translate.c
+patching file target-ppc/helper.h
+patching file target-ppc/op_helper.c
+patching file darwin-user/remaklar/darwin-kernel.c
+patching file darwin-user/remaklar/mach-native.inc
+patching file darwin-user/remaklar/live-regions.inc
+patching file darwin-user/remaklar/typed-live.c
+patching file darwin-user/remaklar/typed-live.h
+All nine source files match manifest SHA-256 after applying patch.

@@ -1,0 +1,47 @@
+/var/tmp/graphics011-isolated/typed-live.c: In function `native_cas':
+/var/tmp/graphics011-isolated/typed-live.c:42: impossible register constraint in `asm'
+/var/tmp/graphics011-isolated/typed-live.c:47: impossible register constraint in `asm'
+/var/tmp/graphics011-isolated/typed-live.c:42: impossible register constraint in `asm'
+/var/tmp/graphics011-isolated/typed-live.c:47: impossible register constraint in `asm'
+/var/tmp/graphics011-isolated/typed-live.c:42: impossible register constraint in `asm'
+/var/tmp/graphics011-isolated/typed-live.c:42: `asm' operand constraint incompatible with operand size
+/var/tmp/graphics011-isolated/typed-live.c:47: impossible register constraint in `asm'
+/var/tmp/graphics011-isolated/typed-live.c:47: `asm' operand constraint incompatible with operand size
+/var/tmp/graphics011-isolated/typed-live.c:56: internal error--unrecognizable insn:
+(insn 23 121 82 (parallel[ 
+            (set (reg:QI 0 %al)
+                (asm_operands/v ("lock; cmpxchgb %3,%1; sete %0") ("=q") 0[ 
+                        (reg:QI 2 %cl)
+                        (mem/v:QI (reg/v:SI 5 %edi) 0)
+                        (reg/v:QI 1 %dl)
+                    ] 
+                    [ 
+                        (asm_input:QI ("q"))
+                        (asm_input:QI ("1"))
+                        (asm_input:(null) ("2"))
+                    ]  ("/var/tmp/graphics011-isolated/typed-live.c") 42))
+            (set (mem/v:QI (reg/v:SI 5 %edi) 0)
+                (asm_operands/v ("lock; cmpxchgb %3,%1; sete %0") ("=m") 1[ 
+                        (reg:QI 2 %cl)
+                        (mem/v:QI (reg/v:SI 5 %edi) 0)
+                        (reg/v:QI 1 %dl)
+                    ] 
+                    [ 
+                        (asm_input:QI ("q"))
+                        (asm_input:QI ("1"))
+                        (asm_input:(null) ("2"))
+                    ]  ("/var/tmp/graphics011-isolated/typed-live.c") 42))
+            (set (reg/v:QI 1 %dl)
+                (asm_operands/v ("lock; cmpxchgb %3,%1; sete %0") ("=a") 2[ 
+                        (reg:QI 2 %cl)
+                        (mem/v:QI (reg/v:SI 5 %edi) 0)
+                        (reg/v:QI 1 %dl)
+                    ] 
+                    [ 
+                        (asm_input:QI ("q"))
+                        (asm_input:QI ("1"))
+                        (asm_input:(null) ("2"))
+                    ]  ("/var/tmp/graphics011-isolated/typed-live.c") 42))
+            (clobber (mem:BLK (scratch) 0))
+        ] ) -1 (insn_list 21 (nil))
+    (nil))

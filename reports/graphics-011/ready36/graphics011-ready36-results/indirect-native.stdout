@@ -1,0 +1,1 @@
+indirect getpid/write/open OK; real kdebug_trace result=-1 errno=22

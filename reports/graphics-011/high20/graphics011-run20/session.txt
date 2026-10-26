@@ -1,0 +1,37 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/stage130.tgz graphics011-run20/*.txt graphics011-run20/*.status graphics011-run20/*.stdout graphics011-run20/*.stderr;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run20/source
++ cp -Rp /var/tmp/graphics011-run19/build /var/tmp/graphics011-run20/build
++ cp /var/tmp/graphics011-stage20/source/cpu-all.h /var/tmp/graphics011-run20/source/cpu-all.h
++ cp /var/tmp/graphics011-stage20/source/darwin-user/mmap.c /var/tmp/graphics011-run20/source/darwin-user/mmap.c
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run20/source/darwin-user/remaklar/high-window.c
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run20/source/darwin-user/remaklar/high-window.h
++ cp /var/tmp/graphics011-stage20/source/target-ppc/cpu.h /var/tmp/graphics011-run20/source/target-ppc/cpu.h
++ cp /var/tmp/graphics011-stage20/source/target-ppc/translate.c /var/tmp/graphics011-run20/source/target-ppc/translate.c
++ cp /var/tmp/graphics011-stage20/source/target-ppc/helper.h /var/tmp/graphics011-run20/source/target-ppc/helper.h
++ cp /var/tmp/graphics011-stage20/source/target-ppc/op_helper.c /var/tmp/graphics011-run20/source/target-ppc/op_helper.c
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run20/source/darwin-user/remaklar/bootstrap-main.c
++ cp /var/tmp/graphics011-stage20/source/darwin-user/qemu.h /var/tmp/graphics011-run20/source/darwin-user/qemu.h
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run20/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run20/source/darwin-user/remaklar/mach-native.inc
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run20/source/darwin-user/remaklar/live-regions.inc
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run20/source/darwin-user/remaklar/typed-live.c
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run20/source/darwin-user/remaklar/typed-live.h
++ cp /var/tmp/graphics011-stage20/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run20/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run20/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run20/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run20/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run20/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage20/threads011-runtime.c -framework IOKit -o /var/tmp/graphics011-run20/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage20/high011-runtime.c -o /var/tmp/graphics011-run20/high-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage20/high011-runtime.c -o /var/tmp/graphics011-run20/high-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run20/high-native /var/tmp/graphics011-run20/high-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run20/high-jaguar /var/tmp/graphics011-run20/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run20/high-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run20/threads /var/tmp/graphics011-run20/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run20/threads-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run20/pbs /var/tmp/graphics011-run20/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/pbs
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run20/windowserver /var/tmp/graphics011-run20/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage130.tgz graphics011-run20/build.txt graphics011-run20/high-i386-build.txt graphics011-run20/high-ppc-build.txt graphics011-run20/script-status.txt graphics011-run20/session.txt graphics011-run20/threads-build.txt graphics011-run20/high-jaguar.status graphics011-run20/high-native.status graphics011-run20/pbs.status graphics011-run20/threads.status graphics011-run20/windowserver.status graphics011-run20/high-jaguar.stdout graphics011-run20/high-native.stdout graphics011-run20/pbs.stdout graphics011-run20/threads.stdout graphics011-run20/windowserver.stdout graphics011-run20/high-jaguar.stderr graphics011-run20/high-native.stderr graphics011-run20/pbs.stderr graphics011-run20/threads.stderr graphics011-run20/windowserver.stderr

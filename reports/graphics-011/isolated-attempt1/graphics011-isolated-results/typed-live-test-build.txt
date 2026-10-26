@@ -1,0 +1,7 @@
+/var/tmp/graphics011-isolated/typed-live.c: In function `native_read':
+/var/tmp/graphics011-isolated/typed-live.c:29: Invalid `asm' statement:
+/var/tmp/graphics011-isolated/typed-live.c:29: fixed or forbidden register 3 (bx) was spilled for class BREG.
+/var/tmp/graphics011-isolated/typed-live.c: In function `native_cas':
+/var/tmp/graphics011-isolated/typed-live.c:51: impossible register constraint in `asm'
+/var/tmp/graphics011-isolated/typed-live.c:51: Invalid `asm' statement:
+/var/tmp/graphics011-isolated/typed-live.c:51: fixed or forbidden register 3 (bx) was spilled for class BREG.

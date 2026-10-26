@@ -1,5 +1,7 @@
 # ReMaklar
 
+Estado actual: [ReMaklar 0.11 y punto exacto de continuacion](docs/remaklar-0.11.md). Mapeos Mach remotos verificados; pendiente el mapeo IOKit en la tarea cliente. Todavia no hay ventana del Installer verificada.
+
 Investigación independiente de Mac OS X Jaguar 10.2 sobre Intel x86 de 32 bits, partiendo de Darwin 6. El objetivo es conservar comportamiento y componentes originales cuando sea posible. Aqua queda para etapas posteriores.
 
 ## Avance 0.05: filesystem y preparación Objective-C

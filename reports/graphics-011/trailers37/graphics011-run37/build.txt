@@ -1,0 +1,33 @@
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:37:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap.h:14: warning: redundant redeclaration of `global_env' in same scope
+/var/tmp/graphics011-run1/source/darwin-user/qemu.h:107: warning: previous declaration of `global_env'
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:113:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:5: warning: redundant redeclaration of `bootstrap_port' in same scope
+/usr/include/mach/mach_init.h:77: warning: previous declaration of `bootstrap_port'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:9: warning: redundant redeclaration of `mach_make_memory_entry_64' in same scope
+/usr/include/mach/vm_map.h:433: warning: previous declaration of `mach_make_memory_entry_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:10: warning: redundant redeclaration of `vm_map_64' in same scope
+/usr/include/mach/vm_map.h:454: warning: previous declaration of `vm_map_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `exec_ppc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:550: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:551: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:552: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:553: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:554: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:555: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `rpc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1826: warning: implicit declaration of function `clock_get_time'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1223: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1278: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1292: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1308: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1323: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1338: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1355: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1371: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1399: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1434: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1469: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1504: warning: `endpoint' might be used uninitialized in this function
+  LINK  ppc-darwin-user/qemu-ppc

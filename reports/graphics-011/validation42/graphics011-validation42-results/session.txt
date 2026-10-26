@@ -1,0 +1,201 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;for dir in graphics011-validation42-results graphics011-regression41 graphics011-joint42;do if test -d "$dir";then for f in "$dir"/*.txt "$dir"/*.status "$dir"/*.stdout "$dir"/*.stderr;do if test -f "$f";then echo "$f";fi;done;fi;done > "$out/export-list.txt";gnutar czf /exchange/valid42.tgz -T "$out/export-list.txt";sync;umount /exchange' 0
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/remote-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/remote-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/remote-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/remote-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/trailer-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/trailer-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/trailer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/trailer-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/fasttrap.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/fasttrap.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/capability-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/capability-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/capability-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/capability-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/high-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/high-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/high-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/high-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/timer-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/timer-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/timer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/timer-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/threads.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/threads.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/typed-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/typed-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/shared-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/shared-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run41/shared-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run41/shared-jaguar.status
++ cmp /var/tmp/graphics011-run41/capability-native.stdout /var/tmp/graphics011-run41/capability-jaguar.stdout
++ cmp /var/tmp/graphics011-run41/trailer-native.stdout /var/tmp/graphics011-run41/trailer-jaguar.stdout
++ echo self_tests_verified
++ sh /var/tmp/graphics011-validation42/regression.sh
++ echo native_regression_completed
++ sync
++ perl /var/tmp/graphics011-validation42/joint.pl /var/tmp/graphics011-joint42 /var/tmp/graphics011-run41/qemu-ppc /var/tmp/jaguar
++ echo joint_trial_completed
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ test -d graphics011-validation42-results
++ test -f graphics011-validation42-results/export-list.txt
++ echo graphics011-validation42-results/export-list.txt
++ test -f graphics011-validation42-results/phase.txt
++ echo graphics011-validation42-results/phase.txt
++ test -f graphics011-validation42-results/script-status.txt
++ echo graphics011-validation42-results/script-status.txt
++ test -f graphics011-validation42-results/session.txt
++ echo graphics011-validation42-results/session.txt
++ test -f 'graphics011-validation42-results/*.status'
++ test -f 'graphics011-validation42-results/*.stdout'
++ test -f 'graphics011-validation42-results/*.stderr'
++ test -d graphics011-regression41
++ test -f graphics011-regression41/filesystem.txt
++ echo graphics011-regression41/filesystem.txt
++ test -f graphics011-regression41/runtime.txt
++ echo graphics011-regression41/runtime.txt
++ test -f graphics011-regression41/session.txt
++ echo graphics011-regression41/session.txt
++ test -f graphics011-regression41/utilities.txt
++ echo graphics011-regression41/utilities.txt
++ test -f graphics011-regression41/access-runtime.status
++ echo graphics011-regression41/access-runtime.status
++ test -f graphics011-regression41/cf.status
++ echo graphics011-regression41/cf.status
++ test -f graphics011-regression41/clock010-runtime.status
++ echo graphics011-regression41/clock010-runtime.status
++ test -f graphics011-regression41/credentials010-runtime.status
++ echo graphics011-regression41/credentials010-runtime.status
++ test -f graphics011-regression41/exec-runtime.status
++ echo graphics011-regression41/exec-runtime.status
++ test -f graphics011-regression41/framebuffer010-runtime.status
++ echo graphics011-regression41/framebuffer010-runtime.status
++ test -f graphics011-regression41/iokit-cstring-runtime.status
++ echo graphics011-regression41/iokit-cstring-runtime.status
++ test -f graphics011-regression41/iokit-open-runtime.status
++ echo graphics011-regression41/iokit-open-runtime.status
++ test -f graphics011-regression41/iokit-runtime.status
++ echo graphics011-regression41/iokit-runtime.status
++ test -f graphics011-regression41/iokit010-open-runtime.status
++ echo graphics011-regression41/iokit010-open-runtime.status
++ test -f graphics011-regression41/mach010-runtime.status
++ echo graphics011-regression41/mach010-runtime.status
++ test -f graphics011-regression41/mmap010-runtime.status
++ echo graphics011-regression41/mmap010-runtime.status
++ test -f graphics011-regression41/objc.status
++ echo graphics011-regression41/objc.status
++ test -f graphics011-regression41/process-runtime.status
++ echo graphics011-regression41/process-runtime.status
++ test -f graphics011-regression41/shm010-runtime.status
++ echo graphics011-regression41/shm010-runtime.status
++ test -f graphics011-regression41/signals-runtime.status
++ echo graphics011-regression41/signals-runtime.status
++ test -f graphics011-regression41/statfs-runtime.status
++ echo graphics011-regression41/statfs-runtime.status
++ test -f graphics011-regression41/system.status
++ echo graphics011-regression41/system.status
++ test -f graphics011-regression41/access-runtime.stdout
++ echo graphics011-regression41/access-runtime.stdout
++ test -f graphics011-regression41/cf.stdout
++ echo graphics011-regression41/cf.stdout
++ test -f graphics011-regression41/clock010-runtime.stdout
++ echo graphics011-regression41/clock010-runtime.stdout
++ test -f graphics011-regression41/credentials010-runtime.stdout
++ echo graphics011-regression41/credentials010-runtime.stdout
++ test -f graphics011-regression41/exec-runtime.stdout
++ echo graphics011-regression41/exec-runtime.stdout
++ test -f graphics011-regression41/framebuffer010-runtime.stdout
++ echo graphics011-regression41/framebuffer010-runtime.stdout
++ test -f graphics011-regression41/iokit-cstring-runtime.stdout
++ echo graphics011-regression41/iokit-cstring-runtime.stdout
++ test -f graphics011-regression41/iokit-open-runtime.stdout
++ echo graphics011-regression41/iokit-open-runtime.stdout
++ test -f graphics011-regression41/iokit-runtime.stdout
++ echo graphics011-regression41/iokit-runtime.stdout
++ test -f graphics011-regression41/iokit010-open-runtime.stdout
++ echo graphics011-regression41/iokit010-open-runtime.stdout
++ test -f graphics011-regression41/mach010-runtime.stdout
++ echo graphics011-regression41/mach010-runtime.stdout
++ test -f graphics011-regression41/mmap010-runtime.stdout
++ echo graphics011-regression41/mmap010-runtime.stdout
++ test -f graphics011-regression41/objc.stdout
++ echo graphics011-regression41/objc.stdout
++ test -f graphics011-regression41/process-runtime.stdout
++ echo graphics011-regression41/process-runtime.stdout
++ test -f graphics011-regression41/shm010-runtime.stdout
++ echo graphics011-regression41/shm010-runtime.stdout
++ test -f graphics011-regression41/signals-runtime.stdout
++ echo graphics011-regression41/signals-runtime.stdout
++ test -f graphics011-regression41/statfs-runtime.stdout
++ echo graphics011-regression41/statfs-runtime.stdout
++ test -f graphics011-regression41/system.stdout
++ echo graphics011-regression41/system.stdout
++ test -f graphics011-regression41/access-runtime.stderr
++ echo graphics011-regression41/access-runtime.stderr
++ test -f graphics011-regression41/cf.stderr
++ echo graphics011-regression41/cf.stderr
++ test -f graphics011-regression41/clock010-runtime.stderr
++ echo graphics011-regression41/clock010-runtime.stderr
++ test -f graphics011-regression41/credentials010-runtime.stderr
++ echo graphics011-regression41/credentials010-runtime.stderr
++ test -f graphics011-regression41/exec-runtime.stderr
++ echo graphics011-regression41/exec-runtime.stderr
++ test -f graphics011-regression41/framebuffer010-runtime.stderr
++ echo graphics011-regression41/framebuffer010-runtime.stderr
++ test -f graphics011-regression41/iokit-cstring-runtime.stderr
++ echo graphics011-regression41/iokit-cstring-runtime.stderr
++ test -f graphics011-regression41/iokit-open-runtime.stderr
++ echo graphics011-regression41/iokit-open-runtime.stderr
++ test -f graphics011-regression41/iokit-runtime.stderr
++ echo graphics011-regression41/iokit-runtime.stderr
++ test -f graphics011-regression41/iokit010-open-runtime.stderr
++ echo graphics011-regression41/iokit010-open-runtime.stderr
++ test -f graphics011-regression41/mach010-runtime.stderr
++ echo graphics011-regression41/mach010-runtime.stderr
++ test -f graphics011-regression41/mmap010-runtime.stderr
++ echo graphics011-regression41/mmap010-runtime.stderr
++ test -f graphics011-regression41/objc.stderr
++ echo graphics011-regression41/objc.stderr
++ test -f graphics011-regression41/process-runtime.stderr
++ echo graphics011-regression41/process-runtime.stderr
++ test -f graphics011-regression41/shm010-runtime.stderr
++ echo graphics011-regression41/shm010-runtime.stderr
++ test -f graphics011-regression41/signals-runtime.stderr
++ echo graphics011-regression41/signals-runtime.stderr
++ test -f graphics011-regression41/statfs-runtime.stderr
++ echo graphics011-regression41/statfs-runtime.stderr
++ test -f graphics011-regression41/system.stderr
++ echo graphics011-regression41/system.stderr
++ test -d graphics011-joint42
++ test -f graphics011-joint42/processes.txt
++ echo graphics011-joint42/processes.txt
++ test -f graphics011-joint42/backend-block.status
++ echo graphics011-joint42/backend-block.status
++ test -f graphics011-joint42/completion.status
++ echo graphics011-joint42/completion.status
++ test -f graphics011-joint42/leaders.status
++ echo graphics011-joint42/leaders.status
++ test -f graphics011-joint42/windowserver-ready.status
++ echo graphics011-joint42/windowserver-ready.status
++ test -f graphics011-joint42/ats.stdout
++ echo graphics011-joint42/ats.stdout
++ test -f graphics011-joint42/pbs.stdout
++ echo graphics011-joint42/pbs.stdout
++ test -f graphics011-joint42/splash.stdout
++ echo graphics011-joint42/splash.stdout
++ test -f graphics011-joint42/windowserver.stdout
++ echo graphics011-joint42/windowserver.stdout
++ test -f graphics011-joint42/ats.stderr
++ echo graphics011-joint42/ats.stderr
++ test -f graphics011-joint42/pbs.stderr
++ echo graphics011-joint42/pbs.stderr
++ test -f graphics011-joint42/splash.stderr
++ echo graphics011-joint42/splash.stderr
++ test -f graphics011-joint42/windowserver.stderr
++ echo graphics011-joint42/windowserver.stderr
++ gnutar czf /exchange/valid42.tgz -T /var/tmp/graphics011-validation42-results/export-list.txt

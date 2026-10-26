@@ -1,0 +1,43 @@
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:32:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap.h:14: warning: redundant redeclaration of `global_env' in same scope
+/var/tmp/graphics011-run1/source/darwin-user/qemu.h:107: warning: previous declaration of `global_env'
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:82:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:5: warning: redundant redeclaration of `bootstrap_port' in same scope
+/usr/include/mach/mach_init.h:77: warning: previous declaration of `bootstrap_port'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:9: warning: redundant redeclaration of `mach_make_memory_entry_64' in same scope
+/usr/include/mach/vm_map.h:433: warning: previous declaration of `mach_make_memory_entry_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:10: warning: redundant redeclaration of `vm_map_64' in same scope
+/usr/include/mach/vm_map.h:454: warning: previous declaration of `vm_map_64'
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:83:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc: In function `remaklar_live_load':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc:90: parse error before `int'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc:91: `error' undeclared (first use in this function)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc:91: (Each undeclared identifier is reported only once
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc:91: for each function it appears in.)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc:82: warning: `x' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc: In function `remaklar_live_store':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc:112: parse error before `int'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc:113: `error' undeclared (first use in this function)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `exec_ppc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:518: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:519: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:520: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:521: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:522: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:523: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `rpc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1104: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1151: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1165: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1181: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1196: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1211: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1228: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1244: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1272: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1297: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1325: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1360: warning: `endpoint' might be used uninitialized in this function
+make[1]: *** [darwin-kernel.o] Error 1
+make: *** [subdir-ppc-darwin-user] Error 2

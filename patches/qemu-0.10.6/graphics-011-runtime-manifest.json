@@ -1,0 +1,72 @@
+{
+  "dependency": "0009-shared-graphics.patch",
+  "dependency_sha256": "dbe19298c358e524837798b7f357972896f6031e851dcb9851747ed10234c513",
+  "patch_sha256": "318e0b229506ac1afc0df14bfe00904c774f1ea8a9cf37a3bd43dcda2621b00e",
+  "files": {
+    "cpu-all.h": {
+      "base_sha256": "826ae77b234e58f18e95a5c1b75a76eab6c595733cc718eca9661a88fecdd126",
+      "sha256": "d3aafffec7eb7ebb907735b81b5c4ef560262f8544b248bdaf98c92861a98ffc"
+    },
+    "target-ppc/translate.c": {
+      "base_sha256": "8ea062c5d1fffba78d006e34600faf06dafa5f0ae72de99112e238a88f30b949",
+      "sha256": "9bcfb3f4d197e5c65fac4f3e0ce574e96c1aa57fc91c6aaf1df6b00cf2a3780a"
+    },
+    "target-ppc/helper.h": {
+      "base_sha256": "3741f974b66f19971a48091047dd00f22159caa3ef95488bf2506a8557c3ed51",
+      "sha256": "8f519f3f296e5857783d4e80c66a113e81da6429d41ee18091fee41e76b4e31a"
+    },
+    "target-ppc/op_helper.c": {
+      "base_sha256": "5f6c57b4a5dd81a8af9bcbe4b9a048a7f47534df5ad70ce0a4bd150c79c537ce",
+      "sha256": "a27af20526fd37ef700146b0a08938e38b80c388bfdb9f22b4e5b8f7ec32ef03"
+    },
+    "darwin-user/remaklar/darwin-kernel.c": {
+      "base_sha256": "b8da80a422b6e0379132c11d103fe176c0aca4ac5b16d73f16d6e3a15cb3a6c1",
+      "sha256": "c9e59d4f14913aaaa3358b09aa428539eafe874438f7dc0c3dceca0faea45e70"
+    },
+    "darwin-user/remaklar/mach-native.inc": {
+      "base_sha256": "e74e7396a4778d3d9b1e316959108a23eb30f33625463c333d87922a1b1c394c",
+      "sha256": "6f7351d7c5b56840f2a1ff406732a0b3e6c02fac34c5c5c33135b9691e327b42"
+    },
+    "darwin-user/remaklar/live-regions.inc": {
+      "base_sha256": "659dfa706a5e7f1363a0e5617da800bc411a4d5978c67534d3051621d69492ba",
+      "sha256": "47c628eec287fc1d4f6132aa4eb6216dff281a437d65a72275340c2de919e0b5"
+    },
+    "darwin-user/remaklar/typed-live.c": {
+      "base_sha256": "502af6710abdcc93bb66a7fde20d795f2b026211b1378a8dd6e7c0173828e877",
+      "sha256": "ba83da0f017f6804d93cb86f1fdb3fe8cdda163206652da2651742885cc8d596"
+    },
+    "darwin-user/remaklar/typed-live.h": {
+      "base_sha256": "b2bcd3387de1adc0b9a900e6fd947c876cf6940493251af333bd3fe676c3a567",
+      "sha256": "72f4c149306d54d9f8ba1c0a61169292e2269f01685309ed7207ac7ba90f4228"
+    },
+    "target-ppc/cpu.h": {
+      "base_sha256": "4522dae30b3499297a3cbfcdd2e912f99510ca35854b299b4ee98912d6b7799b",
+      "sha256": "991a86c6f531096bf5b065bad63715894c73d163e8cf7beaf611594bb0601cb2"
+    },
+    "darwin-user/qemu.h": {
+      "base_sha256": "176217910e0a4bcc3b86cc98639d0cc541ddce53ebc4c9eb920855beb8cc23b7",
+      "sha256": "acc0297ad63623fd590754cf5ccaad5767fd4389f175d25e7d72de6de693d74d"
+    },
+    "darwin-user/mmap.c": {
+      "base_sha256": "398e71ab8822864f51695fdba6673b933eebf9db6db56f5281bfcb1f07d0a5a3",
+      "sha256": "dffa802b963bfc976554d9a4db199c1f83bee4a3cf416485ccf91a230ffb1767"
+    },
+    "darwin-user/remaklar/bootstrap-main.c": {
+      "base_sha256": "0384cbcbb1eb049841df10ad00fe0d07c4c37e010ebb6d7098904d5258669b34",
+      "sha256": "38aa460c4c2322c16c4a38e86fe21533088354cdd2b454a0fd239837e1845911"
+    },
+    "darwin-user/remaklar/threads.inc": {
+      "base_sha256": null,
+      "sha256": "4e07a6ec574e865e87bf5d3a9cb84ece75d9cd81b105fa836595d7e06b710e1b"
+    },
+    "darwin-user/remaklar/high-window.c": {
+      "base_sha256": null,
+      "sha256": "d58dffb726fb86d8e884ad6a2465393925777e1a6d9df31233e4c8343901ee0f"
+    },
+    "darwin-user/remaklar/high-window.h": {
+      "base_sha256": null,
+      "sha256": "abb81d2f0baddae759c84b0a8c73a9ee350e2b75244371ca1408214ab506b339"
+    }
+  },
+  "status": "partial: native execution and memory tests verified; graphical Installer still under investigation"
+}

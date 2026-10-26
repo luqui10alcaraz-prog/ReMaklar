@@ -1,0 +1,705 @@
+--- a/cpu-all.h
++++ b/cpu-all.h
+@@ -655,6 +655,26 @@
+ #define laddr(x) (uint8_t *)(long)(x)
+ #endif
+ 
++#if defined(REMAKLAR_BOOTSTRAP) && defined(TARGET_PPC)
++extern uint32_t remaklar_live_min,remaklar_live_max;
++uint64_t remaklar_live_load(uintptr_t,unsigned);
++void remaklar_live_store(uintptr_t,unsigned,uint64_t);
++int remaklar_live_cas(uint32_t,uint32_t,uint32_t);
++#define ldub_raw(p) ((uint8_t)remaklar_live_load((uintptr_t)(p),1))
++#define ldsb_raw(p) ((int8_t)remaklar_live_load((uintptr_t)(p),1))
++#define lduw_raw(p) ((uint16_t)remaklar_live_load((uintptr_t)(p),2))
++#define ldsw_raw(p) ((int16_t)remaklar_live_load((uintptr_t)(p),2))
++#define ldl_raw(p) ((uint32_t)remaklar_live_load((uintptr_t)(p),4))
++#define ldq_raw(p) remaklar_live_load((uintptr_t)(p),8)
++#define stb_raw(p,v) remaklar_live_store((uintptr_t)(p),1,(v))
++#define stw_raw(p,v) remaklar_live_store((uintptr_t)(p),2,(v))
++#define stl_raw(p,v) remaklar_live_store((uintptr_t)(p),4,(v))
++#define stq_raw(p,v) remaklar_live_store((uintptr_t)(p),8,(v))
++#define ldfl_raw(p) ldfl_p(laddr((p)))
++#define ldfq_raw(p) ldfq_p(laddr((p)))
++#define stfl_raw(p,v) stfl_p(saddr((p)),v)
++#define stfq_raw(p,v) stfq_p(saddr((p)),v)
++#else
+ #define ldub_raw(p) ldub_p(laddr((p)))
+ #define ldsb_raw(p) ldsb_p(laddr((p)))
+ #define lduw_raw(p) lduw_p(laddr((p)))
+@@ -669,6 +689,8 @@
+ #define stq_raw(p, v) stq_p(saddr((p)), v)
+ #define stfl_raw(p, v) stfl_p(saddr((p)), v)
+ #define stfq_raw(p, v) stfq_p(saddr((p)), v)
++
++#endif
+ 
+ 
+ #if defined(CONFIG_USER_ONLY)
+--- a/target-ppc/translate.c
++++ b/target-ppc/translate.c
+@@ -33,6 +33,73 @@
+ #include "helper.h"
+ #define GEN_HELPER 1
+ #include "helper.h"
++
++/* Mapping/unmapping a live object flushes TBs before execution resumes.
++ * With no typed mappings, keep exactly the upstream direct memory operations. */
++#ifdef REMAKLAR_BOOTSTRAP
++static void rm_gen_ld8u(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(1);gen_helper_rm_ld(value,addr,n);tcg_temp_free_i32(n);
++ } else tcg_gen_qemu_ld8u(value,addr,idx);
++}
++static void rm_gen_ld8s(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(1);gen_helper_rm_ld(value,addr,n);tcg_temp_free_i32(n);
++ tcg_gen_ext8s_tl(value,value);
++ } else tcg_gen_qemu_ld8s(value,addr,idx);
++}
++static void rm_gen_ld16u(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(2);gen_helper_rm_ld(value,addr,n);tcg_temp_free_i32(n);
++ } else tcg_gen_qemu_ld16u(value,addr,idx);
++}
++static void rm_gen_ld16s(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(2);gen_helper_rm_ld(value,addr,n);tcg_temp_free_i32(n);
++ tcg_gen_ext16s_tl(value,value);
++ } else tcg_gen_qemu_ld16s(value,addr,idx);
++}
++static void rm_gen_ld32u(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(4);gen_helper_rm_ld(value,addr,n);tcg_temp_free_i32(n);
++ } else tcg_gen_qemu_ld32u(value,addr,idx);
++}
++static void rm_gen_ld64(TCGv_i64 value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ gen_helper_rm_ld64(value,addr);
++ } else tcg_gen_qemu_ld64(value,addr,idx);
++}
++static void rm_gen_st8(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(1);gen_helper_rm_st(addr,value,n);tcg_temp_free_i32(n);
++ } else tcg_gen_qemu_st8(value,addr,idx);
++}
++static void rm_gen_st16(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(2);gen_helper_rm_st(addr,value,n);tcg_temp_free_i32(n);
++ } else tcg_gen_qemu_st16(value,addr,idx);
++}
++static void rm_gen_st32(TCGv value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ TCGv_i32 n=tcg_const_i32(4);gen_helper_rm_st(addr,value,n);tcg_temp_free_i32(n);
++ } else tcg_gen_qemu_st32(value,addr,idx);
++}
++static void rm_gen_st64(TCGv_i64 value,TCGv addr,int idx) {
++ if(remaklar_live_max) {
++ gen_helper_rm_st64(addr,value);
++ } else tcg_gen_qemu_st64(value,addr,idx);
++}
++#define tcg_gen_qemu_ld8u rm_gen_ld8u
++#define tcg_gen_qemu_ld8s rm_gen_ld8s
++#define tcg_gen_qemu_ld16u rm_gen_ld16u
++#define tcg_gen_qemu_ld16s rm_gen_ld16s
++#define tcg_gen_qemu_ld32u rm_gen_ld32u
++#define tcg_gen_qemu_ld64 rm_gen_ld64
++#define tcg_gen_qemu_st8 rm_gen_st8
++#define tcg_gen_qemu_st16 rm_gen_st16
++#define tcg_gen_qemu_st32 rm_gen_st32
++#define tcg_gen_qemu_st64 rm_gen_st64
++#endif
+ 
+ #define CPU_SINGLE_STEP 0x1
+ #define CPU_BRANCH_STEP 0x2
+@@ -3209,11 +3276,19 @@
+ /* eieio */
+ GEN_HANDLER(eieio, 0x1F, 0x16, 0x1A, 0x03FFF801, PPC_MEM_EIEIO)
+ {
++#ifdef REMAKLAR_BOOTSTRAP
++    gen_helper_rm_barrier();
++#endif
++
+ }
+ 
+ /* isync */
+ GEN_HANDLER(isync, 0x13, 0x16, 0x04, 0x03FFF801, PPC_MEM)
+ {
++#ifdef REMAKLAR_BOOTSTRAP
++    gen_helper_rm_barrier();
++#endif
++
+     gen_stop_exception(ctx);
+ }
+ 
+@@ -3225,8 +3300,12 @@
+     t0 = tcg_temp_local_new();
+     gen_addr_reg_index(ctx, t0);
+     gen_check_align(ctx, t0, 0x03);
++#ifdef REMAKLAR_BOOTSTRAP
++    gen_helper_rm_lwarx(cpu_gpr[rD(ctx->opcode)],t0);
++#else
+     gen_qemu_ld32u(ctx, cpu_gpr[rD(ctx->opcode)], t0);
+     tcg_gen_mov_tl(cpu_reserve, t0);
++#endif
+     tcg_temp_free(t0);
+ }
+ 
+@@ -3239,6 +3318,9 @@
+     t0 = tcg_temp_local_new();
+     gen_addr_reg_index(ctx, t0);
+     gen_check_align(ctx, t0, 0x03);
++#ifdef REMAKLAR_BOOTSTRAP
++    gen_helper_rm_stwcx(cpu_crf[0],t0,cpu_gpr[rS(ctx->opcode)]);
++#else
+     tcg_gen_trunc_tl_i32(cpu_crf[0], cpu_xer);
+     tcg_gen_shri_i32(cpu_crf[0], cpu_crf[0], XER_SO);
+     tcg_gen_andi_i32(cpu_crf[0], cpu_crf[0], 1);
+@@ -3248,6 +3330,7 @@
+     gen_qemu_st32(ctx, cpu_gpr[rS(ctx->opcode)], t0);
+     gen_set_label(l1);
+     tcg_gen_movi_tl(cpu_reserve, -1);
++#endif
+     tcg_temp_free(t0);
+ }
+ 
+@@ -3290,6 +3373,10 @@
+ /* sync */
+ GEN_HANDLER(sync, 0x1F, 0x16, 0x12, 0x039FF801, PPC_MEM_SYNC)
+ {
++#ifdef REMAKLAR_BOOTSTRAP
++    gen_helper_rm_barrier();
++#endif
++
+ }
+ 
+ /* wait */
+--- a/target-ppc/helper.h
++++ b/target-ppc/helper.h
+@@ -1,4 +1,15 @@
+ #include "def-helper.h"
++
++#ifdef REMAKLAR_BOOTSTRAP
++DEF_HELPER_2(rm_ld, tl, tl, i32)
++DEF_HELPER_1(rm_ld64, i64, tl)
++DEF_HELPER_3(rm_st, void, tl, tl, i32)
++DEF_HELPER_2(rm_st64, void, tl, i64)
++DEF_HELPER_1(rm_lwarx, tl, tl)
++DEF_HELPER_2(rm_stwcx, i32, tl, tl)
++DEF_HELPER_0(rm_barrier, void)
++#endif
++
+ 
+ DEF_HELPER_2(raise_exception_err, void, i32, i32)
+ DEF_HELPER_1(raise_exception, void, i32)
+--- a/target-ppc/op_helper.c
++++ b/target-ppc/op_helper.c
+@@ -4156,3 +4156,26 @@
+ }
+ 
+ #endif /* !CONFIG_USER_ONLY */
++
++#ifdef REMAKLAR_BOOTSTRAP
++static uint32_t rm_reserved_value;
++target_ulong helper_rm_ld(target_ulong addr,uint32_t n) {return remaklar_live_load(addr,n);}
++uint64_t helper_rm_ld64(target_ulong addr) {return remaklar_live_load(addr,8);}
++void helper_rm_st(target_ulong addr,target_ulong val,uint32_t n) {remaklar_live_store(addr,n,val);}
++void helper_rm_st64(target_ulong addr,uint64_t val) {remaklar_live_store(addr,8,val);}
++target_ulong helper_rm_lwarx(target_ulong addr) {
++    rm_reserved_value=remaklar_live_load(addr,4);env->reserve=addr;return rm_reserved_value;
++}
++uint32_t helper_rm_stwcx(target_ulong addr,target_ulong val) {
++    int ok=env->reserve==addr && remaklar_live_cas(addr,rm_reserved_value,val);
++    env->reserve=(target_ulong)-1;
++    return ((env->xer>>XER_SO)&1)|(ok?(1<<CRF_EQ):0);
++}
++void helper_rm_barrier(void) {
++    #ifdef __x86_64__
++    __asm__ __volatile__("lock; addl $0,0(%%rsp)" : : : "memory","cc");
++#else
++    __asm__ __volatile__("lock; addl $0,0(%%esp)" : : : "memory","cc");
++#endif
++}
++#endif
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -75,7 +75,12 @@
+ static char guest_cwd[4096] = "/";
+ static uint32_t split_region;
+ 
++static unsigned live_object_kind[4096];
++static unsigned live_kind_at(uint32_t);
++static void live_alias(uint32_t,uint32_t,uint32_t,uint64_t,uint32_t);
++static void live_forget(uint32_t,uint32_t);
+ #include "mach-native.inc"
++#include "live-regions.inc"
+ 
+ /* Split-segment Jaguar libraries keep their relative RO/RW geometry in one
+  * PRIVATE guest region. Never MAP_FIXED over host mappings or claim the
+@@ -630,7 +635,7 @@
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
+                 memset(native_ports,0,sizeof(native_ports));
+                 memset(native_notification_kind,0,sizeof(native_notification_kind));
+-                memset(native_iomappings,0,sizeof(native_iomappings));
++                if(remaklar_live_max)qerror("fork child with live IOKit mappings requires inheritance validation");memset(native_iomappings,0,sizeof(native_iomappings));
+             }
+             fprintf(stderr,"fork real host_pid=%ld child_pid=%ld branch=%s\n",
+                     (long)getpid(),(long)pid,pid ? "parent" : "child");
+@@ -1096,17 +1101,17 @@
+             typedef kern_return_t (*unmap_fn)(mach_port_t,int,mach_port_t,vm_address_t);
+             typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
+             typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
+-            mach_port_t endpoint,service=0;uint32_t type,address,slot;int isfb=0;
++            mach_port_t endpoint,service=0;uint32_t type,address,slot;int isfb=0,ishid=0;
+             if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=(id==2819?64:56) || ldl(g2h(a+24))!=1 || ldl(g2h(a+28))!=TASK_SELF || ldub(g2h(a+38))!=19)qerror("invalid IOKit memory task descriptor");
+             type=ldl(g2h(a+48));address=ldl(g2h(a+52));
+             if(id==2853) {
+                 code=((unmap_fn)native_iokit_symbol("_io_connect_unmap_memory"))(endpoint,type,mach_task_self(),address);
+-                if(!code)for(slot=0;slot<64;slot++)if(native_iomappings[slot].connection==destination && native_iomappings[slot].type==type && native_iomappings[slot].address==address){page_set_flags(address&~4095U,TARGET_PAGE_ALIGN(address+native_iomappings[slot].bytes),0);memset(&native_iomappings[slot],0,sizeof(native_iomappings[slot]));break;}
++                if(!code)for(slot=0;slot<64;slot++)if(native_iomappings[slot].connection==destination && native_iomappings[slot].type==type && native_iomappings[slot].address==address){page_set_flags(address&~4095U,TARGET_PAGE_ALIGN(address+native_iomappings[slot].bytes),0);live_kind[slot]=0;memset(&native_iomappings[slot],0,sizeof(native_iomappings[slot]));live_bounds();break;}
+             } else {
+                 vm_address_t mapped=address,region;vm_size_t bytes=ldl(g2h(a+56)),regionsize;vm_region_basic_info_data_t info;mach_msg_type_number_t count=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;uint32_t flags=ldl(g2h(a+60));
+                 code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);if(code)break;
+-                code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);mach_port_deallocate(mach_task_self(),service);if(code)break;
+-                if(!isfb || type!=110)qerror("IOKit shared control memory needs live endian adapter: type=%u framebuffer=%d",type,isfb);
++                code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);if(!code)code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOHIDSystem",&ishid);mach_port_deallocate(mach_task_self(),service);if(code)break;
++                if(!((isfb && (type==110 || type==100)) || (ishid && type==0)))qerror("unverified IOKit memory type=%u framebuffer=%d hid=%d",type,isfb,ishid);
+                 if(!(flags&1) && (address<4096 || address>=0xc0000000U))qerror("IOKit fixed map outside native user range");
+                 for(slot=0;slot<64 && native_iomappings[slot].connection;slot++);if(slot==64)qerror("IOKit mapping table exhausted");
+                 code=((map_fn)native_iokit_symbol("_io_connect_map_memory"))(endpoint,type,mach_task_self(),&mapped,&bytes,flags);
+@@ -1116,6 +1121,20 @@
+                     if(object)mach_port_deallocate(mach_task_self(),object);
+                     page_set_flags(mapped&~4095U,TARGET_PAGE_ALIGN(mapped+bytes),(info.protection&7)|PAGE_VALID);
+                     native_iomappings[slot].connection=destination;native_iomappings[slot].type=type;native_iomappings[slot].address=mapped;native_iomappings[slot].bytes=bytes;
++                    live_kind[slot]=isfb?(type==100?1:0):2;
++                    if(live_kind[slot]==1) {
++                        typedef kern_return_t (*scalar_fn)(mach_port_t,int,const uint32_t *,uint32_t,uint32_t *,uint32_t *);
++                        typedef kern_return_t (*pixel_fn)(mach_port_t,int,const uint32_t *,uint32_t,char *,uint32_t *);
++                        uint32_t mode[2],modecount=2,input[3],pixel[43],pixelbytes=sizeof(pixel);kern_return_t check;
++                        check=((scalar_fn)native_iokit_symbol("_io_connect_method_scalarI_scalarO"))(endpoint,2,NULL,0,mode,&modecount);
++                        if(check || modecount!=2)qerror("cannot type real cursor pixels: mode query");
++                        input[0]=mode[0];input[1]=mode[1];input[2]=0;
++                        check=((pixel_fn)native_iokit_symbol("_io_connect_method_scalarI_structureO"))(endpoint,1,input,3,(char *)pixel,&pixelbytes);
++                        if(check || pixelbytes!=sizeof(pixel) || pixel[2]!=32)qerror("cursor image layout requires verified 32-bit framebuffer");
++                        fprintf(stderr,"live cursor pixel layout verified bits=%u rowbytes=%u\n",pixel[2],pixel[0]);
++                    }
++                    live_bounds();
++                    if(live_kind[slot])fprintf(stderr,"live typed IOKit map kind=%u address=%lx bytes=%u\n",live_kind[slot],(unsigned long)mapped,(unsigned)bytes);
+                     stl(answer+36,mapped);stl(answer+40,bytes);length=44;
+                 }
+                 fprintf(stderr,"native IOKit VRAM map result=%u bytes=%u address=%lx flags=%x\n",code,(uint32_t)bytes,(unsigned long)mapped,flags);
+@@ -1123,6 +1142,20 @@
+         }
+ #else
+         qerror("IOKit mapping requires Darwin");
++#endif
++        break;
++    case 2820: /* IOHID's real registration of the framebuffer user client. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*add_fn)(mach_port_t,mach_port_t);
++            uint32_t other;mach_port_t endpoint,to;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=40 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19)qerror("invalid IOKit add-client port descriptor");
++            other=ldl(g2h(a+28));to=native_name(other);
++            code=((add_fn)native_iokit_symbol("_io_connect_add_client"))(endpoint,to);
++            fprintf(stderr,"native IOKit add client destination=%x other=%x result=%u\n",destination,other,code);
++        }
++#else
++        qerror("IOKit add client requires Darwin");
+ #endif
+         break;
+     case 2821: /* Physical-copy serialized properties, separate method result. */
+@@ -1261,13 +1294,20 @@
+             typedef kern_return_t (*method_fn)(mach_port_t,int,const char *,uint32_t,char *,uint32_t *);
+             typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
+             typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
+-            uint32_t output[1024]={0},outbytes,j;mach_port_t endpoint,service=0;int isfb=0;
+-            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=44 || ldl(g2h(a+32))!=7 || ldl(g2h(a+36)))qerror("IOKit struct/struct method needs typed adapter");
+-            outbytes=ldl(g2h(a+40));if(outbytes>sizeof(output) || (outbytes&3))qerror("invalid display mode list size");
++            uint32_t output[1024]={0},outbytes,j,selector,inputbytes;uint16_t bounds[4];mach_port_t endpoint,service=0;int isfb=0;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<44)qerror("invalid IOKit struct/struct request");
++            selector=ldl(g2h(a+32));inputbytes=ldl(g2h(a+36));
++            if((selector==7 && (size!=44 || inputbytes)) || (selector==9 && (size!=52 || inputbytes!=8)) || (selector!=7 && selector!=9))qerror("IOKit struct/struct method needs typed adapter");
++            outbytes=ldl(g2h(a+40+inputbytes));if(outbytes>sizeof(output) || (outbytes&3))qerror("invalid display mode list size");
+             code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);if(code)break;
+             code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);mach_port_deallocate(mach_task_self(),service);if(code)break;
+             if(!isfb)qerror("mode list on non-framebuffer user client");
+-            code=((method_fn)native_iokit_symbol("_io_connect_method_structureI_structureO"))(endpoint,7,NULL,0,(char *)output,&outbytes);
++            if(selector==9) {
++                if(outbytes)qerror("invalid framebuffer bounds output size");
++                for(j=0;j<4;j++)bounds[j]=lduw(g2h(a+40+j*2));
++                code=((method_fn)native_iokit_symbol("_io_connect_method_structureI_structureO"))(endpoint,9,(char *)bounds,8,(char *)output,&outbytes);
++                fprintf(stderr,"native framebuffer bounds result=%u values=%d,%d,%d,%d\n",code,(short)bounds[0],(short)bounds[1],(short)bounds[2],(short)bounds[3]);
++            } else code=((method_fn)native_iokit_symbol("_io_connect_method_structureI_structureO"))(endpoint,7,NULL,0,(char *)output,&outbytes);
+             fprintf(stderr,"native framebuffer modes result=%u bytes=%u\n",code,outbytes);
+             if(code)break;if(outbytes>sizeof(output) || (outbytes&3))qerror("native mode list size");
+             stl(answer+36,outbytes);for(j=0;j<outbytes/4;j++)stl(answer+40+j*4,output[j]);length=40+outbytes;
+@@ -1654,6 +1694,7 @@
+     case 3802: /* vm_deallocate */
+         if (destination != TASK_SELF || size < 40) qerror("invalid vm_deallocate");
+         if (target_munmap(ldl(g2h(a + 32)), ldl(g2h(a + 36)))) code = 4;
++        else live_forget(ldl(g2h(a+32)),ldl(g2h(a+36)));
+         break;
+     case 3803: /* vm_protect */
+         if (destination != TASK_SELF || size < 48 || ldl(g2h(a + 40)))
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -124,13 +124,14 @@
+         *code=kr;return 1;
+     }
+     if(destination!=TASK_SELF)return 0;
+-    if(id==3810 || id==3803) {
++    if(id==3810 || id==3803 || id==3804) {
+         uint32_t address=ldl(g2h(a+32)),bytes=ldl(g2h(a+36)),page,end;
+-        if(size!=(id==3810?44:48))qerror("invalid vm sync/protect wire");
++        if(size!=(id==3803?48:44))qerror("invalid vm sync/protect wire");
+         if((uint64_t)address+bytes>0xc0000000ULL){*code=KERN_INVALID_ADDRESS;return 1;}
+         end=TARGET_PAGE_ALIGN(address+bytes);
+         for(page=address&~4095U;page<end;page+=4096)if(!(page_get_flags(page)&PAGE_VALID)){*code=KERN_INVALID_ADDRESS;return 1;}
+         if(id==3810)kr=vm_msync(mach_task_self(),(vm_address_t)g2h(address),bytes,ldl(g2h(a+40)));
++        else if(id==3804)kr=vm_inherit(mach_task_self(),(vm_address_t)g2h(address),bytes,ldl(g2h(a+40)));
+         else {
+             uint32_t maximum=ldl(g2h(a+40)),prot=ldl(g2h(a+44));
+             kr=vm_protect(mach_task_self(),(vm_address_t)g2h(address),bytes,maximum,prot);
+@@ -144,7 +145,10 @@
+         bytes=ldq(g2h(a+48));offset=ldq(g2h(a+56));parent=native_name(ldl(g2h(a+28)));
+         if(!parent && bytes && (offset>0xffffffffULL || bytes>0xffffffffULL || !remaklar_guest_access(offset,bytes,PAGE_READ))){*code=KERN_INVALID_ADDRESS;return 1;}
+         kr=mach_make_memory_entry_64(mach_task_self(),&bytes,offset,ldl(g2h(a+64)),&port,parent);
+-        if(!kr){*complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=17;stq(answer+48,bytes);*length=56;}
++        if(!kr){uint32_t guest=native_export(port);/* A named entry of an i386 IOKit pmap mapping does not
++             * share its physical backing (native bidirectional probe). Never
++             * attach the device ABI to the unrelated VM object. */
++            live_object_kind[guest]=0;*complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;stq(answer+48,bytes);*length=56;}
+         fprintf(stderr,"native memory entry offset=%llx bytes=%llu result=%u\n",offset,bytes,kr);*code=kr;return 1;
+     }
+     if((id==3812 && size==84 && ldl(g2h(a+28))) || id==3826) {
+@@ -159,7 +163,7 @@
+         if(reserve==-1){*code=KERN_NO_SPACE;return 1;}
+         target_munmap(reserve,bytes);native_address=(vm_address_t)g2h(reserve);
+         kr=vm_map_64(mach_task_self(),&native_address,bytes,mask,flags&0xff000000U,port,offset,copy,prot,maxprot,inherit);
+-        if(!kr){if(native_address!=(vm_address_t)g2h(reserve))qerror("native fixed map moved");page_set_flags(reserve,reserve+TARGET_PAGE_ALIGN(bytes),prot|PAGE_VALID);stl(answer+36,reserve);*length=40;}
++        if(!kr){if(native_address!=(vm_address_t)g2h(reserve))qerror("native fixed map moved");page_set_flags(reserve,reserve+TARGET_PAGE_ALIGN(bytes),prot|PAGE_VALID);live_alias(reserve,bytes,ldl(g2h(a+28)),offset,copy);stl(answer+36,reserve);*length=40;}
+         fprintf(stderr,"native shared map object=%u offset=%llu bytes=%u result=%u\n",port,offset,bytes,kr);*code=kr;return 1;
+     }
+     if(id==3214) {
+--- /dev/null
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -0,0 +1,167 @@
++/* Live typed access to original i386 IOKit objects. No mirrored allocation.
++ * Layouts: IOGraphics-40, IOHIDFamily-33, XNU-344. */
++#include "typed-live.c"
++uint32_t remaklar_live_min=0xffffffffU,remaklar_live_max;
++static unsigned live_kind[64]; /* 1: framebuffer header, 2: HID header. */
++
++static void live_bounds(void)
++{
++    unsigned i;
++    uint32_t prior=remaklar_live_max;
++    remaklar_live_min=0xffffffffU;remaklar_live_max=0;
++    for(i=0;i<64;i++)if(live_kind[i]) {
++        uint32_t a=native_iomappings[i].address,b=a+native_iomappings[i].bytes;
++        if(a<remaklar_live_min)remaklar_live_min=a;
++        if(b>remaklar_live_max)remaklar_live_max=b;
++    }
++    if(!!prior!=!!remaklar_live_max && global_env)tb_flush(global_env);
++}
++
++/* Select a single declared field, never infer a union's active representation
++ * from the width of a PPC instruction. Image/event unions remain fail-closed. */
++static int live_field(unsigned kind,unsigned pos,struct rm_field *f)
++{
++    unsigned n=0,start=0;
++    f->kind=RM_NUMBER;
++    if(kind==1) {
++        if(pos<8)n=4;
++        else if(pos<12){n=1;start=8;}
++        else if(pos<56){n=2;start=12;}
++        else if(pos<64){n=4;start=56;}
++        else if(pos<80){n=8;start=64;}
++        else if(pos<200){n=4;start=80;}
++        else if(pos<204){n=1;start=200;}
++        else if(pos<236){n=2;start=204;}
++        else {n=4;start=236;} /* Native 32-bit cursor pixels, checked at map time. */
++    } else {
++        if(pos<8)n=4;
++        else {
++            start=8;pos-=8;
++            if(pos<32)n=4;
++            else if(pos<36){n=2;start+=32;pos-=32;}
++            else if(pos<40){n=4;start+=36;pos-=36;}
++            else if(pos<56){n=2;start+=40;pos-=40;}
++            else if(pos<192){n=4;start+=56;pos-=56;}
++            else if(pos<196){n=4;start+=192;pos-=192;f->kind=RM_HID_BITS;}
++            else if(pos<216){n=4;start+=196;pos-=196;}
++            else if(pos<220){n=1;start+=216;pos-=216;}
++            else if(pos<224){n=4;start+=220;pos-=220;}
++            else {
++                /* Each 84-byte NXEQElement starts with next and sema.
++                 * Until event-union semantics are validated, only these two
++                 * words can be touched; no fabricated event data. */
++                unsigned entry=(pos-224)/84,within=(pos-224)%84;
++                if(entry>=240 || within>=8)return 0;
++                n=4;start=8+224+entry*84;pos=within;
++            }
++        }
++        f->offset=start+(pos/n)*n;f->size=n;return n!=0;
++    }
++    if(!n)return 0;
++    f->offset=start+((pos-start)/n)*n;f->size=n;return 1;
++}
++
++static int live_view(uintptr_t address,unsigned n,int write,struct rm_view *v,struct rm_field *f,unsigned *offset)
++{
++    unsigned i;
++    if(address>0xffffffffU)return 0;
++    for(i=0;i<64;i++)if(live_kind[i] && address>=native_iomappings[i].address &&
++        address-native_iomappings[i].address<native_iomappings[i].bytes) {
++        unsigned pos=address-native_iomappings[i].address;
++        if(!remaklar_guest_access(address,n,write?PAGE_WRITE:PAGE_READ))qerror("live shared memory protection violation address=%lx",(unsigned long)address);
++        if(!live_field(live_kind[i],pos,f))qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
++        v->base=(volatile unsigned char *)(uintptr_t)native_iomappings[i].address;
++        v->bytes=native_iomappings[i].bytes;v->fields=f;v->count=1;
++        v->writable=remaklar_guest_access(address,n,PAGE_WRITE);*offset=pos;return 1;
++    }
++    return 0;
++}
++
++uint64_t remaklar_live_load(uintptr_t address,unsigned n)
++{
++    struct rm_view v;struct rm_field f;unsigned off;rm_u64 x;
++    if(live_view(address,n,0,&v,&f,&off)) {
++        int error;
++        /* lfd/stfd may span two pixels. Each pixel is a native uint32,
++         * not half of a native uint64. PPC does not require an atomic pair. */
++        if(n==8 && f.size==4 && off>=236 && f.kind==RM_NUMBER && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
++            uint64_t hi=remaklar_live_load(address,4);
++            return (hi<<32)|remaklar_live_load(address+4,4);
++        }
++        error=rm_read(&v,off,n,&x);
++        if(error)qerror("live shared read unsupported offset=%u width=%u errno=%d",off,n,error);
++        return x;
++    }
++    switch(n) {
++    case 1:return ldub_p((void *)address);
++    case 2:return lduw_be_p((void *)address);
++    case 4:return (uint32_t)ldl_be_p((void *)address);
++    case 8:return ldq_be_p((void *)address);
++    }
++    qerror("invalid live load width");return 0;
++}
++
++void remaklar_live_store(uintptr_t address,unsigned n,uint64_t x)
++{
++    struct rm_view v;struct rm_field f;unsigned off;
++    if(live_view(address,n,1,&v,&f,&off)) {
++        int error;
++        if(n==8 && f.size==4 && off>=236 && f.kind==RM_NUMBER && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
++            remaklar_live_store(address,4,x>>32);
++            remaklar_live_store(address+4,4,x);
++            return;
++        }
++        error=rm_write(&v,off,n,x);
++        if(error)qerror("live shared write unsupported offset=%u width=%u errno=%d",off,n,error);
++        return;
++    }
++    switch(n) {
++    case 1:stb_p((void *)address,x);return;
++    case 2:stw_be_p((void *)address,x);return;
++    case 4:stl_be_p((void *)address,x);return;
++    case 8:stq_be_p((void *)address,x);return;
++    }
++    qerror("invalid live store width");
++}
++
++int remaklar_live_cas(uint32_t address,uint32_t old,uint32_t value)
++{
++    struct rm_view v;struct rm_field f;unsigned off;int ok;
++    if(live_view(address,4,1,&v,&f,&off)) {
++        int error=rm_cas32(&v,off,old,value,&ok);
++        if(error)qerror("live shared atomic unsupported offset=%u errno=%d",off,error);
++        return ok;
++    }
++    return cas((volatile rm_u32 *)(uintptr_t)address,bswap32(old),bswap32(value))==bswap32(old);
++}
++
++static unsigned live_kind_at(uint32_t address)
++{
++    unsigned i;
++    for(i=0;i<64;i++)if(live_kind[i] && address>=native_iomappings[i].address && address-native_iomappings[i].address<native_iomappings[i].bytes) {
++        if(address!=native_iomappings[i].address)qerror("typed memory entry requires base-aligned view");
++        return live_kind[i];
++    }
++    return 0;
++}
++static void live_alias(uint32_t address,uint32_t bytes,uint32_t object,uint64_t offset,uint32_t copy)
++{
++    unsigned i;
++    if(object>=4096 || !live_object_kind[object])return;
++    if(offset || copy)qerror("typed memory alias offset/COW needs a verified descriptor view");
++    for(i=0;i<64 && native_iomappings[i].connection;i++);
++    if(i==64)qerror("typed alias table exhausted");
++    native_iomappings[i].connection=object;native_iomappings[i].type=0xffffffffU;
++    native_iomappings[i].address=address;native_iomappings[i].bytes=bytes;
++    live_kind[i]=live_object_kind[object];live_bounds();
++    fprintf(stderr,"typed Mach memory-entry view kind=%u address=%x bytes=%u object=%x\n",live_kind[i],address,bytes,object);
++}
++static void live_forget(uint32_t address,uint32_t bytes)
++{
++    unsigned i;
++    for(i=0;i<64;i++)if(live_kind[i] && address<=native_iomappings[i].address &&
++       (uint64_t)address+bytes>=(uint64_t)native_iomappings[i].address+native_iomappings[i].bytes) {
++        live_kind[i]=0;memset(&native_iomappings[i],0,sizeof(native_iomappings[i]));
++    }
++    live_bounds();
++}
+--- /dev/null
++++ b/darwin-user/remaklar/typed-live.c
+@@ -0,0 +1,126 @@
++/* A bounded prototype for i386 host / PPC logical fields, not a device model.
++ * Atomic accesses act directly on the original mapped object.
++ * SPDX-License-Identifier: MIT */
++#include "typed-live.h"
++#include <errno.h>
++
++void rm_barrier(void)
++{
++    #ifdef __x86_64__
++    __asm__ __volatile__("lock; addl $0,0(%%rsp)" : : : "memory", "cc");
++#else
++    __asm__ __volatile__("lock; addl $0,0(%%esp)" : : : "memory", "cc");
++#endif
++}
++
++static rm_u32 cas(volatile rm_u32 *p,rm_u32 old,rm_u32 value)
++{
++    __asm__ __volatile__("lock; cmpxchgl %2,%1"
++        : "=a"(old), "=m"(*p) : "r"(value), "0"(old), "m"(*p) : "memory", "cc");
++    return old;
++}
++
++static rm_u64 native_read(volatile unsigned char *p,unsigned size)
++{
++    if(size==1)return *p;
++    if(size==2)return *(volatile unsigned short *)p;
++    if(size==4)return *(volatile rm_u32 *)p;
++    /* cmpxchg8b supplies one coherent read even on an i386 ABI. */
++    {
++        rm_u32 lo=0,hi=0,low=0;
++        /* Darwin GCC2 reserves ebx for PIC. Borrow it without clobbering the
++         * caller's PIC base; force the object address into edi. */
++        __asm__ __volatile__("xchgl %%ebx,%2; .byte 0xf0,0x0f,0xc7,0x0f; xchgl %%ebx,%2"
++            : "=a"(lo), "=d"(hi), "=S"(low)
++            : "D"(p), "c"(0), "0"(lo), "1"(hi), "2"(low) : "memory", "cc");
++        return ((rm_u64)hi<<32)|lo;
++    }
++}
++
++static int native_cas(volatile unsigned char *p,unsigned size,rm_u64 old,rm_u64 value)
++{
++    unsigned char ok;
++    if(size==1) {
++        rm_u32 x=(unsigned char)old;
++        __asm__ __volatile__("lock; cmpxchgb %b3,%1"
++            : "=a"(x), "=m"(*p) : "0"(x), "q"((rm_u32)value), "m"(*p) : "memory","cc");
++        return (unsigned char)x==(unsigned char)old;
++    } else if(size==2) {
++        rm_u32 x=(unsigned short)old;
++        __asm__ __volatile__("lock; cmpxchgw %w3,%1"
++            : "=a"(x), "=m"(*(volatile unsigned short *)p)
++            : "0"(x), "r"((rm_u32)value), "m"(*(volatile unsigned short *)p) : "memory","cc");
++        return (unsigned short)x==(unsigned short)old;
++    } else if(size==4) return cas((volatile rm_u32 *)p,old,value)==(rm_u32)old;
++    else {
++        rm_u32 lo=old,hi=old>>32,low=value;
++        __asm__ __volatile__("xchgl %%ebx,%3; .byte 0xf0,0x0f,0xc7,0x0f; xchgl %%ebx,%3; sete %0"
++            : "=m"(ok), "=a"(lo), "=d"(hi), "=S"(low)
++            : "D"(p), "c"((rm_u32)(value>>32)), "1"(lo), "2"(hi), "3"(low) : "memory","cc");
++    }
++    return ok;
++}
++
++static const struct rm_field *field(const struct rm_view *v,unsigned pos,unsigned n)
++{
++    unsigned i;
++    if(!n || n>8 || pos>v->bytes || n>v->bytes-pos)return 0;
++    for(i=0;i<v->count;i++) {
++        const struct rm_field *f=v->fields+i;
++        if(pos>=f->offset && pos-f->offset<f->size && n<=f->size-(pos-f->offset)) {
++            if((f->size!=1 && f->size!=2 && f->size!=4 && f->size!=8) ||
++               f->offset%(f->size==8?4:f->size) || f->offset>v->bytes || f->size>v->bytes-f->offset ||
++               (f->kind!=RM_NUMBER && (f->kind!=RM_HID_BITS || f->size!=4)))return 0;
++            return f;
++        }
++    }
++    return 0;
++}
++
++static rm_u64 logical(const struct rm_field *f,rm_u64 x)
++{
++    /* PPC's first declared bitfield occupies the MSBs, i386's the LSBs. */
++    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x>>27)|((rm_u32)x<<5));
++    return x;
++}
++static rm_u64 physical(const struct rm_field *f,rm_u64 x)
++{
++    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x<<27)|((rm_u32)x>>5));
++    return x;
++}
++
++int rm_read(const struct rm_view *v,unsigned pos,unsigned n,rm_u64 *out)
++{
++    const struct rm_field *f=field(v,pos,n);rm_u64 x,mask;
++    if(!f)return EINVAL;
++    /* cmpxchg8b requires write permission even when used as a read. The
++     * prototype must reject this rather than fault or weaken protections. */
++    if(f->size==8 && !v->writable)return EACCES;
++    x=logical(f,native_read(v->base+f->offset,f->size));
++    mask=n==8?~(rm_u64)0:(((rm_u64)1<<(8*n))-1);
++    *out=(x>>(8*(f->size-(pos-f->offset)-n)))&mask;
++    return 0;
++}
++
++int rm_write(const struct rm_view *v,unsigned pos,unsigned n,rm_u64 value)
++{
++    const struct rm_field *f=field(v,pos,n);rm_u64 old,x,mask;unsigned shift;
++    if(!v->writable)return EACCES;
++    if(!f)return EINVAL;
++    shift=8*(f->size-(pos-f->offset)-n);
++    mask=n==8?~(rm_u64)0:(((rm_u64)1<<(8*n))-1);
++    do {
++        old=native_read(v->base+f->offset,f->size);
++        x=(logical(f,old)&~(mask<<shift))|((value&mask)<<shift);
++    } while(!native_cas(v->base+f->offset,f->size,old,physical(f,x)));
++    return 0;
++}
++
++int rm_cas32(const struct rm_view *v,unsigned pos,rm_u32 old,rm_u32 value,int *ok)
++{
++    const struct rm_field *f=field(v,pos,4);
++    if(!v->writable)return EACCES;
++    if(!f || pos!=f->offset || f->size!=4)return EINVAL;
++    *ok=cas((volatile rm_u32 *)(v->base+pos),physical(f,old),physical(f,value))==(rm_u32)physical(f,old);
++    return 0;
++}
+--- /dev/null
++++ b/darwin-user/remaklar/typed-live.h
+@@ -0,0 +1,19 @@
++/* Isolated live endian view. No mirrored storage. SPDX-License-Identifier: MIT */
++#ifndef RM_TYPED_LIVE_H
++#define RM_TYPED_LIVE_H
++typedef unsigned int rm_u32;
++typedef unsigned long long rm_u64;
++enum { RM_NUMBER = 0, RM_HID_BITS = 1 };
++struct rm_field { unsigned offset, size, kind; };
++struct rm_view {
++    volatile unsigned char *base;
++    unsigned bytes;
++    const struct rm_field *fields;
++    unsigned count;
++    int writable;
++};
++int rm_read(const struct rm_view *,unsigned,unsigned,rm_u64 *);
++int rm_write(const struct rm_view *,unsigned,unsigned,rm_u64);
++int rm_cas32(const struct rm_view *,unsigned,rm_u32,rm_u32,int *);
++void rm_barrier(void);
++#endif

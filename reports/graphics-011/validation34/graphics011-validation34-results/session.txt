@@ -1,0 +1,61 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;for dir in graphics011-validation34-results graphics011-regression32 graphics011-joint32;do if test -d "$dir";then for f in "$dir"/*.txt "$dir"/*.status "$dir"/*.stdout "$dir"/*.stderr;do if test -f "$f";then echo "$f";fi;done;fi;done > "$out/export-list.txt";gnutar czf /exchange/valid34.tgz -T "$out/export-list.txt";sync;umount /exchange' 0
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/fasttrap.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/fasttrap.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/capability-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/capability-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/capability-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/capability-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/high-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/high-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/high-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/high-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/timer-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/timer-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/timer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/timer-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/threads.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/threads.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/typed-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/typed-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/shared-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/shared-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run32/shared-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run32/shared-jaguar.status
++ cmp /var/tmp/graphics011-run32/capability-native.stdout /var/tmp/graphics011-run32/capability-jaguar.stdout
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-validation34/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-validation34-results/shared-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-validation34/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-validation34-results/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-validation34-results/vram-native /var/tmp/graphics011-validation34-results/shared-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-validation34-results/vram-jaguar /var/tmp/graphics011-run32/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-validation34-results/shared-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-validation34-results/vram-native.status
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ test -d graphics011-validation34-results
++ test -f graphics011-validation34-results/export-list.txt
++ echo graphics011-validation34-results/export-list.txt
++ test -f graphics011-validation34-results/script-status.txt
++ echo graphics011-validation34-results/script-status.txt
++ test -f graphics011-validation34-results/session.txt
++ echo graphics011-validation34-results/session.txt
++ test -f graphics011-validation34-results/shared-i386-build.txt
++ echo graphics011-validation34-results/shared-i386-build.txt
++ test -f graphics011-validation34-results/shared-ppc-build.txt
++ echo graphics011-validation34-results/shared-ppc-build.txt
++ test -f graphics011-validation34-results/vram-jaguar.status
++ echo graphics011-validation34-results/vram-jaguar.status
++ test -f graphics011-validation34-results/vram-native.status
++ echo graphics011-validation34-results/vram-native.status
++ test -f graphics011-validation34-results/vram-jaguar.stdout
++ echo graphics011-validation34-results/vram-jaguar.stdout
++ test -f graphics011-validation34-results/vram-native.stdout
++ echo graphics011-validation34-results/vram-native.stdout
++ test -f graphics011-validation34-results/vram-jaguar.stderr
++ echo graphics011-validation34-results/vram-jaguar.stderr
++ test -f graphics011-validation34-results/vram-native.stderr
++ echo graphics011-validation34-results/vram-native.stderr
++ test -d graphics011-regression32
++ test -d graphics011-joint32
++ gnutar czf /exchange/valid34.tgz -T /var/tmp/graphics011-validation34-results/export-list.txt

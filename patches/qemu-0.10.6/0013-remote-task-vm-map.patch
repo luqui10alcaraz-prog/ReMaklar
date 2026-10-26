@@ -1,0 +1,75 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -1130,7 +1130,7 @@
+     uint8_t answer[8192];
+ #ifdef __APPLE__
+     if(size==24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+20))==3600 && rm_is_thread(ldl(g2h(a+8))))rm_thread_exit(env,ldl(g2h(a+8)));
+-    if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))] && !(ldl(g2h(a+20))==3616 && rm_is_thread(ldl(g2h(a+8)))) && !(native_processor_sets[ldl(g2h(a+8))] && ldl(g2h(a+20))>=4002 && ldl(g2h(a+20))<=4004)))return native_message(env);
++    if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))] && !native_task_request(ldl(g2h(a+8)),ldl(g2h(a+20))) && !(ldl(g2h(a+20))==3616 && rm_is_thread(ldl(g2h(a+8)))) && !(native_processor_sets[ldl(g2h(a+8))] && ldl(g2h(a+20))>=4002 && ldl(g2h(a+20))<=4004)))return native_message(env);
+ #endif
+     if (size < 24 || size > 4096 || !remaklar_guest_access(a, size, PAGE_READ))
+         qerror("invalid Mach message request");
+@@ -2005,6 +2005,20 @@
+     case -29: send_refs[HOST_SELF]++; return HOST_SELF;
+     case -31:
+     case -32: return rpc(env);
++    case -45:
++    case -46:
++#ifdef __APPLE__
++        {
++            kern_return_t code;mach_port_t port=0;int pid=-1;
++            uint32_t ptr=env->gpr[trap==-45?5:4];
++            if(!remaklar_guest_access(ptr,4,PAGE_WRITE))return 1;
++            if(trap==-45){code=task_for_pid(native_name(env->gpr[3]),env->gpr[4],&port);if(!code)stl(g2h(ptr),native_export(port));}
++            else {code=pid_for_task(native_name(env->gpr[3]),&pid);stl(g2h(ptr),pid);}
++            return code;
++        }
++#else
++        return 4;
++#endif
+     case -43: { /* map_fd(fd, offset, address*, anywhere, size) */
+         uint32_t ptr = env->gpr[5], address;
+         long mapped;
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -16,6 +16,14 @@
+     if(name==BOOTSTRAP)return bootstrap_port;
+     if(name<4096 && native_ports[name])return native_ports[name];
+     return name<4096 && native_iokit_ports[name]?native_iokit_ports[name]:MACH_PORT_DEAD;
++}
++/* pid_for_task is an in-kernel trap: unlike probing an RPC, it never
++ * sends a message to an application endpoint. Native reference kobj40. */
++static int native_task_request(uint32_t guest,uint32_t id)
++{
++    int pid=-1;
++    return id>=3800 && id<=3826 && guest<4096 && native_ports[guest] &&
++        pid_for_task(native_ports[guest],&pid)==KERN_SUCCESS && pid>=0;
+ }
+ static void native_refresh(uint32_t guest)
+ {
+@@ -144,6 +152,25 @@
+         if(!kr && id!=403){*complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=id==402?16:17;*length=40;}
+         *code=kr;return 1;
+     }
++    if(destination!=TASK_SELF && native_task_request(destination,id)) {
++        uint32_t address,bytes,mask,flags,copy,prot,maxprot,inherit;
++        unsigned long long offset;vm_address_t mapped;mach_port_t target=native_name(destination);
++        if(id!=3826 && id!=3812)qerror("unsupported remote task VM RPC %u",id);
++        if(size!=(id==3826?88:84) || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19)qerror("invalid remote task vm_map wire");
++        port=native_name(ldl(g2h(a+28)));address=ldl(g2h(a+48));bytes=ldl(g2h(a+52));mask=ldl(g2h(a+56));flags=ldl(g2h(a+60));
++        if(id==3826){offset=ldq(g2h(a+64));copy=ldl(g2h(a+72));prot=ldl(g2h(a+76));maxprot=ldl(g2h(a+80));inherit=ldl(g2h(a+84));}
++        else {offset=ldl(g2h(a+64));copy=ldl(g2h(a+68));prot=ldl(g2h(a+72));maxprot=ldl(g2h(a+76));inherit=ldl(g2h(a+80));}
++        if(flags&~0xff000001U)qerror("remote vm_map flags require verified semantics");
++        if(!bytes || (!(flags&1) && (address<4096 || (uint64_t)address+bytes>0xc0000000ULL))){*code=KERN_INVALID_ADDRESS;return 1;}
++        if(ldl(g2h(a+28))<4096 && live_object_kind[ldl(g2h(a+28))])qerror("typed remote alias metadata not implemented");
++        mapped=address;
++        kr=vm_map_64(target,&mapped,bytes,mask,flags,port,offset,copy,prot,maxprot,inherit);
++        if(!kr){if(mapped>=0xc0000000U || (uint64_t)mapped+bytes>0xc0000000ULL)qerror("remote map outside verified low guest address range");stl(answer+36,mapped);*length=40;
++            if(target==mach_task_self())page_set_flags(mapped&~4095U,TARGET_PAGE_ALIGN(mapped+bytes),prot|PAGE_VALID);
++        }
++        fprintf(stderr,"native remote task map task=%x object=%u address=%x bytes=%u result=%u\n",destination,port,(unsigned)mapped,bytes,kr);
++        *code=kr;return 1;
++    }
+     if(destination!=TASK_SELF)return 0;
+     if(id==3810 || id==3803 || id==3804) {
+         uint32_t address=ldl(g2h(a+32)),bytes=ldl(g2h(a+36)),page,end;

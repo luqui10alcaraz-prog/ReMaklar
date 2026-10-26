@@ -1,0 +1,5 @@
+In file included from /System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:41,
+                 from /System/Library/Frameworks/IOKit.framework/Headers/hidsystem/IOHIDShared.h:65,
+                 from /var/tmp/graphics011-layout/shared-layout011.c:6:
+/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBase.h:35: AvailabilityMacros.h: No such file or directory
+/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBase.h:38: CoreServices/../Frameworks/CarbonCore.framework/Headers/MacTypes.h: No such file or directory

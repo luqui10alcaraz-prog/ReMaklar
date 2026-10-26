@@ -1,0 +1,15 @@
+StdFBShmem=5356 EvOffsets=8 EvGlobals=20384 NXEQElement=84 NXEvent=76 NXEventData=48
+StdFBShmem_t.version=56
+StdFBShmem_t.vblTime=64
+StdFBShmem_t.cursorSize=204
+StdFBShmem_t.cursor=236
+EvGlobals.cursorLoc=32
+EvGlobals.version=56
+EvGlobals.movedMask=196
+EvGlobals.waitThreshold=220
+EvGlobals.lleq=224
+NXEQElement.event=8
+NXEvent.time=12
+NXEvent.data=28
+NXTabletProximityData.uniqueID=16
+mouseRectValid-mask=00000001

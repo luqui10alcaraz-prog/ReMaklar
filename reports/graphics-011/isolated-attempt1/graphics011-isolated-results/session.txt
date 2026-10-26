@@ -1,0 +1,3 @@
++ extra=
++ '[' typed-live-test = typed-framebuffer-native ']'
++ gcc2 -no-cpp-precomp -arch i386 -O2 /var/tmp/graphics011-isolated/typed-live.c /var/tmp/graphics011-isolated/typed-live-test.c -o /var/tmp/graphics011-isolated-results/typed-live-test

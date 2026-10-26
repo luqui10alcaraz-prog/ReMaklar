@@ -1,0 +1,3 @@
+live framebuffer version=3 bytes=278764 partial16/32 original-spinlock neighbors OK
+live IOHID globalsOffset=8 version=3 bytes=20392 OK
+live real IOKit objects unmap rights close OK

@@ -1,0 +1,45 @@
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:32:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap.h:14: warning: redundant redeclaration of `global_env' in same scope
+/var/tmp/graphics011-run1/source/darwin-user/qemu.h:107: warning: previous declaration of `global_env'
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:78:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:5: warning: redundant redeclaration of `bootstrap_port' in same scope
+/usr/include/mach/mach_init.h:77: warning: previous declaration of `bootstrap_port'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:9: warning: redundant redeclaration of `mach_make_memory_entry_64' in same scope
+/usr/include/mach/vm_map.h:433: warning: previous declaration of `mach_make_memory_entry_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:10: warning: redundant redeclaration of `vm_map_64' in same scope
+/usr/include/mach/vm_map.h:454: warning: previous declaration of `vm_map_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc: In function `native_message':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:107: warning: unsigned int format, different type arg (arg 5)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `remaklar_deliver_signals':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:367: warning: unsigned int format, different type arg (arg 5)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `exec_ppc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:514: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:515: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:516: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:517: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:518: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:519: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `remaklar_bsd':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:738: warning: unsigned int format, different type arg (arg 4)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `rpc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1079: warning: unsigned int format, different type arg (arg 3)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1203: warning: unsigned int format, different type arg (arg 3)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1248: `ishid' undeclared (first use in this function)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1248: (Each undeclared identifier is reported only once
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1248: for each function it appears in.)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1331: warning: unsigned int format, different type arg (arg 3)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1583: warning: unsigned int format, different type arg (arg 4)
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1100: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1135: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1151: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1166: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1181: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1198: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1214: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1242: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1267: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1288: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1323: warning: `endpoint' might be used uninitialized in this function
+make[1]: *** [darwin-kernel.o] Error 1
+make: *** [subdir-ppc-darwin-user] Error 2

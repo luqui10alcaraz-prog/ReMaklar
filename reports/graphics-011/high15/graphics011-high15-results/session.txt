@@ -1,0 +1,5 @@
++ gcc2 -no-cpp-precomp -arch i386 -O2 /var/tmp/graphics011-high15/high-window.c /var/tmp/graphics011-high15/high-window-test.c -o /var/tmp/graphics011-high15-results/high-window-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-high15-results/native /var/tmp/graphics011-high15-results/high-window-native
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/high15.tgz graphics011-high15-results/build.txt graphics011-high15-results/session.txt graphics011-high15-results/native.status graphics011-high15-results/native.stdout graphics011-high15-results/native.stderr graphics011-validation13/high-window-build.txt graphics011-validation13/session.txt

@@ -1,0 +1,1 @@
+task query result=5 type=0

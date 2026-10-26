@@ -1,0 +1,12 @@
++ extra=
++ '[' typed-live-test = typed-framebuffer-native ']'
++ gcc2 -no-cpp-precomp -arch i386 -O2 /var/tmp/graphics011-isolated/typed-live.c /var/tmp/graphics011-isolated/typed-live-test.c -o /var/tmp/graphics011-isolated-results5/typed-live-test
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-isolated-results5/typed-live-test /var/tmp/graphics011-isolated-results5/typed-live-test
++ extra=
++ '[' typed-framebuffer-native = typed-framebuffer-native ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch i386 -O2 /var/tmp/graphics011-isolated/typed-live.c /var/tmp/graphics011-isolated/typed-framebuffer-native.c -framework IOKit -o /var/tmp/graphics011-isolated-results5/typed-framebuffer-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-isolated-results5/typed-framebuffer-native /var/tmp/graphics011-isolated-results5/typed-framebuffer-native
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/isol015.tgz graphics011-isolated-results5

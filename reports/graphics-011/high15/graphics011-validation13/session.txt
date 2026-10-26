@@ -1,0 +1,1 @@
++ gcc2 -no-cpp-precomp -arch i386 -O2 /var/tmp/graphics011-validation-payload12/high-window.c /var/tmp/graphics011-validation-payload12/high-window-test.c -o /var/tmp/graphics011-validation13/high-window-native

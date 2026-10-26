@@ -1,0 +1,47 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/stage131.tgz graphics011-run21/*.txt graphics011-run21/*.status graphics011-run21/*.stdout graphics011-run21/*.stderr;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run21/source
++ cp -Rp /var/tmp/graphics011-run20/build /var/tmp/graphics011-run21/build
++ cp /var/tmp/graphics011-stage21/source/cpu-all.h /var/tmp/graphics011-run21/source/cpu-all.h
++ cp /var/tmp/graphics011-stage21/source/darwin-user/mmap.c /var/tmp/graphics011-run21/source/darwin-user/mmap.c
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run21/source/darwin-user/remaklar/high-window.c
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run21/source/darwin-user/remaklar/high-window.h
++ cp /var/tmp/graphics011-stage21/source/target-ppc/cpu.h /var/tmp/graphics011-run21/source/target-ppc/cpu.h
++ cp /var/tmp/graphics011-stage21/source/target-ppc/translate.c /var/tmp/graphics011-run21/source/target-ppc/translate.c
++ cp /var/tmp/graphics011-stage21/source/target-ppc/helper.h /var/tmp/graphics011-run21/source/target-ppc/helper.h
++ cp /var/tmp/graphics011-stage21/source/target-ppc/op_helper.c /var/tmp/graphics011-run21/source/target-ppc/op_helper.c
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run21/source/darwin-user/remaklar/bootstrap-main.c
++ cp /var/tmp/graphics011-stage21/source/darwin-user/qemu.h /var/tmp/graphics011-run21/source/darwin-user/qemu.h
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run21/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run21/source/darwin-user/remaklar/mach-native.inc
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run21/source/darwin-user/remaklar/live-regions.inc
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run21/source/darwin-user/remaklar/typed-live.c
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run21/source/darwin-user/remaklar/typed-live.h
++ cp /var/tmp/graphics011-stage21/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run21/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run21/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run21/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run21/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run21/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage21/threads011-runtime.c -framework IOKit -o /var/tmp/graphics011-run21/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage21/high011-runtime.c -o /var/tmp/graphics011-run21/high-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage21/high011-runtime.c -o /var/tmp/graphics011-run21/high-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/high-native /var/tmp/graphics011-run21/high-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/high-jaguar /var/tmp/graphics011-run21/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run21/high-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/threads /var/tmp/graphics011-run21/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run21/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 -O2 -I/var/tmp/graphics011-stage21/source/darwin-user/remaklar /var/tmp/graphics011-stage21/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-stage21/typed-live-test.c -o /var/tmp/graphics011-run21/typed-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/typed-native /var/tmp/graphics011-run21/typed-native
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage21/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run21/shared-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage21/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run21/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/shared-native /var/tmp/graphics011-run21/shared-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/shared-jaguar /var/tmp/graphics011-run21/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run21/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/pbs /var/tmp/graphics011-run21/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/pbs
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run21/windowserver /var/tmp/graphics011-run21/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage131.tgz graphics011-run21/build.txt graphics011-run21/high-i386-build.txt graphics011-run21/high-ppc-build.txt graphics011-run21/script-status.txt graphics011-run21/session.txt graphics011-run21/shared-i386-build.txt graphics011-run21/shared-ppc-build.txt graphics011-run21/threads-build.txt graphics011-run21/typed-build.txt graphics011-run21/high-jaguar.status graphics011-run21/high-native.status graphics011-run21/pbs.status graphics011-run21/shared-jaguar.status graphics011-run21/shared-native.status graphics011-run21/threads.status graphics011-run21/typed-native.status graphics011-run21/windowserver.status graphics011-run21/high-jaguar.stdout graphics011-run21/high-native.stdout graphics011-run21/pbs.stdout graphics011-run21/shared-jaguar.stdout graphics011-run21/shared-native.stdout graphics011-run21/threads.stdout graphics011-run21/typed-native.stdout graphics011-run21/windowserver.stdout graphics011-run21/high-jaguar.stderr graphics011-run21/high-native.stderr graphics011-run21/pbs.stderr graphics011-run21/shared-jaguar.stderr graphics011-run21/shared-native.stderr graphics011-run21/threads.stderr graphics011-run21/typed-native.stderr graphics011-run21/windowserver.stderr
+
+gzip: stdout: No space left on device
+gnutar: Child returned status 1
+gnutar: Error exit delayed from previous errors

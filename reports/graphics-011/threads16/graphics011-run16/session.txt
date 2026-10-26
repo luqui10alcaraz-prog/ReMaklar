@@ -1,0 +1,30 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/stage126.tgz graphics011-run16/*.txt graphics011-run16/*.status graphics011-run16/*.stdout graphics011-run16/*.stderr;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run16/source
++ cp -Rp /var/tmp/graphics011-run1/build /var/tmp/graphics011-run16/build
++ cp /var/tmp/graphics011-stage16/source/cpu-all.h /var/tmp/graphics011-run16/source/cpu-all.h
++ cp /var/tmp/graphics011-stage16/source/target-ppc/cpu.h /var/tmp/graphics011-run16/source/target-ppc/cpu.h
++ cp /var/tmp/graphics011-stage16/source/target-ppc/translate.c /var/tmp/graphics011-run16/source/target-ppc/translate.c
++ cp /var/tmp/graphics011-stage16/source/target-ppc/helper.h /var/tmp/graphics011-run16/source/target-ppc/helper.h
++ cp /var/tmp/graphics011-stage16/source/target-ppc/op_helper.c /var/tmp/graphics011-run16/source/target-ppc/op_helper.c
++ cp /var/tmp/graphics011-stage16/source/darwin-user/main.c /var/tmp/graphics011-run16/source/darwin-user/main.c
++ cp /var/tmp/graphics011-stage16/source/darwin-user/qemu.h /var/tmp/graphics011-run16/source/darwin-user/qemu.h
++ cp /var/tmp/graphics011-stage16/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run16/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage16/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run16/source/darwin-user/remaklar/mach-native.inc
++ cp /var/tmp/graphics011-stage16/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run16/source/darwin-user/remaklar/live-regions.inc
++ cp /var/tmp/graphics011-stage16/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run16/source/darwin-user/remaklar/typed-live.c
++ cp /var/tmp/graphics011-stage16/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run16/source/darwin-user/remaklar/typed-live.h
++ cp /var/tmp/graphics011-stage16/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run16/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run16/build SRC_PATH=/var/tmp/graphics011-run1/source clean
++ make -C /var/tmp/graphics011-run16/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run16/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run16/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run16/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage16/threads011-runtime.c -framework IOKit -o /var/tmp/graphics011-run16/threads-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run16/threads /var/tmp/graphics011-run16/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run16/threads-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run16/windowserver /var/tmp/graphics011-run16/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage126.tgz graphics011-run16/build.txt graphics011-run16/clean.txt graphics011-run16/script-status.txt graphics011-run16/session.txt graphics011-run16/threads-build.txt graphics011-run16/threads.status graphics011-run16/windowserver.status graphics011-run16/threads.stdout graphics011-run16/windowserver.stdout graphics011-run16/threads.stderr graphics011-run16/windowserver.stderr

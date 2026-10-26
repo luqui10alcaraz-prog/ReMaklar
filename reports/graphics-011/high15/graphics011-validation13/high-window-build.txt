@@ -1,0 +1,26 @@
+In file included from /var/tmp/graphics011-validation-payload12/high-window.c:6:
+/usr/include/sys/mman.h:155: parse error before `size_t'
+/usr/include/sys/mman.h:158: parse error before `size_t'
+/usr/include/sys/mman.h:160: parse error before `size_t'
+/usr/include/sys/mman.h:161: parse error before `size_t'
+/usr/include/sys/mman.h:162: parse error before `size_t'
+/usr/include/sys/mman.h:163: parse error before `size_t'
+/usr/include/sys/mman.h:166: parse error before `size_t'
+/usr/include/sys/mman.h:169: parse error before `caddr_t'
+/usr/include/sys/mman.h:171: parse error before `*'
+/usr/include/sys/mman.h:174: parse error before `size_t'
+/usr/include/sys/mman.h:175: parse error before `size_t'
+/usr/include/sys/mman.h:176: parse error before `size_t'
+/var/tmp/graphics011-validation-payload12/high-window.c: In function `rm_high_map':
+/var/tmp/graphics011-validation-payload12/high-window.c:55: `MAP_ANONYMOUS' undeclared (first use in this function)
+/var/tmp/graphics011-validation-payload12/high-window.c:55: (Each undeclared identifier is reported only once
+/var/tmp/graphics011-validation-payload12/high-window.c:55: for each function it appears in.)
+/var/tmp/graphics011-validation-payload12/high-window.c: In function `rm_high_unmap':
+/var/tmp/graphics011-validation-payload12/high-window.c:74: `MAP_ANONYMOUS' undeclared (first use in this function)
+In file included from /var/tmp/graphics011-validation-payload12/high-window-test.c:9:
+/usr/include/sys/resource.h:81: field `ru_utime' has incomplete type
+/usr/include/sys/resource.h:82: field `ru_stime' has incomplete type
+/var/tmp/graphics011-validation-payload12/high-window-test.c: In function `main':
+/var/tmp/graphics011-validation-payload12/high-window-test.c:17: `MAP_ANONYMOUS' undeclared (first use in this function)
+/var/tmp/graphics011-validation-payload12/high-window-test.c:17: (Each undeclared identifier is reported only once
+/var/tmp/graphics011-validation-payload12/high-window-test.c:17: for each function it appears in.)

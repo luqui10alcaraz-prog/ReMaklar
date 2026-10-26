@@ -1,0 +1,1 @@
+/usr/bin/ld: /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/CoreGraphics 'CoreGraphics.framework' is a subframework.  Link against the umbrella framework 'ApplicationServices.framework' instead.

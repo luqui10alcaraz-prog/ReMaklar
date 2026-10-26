@@ -1,0 +1,18 @@
+{
+  "regression_states": 18,
+  "exit_zero_without_timeout": 18,
+  "utilities": {
+    "cases": 23,
+    "failed": 0
+  },
+  "filesystem": {
+    "cases": 11,
+    "failed": 0,
+    "leftover": 0
+  },
+  "windowserver_ready_before_clients": true,
+  "remote_vm_maps_successful": 2,
+  "installer_window_verified": false,
+  "blocker": "IOKit RPC 2819 requires remote task descriptor support",
+  "archive_sha256": "0de4118bda71eaa7d4fc8f555bdfd7a466b9f12e0b9e6f194bc1cdfa30b23179"
+}

@@ -1,0 +1,104 @@
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:32:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap.h:14: warning: redundant redeclaration of `global_env' in same scope
+/var/tmp/graphics011-run1/source/darwin-user/qemu.h:107: warning: previous declaration of `global_env'
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:82:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:5: warning: redundant redeclaration of `bootstrap_port' in same scope
+/usr/include/mach/mach_init.h:77: warning: previous declaration of `bootstrap_port'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:9: warning: redundant redeclaration of `mach_make_memory_entry_64' in same scope
+/usr/include/mach/vm_map.h:433: warning: previous declaration of `mach_make_memory_entry_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:10: warning: redundant redeclaration of `vm_map_64' in same scope
+/usr/include/mach/vm_map.h:454: warning: previous declaration of `vm_map_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `exec_ppc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:518: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:519: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:520: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:521: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:522: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:523: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `rpc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1104: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1139: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1155: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1170: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1185: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1202: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1218: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1246: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1271: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1299: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1334: warning: `endpoint' might be used uninitialized in this function
+  CC    ppc-darwin-user/translate.o
+/var/tmp/graphics011-run1/source/target-ppc/translate.c: In function `gen_stwcx_':
+/var/tmp/graphics011-run1/source/target-ppc/translate.c:3315: warning: unused variable `l1'
+  CC    ppc-darwin-user/op_helper.o
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/graphics011-run1/source/target-ppc/cpu.h:24,
+                 from /var/tmp/graphics011-run1/source/target-ppc/exec.h:33,
+                 from /var/tmp/graphics011-run1/source/target-ppc/op_helper.c:21:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:88: warning: `INT8_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:76: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:89: warning: `INT16_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:77: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:90: warning: `INT32_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:78: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:91: warning: `INT64_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:79: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:93: warning: `INT8_MIN' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:72: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:94: warning: `INT16_MIN' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:73: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:101: warning: `INT32_MIN' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:74: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:102: warning: `INT64_MIN' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:75: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:104: warning: `UINT8_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:80: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:105: warning: `UINT16_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:81: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:106: warning: `UINT32_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:82: warning: this is the location of the previous definition
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:107: warning: `UINT64_MAX' redefined
+/var/tmp/graphics011-run1/source/dyngen-exec.h:83: warning: this is the location of the previous definition
+In file included from /var/tmp/graphics011-run1/source/target-ppc/exec.h:25,
+                 from /var/tmp/graphics011-run1/source/target-ppc/op_helper.c:21:
+/var/tmp/graphics011-run1/source/dyngen-exec.h:55: warning: redefinition of `int8_t'
+/usr/include/i386/types.h:69: warning: `int8_t' previously declared here
+/var/tmp/graphics011-run1/source/dyngen-exec.h:55: warning: redundant redeclaration of `int8_t' in same scope
+/usr/include/i386/types.h:69: warning: previous declaration of `int8_t'
+/var/tmp/graphics011-run1/source/dyngen-exec.h:57: warning: redefinition of `int16_t'
+/usr/include/i386/types.h:71: warning: `int16_t' previously declared here
+/var/tmp/graphics011-run1/source/dyngen-exec.h:57: warning: redundant redeclaration of `int16_t' in same scope
+/usr/include/i386/types.h:71: warning: previous declaration of `int16_t'
+/var/tmp/graphics011-run1/source/dyngen-exec.h:58: warning: redefinition of `int32_t'
+/usr/include/i386/types.h:73: warning: `int32_t' previously declared here
+/var/tmp/graphics011-run1/source/dyngen-exec.h:58: warning: redundant redeclaration of `int32_t' in same scope
+/usr/include/i386/types.h:73: warning: previous declaration of `int32_t'
+/var/tmp/graphics011-run1/source/dyngen-exec.h:64: warning: redefinition of `int64_t'
+/usr/include/i386/types.h:75: warning: `int64_t' previously declared here
+/var/tmp/graphics011-run1/source/dyngen-exec.h:64: warning: redundant redeclaration of `int64_t' in same scope
+/usr/include/i386/types.h:75: warning: previous declaration of `int64_t'
+In file included from /usr/include/gcc/darwin/2.95.2/g++/../inttypes.h:33,
+                 from /var/tmp/graphics011-run1/source/target-ppc/cpu.h:24,
+                 from /var/tmp/graphics011-run1/source/target-ppc/exec.h:33,
+                 from /var/tmp/graphics011-run1/source/target-ppc/op_helper.c:21:
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redefinition of `uint8_t'
+/var/tmp/graphics011-run1/source/dyngen-exec.h:38: warning: `uint8_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:34: warning: redundant redeclaration of `uint8_t' in same scope
+/var/tmp/graphics011-run1/source/dyngen-exec.h:38: warning: previous declaration of `uint8_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redefinition of `uint16_t'
+/var/tmp/graphics011-run1/source/dyngen-exec.h:39: warning: `uint16_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:35: warning: redundant redeclaration of `uint16_t' in same scope
+/var/tmp/graphics011-run1/source/dyngen-exec.h:39: warning: previous declaration of `uint16_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redefinition of `uint32_t'
+/var/tmp/graphics011-run1/source/dyngen-exec.h:40: warning: `uint32_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:36: warning: redundant redeclaration of `uint32_t' in same scope
+/var/tmp/graphics011-run1/source/dyngen-exec.h:40: warning: previous declaration of `uint32_t'
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redefinition of `uint64_t'
+/var/tmp/graphics011-run1/source/dyngen-exec.h:47: warning: `uint64_t' previously declared here
+/usr/include/gcc/darwin/2.95.2/g++/../stdint.h:37: warning: redundant redeclaration of `uint64_t' in same scope
+/var/tmp/graphics011-run1/source/dyngen-exec.h:47: warning: previous declaration of `uint64_t'
+/var/tmp/graphics011-run1/source/target-ppc/op_helper.c: In function `cvtuhub':
+/var/tmp/graphics011-run1/source/target-ppc/op_helper.c:2001: warning: comparison is always false due to limited range of data type
+  AR    ppc-darwin-user/libqemu.a
+  LINK  ppc-darwin-user/qemu-ppc

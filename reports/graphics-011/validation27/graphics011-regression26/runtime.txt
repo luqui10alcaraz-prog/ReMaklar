@@ -1,0 +1,1 @@
+MD5 (/var/tmp/graphics011-run26/qemu-ppc) = 17d1b47d6450530351229df91f0196bf

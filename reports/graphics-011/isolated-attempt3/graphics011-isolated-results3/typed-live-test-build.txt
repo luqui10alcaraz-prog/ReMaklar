@@ -1,0 +1,2 @@
+/var/tmp/ccMsaaaa.s:59:operands given don't match any known 386 instruction
+/var/tmp/ccMsaaaa.s:130:operands given don't match any known 386 instruction

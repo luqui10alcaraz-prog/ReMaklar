@@ -1,0 +1,2 @@
+POSIX shm child exec real mapping OK
+POSIX shm real create EEXIST truncate aliases fork exec unlink lifetime cleanup OK

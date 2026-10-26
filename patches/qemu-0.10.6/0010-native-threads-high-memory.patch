@@ -1,0 +1,1083 @@
+--- a/cpu-all.h
++++ b/cpu-all.h
+@@ -633,6 +633,13 @@
+ #define GUEST_BASE 0
+ 
+ /* All direct uses of g2h and h2g need to go away for usermode softmmu.  */
++#if defined(REMAKLAR_BOOTSTRAP) && defined(TARGET_PPC)
++uintptr_t remaklar_high_host(uintptr_t);
++uintptr_t remaklar_high_guest(uintptr_t);
++#define g2h(x) ((void *)remaklar_high_host((uintptr_t)(x)))
++#define h2g(x) ((abi_ulong)remaklar_high_guest((uintptr_t)(x)))
++#define h2g_valid(x) (remaklar_high_guest((uintptr_t)(x)) <= 0xffffffffU)
++#else
+ #define g2h(x) ((void *)((unsigned long)(x) + GUEST_BASE))
+ #define h2g(x) ({ \
+     unsigned long __ret = (unsigned long)(x) - GUEST_BASE; \
+@@ -645,6 +652,8 @@
+     (__guest == (abi_ulong)__guest); \
+ })
+ 
++#endif
++
+ #define saddr(x) g2h(x)
+ #define laddr(x) g2h(x)
+ 
+@@ -658,18 +667,20 @@
+ #if defined(REMAKLAR_BOOTSTRAP) && defined(TARGET_PPC)
+ extern uint32_t remaklar_live_min,remaklar_live_max;
+ uint64_t remaklar_live_load(uintptr_t,unsigned);
++uint64_t remaklar_host_load(uintptr_t,unsigned);
++void remaklar_host_store(uintptr_t,unsigned,uint64_t);
+ void remaklar_live_store(uintptr_t,unsigned,uint64_t);
+ int remaklar_live_cas(uint32_t,uint32_t,uint32_t);
+-#define ldub_raw(p) ((uint8_t)remaklar_live_load((uintptr_t)(p),1))
+-#define ldsb_raw(p) ((int8_t)remaklar_live_load((uintptr_t)(p),1))
+-#define lduw_raw(p) ((uint16_t)remaklar_live_load((uintptr_t)(p),2))
+-#define ldsw_raw(p) ((int16_t)remaklar_live_load((uintptr_t)(p),2))
+-#define ldl_raw(p) ((uint32_t)remaklar_live_load((uintptr_t)(p),4))
+-#define ldq_raw(p) remaklar_live_load((uintptr_t)(p),8)
+-#define stb_raw(p,v) remaklar_live_store((uintptr_t)(p),1,(v))
+-#define stw_raw(p,v) remaklar_live_store((uintptr_t)(p),2,(v))
+-#define stl_raw(p,v) remaklar_live_store((uintptr_t)(p),4,(v))
+-#define stq_raw(p,v) remaklar_live_store((uintptr_t)(p),8,(v))
++#define ldub_raw(p) ((uint8_t)remaklar_host_load((uintptr_t)(p),1))
++#define ldsb_raw(p) ((int8_t)remaklar_host_load((uintptr_t)(p),1))
++#define lduw_raw(p) ((uint16_t)remaklar_host_load((uintptr_t)(p),2))
++#define ldsw_raw(p) ((int16_t)remaklar_host_load((uintptr_t)(p),2))
++#define ldl_raw(p) ((uint32_t)remaklar_host_load((uintptr_t)(p),4))
++#define ldq_raw(p) remaklar_host_load((uintptr_t)(p),8)
++#define stb_raw(p,v) remaklar_host_store((uintptr_t)(p),1,(v))
++#define stw_raw(p,v) remaklar_host_store((uintptr_t)(p),2,(v))
++#define stl_raw(p,v) remaklar_host_store((uintptr_t)(p),4,(v))
++#define stq_raw(p,v) remaklar_host_store((uintptr_t)(p),8,(v))
+ #define ldfl_raw(p) ldfl_p(laddr((p)))
+ #define ldfq_raw(p) ldfq_p(laddr((p)))
+ #define stfl_raw(p,v) stfl_p(saddr((p)),v)
+--- a/target-ppc/translate.c
++++ b/target-ppc/translate.c
+@@ -8325,6 +8325,12 @@
+         max_insns = CF_COUNT_MASK;
+ 
+     gen_icount_start();
++#ifdef REMAKLAR_BOOTSTRAP
++    {
++        TCGv quantum_pc=tcg_const_tl(ctx.nip);
++        gen_helper_rm_quantum(quantum_pc);tcg_temp_free(quantum_pc);
++    }
++#endif
+     /* Set env in case of segfault during code fetch */
+     while (ctx.exception == POWERPC_EXCP_NONE && gen_opc_ptr < gen_opc_end) {
+         if (unlikely(!TAILQ_EMPTY(&env->breakpoints))) {
+--- a/target-ppc/helper.h
++++ b/target-ppc/helper.h
+@@ -1,6 +1,7 @@
+ #include "def-helper.h"
+ 
+ #ifdef REMAKLAR_BOOTSTRAP
++DEF_HELPER_1(rm_quantum, void, tl)
+ DEF_HELPER_2(rm_ld, tl, tl, i32)
+ DEF_HELPER_1(rm_ld64, i64, tl)
+ DEF_HELPER_3(rm_st, void, tl, tl, i32)
+--- a/target-ppc/op_helper.c
++++ b/target-ppc/op_helper.c
+@@ -4158,16 +4158,21 @@
+ #endif /* !CONFIG_USER_ONLY */
+ 
+ #ifdef REMAKLAR_BOOTSTRAP
+-static uint32_t rm_reserved_value;
++void helper_rm_quantum(target_ulong pc) {
++    if(++env->rm_quantum>=64) {
++        env->rm_quantum=0;env->nip=pc;
++        env->exception_index=EXCP_INTERRUPT;cpu_loop_exit();
++    }
++}
+ target_ulong helper_rm_ld(target_ulong addr,uint32_t n) {return remaklar_live_load(addr,n);}
+ uint64_t helper_rm_ld64(target_ulong addr) {return remaklar_live_load(addr,8);}
+ void helper_rm_st(target_ulong addr,target_ulong val,uint32_t n) {remaklar_live_store(addr,n,val);}
+ void helper_rm_st64(target_ulong addr,uint64_t val) {remaklar_live_store(addr,8,val);}
+ target_ulong helper_rm_lwarx(target_ulong addr) {
+-    rm_reserved_value=remaklar_live_load(addr,4);env->reserve=addr;return rm_reserved_value;
++    env->rm_reserved_value=remaklar_live_load(addr,4);env->reserve=addr;return env->rm_reserved_value;
+ }
+ uint32_t helper_rm_stwcx(target_ulong addr,target_ulong val) {
+-    int ok=env->reserve==addr && remaklar_live_cas(addr,rm_reserved_value,val);
++    int ok=env->reserve==addr && remaklar_live_cas(addr,env->rm_reserved_value,val);
+     env->reserve=(target_ulong)-1;
+     return ((env->xer>>XER_SO)&1)|(ok?(1<<CRF_EQ):0);
+ }
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -20,6 +20,11 @@
+ #include <sys/sysctl.h>
+ #include <mach/mach_time.h>
+ #include <mach/mach.h>
++#include <mach/semaphore.h>
++extern mach_port_t mk_timer_create(void);
++extern kern_return_t mk_timer_destroy(mach_port_t);
++extern kern_return_t mk_timer_arm(mach_port_t,unsigned long long);
++extern kern_return_t mk_timer_cancel(mach_port_t,unsigned long long *);
+ #else
+ #include <sys/statvfs.h>
+ #include <time.h>
+@@ -34,6 +39,9 @@
+ /* Names designate endpoints in this process model, never Linux handles. */
+ enum { TASK_SELF = 0x101, THREAD_SELF = 0x102, HOST_SELF = 0x103, BOOTSTRAP = 0x104, SYSTEM_CLOCK_PORT = 0x105, IO_MASTER_PORT = 0x106 };
+ static uint32_t native_io_master;
++#ifdef __APPLE__
++static mach_port_t native_system_clock;
++#endif
+ static uint32_t native_iokit_ports[4096];
+ static uint32_t native_ports[4096];
+ static unsigned char native_notification_kind[4096];
+@@ -59,7 +67,6 @@
+ }
+ #endif
+ static uint32_t next_reply = 0x200;
+-static uint32_t thread_self_pointer;
+ static uint32_t thread_base_priority = 31;
+ static uint32_t send_refs[4096];
+ static unsigned char receive_rights[4096];
+@@ -75,12 +82,35 @@
+ static char guest_cwd[4096] = "/";
+ static uint32_t split_region;
+ 
++static void live_bounds(void);
++#include "high-window.c"
++uintptr_t remaklar_high_host(uintptr_t address){return rm_high_host(address);}
++uintptr_t remaklar_high_guest(uintptr_t address){return rm_high_guest(address);}
++int remaklar_high_backing(uintptr_t address,uint32_t bytes){return rm_high_backing(address,bytes);}
++static void rm_high_pages_changed(uint32_t address,uint32_t bytes,int prot)
++{
++ page_set_flags(address,address+bytes,prot<0?0:(prot|PAGE_VALID));live_bounds();
++}
++long remaklar_high_map(uint32_t address,uint32_t bytes,int prot,int flags,int fd,uint32_t offset)
++{
++ long result;
++ if((uint64_t)address+bytes>0xfffff000ULL){errno=ENOTSUP;return -1;}
++ rm_high_changed=rm_high_pages_changed;
++ result=rm_high_map(address,bytes,prot,flags,fd,offset);
++ fprintf(stderr,"real high map guest=%x host=%lx bytes=%x offset=%x result=%lx errno=%d\n",address,(unsigned long)rm_high_host(address),bytes,offset,result,result==-1?errno:0);
++ return result;
++}
++int remaklar_high_unmap(uint32_t address,uint32_t bytes){return rm_high_unmap(address,bytes);}
++int remaklar_high_protect(uint32_t address,uint32_t bytes,int prot){return rm_high_protect(address,bytes,prot);}
+ static unsigned live_object_kind[4096];
+ static unsigned live_kind_at(uint32_t);
+ static void live_alias(uint32_t,uint32_t,uint32_t,uint64_t,uint32_t);
+ static void live_forget(uint32_t,uint32_t);
++static int rm_is_thread(uint32_t);
++static void rm_thread_exit(CPUState *,uint32_t);
+ #include "mach-native.inc"
+ #include "live-regions.inc"
++#include "threads.inc"
+ 
+ /* Split-segment Jaguar libraries keep their relative RO/RW geometry in one
+  * PRIVATE guest region. Never MAP_FIXED over host mappings or claim the
+@@ -619,6 +649,7 @@
+         if (pid >= 0) {
+             env->gpr[4] = pid == 0 ? 1 : 0; /* Jaguar's second fork result. */
+             if (!pid) {
++                rm_threads_fork_child(env);
+                 /* XNU gives the new task its own port namespace. Registered,
+                  * exception and bootstrap endpoints are special inheritance;
+                  * this model has no registered servers or exception ports. */
+@@ -632,10 +663,13 @@
+                 next_port=0x400;next_reply=0x200;
+                 for(i=1;i<32;i++)signal_pending[i]=0;
+                 native_io_master=0;
++#ifdef __APPLE__
++                native_system_clock=0;
++#endif
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
+                 memset(native_ports,0,sizeof(native_ports));
+                 memset(native_notification_kind,0,sizeof(native_notification_kind));
+-                if(remaklar_live_max)qerror("fork child with live IOKit mappings requires inheritance validation");memset(native_iomappings,0,sizeof(native_iomappings));
++                for(i=0;i<64;i++)if(live_kind[i])qerror("fork child with live IOKit mappings requires inheritance validation");memset(native_iomappings,0,sizeof(native_iomappings));live_bounds();
+             }
+             fprintf(stderr,"fork real host_pid=%ld child_pid=%ld branch=%s\n",
+                     (long)getpid(),(long)pid,pid ? "parent" : "child");
+@@ -646,7 +680,7 @@
+         int status=0;
+         if (env->gpr[6] || (c & ~3)) qerror("unsupported wait4 rusage/options");
+         if (b && !remaklar_guest_access(b,4,PAGE_WRITE)) { errno=EFAULT;break; }
+-        r=waitpid((pid_t)a,&status,c);
++        {int saved;remaklar_gate_leave();r=waitpid((pid_t)a,&status,c);saved=errno;remaklar_gate_enter(env);errno=saved;}
+         if (r>0 && b) stl(g2h(b),status);
+         break;
+     }
+@@ -782,13 +816,22 @@
+             stl(g2h(env->gpr[6]), 4); r = 0;
+         }
+         break;
++    case 42: {
++        int slots[2],fds[2],found=0;
++        host_fd(0);
++        for(i=3;i<256 && found<2;i++)if(descriptors[i]<0)slots[found++]=i;
++        if(found!=2){errno=EMFILE;break;}
++        r=pipe(fds);
++        if(!r){descriptors[slots[0]]=fds[0];descriptors[slots[1]]=fds[1];r=slots[0];env->gpr[4]=slots[1];}
++        break;
++    }
+     case 4: /* write, including virtual descriptors opened by the guest */
+         if (!remaklar_guest_access(b, c, PAGE_READ)) { errno = EFAULT; r = -1; }
+-        else r = write(host_fd(a), g2h(b), c);
++        else {int fd=host_fd(a),saved;void *buffer=g2h(b);remaklar_gate_leave();r=write(fd,buffer,c);saved=errno;remaklar_gate_enter(env);errno=saved;}
+         break;
+     case 3: /* read */
+         if (!remaklar_guest_access(b, c, PAGE_WRITE)) { errno = EFAULT; r = -1; }
+-        else r = read(host_fd(a), g2h(b), c);
++        else {int fd=host_fd(a),saved;void *buffer=g2h(b);remaklar_gate_leave();r=read(fd,buffer,c);saved=errno;remaklar_gate_enter(env);errno=saved;}
+         break;
+     case 5: { /* Translate Darwin flags instead of passing Linux bit values. */
+         int flags = b & 3;
+@@ -940,7 +983,7 @@
+         if((uint64_t)b+pageoff+4095>0xffffffffULL){errno=EINVAL;break;}
+         bytes=(b+pageoff+4095)&~4095U;offset-=pageoff;
+         if(flags&0x10)a-=pageoff;
+-        if((flags&0x10) && ((a&4095) || a<4096 || (uint64_t)a+bytes>0xc0000000ULL)){errno=EINVAL;break;}
++        if((flags&0x10) && ((a&4095) || a<4096 || (uint64_t)a+bytes>0xfffff000ULL)){errno=EINVAL;break;}
+         host_flags=(flags&1)?MAP_SHARED:MAP_PRIVATE;
+         if(flags&0x10)host_flags|=MAP_FIXED;
+         if(flags&0x40)host_flags|=MAP_NORESERVE;
+@@ -948,12 +991,18 @@
+         else if(host_fd(fd)<0){errno=EBADF;break;}
+         mapped=target_mmap(a,bytes,c,host_flags,(flags&0x1000)?-1:host_fd(fd),(unsigned long)offset);
+         if((unsigned long)mapped>=0xfffff000UL){if(mapped!=-1)errno=-mapped;r=-1;}
+-        else r=mapped+pageoff;
+-        break;
+-    }
++        else {
++            *result=(uint32_t)mapped+pageoff;*error=0;return 1;
++        }
++        break;
++    }
++    case 74:
++        if((a&4095) || (uint64_t)a+b+4095>0xfffff000ULL){errno=EINVAL;break;}
++        if(c&~7U){errno=EINVAL;break;}
++        r=target_mprotect(a,(b+4095)&~4095U,c);if(r<0 && r!=-1){errno=-r;r=-1;}break;
+     case 73: { /* Unmap only guest mappings; holes never remove host code. */
+         uint32_t page,end;
+-        if((uint64_t)a+b+4095>0xc0000000ULL){errno=EINVAL;break;}
++        if((uint64_t)a+b+4095>0xfffff000ULL){errno=EINVAL;break;}
+         end=(a+b+4095)&~4095U;a&=~4095U;r=0;
+         for(page=a;page<end;page+=4096)if(page_get_flags(page)&PAGE_VALID)if(target_munmap(page,4096)){r=-1;break;}
+         break;
+@@ -1071,7 +1120,8 @@
+     uint32_t id, destination, reply_port, length = 36, code = 0, i, complex = 0;
+     uint8_t answer[8192];
+ #ifdef __APPLE__
+-    if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))]))return native_message(env);
++    if(size==24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+20))==3600 && rm_is_thread(ldl(g2h(a+8))))rm_thread_exit(env,ldl(g2h(a+8)));
++    if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))] && !(ldl(g2h(a+20))==3616 && rm_is_thread(ldl(g2h(a+8)))) && !(ldl(g2h(a+20))>=4002 && ldl(g2h(a+20))<=4004)))return native_message(env);
+ #endif
+     if (size < 24 || size > 4096 || !remaklar_guest_access(a, size, PAGE_READ))
+         qerror("invalid Mach message request");
+@@ -1093,6 +1143,66 @@
+     if(native_kernel_rpc(id,destination,a,size,answer,&length,&code,&complex))goto finish_native_reply;
+ #endif
+     switch (id) {
++    case 3418: {
++#ifdef __APPLE__
++        semaphore_t port=0;
++        if(destination!=TASK_SELF || size!=40){code=4;break;}
++        code=semaphore_create(mach_task_self(),&port,ldl(g2h(a+32)),ldl(g2h(a+36)));
++        if(!code){complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=17;length=40;}
++#else
++        code=4;
++#endif
++        break;
++    }
++    case 3419:
++#ifdef __APPLE__
++        if(destination!=TASK_SELF || size!=40 || ldl(g2h(a+24))!=1){code=4;break;}
++        code=semaphore_destroy(mach_task_self(),native_name(ldl(g2h(a+28))));native_refresh(ldl(g2h(a+28)));
++#else
++        code=4;
++#endif
++        break;
++    case 420: {
++#ifdef __APPLE__
++        mach_port_t port=0;
++        if(destination!=HOST_SELF || size!=40 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19){code=4;break;}
++        code=host_processor_set_priv(mach_host_self(),native_name(ldl(g2h(a+28))),&port);
++        if(!code){complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=17;length=40;}
++#else
++        code=4;
++#endif
++        break;
++    }
++    case 4002:
++    case 4003:
++    case 4004:
++#ifdef __APPLE__
++        if(size!=(id==4003?36:40)){code=4;break;}
++        if(id==4002)code=processor_set_max_priority(native_name(destination),ldl(g2h(a+32)),ldl(g2h(a+36)));
++        else if(id==4003)code=processor_set_policy_enable(native_name(destination),ldl(g2h(a+32)));
++        else code=processor_set_policy_disable(native_name(destination),ldl(g2h(a+32)),ldl(g2h(a+36)));
++#else
++        code=4;
++#endif
++        break;
++    case 213: {
++#ifdef __APPLE__
++        mach_port_t port=0;
++        if(destination!=HOST_SELF || size!=24){code=4;break;}
++        code=processor_set_default(mach_host_self(),&port);
++        if(!code){complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=17;length=40;}
++#else
++        code=4;
++#endif
++        break;
++    }
++    case 3412: {
++        uint32_t child=0;
++        if(destination!=TASK_SELF || size!=200 || ldl(g2h(a+32))!=1 || ldl(g2h(a+36))!=40){code=4;break;}
++        code=rm_thread_create(env,a+40,&child);
++        if(!code){complex=0x80000000;stl(answer+24,1);stl(answer+28,child);answer[38]=17;length=40;}
++        break;
++    }
+     case 2819: /* Actual framebuffer VRAM mapping; never a shadow copy. */
+     case 2853: /* Original IOUserClient unmap, tracked guest page metadata. */
+ #ifdef __APPLE__
+@@ -1276,7 +1386,17 @@
+             for(j=0;j<incount;j++)input[j]=ldl(g2h(a+40+j*4));
+             code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);if(code)break;
+             code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);mach_port_deallocate(mach_task_self(),service);if(code)break;
+-            if(!isfb || ldl(g2h(a+32))!=15 || incount!=1)qerror("IOKit scalar/structure needs typed adapter selector=%u",ldl(g2h(a+32)));
++            if(!isfb)qerror("IOKit table method on non-framebuffer client");
++            if(ldl(g2h(a+32))==11 && incount==3) {
++                uint32_t width=input[2];
++                if((width!=8 && width!=16 && width!=32) || (uint64_t)input[0]*input[1]*(width/8)!=bytes)qerror("unverified gamma table layout");
++                memcpy(data,g2h(a+base),bytes);
++                if(width==16)for(j=0;j<bytes/2;j++)((uint16_t *)data)[j]=lduw(g2h(a+base+j*2));
++                if(width==32)for(j=0;j<bytes/4;j++)data[j]=ldl(g2h(a+base+j*4));
++                code=((method_fn)native_iokit_symbol("_io_connect_method_scalarI_structureI"))(endpoint,11,input,incount,(char *)data,bytes);
++                fprintf(stderr,"native original gamma channels=%u count=%u width=%u bytes=%u result=%u\n",input[0],input[1],width,bytes,code);break;
++            }
++            if(ldl(g2h(a+32))!=15 || incount!=1)qerror("IOKit scalar/structure needs typed adapter selector=%u",ldl(g2h(a+32)));
+             memcpy(data,g2h(a+base),bytes);
+             /* IOFramebuffer::extSetColorConvertTable select 2 is UInt32[256];
+              * selections 0,1,3 are byte tables. Kernel validates exact sizes. */
+@@ -1294,14 +1414,21 @@
+             typedef kern_return_t (*method_fn)(mach_port_t,int,const char *,uint32_t,char *,uint32_t *);
+             typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
+             typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
+-            uint32_t output[1024]={0},outbytes,j,selector,inputbytes;uint16_t bounds[4];mach_port_t endpoint,service=0;int isfb=0;
++            uint32_t output[1024]={0},outbytes,j,selector,inputbytes;uint16_t bounds[4];mach_port_t endpoint,service=0;int isfb=0,ishid=0;
+             if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<44)qerror("invalid IOKit struct/struct request");
+             selector=ldl(g2h(a+32));inputbytes=ldl(g2h(a+36));
+-            if((selector==7 && (size!=44 || inputbytes)) || (selector==9 && (size!=52 || inputbytes!=8)) || (selector!=7 && selector!=9))qerror("IOKit struct/struct method needs typed adapter");
++            if(inputbytes>4096 || size!=44+((inputbytes+3)&~3))qerror("IOKit struct input bounds");
+             outbytes=ldl(g2h(a+40+inputbytes));if(outbytes>sizeof(output) || (outbytes&3))qerror("invalid display mode list size");
+             code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);if(code)break;
+-            code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);mach_port_deallocate(mach_task_self(),service);if(code)break;
+-            if(!isfb)qerror("mode list on non-framebuffer user client");
++            code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);if(!code)code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOHIDSystem",&ishid);mach_port_deallocate(mach_task_self(),service);if(code)break;
++            if(ishid && ((selector==6 && inputbytes==8) || (selector==4 && inputbytes==4))) {
++                for(j=0;j<inputbytes/2;j++)bounds[j]=lduw(g2h(a+40+j*2));
++                code=((method_fn)native_iokit_symbol("_io_connect_method_structureI_structureO"))(endpoint,selector,(char *)bounds,inputbytes,(char *)output,&outbytes);
++                fprintf(stderr,"native HID coordinate method=%u input=%u result=%u output=%u\n",selector,inputbytes,code,outbytes);
++                if(!code && outbytes)qerror("unexpected HID coordinate output layout");
++                if(!code){stl(answer+36,0);length=40;}break;
++            }
++            if(!isfb || !((selector==7 && !inputbytes) || (selector==9 && inputbytes==8)))qerror("IOKit struct/struct needs typed adapter selector=%u fb=%d hid=%d",selector,isfb,ishid);
+             if(selector==9) {
+                 if(outbytes)qerror("invalid framebuffer bounds output size");
+                 for(j=0;j<4;j++)bounds[j]=lduw(g2h(a+40+j*2));
+@@ -1522,14 +1649,18 @@
+         else send_refs[name]++;
+         break;
+     }
+-    case 3616: /* thread_policy: single virtual thread, POLICY_TIMESHARE */
+-        if (destination != THREAD_SELF || size != 48 ||
+-            ldl(g2h(a + 32)) != 1 || ldl(g2h(a + 36)) != 1 ||
+-            ldl(g2h(a + 40)) > 63 || ldl(g2h(a + 44)) > 1)
+-            qerror("unsupported thread_policy request");
+-        thread_base_priority = ldl(g2h(a + 40));
+-        /* Virtual priority only: there is no competing guest thread yet. */
+-        break;
++    case 3616: {
++        uint32_t base;
++        if(size!=48 || ldl(g2h(a+32))!=1 || ldl(g2h(a+36))!=1 || ldl(g2h(a+40))>63 || ldl(g2h(a+44))>1)qerror("unsupported thread_policy request");
++        base=ldl(g2h(a+40));
++#ifdef __APPLE__
++        code=thread_policy(native_name(destination),1,(policy_base_t)&base,1,ldl(g2h(a+44)));
++#else
++        if(destination!=THREAD_SELF){code=4;break;}
++#endif
++        if(!code)thread_base_priority=base;
++        break;
++    }
+     case 202: /* host_page_size */
+         if (destination != HOST_SELF) qerror("host_page_size on wrong endpoint");
+         stl(answer + 36, 4096); length = 40; break;
+@@ -1670,6 +1801,18 @@
+         qerror("host_get_io_master requires a real Darwin IOKit service");
+ #endif
+         break;
++    case 1000: {
++#ifdef __APPLE__
++        mach_timespec_t time;
++        if(destination!=SYSTEM_CLOCK_PORT || size!=24){code=4;break;}
++        if(!native_system_clock)code=host_get_clock_service(mach_host_self(),0,&native_system_clock);
++        if(!code)code=clock_get_time(native_system_clock,&time);
++        if(!code){stl(answer+36,time.tv_sec);stl(answer+40,time.tv_nsec);length=44;}
++#else
++        code=4;
++#endif
++        break;
++    }
+     case 206: /* host_get_clock_service(SYSTEM_CLOCK) */
+         if (destination != HOST_SELF || size < 36 || ldl(g2h(a + 32)) != 0)
+             qerror("unsupported host clock request");
+@@ -1718,10 +1861,104 @@
+ {
+     int32_t trap = env->gpr[0];
+     switch (trap) {
++    case -90:
++#ifdef __APPLE__
++        {
++            uint64_t deadline=((uint64_t)env->gpr[3]<<32)|env->gpr[4];kern_return_t result;
++            remaklar_gate_leave();result=mach_wait_until(deadline);remaklar_gate_enter(env);return result;
++        }
++#else
++        return 4;
++#endif
++    case -91:
++#ifdef __APPLE__
++        {
++            mach_port_t port=mk_timer_create();uint32_t guest=native_export(port);
++            if(guest && guest<4096)native_notification_kind[guest]=3;
++            return guest;
++        }
++#else
++        return 0;
++#endif
++    case -92:
++#ifdef __APPLE__
++        {
++            uint32_t guest=env->gpr[3];kern_return_t result=mk_timer_destroy(native_name(guest));
++            native_refresh(guest);return result;
++        }
++#else
++        return 4;
++#endif
++    case -93:
++#ifdef __APPLE__
++        return mk_timer_arm(native_name(env->gpr[3]),((uint64_t)env->gpr[4]<<32)|env->gpr[5]);
++#else
++        return 4;
++#endif
++    case -94:
++#ifdef __APPLE__
++        {
++            uint32_t ptr=env->gpr[4];uint64_t time=0;kern_return_t result;
++            if(ptr && !remaklar_guest_access(ptr,8,PAGE_WRITE))return KERN_INVALID_ADDRESS;
++            result=mk_timer_cancel(native_name(env->gpr[3]),ptr?&time:NULL);
++            if(!result && ptr)stq(g2h(ptr),time);return result;
++        }
++#else
++        return 4;
++#endif
++    case -62:
++#ifdef __APPLE__
++        {
++            mach_port_t clock;mach_timespec_t request,wake;uint32_t ptr=env->gpr[7];kern_return_t result;
++            if(ptr && !remaklar_guest_access(ptr,8,PAGE_WRITE))return KERN_INVALID_ADDRESS;
++            if(env->gpr[3]==SYSTEM_CLOCK_PORT) {
++                if(!native_system_clock){result=host_get_clock_service(mach_host_self(),0,&native_system_clock);if(result)return result;}
++                clock=native_system_clock;
++            } else clock=native_name(env->gpr[3]);
++            request.tv_sec=env->gpr[5];request.tv_nsec=env->gpr[6];wake.tv_sec=wake.tv_nsec=0;
++            remaklar_gate_leave();result=clock_sleep(clock,env->gpr[4],request,&wake);remaklar_gate_enter(env);
++            if(ptr && result!=KERN_INVALID_ARGUMENT && result!=KERN_FAILURE){stl(g2h(ptr),wake.tv_sec);stl(g2h(ptr+4),wake.tv_nsec);}
++            return result;
++        }
++#else
++        return 4;
++#endif
++    case -33:
++    case -34:
++    case -35:
++    case -36:
++    case -37:
++    case -38:
++    case -39:
++#ifdef __APPLE__
++        {
++            mach_port_t first=native_name(env->gpr[3]),second=native_name(env->gpr[4]);
++            kern_return_t result;mach_timespec_t time;
++            if(trap==-38){time.tv_sec=env->gpr[4];time.tv_nsec=env->gpr[5];}
++            else {time.tv_sec=env->gpr[5];time.tv_nsec=env->gpr[6];}
++            remaklar_gate_leave();
++            switch(trap) {
++            case -33:result=semaphore_signal(first);break;
++            case -34:result=semaphore_signal_all(first);break;
++            case -35:result=semaphore_signal_thread(first,second);break;
++            case -36:result=semaphore_wait(first);break;
++            case -37:result=semaphore_wait_signal(first,second);break;
++            case -38:result=semaphore_timedwait(first,time);break;
++            default:result=semaphore_timedwait_signal(first,second,time);break;
++            }
++            remaklar_gate_enter(env);return result;
++        }
++#else
++        return 4;
++#endif
+     case -61: /* thread_switch: hand off to the actual native scheduler. */
+ #ifdef __APPLE__
+         if(env->gpr[3])return 4; /* No cross-task native thread capability yet. */
+-        return thread_switch(MACH_PORT_NULL,env->gpr[4],env->gpr[5]);
++        {
++            kern_return_t result;remaklar_gate_leave();
++            result=thread_switch(MACH_PORT_NULL,env->gpr[4],env->gpr[5]);
++            remaklar_gate_enter(env);return result;
++        }
+ #else
+         return 4;
+ #endif
+@@ -1730,8 +1967,8 @@
+             stl(g2h(env->gpr[3]), 1); stl(g2h(env->gpr[3] + 4), 1);
+         }
+         return 0;
+-    case 0x7ff1: thread_self_pointer = env->gpr[3]; return env->gpr[3];
+-    case 0x7ff2: return thread_self_pointer;
++    case 0x7ff1: env->rm_self_pointer = env->gpr[3]; return env->gpr[3];
++    case 0x7ff2: return env->rm_self_pointer;
+     /* Conservatively preserve FPRs across dyld initializers. PPC750 has no
+      * vector unit. XNU ppc/thread_act.h: floatUsed = 1 << (31 - 1). */
+     case 0x7ff3: return 0x40000000;
+@@ -1746,7 +1983,7 @@
+ #else
+         return next_reply++;
+ #endif
+-    case -27: send_refs[THREAD_SELF]++; return THREAD_SELF;
++    case -27: return rm_thread_right();
+     case -28: send_refs[TASK_SELF]++; return TASK_SELF;
+     case -29: send_refs[HOST_SELF]++; return HOST_SELF;
+     case -31:
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -76,7 +76,13 @@
+             }
+         }
+     }
+-    kr=mach_msg(h,options|MACH_SEND_INTERRUPT|MACH_RCV_INTERRUPT,send,cap,native_name(env->gpr[7]),env->gpr[8],native_name(env->gpr[9]));
++    {
++        mach_port_t receive=native_name(env->gpr[7]),notify=native_name(env->gpr[9]);
++        remaklar_gate_leave();
++        kr=mach_msg(h,options|MACH_SEND_INTERRUPT|MACH_RCV_INTERRUPT,send,cap,receive,env->gpr[8],notify);
++        remaklar_gate_enter(env);
++    }
++    if(kr)fprintf(stderr,"native Mach message error=%x options=%x send=%u receive=%u\n",kr,options,send,cap);
+     for(i=0;i<touched;i++)native_refresh(ports[i]);
+     if(!kr && (options&MACH_RCV_MSG)) {
+         uint32_t length=h->msgh_size,remote,local;
+@@ -103,6 +109,11 @@
+         }
+         stl(buffer,h->msgh_bits);stl(buffer+4,length);stl(buffer+8,remote);stl(buffer+12,local);
+         stl(buffer+16,h->msgh_reserved);stl(buffer+20,h->msgh_id);
++        if(local<4096 && native_notification_kind[local]==3) {
++            unsigned j;
++            if(length!=48 || (h->msgh_bits&MACH_MSGH_BITS_COMPLEX))qerror("unexpected native mk_timer message layout");
++            for(j=24;j<48;j+=8){uint64_t value;memcpy(&value,buffer+j,8);stq(buffer+j,value);}
++        }
+         memcpy(g2h(out),buffer,length);
+         fprintf(stderr,"native Mach receive port=%x bytes=%u id=%u\n",local,length,ldl(g2h(out+20)));
+     }
+@@ -127,9 +138,13 @@
+     if(id==3810 || id==3803 || id==3804) {
+         uint32_t address=ldl(g2h(a+32)),bytes=ldl(g2h(a+36)),page,end;
+         if(size!=(id==3803?48:44))qerror("invalid vm sync/protect wire");
+-        if((uint64_t)address+bytes>0xc0000000ULL){*code=KERN_INVALID_ADDRESS;return 1;}
++        if((uint64_t)address+bytes>0xfffff000ULL){*code=KERN_INVALID_ADDRESS;return 1;}
+         end=TARGET_PAGE_ALIGN(address+bytes);
+         for(page=address&~4095U;page<end;page+=4096)if(!(page_get_flags(page)&PAGE_VALID)){*code=KERN_INVALID_ADDRESS;return 1;}
++        if(id==3803 && address>=0xc0000000U) {
++            if(ldl(g2h(a+40))){*code=KERN_NOT_SUPPORTED;return 1;}
++            *code=target_mprotect(address,bytes,ldl(g2h(a+44)))?KERN_INVALID_ADDRESS:0;return 1;
++        }
+         if(id==3810)kr=vm_msync(mach_task_self(),(vm_address_t)g2h(address),bytes,ldl(g2h(a+40)));
+         else if(id==3804)kr=vm_inherit(mach_task_self(),(vm_address_t)g2h(address),bytes,ldl(g2h(a+40)));
+         else {
+@@ -144,7 +159,7 @@
+         if(size!=68 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19)qerror("invalid memory entry64 wire");
+         bytes=ldq(g2h(a+48));offset=ldq(g2h(a+56));parent=native_name(ldl(g2h(a+28)));
+         if(!parent && bytes && (offset>0xffffffffULL || bytes>0xffffffffULL || !remaklar_guest_access(offset,bytes,PAGE_READ))){*code=KERN_INVALID_ADDRESS;return 1;}
+-        kr=mach_make_memory_entry_64(mach_task_self(),&bytes,offset,ldl(g2h(a+64)),&port,parent);
++        kr=mach_make_memory_entry_64(mach_task_self(),&bytes,parent?offset:(unsigned long long)(uintptr_t)g2h(offset),ldl(g2h(a+64)),&port,parent);
+         if(!kr){uint32_t guest=native_export(port);/* A named entry of an i386 IOKit pmap mapping does not
+              * share its physical backing (native bidirectional probe). Never
+              * attach the device ABI to the unrelated VM object. */
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -14,6 +14,7 @@
+         if(a<remaklar_live_min)remaklar_live_min=a;
+         if(b>remaklar_live_max)remaklar_live_max=b;
+     }
++    for(i=0;i<16;i++)if(rm_high_regions[i].bytes){remaklar_live_max=0xffffffffU;break;}
+     if(!!prior!=!!remaklar_live_max && global_env)tb_flush(global_env);
+ }
+ 
+@@ -51,8 +52,13 @@
+                  * Until event-union semantics are validated, only these two
+                  * words can be touched; no fabricated event data. */
+                 unsigned entry=(pos-224)/84,within=(pos-224)%84;
+-                if(entry>=240 || within>=8)return 0;
+-                n=4;start=8+224+entry*84;pos=within;
++                if(entry>=240 || within>=36)return 0;
++                /* NXEQElement next/sema + NXEvent type, int coordinates,
++                 * uint64 time (i386 ABI aligns it to 4), flags and window.
++                 * Event data union still requires a validated active type. */
++                start=8+224+entry*84;
++                if(within>=20 && within<28){start+=20;pos=within-20;n=8;}
++                else {n=4;pos=within;}
+             }
+         }
+         f->offset=start+(pos/n)*n;f->size=n;return n!=0;
+@@ -70,6 +76,13 @@
+         unsigned pos=address-native_iomappings[i].address;
+         if(!remaklar_guest_access(address,n,write?PAGE_WRITE:PAGE_READ))qerror("live shared memory protection violation address=%lx",(unsigned long)address);
+         if(!live_field(live_kind[i],pos,f))qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
++        /* Compose only adjacent declared fields, never select a union by
++         * instruction width. A pair of shorts remains one atomic host word. */
++        if(n>=4 && !(pos&3) && f->offset==pos && f->kind==RM_NUMBER && (f->size==1 || f->size==2)) {
++            struct rm_field next;unsigned j,unit=f->size,good=1;
++            for(j=unit;j<4;j+=unit)if(!live_field(live_kind[i],pos+j,&next) || next.offset!=pos+j || next.size!=unit || next.kind!=RM_NUMBER)good=0;
++            if(good){f->size=4;f->kind=unit==2?RM_PAIR16:RM_BYTES;}
++        }
+         v->base=(volatile unsigned char *)(uintptr_t)native_iomappings[i].address;
+         v->bytes=native_iomappings[i].bytes;v->fields=f;v->count=1;
+         v->writable=remaklar_guest_access(address,n,PAGE_WRITE);*offset=pos;return 1;
+@@ -84,7 +97,7 @@
+         int error;
+         /* lfd/stfd may span two pixels. Each pixel is a native uint32,
+          * not half of a native uint64. PPC does not require an atomic pair. */
+-        if(n==8 && f.size==4 && off>=236 && f.kind==RM_NUMBER && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
++        if(n==8 && f.size==4 && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
+             uint64_t hi=remaklar_live_load(address,4);
+             return (hi<<32)|remaklar_live_load(address+4,4);
+         }
+@@ -92,6 +105,10 @@
+         if(error)qerror("live shared read unsupported offset=%u width=%u errno=%d",off,n,error);
+         return x;
+     }
++    if(address>=0xc0000000U) {
++        if(!rm_high_contains(address,n) || !remaklar_guest_access(address,n,PAGE_READ))qerror("high read protection address=%lx bytes=%u",(unsigned long)address,n);
++        address=rm_high_host(address);
++    } else if(rm_high_backing(address,n))qerror("guest access to private high backing");
+     switch(n) {
+     case 1:return ldub_p((void *)address);
+     case 2:return lduw_be_p((void *)address);
+@@ -106,7 +123,7 @@
+     struct rm_view v;struct rm_field f;unsigned off;
+     if(live_view(address,n,1,&v,&f,&off)) {
+         int error;
+-        if(n==8 && f.size==4 && off>=236 && f.kind==RM_NUMBER && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
++        if(n==8 && f.size==4 && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
+             remaklar_live_store(address,4,x>>32);
+             remaklar_live_store(address+4,4,x);
+             return;
+@@ -115,6 +132,10 @@
+         if(error)qerror("live shared write unsupported offset=%u width=%u errno=%d",off,n,error);
+         return;
+     }
++    if(address>=0xc0000000U) {
++        if(!rm_high_contains(address,n) || !remaklar_guest_access(address,n,PAGE_WRITE))qerror("high write protection address=%lx bytes=%u",(unsigned long)address,n);
++        address=rm_high_host(address);
++    } else if(rm_high_backing(address,n))qerror("guest access to private high backing");
+     switch(n) {
+     case 1:stb_p((void *)address,x);return;
+     case 2:stw_be_p((void *)address,x);return;
+@@ -132,6 +153,10 @@
+         if(error)qerror("live shared atomic unsupported offset=%u errno=%d",off,error);
+         return ok;
+     }
++    if(address>=0xc0000000U) {
++        if(!rm_high_contains(address,4) || !remaklar_guest_access(address,4,PAGE_READ|PAGE_WRITE))qerror("high atomic protection");
++        address=rm_high_host(address);
++    } else if(rm_high_backing(address,4))qerror("guest atomic to private high backing");
+     return cas((volatile rm_u32 *)(uintptr_t)address,bswap32(old),bswap32(value))==bswap32(old);
+ }
+ 
+@@ -165,3 +190,25 @@
+     }
+     live_bounds();
+ }
++
++/* Raw helpers also access host-owned MIG/loader buffers. In Linux i386
++ * those buffers may live above the Darwin guest user ceiling. They are not
++ * guest high addresses; TCG always calls the strict guest entrypoints. */
++uint64_t remaklar_host_load(uintptr_t address,unsigned bytes)
++{
++ uintptr_t guest=rm_high_guest(address);
++ if(guest==address && address>=0xc0000000U) {
++  switch(bytes){case 1:return ldub_p((void *)address);case 2:return lduw_be_p((void *)address);case 4:return (uint32_t)ldl_be_p((void *)address);case 8:return ldq_be_p((void *)address);}
++  qerror("invalid raw host load width");
++ }
++ return remaklar_live_load(guest,bytes);
++}
++void remaklar_host_store(uintptr_t address,unsigned bytes,uint64_t value)
++{
++ uintptr_t guest=rm_high_guest(address);
++ if(guest==address && address>=0xc0000000U) {
++  switch(bytes){case 1:stb_p((void *)address,value);return;case 2:stw_be_p((void *)address,value);return;case 4:stl_be_p((void *)address,value);return;case 8:stq_be_p((void *)address,value);return;}
++  qerror("invalid raw host store width");
++ }
++ remaklar_live_store(guest,bytes,value);
++}
+--- a/darwin-user/remaklar/typed-live.c
++++ b/darwin-user/remaklar/typed-live.c
+@@ -70,7 +70,7 @@
+         if(pos>=f->offset && pos-f->offset<f->size && n<=f->size-(pos-f->offset)) {
+             if((f->size!=1 && f->size!=2 && f->size!=4 && f->size!=8) ||
+                f->offset%(f->size==8?4:f->size) || f->offset>v->bytes || f->size>v->bytes-f->offset ||
+-               (f->kind!=RM_NUMBER && (f->kind!=RM_HID_BITS || f->size!=4)))return 0;
++               (f->kind!=RM_NUMBER && !(f->kind==RM_HID_BITS && f->size==4) && !(f->kind==RM_PAIR16 && f->size==4) && !(f->kind==RM_BYTES && (f->size==2 || f->size==4 || f->size==8))))return 0;
+             return f;
+         }
+     }
+@@ -81,11 +81,14 @@
+ {
+     /* PPC's first declared bitfield occupies the MSBs, i386's the LSBs. */
+     if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x>>27)|((rm_u32)x<<5));
++    if(f->kind==RM_PAIR16)return (rm_u32)(((rm_u32)x>>16)|((rm_u32)x<<16));
++    if(f->kind==RM_BYTES){rm_u64 result=0;unsigned i;for(i=0;i<f->size;i++){result=(result<<8)|(x&255);x>>=8;}return result;}
+     return x;
+ }
+ static rm_u64 physical(const struct rm_field *f,rm_u64 x)
+ {
+     if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x<<27)|((rm_u32)x>>5));
++    if(f->kind==RM_PAIR16 || f->kind==RM_BYTES)return logical(f,x);
+     return x;
+ }
+ 
+--- a/darwin-user/remaklar/typed-live.h
++++ b/darwin-user/remaklar/typed-live.h
+@@ -3,7 +3,7 @@
+ #define RM_TYPED_LIVE_H
+ typedef unsigned int rm_u32;
+ typedef unsigned long long rm_u64;
+-enum { RM_NUMBER = 0, RM_HID_BITS = 1 };
++enum { RM_NUMBER = 0, RM_HID_BITS = 1, RM_PAIR16 = 2, RM_BYTES = 3 };
+ struct rm_field { unsigned offset, size, kind; };
+ struct rm_view {
+     volatile unsigned char *base;
+--- a/target-ppc/cpu.h
++++ b/target-ppc/cpu.h
+@@ -557,6 +557,7 @@
+     target_ulong xer;
+     /* Reservation address */
+     target_ulong reserve;
++    uint32_t rm_reserved_value,rm_self_pointer,rm_quantum;
+ 
+     /* Those ones are used in supervisor mode only */
+     /* machine state register */
+--- a/darwin-user/qemu.h
++++ b/darwin-user/qemu.h
+@@ -106,6 +106,15 @@
+ 
+ extern CPUState *global_env;
+ void cpu_loop(CPUState *env);
++#ifdef REMAKLAR_BOOTSTRAP
++void remaklar_gate_enter(CPUState *);
++void remaklar_gate_leave(void);
++void remaklar_gate_yield(void);
++long remaklar_high_map(uint32_t,uint32_t,int,int,int,uint32_t);
++int remaklar_high_unmap(uint32_t,uint32_t);
++int remaklar_high_protect(uint32_t,uint32_t,int);
++int remaklar_high_backing(uintptr_t,uint32_t);
++#endif
+ void init_paths(const char *prefix);
+ const char *path(const char *pathname);
+ 
+--- a/darwin-user/mmap.c
++++ b/darwin-user/mmap.c
+@@ -44,6 +44,10 @@
+            prot & PROT_EXEC ? 'x' : '-');
+ #endif
+ 
++#ifdef REMAKLAR_BOOTSTRAP
++    if(start>=0xc0000000UL)return remaklar_high_protect(start,TARGET_PAGE_ALIGN(len),prot);
++    if(remaklar_high_backing(start,TARGET_PAGE_ALIGN(len))){errno=EINVAL;return -1;}
++#endif
+     if ((start & ~TARGET_PAGE_MASK) != 0)
+         return -EINVAL;
+     len = TARGET_PAGE_ALIGN(len);
+@@ -191,6 +195,10 @@
+     }
+ #endif
+ 
++#ifdef REMAKLAR_BOOTSTRAP
++    if(start>=0xc0000000UL && (flags&MAP_FIXED))return remaklar_high_map(start,TARGET_PAGE_ALIGN(len),prot,flags,fd,offset);
++    if((flags&MAP_FIXED) && remaklar_high_backing(start,TARGET_PAGE_ALIGN(len))){errno=EINVAL;return -1;}
++#endif
+     if (offset & ~TARGET_PAGE_MASK)
+         return -EINVAL;
+ 
+@@ -329,6 +337,10 @@
+ #ifdef DEBUG_MMAP
+     printf("munmap: start=0x%lx len=0x%lx\n", start, len);
+ #endif
++#ifdef REMAKLAR_BOOTSTRAP
++    if(start>=0xc0000000UL)return remaklar_high_unmap(start,TARGET_PAGE_ALIGN(len));
++    if(remaklar_high_backing(start,TARGET_PAGE_ALIGN(len))){errno=EINVAL;return -1;}
++#endif
+     if (start & ~TARGET_PAGE_MASK)
+         return -EINVAL;
+     len = TARGET_PAGE_ALIGN(len);
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -239,6 +239,7 @@
+ {
+     int trap;
+     for (;;) {
++        remaklar_gate_enter(env);
+         remaklar_deliver_signals(env);
+         trap = cpu_exec(env);
+         switch (trap) {
+@@ -268,6 +269,7 @@
+             qerror("unsupported PPC exception %x pc=%08x", trap,
+                    (unsigned)env->nip);
+         }
++        remaklar_gate_yield();
+     }
+ }
+ 
+--- /dev/null
++++ b/darwin-user/remaklar/threads.inc
+@@ -0,0 +1,107 @@
++/* Native scheduling with one serialized TCG execution context at a time.
++ * Mach waits release the execution gate; every 64 TBs yields even in PPC spin.
++ * SPDX-License-Identifier: GPL-2.0-or-later */
++#ifdef __APPLE__
++#include <pthread.h>
++#include <sched.h>
++struct rm_thread_context {
++ CPUState *cpu;pthread_t thread;mach_port_t host;uint32_t guest;
++ pthread_mutex_t ready_lock;pthread_cond_t ready;int started,live;
++};
++static pthread_mutex_t rm_gate=PTHREAD_MUTEX_INITIALIZER;
++static pthread_key_t rm_thread_key;
++static pthread_once_t rm_thread_once=PTHREAD_ONCE_INIT;
++static struct rm_thread_context rm_threads[64];
++static void rm_thread_key_init(void){if(pthread_key_create(&rm_thread_key,NULL))qerror("thread key allocation");}
++void remaklar_gate_enter(CPUState *cpu)
++{
++ struct rm_thread_context *t;
++ pthread_once(&rm_thread_once,rm_thread_key_init);
++ pthread_mutex_lock(&rm_gate);
++ t=pthread_getspecific(rm_thread_key);
++ if(!t) {
++  t=&rm_threads[0];t->cpu=cpu;t->thread=pthread_self();t->live=1;
++  pthread_setspecific(rm_thread_key,t);
++ }
++ global_env=cpu;
++}
++void remaklar_gate_leave(void){
++ struct rm_thread_context *t=pthread_getspecific(rm_thread_key);
++ if(t && t->cpu)t->cpu->reserve=(target_ulong)-1;
++ pthread_mutex_unlock(&rm_gate);
++}
++void remaklar_gate_yield(void){remaklar_gate_leave();sched_yield();}
++static int rm_is_thread(uint32_t guest)
++{
++ unsigned i;
++ for(i=0;i<64;i++)if(rm_threads[i].live && rm_threads[i].guest==guest && guest)return 1;
++ return 0;
++}
++static uint32_t rm_thread_right(void)
++{
++ struct rm_thread_context *t=pthread_getspecific(rm_thread_key);
++ mach_port_t host=mach_thread_self();uint32_t guest=native_export(host);
++ t->host=host;t->guest=guest;return guest;
++}
++static void *rm_thread_start(void *arg)
++{
++ struct rm_thread_context *t=arg;
++ pthread_setspecific(rm_thread_key,t);
++ pthread_mutex_lock(&t->ready_lock);
++ t->host=mach_thread_self();t->started=1;
++ pthread_cond_signal(&t->ready);pthread_mutex_unlock(&t->ready_lock);
++ cpu_loop(t->cpu);return NULL;
++}
++static uint32_t rm_thread_create(CPUState *parent,uint32_t state,uint32_t *guest)
++{
++ unsigned i,j;int error;CPUState *cpu;struct rm_thread_context *t;
++ for(i=1;i<64 && rm_threads[i].cpu;i++);
++ if(i==64)return KERN_RESOURCE_SHORTAGE;
++ if(!remaklar_guest_access(ldl(g2h(state)),4,PAGE_EXEC) ||
++    !remaklar_guest_access(ldl(g2h(state+12))-16,16,PAGE_WRITE))return KERN_INVALID_ADDRESS;
++ cpu=cpu_copy(parent);if(!cpu)return KERN_RESOURCE_SHORTAGE;
++ cpu->nip=ldl(g2h(state));
++ for(j=0;j<32;j++)cpu->gpr[j]=ldl(g2h(state+8+j*4));
++ for(j=0;j<8;j++)cpu->crf[j]=(ldl(g2h(state+136))>>(28-j*4))&15;
++ cpu->xer=ldl(g2h(state+140));cpu->lr=ldl(g2h(state+144));cpu->ctr=ldl(g2h(state+148));
++ cpu->reserve=(target_ulong)-1;cpu->rm_reserved_value=0;cpu->rm_self_pointer=0;cpu->rm_quantum=0;
++ cpu->exception_index=-1;cpu->interrupt_request=0;cpu->exit_request=0;
++ t=rm_threads+i;memset(t,0,sizeof(*t));t->cpu=cpu;
++ pthread_mutex_init(&t->ready_lock,NULL);pthread_cond_init(&t->ready,NULL);
++ pthread_mutex_lock(&t->ready_lock);
++ error=pthread_create(&t->thread,NULL,rm_thread_start,t);
++ if(error){pthread_mutex_unlock(&t->ready_lock);return KERN_RESOURCE_SHORTAGE;}
++ while(!t->started)pthread_cond_wait(&t->ready,&t->ready_lock);
++ pthread_mutex_unlock(&t->ready_lock);
++ t->guest=native_export(t->host);t->live=1;*guest=t->guest;
++ pthread_detach(t->thread);
++ fprintf(stderr,"real PPC thread created guest=%x host=%u pc=%x sp=%x\n",*guest,t->host,(unsigned)cpu->nip,(unsigned)cpu->gpr[1]);
++ return 0;
++}
++static void rm_thread_exit(CPUState *cpu,uint32_t destination)
++{
++ struct rm_thread_context *t=pthread_getspecific(rm_thread_key);
++ if(!t || t->cpu!=cpu || t->guest!=destination)qerror("thread termination context mismatch");
++ t->live=0;cpu->reserve=(target_ulong)-1;
++ fprintf(stderr,"real PPC thread terminating guest=%x\n",t->guest);
++ remaklar_gate_leave();pthread_exit(NULL);
++}
++static void rm_threads_fork_child(CPUState *cpu)
++{
++ pthread_mutex_t fresh=PTHREAD_MUTEX_INITIALIZER;
++ struct rm_thread_context *t;
++ memcpy(&rm_gate,&fresh,sizeof(fresh));pthread_mutex_lock(&rm_gate);
++ memset(rm_threads,0,sizeof(rm_threads));t=&rm_threads[0];
++ t->cpu=cpu;t->thread=pthread_self();t->live=1;pthread_setspecific(rm_thread_key,t);
++ cpu->next_cpu=NULL;first_cpu=cpu;global_env=cpu;cpu->reserve=(target_ulong)-1;
++}
++#else
++void remaklar_gate_enter(CPUState *cpu){global_env=cpu;}
++void remaklar_gate_leave(void){}
++void remaklar_gate_yield(void){}
++static int rm_is_thread(uint32_t guest){return 0;}
++static uint32_t rm_thread_right(void){send_refs[THREAD_SELF]++;return THREAD_SELF;}
++static uint32_t rm_thread_create(CPUState *p,uint32_t s,uint32_t *g){return 4;}
++static void rm_thread_exit(CPUState *cpu,uint32_t destination){qerror("native threads require Darwin");}
++static void rm_threads_fork_child(CPUState *cpu){}
++#endif
+--- /dev/null
++++ b/darwin-user/remaklar/high-window.c
+@@ -0,0 +1,100 @@
++/* No high host addresses and no data copies. Native mmap owns the backing.
++ * Holes retain PROT_NONE reservations, so MAP_FIXED cannot overwrite a host
++ * allocation subsequently placed into a freed interior page.
++ * SPDX-License-Identifier: MIT */
++#include "high-window.h"
++#include <sys/mman.h>
++#include <errno.h>
++#include <string.h>
++#include <stdlib.h>
++struct rm_high_region rm_high_regions[16];
++void (*rm_high_changed)(uint32_t,uint32_t,int);
++static int valid(uint32_t addr,uint32_t bytes)
++{
++ return addr>=0xc0000000U && !(addr&4095) && bytes && !(bytes&4095) &&
++        (uint64_t)addr+bytes<=0x100000000ULL;
++}
++static struct rm_high_region *region(uint32_t a,uint32_t n)
++{
++ unsigned i;
++ for(i=0;i<16;i++)if(rm_high_regions[i].bytes && a>=rm_high_regions[i].guest &&
++   (uint64_t)a+n<=(uint64_t)rm_high_regions[i].guest+rm_high_regions[i].bytes)return rm_high_regions+i;
++ return 0;
++}
++uintptr_t rm_high_host(uintptr_t a)
++{
++ struct rm_high_region *r=a<=0xffffffffU?region(a,1):0;
++ return r?r->host+(a-r->guest):a;
++}
++uintptr_t rm_high_guest(uintptr_t a)
++{
++ unsigned i;
++ for(i=0;i<16;i++)if(rm_high_regions[i].bytes && a>=rm_high_regions[i].host &&
++  a-rm_high_regions[i].host<rm_high_regions[i].bytes)return rm_high_regions[i].guest+(a-rm_high_regions[i].host);
++ return a;
++}
++int rm_high_backing(uintptr_t a,uint32_t n)
++{
++ unsigned i;
++ for(i=0;i<16;i++)if(rm_high_regions[i].bytes && (uint64_t)a+n>rm_high_regions[i].host &&
++  a<(uint64_t)rm_high_regions[i].host+rm_high_regions[i].bytes)return 1;
++ return 0;
++}
++int rm_high_contains(uint32_t a,uint32_t n)
++{
++ struct rm_high_region *r=region(a,n);unsigned first,last,i;
++ if(!r || !n)return 0;
++ first=(a-r->guest)/4096;last=(a-r->guest+n-1)/4096;
++ for(i=first;i<=last;i++)if(!r->mapped[i])return 0;
++ return 1;
++}
++long rm_high_map(uint32_t a,uint32_t n,int prot,int flags,int fd,uint32_t off)
++{
++ struct rm_high_region *r;unsigned i;void *p;int fresh=0;
++ if(!valid(a,n) || !(flags&MAP_FIXED) || (off&4095)){errno=EINVAL;return -1;}
++ /* Executable high pages require additional TB/SMC verification. */
++ if(prot&PROT_EXEC){errno=ENOTSUP;return -1;}
++ r=region(a,n);
++ if(!r) {
++  for(i=0;i<16;i++)if(rm_high_regions[i].bytes && (uint64_t)a+n>rm_high_regions[i].guest &&
++   a<(uint64_t)rm_high_regions[i].guest+rm_high_regions[i].bytes){errno=EINVAL;return -1;}
++  for(i=0;i<16 && rm_high_regions[i].bytes;i++);
++  if(i==16){errno=ENOMEM;return -1;}
++  p=mmap((void *)(uintptr_t)(0x50000000U+i*0x04000000U),n,PROT_NONE,MAP_PRIVATE|MAP_ANONYMOUS,-1,0);
++  if(p==MAP_FAILED)return -1;
++  if((uintptr_t)p<4096 || (uint64_t)(uintptr_t)p+n>0xc0000000ULL){munmap(p,n);errno=ENOMEM;return -1;}
++  r=rm_high_regions+i;
++  r->mapped=calloc(n/4096,1);
++  if(!r->mapped){munmap(p,n);errno=ENOMEM;return -1;}
++  r->guest=a;r->bytes=n;r->host=(uintptr_t)p;fresh=1;
++ }
++ p=mmap((void *)(r->host+(a-r->guest)),n,prot,flags,fd,off);
++ if(p==MAP_FAILED) {
++  if(fresh){munmap((void *)r->host,n);free(r->mapped);memset(r,0,sizeof(*r));}
++  return -1;
++ }
++ memset(r->mapped+(a-r->guest)/4096,1,n/4096);
++ if(rm_high_changed)rm_high_changed(a,n,prot);
++ return (long)a;
++}
++int rm_high_unmap(uint32_t a,uint32_t n)
++{
++ struct rm_high_region *r=region(a,n);int result;
++ if(!valid(a,n) || !r){errno=EINVAL;return -1;}
++ if(a==r->guest && n==r->bytes) {
++  result=munmap((void *)r->host,n);if(result)return result;free(r->mapped);memset(r,0,sizeof(*r));
++ } else if(mmap((void *)(r->host+(a-r->guest)),n,PROT_NONE,MAP_FIXED|MAP_PRIVATE|MAP_ANONYMOUS,-1,0)==MAP_FAILED)return -1;
++ if(r->bytes)memset(r->mapped+(a-r->guest)/4096,0,n/4096);
++ if(rm_high_changed)rm_high_changed(a,n,-1);
++ return 0;
++}
++int rm_high_protect(uint32_t a,uint32_t n,int prot)
++{
++ struct rm_high_region *r=region(a,n);
++ if(!valid(a,n) || !r){errno=EINVAL;return -1;}
++ if(!rm_high_contains(a,n)){errno=ENOMEM;return -1;}
++ if(prot&PROT_EXEC){errno=ENOTSUP;return -1;}
++ if(mprotect((void *)(r->host+(a-r->guest)),n,prot))return -1;
++ if(rm_high_changed)rm_high_changed(a,n,prot);
++ return 0;
++}
+--- /dev/null
++++ b/darwin-user/remaklar/high-window.h
+@@ -0,0 +1,20 @@
++/* Bounded guest-high / host-low windows. SPDX-License-Identifier: MIT */
++#ifndef RM_HIGH_WINDOW_H
++#define RM_HIGH_WINDOW_H
++#include <sys/types.h>
++#include <stdint.h>
++#include <sys/mman.h>
++#ifndef MAP_ANONYMOUS
++#define MAP_ANONYMOUS MAP_ANON
++#endif
++struct rm_high_region { uint32_t guest,bytes;uintptr_t host;unsigned char *mapped; };
++extern struct rm_high_region rm_high_regions[16];
++extern void (*rm_high_changed)(uint32_t,uint32_t,int);
++uintptr_t rm_high_host(uintptr_t);
++uintptr_t rm_high_guest(uintptr_t);
++int rm_high_backing(uintptr_t,uint32_t);
++int rm_high_contains(uint32_t,uint32_t);
++long rm_high_map(uint32_t,uint32_t,int,int,int,uint32_t);
++int rm_high_unmap(uint32_t,uint32_t);
++int rm_high_protect(uint32_t,uint32_t,int);
++#endif

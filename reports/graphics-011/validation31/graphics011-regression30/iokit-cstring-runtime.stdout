@@ -1,0 +1,3 @@
+cstring offset=0 real_iterator=1
+cstring offset=12345678 real_iterator=1
+IOKit real c_string reserved word accepted OK

@@ -1,0 +1,26 @@
+patching file cpu-all.h
+patching file target-ppc/translate.c
+patching file target-ppc/helper.h
+patching file target-ppc/op_helper.c
+patching file darwin-user/remaklar/darwin-kernel.c
+patching file darwin-user/remaklar/mach-native.inc
+patching file darwin-user/remaklar/live-regions.inc
+patching file darwin-user/remaklar/typed-live.c
+patching file darwin-user/remaklar/typed-live.h
+patching file cpu-all.h
+patching file target-ppc/translate.c
+patching file target-ppc/helper.h
+patching file target-ppc/op_helper.c
+patching file darwin-user/remaklar/darwin-kernel.c
+patching file darwin-user/remaklar/mach-native.inc
+patching file darwin-user/remaklar/live-regions.inc
+patching file darwin-user/remaklar/typed-live.c
+patching file darwin-user/remaklar/typed-live.h
+patching file target-ppc/cpu.h
+patching file darwin-user/qemu.h
+patching file darwin-user/mmap.c
+patching file darwin-user/remaklar/bootstrap-main.c
+patching file darwin-user/remaklar/threads.inc
+patching file darwin-user/remaklar/high-window.c
+patching file darwin-user/remaklar/high-window.h
+All 16 files match manifest and the source payload compiled in native run26.

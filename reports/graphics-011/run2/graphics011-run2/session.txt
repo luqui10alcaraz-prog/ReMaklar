@@ -1,0 +1,26 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt"; mount -t msdos /dev/disk1 /exchange; cd /var/tmp; gnutar czf /exchange/stage112.tgz graphics011-run2/*.txt graphics011-run2/*.status graphics011-run2/*.stdout graphics011-run2/*.stderr graphics011-run2/*.command;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run2/source
++ ln -s /var/tmp/graphics011-run1/build /var/tmp/graphics011-run2/build
++ cp /var/tmp/graphics011-stage2/source/cpu-all.h /var/tmp/graphics011-run2/source/cpu-all.h
++ cp /var/tmp/graphics011-stage2/source/target-ppc/translate.c /var/tmp/graphics011-run2/source/target-ppc/translate.c
++ cp /var/tmp/graphics011-stage2/source/target-ppc/helper.h /var/tmp/graphics011-run2/source/target-ppc/helper.h
++ cp /var/tmp/graphics011-stage2/source/target-ppc/op_helper.c /var/tmp/graphics011-run2/source/target-ppc/op_helper.c
++ cp /var/tmp/graphics011-stage2/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run2/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage2/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run2/source/darwin-user/remaklar/live-regions.inc
++ cp /var/tmp/graphics011-stage2/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run2/source/darwin-user/remaklar/typed-live.c
++ cp /var/tmp/graphics011-stage2/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run2/source/darwin-user/remaklar/typed-live.h
++ rm -f /var/tmp/graphics011-run2/build/ppc-darwin-user/darwin-kernel.o /var/tmp/graphics011-run2/build/ppc-darwin-user/translate.o /var/tmp/graphics011-run2/build/ppc-darwin-user/op_helper.o
++ make -C /var/tmp/graphics011-run2/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run2/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run2/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run2/qemu-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage2/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run2/shared-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage2/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run2/shared-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run2/shared-native /var/tmp/graphics011-run2/shared-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run2/shared-jaguar /var/tmp/graphics011-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run2/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run2/windowserver /var/tmp/graphics011-run2/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ status=0
++ echo script_exit=0
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage112.tgz graphics011-run2/build.txt graphics011-run2/script-status.txt graphics011-run2/session.txt graphics011-run2/shared-i386-build.txt graphics011-run2/shared-ppc-build.txt graphics011-run2/shared-jaguar.status graphics011-run2/shared-native.status graphics011-run2/windowserver.status graphics011-run2/shared-jaguar.stdout graphics011-run2/shared-native.stdout graphics011-run2/windowserver.stdout graphics011-run2/shared-jaguar.stderr graphics011-run2/shared-native.stderr graphics011-run2/windowserver.stderr graphics011-run2/shared-jaguar.command graphics011-run2/shared-native.command graphics011-run2/windowserver.command

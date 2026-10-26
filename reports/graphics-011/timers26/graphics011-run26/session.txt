@@ -1,0 +1,48 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/stage136.tgz graphics011-run26/*.txt graphics011-run26/*.status graphics011-run26/*.stdout graphics011-run26/*.stderr;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run26/source
++ cp -Rp /var/tmp/graphics011-run24/build /var/tmp/graphics011-run26/build
++ cmp -s /var/tmp/graphics011-stage26/source/cpu-all.h /var/tmp/graphics011-run26/source/cpu-all.h
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/mmap.c /var/tmp/graphics011-run26/source/darwin-user/mmap.c
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run26/source/darwin-user/remaklar/high-window.c
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run26/source/darwin-user/remaklar/high-window.h
++ cmp -s /var/tmp/graphics011-stage26/source/target-ppc/cpu.h /var/tmp/graphics011-run26/source/target-ppc/cpu.h
++ cmp -s /var/tmp/graphics011-stage26/source/target-ppc/translate.c /var/tmp/graphics011-run26/source/target-ppc/translate.c
++ cmp -s /var/tmp/graphics011-stage26/source/target-ppc/helper.h /var/tmp/graphics011-run26/source/target-ppc/helper.h
++ cmp -s /var/tmp/graphics011-stage26/source/target-ppc/op_helper.c /var/tmp/graphics011-run26/source/target-ppc/op_helper.c
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run26/source/darwin-user/remaklar/bootstrap-main.c
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/qemu.h /var/tmp/graphics011-run26/source/darwin-user/qemu.h
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run26/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage26/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run26/source/darwin-user/remaklar/darwin-kernel.c
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run26/source/darwin-user/remaklar/mach-native.inc
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run26/source/darwin-user/remaklar/live-regions.inc
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run26/source/darwin-user/remaklar/typed-live.c
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run26/source/darwin-user/remaklar/typed-live.h
++ cmp -s /var/tmp/graphics011-stage26/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run26/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run26/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run26/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage26/threads011-runtime.c -framework IOKit -o /var/tmp/graphics011-run26/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage26/high011-runtime.c -o /var/tmp/graphics011-run26/high-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage26/high011-runtime.c -o /var/tmp/graphics011-run26/high-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/high-native /var/tmp/graphics011-run26/high-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/high-jaguar /var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run26/high-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage26/timer011-runtime.c -o /var/tmp/graphics011-run26/timer-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage26/timer011-runtime.c -o /var/tmp/graphics011-run26/timer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/timer-native /var/tmp/graphics011-run26/timer-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/timer-jaguar /var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run26/timer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/threads /var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run26/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 -O2 -I/var/tmp/graphics011-stage26/source/darwin-user/remaklar /var/tmp/graphics011-stage26/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-stage26/typed-live-test.c -o /var/tmp/graphics011-run26/typed-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/typed-native /var/tmp/graphics011-run26/typed-native
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage26/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run26/shared-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage26/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run26/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/shared-native /var/tmp/graphics011-run26/shared-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/shared-jaguar /var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run26/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/pbs /var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/pbs
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run26/windowserver /var/tmp/graphics011-run26/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage136.tgz graphics011-run26/build.txt graphics011-run26/high-i386-build.txt graphics011-run26/high-ppc-build.txt graphics011-run26/script-status.txt graphics011-run26/session.txt graphics011-run26/shared-i386-build.txt graphics011-run26/shared-ppc-build.txt graphics011-run26/threads-build.txt graphics011-run26/timer-i386-build.txt graphics011-run26/timer-ppc-build.txt graphics011-run26/typed-build.txt graphics011-run26/high-jaguar.status graphics011-run26/high-native.status graphics011-run26/pbs.status graphics011-run26/shared-jaguar.status graphics011-run26/shared-native.status graphics011-run26/threads.status graphics011-run26/timer-jaguar.status graphics011-run26/timer-native.status graphics011-run26/typed-native.status graphics011-run26/windowserver.status graphics011-run26/high-jaguar.stdout graphics011-run26/high-native.stdout graphics011-run26/pbs.stdout graphics011-run26/shared-jaguar.stdout graphics011-run26/shared-native.stdout graphics011-run26/threads.stdout graphics011-run26/timer-jaguar.stdout graphics011-run26/timer-native.stdout graphics011-run26/typed-native.stdout graphics011-run26/windowserver.stdout graphics011-run26/high-jaguar.stderr graphics011-run26/high-native.stderr graphics011-run26/pbs.stderr graphics011-run26/shared-jaguar.stderr graphics011-run26/shared-native.stderr graphics011-run26/threads.stderr graphics011-run26/timer-jaguar.stderr graphics011-run26/timer-native.stderr graphics011-run26/typed-native.stderr graphics011-run26/windowserver.stderr

@@ -1,0 +1,19 @@
+{
+  "reason": "Native ps wait_event points to vm_page_free_count under memory pressure during original joint launch. Complete paused migration state and unchanged disks preserved before launching an independent 512MB copy. Trial35 not complete, do not count as PASS.",
+  "files": {
+    "build/011-oom35-machine-state.bin": {
+      "bytes": 132817901,
+      "sha256": "e22a643fe862ea1150904a7135b70173e83e69faca3394741a5450a7442c50bb"
+    },
+    "vm/darwin602-graphics-011-recovery.qcow2": {
+      "bytes": 935002112,
+      "sha256": "48db1c22d65a857e87349fda8e84ba3c25552f39b0db97bc100ddfa6e7bd724c"
+    },
+    "build/graphics011-recovery-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "e8c02e95b48e5216f344b9c6466233d29f23a24beb40942b024f17e3fcc855d6"
+    }
+  },
+  "next_disk": "vm/darwin602-graphics-011-memory512.qcow2",
+  "next_exchange": "build/graphics011-memory512-exchange.img"
+}

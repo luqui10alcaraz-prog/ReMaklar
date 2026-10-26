@@ -1,0 +1,43 @@
+{
+  "base": "local preserved 0.10 source",
+  "patch_sha256": "dbe19298c358e524837798b7f357972896f6031e851dcb9851747ed10234c513",
+  "files": {
+    "cpu-all.h": {
+      "base_sha256": "5057c53f459a3e6b386c2448ffa04ec06adaffd34f710fcc4774d3fc21aabc4f",
+      "sha256": "826ae77b234e58f18e95a5c1b75a76eab6c595733cc718eca9661a88fecdd126"
+    },
+    "target-ppc/translate.c": {
+      "base_sha256": "ff48e709b63d79b4ac2d3d3b4ea5cfef62604d4c8d0a06c8ef9963e38952e898",
+      "sha256": "8ea062c5d1fffba78d006e34600faf06dafa5f0ae72de99112e238a88f30b949"
+    },
+    "target-ppc/helper.h": {
+      "base_sha256": "df26cf104fde0559cc268d28704e78f99b984f12848f3e70520b75fc1848915b",
+      "sha256": "3741f974b66f19971a48091047dd00f22159caa3ef95488bf2506a8557c3ed51"
+    },
+    "target-ppc/op_helper.c": {
+      "base_sha256": "be0cef26d541295a8d7d55c97762dacc6cad2d05bc2f04da864e1ebe6b5a4171",
+      "sha256": "5f6c57b4a5dd81a8af9bcbe4b9a048a7f47534df5ad70ce0a4bd150c79c537ce"
+    },
+    "darwin-user/remaklar/darwin-kernel.c": {
+      "base_sha256": "b614e46387b9654336c80ba4c7530c5e4dbd373cbeae9ce2785a93ae540cc2c7",
+      "sha256": "b8da80a422b6e0379132c11d103fe176c0aca4ac5b16d73f16d6e3a15cb3a6c1"
+    },
+    "darwin-user/remaklar/mach-native.inc": {
+      "base_sha256": "9f36cb0c12d267218f606492d8199f43ff5f0cbb034a82fe8fb6ba84116df140",
+      "sha256": "e74e7396a4778d3d9b1e316959108a23eb30f33625463c333d87922a1b1c394c"
+    },
+    "darwin-user/remaklar/live-regions.inc": {
+      "base_sha256": null,
+      "sha256": "659dfa706a5e7f1363a0e5617da800bc411a4d5978c67534d3051621d69492ba"
+    },
+    "darwin-user/remaklar/typed-live.c": {
+      "base_sha256": null,
+      "sha256": "502af6710abdcc93bb66a7fde20d795f2b026211b1378a8dd6e7c0173828e877"
+    },
+    "darwin-user/remaklar/typed-live.h": {
+      "base_sha256": null,
+      "sha256": "b2bcd3387de1adc0b9a900e6fd947c876cf6940493251af333bd3fe676c3a567"
+    }
+  },
+  "status": "partial: cursor and physical IOKit aliases verified; threads and high VA integration pending"
+}

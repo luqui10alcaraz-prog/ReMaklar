@@ -1,0 +1,1 @@
+real PPC threads spin preemption kernel Mach wait shared-lock count=40000 OK

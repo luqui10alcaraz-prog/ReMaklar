@@ -1,0 +1,8 @@
+{
+  "archive": "build/stage151-results.tgz",
+  "sha256": "64abb0ccf5c7f41b674bc14ab0e93b31174afad765cbeb23916f085c60ca6e77",
+  "script_exit": 0,
+  "remote_native": 0,
+  "remote_ppc": 0,
+  "linux_fixtures": "11/11 PASS"
+}

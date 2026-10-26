@@ -1,0 +1,4 @@
+task query result=5 type=0
+task pid query result=0 pid=645 self=645
+application query result=5 type=99
+application pid query result=5

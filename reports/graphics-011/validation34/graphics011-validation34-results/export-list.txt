@@ -1,0 +1,11 @@
+graphics011-validation34-results/export-list.txt
+graphics011-validation34-results/script-status.txt
+graphics011-validation34-results/session.txt
+graphics011-validation34-results/shared-i386-build.txt
+graphics011-validation34-results/shared-ppc-build.txt
+graphics011-validation34-results/vram-jaguar.status
+graphics011-validation34-results/vram-native.status
+graphics011-validation34-results/vram-jaguar.stdout
+graphics011-validation34-results/vram-native.stdout
+graphics011-validation34-results/vram-jaguar.stderr
+graphics011-validation34-results/vram-native.stderr

@@ -1,0 +1,6 @@
+real native cursor create result=0
+real native cursor map result=0 bytes=278764
+real native StdFBShmem version=3 size=278764 raw=03000000 PPC_unadapted=50331648
+real kernel setBounds result=0
+live native framebuffer version3 bidirectional partial kernel-bounds neighbor-restore OK
+real native cursor map read endian mismatch unmap close OK

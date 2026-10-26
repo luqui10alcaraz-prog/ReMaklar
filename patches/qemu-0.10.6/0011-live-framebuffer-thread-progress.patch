@@ -1,0 +1,254 @@
+--- a/target-ppc/op_helper.c
++++ b/target-ppc/op_helper.c
+@@ -4158,9 +4158,12 @@
+ #endif /* !CONFIG_USER_ONLY */
+ 
+ #ifdef REMAKLAR_BOOTSTRAP
++extern unsigned remaklar_thread_count;
++static unsigned rm_yield_epoch;
+ void helper_rm_quantum(target_ulong pc) {
++    if(remaklar_thread_count<2)return;
+     if(++env->rm_quantum>=64) {
+-        env->rm_quantum=0;env->nip=pc;
++        env->rm_quantum=(++rm_yield_epoch)&7;env->nip=pc;
+         env->exception_index=EXCP_INTERRUPT;cpu_loop_exit();
+     }
+ }
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -44,6 +44,7 @@
+ #endif
+ static uint32_t native_iokit_ports[4096];
+ static uint32_t native_ports[4096];
++static unsigned char native_processor_sets[4096];
+ static unsigned char native_notification_kind[4096];
+ static struct {uint32_t connection,type,address,bytes;} native_iomappings[64];
+ #ifdef __APPLE__
+@@ -66,6 +67,7 @@
+     return NSAddressOfSymbol(symbol);
+ }
+ #endif
++unsigned remaklar_thread_count=1;
+ static uint32_t next_reply = 0x200;
+ static uint32_t thread_base_priority = 31;
+ static uint32_t send_refs[4096];
+@@ -595,6 +597,13 @@
+         return remaklar_bsd(env,result,error);
+     }
+     switch (n) {
++    case 180: /* Original XNU kdebug_trace: preserve real native errno. */
++#ifdef __APPLE__
++        r=syscall(180,a,b,c,env->gpr[6],env->gpr[7]);
++#else
++        errno=ENOTSUP;
++#endif
++        break;
+     case 18: { /* Jaguar getfsstat: real mounted-volume list, PPC32 records. */
+ #ifdef __APPLE__
+         struct statfs *list;unsigned char wire[272];uint32_t count=b/272;
+@@ -667,7 +676,7 @@
+                 native_system_clock=0;
+ #endif
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
+-                memset(native_ports,0,sizeof(native_ports));
++                memset(native_ports,0,sizeof(native_ports));memset(native_processor_sets,0,sizeof(native_processor_sets));
+                 memset(native_notification_kind,0,sizeof(native_notification_kind));
+                 for(i=0;i<64;i++)if(live_kind[i])qerror("fork child with live IOKit mappings requires inheritance validation");memset(native_iomappings,0,sizeof(native_iomappings));live_bounds();
+             }
+@@ -1121,7 +1130,7 @@
+     uint8_t answer[8192];
+ #ifdef __APPLE__
+     if(size==24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+20))==3600 && rm_is_thread(ldl(g2h(a+8))))rm_thread_exit(env,ldl(g2h(a+8)));
+-    if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))] && !(ldl(g2h(a+20))==3616 && rm_is_thread(ldl(g2h(a+8)))) && !(ldl(g2h(a+20))>=4002 && ldl(g2h(a+20))<=4004)))return native_message(env);
++    if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))] && !(ldl(g2h(a+20))==3616 && rm_is_thread(ldl(g2h(a+8)))) && !(native_processor_sets[ldl(g2h(a+8))] && ldl(g2h(a+20))>=4002 && ldl(g2h(a+20))<=4004)))return native_message(env);
+ #endif
+     if (size < 24 || size > 4096 || !remaklar_guest_access(a, size, PAGE_READ))
+         qerror("invalid Mach message request");
+@@ -1167,7 +1176,7 @@
+         mach_port_t port=0;
+         if(destination!=HOST_SELF || size!=40 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19){code=4;break;}
+         code=host_processor_set_priv(mach_host_self(),native_name(ldl(g2h(a+28))),&port);
+-        if(!code){complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=17;length=40;}
++        if(!code){uint32_t guest=native_export(port);native_processor_sets[guest]=1;complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;length=40;}
+ #else
+         code=4;
+ #endif
+@@ -1190,7 +1199,7 @@
+         mach_port_t port=0;
+         if(destination!=HOST_SELF || size!=24){code=4;break;}
+         code=processor_set_default(mach_host_self(),&port);
+-        if(!code){complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=17;length=40;}
++        if(!code){uint32_t guest=native_export(port);native_processor_sets[guest]=1;complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;length=40;}
+ #else
+         code=4;
+ #endif
+@@ -1231,8 +1240,9 @@
+                     if(object)mach_port_deallocate(mach_task_self(),object);
+                     page_set_flags(mapped&~4095U,TARGET_PAGE_ALIGN(mapped+bytes),(info.protection&7)|PAGE_VALID);
+                     native_iomappings[slot].connection=destination;native_iomappings[slot].type=type;native_iomappings[slot].address=mapped;native_iomappings[slot].bytes=bytes;
+-                    live_kind[slot]=isfb?(type==100?1:0):2;
+-                    if(live_kind[slot]==1) {
++                    live_kind[slot]=isfb?(type==100?1:3):2;
++                    live_start[slot]=0;live_extent[slot]=bytes;
++                    if(live_kind[slot]==1 || live_kind[slot]==3) {
+                         typedef kern_return_t (*scalar_fn)(mach_port_t,int,const uint32_t *,uint32_t,uint32_t *,uint32_t *);
+                         typedef kern_return_t (*pixel_fn)(mach_port_t,int,const uint32_t *,uint32_t,char *,uint32_t *);
+                         uint32_t mode[2],modecount=2,input[3],pixel[43],pixelbytes=sizeof(pixel);kern_return_t check;
+@@ -1241,6 +1251,13 @@
+                         input[0]=mode[0];input[1]=mode[1];input[2]=0;
+                         check=((pixel_fn)native_iokit_symbol("_io_connect_method_scalarI_structureO"))(endpoint,1,input,3,(char *)pixel,&pixelbytes);
+                         if(check || pixelbytes!=sizeof(pixel) || pixel[2]!=32)qerror("cursor image layout requires verified 32-bit framebuffer");
++                        if(live_kind[slot]==3) {
++                            uint32_t aperture=0,offset=0,outcount=1;
++                            check=((scalar_fn)native_iokit_symbol("_io_connect_method_scalarI_scalarO"))(endpoint,8,&aperture,1,&offset,&outcount);
++                            if(check || outcount!=1 || (offset&3) || !pixel[39] || !pixel[40] || pixel[0]!=(uint64_t)pixel[39]*4 || (uint64_t)offset+(uint64_t)pixel[0]*pixel[40]>bytes)qerror("unverified visible framebuffer extent");
++                            live_start[slot]=offset;live_extent[slot]=pixel[0]*pixel[40];
++                            fprintf(stderr,"live front pixels offset=%u bytes=%u width=%u height=%u masks=%x/%x/%x\n",offset,live_extent[slot],pixel[39],pixel[40],pixel[6],pixel[7],pixel[8]);
++                        }
+                         fprintf(stderr,"live cursor pixel layout verified bits=%u rowbytes=%u\n",pixel[2],pixel[0]);
+                     }
+                     live_bounds();
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -22,7 +22,7 @@
+     mach_port_type_t type;mach_port_urefs_t refs;
+     if(guest>=4096 || !native_ports[guest])return;
+     receive_rights[guest]=port_sets[guest]=0;send_refs[guest]=send_once_target[guest]=0;
+-    if(mach_port_type(mach_task_self(),native_ports[guest],&type)){native_ports[guest]=0;native_notification_kind[guest]=0;return;}
++    if(mach_port_type(mach_task_self(),native_ports[guest],&type)){native_ports[guest]=0;native_notification_kind[guest]=0;native_processor_sets[guest]=0;return;}
+     if(type&MACH_PORT_TYPE_RECEIVE)receive_rights[guest]=1;
+     if(type&MACH_PORT_TYPE_PORT_SET)port_sets[guest]=1;
+     if(type&MACH_PORT_TYPE_SEND_ONCE)send_once_target[guest]=guest;
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -2,6 +2,7 @@
+  * Layouts: IOGraphics-40, IOHIDFamily-33, XNU-344. */
+ #include "typed-live.c"
+ uint32_t remaklar_live_min=0xffffffffU,remaklar_live_max;
++static unsigned live_start[64],live_extent[64];
+ static unsigned live_kind[64]; /* 1: framebuffer header, 2: HID header. */
+ 
+ static void live_bounds(void)
+@@ -24,7 +25,7 @@
+ {
+     unsigned n=0,start=0;
+     f->kind=RM_NUMBER;
+-    if(kind==1) {
++    if(kind==3) {n=4;} else if(kind==1) {
+         if(pos<8)n=4;
+         else if(pos<12){n=1;start=8;}
+         else if(pos<56){n=2;start=12;}
+@@ -74,6 +75,10 @@
+     for(i=0;i<64;i++)if(live_kind[i] && address>=native_iomappings[i].address &&
+         address-native_iomappings[i].address<native_iomappings[i].bytes) {
+         unsigned pos=address-native_iomappings[i].address;
++        if(live_kind[i]==3) {
++            if(pos<live_start[i] || pos>=live_start[i]+live_extent[i])return 0;
++            if(n>live_start[i]+live_extent[i]-pos)qerror("pixel access crosses verified front buffer");
++        }
+         if(!remaklar_guest_access(address,n,write?PAGE_WRITE:PAGE_READ))qerror("live shared memory protection violation address=%lx",(unsigned long)address);
+         if(!live_field(live_kind[i],pos,f))qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
+         /* Compose only adjacent declared fields, never select a union by
+@@ -97,7 +102,7 @@
+         int error;
+         /* lfd/stfd may span two pixels. Each pixel is a native uint32,
+          * not half of a native uint64. PPC does not require an atomic pair. */
+-        if(n==8 && f.size==4 && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
++        if(n==8 && f.size==4 && v.base && (live_kind_at((uint32_t)(uintptr_t)v.base)==1 || live_kind_at((uint32_t)(uintptr_t)v.base)==3) && !(off&3) && v.bytes-off>=8) {
+             uint64_t hi=remaklar_live_load(address,4);
+             return (hi<<32)|remaklar_live_load(address+4,4);
+         }
+@@ -123,7 +128,7 @@
+     struct rm_view v;struct rm_field f;unsigned off;
+     if(live_view(address,n,1,&v,&f,&off)) {
+         int error;
+-        if(n==8 && f.size==4 && v.base && live_kind_at((uint32_t)(uintptr_t)v.base)==1 && !(off&3) && v.bytes-off>=8) {
++        if(n==8 && f.size==4 && v.base && (live_kind_at((uint32_t)(uintptr_t)v.base)==1 || live_kind_at((uint32_t)(uintptr_t)v.base)==3) && !(off&3) && v.bytes-off>=8) {
+             remaklar_live_store(address,4,x>>32);
+             remaklar_live_store(address+4,4,x);
+             return;
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -205,10 +205,10 @@
+ {
+     uint32_t number = env->gpr[0];
+     int result, handled, guest_errno = 0;
+-    fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x r6=%08x r7=%08x r8=%08x\n",
++    fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x r6=%08x r7=%08x r8=%08x lr=%08x res=%08x\n",
+             (unsigned)env->nip, number, (unsigned)env->gpr[3],
+             (unsigned)env->gpr[4], (unsigned)env->gpr[5],
+-            (unsigned)env->gpr[6], (unsigned)env->gpr[7], (unsigned)env->gpr[8]);
++            (unsigned)env->gpr[6], (unsigned)env->gpr[7], (unsigned)env->gpr[8],(unsigned)env->lr,(unsigned)env->reserve);
+     if ((int32_t)number < 0 || (number >= 0x7ff1 && number <= 0x7ff3)) {
+         env->gpr[3] = remaklar_mach(env);
+         return;
+@@ -237,13 +237,16 @@
+ 
+ void cpu_loop(CPUState *env)
+ {
+-    int trap;
++    int trap,gate_held=0;
+     for (;;) {
+-        remaklar_gate_enter(env);
++        int internal=0;
++        if(!gate_held){remaklar_gate_enter(env);gate_held=1;}
+         remaklar_deliver_signals(env);
+         trap = cpu_exec(env);
+         switch (trap) {
+-        case POWERPC_EXCP_SYSCALL_USER: darwin_syscall(env); break;
++        case POWERPC_EXCP_SYSCALL_USER:
++            internal=env->gpr[0]>=0x7ff1 && env->gpr[0]<=0x7ff3;
++            darwin_syscall(env);break;
+         case EXCP_INTERRUPT: break;
+         case EXCP_DEBUG:
+             if (remaklar_dynamic && env->nip == remaklar_program_entry) {
+@@ -269,7 +272,10 @@
+             qerror("unsupported PPC exception %x pc=%08x", trap,
+                    (unsigned)env->nip);
+         }
+-        remaklar_gate_yield();
++        /* XNU's ultra-fast TLS/facility traps return without a scheduler
++         * handoff. Preserve reservations across them; the TB quantum still
++         * provides bounded preemption if guest code continues spinning. */
++        if(!internal){remaklar_gate_yield();gate_held=0;}
+     }
+ }
+ 
+--- a/darwin-user/remaklar/threads.inc
++++ b/darwin-user/remaklar/threads.inc
+@@ -30,7 +30,7 @@
+  if(t && t->cpu)t->cpu->reserve=(target_ulong)-1;
+  pthread_mutex_unlock(&rm_gate);
+ }
+-void remaklar_gate_yield(void){remaklar_gate_leave();sched_yield();}
++void remaklar_gate_yield(void){remaklar_gate_leave();if(remaklar_thread_count>1)sched_yield();}
+ static int rm_is_thread(uint32_t guest)
+ {
+  unsigned i;
+@@ -73,7 +73,7 @@
+  if(error){pthread_mutex_unlock(&t->ready_lock);return KERN_RESOURCE_SHORTAGE;}
+  while(!t->started)pthread_cond_wait(&t->ready,&t->ready_lock);
+  pthread_mutex_unlock(&t->ready_lock);
+- t->guest=native_export(t->host);t->live=1;*guest=t->guest;
++ t->guest=native_export(t->host);t->live=1;remaklar_thread_count++;*guest=t->guest;
+  pthread_detach(t->thread);
+  fprintf(stderr,"real PPC thread created guest=%x host=%u pc=%x sp=%x\n",*guest,t->host,(unsigned)cpu->nip,(unsigned)cpu->gpr[1]);
+  return 0;
+@@ -82,7 +82,7 @@
+ {
+  struct rm_thread_context *t=pthread_getspecific(rm_thread_key);
+  if(!t || t->cpu!=cpu || t->guest!=destination)qerror("thread termination context mismatch");
+- t->live=0;cpu->reserve=(target_ulong)-1;
++ t->live=0;remaklar_thread_count--;cpu->reserve=(target_ulong)-1;
+  fprintf(stderr,"real PPC thread terminating guest=%x\n",t->guest);
+  remaklar_gate_leave();pthread_exit(NULL);
+ }
+@@ -91,7 +91,7 @@
+  pthread_mutex_t fresh=PTHREAD_MUTEX_INITIALIZER;
+  struct rm_thread_context *t;
+  memcpy(&rm_gate,&fresh,sizeof(fresh));pthread_mutex_lock(&rm_gate);
+- memset(rm_threads,0,sizeof(rm_threads));t=&rm_threads[0];
++ memset(rm_threads,0,sizeof(rm_threads));remaklar_thread_count=1;t=&rm_threads[0];
+  t->cpu=cpu;t->thread=pthread_self();t->live=1;pthread_setspecific(rm_thread_key,t);
+  cpu->next_cpu=NULL;first_cpu=cpu;global_env=cpu;cpu->reserve=(target_ulong)-1;
+ }

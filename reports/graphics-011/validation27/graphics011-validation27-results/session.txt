@@ -1,0 +1,180 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;for dir in graphics011-validation27-results graphics011-regression26 graphics011-joint26;do if test -d "$dir";then for f in "$dir"/*.txt "$dir"/*.status "$dir"/*.stdout "$dir"/*.stderr;do if test -f "$f";then echo "$f";fi;done;fi;done > "$out/export-list.txt";gnutar czf /exchange/valid27.tgz -T "$out/export-list.txt";sync;umount /exchange' 0
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/high-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/high-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/high-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/high-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/timer-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/timer-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/timer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/timer-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/threads.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/threads.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/typed-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/typed-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/shared-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/shared-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run26/shared-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run26/shared-jaguar.status
++ echo self_tests_verified
++ sh /var/tmp/graphics011-validation27/regression.sh
++ echo native_regression_completed
++ perl /var/tmp/graphics011-validation27/joint.pl /var/tmp/graphics011-joint26 /var/tmp/graphics011-run26/qemu-ppc /var/tmp/jaguar
++ echo joint_trial_completed
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ test -d graphics011-validation27-results
++ test -f graphics011-validation27-results/export-list.txt
++ echo graphics011-validation27-results/export-list.txt
++ test -f graphics011-validation27-results/phase.txt
++ echo graphics011-validation27-results/phase.txt
++ test -f graphics011-validation27-results/script-status.txt
++ echo graphics011-validation27-results/script-status.txt
++ test -f graphics011-validation27-results/session.txt
++ echo graphics011-validation27-results/session.txt
++ test -f 'graphics011-validation27-results/*.status'
++ test -f 'graphics011-validation27-results/*.stdout'
++ test -f 'graphics011-validation27-results/*.stderr'
++ test -d graphics011-regression26
++ test -f graphics011-regression26/filesystem.txt
++ echo graphics011-regression26/filesystem.txt
++ test -f graphics011-regression26/runtime.txt
++ echo graphics011-regression26/runtime.txt
++ test -f graphics011-regression26/session.txt
++ echo graphics011-regression26/session.txt
++ test -f graphics011-regression26/utilities.txt
++ echo graphics011-regression26/utilities.txt
++ test -f graphics011-regression26/access-runtime.status
++ echo graphics011-regression26/access-runtime.status
++ test -f graphics011-regression26/cf.status
++ echo graphics011-regression26/cf.status
++ test -f graphics011-regression26/clock010-runtime.status
++ echo graphics011-regression26/clock010-runtime.status
++ test -f graphics011-regression26/credentials010-runtime.status
++ echo graphics011-regression26/credentials010-runtime.status
++ test -f graphics011-regression26/exec-runtime.status
++ echo graphics011-regression26/exec-runtime.status
++ test -f graphics011-regression26/framebuffer010-runtime.status
++ echo graphics011-regression26/framebuffer010-runtime.status
++ test -f graphics011-regression26/iokit-cstring-runtime.status
++ echo graphics011-regression26/iokit-cstring-runtime.status
++ test -f graphics011-regression26/iokit-open-runtime.status
++ echo graphics011-regression26/iokit-open-runtime.status
++ test -f graphics011-regression26/iokit-runtime.status
++ echo graphics011-regression26/iokit-runtime.status
++ test -f graphics011-regression26/iokit010-open-runtime.status
++ echo graphics011-regression26/iokit010-open-runtime.status
++ test -f graphics011-regression26/mach010-runtime.status
++ echo graphics011-regression26/mach010-runtime.status
++ test -f graphics011-regression26/mmap010-runtime.status
++ echo graphics011-regression26/mmap010-runtime.status
++ test -f graphics011-regression26/objc.status
++ echo graphics011-regression26/objc.status
++ test -f graphics011-regression26/process-runtime.status
++ echo graphics011-regression26/process-runtime.status
++ test -f graphics011-regression26/shm010-runtime.status
++ echo graphics011-regression26/shm010-runtime.status
++ test -f graphics011-regression26/signals-runtime.status
++ echo graphics011-regression26/signals-runtime.status
++ test -f graphics011-regression26/statfs-runtime.status
++ echo graphics011-regression26/statfs-runtime.status
++ test -f graphics011-regression26/system.status
++ echo graphics011-regression26/system.status
++ test -f graphics011-regression26/access-runtime.stdout
++ echo graphics011-regression26/access-runtime.stdout
++ test -f graphics011-regression26/cf.stdout
++ echo graphics011-regression26/cf.stdout
++ test -f graphics011-regression26/clock010-runtime.stdout
++ echo graphics011-regression26/clock010-runtime.stdout
++ test -f graphics011-regression26/credentials010-runtime.stdout
++ echo graphics011-regression26/credentials010-runtime.stdout
++ test -f graphics011-regression26/exec-runtime.stdout
++ echo graphics011-regression26/exec-runtime.stdout
++ test -f graphics011-regression26/framebuffer010-runtime.stdout
++ echo graphics011-regression26/framebuffer010-runtime.stdout
++ test -f graphics011-regression26/iokit-cstring-runtime.stdout
++ echo graphics011-regression26/iokit-cstring-runtime.stdout
++ test -f graphics011-regression26/iokit-open-runtime.stdout
++ echo graphics011-regression26/iokit-open-runtime.stdout
++ test -f graphics011-regression26/iokit-runtime.stdout
++ echo graphics011-regression26/iokit-runtime.stdout
++ test -f graphics011-regression26/iokit010-open-runtime.stdout
++ echo graphics011-regression26/iokit010-open-runtime.stdout
++ test -f graphics011-regression26/mach010-runtime.stdout
++ echo graphics011-regression26/mach010-runtime.stdout
++ test -f graphics011-regression26/mmap010-runtime.stdout
++ echo graphics011-regression26/mmap010-runtime.stdout
++ test -f graphics011-regression26/objc.stdout
++ echo graphics011-regression26/objc.stdout
++ test -f graphics011-regression26/process-runtime.stdout
++ echo graphics011-regression26/process-runtime.stdout
++ test -f graphics011-regression26/shm010-runtime.stdout
++ echo graphics011-regression26/shm010-runtime.stdout
++ test -f graphics011-regression26/signals-runtime.stdout
++ echo graphics011-regression26/signals-runtime.stdout
++ test -f graphics011-regression26/statfs-runtime.stdout
++ echo graphics011-regression26/statfs-runtime.stdout
++ test -f graphics011-regression26/system.stdout
++ echo graphics011-regression26/system.stdout
++ test -f graphics011-regression26/access-runtime.stderr
++ echo graphics011-regression26/access-runtime.stderr
++ test -f graphics011-regression26/cf.stderr
++ echo graphics011-regression26/cf.stderr
++ test -f graphics011-regression26/clock010-runtime.stderr
++ echo graphics011-regression26/clock010-runtime.stderr
++ test -f graphics011-regression26/credentials010-runtime.stderr
++ echo graphics011-regression26/credentials010-runtime.stderr
++ test -f graphics011-regression26/exec-runtime.stderr
++ echo graphics011-regression26/exec-runtime.stderr
++ test -f graphics011-regression26/framebuffer010-runtime.stderr
++ echo graphics011-regression26/framebuffer010-runtime.stderr
++ test -f graphics011-regression26/iokit-cstring-runtime.stderr
++ echo graphics011-regression26/iokit-cstring-runtime.stderr
++ test -f graphics011-regression26/iokit-open-runtime.stderr
++ echo graphics011-regression26/iokit-open-runtime.stderr
++ test -f graphics011-regression26/iokit-runtime.stderr
++ echo graphics011-regression26/iokit-runtime.stderr
++ test -f graphics011-regression26/iokit010-open-runtime.stderr
++ echo graphics011-regression26/iokit010-open-runtime.stderr
++ test -f graphics011-regression26/mach010-runtime.stderr
++ echo graphics011-regression26/mach010-runtime.stderr
++ test -f graphics011-regression26/mmap010-runtime.stderr
++ echo graphics011-regression26/mmap010-runtime.stderr
++ test -f graphics011-regression26/objc.stderr
++ echo graphics011-regression26/objc.stderr
++ test -f graphics011-regression26/process-runtime.stderr
++ echo graphics011-regression26/process-runtime.stderr
++ test -f graphics011-regression26/shm010-runtime.stderr
++ echo graphics011-regression26/shm010-runtime.stderr
++ test -f graphics011-regression26/signals-runtime.stderr
++ echo graphics011-regression26/signals-runtime.stderr
++ test -f graphics011-regression26/statfs-runtime.stderr
++ echo graphics011-regression26/statfs-runtime.stderr
++ test -f graphics011-regression26/system.stderr
++ echo graphics011-regression26/system.stderr
++ test -d graphics011-joint26
++ test -f graphics011-joint26/processes.txt
++ echo graphics011-joint26/processes.txt
++ test -f graphics011-joint26/completion.status
++ echo graphics011-joint26/completion.status
++ test -f graphics011-joint26/leaders.status
++ echo graphics011-joint26/leaders.status
++ test -f graphics011-joint26/ats.stdout
++ echo graphics011-joint26/ats.stdout
++ test -f graphics011-joint26/pbs.stdout
++ echo graphics011-joint26/pbs.stdout
++ test -f graphics011-joint26/splash.stdout
++ echo graphics011-joint26/splash.stdout
++ test -f graphics011-joint26/windowserver.stdout
++ echo graphics011-joint26/windowserver.stdout
++ test -f graphics011-joint26/ats.stderr
++ echo graphics011-joint26/ats.stderr
++ test -f graphics011-joint26/pbs.stderr
++ echo graphics011-joint26/pbs.stderr
++ test -f graphics011-joint26/splash.stderr
++ echo graphics011-joint26/splash.stderr
++ test -f graphics011-joint26/windowserver.stderr
++ echo graphics011-joint26/windowserver.stderr
++ gnutar czf /exchange/valid27.tgz -T /var/tmp/graphics011-validation27-results/export-list.txt

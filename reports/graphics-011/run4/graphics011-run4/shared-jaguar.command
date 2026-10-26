@@ -1,0 +1,1 @@
+/var/tmp/graphics011-run4/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run4/shared-ppc

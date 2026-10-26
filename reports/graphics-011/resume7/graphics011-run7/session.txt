@@ -1,0 +1,19 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt"; mount -t msdos /dev/disk1 /exchange; cd /var/tmp; gnutar czf /exchange/stage117.tgz graphics011-run7/*.txt graphics011-run7/*.status graphics011-run7/*.stdout graphics011-run7/*.stderr graphics011-run7/*.command;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run7/source
++ ln -s /var/tmp/graphics011-run1/build /var/tmp/graphics011-run7/build
++ cp /var/tmp/graphics011-stage7/source/cpu-all.h /var/tmp/graphics011-run7/source/cpu-all.h
++ cp /var/tmp/graphics011-stage7/source/target-ppc/translate.c /var/tmp/graphics011-run7/source/target-ppc/translate.c
++ cp /var/tmp/graphics011-stage7/source/target-ppc/helper.h /var/tmp/graphics011-run7/source/target-ppc/helper.h
++ cp /var/tmp/graphics011-stage7/source/target-ppc/op_helper.c /var/tmp/graphics011-run7/source/target-ppc/op_helper.c
++ cp /var/tmp/graphics011-stage7/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run7/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage7/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run7/source/darwin-user/remaklar/mach-native.inc
++ cp /var/tmp/graphics011-stage7/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run7/source/darwin-user/remaklar/live-regions.inc
++ cp /var/tmp/graphics011-stage7/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run7/source/darwin-user/remaklar/typed-live.c
++ cp /var/tmp/graphics011-stage7/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run7/source/darwin-user/remaklar/typed-live.h
++ rm -f /var/tmp/graphics011-run7/build/ppc-darwin-user/darwin-kernel.o /var/tmp/graphics011-run7/build/ppc-darwin-user/translate.o /var/tmp/graphics011-run7/build/ppc-darwin-user/op_helper.o
++ make -C /var/tmp/graphics011-run7/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ status=2
++ echo script_exit=2
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage117.tgz graphics011-run7/build.txt graphics011-run7/script-status.txt graphics011-run7/session.txt 'graphics011-run7/*.status' 'graphics011-run7/*.stdout' 'graphics011-run7/*.stderr' 'graphics011-run7/*.command'

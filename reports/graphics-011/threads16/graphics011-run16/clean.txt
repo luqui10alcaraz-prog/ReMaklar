@@ -1,0 +1,11 @@
+rm -f config.mak config.h op-i386.h opc-i386.h gen-op-i386.h op-arm.h opc-arm.h gen-op-arm.h
+rm -f *.o *.d *.a  TAGS cscope.* *.pod *~ */*~
+rm -f slirp/*.o slirp/*.d audio/*.o audio/*.d
+make -C tests clean
+rm -f *~ *.o test-i386.out test-i386.ref \
+           test-x86_64.log test-x86_64.ref qruncom linux-test testthread sha1-i386 test-i386 sha1
+for d in ppc-darwin-user; do \
+make -C $d clean || exit 1 ; \
+        done
+rm -f *.o *.a *~ qemu-ppc nwfpe/*.o fpu/*.o
+rm -f *.d */*.d tcg/*.o

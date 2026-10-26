@@ -1,0 +1,3 @@
+live framebuffer version=3 bytes=278764 partial16/32 original-spinlock neighbors OK
+IOKit entry native alias diagnostic source=00000003 alias=00000000 bytes=278764 length=282624 addresses=44faf000,44ff4000
+native memory-entry diagnostic retained; physical IOKit aliases tested separately

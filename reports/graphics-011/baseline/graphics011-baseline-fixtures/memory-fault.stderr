@@ -1,0 +1,11 @@
+loaded entry=10000200 stack=223c7fcc cpu=750 host=i386 env=0x2233b000
+remaklar: unhandled host memory fault (Darwin 6 legacy signal)
+legacy host pc=200e51cd
+eax=00000020
+ebx=2001169f
+ecx=00000000
+edx=00000008
+ebp=2233b000
+esp=bffffc78
+esi=220e71f0
+edi=225e9000
