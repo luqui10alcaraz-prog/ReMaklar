@@ -1,0 +1,5 @@
+Mach real multi-set send receive duplicate extract timeout status OK
+Mach real transferred send right and release OK
+read-only entry RW map kr=17
+Mach real memory entry shared aliases offsets protection lifetime OK
+FAIL line=84 condition=!receive_value(b,&m) && m.value==0x98765432 && signal_seen==1 && !signal_error

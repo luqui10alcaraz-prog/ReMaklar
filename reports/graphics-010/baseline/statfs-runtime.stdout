@@ -1,0 +1,7 @@
+FS bsize=1024 iosize=4096 blocks=2023918 type=1 flags=5000 fsid=e000003:1 owner=0 name=ufs mount=/ from=/dev/disk0s2
+VOLUME type=1 fsid=e000003:1 name=ufs mount=/ from=/dev/disk0s2
+VOLUME type=19 fsid=82bb6a4:13 name=devfs mount=/dev from=devfs
+VOLUME type=0 fsid=e000005:e name=cd9660 mount=/recovery from=/dev/disk2s0
+VOLUME type=20 fsid=e000001:14 name=msdos mount=/exchange from=/dev/disk1
+getfsstat real volumes count list EFAULT OK
+statfs PPC32 real volume direct fd ENOENT EFAULT EBADF OK

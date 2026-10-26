@@ -1,0 +1,4 @@
+Mach real multi-set send receive duplicate extract timeout status OK
+Mach real transferred send right and release OK
+read-only entry RW map kr=17
+FAIL line=67 condition=kr==KERN_PROTECTION_FAILURE

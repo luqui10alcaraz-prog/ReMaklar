@@ -1,0 +1,98 @@
+[
+  {
+    "path": "logs/graphics-010/baseline/graphics010-baseline/splash.stderr",
+    "bytes": 4443603,
+    "sha256": "904796de3348a3a8ad8975be529ab06f40b5aeed186a33cff3dd897809b3ea57",
+    "excerpt": "reports/graphics-010/baseline/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage1/splash.stderr",
+    "bytes": 4395347,
+    "sha256": "4b93d6da4212c51b1cb98d9867dbc8b5d5cc710c8602b2b699eb50d856e7c631",
+    "excerpt": "reports/graphics-010/stage1/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage2/splash.stderr",
+    "bytes": 4749651,
+    "sha256": "8c35bcc437b522a8546b21d58440d8246c813e44524e39e11d6d5078eb5f3623",
+    "excerpt": "reports/graphics-010/stage2/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage3/installer.stderr",
+    "bytes": 4544482,
+    "sha256": "3a40465ed93e4149c31d93661a412d23ae0b77ddf4e51e896ac20bca7a6b043b",
+    "excerpt": "reports/graphics-010/stage3/installer.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage3/splash.stderr",
+    "bytes": 4439631,
+    "sha256": "f58c0a8c9b06891d5191935e4ba1aaa7e932365bbebeb9b902569ae3126dc1e1",
+    "excerpt": "reports/graphics-010/stage3/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage4/installer.stderr",
+    "bytes": 4006105,
+    "sha256": "6fbe00bf4fceff8f162f725ccad6c0b8b925dd98b9f3d1dc9193571e45bb99b0",
+    "excerpt": "reports/graphics-010/stage4/installer.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage4/splash.stderr",
+    "bytes": 4701217,
+    "sha256": "267d0168335695a8a5fba576d532f3931af7b38f3941aca0b1de5bd7a50795ad",
+    "excerpt": "reports/graphics-010/stage4/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage5/installer.stderr",
+    "bytes": 4313355,
+    "sha256": "f67847a1d6317d52343721b38db89bc0517189698167ff465b9e499e0143cc70",
+    "excerpt": "reports/graphics-010/stage5/installer.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage5/splash.stderr",
+    "bytes": 4328923,
+    "sha256": "c4b7add68f40992c3b76e3c457aac17d678fb337abcd1f874b1704e642519449",
+    "excerpt": "reports/graphics-010/stage5/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage6/mach010-runtime-jaguar.stderr",
+    "bytes": 224463712,
+    "sha256": "e6b1fdd4a39b2bcf6fd0b86422c7dfe62a86946a5b19f8a4765a252bffdfe213",
+    "excerpt": "reports/graphics-010/stage6/mach010-runtime-jaguar.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage7/installer.stderr",
+    "bytes": 4807544,
+    "sha256": "b20e4158bd7a1577984fff5022ff07aed2736188c479cb219b87e99092e41ba8",
+    "excerpt": "reports/graphics-010/stage7/installer.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage7/splash.stderr",
+    "bytes": 4868811,
+    "sha256": "e85405e86fe189170da40ba523eafe3f3d57135bd794a2673c4b1528d8c2b0f1",
+    "excerpt": "reports/graphics-010/stage7/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage8/installer.stderr",
+    "bytes": 4813080,
+    "sha256": "31e27cb4d95f06c6355cc9f3b2abdb119ad5c72911aeb922d0b5d0054c043339",
+    "excerpt": "reports/graphics-010/stage8/installer.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage8/splash.stderr",
+    "bytes": 4368265,
+    "sha256": "498e973cddf6101f581467893b335a6b316e0486211061b1bf44db1cf4fe5384",
+    "excerpt": "reports/graphics-010/stage8/splash.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage10/installer.stderr",
+    "bytes": 4689904,
+    "sha256": "d731233c9bcb805bb3b6de7cefebf82d93766bd42a2cc2bcfd687696988e5382",
+    "excerpt": "reports/graphics-010/stage10/installer.stderr.excerpt.txt"
+  },
+  {
+    "path": "logs/graphics-010/stage10/splash.stderr",
+    "bytes": 4750298,
+    "sha256": "7de688fd6a01edc26d7305d6a3611bd6c8103bbd99981c41d8eb3815009dab23",
+    "excerpt": "reports/graphics-010/stage10/splash.stderr.excerpt.txt"
+  }
+]

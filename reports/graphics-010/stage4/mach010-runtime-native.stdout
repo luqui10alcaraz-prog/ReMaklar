@@ -1,0 +1,6 @@
+Mach child exec clears ordinary rights, bootstrap IPC reply OK
+Mach real multi-set send receive duplicate extract timeout status OK
+Mach real transferred send right and release OK
+read-only entry RW map kr=17
+Mach real memory entry shared aliases offsets protection lifetime OK
+Mach real bootstrap interprocess fork exec send-once rights cleanup OK

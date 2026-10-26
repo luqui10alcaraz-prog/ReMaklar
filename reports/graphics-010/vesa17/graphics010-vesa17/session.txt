@@ -1,0 +1,12 @@
++ uname -a
++ sysctl hw
++ ps -axww
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-vesa/hid010-native.c -framework IOKit -o /var/tmp/graphics010-vesa17/hid-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-vesa17/hid-native /var/tmp/graphics010-vesa17/hid-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-vesa17/framebuffer-native /var/tmp/graphics010-run17/framebuffer010-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-vesa17/framebuffer-ppc /var/tmp/graphics010-run17/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run17/framebuffer010-runtime-ppc
++ perl /var/tmp/graphics010-final/joint.pl /var/tmp/graphics010-joint-vesa17 /var/tmp/graphics010-run17/qemu-ppc /var/tmp/jaguar
++ mount -t msdos /dev/disk1 /exchange
+kextload: /System/Library/Extensions/msdosfs.kext loaded successfully
++ cd /var/tmp
++ gnutar czf /exchange/vesa17.tgz graphics010-vesa17 graphics010-joint-vesa17

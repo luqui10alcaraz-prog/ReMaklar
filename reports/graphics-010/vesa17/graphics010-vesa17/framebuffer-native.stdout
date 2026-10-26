@@ -1,0 +1,21 @@
+Framebuffer open result=3758097095
+Framebuffer open result=0
+Framebuffer real malformed properties transport=0 result=3758097090
+Framebuffer notification registration result=0
+Framebuffer real notification receive result=268451843 bytes=0 id=0
+Framebuffer real metaclass conforms positive negative OK
+Framebuffer real registry path: IOService:/AppleI386PlatformExpert/display/.Display_boot
+Framebuffer real registry traversal nodes=3 displays=1
+Framebuffer real modes result=0 count=1 bytes=4 first=100
+Framebuffer real current mode result=0 mode=100 depth=0
+Framebuffer real mode description result=0 bytes=204 width=1024 height=768 flags=3 timing=0
+Framebuffer real invalid mode result=3758097090
+Framebuffer real pixel info result=0 bytes=172 width=1024 height=768 bpp=32 row=4096 format=--------RRRRRRRRGGGGGGGGBBBBBBBB
+Framebuffer interest registration result=0 nonnull=1
+Framebuffer IOClass result=0 bytes=42
+Framebuffer class XML: <string ID="0">IONDRVFramebuffer</string>
+Framebuffer real serialized property dictionary OK
+Framebuffer missing property result=3758097136
+Framebuffer real VRAM map result=0 bytes=16777216
+Framebuffer real VRAM read unmap OK
+real framebuffer open associated service property errors close OK

@@ -1,0 +1,14 @@
+{
+  "base_project_commit": "f10ee0ced472e1089e6761956b46c0cb4655b839",
+  "upstream_qemu_commit": "9eab386edbf8cf002a731f8204a156f243a47a57",
+  "requires_patch": "0007-statfs-signals-iokit.patch",
+  "requires_patch_sha256": "74fcc3dec736ddb89c82a82fd75b7d37a403fe8366d9af930031648ba51f0f75",
+  "patch": "0008-native-mach-graphics.patch",
+  "patch_sha256": "1a2e7189f9b89b54bf82e300c719ff5050ccc0474b589d1839770b41255dd0fb",
+  "experimental_commit": null,
+  "scope": "0.10 real Mach port sets, interprocess bootstrap/messages/rights, memory entry aliases, PPC clock/mmap/shm ABI and typed original i386 IOKit/framebuffer; no Aqua; live shared-control endian adapters still required",
+  "source_sha256": {
+    "darwin-kernel.c": "b614e46387b9654336c80ba4c7530c5e4dbd373cbeae9ce2785a93ae540cc2c7",
+    "mach-native.inc": "9f36cb0c12d267218f606492d8199f43ff5f0cbb034a82fe8fb6ba84116df140"
+  }
+}

@@ -1,0 +1,5 @@
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.14 /sbin/init -s -v       
+    2  ??  Ss     0:01.32 /sbin/mach_init -s -v      
+   22  ??  Ss     0:00.35 -sh (sh)
+  402  ??  R+     0:00.02 ps -axww

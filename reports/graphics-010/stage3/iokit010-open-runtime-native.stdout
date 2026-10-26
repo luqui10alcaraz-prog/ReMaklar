@@ -1,0 +1,2 @@
+IOServiceOpen type=0 result=0 nonnull=1
+IOConnectGetService result=3758097095 nonnull=0

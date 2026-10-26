@@ -1,0 +1,10 @@
+hw.machine = x86
+hw.model = x86
+hw.ncpu = 1
+hw.byteorder = 1234
+hw.physmem = 133689344
+hw.usermem = 117686272
+hw.pagesize = 4096
+hw.epoch = 1
+hw.busfrequency = 100000000
+hw.cpufrequency = 300000000

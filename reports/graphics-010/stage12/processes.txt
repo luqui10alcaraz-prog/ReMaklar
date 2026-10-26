@@ -1,0 +1,6 @@
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.19 /sbin/init -s -v       
+    2  ??  Ss     0:04.56 /sbin/mach_init -s -v      
+   22  ??  Ss     0:01.68 -sh (sh)
+ 1732  ??  S+     0:00.06 sh graphics010-stage12/run.sh
+ 1792  ??  R+     0:00.01 ps -axww

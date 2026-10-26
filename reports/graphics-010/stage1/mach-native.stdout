@@ -1,0 +1,5 @@
+FAIL line=31 condition=!mach_port_get_refs(task,q,MACH_PORT_RIGHT_RECEIVE,&refs) && refs==1
+Mach real multi-set send receive duplicate extract timeout status OK
+Mach real transferred send right and release OK
+Mach real memory entry shared aliases offsets protection lifetime OK
+FAIL line=77 condition=!receive_value(b,&m) && m.value==0xabcdef12 && m.h.msgh_remote_port

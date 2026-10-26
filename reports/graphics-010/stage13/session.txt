@@ -1,0 +1,34 @@
++ cp /var/tmp/graphics010-run1/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics010-run13/prior-darwin-kernel.c
++ cp /var/tmp/graphics010-stage13/darwin-kernel.c /var/tmp/graphics010-run1/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics010-run1/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics010-run13/prior-mach-native.inc
++ cp /var/tmp/graphics010-stage13/mach-native.inc /var/tmp/graphics010-run1/source/darwin-user/remaklar/mach-native.inc
++ rm -f /var/tmp/graphics010-run1/build/ppc-darwin-user/darwin-kernel.o
++ make -C /var/tmp/graphics010-run1/build SRC_PATH=/var/tmp/graphics010-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics010-run13/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ extra=
++ '[' clock010-runtime = iokit-cstring-runtime ']'
++ '[' clock010-runtime = iokit010-open-runtime ']'
++ '[' clock010-runtime = framebuffer010-runtime ']'
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage13/clock010-runtime.c -o /var/tmp/graphics010-run13/clock010-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage13/clock010-runtime.c -o /var/tmp/graphics010-run13/clock010-runtime-ppc
++ '[' clock010-runtime = mach010-runtime ']'
++ '[' clock010-runtime = shm010-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run13/clock010-runtime-native /var/tmp/graphics010-run13/clock010-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run13/clock010-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run13/clock010-runtime-ppc
++ extra=
++ '[' framebuffer010-runtime = iokit-cstring-runtime ']'
++ '[' framebuffer010-runtime = iokit010-open-runtime ']'
++ '[' framebuffer010-runtime = framebuffer010-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage13/framebuffer010-runtime.c -framework IOKit -o /var/tmp/graphics010-run13/framebuffer010-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage13/framebuffer010-runtime.c -framework IOKit -o /var/tmp/graphics010-run13/framebuffer010-runtime-ppc
++ '[' framebuffer010-runtime = mach010-runtime ']'
++ '[' framebuffer010-runtime = shm010-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run13/framebuffer010-runtime-native /var/tmp/graphics010-run13/framebuffer010-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run13/framebuffer010-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run13/framebuffer010-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run13/windowserver /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ ps -axww
++ echo GRAPHICS010_STAGE13_COMPLETE
+GRAPHICS010_STAGE13_COMPLETE

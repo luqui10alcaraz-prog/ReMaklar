@@ -1,0 +1,18 @@
+{
+  "shutdown": "halt stalled after proc_shutdown; explicit sync beforehand; no disk I/O for >2min; full VM migration completed; source paused then QEMU quit",
+  "original_overlay": {
+    "path": "vm/darwin602-native-007-overlay-02.qcow2",
+    "sha256": "47bac9d704da87c7e180e7f7d45a636b018b8443a17a376986c4f32593d30874"
+  },
+  "exchange_preserved": {
+    "path": "build/native-007-exchange.img",
+    "sha256": "3c4ee8c7a408e28dd90f75462007be15792995b5d2879d0d5d8cd991510135e7"
+  },
+  "vmstate": {
+    "path": "logs/graphics-010/halt-vmstate.bin",
+    "sha256": "d44b0ecc7d8b8ea332393d38c1d3013a4b2aecf58b5ead0c743cce55f05b888d"
+  },
+  "base_sha256": "9d5ecfd3753747777d7b34baee475036a46f0b75b9018c8c6136d2e591aad72f",
+  "copy_before_rebase_matches": true,
+  "graphics_overlay_before_boot_sha256": "c89732d793fb4dd6fe346aff048eaa87d0f0b6e479f3fc71e1e7f7dd29932e03"
+}

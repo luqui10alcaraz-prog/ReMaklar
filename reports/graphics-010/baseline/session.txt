@@ -1,0 +1,27 @@
++ md5 /var/tmp/graphics009-run12/qemu-ppc
++ '[' signals-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/signals-runtime /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/signals-runtime-ppc /tmp/signals-009-r10.ppc
++ '[' statfs-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/statfs-runtime /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/statfs-runtime-ppc
++ '[' iokit-open-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/iokit-open-runtime /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/iokit-open-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/system /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run12/system-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/process-runtime /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/process-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/access-runtime /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/access-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/iokit-runtime /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/iokit-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/exec-runtime /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/exec-runtime-ppc /tmp/exec-009-r10.ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/objc /var/tmp/graphics009-run10/objc-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/cf /var/tmp/graphics009-run10/cf-i386
++ perl /var/tmp/graphics009-r8/run_utilities.pl /var/tmp/graphics009-run12/qemu-ppc /var/tmp/graphics009-r8/samples /var/tmp/graphics009-r8/utility-cases.tsv /var/tmp/graphics010-baseline/utilities
++ perl /var/tmp/graphics009-r8/run_filesystem.pl /var/tmp/graphics009-run12/qemu-ppc /var/tmp/graphics009-r8/samples /var/tmp/graphics009-r8/filesystem-probe.macho /var/tmp/graphics010-baseline/filesystem
++ target=/var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ '[' windowserver = splash ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/windowserver /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ target=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ '[' installer = splash ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/installer /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ target=/var/tmp/jaguar/System/Installation/CDIS/splash
++ '[' splash = splash ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-baseline/splash /var/tmp/graphics009-run12/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Installation/CDIS/splash /Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ echo BASELINE010_COMPLETE
+BASELINE010_COMPLETE

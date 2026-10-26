@@ -1,0 +1,29 @@
++ cp /var/tmp/graphics010-run1/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics010-run5/prior-darwin-kernel.c
++ cp /var/tmp/graphics010-stage5/darwin-kernel.c /var/tmp/graphics010-run1/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics010-run1/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics010-run5/prior-mach-native.inc
++ cp /var/tmp/graphics010-stage5/mach-native.inc /var/tmp/graphics010-run1/source/darwin-user/remaklar/mach-native.inc
++ rm -f /var/tmp/graphics010-run1/build/ppc-darwin-user/darwin-kernel.o
++ make -C /var/tmp/graphics010-run1/build SRC_PATH=/var/tmp/graphics010-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics010-run5/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ extra=
++ '[' framebuffer010-runtime = iokit-cstring-runtime ']'
++ '[' framebuffer010-runtime = iokit010-open-runtime ']'
++ '[' framebuffer010-runtime = framebuffer010-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage5/framebuffer010-runtime.c -framework IOKit -o /var/tmp/graphics010-run5/framebuffer010-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage5/framebuffer010-runtime.c -framework IOKit -o /var/tmp/graphics010-run5/framebuffer010-runtime-ppc
++ '[' framebuffer010-runtime = mach010-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run5/framebuffer010-runtime-native /var/tmp/graphics010-run5/framebuffer010-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run5/framebuffer010-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run5/framebuffer010-runtime-ppc
++ test -e /var/tmp/jaguar/System/Library/CoreServices/pbs
++ cp /var/tmp/graphics010-stage5/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run5/ats /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run5/pbs /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/pbs
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run5/installer /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run5/windowserver /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run5/splash /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Installation/CDIS/splash /Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ ps -axww
++ echo GRAPHICS010_STAGE5_COMPLETE
+GRAPHICS010_STAGE5_COMPLETE

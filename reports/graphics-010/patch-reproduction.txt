@@ -1,0 +1,10 @@
+PASS 0001-remaklar-0.01.patch
+PASS 0002-dyld-startup.patch
+PASS 0003-darwin6-i386.patch
+PASS 0004-filesystem.patch
+PASS 0005-runtime-quartz.patch
+PASS 0006-processes-iokit.patch
+PASS 0007-statfs-signals-iokit.patch
+PASS 0008-native-mach-graphics.patch
+MATCH darwin-kernel.c sha256=b614e46387b9654336c80ba4c7530c5e4dbd373cbeae9ce2785a93ae540cc2c7
+MATCH mach-native.inc sha256=9f36cb0c12d267218f606492d8199f43ff5f0cbb034a82fe8fb6ba84116df140

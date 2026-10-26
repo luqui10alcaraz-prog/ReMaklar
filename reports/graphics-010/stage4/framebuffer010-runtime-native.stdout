@@ -1,0 +1,6 @@
+Framebuffer open result=3758097101
+Framebuffer open result=0
+Framebuffer IOClass result=0 bytes=42
+Framebuffer class XML: <string ID="0">IONDRVFramebuffer</string>
+Framebuffer missing property result=3758097136
+real framebuffer open associated service property errors close OK

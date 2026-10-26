@@ -1,0 +1,5 @@
+leader_exit=0
+timeout=0
+remaining_group_after_leader=0
+descendant_seconds=5
+remaining_detached_children=0

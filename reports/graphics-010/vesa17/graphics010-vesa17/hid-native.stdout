@@ -1,0 +1,4 @@
+real native IOHID create shared memory result=0
+real native IOHID map result=0 bytes=20392
+real native EvOffsets globals=8 end=20392 raw=08000000 PPC_unadapted=134217728
+real native IOHID map read endian mismatch unmap close OK

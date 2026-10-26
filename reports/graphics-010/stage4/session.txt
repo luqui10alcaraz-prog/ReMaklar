@@ -1,0 +1,61 @@
++ cp /var/tmp/graphics010-run1/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics010-run4/prior-darwin-kernel.c
++ cp /var/tmp/graphics010-stage4/darwin-kernel.c /var/tmp/graphics010-run1/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics010-run1/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics010-run4/prior-mach-native.inc
++ cp /var/tmp/graphics010-stage4/mach-native.inc /var/tmp/graphics010-run1/source/darwin-user/remaklar/mach-native.inc
++ rm -f /var/tmp/graphics010-run1/build/ppc-darwin-user/darwin-kernel.o
++ make -C /var/tmp/graphics010-run1/build SRC_PATH=/var/tmp/graphics010-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics010-run4/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ extra=
++ '[' mach010-runtime = iokit-cstring-runtime ']'
++ '[' mach010-runtime = iokit010-open-runtime ']'
++ '[' mach010-runtime = framebuffer010-runtime ']'
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage4/mach010-runtime.c -o /var/tmp/graphics010-run4/mach010-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage4/mach010-runtime.c -o /var/tmp/graphics010-run4/mach010-runtime-ppc
++ '[' mach010-runtime = mach010-runtime ']'
++ cp /var/tmp/graphics010-run4/mach010-runtime-ppc /var/tmp/jaguar/tmp/mach010-r4.ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/mach010-runtime-native /var/tmp/graphics010-run4/mach010-runtime-i386 /var/tmp/graphics010-run4/mach010-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/mach010-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/mach010-runtime-ppc /tmp/mach010-r4.ppc
++ extra=
++ '[' iokit-cstring-runtime = iokit-cstring-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage4/iokit-cstring-runtime.c -framework IOKit -o /var/tmp/graphics010-run4/iokit-cstring-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage4/iokit-cstring-runtime.c -framework IOKit -o /var/tmp/graphics010-run4/iokit-cstring-runtime-ppc
++ '[' iokit-cstring-runtime = mach010-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/iokit-cstring-runtime-native /var/tmp/graphics010-run4/iokit-cstring-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/iokit-cstring-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/iokit-cstring-runtime-ppc
++ extra=
++ '[' mmap010-runtime = iokit-cstring-runtime ']'
++ '[' mmap010-runtime = iokit010-open-runtime ']'
++ '[' mmap010-runtime = framebuffer010-runtime ']'
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage4/mmap010-runtime.c -o /var/tmp/graphics010-run4/mmap010-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage4/mmap010-runtime.c -o /var/tmp/graphics010-run4/mmap010-runtime-ppc
++ '[' mmap010-runtime = mach010-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/mmap010-runtime-native /var/tmp/graphics010-run4/mmap010-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/mmap010-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/mmap010-runtime-ppc
++ extra=
++ '[' iokit010-open-runtime = iokit-cstring-runtime ']'
++ '[' iokit010-open-runtime = iokit010-open-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage4/iokit010-open-runtime.c -framework IOKit -o /var/tmp/graphics010-run4/iokit010-open-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage4/iokit010-open-runtime.c -framework IOKit -o /var/tmp/graphics010-run4/iokit010-open-runtime-ppc
++ '[' iokit010-open-runtime = mach010-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/iokit010-open-runtime-native /var/tmp/graphics010-run4/iokit010-open-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/iokit010-open-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/iokit010-open-runtime-ppc
++ extra=
++ '[' framebuffer010-runtime = iokit-cstring-runtime ']'
++ '[' framebuffer010-runtime = iokit010-open-runtime ']'
++ '[' framebuffer010-runtime = framebuffer010-runtime ']'
++ extra=-framework IOKit
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics010-stage4/framebuffer010-runtime.c -framework IOKit -o /var/tmp/graphics010-run4/framebuffer010-runtime-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics010-stage4/framebuffer010-runtime.c -framework IOKit -o /var/tmp/graphics010-run4/framebuffer010-runtime-ppc
++ '[' framebuffer010-runtime = mach010-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/framebuffer010-runtime-native /var/tmp/graphics010-run4/framebuffer010-runtime-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/framebuffer010-runtime-jaguar /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/framebuffer010-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/installer /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/windowserver /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Library/CoreServices/WindowServer
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics010-run4/splash /var/tmp/graphics010-run1/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/jaguar/System/Installation/CDIS/splash /Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ ps -axww
++ echo GRAPHICS010_STAGE4_COMPLETE
+GRAPHICS010_STAGE4_COMPLETE

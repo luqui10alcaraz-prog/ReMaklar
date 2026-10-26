@@ -1,0 +1,167 @@
+{
+  "runtime": "/var/tmp/graphics010-run19/qemu-ppc",
+  "status": "all listed regression cases passed; GUI not obtained",
+  "utilities": 23,
+  "filesystem": 11,
+  "filesystem_leftover": 0,
+  "fixtures": 11,
+  "statuses": {
+    "access-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "cf": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "clock010-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "credentials010-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "cursor-native": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "exec-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "framebuffer010-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "iokit-cstring-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "iokit-open-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "iokit-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "iokit010-open-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "mach010-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "mmap010-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "objc": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "process-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "shm010-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "signals-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "statfs-runtime": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    },
+    "system": {
+      "leader_exit": "0",
+      "timeout": "0",
+      "remaining_group_after_leader": "0",
+      "descendant_seconds": "0",
+      "remaining_detached_children": "0"
+    }
+  },
+  "reference_comparisons": {
+    "stage7/mach010-runtime": "native/PPC stdout identical",
+    "stage7/shm010-runtime": "native/PPC stdout identical",
+    "stage7/credentials010-runtime": "native/PPC stdout identical",
+    "stage7/framebuffer010-runtime": "native/PPC stdout identical",
+    "stage8/clock010-runtime": "native/PPC stdout identical",
+    "stage19/clock010-runtime": "native/PPC stdout identical",
+    "stage19/framebuffer010-runtime": "native/PPC stdout identical"
+  },
+  "joint_trial": "completed; WindowServer stops at framebuffer cursor shared control memory; Installer connection unavailable",
+  "native_fixtures": 11,
+  "native_fixture_stdout_and_stderr_validated": true,
+  "native_memory_fault_exit": 126,
+  "native_illegal_stdout": "identical diagnostic to native 0.09, exit 125; Linux keeps stdout empty",
+  "native_cursor_reference": {
+    "bytes": 278764,
+    "version": 3,
+    "unadapted_ppc_version": 50331648
+  },
+  "native_hid_reference": {
+    "bytes": 20392,
+    "globals_offset": 8,
+    "unadapted_ppc_offset": 134217728
+  }
+}

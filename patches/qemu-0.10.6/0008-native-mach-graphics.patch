@@ -1,0 +1,752 @@
+diff --git a/darwin-user/remaklar/darwin-kernel.c b/darwin-user/remaklar/darwin-kernel.c
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -17,6 +17,7 @@
+ #ifdef __APPLE__
+ #include <sys/mount.h>
+ #include <sys/attr.h>
++#include <sys/sysctl.h>
+ #include <mach/mach_time.h>
+ #include <mach/mach.h>
+ #else
+@@ -34,6 +35,9 @@
+ enum { TASK_SELF = 0x101, THREAD_SELF = 0x102, HOST_SELF = 0x103, BOOTSTRAP = 0x104, SYSTEM_CLOCK_PORT = 0x105, IO_MASTER_PORT = 0x106 };
+ static uint32_t native_io_master;
+ static uint32_t native_iokit_ports[4096];
++static uint32_t native_ports[4096];
++static unsigned char native_notification_kind[4096];
++static struct {uint32_t connection,type,address,bytes;} native_iomappings[64];
+ #ifdef __APPLE__
+ struct mach_header;
+ extern const struct mach_header *NSAddImage(const char *,unsigned long);
+@@ -70,6 +74,8 @@
+ static uint32_t directory_positions[256];
+ static char guest_cwd[4096] = "/";
+ static uint32_t split_region;
++
++#include "mach-native.inc"
+ 
+ /* Split-segment Jaguar libraries keep their relative RO/RW geometry in one
+  * PRIVATE guest region. Never MAP_FIXED over host mappings or claim the
+@@ -390,7 +396,7 @@
+     uint32_t pending[32];
+     uint32_t send[4096],membership[4096],once[4096],notification[4096],limits[4096];
+     unsigned char receive[4096],sets[4096];
+-    uint32_t native_iokit[4096];
++    uint32_t native_iokit[4096],native_mach[4096];
+ };
+ static int transfer_ports(int fd,int writing)
+ {
+@@ -399,11 +405,20 @@
+     if(writing) {
+         s->signals_mask=signal_mask;
+         for(n=1;n<32;n++){s->actions[n]=signal_actions[n];if(s->actions[n].handler>1)memset(&s->actions[n],0,sizeof(s->actions[n]));s->pending[n]=signal_pending[n];}
+-        s->magic=0x524d3039;s->reply=next_reply;s->port=next_port;s->priority=thread_base_priority;s->io_master=native_io_master;
++        s->magic=0x524d3130;s->reply=next_reply;s->port=next_port;s->priority=thread_base_priority;s->io_master=native_io_master;
+         memcpy(s->send,send_refs,sizeof(send_refs));memcpy(s->membership,port_membership,sizeof(port_membership));
+         memcpy(s->once,send_once_target,sizeof(send_once_target));memcpy(s->notification,dead_name_notification,sizeof(dead_name_notification));
+         memcpy(s->limits,queue_limits,sizeof(queue_limits));memcpy(s->receive,receive_rights,sizeof(receive_rights));memcpy(s->sets,port_sets,sizeof(port_sets));
+         memcpy(s->native_iokit,native_iokit_ports,sizeof(native_iokit_ports));
++        memcpy(s->native_mach,native_ports,sizeof(native_ports));
++        /* XNU 344 task_halt clears the ordinary IPC space on successful
++         * exec. Only special/registered ports have kernel inheritance.
++         * Never restore stale native port numbers into the new namespace. */
++        s->reply=next_reply;s->port=next_port;s->io_master=0;
++        memset(s->send,0,sizeof(s->send));memset(s->membership,0,sizeof(s->membership));
++        memset(s->once,0,sizeof(s->once));memset(s->notification,0,sizeof(s->notification));
++        memset(s->limits,0,sizeof(s->limits));memset(s->receive,0,sizeof(s->receive));memset(s->sets,0,sizeof(s->sets));
++        memset(s->native_iokit,0,sizeof(s->native_iokit));memset(s->native_mach,0,sizeof(s->native_mach));
+     }
+     while(done<sizeof(*s)) {
+         n=writing?write(fd,(char *)s+done,sizeof(*s)-done):read(fd,(char *)s+done,sizeof(*s)-done);
+@@ -412,7 +427,7 @@
+         done+=n;
+     }
+     if(!writing) {
+-        if(s->magic!=0x524d3039 || s->port<0x400 || s->port>4096){errno=EINVAL;goto finished;}
++        if(s->magic!=0x524d3130 || s->port<0x400 || s->port>4096){errno=EINVAL;goto finished;}
+         signal_mask=s->signals_mask;memcpy(signal_actions,s->actions,sizeof(signal_actions));
+         for(n=1;n<32;n++)signal_pending[n]=s->pending[n];
+         next_reply=s->reply;next_port=s->port;thread_base_priority=s->priority;native_io_master=s->io_master;
+@@ -420,6 +435,7 @@
+         memcpy(send_once_target,s->once,sizeof(send_once_target));memcpy(dead_name_notification,s->notification,sizeof(dead_name_notification));
+         memcpy(queue_limits,s->limits,sizeof(queue_limits));memcpy(receive_rights,s->receive,sizeof(receive_rights));memcpy(port_sets,s->sets,sizeof(port_sets));
+         memcpy(native_iokit_ports,s->native_iokit,sizeof(native_iokit_ports));
++        memcpy(native_ports,s->native_mach,sizeof(native_ports));
+     }
+     result=0;
+ finished:free(s);return result;
+@@ -612,6 +628,9 @@
+                 for(i=1;i<32;i++)signal_pending[i]=0;
+                 native_io_master=0;
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
++                memset(native_ports,0,sizeof(native_ports));
++                memset(native_notification_kind,0,sizeof(native_notification_kind));
++                memset(native_iomappings,0,sizeof(native_iomappings));
+             }
+             fprintf(stderr,"fork real host_pid=%ld child_pid=%ld branch=%s\n",
+                     (long)getpid(),(long)pid,pid ? "parent" : "child");
+@@ -627,6 +646,11 @@
+         break;
+     }
+     case 39: r=getppid();break;
++    case 183:r=seteuid(a);break;
++    case 182:r=setegid(a);break;
++    case 181:r=setgid(a);break;
++    case 23:r=setuid(a);break;
++    case 201:r=ftruncate(host_fd(a),(int64_t)(((uint64_t)b<<32)|c));break;
+     case 147: r=setsid();break; /* Real session creation; host errors retained. */
+     case 59: r=exec_ppc(env);break;
+     case 133: /* sendto on a connected local socket, no explicit destination. */
+@@ -656,8 +680,8 @@
+         fprintf(stderr,"guest unix connect %s\n",resolved);
+         r=connect(host_fd(a),(struct sockaddr *)&address,sizeof(address));break;
+     }
+-    case 266: { /* shm_open lookup in the initially empty guest namespace.
+-                * No host-global shared objects are exposed as guest objects. */
++    case 266:
++    case 267: { /* Native POSIX shared namespace, shared with original i386 peers. */
+         char name[1024];
+         for(i=0;i<sizeof(name);i++) {
+             if(!remaklar_guest_access(a+i,1,PAGE_READ)) { errno=EFAULT;break; }
+@@ -665,9 +689,13 @@
+         }
+         if(errno) break;
+         if(i==sizeof(name)) { errno=ENAMETOOLONG;break; }
+-        fprintf(stderr,"shm lookup name=%s flags=%x\n",name,b);
+-        if(b&0x200) qerror("guest shared-memory creation not implemented");
+-        errno=ENOENT;break;
++#ifdef __APPLE__
++        if(n==266)r=register_fd(shm_open(name,b,c));else r=shm_unlink(name);
++        fprintf(stderr,"native shm syscall=%u name=%s flags=%x result=%d errno=%d\n",n,name,b,r,errno);
++#else
++        errno=ENOTSUP;
++#endif
++        break;
+     }
+     case 121: { /* writev: fixed-width PPC iovec, bytes stay unswapped. */
+         struct iovec *vectors;
+@@ -718,6 +746,23 @@
+             /* XNU sysctl_string copies the NUL but reports strlen, unlike
+              * sysctl_rdstring. The native contract probe caught this detail. */
+             stl(g2h(env->gpr[6]),needed-1);r=0;break;
++        }
++        if(b==2 && ldl(g2h(a))==6 && (ldl(g2h(a+4))==4 || ldl(g2h(a+4))==5) && !env->gpr[7] && !env->gpr[8]) {
++            uint32_t value=4321,capacity;
++            if(!remaklar_guest_access(env->gpr[6],4,PAGE_READ|PAGE_WRITE)){errno=EFAULT;break;}
++            capacity=ldl(g2h(env->gpr[6]));
++            if(ldl(g2h(a+4))==5) {
++#ifdef __APPLE__
++                int mib[2]={CTL_HW,HW_PHYSMEM};size_t bytes=4;
++                if(sysctl(mib,2,&value,&bytes,NULL,0))break;
++                if(bytes!=4)qerror("native hw.physmem result size");
++#else
++                errno=ENOTSUP;break;
++#endif
++            }
++            if(c && capacity<4){errno=ENOMEM;break;}
++            if(c && !remaklar_guest_access(c,4,PAGE_WRITE)){errno=EFAULT;break;}
++            if(c)stl(g2h(c),value);stl(g2h(env->gpr[6]),4);r=0;break;
+         }
+         if (b != 2 || ldl(g2h(a)) != 6 ||
+             (ldl(g2h(a + 4)) != 3 && ldl(g2h(a + 4)) != 13) ||
+@@ -838,11 +883,16 @@
+         r = fcntl(host_fd(a), b == 1 ? F_GETFD : F_SETFD, c & 1);
+         break;
+     case 116: {
+-        struct timeval tv;
+-        if (b) qerror("gettimeofday timezone output not implemented");
+-        if (!remaklar_guest_access(a, 8, PAGE_WRITE)) { errno = EFAULT; break; }
+-        r = gettimeofday(&tv, NULL);
+-        if (!r) { stl(g2h(a), tv.tv_sec); stl(g2h(a+4), tv.tv_usec); }
++        struct timeval tv;struct timezone tz;
++        /* Jaguar ppc_gettimeofday returns seconds/useconds in r3/r4.
++         * Original Libc's __ppc_gettimeofday stores them through r12.
++         * The i386 copyout ABI silently freezes the PPC caller's clock. */
++        if (b && !remaklar_guest_access(b,8,PAGE_WRITE)) { errno=EFAULT;break; }
++        r=gettimeofday(&tv,b?&tz:NULL);
++        if (!r) {
++            if(b){stl(g2h(b),tz.tz_minuteswest);stl(g2h(b+4),tz.tz_dsttime);}
++            if(a){r=tv.tv_sec;env->gpr[4]=tv.tv_usec;}
++        }
+         break;
+     }
+     case 128: {
+@@ -875,6 +925,34 @@
+ #endif
+         break;
+     }
++    case 197: { /* PPC32 off_t follows fd in r8:r9, as in Jaguar mmap.s. */
++        uint32_t flags=env->gpr[6],fd=env->gpr[7];
++        uint64_t offset=((uint64_t)env->gpr[8]<<32)|env->gpr[9];
++        int host_flags=0;long mapped;uint32_t pageoff=offset&4095U,bytes;
++        if((int32_t)b<0 || c&~7U || (flags&~(1U|2U|0x10U|0x40U|0x1000U)) || ((flags&3)!=1 && (flags&3)!=2)){errno=EINVAL;break;}
++        if(offset>0xffffffffULL){errno=ENOTSUP;break;}
++        if((flags&0x1000) && fd!=0xffffffffU){errno=EINVAL;break;}
++        if((uint64_t)b+pageoff+4095>0xffffffffULL){errno=EINVAL;break;}
++        bytes=(b+pageoff+4095)&~4095U;offset-=pageoff;
++        if(flags&0x10)a-=pageoff;
++        if((flags&0x10) && ((a&4095) || a<4096 || (uint64_t)a+bytes>0xc0000000ULL)){errno=EINVAL;break;}
++        host_flags=(flags&1)?MAP_SHARED:MAP_PRIVATE;
++        if(flags&0x10)host_flags|=MAP_FIXED;
++        if(flags&0x40)host_flags|=MAP_NORESERVE;
++        if(flags&0x1000)host_flags|=MAP_ANONYMOUS;
++        else if(host_fd(fd)<0){errno=EBADF;break;}
++        mapped=target_mmap(a,bytes,c,host_flags,(flags&0x1000)?-1:host_fd(fd),(unsigned long)offset);
++        if((unsigned long)mapped>=0xfffff000UL){if(mapped!=-1)errno=-mapped;r=-1;}
++        else r=mapped+pageoff;
++        break;
++    }
++    case 73: { /* Unmap only guest mappings; holes never remove host code. */
++        uint32_t page,end;
++        if((uint64_t)a+b+4095>0xc0000000ULL){errno=EINVAL;break;}
++        end=(a+b+4095)&~4095U;a&=~4095U;r=0;
++        for(page=a;page<end;page+=4096)if(page_get_flags(page)&PAGE_VALID)if(target_munmap(page,4096)){r=-1;break;}
++        break;
++    }
+     case 191:
+     case 192: /* Jaguar pathconf/fpathconf values come from the real filesystem. */
+ #ifdef __APPLE__
+@@ -986,7 +1064,10 @@
+     uint32_t a = env->gpr[3], size = env->gpr[5], cap = env->gpr[6];
+     uint32_t out = env->gpr[0] == (uint32_t)-32 && env->gpr[10] ? env->gpr[10] : a;
+     uint32_t id, destination, reply_port, length = 36, code = 0, i, complex = 0;
+-    uint8_t answer[128];
++    uint8_t answer[8192];
++#ifdef __APPLE__
++    if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))]))return native_message(env);
++#endif
+     if (size < 24 || size > 4096 || !remaklar_guest_access(a, size, PAGE_READ))
+         qerror("invalid Mach message request");
+     id = ldl(g2h(a + 20));
+@@ -1003,7 +1084,235 @@
+         return 0x10000003U; /* MACH_SEND_INVALID_DEST; no fabricated reply. */
+     }
+     memset(answer, 0, sizeof(answer));
++#ifdef __APPLE__
++    if(native_kernel_rpc(id,destination,a,size,answer,&length,&code,&complex))goto finish_native_reply;
++#endif
+     switch (id) {
++    case 2819: /* Actual framebuffer VRAM mapping; never a shadow copy. */
++    case 2853: /* Original IOUserClient unmap, tracked guest page metadata. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*map_fn)(mach_port_t,int,mach_port_t,vm_address_t *,vm_size_t *,int);
++            typedef kern_return_t (*unmap_fn)(mach_port_t,int,mach_port_t,vm_address_t);
++            typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
++            typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
++            mach_port_t endpoint,service=0;uint32_t type,address,slot;int isfb=0;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=(id==2819?64:56) || ldl(g2h(a+24))!=1 || ldl(g2h(a+28))!=TASK_SELF || ldub(g2h(a+38))!=19)qerror("invalid IOKit memory task descriptor");
++            type=ldl(g2h(a+48));address=ldl(g2h(a+52));
++            if(id==2853) {
++                code=((unmap_fn)native_iokit_symbol("_io_connect_unmap_memory"))(endpoint,type,mach_task_self(),address);
++                if(!code)for(slot=0;slot<64;slot++)if(native_iomappings[slot].connection==destination && native_iomappings[slot].type==type && native_iomappings[slot].address==address){page_set_flags(address&~4095U,TARGET_PAGE_ALIGN(address+native_iomappings[slot].bytes),0);memset(&native_iomappings[slot],0,sizeof(native_iomappings[slot]));break;}
++            } else {
++                vm_address_t mapped=address,region;vm_size_t bytes=ldl(g2h(a+56)),regionsize;vm_region_basic_info_data_t info;mach_msg_type_number_t count=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;uint32_t flags=ldl(g2h(a+60));
++                code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);if(code)break;
++                code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);mach_port_deallocate(mach_task_self(),service);if(code)break;
++                if(!isfb || type!=110)qerror("IOKit shared control memory needs live endian adapter: type=%u framebuffer=%d",type,isfb);
++                if(!(flags&1) && (address<4096 || address>=0xc0000000U))qerror("IOKit fixed map outside native user range");
++                for(slot=0;slot<64 && native_iomappings[slot].connection;slot++);if(slot==64)qerror("IOKit mapping table exhausted");
++                code=((map_fn)native_iokit_symbol("_io_connect_map_memory"))(endpoint,type,mach_task_self(),&mapped,&bytes,flags);
++                if(!code) {
++                    region=mapped;
++                    if(!bytes || (uint64_t)mapped+bytes>0xc0000000ULL || vm_region(mach_task_self(),&region,&regionsize,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&count,&object) || region>mapped || (uint64_t)region+regionsize<(uint64_t)mapped+bytes)qerror("native IO mapping region mismatch");
++                    if(object)mach_port_deallocate(mach_task_self(),object);
++                    page_set_flags(mapped&~4095U,TARGET_PAGE_ALIGN(mapped+bytes),(info.protection&7)|PAGE_VALID);
++                    native_iomappings[slot].connection=destination;native_iomappings[slot].type=type;native_iomappings[slot].address=mapped;native_iomappings[slot].bytes=bytes;
++                    stl(answer+36,mapped);stl(answer+40,bytes);length=44;
++                }
++                fprintf(stderr,"native IOKit VRAM map result=%u bytes=%u address=%lx flags=%x\n",code,(uint32_t)bytes,(unsigned long)mapped,flags);
++            }
++        }
++#else
++        qerror("IOKit mapping requires Darwin");
++#endif
++        break;
++    case 2821: /* Physical-copy serialized properties, separate method result. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*set_fn)(mach_port_t,const char *,uint32_t,uint32_t *);
++            uint32_t address,count,result=0;mach_port_t endpoint;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=52 || ldl(g2h(a+24))!=1 || ldub(g2h(a+39))!=1 || ldub(g2h(a+36)))qerror("invalid serialized IOKit property input");
++            address=ldl(g2h(a+28));count=ldl(g2h(a+32));
++            if(count!=ldl(g2h(a+48)) || count>16*1024*1024 || !remaklar_guest_access(address,count,PAGE_READ))qerror("invalid IOKit property bytes");
++            code=((set_fn)native_iokit_symbol("_io_connect_set_properties"))(endpoint,g2h(address),count,&result);
++            if(!code){stl(answer+36,result);length=40;}
++            fprintf(stderr,"native IOKit set properties transport=%u result=%u bytes=%u\n",code,result,count);
++        }
++#else
++        qerror("IOKit set properties requires Darwin");
++#endif
++        break;
++    case 2826: /* io_registry_entry_get_path: bounded native registry path. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*path_fn)(mach_port_t,const char *,char *);
++            char path[512]={0};uint32_t count,bytes;mach_port_t endpoint;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<40)qerror("invalid registry path request");
++            count=ldl(g2h(a+36));if(!count || count>128 || size!=40+((count+3)&~3) || ldub(g2h(a+40+count-1)))qerror("invalid registry plane");
++            code=((path_fn)native_iokit_symbol("_io_registry_entry_get_path"))(endpoint,g2h(a+40),path);
++            if(!code){if(!memchr(path,0,sizeof(path)))qerror("native registry path not terminated");bytes=strlen(path)+1;stl(answer+36,0);stl(answer+40,bytes);memcpy(answer+44,path,bytes);length=44+((bytes+3)&~3);}
++            fprintf(stderr,"native IOKit path result=%u path=%s\n",code,path);
++        }
++#else
++        qerror("IOKit path requires Darwin");
++#endif
++        break;
++    case 2801: /* io_object_conforms_to: kernel's real metaclass query. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
++            uint32_t count;int yes=0;mach_port_t endpoint;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<40)qerror("invalid conforms request");
++            count=ldl(g2h(a+36));if(!count || count>128 || size!=40+((count+3)&~3) || ldub(g2h(a+40+count-1)))qerror("invalid conforms class name");
++            code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(endpoint,g2h(a+40),&yes);
++            if(!code){stl(answer+36,yes);length=40;}
++            fprintf(stderr,"native IOKit conforms class=%s result=%u yes=%d\n",(char *)g2h(a+40),code,yes);
++        }
++#else
++        qerror("IOKit conforms requires Darwin");
++#endif
++        break;
++    case 2850: /* IOService interest notification, original kernel notifier. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*interest_fn)(mach_port_t,const char *,mach_port_t,const uint32_t *,uint32_t,mach_port_t *);
++            uint32_t count,namebytes,base,refs[8]={0},j,guest;mach_port_t endpoint,notification=0;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<60 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=20)qerror("invalid IOKit interest request");
++            namebytes=ldl(g2h(a+52));if(!namebytes || namebytes>128 || size<60+((namebytes+3)&~3) || ldub(g2h(a+56+namebytes-1)))qerror("invalid IOKit interest name");
++            base=56+((namebytes+3)&~3);count=ldl(g2h(a+base));if(count>8 || size!=base+4+count*4)qerror("invalid interest reference count");
++            for(j=0;j<count;j++)refs[j]=ldl(g2h(a+base+4+j*4));guest=ldl(g2h(a+28));
++            code=((interest_fn)native_iokit_symbol("_io_service_add_interest_notification"))(endpoint,g2h(a+56),native_name(guest),refs,count,&notification);
++            if(!code){if(guest<4096)native_notification_kind[guest]=2;complex=0x80000000;stl(answer+24,1);stl(answer+28,native_iokit_export(notification));answer[38]=17;length=40;}
++            fprintf(stderr,"native IOKit interest name=%s result=%u\n",(char *)g2h(a+56),code);
++        }
++#else
++        qerror("IOKit interest requires Darwin");
++#endif
++        break;
++    case 2818: /* Real kernel notification registration with MAKE_SEND. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*notify_fn)(mach_port_t,int,mach_port_t,int);
++            uint32_t guest;mach_port_t endpoint;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=56 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=20)qerror("invalid IOKit notification request");
++            guest=ldl(g2h(a+28));
++            code=((notify_fn)native_iokit_symbol("_io_connect_set_notification_port"))(endpoint,ldl(g2h(a+48)),native_name(guest),ldl(g2h(a+52)));
++            if(!code && guest<4096)native_notification_kind[guest]=1;
++            fprintf(stderr,"native IOKit notification type=%u guest_port=%x result=%u\n",ldl(g2h(a+48)),guest,code);
++        }
++#else
++        qerror("IOKit notification requires Darwin");
++#endif
++        break;
++    case 2811: /* io_registry_entry_get_properties: physical-copy XML. */
++    case 2805: /* io_registry_entry_get_property: immutable serialized XML. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*property_fn)(mach_port_t,const char *,char **,uint32_t *);
++            char *data=NULL;uint32_t count=0,namesize;long mapped;mach_port_t endpoint;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]))qerror("invalid IOKit property endpoint");
++            if(id==2811) {
++                typedef kern_return_t (*properties_fn)(mach_port_t,char **,uint32_t *);
++                if(size!=24)qerror("invalid IOKit properties request");
++                code=((properties_fn)native_iokit_symbol("_io_registry_entry_get_properties"))(endpoint,&data,&count);
++            } else {
++                if(size<40)qerror("short IOKit property request");
++                namesize=ldl(g2h(a+36));if(!namesize || namesize>128 || size<40+((namesize+3)&~3) || ldub(g2h(a+40+namesize-1)))qerror("invalid IOKit property name");
++                code=((property_fn)native_iokit_symbol("_io_registry_entry_get_property"))(endpoint,g2h(a+40),&data,&count);
++            }
++            fprintf(stderr,"native IOKit properties rpc=%u result=%u bytes=%u\n",id,code,count);
++            if(code)break;if(count>16*1024*1024)qerror("IOKit property too large");
++            mapped=target_mmap(0,count?count:1,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_ANONYMOUS,-1,0);
++            if(mapped==-1)qerror("IOKit property allocation");if(count)memcpy(g2h(mapped),data,count);
++            if(data && count)vm_deallocate(mach_task_self(),(vm_address_t)data,count);
++            complex=0x80000000;stl(answer+24,1);stl(answer+28,mapped);stl(answer+32,count);answer[39]=1;stl(answer+48,count);length=52;
++        }
++#else
++        qerror("IOKit property requires native Darwin");
++#endif
++        break;
++    case 2824: /* IOGraphics color-conversion tables: byte or uint32 arrays. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*method_fn)(mach_port_t,int,const uint32_t *,uint32_t,const char *,uint32_t);
++            typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
++            typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
++            uint32_t incount,bytes,base,input[16],data[1024],j;mach_port_t endpoint,service=0;int isfb=0;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<44)qerror("invalid IOKit scalar/structure request");
++            incount=ldl(g2h(a+36));if(incount>16 || size<44+incount*4)qerror("invalid structure input scalars");
++            base=44+incount*4;bytes=ldl(g2h(a+base-4));if(bytes>sizeof(data) || size!=base+((bytes+3)&~3))qerror("invalid structure input bytes");
++            for(j=0;j<incount;j++)input[j]=ldl(g2h(a+40+j*4));
++            code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);if(code)break;
++            code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);mach_port_deallocate(mach_task_self(),service);if(code)break;
++            if(!isfb || ldl(g2h(a+32))!=15 || incount!=1)qerror("IOKit scalar/structure needs typed adapter selector=%u",ldl(g2h(a+32)));
++            memcpy(data,g2h(a+base),bytes);
++            /* IOFramebuffer::extSetColorConvertTable select 2 is UInt32[256];
++             * selections 0,1,3 are byte tables. Kernel validates exact sizes. */
++            if(input[0]==2)for(j=0;j<bytes/4;j++)data[j]=ldl(g2h(a+base+j*4));
++            code=((method_fn)native_iokit_symbol("_io_connect_method_scalarI_structureI"))(endpoint,15,input,incount,(char *)data,bytes);
++            fprintf(stderr,"native framebuffer color table select=%u bytes=%u result=%u\n",input[0],bytes,code);
++        }
++#else
++        qerror("IOKit color tables require Darwin");
++#endif
++        break;
++    case 2825: /* IOGraphics selector 7: array of real 32-bit display mode IDs. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*method_fn)(mach_port_t,int,const char *,uint32_t,char *,uint32_t *);
++            typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
++            typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
++            uint32_t output[1024]={0},outbytes,j;mach_port_t endpoint,service=0;int isfb=0;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=44 || ldl(g2h(a+32))!=7 || ldl(g2h(a+36)))qerror("IOKit struct/struct method needs typed adapter");
++            outbytes=ldl(g2h(a+40));if(outbytes>sizeof(output) || (outbytes&3))qerror("invalid display mode list size");
++            code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);if(code)break;
++            code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);mach_port_deallocate(mach_task_self(),service);if(code)break;
++            if(!isfb)qerror("mode list on non-framebuffer user client");
++            code=((method_fn)native_iokit_symbol("_io_connect_method_structureI_structureO"))(endpoint,7,NULL,0,(char *)output,&outbytes);
++            fprintf(stderr,"native framebuffer modes result=%u bytes=%u\n",code,outbytes);
++            if(code)break;if(outbytes>sizeof(output) || (outbytes&3))qerror("native mode list size");
++            stl(answer+36,outbytes);for(j=0;j<outbytes/4;j++)stl(answer+40+j*4,output[j]);length=40+outbytes;
++        }
++#else
++        qerror("IOKit mode list requires Darwin");
++#endif
++        break;
++    case 2823: /* Framebuffer pixel description: typed IOGraphics-40 layout. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*structure_fn)(mach_port_t,int,const uint32_t *,uint32_t,char *,uint32_t *);
++            typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
++            typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
++            uint32_t input[16],output[51]={0},incount,outbytes,selector,j;mach_port_t endpoint,service=0;int isfb=0;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<44)qerror("invalid IOKit structure request");
++            incount=ldl(g2h(a+36));if(incount>16 || size!=44+incount*4)qerror("invalid structure input count");
++            selector=ldl(g2h(a+32));outbytes=ldl(g2h(a+40+incount*4));
++            code=((service_fn)native_iokit_symbol("_io_connect_get_service"))(endpoint,&service);
++            if(code)break;
++            code=((conforms_fn)native_iokit_symbol("_io_object_conforms_to"))(service,"IOFramebuffer",&isfb);
++            mach_port_deallocate(mach_task_self(),service);if(code)break;
++            if(!isfb || !((selector==1 && incount==3 && outbytes==172) || (selector==5 && incount==1 && outbytes==204)))qerror("IOKit structure needs typed adapter selector=%u input=%u output=%u framebuffer=%d",selector,incount,outbytes,isfb);
++            for(j=0;j<incount;j++)input[j]=ldl(g2h(a+40+j*4));
++            code=((structure_fn)native_iokit_symbol("_io_connect_method_scalarI_structureO"))(endpoint,selector,input,incount,(char *)output,&outbytes);
++            fprintf(stderr,"native framebuffer structure selector=%u result=%u bytes=%u\n",selector,code,outbytes);
++            if(code)break;if(outbytes!=(selector==1?172:204))qerror("native graphics layout mismatch");
++            stl(answer+36,outbytes);memcpy(answer+40,output,outbytes);
++            if(selector==1) {
++                for(j=0;j<22;j++)stl(answer+40+j*4,output[j]);
++                /* pixelFormat[64] is bytes; flags/width/height/reserved follow. */
++                for(j=38;j<43;j++)stl(answer+40+j*4,output[j]);
++            } else {
++                /* IOGraphics-40 IOFBDisplayModeDescription: 9 info words,
++                 * 2 timing words, V2 timing union. The three 64-bit clocks
++                 * are at offsets 84,92,100 in Jaguar's 204-byte ABI. */
++                for(j=0;j<51;j++)stl(answer+40+j*4,output[j]);
++                if(output[10]&0x80000000U)for(j=84;j<108;j+=8){uint64_t clock;memcpy(&clock,(char *)output+j,8);stq(answer+40+j,clock);}
++            }
++            length=40+outbytes;
++        }
++#else
++        qerror("IOKit structure requires Darwin");
++#endif
++        break;
+     case 2822: /* io_connect_method_scalarI_scalarO: counted 32-bit scalars. */
+ #ifdef __APPLE__
+         {
+@@ -1025,10 +1334,13 @@
+         qerror("IOKit scalar RPC requires real Darwin services");
+ #endif
+         break;
++    case 2814: /* io_registry_entry_get_parent_iterator, real registry parents. */
++    case 2833: /* io_registry_entry_create_iterator, real registry traversal. */
+     case 2815: /* io_service_open: explicit task capability conversion. */
+     case 2816: /* io_service_close: real user-client termination. */
+     case 2809: /* device.defs: io_registry_entry_from_path(io_string_t). */
+     case 2804: /* io_service_get_matching_services: serialized XML bytes. */
++    case 2817: /* io_connect_get_service: real associated service right. */
+     case 2802: /* io_iterator_next: a real kernel iterator, not an array mock. */
+ #ifdef __APPLE__
+         {
+@@ -1051,15 +1363,24 @@
+                 code=((close_fn)native_iokit_symbol("_io_service_close"))(endpoint);
+                 fprintf(stderr,"native IOKit close result=%u connection=%u\n",code,endpoint);
+                 break;
+-            } else if(id==2802) {
+-                if(size!=24)qerror("invalid io_iterator_next request");
+-                code=((next_fn)native_iokit_symbol("_io_iterator_next"))(endpoint,&native);
++            } else if(id==2802 || id==2817) {
++                if(size!=24)qerror("invalid IOKit object query request");
++                code=((next_fn)native_iokit_symbol(id==2802?"_io_iterator_next":"_io_connect_get_service"))(endpoint,&native);
+             } else {
+-                if(size<40 || ldl(g2h(a+32)))qerror("invalid IOKit string offset");
++                /* MIG c_string carries a reserved offset word. Jaguar's own
++                 * optimized client can leave it unspecified; it is not a
++                 * pointer or an offset into the bounded inline string. */
++                if(size<40)qerror("invalid IOKit string header");
+                 count=ldl(g2h(a+36));
+                 if(!count || count>512 || size<40+((count+3)&~3) || ldub(g2h(a+40+count-1)))
+                     qerror("invalid IOKit bounded string");
+-                code=((string_fn)native_iokit_symbol(id==2809 ? "_io_registry_entry_from_path" :
++                if(id==2814 && (count>128 || size!=40+((count+3)&~3)))qerror("invalid parent iterator plane");
++                if(id==2833) {
++                    typedef kern_return_t (*iterator_fn)(mach_port_t,const char *,uint32_t,mach_port_t *);
++                    uint32_t base=40+((count+3)&~3);
++                    if(count>128 || size!=base+4)qerror("invalid registry iterator options");
++                    code=((iterator_fn)native_iokit_symbol("_io_registry_entry_create_iterator"))(endpoint,g2h(a+40),ldl(g2h(a+base)),&native);
++                } else code=((string_fn)native_iokit_symbol(id==2814 ? "_io_registry_entry_get_parent_iterator" : id==2809 ? "_io_registry_entry_from_path" :
+                     "_io_service_get_matching_services"))(endpoint,(const char *)g2h(a+40),&native);
+             }
+             fprintf(stderr,"native IOKit rpc=%u native_result=%u object=%u\n",id,code,native);
+@@ -1341,6 +1662,7 @@
+         break;
+     default: qerror("unsupported Mach RPC id %u", id);
+     }
++finish_native_reply:
+     if (length > cap || !remaklar_guest_access(out, length, PAGE_WRITE))
+         qerror("Mach reply does not fit receive buffer");
+     stl(answer, complex | 18); stl(answer + 4, length);
+@@ -1372,7 +1694,17 @@
+     /* Conservatively preserve FPRs across dyld initializers. PPC750 has no
+      * vector unit. XNU ppc/thread_act.h: floatUsed = 1 << (31 - 1). */
+     case 0x7ff3: return 0x40000000;
+-    case -26: return next_reply++;
++    case -26:
++#ifdef __APPLE__
++        {
++            mach_port_t port;uint32_t guest=next_reply++;
++            if(guest>=0x400 || native_ports[guest])qerror("reply capability range exhausted");
++            if(mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&port))return 0;
++            native_ports[guest]=port;native_refresh(guest);return guest;
++        }
++#else
++        return next_reply++;
++#endif
+     case -27: send_refs[THREAD_SELF]++; return THREAD_SELF;
+     case -28: send_refs[TASK_SELF]++; return TASK_SELF;
+     case -29: send_refs[HOST_SELF]++; return HOST_SELF;
+diff --git a/darwin-user/remaklar/mach-native.inc b/darwin-user/remaklar/mach-native.inc
+new file mode 100644
+--- /dev/null
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -0,0 +1,219 @@
++/* Darwin 6 native Mach bridge. Inline application bytes stay PPC-endian;
++ * only Mach headers/descriptors and explicitly typed kernel RPCs convert.
++ * SPDX-License-Identifier: GPL-2.0-or-later */
++#ifdef __APPLE__
++extern mach_port_t bootstrap_port;
++extern kern_return_t bootstrap_look_up(mach_port_t,const char *,mach_port_t *);
++extern kern_return_t bootstrap_check_in(mach_port_t,const char *,mach_port_t *);
++extern kern_return_t bootstrap_register(mach_port_t,const char *,mach_port_t);
++extern kern_return_t mach_make_memory_entry_64(mach_port_t,unsigned long long *,unsigned long long,vm_prot_t,mach_port_t *,mach_port_t);
++extern kern_return_t vm_map_64(mach_port_t,vm_address_t *,vm_size_t,vm_address_t,int,mach_port_t,unsigned long long,boolean_t,vm_prot_t,vm_prot_t,vm_inherit_t);
++static mach_port_t native_name(uint32_t name)
++{
++    if(!name || name==0xffffffffU)return name;
++    if(name==TASK_SELF)return mach_task_self();
++    if(name==IO_MASTER_PORT)return native_io_master;
++    if(name==BOOTSTRAP)return bootstrap_port;
++    if(name<4096 && native_ports[name])return native_ports[name];
++    return name<4096 && native_iokit_ports[name]?native_iokit_ports[name]:MACH_PORT_DEAD;
++}
++static void native_refresh(uint32_t guest)
++{
++    mach_port_type_t type;mach_port_urefs_t refs;
++    if(guest>=4096 || !native_ports[guest])return;
++    receive_rights[guest]=port_sets[guest]=0;send_refs[guest]=send_once_target[guest]=0;
++    if(mach_port_type(mach_task_self(),native_ports[guest],&type)){native_ports[guest]=0;native_notification_kind[guest]=0;return;}
++    if(type&MACH_PORT_TYPE_RECEIVE)receive_rights[guest]=1;
++    if(type&MACH_PORT_TYPE_PORT_SET)port_sets[guest]=1;
++    if(type&MACH_PORT_TYPE_SEND_ONCE)send_once_target[guest]=guest;
++    if((type&MACH_PORT_TYPE_SEND) && !mach_port_get_refs(mach_task_self(),native_ports[guest],MACH_PORT_RIGHT_SEND,&refs))send_refs[guest]=refs;
++}
++static uint32_t native_export(mach_port_t port)
++{
++    uint32_t guest;
++    if(!port || port==MACH_PORT_DEAD)return port;
++    for(guest=0x200;guest<4096;guest++)if(native_ports[guest]==port){native_refresh(guest);return guest;}
++    if(next_port>=4096)qerror("native Mach capability table exhausted");
++    guest=next_port++;native_ports[guest]=port;native_refresh(guest);
++    fprintf(stderr,"native Mach capability guest=%x host=%u receive=%u set=%u send=%u\n",guest,port,receive_rights[guest],port_sets[guest],send_refs[guest]);
++    return guest;
++}
++static uint32_t native_iokit_export(mach_port_t port)
++{
++    uint32_t guest;mach_port_urefs_t refs;
++    if(!port || port==MACH_PORT_DEAD)return port;
++    for(guest=0x400;guest<next_port;guest++)if(native_iokit_ports[guest]==port)break;
++    if(guest==next_port){if(next_port>=4096)qerror("IOKit capability table exhausted");next_port++;native_iokit_ports[guest]=port;}
++    if(mach_port_get_refs(mach_task_self(),port,MACH_PORT_RIGHT_SEND,&refs))qerror("IOKit exported right missing");send_refs[guest]=refs;return guest;
++}
++/* Actual XNU message queues and port-set arbitration, including inter-process
++ * send/send-once rights. No application server reply is synthesized here. */
++static uint32_t native_message(CPUState *env)
++{
++    uint32_t in=env->gpr[3],options=env->gpr[4],send=env->gpr[5],cap=env->gpr[6];
++    uint32_t out=env->gpr[0]==(uint32_t)-32 && env->gpr[10]?env->gpr[10]:in;
++    uint32_t bytes=(send>cap?send:cap)+512,i,count=0,guest_remote=0,guest_local=0,ports[66],touched=0;
++    unsigned char *buffer;mach_msg_header_t *h;mach_msg_return_t kr;
++    if(send>65536 || cap>65536)return MACH_SEND_TOO_LARGE;
++    if((options&MACH_SEND_MSG) && (send<24 || !remaklar_guest_access(in,send,PAGE_READ)))return MACH_SEND_INVALID_DATA;
++    if((options&MACH_RCV_MSG) && !remaklar_guest_access(out,cap,PAGE_WRITE))return MACH_RCV_INVALID_DATA;
++    buffer=calloc(1,bytes);if(!buffer)qerror("native Mach message allocation");h=(mach_msg_header_t *)buffer;
++    if(options&MACH_SEND_MSG) {
++        memcpy(buffer,g2h(in),send);
++        h->msgh_bits=ldl(g2h(in));h->msgh_size=send;
++        guest_remote=ldl(g2h(in+8));guest_local=ldl(g2h(in+12));
++        h->msgh_remote_port=native_name(guest_remote);h->msgh_local_port=native_name(guest_local);
++        h->msgh_reserved=ldl(g2h(in+16));h->msgh_id=ldl(g2h(in+20));
++        ports[touched++]=guest_remote;ports[touched++]=guest_local;
++        if(h->msgh_bits&MACH_MSGH_BITS_COMPLEX) {
++            if(send<28){free(buffer);return MACH_SEND_MSG_TOO_SMALL;}
++            count=ldl(g2h(in+24));if(count>64 || 28+12*count>send)qerror("native Mach descriptor bounds");
++            *(uint32_t *)(buffer+24)=count;
++            for(i=0;i<count;i++) {
++                mach_msg_port_descriptor_t *d=(mach_msg_port_descriptor_t *)(buffer+28+12*i);
++                if(d->type!=MACH_MSG_PORT_DESCRIPTOR)qerror("native IPC OOL descriptor type=%u requires typed conversion",d->type);
++                ports[touched++]=ldl(g2h(in+28+12*i));d->name=native_name(ports[touched-1]);
++            }
++        }
++    }
++    kr=mach_msg(h,options|MACH_SEND_INTERRUPT|MACH_RCV_INTERRUPT,send,cap,native_name(env->gpr[7]),env->gpr[8],native_name(env->gpr[9]));
++    for(i=0;i<touched;i++)native_refresh(ports[i]);
++    if(!kr && (options&MACH_RCV_MSG)) {
++        uint32_t length=h->msgh_size,remote,local;
++        if(length>cap || length<24)qerror("native Mach receive bounds");
++        local=native_export(h->msgh_local_port);
++        if(local<4096 && native_notification_kind[local]==2 && h->msgh_id==53) {
++            uint32_t type=*(uint32_t *)(buffer+28);
++            if(length<64)qerror("short IOKit notification");
++            if(type==160 && length!=72)qerror("structured IOKit interest argument needs typed conversion, bytes=%u",length);
++            if(type!=160 && type!=150 && type!=100 && type!=101 && type!=102)qerror("unknown IOKit notification type %u",type);
++            if(length&3)qerror("unaligned IOKit notification");
++            for(i=24;i<length;i+=4){uint32_t value=*(uint32_t *)(buffer+i);stl(buffer+i,value);}
++            remote=native_iokit_export(h->msgh_remote_port);
++        } else remote=native_export(h->msgh_remote_port);
++        if(h->msgh_bits&MACH_MSGH_BITS_COMPLEX) {
++            count=*(uint32_t *)(buffer+24);
++            if(count>64 || 28+12*count>length)qerror("native received descriptor bounds");
++            for(i=0;i<count;i++) {
++                mach_msg_port_descriptor_t *d=(mach_msg_port_descriptor_t *)(buffer+28+12*i);
++                if(d->type!=MACH_MSG_PORT_DESCRIPTOR)qerror("native received OOL descriptor type=%u requires typed conversion",d->type);
++                stl(buffer+28+12*i,native_export(d->name));
++            }
++            stl(buffer+24,count);
++        }
++        stl(buffer,h->msgh_bits);stl(buffer+4,length);stl(buffer+8,remote);stl(buffer+12,local);
++        stl(buffer+16,h->msgh_reserved);stl(buffer+20,h->msgh_id);
++        memcpy(g2h(out),buffer,length);
++        fprintf(stderr,"native Mach receive port=%x bytes=%u id=%u\n",local,length,ldl(g2h(out+20)));
++    }
++    free(buffer);return kr;
++}
++static int native_kernel_rpc(uint32_t id,uint32_t destination,uint32_t a,uint32_t size,unsigned char *answer,uint32_t *length,uint32_t *code,uint32_t *complex)
++{
++    uint32_t g,n,set;mach_port_t port=0;mach_port_type_t type;mach_port_urefs_t refs;kern_return_t kr=0;
++    if(destination==BOOTSTRAP && (id==402 || id==403 || id==404)) {
++        const char *service;
++        if(id==403){if(size!=176 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19)qerror("invalid bootstrap register wire");service=g2h(a+48);port=native_name(ldl(g2h(a+28)));}
++        else {if(size!=160)qerror("invalid bootstrap lookup/checkin wire");service=g2h(a+32);}
++        if(!memchr(service,0,128))qerror("unterminated bootstrap service");
++        if(id==403)kr=bootstrap_register(bootstrap_port,service,port);
++        else if(id==402)kr=bootstrap_check_in(bootstrap_port,service,&port);
++        else kr=bootstrap_look_up(bootstrap_port,service,&port);
++        fprintf(stderr,"native bootstrap id=%u service=%s result=%u\n",id,service,kr);
++        if(!kr && id!=403){*complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=id==402?16:17;*length=40;}
++        *code=kr;return 1;
++    }
++    if(destination!=TASK_SELF)return 0;
++    if(id==3810 || id==3803) {
++        uint32_t address=ldl(g2h(a+32)),bytes=ldl(g2h(a+36)),page,end;
++        if(size!=(id==3810?44:48))qerror("invalid vm sync/protect wire");
++        if((uint64_t)address+bytes>0xc0000000ULL){*code=KERN_INVALID_ADDRESS;return 1;}
++        end=TARGET_PAGE_ALIGN(address+bytes);
++        for(page=address&~4095U;page<end;page+=4096)if(!(page_get_flags(page)&PAGE_VALID)){*code=KERN_INVALID_ADDRESS;return 1;}
++        if(id==3810)kr=vm_msync(mach_task_self(),(vm_address_t)g2h(address),bytes,ldl(g2h(a+40)));
++        else {
++            uint32_t maximum=ldl(g2h(a+40)),prot=ldl(g2h(a+44));
++            kr=vm_protect(mach_task_self(),(vm_address_t)g2h(address),bytes,maximum,prot);
++            if(!kr)for(page=address&~4095U;page<end;page+=4096)page_set_flags(page,page+4096,((maximum?(page_get_flags(page)&prot):prot)&7)|PAGE_VALID);
++        }
++        *code=kr;return 1;
++    }
++    if(id==3825) {
++        unsigned long long bytes,offset;mach_port_t parent;
++        if(size!=68 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19)qerror("invalid memory entry64 wire");
++        bytes=ldq(g2h(a+48));offset=ldq(g2h(a+56));parent=native_name(ldl(g2h(a+28)));
++        if(!parent && bytes && (offset>0xffffffffULL || bytes>0xffffffffULL || !remaklar_guest_access(offset,bytes,PAGE_READ))){*code=KERN_INVALID_ADDRESS;return 1;}
++        kr=mach_make_memory_entry_64(mach_task_self(),&bytes,offset,ldl(g2h(a+64)),&port,parent);
++        if(!kr){*complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=17;stq(answer+48,bytes);*length=56;}
++        fprintf(stderr,"native memory entry offset=%llx bytes=%llu result=%u\n",offset,bytes,kr);*code=kr;return 1;
++    }
++    if((id==3812 && size==84 && ldl(g2h(a+28))) || id==3826) {
++        uint32_t address,bytes,mask,flags,copy,prot,maxprot,inherit;unsigned long long offset;long reserve;vm_address_t native_address;
++        if((id==3826 && size!=88) || ldl(g2h(a+24))!=1)qerror("invalid shared vm_map wire");
++        port=native_name(ldl(g2h(a+28)));address=ldl(g2h(a+48));bytes=ldl(g2h(a+52));mask=ldl(g2h(a+56));flags=ldl(g2h(a+60));
++        if(id==3812){offset=ldl(g2h(a+64));copy=ldl(g2h(a+68));prot=ldl(g2h(a+72));maxprot=ldl(g2h(a+76));inherit=ldl(g2h(a+80));}
++        else {offset=ldq(g2h(a+64));copy=ldl(g2h(a+72));prot=ldl(g2h(a+76));maxprot=ldl(g2h(a+80));inherit=ldl(g2h(a+84));}
++        if(mask>4095 || (flags&~0xff000001U))qerror("shared vm_map alignment/flags not implemented");
++        if(!bytes || (uint64_t)bytes+4095>0xffffffffULL || (!(flags&1) && (address<4096 || (uint64_t)address+bytes>0xc0000000ULL))){*code=KERN_INVALID_ARGUMENT;return 1;}
++        reserve=target_mmap(address,bytes,PROT_NONE,MAP_PRIVATE|MAP_ANONYMOUS|((flags&1)?0:MAP_FIXED),-1,0);
++        if(reserve==-1){*code=KERN_NO_SPACE;return 1;}
++        target_munmap(reserve,bytes);native_address=(vm_address_t)g2h(reserve);
++        kr=vm_map_64(mach_task_self(),&native_address,bytes,mask,flags&0xff000000U,port,offset,copy,prot,maxprot,inherit);
++        if(!kr){if(native_address!=(vm_address_t)g2h(reserve))qerror("native fixed map moved");page_set_flags(reserve,reserve+TARGET_PAGE_ALIGN(bytes),prot|PAGE_VALID);stl(answer+36,reserve);*length=40;}
++        fprintf(stderr,"native shared map object=%u offset=%llu bytes=%u result=%u\n",port,offset,bytes,kr);*code=kr;return 1;
++    }
++    if(id==3214) {
++        uint32_t name,right;
++        if(size!=52 || ldl(g2h(a+24))!=1)qerror("native insert right wire");
++        name=ldl(g2h(a+48));right=ldl(g2h(a+28));
++        if(name!=right || name>=4096 || !native_ports[name]){*code=KERN_INVALID_RIGHT;return 1;}
++        *code=mach_port_insert_right(mach_task_self(),native_ports[name],native_name(right),ldub(g2h(a+38)));native_refresh(name);return 1;
++    }
++    if(id==3213) {
++        uint32_t name,notify;
++        if(size!=60 || ldl(g2h(a+24))!=1)qerror("native notification wire");
++        name=ldl(g2h(a+48));notify=ldl(g2h(a+28));
++        kr=mach_port_request_notification(mach_task_self(),native_name(name),ldl(g2h(a+52)),ldl(g2h(a+56)),native_name(notify),ldub(g2h(a+38)),&port);
++        if(!kr){*complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(port));answer[38]=18;*length=40;}
++        *code=kr;return 1;
++    }
++    if(id<3201 || id>3227)return 0;
++    if(size<36)return 0;g=ldl(g2h(a+32));
++    if(id==3204) {
++        kr=mach_port_allocate(mach_task_self(),g,&port);
++        if(!kr){stl(answer+36,native_export(port));*length=40;}*code=kr;return 1;
++    }
++    /* Preserve the older typed treatment of synthetic task/host and IOKit
++     * capabilities until those paths explicitly acquire native rights. */
++    if(g<4096 && native_iokit_ports[g])return 0;
++    if(g>=4096 || !native_ports[g]) {
++        if(g && g!=0xffffffffU){if(g>=0x200){*code=KERN_INVALID_NAME;return 1;}return 0;}
++    }
++    port=native_name(g);
++    switch(id) {
++    case 3201:kr=mach_port_type(mach_task_self(),port,&type);if(!kr){stl(answer+36,type);*length=40;}break;
++    case 3205:kr=mach_port_destroy(mach_task_self(),port);break;
++    case 3206:kr=mach_port_deallocate(mach_task_self(),port);break;
++    case 3207:kr=mach_port_get_refs(mach_task_self(),port,ldl(g2h(a+36)),&refs);if(!kr){stl(answer+36,refs);*length=40;}break;
++    case 3208:kr=mach_port_mod_refs(mach_task_self(),port,ldl(g2h(a+36)),(int32_t)ldl(g2h(a+40)));break;
++    case 3211: {
++        mach_port_name_array_t members;mach_msg_type_number_t count;long mapped;
++        kr=mach_port_get_set_status(mach_task_self(),port,&members,&count);
++        if(!kr){mapped=target_mmap(0,(count?count:1)*4,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_ANONYMOUS,-1,0);if(mapped==-1)qerror("port-set array allocation");for(n=0;n<count;n++)stl(g2h(mapped+n*4),native_export(members[n]));vm_deallocate(mach_task_self(),(vm_address_t)members,count*4);*complex=0x80000000;stl(answer+24,1);stl(answer+28,mapped);stl(answer+32,count*4);answer[37]=1;answer[39]=1;stl(answer+48,count);*length=52;}
++        break;
++    }
++    case 3212:kr=mach_port_move_member(mach_task_self(),port,native_name(ldl(g2h(a+36))));break;
++    case 3217: {
++        integer_t info[16];mach_msg_type_number_t count=ldl(g2h(a+40));
++        if(count>16)count=16;kr=mach_port_get_attributes(mach_task_self(),port,ldl(g2h(a+36)),(mach_port_info_t)info,&count);
++        if(!kr){if(count>16)qerror("native port attributes overflow");stl(answer+36,count);for(n=0;n<count;n++)stl(answer+40+n*4,info[n]);*length=40+count*4;}break;
++    }
++    case 3218: {
++        mach_port_limits_t limits;limits.mpl_qlimit=ldl(g2h(a+44));kr=mach_port_set_attributes(mach_task_self(),port,ldl(g2h(a+36)),(mach_port_info_t)&limits,1);break;
++    }
++    case 3226:case 3227:set=ldl(g2h(a+36));kr=id==3226?mach_port_insert_member(mach_task_self(),port,native_name(set)):mach_port_extract_member(mach_task_self(),port,native_name(set));break;
++    default:return 0;
++    }
++    native_refresh(g);*code=kr;return 1;
++}
++#endif

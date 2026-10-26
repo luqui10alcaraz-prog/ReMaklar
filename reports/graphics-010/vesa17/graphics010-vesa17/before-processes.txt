@@ -1,0 +1,6 @@
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.14 /sbin/init -s -v       
+    2  ??  Ss     0:00.06 /sbin/mach_init -s -v      
+   22  ??  Ss     0:00.08 -sh (sh)
+   26  ??  S+     0:00.04 sh /var/tmp/graphics010-vesa/run.sh
+   30  ??  R+     0:00.03 ps -axww

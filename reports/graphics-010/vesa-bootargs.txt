@@ -1,0 +1,1 @@
+-s "Boot Graphics"=Yes "Graphics Mode"="1024x768x32"
