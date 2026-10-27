@@ -1,0 +1,23 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -32,6 +32,7 @@
+ #include <sys/stat.h>
+ #include <sys/mman.h>
+ #include <sys/wait.h>
++#include <sys/resource.h>
+ #include <signal.h>
+ #include "qemu.h"
+ #include "bootstrap.h"
+@@ -795,6 +796,12 @@
+         if (a >= 32 && b == 0 && c == 0 && env->gpr[6] == 0) {
+             errno = EPERM; r = -1;
+         } else qerror("unsupported ptrace request=%x pid=%u", a, b);
++        break;
++    case 96: /* Original kernel process-priority operation. */
++        r=setpriority((int)a,(int)b,(int)c);break;
++    case 100:
++        errno=0;r=getpriority((int)a,(int)b);
++        if(r==-1 && !errno){*result=-1;*error=0;return 1;}
+         break;
+     case 202: /* sysctl, fixed-width PPC32 result */
+         if (b > 16 || !remaklar_guest_access(a, b * 4, PAGE_READ))

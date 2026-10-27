@@ -1,0 +1,79 @@
+{
+  "dependency": "0014-remote-iokit-map-metadata.patch",
+  "patch_sha256": "819d69f6b885c249a585588d7381722a791ad0afa252e91ccaf206117ae5610a",
+  "files": {
+    "cpu-all.h": {
+      "base_sha256": "d3aafffec7eb7ebb907735b81b5c4ef560262f8544b248bdaf98c92861a98ffc",
+      "sha256": "d3aafffec7eb7ebb907735b81b5c4ef560262f8544b248bdaf98c92861a98ffc"
+    },
+    "target-ppc/translate.c": {
+      "base_sha256": "9bcfb3f4d197e5c65fac4f3e0ce574e96c1aa57fc91c6aaf1df6b00cf2a3780a",
+      "sha256": "9bcfb3f4d197e5c65fac4f3e0ce574e96c1aa57fc91c6aaf1df6b00cf2a3780a"
+    },
+    "target-ppc/helper.h": {
+      "base_sha256": "8f519f3f296e5857783d4e80c66a113e81da6429d41ee18091fee41e76b4e31a",
+      "sha256": "8f519f3f296e5857783d4e80c66a113e81da6429d41ee18091fee41e76b4e31a"
+    },
+    "target-ppc/op_helper.c": {
+      "base_sha256": "c2a25462a277f33567dc5e4a418b92f31290d88bcd46a75eabefba11f9bca17f",
+      "sha256": "c2a25462a277f33567dc5e4a418b92f31290d88bcd46a75eabefba11f9bca17f"
+    },
+    "darwin-user/remaklar/darwin-kernel.c": {
+      "base_sha256": "ce88d427d7233b8b9cac880d1385d9dc30c32a792705039925dcd61f50f45805",
+      "sha256": "a4512baf4d5128e1263852be6e3b2fe328209b814a8c007e2ed86793400b2231"
+    },
+    "darwin-user/remaklar/mach-native.inc": {
+      "base_sha256": "1b6aec7c8af5da0023032d81d664700821ff44d6f7cf0bcae816e317ecef7641",
+      "sha256": "1ddd5cabbc40907ef7e1c87e030c305964d7b61eff0bc2f90318d2426573e588"
+    },
+    "darwin-user/remaklar/live-regions.inc": {
+      "base_sha256": "f3f09aa48c1e373f79ee30ba29face7c887b98599200c8b1a4fd3b287051216f",
+      "sha256": "65e31875eb11291fefa0d8e22c37fefa4d372bc6c27efcba376bf85a911307b7"
+    },
+    "darwin-user/remaklar/typed-live.c": {
+      "base_sha256": "ba83da0f017f6804d93cb86f1fdb3fe8cdda163206652da2651742885cc8d596",
+      "sha256": "ba83da0f017f6804d93cb86f1fdb3fe8cdda163206652da2651742885cc8d596"
+    },
+    "darwin-user/remaklar/typed-live.h": {
+      "base_sha256": "72f4c149306d54d9f8ba1c0a61169292e2269f01685309ed7207ac7ba90f4228",
+      "sha256": "72f4c149306d54d9f8ba1c0a61169292e2269f01685309ed7207ac7ba90f4228"
+    },
+    "target-ppc/cpu.h": {
+      "base_sha256": "991a86c6f531096bf5b065bad63715894c73d163e8cf7beaf611594bb0601cb2",
+      "sha256": "991a86c6f531096bf5b065bad63715894c73d163e8cf7beaf611594bb0601cb2"
+    },
+    "darwin-user/qemu.h": {
+      "base_sha256": "acc0297ad63623fd590754cf5ccaad5767fd4389f175d25e7d72de6de693d74d",
+      "sha256": "acc0297ad63623fd590754cf5ccaad5767fd4389f175d25e7d72de6de693d74d"
+    },
+    "darwin-user/mmap.c": {
+      "base_sha256": "dffa802b963bfc976554d9a4db199c1f83bee4a3cf416485ccf91a230ffb1767",
+      "sha256": "dffa802b963bfc976554d9a4db199c1f83bee4a3cf416485ccf91a230ffb1767"
+    },
+    "darwin-user/remaklar/bootstrap-main.c": {
+      "base_sha256": "450aed8313b82c8db3e3eb21706247fc756fb34cae2f9aa80e5ce4101874daf0",
+      "sha256": "450aed8313b82c8db3e3eb21706247fc756fb34cae2f9aa80e5ce4101874daf0"
+    },
+    "darwin-user/remaklar/threads.inc": {
+      "base_sha256": "a9ad1d5aa61792f46a532c5e55874d66ffbfdaa94f99b6fefa4dc8cc08302190",
+      "sha256": "a9ad1d5aa61792f46a532c5e55874d66ffbfdaa94f99b6fefa4dc8cc08302190"
+    },
+    "darwin-user/remaklar/high-window.c": {
+      "base_sha256": "d58dffb726fb86d8e884ad6a2465393925777e1a6d9df31233e4c8343901ee0f",
+      "sha256": "d58dffb726fb86d8e884ad6a2465393925777e1a6d9df31233e4c8343901ee0f"
+    },
+    "darwin-user/remaklar/high-window.h": {
+      "base_sha256": "abb81d2f0baddae759c84b0a8c73a9ee350e2b75244371ca1408214ab506b339",
+      "sha256": "abb81d2f0baddae759c84b0a8c73a9ee350e2b75244371ca1408214ab506b339"
+    },
+    "darwin-user/remaklar/remote-maps.inc": {
+      "base_sha256": "89a07ccf11fa2aa81448f1e3f569e23539bfc5bf878deecb34b39b1613f1e892",
+      "sha256": "89a07ccf11fa2aa81448f1e3f569e23539bfc5bf878deecb34b39b1613f1e892"
+    },
+    "darwin-user/remaklar/kinfo.inc": {
+      "base_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "80ce7cb78c5cff0aabdbb4a9d99e81a0f62fd5dbf07c2934fc40ba83b7f3a2cc"
+    }
+  },
+  "status": "run48 native and PPC KERN_PROC_PID and application OOL probes passed; Installer window pending"
+}

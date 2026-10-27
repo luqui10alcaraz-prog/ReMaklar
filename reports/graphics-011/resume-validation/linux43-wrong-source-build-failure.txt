@@ -1,0 +1,117 @@
+make: Entering directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux'
+make[1]: Entering directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux/ppc-darwin-user'
+  LINK  ppc-darwin-user/qemu-ppc
+/usr/bin/ld: libqemu.a(exec.o): in function `page_find_alloc':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:313:(.text+0x1527): undefined reference to `remaklar_high_guest'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:314:(.text+0x152f): undefined reference to `remaklar_high_guest'
+/usr/bin/ld: libqemu.a(exec.o): in function `tb_alloc_page':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:1121:(.text+0x1660): undefined reference to `remaklar_high_host'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:1121:(.text+0x1742): undefined reference to `remaklar_high_host'
+/usr/bin/ld: libqemu.a(exec.o): in function `page_find_alloc':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:313:(.text+0x1833): undefined reference to `remaklar_high_guest'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:314:(.text+0x183b): undefined reference to `remaklar_high_guest'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:313:(.text+0x189f): undefined reference to `remaklar_high_guest'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:314:(.text+0x18a7): undefined reference to `remaklar_high_guest'
+/usr/bin/ld: libqemu.a(exec.o): in function `page_unprotect':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:2210:(.text+0x1ce3): undefined reference to `remaklar_high_host'
+/usr/bin/ld: libqemu.a(exec.o): in function `cpu_physical_memory_rw':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:2923:(.text+0x1e24): undefined reference to `remaklar_high_host'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/exec.c:2932:(.text+0x1eb1): undefined reference to `remaklar_high_host'
+/usr/bin/ld: bootstrap-main.o: in function `remaklar_host_action':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/bootstrap-main.c:180:(.text+0x15d): undefined reference to `remaklar_signal_caught'
+/usr/bin/ld: bootstrap-main.o: in function `cpu_loop':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/bootstrap-main.c:243:(.text+0x29f): undefined reference to `remaklar_gate_enter'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/bootstrap-main.c:244:(.text+0x2ab): undefined reference to `remaklar_deliver_signals'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/bootstrap-main.c:278:(.text+0x39a): undefined reference to `remaklar_gate_yield'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/bootstrap-main.c:278:(.text+0x456): undefined reference to `remaklar_gate_yield'
+/usr/bin/ld: machload.o: in function `setup_arg_pages':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/machload.c:878:(.text+0x16ee): undefined reference to `remaklar_host_store'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/machload.c:882:(.text+0x16fd): undefined reference to `remaklar_host_store'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/machload.c:891:(.text+0x176b): undefined reference to `remaklar_host_store'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/machload.c:915:(.text+0x17f2): undefined reference to `remaklar_host_store'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/machload.c:938:(.text+0x1804): undefined reference to `remaklar_host_store'
+/usr/bin/ld: machload.o:/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/machload.c:947: more undefined references to `remaklar_host_store' follow
+/usr/bin/ld: mmap.o: in function `target_mprotect':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/mmap.c:49:(.text+0x1c): undefined reference to `remaklar_high_backing'
+/usr/bin/ld: mmap.o: in function `target_mmap':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/mmap.c:200:(.text+0x665): undefined reference to `remaklar_high_backing'
+/usr/bin/ld: mmap.o: in function `target_mprotect':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/mmap.c:48:(.text+0x82a): undefined reference to `remaklar_high_protect'
+/usr/bin/ld: mmap.o: in function `target_munmap':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/mmap.c:342:(.text+0x87d): undefined reference to `remaklar_high_backing'
+/usr/bin/ld: mmap.o: in function `target_mprotect':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/mmap.c:48:(.text+0x251): undefined reference to `remaklar_high_protect'
+/usr/bin/ld: mmap.o: in function `target_mmap':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/mmap.c:199:(.text+0x6a8): undefined reference to `remaklar_high_map'
+/usr/bin/ld: mmap.o: in function `target_munmap':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/mmap.c:341:(.text+0x99c): undefined reference to `remaklar_high_unmap'
+/usr/bin/ld: libqemu.a(cpu-exec.o): in function `handle_cpu_signal':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/cpu-exec.c:893:(.text+0x5fb): undefined reference to `remaklar_high_guest'
+/usr/bin/ld: libqemu.a(translate.o): in function `rm_gen_ld64':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:68:(.text+0xc8b): undefined reference to `remaklar_live_max'
+/usr/bin/ld: libqemu.a(translate.o): in function `rm_gen_st64':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:88:(.text+0x89327): undefined reference to `remaklar_live_max'
+/usr/bin/ld: libqemu.a(translate.o): in function `rm_gen_ld8u':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:41:(.text+0x92e1c): undefined reference to `remaklar_live_max'
+/usr/bin/ld: libqemu.a(translate.o): in function `rm_gen_ld16u':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:52:(.text+0x9384c): undefined reference to `remaklar_live_max'
+/usr/bin/ld: libqemu.a(translate.o): in function `rm_gen_ld16s':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:57:(.text+0x979bc): undefined reference to `remaklar_live_max'
+/usr/bin/ld: libqemu.a(translate.o):/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:63: more undefined references to `remaklar_live_max' follow
+/usr/bin/ld: libqemu.a(translate.o): in function `gen_intermediate_code_internal':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:8363:(.text+0xab39c): undefined reference to `remaklar_host_load'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:8361:(.text+0xab6b7): undefined reference to `remaklar_host_load'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:8363:(.text+0xac0e4): undefined reference to `remaklar_host_load'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/translate.c:8361:(.text+0xac367): undefined reference to `remaklar_host_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_lmw':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:281:(.text+0x1d2): undefined reference to `remaklar_host_load'
+/usr/bin/ld: libqemu.a(op_helper.o):/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:283: more undefined references to `remaklar_host_load' follow
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_stmw':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:294:(.text+0x255): undefined reference to `remaklar_host_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_lsw':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:303:(.text+0x2b2): undefined reference to `remaklar_host_load'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:310:(.text+0x30d): undefined reference to `remaklar_host_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_stsw':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:338:(.text+0x40f): undefined reference to `remaklar_host_store'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:344:(.text+0x46f): undefined reference to `remaklar_host_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `do_dcbz':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:355:(.text+0x4b3): undefined reference to `remaklar_host_store'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:355:(.text+0x523): undefined reference to `remaklar_host_store'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:355:(.text+0x55b): undefined reference to `remaklar_host_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_icbi':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:384:(.text+0x594): undefined reference to `remaklar_host_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_lscbx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:394:(.text+0x606): undefined reference to `remaklar_host_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_lvebx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:2023:(.text+0x3721): undefined reference to `remaklar_host_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_lvehx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:2024:(.text+0x3761): undefined reference to `remaklar_host_load'
+/usr/bin/ld: /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:2024:(.text+0x3787): undefined reference to `remaklar_host_load'
+/usr/bin/ld: libqemu.a(op_helper.o):/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:2025: more undefined references to `remaklar_host_load' follow
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_stvebx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:2061:(.text+0x388e): undefined reference to `remaklar_host_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_stvehx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:2062:(.text+0x38d0): undefined reference to `remaklar_host_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_stvewx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:2063:(.text+0x390b): undefined reference to `remaklar_host_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_rm_quantum':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:4164:(.text+0x85c2): undefined reference to `remaklar_thread_count'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_rm_ld':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:4170:(.text+0x861c): undefined reference to `remaklar_live_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_rm_ld64':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:4171:(.text+0x863a): undefined reference to `remaklar_live_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_rm_st':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:4172:(.text+0x8664): undefined reference to `remaklar_live_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_rm_st64':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:4173:(.text+0x8682): undefined reference to `remaklar_live_store'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_rm_lwarx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:4175:(.text+0x869c): undefined reference to `remaklar_live_load'
+/usr/bin/ld: libqemu.a(op_helper.o): in function `helper_rm_stwcx':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/op_helper.c:4178:(.text+0x86ff): undefined reference to `remaklar_live_cas'
+/usr/bin/ld: libqemu.a(disas.o): in function `target_read_memory':
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/disas.c:38:(.text+0xe7): undefined reference to `remaklar_host_load'
+collect2: error: ld returned 1 exit status
+make[1]: *** [Makefile:412: qemu-ppc] Error 1
+make[1]: Leaving directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux/ppc-darwin-user'
+make: *** [Makefile:46: subdir-ppc-darwin-user] Error 2
+make: Leaving directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux'

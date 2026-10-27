@@ -1,0 +1,17 @@
+{
+  "vnode_type": 1,
+  "vnode_data": "0x211b3440",
+  "inode_vnode": "0x20d9c5c8",
+  "inode_number": 12953,
+  "fs_pointer": "0x20c05004",
+  "fs_bsize": 4096,
+  "fs_fsize": 1024,
+  "fs_frag": 4,
+  "fs_cstotal_words": [
+    5494,
+    25059,
+    452904,
+    511,
+    1
+  ]
+}

@@ -1,0 +1,13 @@
+anonymous entry source=13579bdf alias=13579bdf port=1027
+anonymous Mach entry bidirectional original bytes OK
+live framebuffer version=3 bytes=278764 partial16/32 original-spinlock neighbors OK
+IOKit entry native alias diagnostic source=00000003 alias=00000000 bytes=278764 length=282624 addresses=44fef000,45034000
+IOKit named entry is physically disjoint: bidirectional isolation verified
+native memory-entry diagnostic retained; physical IOKit aliases tested separately
+cursor paired32 lfd/stfd original aliases restore OK
+original cursor packed coordinates word32 preserves two native16 fields OK
+physical IOKit aliases bidirectional cursor32 protect unmap OK
+original gamma16 identity result=0
+visible VRAM native32 physical aliases endian subfields restore OK
+live IOHID globalsOffset=8 version=3 bytes=20392 OK
+live real IOKit objects unmap rights close OK

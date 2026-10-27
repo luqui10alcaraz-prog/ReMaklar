@@ -1,0 +1,21 @@
+{
+  "reason": "Observed kernel proc_exit / UFS pageout path during trial66; memory free count 90969 pages. Aqua menu bar and busy cursor, no Installer window verified. Complete state preserved before recovery.",
+  "files": {
+    "build/011-upl66-machine-state.bin": {
+      "bytes": 253068170,
+      "sha256": "8c09e33f786b5e4c1ce55e9be39411e42fad1d08c9bbfa999f73b9639915ff5c"
+    },
+    "vm/darwin602-graphics-011-upl66-preserved.qcow2": {
+      "bytes": 199688192,
+      "sha256": "0228dfb867cdaf219f5a68ff053f6111c40828493fa05c34def2eb4e4e3c0d14"
+    },
+    "build/graphics011-upl66-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "6a0006bdcc69dd446e824d2a9c052390615a06155dd0fa54d86158276d2f7b4b"
+    },
+    "build/011-upl66-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "b333b423c0e19fb6d748f2e1e1a1617e6227d961d9423e0849b2989f5ddf1ede"
+    }
+  }
+}

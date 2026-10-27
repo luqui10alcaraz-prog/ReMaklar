@@ -1,0 +1,53 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -681,7 +681,21 @@
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
+                 memset(native_ports,0,sizeof(native_ports));memset(native_processor_sets,0,sizeof(native_processor_sets));
+                 memset(native_notification_kind,0,sizeof(native_notification_kind));
+-                for(i=0;i<64;i++)if(live_kind[i])qerror("fork child with live IOKit mappings requires inheritance validation");memset(native_iomappings,0,sizeof(native_iomappings));live_bounds();
++                for(i=0;i<64;i++)if(live_kind[i]) {
++#ifdef __APPLE__
++                    vm_address_t region=native_iomappings[i].address;vm_size_t bytes;vm_region_basic_info_data_t info;
++                    mach_msg_type_number_t count=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;
++                    kern_return_t query=vm_region(mach_task_self(),&region,&bytes,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&count,&object);
++                    if(object)mach_port_deallocate(mach_task_self(),object);
++                    if(!query && region<=native_iomappings[i].address)qerror("fork inherited live IOKit region requires shared/COW validation");
++                    page_set_flags(native_iomappings[i].address&~4095U,TARGET_PAGE_ALIGN(native_iomappings[i].address+native_iomappings[i].bytes),0);
++                    fprintf(stderr,"fork confirmed noninherited IOKit address=%x bytes=%u\n",native_iomappings[i].address,native_iomappings[i].bytes);
++                    live_kind[i]=0;
++#else
++                    qerror("fork live IOKit mappings require Darwin");
++#endif
++                }
++                memset(native_iomappings,0,sizeof(native_iomappings));live_bounds();
+             }
+             fprintf(stderr,"fork real host_pid=%ld child_pid=%ld branch=%s\n",
+                     (long)getpid(),(long)pid,pid ? "parent" : "child");
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -211,6 +211,25 @@
+         *code=kr;return 1;
+     }
+     if(destination!=TASK_SELF)return 0;
++    if(id==3800) {
++        uint64_t start,end;int flags,next;vm_address_t region,host;vm_size_t bytes;
++        vm_region_basic_info_data_t info;mach_msg_type_number_t count=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;
++        if(size!=44 || ldl(g2h(a+36))!=10 || ldl(g2h(a+40))<8)qerror("unsupported native guest vm_region flavor");
++        start=ldl(g2h(a+32))&~4095U;
++        while(start<0x100000000ULL && !(page_get_flags(start)&PAGE_VALID))start+=4096;
++        if(start>=0x100000000ULL){*code=KERN_INVALID_ADDRESS;return 1;}
++        flags=page_get_flags(start);host=(vm_address_t)g2h(start);region=host;
++        kr=vm_region(mach_task_self(),&region,&bytes,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&count,&object);
++        if(kr || region>host){if(object)mach_port_deallocate(mach_task_self(),object);*code=KERN_INVALID_ADDRESS;return 1;}
++        for(end=start+4096;end<0x100000000ULL && end-start<(uint64_t)region+bytes-host;end+=4096) {
++            next=page_get_flags(end);
++            if(!(next&PAGE_VALID) || (next&(7|PAGE_WRITE_ORG))!=(flags&(7|PAGE_WRITE_ORG)) || (uintptr_t)g2h(end)!=(uint64_t)host+end-start)break;
++        }
++        *complex=0x80000000;stl(answer+24,1);stl(answer+28,native_export(object));answer[38]=17;
++        stl(answer+48,start);stl(answer+52,end-start);stl(answer+56,8);
++        stl(answer+60,(flags&7)|((flags&PAGE_WRITE_ORG)?PROT_WRITE:0));stl(answer+64,info.max_protection);stl(answer+68,info.inheritance);
++        stl(answer+72,info.shared);stl(answer+76,info.reserved);stl(answer+80,info.offset+host-region);stl(answer+84,info.behavior);stw(answer+88,info.user_wired_count);*length=92;*code=0;return 1;
++    }
+     if(id==3810 || id==3803 || id==3804) {
+         uint32_t address=ldl(g2h(a+32)),bytes=ldl(g2h(a+36)),page,end;
+         if(size!=(id==3803?48:44))qerror("invalid vm sync/protect wire");

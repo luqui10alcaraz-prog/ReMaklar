@@ -1,0 +1,84 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/stage161.tgz graphics011-run51/*.txt graphics011-run51/*.status graphics011-run51/*.stdout graphics011-run51/*.stderr;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run51/source
++ cp -Rp /var/tmp/graphics011-run37/build /var/tmp/graphics011-run51/build
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/kinfo.inc /var/tmp/graphics011-run51/source/darwin-user/remaklar/kinfo.inc
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run51/source/darwin-user/remaklar/remote-maps.inc
++ cmp -s /var/tmp/graphics011-stage51/source/cpu-all.h /var/tmp/graphics011-run51/source/cpu-all.h
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/mmap.c /var/tmp/graphics011-run51/source/darwin-user/mmap.c
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run51/source/darwin-user/remaklar/high-window.c
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run51/source/darwin-user/remaklar/high-window.h
++ cmp -s /var/tmp/graphics011-stage51/source/target-ppc/cpu.h /var/tmp/graphics011-run51/source/target-ppc/cpu.h
++ cmp -s /var/tmp/graphics011-stage51/source/target-ppc/translate.c /var/tmp/graphics011-run51/source/target-ppc/translate.c
++ cmp -s /var/tmp/graphics011-stage51/source/target-ppc/helper.h /var/tmp/graphics011-run51/source/target-ppc/helper.h
++ cmp -s /var/tmp/graphics011-stage51/source/target-ppc/op_helper.c /var/tmp/graphics011-run51/source/target-ppc/op_helper.c
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run51/source/darwin-user/remaklar/bootstrap-main.c
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/qemu.h /var/tmp/graphics011-run51/source/darwin-user/qemu.h
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run51/source/darwin-user/remaklar/darwin-kernel.c
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run51/source/darwin-user/remaklar/mach-native.inc
++ cp /var/tmp/graphics011-stage51/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run51/source/darwin-user/remaklar/mach-native.inc
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run51/source/darwin-user/remaklar/live-regions.inc
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run51/source/darwin-user/remaklar/typed-live.c
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run51/source/darwin-user/remaklar/typed-live.h
++ cmp -s /var/tmp/graphics011-stage51/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run51/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run51/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run51/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/threads011-runtime.c -framework IOKit -o /var/tmp/graphics011-run51/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/high011-runtime.c -o /var/tmp/graphics011-run51/high-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/high011-runtime.c -o /var/tmp/graphics011-run51/high-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ mkdir -p /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources
++ cp /var/tmp/graphics011-stage51/BootPanel.pdf /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf
++ md5 /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/forkio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run51/forkio-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/forkio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run51/forkio-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/forkio-native /var/tmp/graphics011-run51/forkio-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/forkio-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/forkio-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/kinfo-011.c -o /var/tmp/graphics011-run51/kinfo-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/kinfo-011.c -o /var/tmp/graphics011-run51/kinfo-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/kinfo-native /var/tmp/graphics011-run51/kinfo-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/kinfo-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/kinfo-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/ool-011.c -o /var/tmp/graphics011-run51/ool-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/ool-011.c -o /var/tmp/graphics011-run51/ool-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/ool-native /var/tmp/graphics011-run51/ool-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/ool-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/ool-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/remote011-runtime.c -o /var/tmp/graphics011-run51/remote-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/remote011-runtime.c -o /var/tmp/graphics011-run51/remote-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/remoteio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run51/remoteio-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/remoteio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run51/remoteio-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/remoteio-native /var/tmp/graphics011-run51/remoteio-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/remoteio-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/remoteio-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/remote-native /var/tmp/graphics011-run51/remote-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/remote-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/remote-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/trailer011-runtime.c -o /var/tmp/graphics011-run51/trailer-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/trailer011-runtime.c -o /var/tmp/graphics011-run51/trailer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/trailer-native /var/tmp/graphics011-run51/trailer-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/trailer-previous /var/tmp/graphics011-run32/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/trailer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/trailer-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/trailer-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/fasttrap011-runtime.c -o /var/tmp/graphics011-run51/fasttrap-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/fasttrap /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/fasttrap-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/fasttrap-previous /var/tmp/graphics011-run26/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/fasttrap-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/capability011-runtime.c -o /var/tmp/graphics011-run51/capability-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/capability011-runtime.c -o /var/tmp/graphics011-run51/capability-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/capability-native /var/tmp/graphics011-run51/capability-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/capability-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/capability-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/capability-previous /var/tmp/graphics011-run26/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/capability-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/high-native /var/tmp/graphics011-run51/high-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/high-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/high-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/timer011-runtime.c -o /var/tmp/graphics011-run51/timer-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/timer011-runtime.c -o /var/tmp/graphics011-run51/timer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/timer-native /var/tmp/graphics011-run51/timer-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/timer-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/timer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/threads /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 -O2 -I/var/tmp/graphics011-stage51/source/darwin-user/remaklar /var/tmp/graphics011-stage51/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-stage51/typed-live-test.c -o /var/tmp/graphics011-run51/typed-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/typed-native /var/tmp/graphics011-run51/typed-native
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage51/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run51/shared-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage51/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run51/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/shared-native /var/tmp/graphics011-run51/shared-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run51/shared-jaguar /var/tmp/graphics011-run51/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run51/shared-ppc
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage161.tgz graphics011-run51/bootpanel-md5.txt graphics011-run51/build.txt graphics011-run51/capability-i386-build.txt graphics011-run51/capability-ppc-build.txt graphics011-run51/fasttrap-build.txt graphics011-run51/forkio-i386-build.txt graphics011-run51/forkio-ppc-build.txt graphics011-run51/high-i386-build.txt graphics011-run51/high-ppc-build.txt graphics011-run51/kinfo-i386-build.txt graphics011-run51/kinfo-ppc-build.txt graphics011-run51/ool-i386-build.txt graphics011-run51/ool-ppc-build.txt graphics011-run51/remote-i386-build.txt graphics011-run51/remote-ppc-build.txt graphics011-run51/remoteio-i386-build.txt graphics011-run51/remoteio-ppc-build.txt graphics011-run51/script-status.txt graphics011-run51/session.txt graphics011-run51/shared-i386-build.txt graphics011-run51/shared-ppc-build.txt graphics011-run51/threads-build.txt graphics011-run51/timer-i386-build.txt graphics011-run51/timer-ppc-build.txt graphics011-run51/trailer-i386-build.txt graphics011-run51/trailer-ppc-build.txt graphics011-run51/typed-build.txt graphics011-run51/capability-jaguar.status graphics011-run51/capability-native.status graphics011-run51/capability-previous.status graphics011-run51/fasttrap-previous.status graphics011-run51/fasttrap.status graphics011-run51/forkio-jaguar.status graphics011-run51/forkio-native.status graphics011-run51/high-jaguar.status graphics011-run51/high-native.status graphics011-run51/kinfo-jaguar.status graphics011-run51/kinfo-native.status graphics011-run51/ool-jaguar.status graphics011-run51/ool-native.status graphics011-run51/remote-jaguar.status graphics011-run51/remote-native.status graphics011-run51/remoteio-jaguar.status graphics011-run51/remoteio-native.status graphics011-run51/shared-jaguar.status graphics011-run51/shared-native.status graphics011-run51/threads.status graphics011-run51/timer-jaguar.status graphics011-run51/timer-native.status graphics011-run51/trailer-jaguar.status graphics011-run51/trailer-native.status graphics011-run51/trailer-previous.status graphics011-run51/typed-native.status graphics011-run51/capability-jaguar.stdout graphics011-run51/capability-native.stdout graphics011-run51/capability-previous.stdout graphics011-run51/fasttrap-previous.stdout graphics011-run51/fasttrap.stdout graphics011-run51/forkio-jaguar.stdout graphics011-run51/forkio-native.stdout graphics011-run51/high-jaguar.stdout graphics011-run51/high-native.stdout graphics011-run51/kinfo-jaguar.stdout graphics011-run51/kinfo-native.stdout graphics011-run51/ool-jaguar.stdout graphics011-run51/ool-native.stdout graphics011-run51/remote-jaguar.stdout graphics011-run51/remote-native.stdout graphics011-run51/remoteio-jaguar.stdout graphics011-run51/remoteio-native.stdout graphics011-run51/shared-jaguar.stdout graphics011-run51/shared-native.stdout graphics011-run51/threads.stdout graphics011-run51/timer-jaguar.stdout graphics011-run51/timer-native.stdout graphics011-run51/trailer-jaguar.stdout graphics011-run51/trailer-native.stdout graphics011-run51/trailer-previous.stdout graphics011-run51/typed-native.stdout graphics011-run51/capability-jaguar.stderr graphics011-run51/capability-native.stderr graphics011-run51/capability-previous.stderr graphics011-run51/fasttrap-previous.stderr graphics011-run51/fasttrap.stderr graphics011-run51/forkio-jaguar.stderr graphics011-run51/forkio-native.stderr graphics011-run51/high-jaguar.stderr graphics011-run51/high-native.stderr graphics011-run51/kinfo-jaguar.stderr graphics011-run51/kinfo-native.stderr graphics011-run51/ool-jaguar.stderr graphics011-run51/ool-native.stderr graphics011-run51/remote-jaguar.stderr graphics011-run51/remote-native.stderr graphics011-run51/remoteio-jaguar.stderr graphics011-run51/remoteio-native.stderr graphics011-run51/shared-jaguar.stderr graphics011-run51/shared-native.stderr graphics011-run51/threads.stderr graphics011-run51/timer-jaguar.stderr graphics011-run51/timer-native.stderr graphics011-run51/trailer-jaguar.stderr graphics011-run51/trailer-native.stderr graphics011-run51/trailer-previous.stderr graphics011-run51/typed-native.stderr

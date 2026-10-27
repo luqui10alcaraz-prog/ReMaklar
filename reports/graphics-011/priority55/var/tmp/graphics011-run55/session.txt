@@ -1,0 +1,56 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;for f in "$out"/*.txt "$out"/*.status "$out"/*.stdout "$out"/*.stderr;do test ! -f "$f" || echo "$f";done > "$out/export-list.txt";gnutar czf /exchange/stage165.tgz -T "$out/export-list.txt";sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run55/source
++ cp -Rp /var/tmp/graphics011-run37/build /var/tmp/graphics011-run55/build
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/kinfo.inc /var/tmp/graphics011-run55/source/darwin-user/remaklar/kinfo.inc
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run55/source/darwin-user/remaklar/remote-maps.inc
++ cmp -s /var/tmp/graphics011-stage55/source/cpu-all.h /var/tmp/graphics011-run55/source/cpu-all.h
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/mmap.c /var/tmp/graphics011-run55/source/darwin-user/mmap.c
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run55/source/darwin-user/remaklar/high-window.c
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run55/source/darwin-user/remaklar/high-window.h
++ cmp -s /var/tmp/graphics011-stage55/source/target-ppc/cpu.h /var/tmp/graphics011-run55/source/target-ppc/cpu.h
++ cmp -s /var/tmp/graphics011-stage55/source/target-ppc/translate.c /var/tmp/graphics011-run55/source/target-ppc/translate.c
++ cmp -s /var/tmp/graphics011-stage55/source/target-ppc/helper.h /var/tmp/graphics011-run55/source/target-ppc/helper.h
++ cmp -s /var/tmp/graphics011-stage55/source/target-ppc/op_helper.c /var/tmp/graphics011-run55/source/target-ppc/op_helper.c
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run55/source/darwin-user/remaklar/bootstrap-main.c
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/qemu.h /var/tmp/graphics011-run55/source/darwin-user/qemu.h
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run55/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage55/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run55/source/darwin-user/remaklar/darwin-kernel.c
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run55/source/darwin-user/remaklar/mach-native.inc
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run55/source/darwin-user/remaklar/live-regions.inc
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run55/source/darwin-user/remaklar/typed-live.c
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run55/source/darwin-user/remaklar/typed-live.h
++ cmp -s /var/tmp/graphics011-stage55/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run55/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run55/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run55/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run55/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run55/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage55/threads011-runtime.c -framework IOKit -o /var/tmp/graphics011-run55/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage55/high011-runtime.c -o /var/tmp/graphics011-run55/high-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage55/high011-runtime.c -o /var/tmp/graphics011-run55/high-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage55/priority011-runtime.c -o /var/tmp/graphics011-run55/priority-i386
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ test '!' -f /var/tmp/graphics011-run55/build.txt
++ echo /var/tmp/graphics011-run55/build.txt
++ test '!' -f /var/tmp/graphics011-run55/export-list.txt
++ echo /var/tmp/graphics011-run55/export-list.txt
++ test '!' -f /var/tmp/graphics011-run55/high-i386-build.txt
++ echo /var/tmp/graphics011-run55/high-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run55/high-ppc-build.txt
++ echo /var/tmp/graphics011-run55/high-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run55/priority-i386-build.txt
++ echo /var/tmp/graphics011-run55/priority-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run55/script-status.txt
++ echo /var/tmp/graphics011-run55/script-status.txt
++ test '!' -f /var/tmp/graphics011-run55/session.txt
++ echo /var/tmp/graphics011-run55/session.txt
++ test '!' -f /var/tmp/graphics011-run55/threads-build.txt
++ echo /var/tmp/graphics011-run55/threads-build.txt
++ test '!' -f '/var/tmp/graphics011-run55/*.status'
++ test '!' -f '/var/tmp/graphics011-run55/*.stdout'
++ test '!' -f '/var/tmp/graphics011-run55/*.stderr'
++ gnutar czf /exchange/stage165.tgz -T /var/tmp/graphics011-run55/export-list.txt
+gnutar: Removing leading `/' from absolute path names in the archive

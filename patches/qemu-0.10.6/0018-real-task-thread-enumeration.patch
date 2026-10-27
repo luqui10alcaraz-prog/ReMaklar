@@ -1,0 +1,25 @@
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -211,6 +211,22 @@
+         *code=kr;return 1;
+     }
+     if(destination!=TASK_SELF)return 0;
++    if(id==3402) {
++        thread_act_array_t threads=NULL;mach_msg_type_number_t count=0;uint32_t i;long mapped;
++        if(size!=24)qerror("invalid task_threads wire");
++        kr=task_threads(mach_task_self(),&threads,&count);
++        if(!kr) {
++            if(count>4096)qerror("native task_threads count exceeds capability table");
++            mapped=target_mmap(0,count?count*4:4,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_ANONYMOUS,-1,0);
++            if(mapped==-1)qerror("native task_threads guest OOL allocation");
++            for(i=0;i<count;i++)stl(g2h(mapped+i*4),native_export(threads[i]));
++            if(threads)vm_deallocate(mach_task_self(),(vm_address_t)threads,count*sizeof(*threads));
++            *complex=0x80000000;stl(answer+24,1);stl(answer+28,mapped);stl(answer+32,count);
++            answer[37]=1;answer[38]=17;answer[39]=2;stl(answer+48,count);*length=52;
++            fprintf(stderr,"native task_threads real count=%u guest_array=%lx\n",count,(unsigned long)mapped);
++        }
++        *code=kr;return 1;
++    }
+     if(id==3800) {
+         uint64_t start,end;int flags,next;vm_address_t region,host;vm_size_t bytes;
+         vm_region_basic_info_data_t info;mach_msg_type_number_t count=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;

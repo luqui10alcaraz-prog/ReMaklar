@@ -1,0 +1,3 @@
+In file included from /var/tmp/graphics011-stage55/priority011-runtime.c:2:
+/usr/include/sys/resource.h:81: field `ru_utime' has incomplete type
+/usr/include/sys/resource.h:82: field `ru_stime' has incomplete type

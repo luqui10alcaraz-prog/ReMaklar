@@ -1,0 +1,217 @@
+[
+  {
+    "proc": "0x20c1b908",
+    "pid": 224,
+    "state": 2,
+    "comm": "qemu-ppc",
+    "pptr": "0x20c1b7a4",
+    "wchan": "0x0",
+    "wmesg": "0x0",
+    "threads": [
+      {
+        "thread": "0x20b4a5f0",
+        "wait_event": "0x0",
+        "state": "0x4",
+        "stack": "0x2a480000"
+      }
+    ]
+  },
+  {
+    "proc": "0x20c1b7a4",
+    "pid": 223,
+    "state": 2,
+    "comm": "perl",
+    "pptr": "0x20c1ba6c",
+    "wchan": "0x0",
+    "wmesg": "0x0",
+    "threads": [
+      {
+        "thread": "0x20b4a7c4",
+        "wait_event": "0x20c1b7a4",
+        "state": "0x1",
+        "stack": "0x2a478000"
+      }
+    ]
+  },
+  {
+    "proc": "0x20c1ba6c",
+    "pid": 32,
+    "state": 2,
+    "comm": "sh",
+    "pptr": "0x20c1bbd0",
+    "wchan": "0x0",
+    "wmesg": "0x0",
+    "threads": [
+      {
+        "thread": "0x20b4ad40",
+        "wait_event": "0x20c1ba6c",
+        "state": "0x1",
+        "stack": "0x2a470000"
+      }
+    ]
+  },
+  {
+    "proc": "0x20c1bbd0",
+    "pid": 22,
+    "state": 2,
+    "comm": "sh",
+    "pptr": "0x20c1be98",
+    "wchan": "0x0",
+    "wmesg": "0x0",
+    "threads": [
+      {
+        "thread": "0x20b4bbe0",
+        "wait_event": "0x20c1bbd0",
+        "state": "0x1",
+        "stack": "0x2a420000"
+      }
+    ]
+  },
+  {
+    "proc": "0x20c1bd34",
+    "pid": 2,
+    "state": 2,
+    "comm": "mach_init",
+    "pptr": "0x20c1be98",
+    "wchan": "0x0",
+    "wmesg": "0x0",
+    "threads": [
+      {
+        "thread": "0x20b4a998",
+        "wait_event": "0x3a53a0",
+        "state": "0x1",
+        "stack": "0x2a458000"
+      },
+      {
+        "thread": "0x20b4b0e8",
+        "wait_event": "0x3a53a0",
+        "state": "0x1",
+        "stack": "0x2a450000"
+      }
+    ]
+  },
+  {
+    "proc": "0x20c1be98",
+    "pid": 1,
+    "state": 2,
+    "comm": "init",
+    "pptr": "0x3e6900",
+    "wchan": "0x0",
+    "wmesg": "0x0",
+    "threads": [
+      {
+        "thread": "0x20b4ab6c",
+        "wait_event": "0x20c1be98",
+        "state": "0x1",
+        "stack": "0x2a468000"
+      }
+    ]
+  },
+  {
+    "proc": "0x3e6900",
+    "pid": 0,
+    "state": 2,
+    "comm": "kernel_task",
+    "pptr": "0x3e6900",
+    "wchan": "0x0",
+    "wmesg": "0x0",
+    "threads": [
+      {
+        "thread": "0x3b6d40",
+        "wait_event": "0x3d83e0",
+        "state": "0x9",
+        "stack": "0x2a3c8000"
+      },
+      {
+        "thread": "0x20b4ce28",
+        "wait_event": "0x0",
+        "state": "0x84",
+        "stack": "0x2a3d0000"
+      },
+      {
+        "thread": "0x20b4cc54",
+        "wait_event": "0x0",
+        "state": "0x84",
+        "stack": "0x2a3d8000"
+      },
+      {
+        "thread": "0x20b4ca80",
+        "wait_event": "0x3b7d10",
+        "state": "0x9",
+        "stack": "0x2a3e0000"
+      },
+      {
+        "thread": "0x20b4c8ac",
+        "wait_event": "0x3d8210",
+        "state": "0x9",
+        "stack": "0x2a3e8000"
+      },
+      {
+        "thread": "0x20b4c6d8",
+        "wait_event": "0x124660",
+        "state": "0x1",
+        "stack": "0x2a3f0000"
+      },
+      {
+        "thread": "0x20b4c504",
+        "wait_event": "0x39774c",
+        "state": "0x1",
+        "stack": "0x2a3f8000"
+      },
+      {
+        "thread": "0x20b4c330",
+        "wait_event": "0x20b2e21c",
+        "state": "0x9",
+        "stack": "0x2a400000"
+      },
+      {
+        "thread": "0x20b4bf88",
+        "wait_event": "0x3d8b80",
+        "state": "0x9",
+        "stack": "0x2a410000"
+      },
+      {
+        "thread": "0x20b4bdb4",
+        "wait_event": "0x20b85e5c",
+        "state": "0x9",
+        "stack": "0x2a418000"
+      },
+      {
+        "thread": "0x20b4ba0c",
+        "wait_event": "0x20b88d1c",
+        "state": "0x9",
+        "stack": "0x2a428000"
+      },
+      {
+        "thread": "0x20b4b664",
+        "wait_event": "0x20b9dd1c",
+        "state": "0x9",
+        "stack": "0x2a438000"
+      },
+      {
+        "thread": "0x20b4b490",
+        "wait_event": "0x37b5b4",
+        "state": "0x9",
+        "stack": "0x2a440000"
+      },
+      {
+        "thread": "0x20b4b838",
+        "wait_event": "0x397738",
+        "state": "0x1",
+        "stack": "0x2a430000"
+      },
+      {
+        "thread": "0x20b4c15c",
+        "wait_event": "0x20bd981c",
+        "state": "0x9",
+        "stack": "0x2a408000"
+      },
+      {
+        "thread": "0x20b4b2bc",
+        "wait_event": "0x20bd93dc",
+        "state": "0x9",
+        "stack": "0x2a448000"
+      }
+    ]
+  }
+]

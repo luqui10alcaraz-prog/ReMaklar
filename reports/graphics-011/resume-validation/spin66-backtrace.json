@@ -1,0 +1,17 @@
+[
+  {
+    "frame": "0x2a4ab9a8",
+    "return": "0x17c610",
+    "symbol": "_kernel_preempt_check+0",
+    "words": [
+      "0x0",
+      "0x17c610",
+      "0x17c610",
+      "0x4",
+      "0x2a4ab9f8",
+      "0x21227a08",
+      "0x0",
+      "0x0"
+    ]
+  }
+]

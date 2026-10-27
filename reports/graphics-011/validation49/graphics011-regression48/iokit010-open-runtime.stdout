@@ -1,0 +1,8 @@
+IOServiceOpen type=0 result=0 nonnull=1
+IOConnectGetService result=3758097095 nonnull=0
+GetAggressiveness result=0 value=0
+Invalid selector result=3758097095
+IOServiceClose result=0
+IOServiceOpen unusual-type result=0 nonnull=1
+IOServiceOpen wrong-service result=3758097090 nonnull=0
+IOKit original real open close scalar negative OK

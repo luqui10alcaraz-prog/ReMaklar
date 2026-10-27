@@ -1,0 +1,20 @@
+{
+  "ram_mb": 512,
+  "original_aqua_menubar_observed": true,
+  "installer_window_verified": false,
+  "trial_completed": false,
+  "final_guest_export_available": false,
+  "captures": [
+    {
+      "file": "aqua-menubar.png",
+      "source": "build\\watch011-66\\frame-1793056122746704100.png",
+      "sha256": "1770baa14c0baadd0c2f0b233e5d346ea081cffb50facf2ae5e2217917368f0d"
+    },
+    {
+      "file": "aqua-busy-cursor.png",
+      "source": "build\\watch011-66\\frame-1793056157022332500.png",
+      "sha256": "352bc40a5380e30f160428b18ae4aa3cc1d9ae0f6a4e0e5f8be707ad890d9ea4"
+    }
+  ],
+  "checkpoint_manifest": "../resume-validation/upl66-machine-checkpoint.json"
+}

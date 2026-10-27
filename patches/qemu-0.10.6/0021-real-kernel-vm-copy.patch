@@ -1,0 +1,23 @@
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -246,6 +246,20 @@
+         }
+         *code=kr;return 1;
+     }
++    if(id==3808) {
++        uint32_t source,bytes,dest,page;uint64_t end;
++        if(size!=44)qerror("invalid vm_copy wire");
++        source=ldl(g2h(a+32));bytes=ldl(g2h(a+36));dest=ldl(g2h(a+40));
++        if((uint64_t)source+bytes>0xc0000000ULL || (uint64_t)dest+bytes>0xc0000000ULL)qerror("high vm_copy requires verified contiguous backing");
++        end=(uint64_t)source+bytes;
++        for(page=source&~4095U;page<end;page+=4096)if(!(page_get_flags(page)&PAGE_VALID)){*code=KERN_INVALID_ADDRESS;return 1;}
++        end=(uint64_t)dest+bytes;
++        for(page=dest&~4095U;page<end;page+=4096)if(!(page_get_flags(page)&PAGE_VALID)){*code=KERN_INVALID_ADDRESS;return 1;}
++        if(bytes && (!remaklar_guest_access(source,bytes,PAGE_READ) || !remaklar_guest_access(dest,bytes,PAGE_WRITE))){*code=KERN_PROTECTION_FAILURE;return 1;}
++        if(live_overlaps(source,bytes) || live_overlaps(dest,bytes))qerror("typed device vm_copy requires verified view semantics");
++        kr=vm_copy(mach_task_self(),(vm_address_t)g2h(source),bytes,(vm_address_t)g2h(dest));
++        fprintf(stderr,"native vm_copy source=%x dest=%x bytes=%u result=%u\n",source,dest,bytes,kr);*code=kr;return 1;
++    }
+     if(id==3800) {
+         uint64_t start,end;int flags,next;vm_address_t region,host;vm_size_t bytes;
+         vm_region_basic_info_data_t info;mach_msg_type_number_t count=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;

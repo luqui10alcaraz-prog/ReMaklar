@@ -1,0 +1,63 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/direct60.tgz graphics011-direct60-results graphics011-joint60;sync;umount /exchange' 0
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/taskthreads-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/taskthreads-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/taskthreads-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/taskthreads-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/priority-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/priority-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/priority-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/priority-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/forkio-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/forkio-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/forkio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/forkio-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/kinfo-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/kinfo-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/kinfo-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/kinfo-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/ool-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/ool-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/ool-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/ool-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/remoteio-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/remoteio-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/remoteio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/remoteio-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/remote-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/remote-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/remote-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/remote-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/shared-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/shared-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/shared-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/shared-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/high-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/high-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/high-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/high-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/threads.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/threads.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/timer-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/timer-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/timer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/timer-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/fasttrap.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/fasttrap.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/capability-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/capability-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/capability-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/capability-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/trailer-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/trailer-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/trailer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/trailer-jaguar.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run59/typed-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run59/typed-native.status
++ perl /var/tmp/graphics011-direct60/joint.pl /var/tmp/graphics011-joint60 /var/tmp/graphics011-run59/qemu-ppc /var/tmp/jaguar
++ echo joint_trial_completed
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/direct60.tgz graphics011-direct60-results graphics011-joint60

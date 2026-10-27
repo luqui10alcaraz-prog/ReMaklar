@@ -1,0 +1,10 @@
+#include <mach/mach.h>
+#include <stdio.h>
+#include <string.h>
+#define CHECK(x) do{if(!(x)){fprintf(stderr,"FAIL rename line=%d\n",__LINE__);return 1;}}while(0)
+int main(void){mach_port_t port=0,set=0,other=0;mach_port_type_t type;mach_port_name_array_t members=0;mach_msg_type_number_t count=0;union{mach_msg_header_t h;unsigned char bytes[128];} msg;mach_port_t first=0x50000000U,second=0x50000100U;
+ CHECK(!mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&port));CHECK(!mach_port_insert_right(mach_task_self(),port,port,MACH_MSG_TYPE_MAKE_SEND));CHECK(!mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_PORT_SET,&set));CHECK(!mach_port_move_member(mach_task_self(),port,set));
+ CHECK(!mach_port_rename(mach_task_self(),port,first));CHECK(mach_port_type(mach_task_self(),port,&type)==KERN_INVALID_NAME);CHECK(!mach_port_type(mach_task_self(),first,&type)&&(type&MACH_PORT_TYPE_RECEIVE)&&(type&MACH_PORT_TYPE_SEND));
+ CHECK(!mach_port_get_set_status(mach_task_self(),set,&members,&count)&&count==1&&members[0]==first);CHECK(!vm_deallocate(mach_task_self(),(vm_address_t)members,count*4));
+ memset(&msg,0,sizeof(msg));msg.h.msgh_bits=MACH_MSGH_BITS(MACH_MSG_TYPE_COPY_SEND,0);msg.h.msgh_remote_port=first;msg.h.msgh_size=24;msg.h.msgh_id=6201;CHECK(!mach_msg(&msg.h,MACH_SEND_MSG,24,0,0,0,0));CHECK(!mach_msg(&msg.h,MACH_RCV_MSG|MACH_RCV_TIMEOUT,0,sizeof(msg),set,1000,0));CHECK(msg.h.msgh_id==6201&&msg.h.msgh_local_port==first);
+ CHECK(!mach_port_move_member(mach_task_self(),first,0));CHECK(!mach_port_rename(mach_task_self(),first,second));CHECK(mach_port_type(mach_task_self(),first,&type)==KERN_INVALID_NAME);CHECK(!mach_port_allocate(mach_task_self(),MACH_PORT_RIGHT_RECEIVE,&other));CHECK(mach_port_rename(mach_task_self(),other,second)==KERN_NAME_EXISTS);CHECK(!mach_port_type(mach_task_self(),other,&type));CHECK(!mach_port_destroy(mach_task_self(),other));CHECK(!mach_port_destroy(mach_task_self(),second));CHECK(!mach_port_destroy(mach_task_self(),set));puts("real Mach explicit32 rename old-name invalid port-set delivery collision rights lifecycle OK");return 0;}

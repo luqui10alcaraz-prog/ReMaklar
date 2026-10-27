@@ -1,0 +1,1494 @@
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Installation/CDIS/splash'
+loaded entry=8fe960f0 stack=223d4fc0 cpu=750 host=i386 env=0x22339000
+smc restored=8fe960fc
+syscall pc=8fea2168 r0=4294967268 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe9860c res=ffffffff
+syscall pc=8fea2178 r0=4294967267 r3=00000101 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe9861c res=ffffffff
+syscall pc=8feac8c0 r0=32753 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe98658 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fea007c res=ffffffff
+syscall pc=8feac8c0 r0=32753 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe98660 res=ffffffff
+syscall pc=8fea2148 r0=4294967270 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8feac600 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000103 r4=00000008 r5=00000000 r6=223d4f60 r7=00000065 r8=8fe7d53c lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000008 r5=00000000 r6=223d4f60 r7=00000065 r8=8fe7d53c lr=8fea00d8 res=ffffffff
+syscall pc=8fea2198 r0=4294967264 r3=223d4e90 r4=00000003 r5=00000028 r6=00000060 r7=00000200 r8=00000000 lr=8feaba98 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000000 00000103 00000200 8fe7d570 000000c8 00000000 00000000 00000008 00000000
+syscall pc=8feb17d8 r0=32754 r3=00000103 r4=8fec9100 r5=00000000 r6=ddc2b148 r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=8fec9100 r5=00000000 r6=ddc2b148 r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4ed0 r4=00000003 r5=00000018 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=202 destination=103 send=24 recv=48: 00001513 00000000 00000103 00000200 00000000 000000ca
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000103 r5=00000018 r6=00000030 r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000103 r5=00000018 r6=00000030 r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4ed0 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000200 00000000 00000c86 00000000 00000000 00000103
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000004 r5=8fec5c90 r6=0000002c r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000004 r5=8fec5c90 r6=0000002c r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e70 r4=00000003 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000200 8fec5770 00000d51 00000000 00000000 00000004
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=223d4ef0 r5=223d4ef4 r6=00000030 r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=223d4ef0 r5=223d4ef4 r6=00000030 r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e50 r4=00000003 r5=00000018 r6=0000003c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3404 destination=101 send=24 recv=60: 00001513 00000000 00000101 00000200 00000000 00000d4c
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=223e1000 r5=0000000c r6=0000003c r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=223e1000 r5=0000000c r6=0000003c r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e70 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00011102 00000101 00000200 00000003 00000eda 00000000 00000000 223e1000 0000000c
+syscall pc=8fea2178 r0=4294967267 r3=00000000 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feac960 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000103 r4=00000000 r5=8fec5ca0 r6=0000002c r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000000 r5=8fec5ca0 r6=0000002c r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e70 r4=00000003 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=206 destination=103 send=36 recv=48: 00001513 00000024 00000103 00000200 00000000 000000ce 00000000 00000000 00000000
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000103 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000103 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e70 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000200 00000000 00000c86 00000000 00000000 00000103
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000001 r5=8fec5ca4 r6=0000002c r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000001 r5=8fec5ca4 r6=0000002c r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e70 r4=00000003 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000024 00000101 00000200 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=400 host=2819 receive=1 set=0 send=0
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=80001513 r5=00001000 r6=00000000 r7=00000000 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=80001513 r5=00001000 r6=00000000 r7=00000000 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e90 r4=00000003 r5=00000054 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3812 destination=101 send=84 recv=48: 80001513 00000400 00000101 00000200 8fec5770 00000ee4 00000001 00000000 223d4f10 00001300 00000000 00000000 00000000 00001000 00000000 00000000 00000000 00000001 00000000 00000000 00000001
+vm_map anonymous bytes=4096 mask=0 alias=0
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000000 r5=00000000 r6=223d4fd4 r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000000 r5=00000000 r6=223d4fd4 r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e10 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000200 8fec5ca4 00000c86 00000000 00000000 00000000
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8fe91d74 res=ffffffff
+native Mach capability guest=401 host=519 receive=0 set=0 send=3
+syscall pc=8fea2178 r0=4294967267 r3=8fec53c0 r4=00000000 r5=00000000 r6=0000002c r7=00000200 r8=00000000 lr=8fe7e2bc res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000103 r4=00000001 r5=8fec5400 r6=223d4f50 r7=00000200 r8=00000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000001 r5=8fec5400 r6=223d4f50 r7=00000200 r8=00000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4e90 r4=00000003 r5=00000028 r6=00000060 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000028 00000103 00000200 00000000 000000c8 00000000 00000000 00000001 00000005
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000103 r5=00000014 r6=00000009 r7=00000001 r8=08000000 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=00000103 r5=00000014 r6=00000009 r7=00000001 r8=08000000 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4ed0 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000001 00000101 00000200 00000001 00000c86 00000000 00000000 00000103
+syscall pc=8fea2508 r0=5 r3=00001460 r4=00000000 r5=00000000 r6=00000000 r7=8fec83cc r8=7368002f lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d60 r5=00000000 r6=00000000 r7=8fec83cc r8=7368002f lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4dc0 r6=00000001 r7=0000228c r8=7368002f lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=00001460 r4=223e1000 r5=0000228c r6=223d4b70 r7=00000003 r8=223d4b00 lr=8fe81958 res=ffffffff
+split-private preferred=90670000 base=25457000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=223e1000 r5=0000228c r6=223d4b70 r7=00000003 r8=223d4b00 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=223e1000 r5=0000228c r6=223d4b70 r7=00000003 r8=223d4b00 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a80 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000200 00000000 00000eda 00000000 00000000 223e1000 0000228c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=000014d0 r4=00000000 r5=00000000 r6=00000000 r7=8fec83d0 r8=254572e4 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d60 r5=00000000 r6=00000000 r7=8fec83d0 r8=254572e4 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4dc0 r6=00000001 r7=000ee748 r8=254572e4 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=000014d0 r4=44ef7000 r5=000ee748 r6=223d4b70 r7=00000003 r8=223d4b00 lr=8fe81958 res=ffffffff
+split-private preferred=90130000 base=24f17000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=44ef7000 r5=000ee748 r6=223d4b70 r7=00000003 r8=223d4b00 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=44ef7000 r5=000ee748 r6=223d4b70 r7=00000003 r8=223d4b00 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a80 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 44ef7000 000ee748
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=00001538 r4=00000000 r5=00000000 r6=00000000 r7=8fec83d4 r8=24f17548 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d60 r5=00000000 r6=00000000 r7=8fec83d4 r8=24f17548 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4dc0 r6=00000001 r7=0007a238 r8=24f17548 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=00001538 r4=44ef7000 r5=0007a238 r6=223d4b70 r7=00000003 r8=223d4b00 lr=8fe81958 res=ffffffff
+split-private preferred=90490000 base=25277000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=44ef7000 r5=0007a238 r6=223d4b70 r7=00000003 r8=223d4b00 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=44ef7000 r5=0007a238 r6=223d4b70 r7=00000003 r8=223d4b00 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a80 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 44ef7000 0007a238
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=0000158c r4=00000000 r5=00000000 r6=00000000 r7=8fec83d8 r8=2527747c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libSystem.B.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d60 r5=00000000 r6=00000000 r7=8fec83d8 r8=2527747c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4dc0 r6=00000001 r7=0013018c r8=2527747c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=0000158c r4=44ef7000 r5=0013018c r6=223d4b70 r7=00000004 r8=223d4b00 lr=8fe81958 res=ffffffff
+split-private preferred=90000000 base=24de7000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=44ef7000 r5=0013018c r6=223d4b70 r7=00000004 r8=223d4b00 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=44ef7000 r5=0013018c r6=223d4b70 r7=00000004 r8=223d4b00 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a80 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 44ef7000 0013018c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=223d4c30 r5=00040000 r6=01000001 r7=00000000 r8=8fec03a4 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=223d4c30 r5=00040000 r6=01000001 r7=00000000 r8=8fec03a4 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4bb0 r4=00000003 r5=0000002c r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000200 00001574 00000ed9 00000000 00000000 223d4c90 00040000 01000001
+syscall pc=8fea2508 r0=5 r3=2545736c r4=00000000 r5=00000000 r6=00000000 r7=44ef72d0 r8=00000000 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72d0 r8=00000000 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00040aec r8=00000000 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=2545736c r4=44f37000 r5=00040aec r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=91b50000 base=26937000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=44f37000 r5=00040aec r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=44f37000 r5=00040aec r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 0000000a 00000101 00000200 44ef7598 00000eda 00000000 00000000 44f37000 00040aec
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=254573f0 r4=00000000 r5=00000000 r6=00000000 r7=44ef72d4 r8=26937724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72d4 r8=26937724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=0006dc04 r8=26937724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=254573f0 r4=44f37000 r5=0006dc04 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=91930000 base=26717000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=44f37000 r5=0006dc04 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=44f37000 r5=0006dc04 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 44f37000 0006dc04
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25457474 r4=00000000 r5=00000000 r6=00000000 r7=44ef72d8 r8=26717658 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72d8 r8=26717658 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00108198 r8=26717658 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25457474 r4=4502c000 r5=00108198 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=917f0000 base=265d7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00108198 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00108198 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00108198
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25457504 r4=00000000 r5=00000000 r6=00000000 r7=44ef72dc r8=265d76e0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72dc r8=265d76e0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=0029f5ec r8=265d76e0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25457504 r4=4502c000 r5=0029f5ec r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=936f0000 base=284d7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=0029f5ec r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=0029f5ec r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 0029f5ec
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=2545759c r4=00000000 r5=00000000 r6=00000000 r7=44ef72e0 r8=284d74c0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72e0 r8=284d74c0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00002278 r8=284d74c0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=2545759c r4=4502c000 r5=00002278 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=905c0000 base=253a7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00002278 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00002278 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00002278
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25457600 r4=00000000 r5=00000000 r6=00000000 r7=44ef72e4 r8=253a72e4 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72e4 r8=253a72e4 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=000bda7c r8=253a72e4 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25457600 r4=4502c000 r5=000bda7c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=91b90000 base=26977000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=000bda7c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=000bda7c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 000bda7c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25457690 r4=00000000 r5=00000000 r6=00000000 r7=44ef72e8 r8=269776e0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72e8 r8=269776e0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00103b90 r8=269776e0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25457690 r4=4502c000 r5=00103b90 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=91a50000 base=26837000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00103b90 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00103b90 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00103b90
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25457714 r4=00000000 r5=00000000 r6=00000000 r7=44ef72ec r8=26837724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72ec r8=26837724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00021ad0 r8=26837724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25457714 r4=4502c000 r5=00021ad0 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=917c0000 base=265a7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00021ad0 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00021ad0 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00021ad0
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=254577ac r4=00000000 r5=00000000 r6=00000000 r7=44ef72f0 r8=265a7658 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72f0 r8=265a7658 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00069e1c r8=265a7658 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=254577ac r4=4502c000 r5=00069e1c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=93000000 base=27de7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00069e1c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00069e1c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00069e1c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25457840 r4=00000000 r5=00000000 r6=00000000 r7=44ef72f4 r8=27de7724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72f4 r8=27de7724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=0001f044 r8=27de7724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25457840 r4=4502c000 r5=0001f044 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=91910000 base=266f7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=0001f044 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=0001f044 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 0001f044
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=254578dc r4=00000000 r5=00000000 r6=00000000 r7=44ef72f8 r8=266f76e0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72f8 r8=266f76e0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00030898 r8=266f76e0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=254578dc r4=4502c000 r5=00030898 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=923e0000 base=271c7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00030898 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00030898 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00030898
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25457974 r4=00000000 r5=00000000 r6=00000000 r7=44ef72fc r8=271c7724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef72fc r8=271c7724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=0002760c r8=271c7724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25457974 r4=4502c000 r5=0002760c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=92800000 base=275e7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=0002760c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=0002760c r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 0002760c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=25277550 r4=00000000 r5=00000000 r6=00000000 r7=8fec83e4 r8=275e758c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=8fec83e4 r8=275e758c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=000233b8 r8=275e758c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=25277550 r4=4502c000 r5=000233b8 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=90a50000 base=25837000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=000233b8 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=000233b8 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 000233b8
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=252775c0 r4=00000000 r5=00000000 r6=00000000 r7=8fec83e8 r8=2583736c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libz.1.1.3.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=8fec83e8 r8=2583736c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=0000dc34 r8=2583736c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252775c0 r4=4502c000 r5=0000dc34 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=922a0000 base=27087000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=0000dc34 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=0000dc34 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 0000dc34
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=24de761c r4=00000000 r5=00000000 r6=00000000 r7=8fec83f0 r8=27087328 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/system/libmathCommon.A.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=8fec83f0 r8=27087328 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00006b84 r8=27087328 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=24de761c r4=4502c000 r5=00006b84 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=93a40000 base=28827000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00006b84 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00006b84 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00006b84
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253a7360 r4=00000000 r5=00000000 r6=00000000 r7=44ef7390 r8=2882736c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef7390 r8=2882736c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00266630 r8=2882736c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253a7360 r4=4502c000 r5=00266630 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=90220000 base=25007000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00266630 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00266630 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00266630
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253a7454 r4=00000000 r5=00000000 r6=00000000 r7=44ef7398 r8=25007724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef7398 r8=25007724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=000b7f1c r8=25007724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253a7454 r4=4502c000 r5=000b7f1c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=90510000 base=252f7000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=000b7f1c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=000b7f1c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 000b7f1c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253a74e0 r4=00000000 r5=00000000 r6=00000000 r7=44ef739c r8=252f7724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef739c r8=252f7724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=00021948 r8=252f7724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253a74e0 r4=4502c000 r5=00021948 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=92b30000 base=27917000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=00021948 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=00021948 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 00021948
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253a756c r4=00000000 r5=00000000 r6=00000000 r7=44ef73a0 r8=279174c0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef73a0 r8=279174c0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=000238b8 r8=279174c0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253a756c r4=4502c000 r5=000238b8 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=93ec0000 base=28ca7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=000238b8 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=000238b8 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 000238b8
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=26977b20 r4=00000000 r5=00000000 r6=00000000 r7=44ef73cc r8=28ca75d0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Security.framework/Versions/A/Security
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef73cc r8=28ca75d0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=003d28c4 r8=28ca75d0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=26977b20 r4=4502c000 r5=003d28c4 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=92410000 base=271f7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=003d28c4 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=003d28c4 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 003d28c4
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=26977b7c r4=00000000 r5=00000000 r6=00000000 r7=44ef73d0 r8=271f7614 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libcups.2.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef73d0 r8=271f7614 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=000186c8 r8=271f7614 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=26977b7c r4=4502c000 r5=000186c8 r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=93a20000 base=28807000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=000186c8 r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=000186c8 r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 000186c8
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=252f77c8 r4=00000000 r5=00000000 r6=00000000 r7=44ef74f0 r8=2880736c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef74f0 r8=2880736c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=0002e85c r8=2880736c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252f77c8 r4=4502c000 r5=0002e85c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=90b10000 base=258f7000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=0002e85c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=0002e85c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 0002e85c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=288073ec r4=00000000 r5=00000000 r6=00000000 r7=44ef7554 r8=258f7548 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libssl.0.9.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef7554 r8=258f7548 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=0003d5b0 r8=258f7548 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=288073ec r4=4502c000 r5=0003d5b0 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=92ad0000 base=278b7000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=0003d5b0 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=0003d5b0 r6=223d4b10 r7=00000003 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 0003d5b0
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=28807420 r4=00000000 r5=00000000 r6=00000000 r7=44ef7558 r8=278b7438 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libcrypto.0.9.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d4d00 r5=00000000 r6=00000000 r7=44ef7558 r8=278b7438 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d4d60 r6=00000001 r7=000e122c r8=278b7438 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=28807420 r4=4502c000 r5=000e122c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fe81958 res=ffffffff
+split-private preferred=929f0000 base=277d7000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=4502c000 r5=000e122c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8feac638 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000000 r4=4502c000 r5=000e122c r6=223d4b10 r7=00000004 r8=223d4aa0 lr=8fea00d8 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3a20 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502c000 000e122c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+startup: entered original executable at 00003398
+syscall pc=24dee588 r0=4294967268 r3=00000000 r4=223d4fc8 r5=223d4fd4 r6=223d4e90 r7=223d4e94 r8=00000000 lr=24dee480 res=ffffffff
+syscall pc=24dee5a8 r0=4294967267 r3=00000101 r4=223d4fc8 r5=223d4fd4 r6=223d4e90 r7=223d4e94 r8=00000000 lr=24dee490 res=ffffffff
+syscall pc=24dee5c8 r0=32753 r3=00000000 r4=223d4fc8 r5=223d4fd4 r6=223d4e90 r7=223d4e94 r8=00000000 lr=24dee4cc res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=223d4fc8 r5=223d4fd4 r6=223d4e90 r7=223d4e94 r8=00000000 lr=24dee5f8 res=ffffffff
+syscall pc=24dee5c8 r0=32753 r3=00000000 r4=223d4fc8 r5=223d4fd4 r6=223d4e90 r7=223d4e94 r8=00000000 lr=24dee4d4 res=ffffffff
+syscall pc=24dee688 r0=4294967270 r3=00000000 r4=223d4fc8 r5=223d4fd4 r6=223d4e90 r7=223d4e94 r8=00000000 lr=24dedd6c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000103 r4=00000008 r5=00000000 r6=223d4f00 r7=223d4e94 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000008 r5=00000000 r6=223d4f00 r7=223d4e94 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24de84e8 r0=4294967264 r3=223d4e30 r4=00000003 r5=00000028 r6=00000060 r7=00000201 r8=00000000 lr=24ded68c res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000004 00000103 00000201 223d4e90 000000c8 00000000 00000000 00000008 00000000
+syscall pc=24de85c8 r0=32754 r3=00000103 r4=34df1430 r5=00000000 r6=ddc2b1a8 r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=34df1430 r5=00000000 r6=ddc2b1a8 r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e70 r4=00000003 r5=00000018 r6=00000030 r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=202 destination=103 send=24 recv=48: 00001513 ddc2b1a8 00000103 00000201 34de80a4 000000ca
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000103 r5=00000018 r6=00000030 r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000103 r5=00000018 r6=00000030 r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e70 r4=00000003 r5=00000024 r6=0000002c r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000030 00000101 00000201 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000004 r5=34de80a8 r6=0000002c r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000004 r5=34de80a8 r6=0000002c r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e10 r4=00000003 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 0000002c 00000101 00000201 34dee9ac 00000d51 00000000 00000000 00000004
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223d4e90 r5=223d4e94 r6=00000030 r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=223d4e90 r5=223d4e94 r6=00000030 r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4df0 r4=00000003 r5=00000018 r6=0000003c r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3404 destination=101 send=24 recv=60: 00001513 0000002c 00000101 00000201 24edf0d4 00000d4c
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223e1000 r5=0000000c r6=0000003c r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=223e1000 r5=0000000c r6=0000003c r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e10 r4=00000003 r5=00000028 r6=0000002c r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 0000003c 00000101 00000201 34dee9ac 00000eda 00000000 00000000 223e1000 0000000c
+syscall pc=24dee5a8 r0=4294967267 r3=00000000 r4=00000003 r5=00000028 r6=0000002c r7=00000201 r8=00000000 lr=24deea3c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000103 r4=00000000 r5=34de80b8 r6=0000002c r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000000 r5=34de80b8 r6=0000002c r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e10 r4=00000003 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=206 destination=103 send=36 recv=48: 00001513 0000002c 00000103 00000201 00000000 000000ce 00000000 00000000 00000000
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000103 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000103 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e10 r4=00000003 r5=00000024 r6=0000002c r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000201 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000001 r5=34de80bc r6=0000002c r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000001 r5=34de80bc r6=0000002c r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e10 r4=00000003 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 0000002c 00000101 00000201 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=402 host=3331 receive=1 set=0 send=0
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=80001513 r5=00001000 r6=00000000 r7=00000000 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=80001513 r5=00001000 r6=00000000 r7=00000000 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e30 r4=00000003 r5=00000054 r6=00000030 r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3812 destination=101 send=84 recv=48: 80001513 00000402 00000101 00000201 34de80c8 00000ee4 00000001 00000000 223d4eb0 00001300 00000000 00000000 00000000 00001000 00000000 00000000 00000000 00000001 00000000 00000000 00000001
+vm_map anonymous bytes=4096 mask=0 alias=0
+syscall pc=24dee5a8 r0=4294967267 r3=00000000 r4=00000003 r5=00000054 r6=00000030 r7=00000201 r8=00000000 lr=24def3a4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000103 r4=00000005 r5=223d4ec0 r6=223d4ee0 r7=00000201 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000005 r5=223d4ec0 r6=223d4ee0 r7=00000201 r8=00000000 lr=24dee850 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4de0 r4=00000003 r5=00000028 r6=00000060 r7=00000201 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000000 00000103 00000201 223d4eb0 000000c8 00000000 00000000 00000005 00000008
+syscall pc=24dee5c8 r0=32753 r3=34de7dec r4=00000000 r5=00000020 r6=00000050 r7=00000050 r8=24def5cc lr=24def41c res=ffffffff
+syscall pc=24def648 r0=4294967269 r3=34de7dec r4=00000000 r5=00000020 r6=00000050 r7=00000050 r8=24def5cc lr=24def420 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=223d4d68 r4=223d4de4 r5=00000004 r6=0000001f r7=00000001 r8=24def5cc lr=24dee13c res=ffffffff
+syscall pc=24dee688 r0=4294967270 r3=34de7dec r4=223d4de4 r5=00000004 r6=0000001f r7=00000001 r8=24def5cc lr=24dee168 res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d40 r4=00000003 r5=00000030 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3616 destination=401 send=48 recv=44: 00001513 34deb6ec 00000401 00000202 223d4da0 00000e20 00000000 00000000 00000001 00000001 0000001f 00000001
+syscall pc=24df06a8 r0=202 r3=223d4ee8 r4=00000002 r5=223d4ef0 r6=223d4ef4 r7=00000000 r8=00000000 lr=24def46c res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=3
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000103 r5=223d4ef0 r6=223d4ef4 r7=00000000 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4e20 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223d4ef4 00000101 00000202 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24df06a8 r0=202 r3=223d4ee8 r4=00000002 r5=223d4ef8 r6=223d4ef4 r7=00000000 r8=00000000 lr=24def538 res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=13
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223d4c10 r5=00040000 r6=01000001 r7=000074ac r8=34defc6c lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4b90 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 01000001 00000101 00000202 34de80c8 00000ed9 00000000 00000000 223d4c90 00040000 01000001
+syscall pc=24de85c8 r0=32754 r3=44f37350 r4=00000005 r5=00000002 r6=00000000 r7=00000000 r8=00000000 lr=24df1940 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000000 r5=0000002c r6=00000000 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000002 r5=00000028 r6=223d4db8 r7=00000000 r8=00000000 lr=24df1a2c res=ffffffff
+syscall pc=8fea2540 r0=32755 r3=8fec92dc r4=223d4cb0 r5=223d4d20 r6=223d4e40 r7=223d4e44 r8=00000001 lr=8fe932c8 res=ffffffff
+syscall pc=8fea2540 r0=32755 r3=00000000 r4=8fec54ec r5=8fec550c r6=8fec550c r7=8fec5740 r8=00000000 lr=8fe85f14 res=ffffffff
+syscall pc=24df7f68 r0=26 r3=0000c000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee0034 lr=24f8c99c res=ffffffff
+return r3=1 error=1 resume=24df7f68
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee0034 lr=24decda0 res=ffffffff
+syscall pc=24df8208 r0=4294967207 r3=223d45b0 r4=00000a00 r5=44f37010 r6=00000000 r7=00000000 r8=34f18068 lr=24f19d5c res=ffffffff
+syscall pc=24dece0c r0=20 r3=00000000 r4=00000a00 r5=34de8ec4 r6=00000000 r7=00000000 r8=24f18144 lr=24f1a364 res=ffffffff
+return r3=981 error=0 resume=24dece10
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=34de8ec4 r6=00000000 r7=00000000 r8=24f18144 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=34de8ec4 r6=00000000 r7=00000000 r8=24f18144 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f37ac0 r5=00000010 r6=00000000 r7=00000000 r8=24f18144 lr=24df814c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f37ac0 r5=00000010 r6=00000000 r7=00000000 r8=24f18144 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000001 r5=44f37aec r6=00000000 r7=00000000 r8=24f18144 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d44a0 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 223d4510 00000c84 00000000 00000000 00000001
+native Mach capability guest=403 host=3843 receive=1 set=0 send=0
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000403 r5=00000403 r6=00000014 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4490 r4=00000003 r5=00000034 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 00000000 00000101 00000202 00000012 00000c8e 00000001 00000403 00000000 00001400 00000000 00000000 00000403
+syscall pc=24de85c8 r0=32754 r3=223d448c r4=223d4524 r5=00000004 r6=00000001 r7=00000001 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4460 r4=00000003 r5=00000030 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3218 destination=101 send=48 recv=44: 00001513 34f18378 00000101 00000202 00000024 00000c92 00000000 00000000 00000403 00000001 00000001 00000001
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000003 r5=44f37c04 r6=00000000 r7=ffffffff r8=34f19364 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4400 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 8fec544c 00000101 00000202 44f37b60 00000c84 00000000 00000000 00000003
+native Mach capability guest=404 host=4099 receive=0 set=1 send=0
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000403 r5=00000404 r6=00000030 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4400 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c9a 00000000 00000000 00000403 00000404
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f37be0 r5=00000000 r6=00000000 r7=ffffffff r8=34f195b0 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f37be0 r5=00000000 r6=00000000 r7=ffffffff r8=34f195b0 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223d45c0 r5=00c00000 r6=1f000000 r7=ffffffff r8=24f18144 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4540 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 00000001 00000ed9 00000000 00000000 ff000000 00c00000 1f000000
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=24faf41d r5=0000000d r6=00000000 r7=ffffffff r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=24faf42c r4=223d4140 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=24f34328 res=ffffffff
+return r3=0 error=0 resume=24df2dcc
+syscall pc=24df2dc8 r0=188 r3=223d41a0 r4=223d40e0 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=24f3433c res=ffffffff
+return r3=0 error=0 resume=24df2dcc
+syscall pc=24df7f68 r0=26 r3=0000c001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f14254 lr=24f8cd48 res=ffffffff
+return r3=1 error=1 resume=24df7f68
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f14254 lr=24decda0 res=ffffffff
+syscall pc=24df7f68 r0=26 r3=0000c003 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f14254 lr=24f8cd64 res=ffffffff
+return r3=1 error=1 resume=24df7f68
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f14254 lr=24decda0 res=ffffffff
+syscall pc=24df2588 r0=24 r3=223d45c0 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f14254 lr=24f946a0 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24df7f68 r0=26 r3=0000c0ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f14254 lr=24f8cd80 res=ffffffff
+return r3=1 error=1 resume=24df7f68
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f14254 lr=24decda0 res=ffffffff
+syscall pc=24dee5a8 r0=4294967267 r3=00000104 r4=223d4de0 r5=223d4fd4 r6=223d4ff8 r7=8fec5550 r8=bfffff53 lr=2527afc0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000103 r4=223d4de0 r5=223d4fd4 r6=223d4ff8 r7=8fec5550 r8=bfffff53 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d10 r4=00000003 r5=00000018 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=205 destination=103 send=24 recv=48: 00001513 223d4ff8 00000103 00000202 34de80a8 000000cd
+native IOKit master obtained host_port=4611 guest_port=106
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000103 r5=00000018 r6=00000030 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d10 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24de85c8 r0=32754 r3=0000002a r4=252cadde r5=00000200 r6=0000002c r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4a90 r4=00000003 r5=00000054 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=2809 destination=106 send=84 recv=48: 00001513 00000000 00000106 00000202 24edf524 00000af9 00000000 00000000 00000000 0000002a 494f506f 7765723a 2f494f50 6f776572 436f6e6e 65637469 6f6e2f49 4f504d72 6f6f7444 6f6d6169 6e004b30
+native bridge loaded ORIGINAL IOKit image cpu=7
+native IOKit rpc=2809 native_result=0 object=4867
+syscall pc=24de85c8 r0=32754 r3=00000405 r4=00000101 r5=00000000 r6=223d4d80 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4cf0 r4=00000003 r5=00000034 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=2815 destination=405 send=52 recv=48: 80001513 8fec7c18 00000405 00000202 00000000 00000aff 00000001 00000101 34de80c8 00001300 00000000 00000000 00000000
+native IOKit rpc=2815 native_result=0 object=5123
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000405 r5=00000034 r6=00000030 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d00 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000030 00000101 00000202 00000000 00000c86 00000000 00000000 00000405
+syscall pc=24de85c8 r0=32754 r3=223d4cd8 r4=223d4d88 r5=00000008 r6=00000000 r7=00000000 r8=223d4d88 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4cb0 r4=00000003 r5=00000034 r6=00000070 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=2822 destination=406 send=52 recv=112: 00001513 00000406 00000406 00000202 223d4d40 00000b06 00000000 00000000 00000000 00000002 00000000 00000000 00000000
+native IOKit scalar selector=0 result=0 output_count=0
+syscall pc=24de85c8 r0=32754 r3=223d4cd8 r4=223d4d88 r5=00000008 r6=00000001 r7=00000000 r8=223d4d88 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4cb0 r4=00000003 r5=00000034 r6=00000070 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=2822 destination=406 send=52 recv=112: 00001513 00000028 00000406 00000202 00000000 00000b06 00000000 00000000 00000000 00000002 00000001 00000000 00000000
+native IOKit scalar selector=0 result=0 output_count=0
+syscall pc=24de85c8 r0=32754 r3=223d4cd8 r4=223d4d88 r5=00000008 r6=00000002 r7=00000000 r8=223d4d88 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4cb0 r4=00000003 r5=00000034 r6=00000070 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=2822 destination=406 send=52 recv=112: 00001513 00000028 00000406 00000202 00000000 00000b06 00000000 00000000 00000000 00000002 00000002 00000000 00000000
+native IOKit scalar selector=0 result=0 output_count=0
+syscall pc=24de85c8 r0=32754 r3=223d4cd8 r4=223d4d88 r5=00000008 r6=00000003 r7=00000000 r8=223d4d88 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4cb0 r4=00000003 r5=00000034 r6=00000070 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=2822 destination=406 send=52 recv=112: 00001513 00000028 00000406 00000202 00000000 00000b06 00000000 00000000 00000000 00000002 00000003 00000000 00000000
+native IOKit scalar selector=0 result=0 output_count=0
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000008 r6=00000000 r7=00000202 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=34f185bc r4=34f1857c r5=34f1857c r6=34f1857c r7=ffffffff r8=34f19364 lr=24f338e0 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24deca88 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=34f1857c r7=ffffffff r8=34f19364 lr=24f33964 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=34f1857c r7=ffffffff r8=34f19364 lr=24f33978 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=24e72e60 r5=00000002 r6=34f1857c r7=ffffffff r8=34dedf40 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=44f37de0 r5=00000010 r6=34f1857c r7=ffffffff r8=34dedf40 lr=24df814c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=24e73160 r5=00000014 r6=34f1857c r7=ffffffff r8=34dedf40 lr=24df80c4 res=ffffffff
+syscall pc=24df6228 r0=49 r3=44f37e50 r4=000000ff r5=00000002 r6=34f1857c r7=ffffffff r8=00002792 lr=24df61c4 res=ffffffff
+return r3=0 error=0 resume=24df622c
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000004 r5=223d4880 r6=34f1857c r7=ffffffff r8=00002792 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4800 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 223d4860 00000101 00000202 00000001 00000d51 00000000 00000000 00000004
+syscall pc=24de85c8 r0=32754 r3=00000011 r4=34de7bf5 r5=00000080 r6=00000030 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4790 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 8fec544c 00000104 00000202 34f13950 00000194 00000000 00000000 6c6f6f6b 75702064 61656d6f 6e207632 003d4840 44f3725c 24deeb18 24dec1ac 223d4850 223d48c8 24dec538 34de612c 34de612c 34de9f98 34f17510 24e7316c 223d4840 8fec54dc 24e7318c 0000000a 80000012 00000028 00000202 00000000
+native bootstrap id=404 service=lookup daemon v2 result=1102
+syscall pc=24deca88 r0=24 r3=44f37e50 r4=00000000 r5=00000001 r6=00000030 r7=00000202 r8=00000000 lr=24df460c res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24decca8 r0=5 r3=24ec0700 r4=00000000 r5=000001b6 r6=00000030 r7=00000202 r8=00000000 lr=24df46f4 res=ffffffff
+guest open /var/tmp/jaguar/etc/master.passwd
+return r3=3 error=0 resume=24deccac
+syscall pc=24dec608 r0=189 r3=00000003 r4=223d42c0 r5=223d4374 r6=00000030 r7=00000202 r8=00000000 lr=24df28f8 res=ffffffff
+return r3=0 error=0 resume=24dec60c
+syscall pc=24de8508 r0=3 r3=00000003 r4=44f37f60 r5=00001000 r6=00000030 r7=00000202 r8=00000000 lr=24df4dfc res=ffffffff
+return r3=775 error=0 resume=24de850c
+syscall pc=24df26a8 r0=6 r3=00000003 r4=44f39005 r5=44f37e55 r6=00006800 r7=2f746373 r8=44f37010 lr=24df6004 res=ffffffff
+return r3=0 error=0 resume=24df26ac
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000004 r5=223d4880 r6=00006800 r7=2f746373 r8=68000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4800 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 0000000c 00000101 00000202 00000001 00000d51 00000000 00000000 00000004
+syscall pc=24de85c8 r0=32754 r3=00000011 r4=34de7bf5 r5=00000080 r6=00000030 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4790 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 44f39060 00000104 00000202 34f13950 00000194 00000000 00000000 6c6f6f6b 75702064 61656d6f 6e207632 003d4840 00000003 24deeb18 24df0bec 223d4840 34de24ec 24df0e74 34f13950 34f13950 34de24ec 00000000 00000000 0000000a 44f37010 44f38fc0 24dec0b0 80000012 00000028 00000202 00000000
+native bootstrap id=404 service=lookup daemon v2 result=1102
+syscall pc=24deca88 r0=24 r3=44f37e50 r4=00000000 r5=00000001 r6=00000030 r7=00000202 r8=00000000 lr=24df460c res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24decca8 r0=5 r3=24ec0700 r4=00000000 r5=000001b6 r6=00000030 r7=00000202 r8=00000000 lr=24df46f4 res=ffffffff
+guest open /var/tmp/jaguar/etc/master.passwd
+return r3=3 error=0 resume=24deccac
+syscall pc=24dec608 r0=189 r3=00000003 r4=223d42c0 r5=223d4374 r6=00000030 r7=00000202 r8=00000000 lr=24df28f8 res=ffffffff
+return r3=0 error=0 resume=24dec60c
+syscall pc=24de8508 r0=3 r3=00000003 r4=44f37f60 r5=00001000 r6=00000030 r7=00000202 r8=00000000 lr=24df4dfc res=ffffffff
+return r3=775 error=0 resume=24de850c
+syscall pc=24df26a8 r0=6 r3=00000003 r4=44f38fb5 r5=44f37e55 r6=00006800 r7=2f746373 r8=44f37010 lr=24df6004 res=ffffffff
+return r3=0 error=0 resume=24df26ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f390e0 r5=00000009 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4774 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4774 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39161 r5=0000000a r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39000 r5=00000004 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39004 r5=00000004 r6=726f6f74 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4a94 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4a94 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4ae4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4ae4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=00000000 r4=34f1857c r5=34f1857c r6=00000000 r7=34f1c5f4 r8=44f37010 lr=24f33f4c res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=00000000 r7=34f1c5f4 r8=44f37010 lr=24f33f60 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d4ad4 r8=34f195b0 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d4ad4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4714 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4714 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d3c00 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=24f97110 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/CharacterSets/CFUnicodeData-B.mapping
+return r3=3 error=0 resume=24deccac
+syscall pc=24dec608 r0=189 r3=00000003 r4=223d3b50 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=24f97124 res=ffffffff
+return r3=0 error=0 resume=24dec60c
+syscall pc=24dfae28 r0=4294967253 r3=00000003 r4=00000000 r5=223d4070 r6=00000001 r7=0001356c r8=74732f00 lr=24f97144 res=ffffffff
+syscall pc=24df26a8 r0=6 r3=00000003 r4=00000000 r5=223d4070 r6=00000001 r7=0001356c r8=74732f00 lr=24f97164 res=ffffffff
+return r3=0 error=0 resume=24df26ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000018 r5=00000000 r6=00000001 r7=0001356c r8=74732f00 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d3ba0 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=24f97110 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/CharacterSets/CFCharacterSetBitmaps.bitmap
+return r3=3 error=0 resume=24deccac
+syscall pc=24dec608 r0=189 r3=00000003 r4=223d3af0 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=24f97124 res=ffffffff
+return r3=0 error=0 resume=24dec60c
+syscall pc=24dfae28 r0=4294967253 r3=00000003 r4=00000000 r5=223d4010 r6=00000001 r7=000480aa r8=74732f00 lr=24f97144 res=ffffffff
+syscall pc=24df26a8 r0=6 r3=00000003 r4=00000000 r5=223d4010 r6=00000001 r7=000480aa r8=74732f00 lr=24f97164 res=ffffffff
+return r3=0 error=0 resume=24df26ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000090 r5=00000000 r6=00000001 r7=000480aa r8=4502c000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=4502c000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=0000000c r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=0000000c r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=0000000c r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=0000000c r5=00000000 r6=00000001 r7=000480aa r8=000000ff lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000008 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000000 r6=00000001 r7=000480aa r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d45e0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/.GlobalPreferences.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24e52ae0 r0=116 r3=223d4ab0 r4=00000000 r5=00000000 r6=00000000 r7=24f2f5b4 r8=24fcf5b4 lr=24dec770 res=ffffffff
+return r3=1793053267 error=0 resume=24e52ae4
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223d4be0 r5=00040000 r6=01000001 r7=00007404 r8=34defc6c lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4b60 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 34de8ea4 00000101 00000202 223d4bc0 00000ed9 00000000 00000000 223d4c60 00040000 01000001
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000004 r5=223d4c60 r6=00000000 r7=00000000 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4be0 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 384dfe18 00000d51 00000000 00000000 00000004
+syscall pc=24de85c8 r0=32754 r3=0000000d r4=286a8d31 r5=00000080 r6=00000030 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4b70 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 8fec7de8 00000104 00000202 00000000 00000194 00000000 00000000 57696e64 6f775365 72766572 003d4ba0 223d4c20 384d5898 8fe7dec0 223d4fc8 384de5b4 384dbe80 384d8594 2856fe18 223d4c20 00000000 24df2194 00000000 2857cd2c 384d8a6c 00000104 286a8d24 223d4c64 00000030 00000202 00000000
+native bootstrap id=404 service=WindowServer result=0
+native Mach capability guest=407 host=4871 receive=0 set=0 send=1
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000104 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4be0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000030 00000101 00000202 00000000 00000c86 00000000 00000000 00000104
+syscall pc=24de85c8 r0=32754 r3=00000407 r4=223d4cc8 r5=223d4ccc r6=0000c350 r7=3fef0000 r8=24e004b8 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4c20 r4=00000103 r5=00000018 r6=00000034 r7=00000202 r8=0000c350 lr=24ded670 res=ffffffff
+native Mach send id=29000 destination=407 bytes=24
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=44 id=29100
+syscall pc=24de85c8 r0=32754 r3=00000407 r4=384d861c r5=384d8624 r6=00000034 r7=00000202 r8=0000c350 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4c90 r4=00000003 r5=00000018 r6=0000003c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29033 destination=407 bytes=24
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=52 id=29133
+syscall pc=24de85c8 r0=32754 r3=00000407 r4=00000101 r5=00000002 r6=00000002 r7=223d4c60 r8=223d4c64 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4bc0 r4=00000003 r5=00000038 r6=00000034 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29029 destination=407 bytes=56
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=44 id=29129
+syscall pc=24de85c8 r0=32754 r3=00000407 r4=00000101 r5=00000004 r6=00000001 r7=223d4c60 r8=223d4c64 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4bc0 r4=00000003 r5=00000038 r6=00000034 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29029 destination=407 bytes=56
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=44 id=29129
+syscall pc=24de85c8 r0=32754 r3=00000407 r4=384d88bc r5=000000a5 r6=00000034 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4c70 r4=00000003 r5=00000018 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29034 destination=407 bytes=24
+native Mach capability guest=408 host=5379 receive=0 set=0 send=1
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=40 id=29134
+syscall pc=24de85c8 r0=32754 r3=00000407 r4=5b81c5c1 r5=00000101 r6=44f38524 r7=44f38528 r8=223d4d30 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4c70 r4=00000003 r5=00000034 r6=00000038 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29010 destination=407 bytes=52
+real remote mapping metadata applied address=4524b000 bytes=16777216 kind=3 remove=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=48 id=29110
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223d4ae0 r5=00040000 r6=01000001 r7=00000202 r8=34defc6c lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4a60 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 223d4b58 00000101 00000202 00000401 00000ed9 00000000 00000000 223d4b60 00040000 01000001
+syscall pc=24dee5a8 r0=4294967267 r3=00000000 r4=44f385e0 r5=00000099 r6=223d4c70 r7=384dc550 r8=44f385a0 lr=2856ed2c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000103 r4=00000001 r5=384d87e0 r6=223d4d30 r7=384dc550 r8=44f385a0 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4c70 r4=00000003 r5=00000028 r6=00000060 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 44fe362c 00000103 00000202 44fe3010 000000c8 00000000 00000000 00000001 00000005
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000103 r5=00000014 r6=00000009 r7=00000001 r8=08000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4cb0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223d4d30 00000101 00000202 384d87f4 00000c86 00000000 00000000 00000103
+syscall pc=24df06a8 r0=202 r3=223d4d90 r4=00000002 r5=223d4d98 r6=223d4d9c r7=00000000 r8=00000000 lr=2856ecb4 res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=13
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4ba4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4ba4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4bf4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4bf4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000008 r6=00000000 r7=00000000 r8=0000078c lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4320 r5=00000008 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d40f4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d40f4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f38671 r5=00000009 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d47c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d47c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f37d80 r5=0000002f r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4250 r5=00000050 r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d42a2 r5=0000000c r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4084 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4084 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f38791 r5=00000029 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=44f386b0 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4298 r5=00000008 r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4250 r5=00000050 r6=00000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4084 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4084 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f38670 r5=00000052 r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d46b0 r5=00000028 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4484 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4484 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f38821 r5=00000029 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1ac r7=223d4534 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1ac r7=223d4534 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=0000000c r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d4160 r4=223d4100 r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=2 error=2 resume=24df2dc8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d4100 r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=ffffffff r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d4160 r4=223d4100 r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=2 error=2 resume=24df2dc8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d4100 r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=ffffffff r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d4160 r4=223d4100 r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=2 error=2 resume=24df2dc8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d4100 r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=00000008 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d4230 r4=223d41d0 r5=00000008 r6=00000080 r7=ffffffff r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=0 error=0 resume=24df2dcc
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=0000000b r5=00000008 r6=00000000 r7=ffffffff r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000014 r5=00000044 r6=00000000 r7=ffffffff r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f38820 r5=00000003 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d3810 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/System/Installation/CDIS/Info-macos.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d3810 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/System/Installation/CDIS/Info.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=0000001c r6=00000000 r7=ffffffff r8=34f195b0 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000003 r5=00000030 r6=00000000 r7=223d4620 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4440 r4=00000000 r5=000001ff r6=00000000 r7=ffffffff r8=34f195b0 lr=24f7cdc8 res=ffffffff
+guest open /var/tmp/jaguar/System/Installation/CDIS/splash
+return r3=3 error=0 resume=24deccac
+syscall pc=24dec608 r0=189 r3=00000003 r4=223d43e0 r5=000001ff r6=00000000 r7=ffffffff r8=34f195b0 lr=24f7cdd8 res=ffffffff
+return r3=0 error=0 resume=24dec60c
+syscall pc=24de8508 r0=3 r3=00000003 r4=223d4850 r5=00000200 r6=00000000 r7=ffffffff r8=34f195b0 lr=24f7ce0c res=ffffffff
+return r3=512 error=0 resume=24de850c
+syscall pc=24df26a8 r0=6 r3=00000003 r4=223d4850 r5=00000200 r6=00000000 r7=223d4850 r8=00000200 lr=24f7d448 res=ffffffff
+return r3=0 error=0 resume=24df26ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=a1b1c1d3 r5=00000003 r6=00000080 r7=00000000 r8=000007c8 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d4be4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d4be4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4824 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4824 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d46f0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/Network/splash.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24e52ae0 r0=116 r3=223d4bc0 r4=00000000 r5=00000000 r6=00000000 r7=24f2f5b4 r8=24fcf5b4 lr=24dec770 res=ffffffff
+return r3=1793053272 error=0 resume=24e52ae4
+syscall pc=24deca88 r0=24 r3=34f185bc r4=34f1857c r5=34f1857c r6=34f1857c r7=24f2f5b4 r8=24fcf5b4 lr=24f338e0 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=34f1857c r7=24f2f5b4 r8=24fcf5b4 lr=24f338f4 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4ba4 r8=24fcf5b4 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4ba4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4bf4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4bf4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=00000000 r4=34f1857c r5=34f1857c r6=0000078c r7=00000000 r8=0000078c lr=24f33f4c res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=0000078c r7=00000000 r8=0000078c lr=24f33f60 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d4be4 r8=000007c8 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d4be4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4824 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4824 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d46f0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/splash.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24deca88 r0=24 r3=34f185bc r4=34f185ac r5=34f185ac r6=34f185ac r7=24f2f5b4 r8=24fcf5b4 lr=24f338e0 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f185ac r6=34f185ac r7=24f2f5b4 r8=24fcf5b4 lr=24f338f4 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24df8ae8 r0=97 r3=00000002 r4=00000002 r5=00000000 r6=34f185ac r7=24f2f5b4 r8=24fcf5b4 lr=24f78508 res=ffffffff
+return r3=3 error=0 resume=24df8aec
+syscall pc=24debbc8 r0=54 r3=00000003 r4=c0086924 r5=223d4730 r6=34f185ac r7=24f2f5b4 r8=24fcf5b4 lr=24f7853c res=ffffffff
+return r3=0 error=0 resume=24debbcc
+syscall pc=24df26a8 r0=6 r3=00000003 r4=c0086924 r5=223d4730 r6=34f185ac r7=24f2f5b4 r8=24fcf5b4 lr=24f78678 res=ffffffff
+return r3=0 error=0 resume=24df26ac
+syscall pc=24df06a8 r0=202 r3=223d4a10 r4=00000002 r5=223d4a70 r6=223d4a18 r7=00000000 r8=00000000 lr=24df433c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4a70 r5=00000009 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4bb4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4bb4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4c04 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d4c04 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=00000000 r4=34f185ac r5=34f185ac r6=0000078c r7=00000000 r8=0000078c lr=24f33f4c res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f185ac r6=0000078c r7=00000000 r8=0000078c lr=24f33f60 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d47d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d47d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df06a8 r0=202 r3=223d4a50 r4=00000002 r5=223d4ab0 r6=223d4a58 r7=00000000 r8=00000000 lr=24df433c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4ab0 r5=00000009 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba1c r7=223d4bf4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba1c r7=223d4bf4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4834 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4834 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4700 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/ByHost/.GlobalPreferences.localhost.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000001 r5=223d4dd0 r6=00000000 r7=24f2f5b4 r8=24fcf5b4 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d40 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 384dc6f0 00000c84 00000000 00000000 00000001
+native Mach capability guest=409 host=5891 receive=1 set=0 send=0
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000409 r5=00000409 r6=00000014 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d30 r4=00000003 r5=00000034 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 00000000 00000101 00000202 00000409 00000c8e 00000001 00000409 00000000 44fe1400 00000000 00000000 00000409
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000409 r5=00000001 r6=223d4dd4 r7=223d4dd8 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d00 r4=00000003 r5=0000002c r6=00000058 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3217 destination=101 send=44 recv=88: 00001513 223d4ed0 00000101 00000202 00000001 00000c91 00000000 00000000 00000409 00000001 00000001
+syscall pc=24de85c8 r0=32754 r3=223d4d2c r4=223d4dd8 r5=00000004 r6=00000001 r7=00000001 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d00 r4=00000003 r5=00000030 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3218 destination=101 send=48 recv=44: 00001513 0000002c 00000101 00000202 00000000 00000c92 00000000 00000000 00000409 00000001 00000001 00000001
+syscall pc=24de85c8 r0=32754 r3=00000407 r4=00000000 r5=000003d5 r6=44fe41bc r7=223d4ddc r8=223d4dc0 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d10 r4=00000003 r5=00000034 r6=00000048 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29001 destination=407 bytes=52
+native Mach capability guest=40a host=6147 receive=0 set=0 send=1
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=64 id=29101
+syscall pc=24dec828 r0=0 r3=000000b4 r4=1fff0305 r5=00000000 r6=00000000 r7=00000000 r8=00000000 lr=285593ac res=ffffffff
+return r3=22 error=22 resume=24dec828
+syscall pc=24de85c8 r0=32754 r3=00000016 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=44fe3300 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=0000040a r4=00000000 r5=00000000 r6=000003d5 r7=223d4da0 r8=44fe3300 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4c40 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29319 destination=40a bytes=44
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=36 id=29419
+syscall pc=24df2dc8 r0=188 r3=44f37d80 r4=223d4c10 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=28584e14 res=ffffffff
+return r3=0 error=0 resume=24df2dcc
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f37d80 r5=0000002f r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4370 r5=0000002f r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4144 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4144 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f391c1 r5=00000030 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1ac r7=223d41f4 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1ac r7=223d41f4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=0000000c r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d3e20 r4=223d3dc0 r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=20 error=20 resume=24df2dc8
+syscall pc=24de85c8 r0=32754 r3=00000014 r4=223d3dc0 r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=34def958 r4=ffffffff r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=ffffffff r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d3e20 r4=223d3dc0 r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=20 error=20 resume=24df2dc8
+syscall pc=24de85c8 r0=32754 r3=00000014 r4=223d3dc0 r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=34def958 r4=ffffffff r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=ffffffff r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d3e20 r4=223d3dc0 r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=20 error=20 resume=24df2dc8
+syscall pc=24de85c8 r0=32754 r3=00000014 r4=223d3dc0 r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=34def958 r4=ffffffff r5=00000012 r6=00000080 r7=00000000 r8=44f37010 lr=24de855c res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d3ef0 r4=223d3e90 r5=00000015 r6=00000080 r7=ffffffff r8=44f37010 lr=24f38d5c res=ffffffff
+return r3=0 error=0 resume=24df2dcc
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=0000000b r5=00000008 r6=00000000 r7=ffffffff r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d36e0 r5=00000050 r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d3732 r5=0000000c r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3514 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3514 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f391e1 r5=00000029 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=44f391c0 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d3728 r5=00000008 r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d36e0 r5=00000050 r6=00000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3514 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3514 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f391a0 r5=00000052 r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d3730 r5=00000050 r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d3782 r5=0000000c r6=00000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3564 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3564 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39261 r5=00000029 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=44f391e0 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d3af0 r5=00000028 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d38c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d38c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f391a1 r5=00000029 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1ac r7=223d3844 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1ac r7=223d3844 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=8fea2540 r0=32755 r3=00000000 r4=8fec54ec r5=8fec550c r6=8fec550c r7=8fec5740 r8=00000000 lr=8fe85f14 res=ffffffff
+syscall pc=24df7f68 r0=26 r3=00010000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee0034 lr=25043f98 res=ffffffff
+return r3=1 error=1 resume=24df7f68
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee0034 lr=24decda0 res=ffffffff
+syscall pc=24df8208 r0=4294967207 r3=223d46e0 r4=440af615 r5=00000000 r6=00000000 r7=25008a0c r8=25218a0c lr=25009360 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=250bb721 r5=34de8ec4 r6=00000000 r7=25008a0c r8=25218a0c lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=250bb721 r5=34de8ec4 r6=00000000 r7=25008a0c r8=25218a0c lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000003 r4=00000001 r5=34de8ec4 r6=00000000 r7=25008a0c r8=34dedf48 lr=24df814c res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000000 r4=00000001 r5=34de8ec4 r6=00000000 r7=25008a0c r8=34dedf48 lr=2504d694 res=ffffffff
+syscall pc=24df7f68 r0=26 r3=000100ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34dedf48 lr=8fe8601c res=ffffffff
+return r3=1 error=1 resume=24df7f68
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34dedf48 lr=24decda0 res=ffffffff
+syscall pc=24dfcba8 r0=220 r3=44f37d80 r4=223d3840 r5=223d34f0 r6=00000334 r7=00000000 r8=00000000 lr=25016db4 res=ffffffff
+native getattrlist masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24dfcba8
+syscall pc=24de85c8 r0=32754 r3=0000002d r4=223d3840 r5=223d34f0 r6=00000334 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=223d34f0 r6=00000334 r7=00000000 r8=00000000 lr=24de855c res=ffffffff
+syscall pc=24df7568 r0=190 r3=44f391a0 r4=223d2b90 r5=00000007 r6=80808080 r7=00000003 r8=61736800 lr=25028418 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d2b90 r5=00000007 r6=80808080 r7=00000003 r8=61736800 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=00000007 r6=80808080 r7=00000003 r8=61736800 lr=24de855c res=ffffffff
+syscall pc=24df7568 r0=190 r3=44f391a0 r4=223d2b90 r5=00000007 r6=80808080 r7=00000003 r8=61736800 lr=25028478 res=ffffffff
+return r3=0 error=0 resume=24df756c
+syscall pc=24dfcbe8 r0=157 r3=250b70ec r4=223d3720 r5=ffffffff r6=80808080 r7=00000000 r8=44f37010 lr=2504fb04 res=ffffffff
+return r3=0 error=0 resume=24dfcbec
+syscall pc=24dfcd68 r0=18 r3=00000000 r4=00000000 r5=00000002 r6=80808080 r7=00000000 r8=44f37010 lr=24dfcc64 res=ffffffff
+return r3=2 error=0 resume=24dfcd6c
+syscall pc=24dfcd68 r0=18 r3=44f391a0 r4=00000330 r5=00000002 r6=00000000 r7=00000000 r8=44f37010 lr=24dfcd14 res=ffffffff
+return r3=2 error=0 resume=24dfcd6c
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000401 r5=00000000 r6=00000000 r7=00000000 r8=44f37010 lr=8feac638 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3310 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000003 00000101 00000202 00000000 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000018 r4=250bc1c0 r5=00000080 r6=00000000 r7=00000000 r8=00000004 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d2df0 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 223d2e50 00000104 00000202 44f37010 00000194 00000000 00000000 636f6d2e 6170706c 652e636f 72657365 72766963 65736400 00000000 0000001c 00000034 44f37010 00000034 24dec0b0 223d2e90 00000000 24dec144 28000244 00000001 44f391d0 00000000 24f1fbf0 223d3310 28000244 24f1ff28 34f173fc
+native bootstrap id=404 service=com.apple.coreservicesd result=1102
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=350090c8 r7=223d2eb4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=350090c8 r7=223d2eb4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f38d81 r5=00000013 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000003 r5=00000034 r6=00000000 r7=2511c86c r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000008 r6=00000000 r7=223d3254 r8=223d31e0 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000005 r5=00000010 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000010 r5=00000000 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223d3130 r5=000000bf r6=00000001 r7=00000000 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d30b0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 28002242 00000101 00000202 00000001 00000ed9 00000000 00000000 00000000 000000bf 00000001
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000005 r5=000000de r6=00000000 r7=000000bf r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223e1000 r5=000000bf r6=0000000a r7=3e0a3c2f r8=2e30223e lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d31d0 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000202 00000000 00000eda 00000000 00000000 223e1000 000000bf
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39931 r5=00000008 r6=223d30e0 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24e52ae0 r0=116 r3=223d32c0 r4=00000000 r5=00000000 r6=00000080 r7=00000000 r8=44f37010 lr=24dec770 res=ffffffff
+return r3=1793053303 error=0 resume=24e52ae4
+syscall pc=24e52ae0 r0=116 r3=223d30f0 r4=00000000 r5=00000021 r6=00000124 r7=223d3450 r8=223d3454 lr=24dec770 res=ffffffff
+return r3=1793053303 error=0 resume=24e52ae4
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223d31f0 r5=00000004 r6=00000001 r7=00000000 r8=00000004 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d3170 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 00000000 00000ed9 00000000 00000000 00000000 00000004 00000001
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=223e1000 r5=00000004 r6=fffffc18 r7=00000202 r8=00000000 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d32a0 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 223d3300 00000101 00000202 384d8804 00000eda 00000000 00000000 223e1000 00000004
+syscall pc=24e2fe98 r0=191 r3=44f3953f r4=00000004 r5=ffffffff r6=0000002c r7=00000202 r8=00000000 lr=2504285c res=ffffffff
+return r3=255 error=0 resume=24e2fe9c
+syscall pc=24df2dc8 r0=188 r3=44f3953f r4=223d3560 r5=00000004 r6=0000002c r7=00000202 r8=00000000 lr=25049bfc res=ffffffff
+return r3=0 error=0 resume=24df2dcc
+syscall pc=24e52ae0 r0=116 r3=223d34e0 r4=00000000 r5=00000002 r6=00002f00 r7=00000000 r8=00000000 lr=24dec770 res=ffffffff
+return r3=1793053303 error=0 resume=24e52ae4
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=0000001b r5=0000002c r6=00000000 r7=250511ec r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00001b00 r5=44f37010 r6=00000000 r7=250511ec r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00001b00 r5=44f37010 r6=00000000 r7=250511ec r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df7568 r0=190 r3=223d2580 r4=223d4174 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=25016a40 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d4174 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f37d80 r5=0000002f r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4954 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4954 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39dc1 r5=00000030 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df2dc8 r0=188 r3=223d3ef0 r4=223d3e90 r5=00000068 r6=626f6e43 r7=6f726500 r8=00000000 lr=24f3a2a8 res=ffffffff
+return r3=0 error=0 resume=24df2dcc
+syscall pc=8fea2508 r0=5 r3=44ef88c0 r4=00000000 r5=00000000 r6=00000000 r7=223d3de0 r8=6f726500 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d3ca0 r5=00000000 r6=00000000 r7=223d3de0 r8=6f726500 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000000 r5=8fec9c1c r6=223d3de0 r7=223d3de0 r8=6f726500 lr=8fe7ff58 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000401 r5=00000000 r6=8fec5660 r7=8fec5550 r8=00000022 lr=8feac638 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4150 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 006e002f 00000101 00000202 002f0073 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24dfcba8 r0=220 r3=223d43c0 r4=223d3030 r5=223d2ce0 r6=00000334 r7=00000000 r8=00000000 lr=25016db4 res=ffffffff
+native getattrlist masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24dfcba8
+syscall pc=24de85c8 r0=32754 r3=0000002d r4=223d3030 r5=223d2ce0 r6=00000334 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=223d2ce0 r6=00000334 r7=00000000 r8=00000000 lr=24de855c res=ffffffff
+syscall pc=24df7568 r0=190 r3=44f39e50 r4=223d2380 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=25028418 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d2380 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=24de855c res=ffffffff
+syscall pc=24df7568 r0=190 r3=44f39e50 r4=223d2380 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=25028478 res=ffffffff
+return r3=0 error=0 resume=24df756c
+syscall pc=24df7568 r0=190 r3=223d1d70 r4=223d3964 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=25016a40 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d3964 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24dfcba8 r0=220 r3=44f37d80 r4=223d4ae0 r5=223d4b00 r6=00000024 r7=00000000 r8=44f37010 lr=285988ac res=ffffffff
+native getattrlist masks=4000/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24dfcba8
+syscall pc=24de85c8 r0=32754 r3=0000002d r4=223d4ae0 r5=223d4b00 r6=00000024 r7=00000000 r8=44f37010 lr=24decda0 res=ffffffff
+syscall pc=24dfcba8 r0=220 r3=44f37d80 r4=223d3650 r5=223d3300 r6=00000334 r7=00000000 r8=00000000 lr=25016db4 res=ffffffff
+native getattrlist masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24dfcba8
+syscall pc=24de85c8 r0=32754 r3=0000002d r4=223d3650 r5=223d3300 r6=00000334 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=223d3300 r6=00000334 r7=00000000 r8=00000000 lr=24de855c res=ffffffff
+syscall pc=24df7568 r0=190 r3=44f39e50 r4=223d29a0 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=25028418 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d29a0 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=ffffffff r4=ffffffff r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=24de855c res=ffffffff
+syscall pc=24df7568 r0=190 r3=44f39e50 r4=223d29a0 r5=b9b40030 r6=80808080 r7=00000003 r8=61736800 lr=25028478 res=ffffffff
+return r3=0 error=0 resume=24df756c
+syscall pc=24df7568 r0=190 r3=223d2390 r4=223d3f84 r5=0001f400 r6=80808080 r7=00000000 r8=000003e8 lr=25016a40 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d3f84 r5=0001f400 r6=80808080 r7=00000000 r8=000003e8 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000003 r5=0000001c r6=00000000 r7=00000000 r8=00000003 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39e80 r5=223d4960 r6=00000000 r7=00000000 r8=223d4964 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4410 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/com.apple.MCX.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000028 r6=00000000 r7=ffffffff r8=34f195b0 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=34f185bc r4=34f185ac r5=34f185ac r6=00000000 r7=ffffffff r8=34f195b0 lr=24f338e0 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f185ac r6=00000000 r7=ffffffff r8=34f195b0 lr=24f338f4 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24df06a8 r0=202 r3=223d46e0 r4=00000002 r5=223d4740 r6=223d46e8 r7=00000000 r8=00000000 lr=24df433c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4740 r5=00000009 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=00000000 r4=34f185ac r5=34f185ac r6=00000080 r7=00000000 r8=0000078c lr=24f33f4c res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f185ac r6=00000080 r7=00000000 r8=0000078c lr=24f33f60 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d44a4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d44a4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df06a8 r0=202 r3=223d4720 r4=00000002 r5=223d4780 r6=223d4728 r7=00000000 r8=00000000 lr=24df433c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4780 r5=00000009 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba1c r7=223d48c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba1c r7=223d48c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=34f185bc r4=34f1857c r5=34f1857c r6=44f39df0 r7=ffffffff r8=34f19364 lr=24f338e0 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=44f39df0 r7=ffffffff r8=34f19364 lr=24f338f4 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=00000000 r4=34f1857c r5=34f1857c r6=0000078c r7=00000000 r8=0000078c lr=24f33f4c res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=0000078c r7=00000000 r8=0000078c lr=24f33f60 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=34f195b0 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=34f185bc r4=34f185ac r5=34f185ac r6=44f3a000 r7=ffffffff r8=34f19364 lr=24f338e0 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f185ac r6=44f3a000 r7=ffffffff r8=34f19364 lr=24f338f4 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24df06a8 r0=202 r3=223d46e0 r4=00000002 r5=223d4740 r6=223d46e8 r7=00000000 r8=00000000 lr=24df433c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4740 r5=00000009 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24deca88 r0=24 r3=34f185bc r4=34f1857c r5=34f1857c r6=44f38cb0 r7=ffffffff r8=34f19364 lr=24f338e0 res=ffffffff
+return r3=0 error=0 resume=24deca8c
+syscall pc=24df2588 r0=24 r3=00000000 r4=00000000 r5=34f1857c r6=44f38cb0 r7=ffffffff r8=34f19364 lr=24f338f4 res=ffffffff
+return r3=0 error=0 resume=24df258c
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df06a8 r0=202 r3=223d46e0 r4=00000002 r5=223d4740 r6=223d46e8 r7=00000000 r8=00000000 lr=24df433c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4740 r5=00000009 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000008 r6=00000000 r7=00000000 r8=0000078c lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4000 r5=00000008 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f3a1b1 r5=00000009 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000008 r6=00000000 r7=00000000 r8=0000078c lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4000 r5=00000008 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f38ed1 r5=00000009 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d44a4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d44a4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24df06a8 r0=202 r3=223d46e0 r4=00000002 r5=223d4740 r6=223d46e8 r7=00000000 r8=00000000 lr=24df433c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df06ac
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4740 r5=00000009 r6=08000100 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000008 r6=00000000 r7=00000000 r8=0000078c lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4000 r5=00000008 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f3a591 r5=00000009 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=34f19364 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9dc r7=223d4884 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1b9ec r7=223d48d4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000004 r5=00000008 r6=00000000 r7=00000000 r8=0000078c lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=223d4000 r5=00000008 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d3dd4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f3a6f1 r5=00000009 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d44a4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d44a4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=44f37010 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1ba0c r7=223d48c4 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000000 r5=00000000 r6=34f1c1bc r7=223d4504 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4260 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/Network/.GlobalPreferences.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24e52ae0 r0=116 r3=223d4730 r4=00000000 r5=00000000 r6=00000000 r7=24f2f5b4 r8=24fcf5b4 lr=24dec770 res=ffffffff
+return r3=1793053304 error=0 resume=24e52ae4
+syscall pc=24decca8 r0=5 r3=223d4260 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/.GlobalPreferences.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4260 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/Network/com.apple.applicationaccess.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4260 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/com.apple.applicationaccess.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4260 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/com.apple.applicationaccess.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4260 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/ByHost/com.apple.applicationaccess.localhost.plist
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=0000040a r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=00000004 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4c10 r4=00000003 r5=0000004c r6=00000034 r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+native Mach send id=29320 destination=40a bytes=76
+native application OOL send id=29320 bytes=124 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=44 id=29420
+syscall pc=24dec828 r0=0 r3=000000b4 r4=1fff0306 r5=00000000 r6=00000000 r7=00000000 r8=00000000 lr=28559724 res=ffffffff
+return r3=22 error=22 resume=24dec828
+syscall pc=24de85c8 r0=32754 r3=00000016 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34de8048 lr=24decda0 res=ffffffff
+syscall pc=24df7568 r0=190 r3=00005c38 r4=223d4e70 r5=000004ac r6=286b4aa0 r7=00000000 r8=00000000 lr=00004580 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223d4e70 r5=000004ac r6=286b4aa0 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00005be0 r5=00000057 r6=08000100 r7=00000000 r8=00000001 lr=24df80c4 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=00000011 r5=00000018 r6=00000000 r7=00000000 r8=00000000 lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4920 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f195b0 lr=28592968 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f195b0 lr=24decda0 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000001 r4=44f39da0 r5=223d4d98 r6=00000000 r7=00000000 r8=223d4d9c lr=24df80c4 res=ffffffff
+syscall pc=24decca8 r0=5 r3=223d4840 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24f352a4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f19364 lr=24decda0 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000401 r5=00000000 r6=00003130 r7=77697468 r8=20657272 lr=8feac638 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3660 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223d36c0 00000101 00000202 44f37010 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24decca8 r0=5 r3=286a48bc r4=00000002 r5=00000000 r6=00000030 r7=77697468 r8=20657272 lr=2859f254 res=ffffffff
+guest open /var/tmp/jaguar/dev/tty
+return r3=2 error=2 resume=24decca8
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=00000002 r5=00000000 r6=00000030 r7=77697468 r8=20657272 lr=24decda0 res=ffffffff
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000401 r5=00000000 r6=00000030 r7=77697468 r8=20657272 lr=8feac638 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d2570 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000202 223d2d20 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=00000003 r4=2869c2ec r5=223d2790 r6=00000030 r7=77697468 r8=20657272 lr=24de855c res=ffffffff
+syscall pc=24e52ae0 r0=116 r3=223d1a50 r4=00000000 r5=223d2790 r6=00000030 r7=77697468 r8=20657272 lr=24dec770 res=ffffffff
+return r3=1793053304 error=0 resume=24e52ae4
+syscall pc=24df7568 r0=190 r3=24ebbd38 r4=223cf5d0 r5=00000010 r6=00000000 r7=00000000 r8=20657272 lr=24df39f0 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223cf5d0 r5=00000010 r6=00000000 r7=00000000 r8=20657272 lr=24decda0 res=ffffffff
+syscall pc=24e55d84 r0=327 r3=24eb8c64 r4=44f3b120 r5=00000010 r6=00000000 r7=00000000 r8=20657272 lr=24df38e8 res=ffffffff
+return r3=0 error=0 resume=24e55d88
+syscall pc=24df7568 r0=190 r3=223cf640 r4=223cf580 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24df39f0 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223cf580 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24e55d84 r0=327 r3=24ebbd5c r4=44f3b120 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24df38e8 res=ffffffff
+return r3=0 error=0 resume=24e55d88
+syscall pc=24df7568 r0=190 r3=223cf5d0 r4=223cf510 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24df39f0 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223cf510 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24df7568 r0=190 r3=24ebbd38 r4=223cf5c0 r5=00000002 r6=34dee530 r7=00000005 r8=24ec8898 lr=24df39f0 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223cf5c0 r5=00000002 r6=34dee530 r7=00000005 r8=24ec8898 lr=24decda0 res=ffffffff
+syscall pc=24e55d84 r0=327 r3=24eb8c64 r4=44f3b120 r5=00000002 r6=34dee530 r7=00000005 r8=24ec8898 lr=24df38e8 res=ffffffff
+return r3=0 error=0 resume=24e55d88
+syscall pc=24df7568 r0=190 r3=223cf630 r4=223cf570 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24df39f0 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223cf570 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24decda0 res=ffffffff
+syscall pc=24e55d84 r0=327 r3=24ebbd5c r4=44f3b120 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24df38e8 res=ffffffff
+return r3=0 error=0 resume=24e55d88
+syscall pc=24df7568 r0=190 r3=223cf5c0 r4=223cf500 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24df39f0 res=ffffffff
+return r3=2 error=2 resume=24df7568
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=223cf500 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24decda0 res=ffffffff
+syscall pc=24df8ae8 r0=97 r3=00000001 r4=00000002 r5=00000000 r6=00000030 r7=65202d31 r8=74682065 lr=24df8a5c res=ffffffff
+return r3=3 error=0 resume=24df8aec
+syscall pc=24dec648 r0=92 r3=00000003 r4=00000002 r5=00000001 r6=00000030 r7=65202d31 r8=74682065 lr=24df8a74 res=ffffffff
+return r3=0 error=0 resume=24dec64c
+syscall pc=24df8b28 r0=98 r3=00000003 r4=34ded570 r5=0000006a r6=00000030 r7=65202d31 r8=74682065 lr=24df8aa8 res=ffffffff
+guest unix connect /var/tmp/jaguar/var/run/syslog
+return r3=2 error=2 resume=24df8b28
+syscall pc=24de85c8 r0=32754 r3=00000002 r4=34ded570 r5=0000006a r6=00000030 r7=65202d31 r8=74682065 lr=24decda0 res=ffffffff
+syscall pc=24df26a8 r0=6 r3=00000003 r4=ffffffff r5=0000006a r6=00000030 r7=65202d31 r8=74682065 lr=24df8abc res=ffffffff
+return r3=0 error=0 resume=24df26ac
+syscall pc=24dfac08 r0=133 r3=ffffffff r4=223d1ab0 r5=0000008e r6=00000000 r7=00000000 r8=00000000 lr=24df9e4c res=ffffffff
+return r3=9 error=9 resume=24dfac08
+syscall pc=24de85c8 r0=32754 r3=00000009 r4=223d1ab0 r5=0000008e r6=00000000 r7=00000000 r8=00000000 lr=24decda0 res=ffffffff
+syscall pc=24deafe8 r0=4 r3=00000002 r4=223d4620 r5=00000037 r6=0000290a r7=20213d20 r8=73706c61 lr=24de878c res=ffffffff
+*** [splash.c:99] failed assertion (NULL != splashDoc)
+return r3=55 error=0 resume=24deafec
+syscall pc=8feb17d8 r0=32754 r3=00000101 r4=00000401 r5=00000000 r6=0000290a r7=20213d20 r8=73706c61 lr=8feac638 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d4c00 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000070 00000101 00000202 223d4c70 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24de85c8 r0=32754 r3=34de7b6c r4=00000001 r5=00000000 r6=0000290a r7=20213d20 r8=73706c61 lr=24ded328 res=ffffffff
+syscall pc=24ded0c0 r0=2 r3=8fec53c0 r4=00000000 r5=00000000 r6=8fec5600 r7=8fec5550 r8=00000016 lr=24ded0b8 res=ffffffff
+fork child with live IOKit mappings requires inheritance validation
+fork real host_pid=981 child_pid=991 branch=parent
+return r3=991 error=0 resume=24ded0c4
+syscall pc=24ded008 r0=7 r3=000003df r4=223d4edc r5=00000000 r6=00000000 r7=8fec5550 r8=00000017 lr=000049dc res=ffffffff
+return r3=991 error=0 resume=24ded00c
+syscall pc=24de85c8 r0=32754 r3=00000101 r4=00000409 r5=00000005 r6=00000001 r7=00000000 r8=44fe3010 lr=24dee13c res=ffffffff
+syscall pc=24e5b328 r0=4294967265 r3=223d4d60 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24ded670 res=ffffffff
+mach_rpc id=3205 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000202 00000000 00000c85 00000000 00000000 00000409
+syscall pc=24decfc8 r0=1 r3=0000007d r4=00000000 r5=00000000 r6=0000002c r7=00000001 r8=94de7000 lr=00004a00 res=ffffffff

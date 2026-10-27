@@ -1,0 +1,153 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -112,6 +112,7 @@
+ static void rm_thread_exit(CPUState *,uint32_t);
+ #include "mach-native.inc"
+ #include "live-regions.inc"
++#include "remote-maps.inc"
+ #include "threads.inc"
+ 
+ /* Split-segment Jaguar libraries keep their relative RO/RW geometry in one
+@@ -1220,9 +1221,22 @@
+             typedef kern_return_t (*unmap_fn)(mach_port_t,int,mach_port_t,vm_address_t);
+             typedef kern_return_t (*service_fn)(mach_port_t,mach_port_t *);
+             typedef kern_return_t (*conforms_fn)(mach_port_t,const char *,int *);
+-            mach_port_t endpoint,service=0;uint32_t type,address,slot;int isfb=0,ishid=0;
+-            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=(id==2819?64:56) || ldl(g2h(a+24))!=1 || ldl(g2h(a+28))!=TASK_SELF || ldub(g2h(a+38))!=19)qerror("invalid IOKit memory task descriptor");
++            mach_port_t endpoint,service=0,target;uint32_t type,address,slot,taskguest;int isfb=0,ishid=0,remote;
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=(id==2819?64:56) || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19)qerror("invalid IOKit memory task descriptor");
++            taskguest=ldl(g2h(a+28));target=native_name(taskguest);remote=target!=mach_task_self();
++            if(taskguest!=TASK_SELF && !native_task_request(taskguest,3826))qerror("IOKit memory descriptor is not a task capability");
+             type=ldl(g2h(a+48));address=ldl(g2h(a+52));
++            if(id==2853 && remote) {
++                vm_address_t region=address;vm_size_t bytes;vm_region_basic_info_data_t info;
++                mach_msg_type_number_t count=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;
++                code=vm_region(target,&region,&bytes,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&count,&object);
++                if(object)mach_port_deallocate(mach_task_self(),object);
++                if(code || region!=address || !bytes || (uint64_t)address+bytes>0xc0000000ULL)qerror("remote IOKit unmap region mismatch");
++                code=((unmap_fn)native_iokit_symbol("_io_connect_unmap_memory"))(endpoint,type,target,address);
++                if(!code){struct rm_remote_event event;memset(&event,0,sizeof(event));event.address=address;event.bytes=bytes;event.remove=1;rm_remote_publish(target,&event);}
++                fprintf(stderr,"native remote IOKit unmap address=%x bytes=%u result=%u\n",address,(unsigned)bytes,code);
++                break;
++            }
+             if(id==2853) {
+                 code=((unmap_fn)native_iokit_symbol("_io_connect_unmap_memory"))(endpoint,type,mach_task_self(),address);
+                 if(!code)for(slot=0;slot<64;slot++)if(native_iomappings[slot].connection==destination && native_iomappings[slot].type==type && native_iomappings[slot].address==address){page_set_flags(address&~4095U,TARGET_PAGE_ALIGN(address+native_iomappings[slot].bytes),0);live_kind[slot]=0;memset(&native_iomappings[slot],0,sizeof(native_iomappings[slot]));live_bounds();break;}
+@@ -1233,12 +1247,12 @@
+                 if(!((isfb && (type==110 || type==100)) || (ishid && type==0)))qerror("unverified IOKit memory type=%u framebuffer=%d hid=%d",type,isfb,ishid);
+                 if(!(flags&1) && (address<4096 || address>=0xc0000000U))qerror("IOKit fixed map outside native user range");
+                 for(slot=0;slot<64 && native_iomappings[slot].connection;slot++);if(slot==64)qerror("IOKit mapping table exhausted");
+-                code=((map_fn)native_iokit_symbol("_io_connect_map_memory"))(endpoint,type,mach_task_self(),&mapped,&bytes,flags);
++                code=((map_fn)native_iokit_symbol("_io_connect_map_memory"))(endpoint,type,target,&mapped,&bytes,flags);
+                 if(!code) {
+                     region=mapped;
+-                    if(!bytes || (uint64_t)mapped+bytes>0xc0000000ULL || vm_region(mach_task_self(),&region,&regionsize,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&count,&object) || region>mapped || (uint64_t)region+regionsize<(uint64_t)mapped+bytes)qerror("native IO mapping region mismatch");
++                    if(!bytes || (uint64_t)mapped+bytes>0xc0000000ULL || vm_region(target,&region,&regionsize,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&count,&object) || region>mapped || (uint64_t)region+regionsize<(uint64_t)mapped+bytes)qerror("native IO mapping region mismatch");
+                     if(object)mach_port_deallocate(mach_task_self(),object);
+-                    page_set_flags(mapped&~4095U,TARGET_PAGE_ALIGN(mapped+bytes),(info.protection&7)|PAGE_VALID);
++                    if(!remote)page_set_flags(mapped&~4095U,TARGET_PAGE_ALIGN(mapped+bytes),(info.protection&7)|PAGE_VALID);
+                     native_iomappings[slot].connection=destination;native_iomappings[slot].type=type;native_iomappings[slot].address=mapped;native_iomappings[slot].bytes=bytes;
+                     live_kind[slot]=isfb?(type==100?1:3):2;
+                     live_start[slot]=0;live_extent[slot]=bytes;
+@@ -1259,6 +1273,14 @@
+                             fprintf(stderr,"live front pixels offset=%u bytes=%u width=%u height=%u masks=%x/%x/%x\n",offset,live_extent[slot],pixel[39],pixel[40],pixel[6],pixel[7],pixel[8]);
+                         }
+                         fprintf(stderr,"live cursor pixel layout verified bits=%u rowbytes=%u\n",pixel[2],pixel[0]);
++                    }
++                    if(remote) {
++                        struct rm_remote_event event;
++                        memset(&event,0,sizeof(event));event.address=mapped;event.bytes=bytes;event.prot=info.protection;
++                        event.kind=live_kind[slot];event.start=live_start[slot];event.extent=live_extent[slot];
++                        rm_remote_publish(target,&event);
++                        live_kind[slot]=0;memset(&native_iomappings[slot],0,sizeof(native_iomappings[slot]));
++                        fprintf(stderr,"native remote IOKit map task=%x address=%lx bytes=%u type=%u result=0\n",taskguest,(unsigned long)mapped,(unsigned)bytes,type);
+                     }
+                     live_bounds();
+                     if(live_kind[slot])fprintf(stderr,"live typed IOKit map kind=%u address=%lx bytes=%u\n",live_kind[slot],(unsigned long)mapped,(unsigned)bytes);
+--- a/darwin-user/remaklar/threads.inc
++++ b/darwin-user/remaklar/threads.inc
+@@ -23,7 +23,7 @@
+   t=&rm_threads[0];t->cpu=cpu;t->thread=pthread_self();t->live=1;
+   pthread_setspecific(rm_thread_key,t);
+  }
+- global_env=cpu;
++ global_env=cpu;rm_remote_sync();
+ }
+ void remaklar_gate_leave(void){
+  struct rm_thread_context *t=pthread_getspecific(rm_thread_key);
+--- /dev/null
++++ b/darwin-user/remaklar/remote-maps.inc
+@@ -0,0 +1,73 @@
++/* Cross-process translator metadata only. Bytes stay in original kernel maps.
++ * Each process owns a private, mode-0600 mailbox with a shared event page.
++ * Writers hold the file lock; the aligned count publishes complete events.
++ * This channel never supplies application replies or framebuffer contents.
++ * SPDX-License-Identifier: GPL-2.0-or-later */
++#ifdef __APPLE__
++#define RM_REMOTE_MAGIC 0x524d0043U
++#define RM_REMOTE_EVENTS 256
++struct rm_remote_event {uint32_t address,bytes,prot,kind,start,extent,remove;};
++struct rm_remote_mailbox {uint32_t magic,pid;volatile uint32_t count;struct rm_remote_event events[RM_REMOTE_EVENTS];};
++static struct rm_remote_mailbox *rm_remote_box;
++static int rm_remote_fd=-1,rm_remote_pid;
++static unsigned rm_remote_seen;
++static void rm_remote_lock(int fd,int lock)
++{
++ struct flock f;int r;
++ memset(&f,0,sizeof(f));f.l_type=lock?F_WRLCK:F_UNLCK;f.l_whence=SEEK_SET;
++ do {r=fcntl(fd,F_SETLKW,&f);}while(r<0 && errno==EINTR);
++ if(r<0)qerror("remote mapping metadata lock errno=%d",errno);
++}
++static void rm_remote_sync(void)
++{
++ char path[128];int pid=getpid();unsigned end,i;
++ if(pid!=rm_remote_pid) {
++  if(rm_remote_box)munmap(rm_remote_box,sizeof(*rm_remote_box));
++  if(rm_remote_fd>=0)close(rm_remote_fd);
++  sprintf(path,"/var/tmp/remaklar-remote-map-%d",pid);
++  /* PID reuse starts a fresh inode; a retained task right cannot designate
++   * a new task merely because its PID has been reused. */
++  unlink(path);rm_remote_fd=open(path,O_RDWR|O_CREAT|O_EXCL,0600);
++  if(rm_remote_fd<0 || ftruncate(rm_remote_fd,sizeof(*rm_remote_box)))qerror("remote mapping mailbox creation errno=%d",errno);
++  rm_remote_box=mmap(NULL,sizeof(*rm_remote_box),PROT_READ|PROT_WRITE,MAP_SHARED,rm_remote_fd,0);
++  if(rm_remote_box==MAP_FAILED)qerror("remote mapping mailbox mmap");
++  memset(rm_remote_box,0,sizeof(*rm_remote_box));rm_remote_box->pid=pid;rm_remote_box->magic=RM_REMOTE_MAGIC;
++  rm_remote_pid=pid;rm_remote_seen=0;
++ }
++ if(rm_remote_box->count==rm_remote_seen)return;
++ rm_remote_lock(rm_remote_fd,1);end=rm_remote_box->count;
++ if(end>RM_REMOTE_EVENTS || end<rm_remote_seen)qerror("remote mapping metadata sequence");
++ for(i=rm_remote_seen;i<end;i++) {
++  struct rm_remote_event e=rm_remote_box->events[i];unsigned slot;
++  if(!e.bytes || (uint64_t)e.address+e.bytes>0xc0000000ULL || e.kind>3 || (uint64_t)e.start+e.extent>e.bytes)qerror("remote mapping metadata bounds");
++  live_forget(e.address,e.bytes);
++  page_set_flags(e.address&~4095U,TARGET_PAGE_ALIGN(e.address+e.bytes),e.remove?0:((e.prot&7)|PAGE_VALID));
++  if(!e.remove && e.kind) {
++   for(slot=0;slot<64 && native_iomappings[slot].connection;slot++);
++   if(slot==64)qerror("remote typed mapping table exhausted");
++   native_iomappings[slot].connection=0xffffffffU;native_iomappings[slot].type=0xfffffffeU;
++   native_iomappings[slot].address=e.address;native_iomappings[slot].bytes=e.bytes;
++   live_kind[slot]=e.kind;live_start[slot]=e.start;live_extent[slot]=e.extent;
++  }
++  fprintf(stderr,"real remote mapping metadata applied address=%x bytes=%u kind=%u remove=%u\n",e.address,e.bytes,e.kind,e.remove);
++ }
++ rm_remote_seen=end;live_bounds();rm_remote_lock(rm_remote_fd,0);
++}
++static void rm_remote_publish(mach_port_t task,const struct rm_remote_event *event)
++{
++ char path[128];int pid=-1,fd;struct stat st;struct rm_remote_mailbox *box;unsigned n;
++ if(pid_for_task(task,&pid) || pid<1)qerror("remote mapping task lost");
++ sprintf(path,"/var/tmp/remaklar-remote-map-%d",pid);fd=open(path,O_RDWR);
++ if(fd<0){if(errno==ENOENT)return;qerror("remote mapping mailbox open errno=%d",errno);}
++ if(fstat(fd,&st) || st.st_size!=sizeof(*box) || st.st_uid!=geteuid() || !S_ISREG(st.st_mode) || (st.st_mode&077))qerror("invalid remote mapping mailbox file");
++ box=mmap(NULL,sizeof(*box),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
++ if(box==MAP_FAILED)qerror("remote mapping writer mmap");
++ rm_remote_lock(fd,1);n=box->count;
++ if(box->magic!=RM_REMOTE_MAGIC || box->pid!=pid || n>=RM_REMOTE_EVENTS)qerror("remote mapping mailbox identity/capacity");
++ box->events[n]=*event;__asm__ __volatile__("" ::: "memory");box->count=n+1;
++ rm_remote_lock(fd,0);munmap(box,sizeof(*box));close(fd);
++ fprintf(stderr,"real remote mapping metadata published pid=%d address=%x kind=%u remove=%u\n",pid,event->address,event->kind,event->remove);
++}
++#else
++static void rm_remote_sync(void){}
++#endif

@@ -1,0 +1,315 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;for f in "$out"/*.txt "$out"/*.status "$out"/*.stdout "$out"/*.stderr;do test ! -f "$f" || echo "${f#/var/tmp/}";done > "$out/export-list.txt";gnutar czf /exchange/stage167.tgz -T "$out/export-list.txt";sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run57/source
++ cp -Rp /var/tmp/graphics011-run37/build /var/tmp/graphics011-run57/build
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/kinfo.inc /var/tmp/graphics011-run57/source/darwin-user/remaklar/kinfo.inc
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run57/source/darwin-user/remaklar/remote-maps.inc
++ cmp -s /var/tmp/graphics011-stage57/source/cpu-all.h /var/tmp/graphics011-run57/source/cpu-all.h
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/mmap.c /var/tmp/graphics011-run57/source/darwin-user/mmap.c
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run57/source/darwin-user/remaklar/high-window.c
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run57/source/darwin-user/remaklar/high-window.h
++ cmp -s /var/tmp/graphics011-stage57/source/target-ppc/cpu.h /var/tmp/graphics011-run57/source/target-ppc/cpu.h
++ cmp -s /var/tmp/graphics011-stage57/source/target-ppc/translate.c /var/tmp/graphics011-run57/source/target-ppc/translate.c
++ cmp -s /var/tmp/graphics011-stage57/source/target-ppc/helper.h /var/tmp/graphics011-run57/source/target-ppc/helper.h
++ cmp -s /var/tmp/graphics011-stage57/source/target-ppc/op_helper.c /var/tmp/graphics011-run57/source/target-ppc/op_helper.c
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run57/source/darwin-user/remaklar/bootstrap-main.c
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/qemu.h /var/tmp/graphics011-run57/source/darwin-user/qemu.h
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run57/source/darwin-user/remaklar/darwin-kernel.c
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run57/source/darwin-user/remaklar/mach-native.inc
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run57/source/darwin-user/remaklar/live-regions.inc
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run57/source/darwin-user/remaklar/typed-live.c
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run57/source/darwin-user/remaklar/typed-live.h
++ cmp -s /var/tmp/graphics011-stage57/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run57/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run57/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run57/qemu-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/threads011-runtime.c -framework IOKit -o /var/tmp/graphics011-run57/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/high011-runtime.c -o /var/tmp/graphics011-run57/high-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/high011-runtime.c -o /var/tmp/graphics011-run57/high-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/priority011-runtime.c -o /var/tmp/graphics011-run57/priority-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/priority011-runtime.c -o /var/tmp/graphics011-run57/priority-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/priority-native /var/tmp/graphics011-run57/priority-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/priority-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/priority-ppc
++ mkdir -p /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources
++ cp /var/tmp/graphics011-stage57/BootPanel.pdf /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf
++ md5 /var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/forkio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run57/forkio-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/forkio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run57/forkio-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/forkio-native /var/tmp/graphics011-run57/forkio-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/forkio-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/forkio-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/kinfo-011.c -o /var/tmp/graphics011-run57/kinfo-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/kinfo-011.c -o /var/tmp/graphics011-run57/kinfo-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/kinfo-native /var/tmp/graphics011-run57/kinfo-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/kinfo-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/kinfo-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/ool-011.c -o /var/tmp/graphics011-run57/ool-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/ool-011.c -o /var/tmp/graphics011-run57/ool-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/ool-native /var/tmp/graphics011-run57/ool-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/ool-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/ool-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/remote011-runtime.c -o /var/tmp/graphics011-run57/remote-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/remote011-runtime.c -o /var/tmp/graphics011-run57/remote-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/remoteio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run57/remoteio-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/remoteio011-runtime.c -framework IOKit -o /var/tmp/graphics011-run57/remoteio-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/remoteio-native /var/tmp/graphics011-run57/remoteio-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/remoteio-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/remoteio-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/remote-native /var/tmp/graphics011-run57/remote-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/remote-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/remote-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/trailer011-runtime.c -o /var/tmp/graphics011-run57/trailer-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/trailer011-runtime.c -o /var/tmp/graphics011-run57/trailer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/trailer-native /var/tmp/graphics011-run57/trailer-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/trailer-previous /var/tmp/graphics011-run32/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/trailer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/trailer-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/trailer-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/fasttrap011-runtime.c -o /var/tmp/graphics011-run57/fasttrap-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/fasttrap /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/fasttrap-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/fasttrap-previous /var/tmp/graphics011-run26/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/fasttrap-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/capability011-runtime.c -o /var/tmp/graphics011-run57/capability-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/capability011-runtime.c -o /var/tmp/graphics011-run57/capability-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/capability-native /var/tmp/graphics011-run57/capability-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/capability-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/capability-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/capability-previous /var/tmp/graphics011-run26/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/capability-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/high-native /var/tmp/graphics011-run57/high-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/high-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/high-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/timer011-runtime.c -o /var/tmp/graphics011-run57/timer-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/timer011-runtime.c -o /var/tmp/graphics011-run57/timer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/timer-native /var/tmp/graphics011-run57/timer-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/timer-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/timer-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/threads /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/threads-ppc
++ gcc2 -no-cpp-precomp -arch i386 -O2 -I/var/tmp/graphics011-stage57/source/darwin-user/remaklar /var/tmp/graphics011-stage57/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-stage57/typed-live-test.c -o /var/tmp/graphics011-run57/typed-native
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/typed-native /var/tmp/graphics011-run57/typed-native
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage57/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run57/shared-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage57/shared011-runtime.c -framework IOKit -o /var/tmp/graphics011-run57/shared-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/shared-native /var/tmp/graphics011-run57/shared-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run57/shared-jaguar /var/tmp/graphics011-run57/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run57/shared-ppc
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ test '!' -f /var/tmp/graphics011-run57/bootpanel-md5.txt
++ echo graphics011-run57/bootpanel-md5.txt
++ test '!' -f /var/tmp/graphics011-run57/build.txt
++ echo graphics011-run57/build.txt
++ test '!' -f /var/tmp/graphics011-run57/capability-i386-build.txt
++ echo graphics011-run57/capability-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/capability-ppc-build.txt
++ echo graphics011-run57/capability-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/export-list.txt
++ echo graphics011-run57/export-list.txt
++ test '!' -f /var/tmp/graphics011-run57/fasttrap-build.txt
++ echo graphics011-run57/fasttrap-build.txt
++ test '!' -f /var/tmp/graphics011-run57/forkio-i386-build.txt
++ echo graphics011-run57/forkio-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/forkio-ppc-build.txt
++ echo graphics011-run57/forkio-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/high-i386-build.txt
++ echo graphics011-run57/high-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/high-ppc-build.txt
++ echo graphics011-run57/high-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/kinfo-i386-build.txt
++ echo graphics011-run57/kinfo-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/kinfo-ppc-build.txt
++ echo graphics011-run57/kinfo-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/ool-i386-build.txt
++ echo graphics011-run57/ool-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/ool-ppc-build.txt
++ echo graphics011-run57/ool-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/priority-i386-build.txt
++ echo graphics011-run57/priority-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/priority-ppc-build.txt
++ echo graphics011-run57/priority-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/remote-i386-build.txt
++ echo graphics011-run57/remote-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/remote-ppc-build.txt
++ echo graphics011-run57/remote-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/remoteio-i386-build.txt
++ echo graphics011-run57/remoteio-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/remoteio-ppc-build.txt
++ echo graphics011-run57/remoteio-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/script-status.txt
++ echo graphics011-run57/script-status.txt
++ test '!' -f /var/tmp/graphics011-run57/session.txt
++ echo graphics011-run57/session.txt
++ test '!' -f /var/tmp/graphics011-run57/shared-i386-build.txt
++ echo graphics011-run57/shared-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/shared-ppc-build.txt
++ echo graphics011-run57/shared-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/threads-build.txt
++ echo graphics011-run57/threads-build.txt
++ test '!' -f /var/tmp/graphics011-run57/timer-i386-build.txt
++ echo graphics011-run57/timer-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/timer-ppc-build.txt
++ echo graphics011-run57/timer-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/trailer-i386-build.txt
++ echo graphics011-run57/trailer-i386-build.txt
++ test '!' -f /var/tmp/graphics011-run57/trailer-ppc-build.txt
++ echo graphics011-run57/trailer-ppc-build.txt
++ test '!' -f /var/tmp/graphics011-run57/typed-build.txt
++ echo graphics011-run57/typed-build.txt
++ test '!' -f /var/tmp/graphics011-run57/capability-jaguar.status
++ echo graphics011-run57/capability-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/capability-native.status
++ echo graphics011-run57/capability-native.status
++ test '!' -f /var/tmp/graphics011-run57/capability-previous.status
++ echo graphics011-run57/capability-previous.status
++ test '!' -f /var/tmp/graphics011-run57/fasttrap-previous.status
++ echo graphics011-run57/fasttrap-previous.status
++ test '!' -f /var/tmp/graphics011-run57/fasttrap.status
++ echo graphics011-run57/fasttrap.status
++ test '!' -f /var/tmp/graphics011-run57/forkio-jaguar.status
++ echo graphics011-run57/forkio-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/forkio-native.status
++ echo graphics011-run57/forkio-native.status
++ test '!' -f /var/tmp/graphics011-run57/high-jaguar.status
++ echo graphics011-run57/high-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/high-native.status
++ echo graphics011-run57/high-native.status
++ test '!' -f /var/tmp/graphics011-run57/kinfo-jaguar.status
++ echo graphics011-run57/kinfo-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/kinfo-native.status
++ echo graphics011-run57/kinfo-native.status
++ test '!' -f /var/tmp/graphics011-run57/ool-jaguar.status
++ echo graphics011-run57/ool-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/ool-native.status
++ echo graphics011-run57/ool-native.status
++ test '!' -f /var/tmp/graphics011-run57/priority-jaguar.status
++ echo graphics011-run57/priority-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/priority-native.status
++ echo graphics011-run57/priority-native.status
++ test '!' -f /var/tmp/graphics011-run57/remote-jaguar.status
++ echo graphics011-run57/remote-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/remote-native.status
++ echo graphics011-run57/remote-native.status
++ test '!' -f /var/tmp/graphics011-run57/remoteio-jaguar.status
++ echo graphics011-run57/remoteio-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/remoteio-native.status
++ echo graphics011-run57/remoteio-native.status
++ test '!' -f /var/tmp/graphics011-run57/shared-jaguar.status
++ echo graphics011-run57/shared-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/shared-native.status
++ echo graphics011-run57/shared-native.status
++ test '!' -f /var/tmp/graphics011-run57/threads.status
++ echo graphics011-run57/threads.status
++ test '!' -f /var/tmp/graphics011-run57/timer-jaguar.status
++ echo graphics011-run57/timer-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/timer-native.status
++ echo graphics011-run57/timer-native.status
++ test '!' -f /var/tmp/graphics011-run57/trailer-jaguar.status
++ echo graphics011-run57/trailer-jaguar.status
++ test '!' -f /var/tmp/graphics011-run57/trailer-native.status
++ echo graphics011-run57/trailer-native.status
++ test '!' -f /var/tmp/graphics011-run57/trailer-previous.status
++ echo graphics011-run57/trailer-previous.status
++ test '!' -f /var/tmp/graphics011-run57/typed-native.status
++ echo graphics011-run57/typed-native.status
++ test '!' -f /var/tmp/graphics011-run57/capability-jaguar.stdout
++ echo graphics011-run57/capability-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/capability-native.stdout
++ echo graphics011-run57/capability-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/capability-previous.stdout
++ echo graphics011-run57/capability-previous.stdout
++ test '!' -f /var/tmp/graphics011-run57/fasttrap-previous.stdout
++ echo graphics011-run57/fasttrap-previous.stdout
++ test '!' -f /var/tmp/graphics011-run57/fasttrap.stdout
++ echo graphics011-run57/fasttrap.stdout
++ test '!' -f /var/tmp/graphics011-run57/forkio-jaguar.stdout
++ echo graphics011-run57/forkio-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/forkio-native.stdout
++ echo graphics011-run57/forkio-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/high-jaguar.stdout
++ echo graphics011-run57/high-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/high-native.stdout
++ echo graphics011-run57/high-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/kinfo-jaguar.stdout
++ echo graphics011-run57/kinfo-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/kinfo-native.stdout
++ echo graphics011-run57/kinfo-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/ool-jaguar.stdout
++ echo graphics011-run57/ool-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/ool-native.stdout
++ echo graphics011-run57/ool-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/priority-jaguar.stdout
++ echo graphics011-run57/priority-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/priority-native.stdout
++ echo graphics011-run57/priority-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/remote-jaguar.stdout
++ echo graphics011-run57/remote-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/remote-native.stdout
++ echo graphics011-run57/remote-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/remoteio-jaguar.stdout
++ echo graphics011-run57/remoteio-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/remoteio-native.stdout
++ echo graphics011-run57/remoteio-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/shared-jaguar.stdout
++ echo graphics011-run57/shared-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/shared-native.stdout
++ echo graphics011-run57/shared-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/threads.stdout
++ echo graphics011-run57/threads.stdout
++ test '!' -f /var/tmp/graphics011-run57/timer-jaguar.stdout
++ echo graphics011-run57/timer-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/timer-native.stdout
++ echo graphics011-run57/timer-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/trailer-jaguar.stdout
++ echo graphics011-run57/trailer-jaguar.stdout
++ test '!' -f /var/tmp/graphics011-run57/trailer-native.stdout
++ echo graphics011-run57/trailer-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/trailer-previous.stdout
++ echo graphics011-run57/trailer-previous.stdout
++ test '!' -f /var/tmp/graphics011-run57/typed-native.stdout
++ echo graphics011-run57/typed-native.stdout
++ test '!' -f /var/tmp/graphics011-run57/capability-jaguar.stderr
++ echo graphics011-run57/capability-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/capability-native.stderr
++ echo graphics011-run57/capability-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/capability-previous.stderr
++ echo graphics011-run57/capability-previous.stderr
++ test '!' -f /var/tmp/graphics011-run57/fasttrap-previous.stderr
++ echo graphics011-run57/fasttrap-previous.stderr
++ test '!' -f /var/tmp/graphics011-run57/fasttrap.stderr
++ echo graphics011-run57/fasttrap.stderr
++ test '!' -f /var/tmp/graphics011-run57/forkio-jaguar.stderr
++ echo graphics011-run57/forkio-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/forkio-native.stderr
++ echo graphics011-run57/forkio-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/high-jaguar.stderr
++ echo graphics011-run57/high-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/high-native.stderr
++ echo graphics011-run57/high-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/kinfo-jaguar.stderr
++ echo graphics011-run57/kinfo-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/kinfo-native.stderr
++ echo graphics011-run57/kinfo-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/ool-jaguar.stderr
++ echo graphics011-run57/ool-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/ool-native.stderr
++ echo graphics011-run57/ool-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/priority-jaguar.stderr
++ echo graphics011-run57/priority-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/priority-native.stderr
++ echo graphics011-run57/priority-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/remote-jaguar.stderr
++ echo graphics011-run57/remote-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/remote-native.stderr
++ echo graphics011-run57/remote-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/remoteio-jaguar.stderr
++ echo graphics011-run57/remoteio-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/remoteio-native.stderr
++ echo graphics011-run57/remoteio-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/shared-jaguar.stderr
++ echo graphics011-run57/shared-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/shared-native.stderr
++ echo graphics011-run57/shared-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/threads.stderr
++ echo graphics011-run57/threads.stderr
++ test '!' -f /var/tmp/graphics011-run57/timer-jaguar.stderr
++ echo graphics011-run57/timer-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/timer-native.stderr
++ echo graphics011-run57/timer-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/trailer-jaguar.stderr
++ echo graphics011-run57/trailer-jaguar.stderr
++ test '!' -f /var/tmp/graphics011-run57/trailer-native.stderr
++ echo graphics011-run57/trailer-native.stderr
++ test '!' -f /var/tmp/graphics011-run57/trailer-previous.stderr
++ echo graphics011-run57/trailer-previous.stderr
++ test '!' -f /var/tmp/graphics011-run57/typed-native.stderr
++ echo graphics011-run57/typed-native.stderr
++ gnutar czf /exchange/stage167.tgz -T /var/tmp/graphics011-run57/export-list.txt

@@ -1,0 +1,362 @@
+[
+  {
+    "frame": "0x2a4ab9e8",
+    "return": "0x2b8ef8",
+    "symbol": "_ubc_upl_abort_range+48",
+    "words": [
+      "0x2a4aba18",
+      "0x2b8ef8",
+      "0x20e872c0",
+      "0x0",
+      "0x1000",
+      "0x28",
+      "0x2a4aba08",
+      "0x20d9c5c8"
+    ]
+  },
+  {
+    "frame": "0x2a4aba18",
+    "return": "0x2650c6",
+    "symbol": "_ffs_pageout+346",
+    "words": [
+      "0x2a4abac8",
+      "0x2650c6",
+      "0x20e872c0",
+      "0x0",
+      "0x1000",
+      "0x8",
+      "0x0",
+      "0x0"
+    ]
+  },
+  {
+    "frame": "0x2a4abac8",
+    "return": "0x2caddd",
+    "symbol": "_vnode_pageout+4cd",
+    "words": [
+      "0x2a4abba8",
+      "0x2caddd",
+      "0x2a4abb30",
+      "0x0",
+      "0x0",
+      "0x1000",
+      "0x2a4abb2c",
+      "0x2a4abb28"
+    ]
+  },
+  {
+    "frame": "0x2a4abba8",
+    "return": "0x16acfc",
+    "symbol": "_vnode_pager_cluster_write+8c",
+    "words": [
+      "0x2a4abbf8",
+      "0x16acfc",
+      "0x20d9c5c8",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x1000"
+    ]
+  },
+  {
+    "frame": "0x2a4abbf8",
+    "return": "0x16aab4",
+    "symbol": "_vnode_pager_data_return+34",
+    "words": [
+      "0x2a4abc18",
+      "0x16aab4",
+      "0x20c2cf54",
+      "0x0",
+      "0x0",
+      "0x1000",
+      "0x0",
+      "0x0"
+    ]
+  },
+  {
+    "frame": "0x2a4abc18",
+    "return": "0x161614",
+    "symbol": "_vm_pageout_cluster+2f4",
+    "words": [
+      "0x2a4abc88",
+      "0x161614",
+      "0x20c2cf54",
+      "0x0",
+      "0x0",
+      "0x1000",
+      "0x0",
+      "0x0"
+    ]
+  },
+  {
+    "frame": "0x2a4abc88",
+    "return": "0x15dced",
+    "symbol": "_vm_object_terminate+44d",
+    "words": [
+      "0x2a4abcb8",
+      "0x15dced",
+      "0x20563a90",
+      "0x20c1b214",
+      "0x2a4abcd8",
+      "0x2a101e",
+      "0x211b3474",
+      "0x30002"
+    ]
+  },
+  {
+    "frame": "0x2a4abcb8",
+    "return": "0x15d5fe",
+    "symbol": "_vm_object_deallocate+8e",
+    "words": [
+      "0x2a4abce8",
+      "0x15d5fe",
+      "0x21227a00",
+      "0xf06",
+      "0x0",
+      "0x20d9c5c8",
+      "0x211b3440",
+      "0x0"
+    ]
+  },
+  {
+    "frame": "0x2a4abce8",
+    "return": "0x160719",
+    "symbol": "_vm_object_release_name+119",
+    "words": [
+      "0x2a4abd08",
+      "0x160719",
+      "0x21227a00",
+      "0x2a4abd60",
+      "0x1",
+      "0x20e3085c",
+      "0x20c3563c",
+      "0x20c21f54"
+    ]
+  },
+  {
+    "frame": "0x2a4abd08",
+    "return": "0x2b88b2",
+    "symbol": "_ubc_release_named+72",
+    "words": [
+      "0x2a4abd28",
+      "0x2b88b2",
+      "0x21227a00",
+      "0x2",
+      "0x379560",
+      "0x20d9c5c8",
+      "0x20d9c5c8",
+      "0x20e3085c"
+    ]
+  },
+  {
+    "frame": "0x2a4abd28",
+    "return": "0x2b87d5",
+    "symbol": "_ubc_rele+65",
+    "words": [
+      "0x2a4abd48",
+      "0x2b87d5",
+      "0x20d9c5c8",
+      "0x0",
+      "0x88c",
+      "0x20c47e28",
+      "0x0",
+      "0x20d9c5c8"
+    ]
+  },
+  {
+    "frame": "0x2a4abd48",
+    "return": "0x19aa33",
+    "symbol": "_vn_close+53",
+    "words": [
+      "0x2a4abd88",
+      "0x19aa33",
+      "0x20d9c5c8",
+      "0xbebc20",
+      "0x3977a0",
+      "0xbebc20",
+      "0x378d60",
+      "0x20d9c5c8"
+    ]
+  },
+  {
+    "frame": "0x2a4abd88",
+    "return": "0x19b69a",
+    "symbol": "_vn_closefile+2a",
+    "words": [
+      "0x2a4abda8",
+      "0x19b69a",
+      "0x20d9c5c8",
+      "0x3",
+      "0x20b92f90",
+      "0x20c1b214",
+      "0x2a4abdc0",
+      "0x0"
+    ]
+  },
+  {
+    "frame": "0x2a4abda8",
+    "return": "0x29b5ad",
+    "symbol": "_closef_finish+4d",
+    "words": [
+      "0x2a4abe08",
+      "0x29b5ad",
+      "0x20c47e28",
+      "0x20c1b214",
+      "0x20b49ccc",
+      "0x46",
+      "0x2a4abe00",
+      "0x122f95"
+    ]
+  },
+  {
+    "frame": "0x2a4abe08",
+    "return": "0x29b67f",
+    "symbol": "_closef+4f",
+    "words": [
+      "0x2a4abe68",
+      "0x29b67f",
+      "0x20c47e28",
+      "0x20c1b214",
+      "0x4",
+      "0x1319a3",
+      "0x20371104",
+      "0x0"
+    ]
+  },
+  {
+    "frame": "0x2a4abe68",
+    "return": "0x29b54f",
+    "symbol": "_fdfree+cf",
+    "words": [
+      "0x2a4abe88",
+      "0x29b54f",
+      "0x20c47e28",
+      "0x20c1b214",
+      "0x1",
+      "0x20b344a8",
+      "0x20b49cec",
+      "0x20b49ccc"
+    ]
+  },
+  {
+    "frame": "0x2a4abe88",
+    "return": "0x29e1c1",
+    "symbol": "_proc_exit+71",
+    "words": [
+      "0x2a4abf18",
+      "0x29e1c1",
+      "0x20c1b214",
+      "0x8",
+      "0x0",
+      "0x2",
+      "0x0",
+      "0x20b344a8"
+    ]
+  },
+  {
+    "frame": "0x2a4abf18",
+    "return": "0x129e28",
+    "symbol": "_thread_terminate_self+128",
+    "words": [
+      "0x2a4abf38",
+      "0x129e28",
+      "0x20c1b214",
+      "0x1",
+      "0x20b456ac",
+      "0x20b49ccc",
+      "0x20b49cec",
+      "0x0"
+    ]
+  },
+  {
+    "frame": "0x2a4abf38",
+    "return": "0x179b37",
+    "symbol": "_act_machine_return+17",
+    "words": [
+      "0x2a4abf48",
+      "0x179b37",
+      "0x20b457bc",
+      "0x20b45701",
+      "0x2a4abf68",
+      "0x12ca14",
+      "0x25",
+      "0xbebc20"
+    ]
+  },
+  {
+    "frame": "0x2a4abf48",
+    "return": "0x12ca14",
+    "symbol": "_special_handler+d4",
+    "words": [
+      "0x2a4abf68",
+      "0x12ca14",
+      "0x25",
+      "0xbebc20",
+      "0x20b456ac",
+      "0x20b4581c",
+      "0x20b49cec",
+      "0x20b456ac"
+    ]
+  },
+  {
+    "frame": "0x2a4abf68",
+    "return": "0x12c849",
+    "symbol": "_act_execute_returnhandlers+99",
+    "words": [
+      "0x2a4abf88",
+      "0x12c849",
+      "0x20b4581c",
+      "0x20b456ac",
+      "0x20b49ccc",
+      "0x17c610",
+      "0x0",
+      "0x20"
+    ]
+  },
+  {
+    "frame": "0x2a4abf88",
+    "return": "0x116095",
+    "symbol": "_ast_taken+195",
+    "words": [
+      "0x2a4abfb8",
+      "0x116095",
+      "0x1",
+      "0x1144db",
+      "0x222cab50",
+      "0x2",
+      "0x0",
+      "0x20b49ccc"
+    ]
+  },
+  {
+    "frame": "0x2a4abfb8",
+    "return": "0x17c441",
+    "symbol": "_i386_astintr+c1",
+    "words": [
+      "0x2a4abfd8",
+      "0x17c441",
+      "0xffffffff",
+      "0x1",
+      "0x20b49ccc",
+      "0x20b49ccc",
+      "0x20b49ccc",
+      "0x20b4ca80"
+    ]
+  },
+  {
+    "frame": "0x2a4abfd8",
+    "return": "0x1772d4",
+    "symbol": "_return_from_trap+2b",
+    "words": [
+      "0x2a4abfe0",
+      "0x1772d4",
+      "0x0",
+      "0x20b45700",
+      "0x0",
+      "0x2a4abdc8",
+      "0x2a4abe00",
+      "0x20b49ccc"
+    ]
+  }
+]

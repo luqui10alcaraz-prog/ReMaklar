@@ -1,0 +1,29 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -974,9 +974,23 @@
+         else r = readlink(p, g2h(b), c);
+         break;
+     case 60: r = umask(a); break;
+-    case 92: /* fcntl descriptor flags; other commands fail explicitly. */
+-        if (b != 1 && b != 2) qerror("unsupported fcntl %u", b);
+-        r = fcntl(host_fd(a), b == 1 ? F_GETFD : F_SETFD, c & 1);
++    case 92: /* Real descriptor and open-file status flags. */
++        if(b==1 || b==2)r=fcntl(host_fd(a),b==1?F_GETFD:F_SETFD,c&1);
++        else if(b==3 || b==4) {
++#ifdef __APPLE__
++            r=fcntl(host_fd(a),b==3?F_GETFL:F_SETFL,c);
++#else
++            int flags=0;
++            if(b==4) {
++                if(c&128){errno=ENOTSUP;break;}
++                if(c&4)flags|=O_NONBLOCK;if(c&8)flags|=O_APPEND;if(c&64)flags|=O_ASYNC;
++                r=fcntl(host_fd(a),F_SETFL,flags);
++            } else {
++                r=fcntl(host_fd(a),F_GETFL);
++                if(r>=0){flags=r&3;if(r&O_NONBLOCK)flags|=4;if(r&O_APPEND)flags|=8;if(r&O_ASYNC)flags|=64;if(r&O_SYNC)flags|=128;r=flags;}
++            }
++#endif
++        } else qerror("unsupported fcntl %u",b);
+         break;
+     case 116: {
+         struct timeval tv;struct timezone tz;

@@ -1,0 +1,272 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -106,6 +106,7 @@
+ int remaklar_high_protect(uint32_t address,uint32_t bytes,int prot){return rm_high_protect(address,bytes,prot);}
+ static unsigned live_object_kind[4096];
+ static unsigned live_kind_at(uint32_t);
++static int live_overlaps(uint32_t,uint32_t);
+ static void live_alias(uint32_t,uint32_t,uint32_t,uint64_t,uint32_t);
+ static void live_forget(uint32_t,uint32_t);
+ static int rm_is_thread(uint32_t);
+@@ -113,6 +114,7 @@
+ #include "mach-native.inc"
+ #include "live-regions.inc"
+ #include "remote-maps.inc"
++#include "kinfo.inc"
+ #include "threads.inc"
+ 
+ /* Split-segment Jaguar libraries keep their relative RO/RW geometry in one
+@@ -784,6 +786,21 @@
+         if (b > 16 || !remaklar_guest_access(a, b * 4, PAGE_READ))
+             qerror("invalid sysctl MIB");
+         for (i = 0; i < b; i++) fprintf(stderr, "sysctl mib[%d]=%u\n", i, ldl(g2h(a + i * 4)));
++        if(b==4 && ldl(g2h(a))==1 && ldl(g2h(a+4))==14 && ldl(g2h(a+8))==1 && !env->gpr[7] && !env->gpr[8]) {
++#ifdef __APPLE__
++            int mib[4]={CTL_KERN,KERN_PROC,KERN_PROC_PID,0},saved;uint32_t capacity;size_t bytes;struct kinfo_proc proc;
++            if(!remaklar_guest_access(env->gpr[6],4,PAGE_READ|PAGE_WRITE)){errno=EFAULT;break;}
++            mib[3]=ldl(g2h(a+12));capacity=ldl(g2h(env->gpr[6]));bytes=c?(capacity>=492?sizeof(proc):0):0;
++            if(c && capacity>=492 && !remaklar_guest_access(c,492,PAGE_WRITE)){errno=EFAULT;break;}
++            memset(&proc,0,sizeof(proc));r=sysctl(mib,4,c?&proc:NULL,&bytes,NULL,0);saved=errno;
++            if(bytes%sizeof(proc))qerror("native KERN_PROC_PID returned partial record");
++            if(c && bytes){if(bytes!=sizeof(proc) || capacity<492)qerror("native KERN_PROC_PID bounds");rm_kinfo_convert(g2h(c),&proc);}
++            stl(g2h(env->gpr[6]),(bytes/sizeof(proc))*492);errno=saved;
++            fprintf(stderr,"native KERN_PROC_PID pid=%d bytes=%u result=%d errno=%d\n",mib[3],(unsigned)bytes,r,r<0?saved:0);break;
++#else
++            errno=ENOTSUP;break;
++#endif
++        }
+         if(b==2 && ldl(g2h(a))==1 && ldl(g2h(a+4))==10 && !env->gpr[7] && !env->gpr[8]) {
+             char hostname[256];uint32_t needed,capacity;
+             if(!remaklar_guest_access(env->gpr[6],4,PAGE_READ|PAGE_WRITE)) { errno=EFAULT;break; }
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -62,6 +62,7 @@
+     uint32_t out=env->gpr[0]==(uint32_t)-32 && env->gpr[10]?env->gpr[10]:in;
+     uint32_t bytes=(send>cap?send:cap)+512,i,count=0,guest_remote=0,guest_local=0,ports[66],touched=0;
+     unsigned char *buffer;mach_msg_header_t *h;mach_msg_return_t kr;
++    uint32_t destroyed[64],destroyed_bytes[64],destroyed_count=0;
+     if(send>65536 || cap>65536)return MACH_SEND_TOO_LARGE;
+     if((options&MACH_SEND_MSG) && (send<24 || !remaklar_guest_access(in,send,PAGE_READ)))return MACH_SEND_INVALID_DATA;
+     if((options&MACH_RCV_MSG) && !remaklar_guest_access(out,cap,PAGE_WRITE))return MACH_RCV_INVALID_DATA;
+@@ -73,14 +74,25 @@
+         h->msgh_remote_port=native_name(guest_remote);h->msgh_local_port=native_name(guest_local);
+         h->msgh_reserved=ldl(g2h(in+16));h->msgh_id=ldl(g2h(in+20));
+         ports[touched++]=guest_remote;ports[touched++]=guest_local;
++        fprintf(stderr,"native Mach send id=%u destination=%x bytes=%u\n",h->msgh_id,guest_remote,send);
+         if(h->msgh_bits&MACH_MSGH_BITS_COMPLEX) {
+             if(send<28){free(buffer);return MACH_SEND_MSG_TOO_SMALL;}
+             count=ldl(g2h(in+24));if(count>64 || 28+12*count>send)qerror("native Mach descriptor bounds");
+             *(uint32_t *)(buffer+24)=count;
+             for(i=0;i<count;i++) {
+                 mach_msg_port_descriptor_t *d=(mach_msg_port_descriptor_t *)(buffer+28+12*i);
+-                if(d->type!=MACH_MSG_PORT_DESCRIPTOR)qerror("native IPC OOL descriptor type=%u requires typed conversion",d->type);
+-                ports[touched++]=ldl(g2h(in+28+12*i));d->name=native_name(ports[touched-1]);
++                if(d->type==MACH_MSG_OOL_DESCRIPTOR) {
++                    mach_msg_ool_descriptor_t *o=(mach_msg_ool_descriptor_t *)d;
++                    uint32_t address=ldl(g2h(in+28+12*i)),length=ldl(g2h(in+32+12*i));
++                    if(length>16*1024*1024 || (length && (!remaklar_guest_access(address,length,PAGE_READ) || live_overlaps(address,length))))qerror("unverified application OOL source");
++                    if(o->deallocate && address>=0xc0000000U)qerror("high OOL deallocation needs backing lifetime conversion");
++                    o->address=length?g2h(address):NULL;o->size=length;
++                    if(o->deallocate && length){destroyed[destroyed_count]=address;destroyed_bytes[destroyed_count++]=length;}
++                    fprintf(stderr,"native application OOL send id=%u bytes=%u copy=%u deallocate=%u\n",h->msgh_id,length,o->copy,o->deallocate);
++                } else {
++                    if(d->type!=MACH_MSG_PORT_DESCRIPTOR)qerror("native IPC OOL descriptor type=%u requires typed conversion",d->type);
++                    ports[touched++]=ldl(g2h(in+28+12*i));d->name=native_name(ports[touched-1]);
++                }
+             }
+         }
+     }
+@@ -89,6 +101,17 @@
+         remaklar_gate_leave();
+         kr=mach_msg(h,options|MACH_SEND_INTERRUPT|MACH_RCV_INTERRUPT,send,cap,receive,env->gpr[8],notify);
+         remaklar_gate_enter(env);
++    }
++    /* Receive errors occur after the send has consumed its OOL ranges. */
++    if(!kr || (kr>=0x10004000U && kr<0x10005000U))for(i=0;i<destroyed_count;i++) {
++        uint32_t page,end=TARGET_PAGE_ALIGN(destroyed[i]+destroyed_bytes[i]);
++        for(page=destroyed[i]&~4095U;page<end;page+=4096) {
++            vm_address_t region=page;vm_size_t length;vm_region_basic_info_data_t info;
++            mach_msg_type_number_t n=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;
++            kern_return_t query=vm_region(mach_task_self(),&region,&length,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&n,&object);
++            if(object)mach_port_deallocate(mach_task_self(),object);
++            page_set_flags(page,page+4096,(!query && region<=page)?((info.protection&7)|PAGE_VALID):0);
++        }
+     }
+     if(kr)fprintf(stderr,"native Mach message error=%x options=%x send=%u receive=%u\n",kr,options,send,cap);
+     for(i=0;i<touched;i++)native_refresh(ports[i]);
+@@ -110,8 +133,24 @@
+             if(count>64 || 28+12*count>length)qerror("native received descriptor bounds");
+             for(i=0;i<count;i++) {
+                 mach_msg_port_descriptor_t *d=(mach_msg_port_descriptor_t *)(buffer+28+12*i);
+-                if(d->type!=MACH_MSG_PORT_DESCRIPTOR)qerror("native received OOL descriptor type=%u requires typed conversion",d->type);
+-                stl(buffer+28+12*i,native_export(d->name));
++                if(d->type==MACH_MSG_OOL_DESCRIPTOR) {
++                    mach_msg_ool_descriptor_t *o=(mach_msg_ool_descriptor_t *)d;
++                    uint32_t address=(uintptr_t)o->address,bytes=o->size;
++                    if(bytes>16*1024*1024 || (bytes && (address<4096 || (uint64_t)address+bytes>0xc0000000ULL)))qerror("native application OOL receive bounds");
++                    if(bytes) {
++                        vm_address_t region=address;vm_size_t length;vm_region_basic_info_data_t info;
++                        mach_msg_type_number_t n=VM_REGION_BASIC_INFO_COUNT;mach_port_t object=0;
++                        kern_return_t query=vm_region(mach_task_self(),&region,&length,VM_REGION_BASIC_INFO,(vm_region_info_t)&info,&n,&object);
++                        if(object)mach_port_deallocate(mach_task_self(),object);
++                        if(query || region>address || (uint64_t)region+length<(uint64_t)address+bytes)qerror("native application OOL receive region");
++                        page_set_flags(address&~4095U,TARGET_PAGE_ALIGN(address+bytes),(info.protection&7)|PAGE_VALID);
++                    }
++                    stl(buffer+28+12*i,address);stl(buffer+32+12*i,bytes);
++                    fprintf(stderr,"native application OOL receive id=%u address=%x bytes=%u\n",h->msgh_id,address,bytes);
++                } else {
++                    if(d->type!=MACH_MSG_PORT_DESCRIPTOR)qerror("native received OOL descriptor type=%u requires typed conversion",d->type);
++                    stl(buffer+28+12*i,native_export(d->name));
++                }
+             }
+             stl(buffer+24,count);
+         }
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -217,3 +217,10 @@
+  }
+  remaklar_live_store(guest,bytes,value);
+ }
++
++static int live_overlaps(uint32_t address,uint32_t bytes)
++{
++ unsigned i;
++ for(i=0;i<64;i++)if(live_kind[i] && (uint64_t)address+bytes>native_iomappings[i].address && (uint64_t)native_iomappings[i].address+native_iomappings[i].bytes>address)return 1;
++ return 0;
++}
+--- /dev/null
++++ b/darwin-user/remaklar/kinfo.inc
+@@ -0,0 +1,133 @@
++/* kinfo_proc offsets verified with the actual Darwin6 i386/PPC headers.
++ * The kernel's private simple-lock image is opaque machine-specific data;
++ * preserve its bytes and zero only the PPC extension, never use it as a lock.
++ * SPDX-License-Identifier: GPL-2.0-or-later */
++#ifdef __APPLE__
++#include <stddef.h>
++static void rm_kinfo_convert(unsigned char *out,const struct kinfo_proc *in)
++{
++ const unsigned char *src=(const unsigned char *)in;unsigned i;
++ static const struct {unsigned native,guest,bytes;} fields[]={
++  {offsetof(struct kinfo_proc,kp_proc.p_vmspace),8,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_sigacts),12,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_flag),16,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_pid),24,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_oppid),28,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_dupfd),32,4},
++  {offsetof(struct kinfo_proc,kp_proc.user_stack),36,4},
++  {offsetof(struct kinfo_proc,kp_proc.exit_thread),40,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_debugger),44,4},
++  {offsetof(struct kinfo_proc,kp_proc.sigwait),48,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_estcpu),52,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_cpticks),56,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_pctcpu),60,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_wchan),64,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_wmesg),68,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_swtime),72,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_slptime),76,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_traceflag),128,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_tracep),132,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_siglist),136,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_textvp),140,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_holdcnt),144,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_sigmask),148,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_sigignore),152,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_sigcatch),156,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_pgrp),180,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_addr),184,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_ru),192,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_starttime.tv_sec),0,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_starttime.tv_usec),4,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_realtimer.it_interval.tv_sec),80,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_realtimer.it_interval.tv_usec),84,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_realtimer.it_value.tv_sec),88,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_realtimer.it_value.tv_usec),92,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_rtime.tv_sec),96,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_rtime.tv_usec),100,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_uticks),104,8},
++  {offsetof(struct kinfo_proc,kp_proc.p_sticks),112,8},
++  {offsetof(struct kinfo_proc,kp_proc.p_iticks),120,8},
++  {offsetof(struct kinfo_proc,kp_proc.p_stat),20,1},
++  {offsetof(struct kinfo_proc,kp_proc.p_priority),160,1},
++  {offsetof(struct kinfo_proc,kp_proc.p_usrpri),161,1},
++  {offsetof(struct kinfo_proc,kp_proc.p_nice),162,1},
++  {offsetof(struct kinfo_proc,kp_proc.p_xstat),188,2},
++  {offsetof(struct kinfo_proc,kp_proc.p_acflag),190,2},
++  {offsetof(struct kinfo_proc,kp_eproc.e_paddr),196,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_sess),200,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_ucred),276,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.p_ruid),280,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.p_svuid),284,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.p_rgid),288,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.p_svgid),292,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.p_refcnt),296,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_ref),300,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_uid),304,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ppid),416,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pgid),420,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_tdev),428,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_tpgid),432,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_tsess),436,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_xsize),448,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_flag),460,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_ngroups),308,2},
++  {offsetof(struct kinfo_proc,kp_eproc.e_jobc),424,2},
++  {offsetof(struct kinfo_proc,kp_eproc.e_xrssize),452,2},
++  {offsetof(struct kinfo_proc,kp_eproc.e_xccount),454,2},
++  {offsetof(struct kinfo_proc,kp_eproc.e_xswrss),456,2},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[0]),312,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[1]),316,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[2]),320,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[3]),324,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[4]),328,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[5]),332,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[6]),336,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[7]),340,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[8]),344,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[9]),348,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[10]),352,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[11]),356,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[12]),360,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[13]),364,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[14]),368,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_ucred.cr_groups[15]),372,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_spare[0]),476,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_spare[1]),480,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_spare[2]),484,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_spare[3]),488,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_refcnt),376,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_shm),380,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_rssize),384,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_swrss),388,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_tsize),392,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_dsize),396,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_ssize),400,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_taddr),404,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_daddr),408,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_vm.vm_maxsaddr),412,4},
++  {offsetof(struct kinfo_proc,kp_proc.p_comm),163,17},
++  {offsetof(struct kinfo_proc,kp_eproc.e_wmesg),440,8},
++  {offsetof(struct kinfo_proc,kp_eproc.e_login),464,12},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_flags),244,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_sharecount),248,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_waitcount),252,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_wmesg),260,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_timo),264,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_lockholder),268,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_lockthread),272,4},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_exclusivecount),256,2},
++  {offsetof(struct kinfo_proc,kp_eproc.e_pcred.pc_lock.lk_prio),258,2},
++ };
++ if(sizeof(*in)!=488)qerror("unverified native kinfo_proc size");
++ memset(out,0,492);
++ for(i=0;i<sizeof(fields)/sizeof(fields[0]);i++) {
++  unsigned a=fields[i].native,b=fields[i].guest,n=fields[i].bytes;
++  if(n==1)out[b]=src[a];
++  else if(n==2){uint16_t value;memcpy(&value,src+a,2);stw(out+b,value);}
++  else if(n==4){uint32_t value;memcpy(&value,src+a,4);stl(out+b,value);}
++  else if(n==8){uint64_t value;memcpy(&value,src+a,8);stq(out+b,value);}
++  else memcpy(out+b,src+a,n);
++ }
++ memcpy(out+204,src+204,36);
++}
++#endif

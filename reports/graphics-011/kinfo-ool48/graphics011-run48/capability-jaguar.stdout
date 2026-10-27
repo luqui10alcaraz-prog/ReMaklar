@@ -1,0 +1,2 @@
+real processor-set policy result=4
+capability provenance: app IDs preserved, real processor-set policy OK

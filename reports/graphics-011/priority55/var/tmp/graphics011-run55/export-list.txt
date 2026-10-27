@@ -1,0 +1,8 @@
+/var/tmp/graphics011-run55/build.txt
+/var/tmp/graphics011-run55/export-list.txt
+/var/tmp/graphics011-run55/high-i386-build.txt
+/var/tmp/graphics011-run55/high-ppc-build.txt
+/var/tmp/graphics011-run55/priority-i386-build.txt
+/var/tmp/graphics011-run55/script-status.txt
+/var/tmp/graphics011-run55/session.txt
+/var/tmp/graphics011-run55/threads-build.txt

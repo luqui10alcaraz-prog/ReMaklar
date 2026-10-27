@@ -1,0 +1,79 @@
+make: Entering directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux'
+make[1]: Entering directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux/ppc-darwin-user'
+make[1]: Warning: File 'darwin-kernel.c' has modification time 0.83 s in the future
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:36:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/qemu.h:100:33: warning: ‘struct sigaltstack’ declared inside parameter list will not be visible outside of this definition or declaration
+  100 | int do_sigaltstack(const struct sigaltstack *ss, struct sigaltstack *oss);
+      |                                 ^~~~~~~~~~~
+In file included from /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:37:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/bootstrap.h:14:18: warning: redundant redeclaration of ‘global_env’ [-Wredundant-decls]
+   14 | extern CPUState *global_env;
+      |                  ^~~~~~~~~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/qemu.h:107:18: note: previous declaration of ‘global_env’ with type ‘CPUPPCState *’
+  107 | extern CPUState *global_env;
+      |                  ^~~~~~~~~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c: In function ‘exec_ppc’:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:551:47: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  551 |     launch[j++]=remaklar_self_path;launch[j++]="--root";launch[j++]=(char *)interp_prefix;
+      |                                               ^
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:552:16: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  552 |     launch[j++]="--cwd";launch[j++]=guest_cwd;
+      |                ^
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:553:16: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  553 |     launch[j++]="--exec-argv0";launch[j++]=args[0];
+      |                ^
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:554:16: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  554 |     launch[j++]="--inherit-fds";launch[j++]=fdmap;
+      |                ^
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:555:16: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  555 |     launch[j++]="--inherit-ports";launch[j++]=ports_fd;
+      |                ^
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:556:16: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  556 |     launch[j++]="--exec-env-count";launch[j++]=count;
+      |                ^
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c: In function ‘remaklar_bsd’:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:682:17: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  682 |                 for(i=0;i<64;i++)if(live_kind[i])qerror("fork child with live IOKit mappings requires inheritance validation");memset(native_iomappings,0,sizeof(native_iomappings));live_bounds();
+      |                 ^~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:682:128: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  682 |                 for(i=0;i<64;i++)if(live_kind[i])qerror("fork child with live IOKit mappings requires inheritance validation");memset(native_iomappings,0,sizeof(native_iomappings));live_bounds();
+      |                                                                                                                                ^~~~~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:814:13: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  814 |             if(c)stl(g2h(c),value);stl(g2h(env->gpr[6]),4);r=0;break;
+      |             ^~
+In file included from /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/target-ppc/cpu.h:820,
+                 from /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/qemu.h:7:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/cpu-all.h:682:22: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  682 | #define stl_raw(p,v) remaklar_host_store((uintptr_t)(p),4,(v))
+      |                      ^~~~~~~~~~~~~~~~~~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/cpu-all.h:720:19: note: in expansion of macro ‘stl_raw’
+  720 | #define stl(p, v) stl_raw(p, v)
+      |                   ^~~~~~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:814:36: note: in expansion of macro ‘stl’
+  814 |             if(c)stl(g2h(c),value);stl(g2h(env->gpr[6]),4);r=0;break;
+      |                                    ^~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c: In function ‘rpc’:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:1888:1: warning: label ‘finish_native_reply’ defined but not used [-Wunused-label]
+ 1888 | finish_native_reply:
+      | ^~~~~~~~~~~~~~~~~~~
+In file included from /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:116:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/threads.inc: At top level:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/threads.inc:105:13: warning: ‘rm_thread_exit’ defined but not used [-Wunused-function]
+  105 | static void rm_thread_exit(CPUState *cpu,uint32_t destination){qerror("native threads require Darwin");}
+      |             ^~~~~~~~~~~~~~
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/threads.inc:102:12: warning: ‘rm_is_thread’ defined but not used [-Wunused-function]
+  102 | static int rm_is_thread(uint32_t guest){return 0;}
+      |            ^~~~~~~~~~~~
+In file included from /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:115:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/remote-maps.inc:72:13: warning: ‘rm_remote_sync’ defined but not used [-Wunused-function]
+   72 | static void rm_remote_sync(void){}
+      |             ^~~~~~~~~~~~~~
+In file included from /mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/darwin-kernel.c:114:
+/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-source/darwin-user/remaklar/live-regions.inc:177:13: warning: ‘live_alias’ defined but not used [-Wunused-function]
+  177 | static void live_alias(uint32_t address,uint32_t bytes,uint32_t object,uint64_t offset,uint32_t copy)
+      |             ^~~~~~~~~~
+  LINK  ppc-darwin-user/qemu-ppc
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Leaving directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux/ppc-darwin-user'
+make: Leaving directory '/mnt/c/Users/Chicos/Desktop/ReMaklar/ReMaklar/build/qemu-011-thread-linux'

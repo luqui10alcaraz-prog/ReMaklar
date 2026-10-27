@@ -1,0 +1,1 @@
+real F_GETFL F_SETFL access append nonblock actual file bytes closeexec EBADF OK

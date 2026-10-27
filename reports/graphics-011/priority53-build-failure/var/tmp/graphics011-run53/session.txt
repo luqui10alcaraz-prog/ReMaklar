@@ -1,0 +1,33 @@
++ trap 'status=$?; echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/stage163.tgz graphics011-run53/*.txt graphics011-run53/*.status graphics011-run53/*.stdout graphics011-run53/*.stderr;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run53/source
++ cp -Rp /var/tmp/graphics011-run37/build /var/tmp/graphics011-run53/build
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/kinfo.inc /var/tmp/graphics011-run53/source/darwin-user/remaklar/kinfo.inc
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run53/source/darwin-user/remaklar/remote-maps.inc
++ cmp -s /var/tmp/graphics011-stage53/source/cpu-all.h /var/tmp/graphics011-run53/source/cpu-all.h
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/mmap.c /var/tmp/graphics011-run53/source/darwin-user/mmap.c
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run53/source/darwin-user/remaklar/high-window.c
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run53/source/darwin-user/remaklar/high-window.h
++ cmp -s /var/tmp/graphics011-stage53/source/target-ppc/cpu.h /var/tmp/graphics011-run53/source/target-ppc/cpu.h
++ cmp -s /var/tmp/graphics011-stage53/source/target-ppc/translate.c /var/tmp/graphics011-run53/source/target-ppc/translate.c
++ cmp -s /var/tmp/graphics011-stage53/source/target-ppc/helper.h /var/tmp/graphics011-run53/source/target-ppc/helper.h
++ cmp -s /var/tmp/graphics011-stage53/source/target-ppc/op_helper.c /var/tmp/graphics011-run53/source/target-ppc/op_helper.c
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run53/source/darwin-user/remaklar/bootstrap-main.c
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/qemu.h /var/tmp/graphics011-run53/source/darwin-user/qemu.h
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run53/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage53/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run53/source/darwin-user/remaklar/darwin-kernel.c
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run53/source/darwin-user/remaklar/mach-native.inc
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run53/source/darwin-user/remaklar/live-regions.inc
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run53/source/darwin-user/remaklar/typed-live.c
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run53/source/darwin-user/remaklar/typed-live.h
++ cmp -s /var/tmp/graphics011-stage53/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run53/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run53/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ status=2
++ echo script_exit=2
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/stage163.tgz graphics011-run53/build.txt graphics011-run53/script-status.txt graphics011-run53/session.txt 'graphics011-run53/*.status' 'graphics011-run53/*.stdout' 'graphics011-run53/*.stderr'
+gnutar: Cannot add file graphics011-run53/*.status: No such file or directory
+gnutar: Cannot add file graphics011-run53/*.stdout: No such file or directory
+gnutar: Cannot add file graphics011-run53/*.stderr: No such file or directory
+gnutar: Error exit delayed from previous errors

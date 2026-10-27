@@ -1,0 +1,1 @@
+MD5 (/var/tmp/jaguar/System/Library/CoreServices/SystemStarter/QuartzDisplay.bundle/Resources/BootPanel.pdf) = 7b68cb62c13c29b9b41459a5a4dc076a
