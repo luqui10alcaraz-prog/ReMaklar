@@ -1,0 +1,84 @@
+378f4 res=ffffffff
+return r3=0 error=0 resume=24df658c
+syscall pc=24df0a88 r0=24 r3=00000000 r4=34f1c57c r5=34f1c57c r6=00000080 r7=00000000 r8=0000078c lr=24f37f4c res=ffffffff
+return r3=0 error=0 resume=24df0a8c
+syscall pc=24df6588 r0=24 r3=00000000 r4=00000000 r5=34f1c57c r6=00000080 r7=00000000 r8=0000078c lr=24f37f60 res=ffffffff
+return r3=0 error=0 resume=24df658c
+syscall pc=24df0a88 r0=24 r3=34f1c5bc r4=34f1c5ac r5=34f1c5ac r6=223f5d10 r7=ffffffff r8=34f1d364 lr=24f378e0 res=ffffffff
+return r3=0 error=0 resume=24df0a8c
+syscall pc=24df6588 r0=24 r3=00000000 r4=00000000 r5=34f1c5ac r6=223f5d10 r7=ffffffff r8=34f1d364 lr=24f378f4 res=ffffffff
+return r3=0 error=0 resume=24df658c
+syscall pc=24df46a8 r0=202 r3=22398050 r4=00000002 r5=223980b0 r6=22398058 r7=00000000 r8=00000000 lr=24df833c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df46ac
+syscall pc=24df0a88 r0=24 r3=00000000 r4=34f1c5ac r5=34f1c5ac r6=0000078c r7=00000000 r8=0000078c lr=24f37f4c res=ffffffff
+return r3=0 error=0 resume=24df0a8c
+syscall pc=24df6588 r0=24 r3=00000000 r4=00000000 r5=34f1c5ac r6=0000078c r7=00000000 r8=0000078c lr=24f37f60 res=ffffffff
+return r3=0 error=0 resume=24df658c
+syscall pc=24df46a8 r0=202 r3=22398090 r4=00000002 r5=223980f0 r6=22398098 r7=00000000 r8=00000000 lr=24df833c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df46ac
+syscall pc=24df0a88 r0=24 r3=34f1c5bc r4=34f1c57c r5=34f1c57c r6=223f5fd0 r7=ffffffff r8=34f1d364 lr=24f378e0 res=ffffffff
+return r3=0 error=0 resume=24df0a8c
+syscall pc=24df6588 r0=24 r3=00000000 r4=00000000 r5=34f1c57c r6=223f5fd0 r7=ffffffff r8=34f1d364 lr=24f378f4 res=ffffffff
+return r3=0 error=0 resume=24df658c
+syscall pc=24df0a88 r0=24 r3=00000000 r4=34f1c57c r5=34f1c57c r6=0000078c r7=00000000 r8=0000078c lr=24f37f4c res=ffffffff
+return r3=0 error=0 resume=24df0a8c
+syscall pc=24df6588 r0=24 r3=00000000 r4=00000000 r5=34f1c57c r6=0000078c r7=00000000 r8=0000078c lr=24f37f60 res=ffffffff
+return r3=0 error=0 resume=24df658c
+syscall pc=24df46a8 r0=202 r3=22398050 r4=00000002 r5=223980b0 r6=22398058 r7=00000000 r8=00000000 lr=24df833c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df46ac
+syscall pc=24df46a8 r0=202 r3=22398050 r4=00000002 r5=223980b0 r6=22398058 r7=00000000 r8=00000000 lr=24df833c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24df46ac
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/Network/.GlobalPreferences.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=8fea2188 r0=4294967265 r3=22397e60 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223f68a0 00000101 00000202 22397ed0 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24e56ae0 r0=116 r3=223980a0 r4=00000000 r5=00000000 r6=00000000 r7=24f335b4 r8=24fd35b4 lr=24df0770 res=ffffffff
+return r3=1793064851 error=0 resume=24e56ae4
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/.GlobalPreferences.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/Network/pbs.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/Library/Preferences/pbs.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/.GlobalPreferences.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/ByHost/.GlobalPreferences.localhost.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/pbs.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=24df0ca8 r0=5 r3=22397bd0 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=34f1d364 lr=24f392a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/ByHost/pbs.localhost.plist
+return r3=2 error=2 resume=24df0ca8
+syscall pc=8fea2188 r0=4294967265 r3=22398000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 4400024e 00000101 00000202 22398080 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=22397d60 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223f7278 00000101 00000202 22397de0 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223980b0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000002 00000101 00000202 00000002 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24e00be8 r0=157 r3=223f72a0 r4=223982f0 r5=223f72a0 r6=0000001a r7=00000000 r8=00000001 lr=255f8d18 res=ffffffff
+return r3=2 error=2 resume=24e00be8
+syscall pc=24e00be8 r0=157 r3=223f76f0 r4=22398340 r5=223f76f0 r6=0000001b r7=00000000 r8=00000001 lr=255f8d18 res=ffffffff
+return r3=2 error=2 resume=24e00be8
+syscall pc=24e00be8 r0=157 r3=223f7810 r4=22398390 r5=223f7810 r6=00000013 r7=00000000 r8=00000001 lr=255f8d18 res=ffffffff
+return r3=2 error=2 resume=24e00be8
+syscall pc=24e00be8 r0=157 r3=223f78d0 r4=223983e0 r5=223f78d0 r6=0000001c r7=00000000 r8=00000001 lr=255f8d18 res=ffffffff
+return r3=2 error=2 resume=24e00be8

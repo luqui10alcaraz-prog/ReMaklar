@@ -1,0 +1,58 @@
+ res=ffffffff
+return r3=1 error=0 resume=24e5ad88
+syscall pc=24dfc568 r0=190 r3=22396100 r4=22396040 r5=37b9b480 r6=80808080 r7=00000000 r8=006f7369 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24dfc568 r0=190 r3=24ec0d38 r4=223960f0 r5=00000002 r6=34df3530 r7=00000005 r8=24ecd898 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/etc/localtime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24e5ad84 r0=327 r3=24ebdc64 r4=44f069a0 r5=00000002 r6=34df3530 r7=00000005 r8=24ecd898 lr=24df88e8 res=ffffffff
+return r3=1 error=0 resume=24e5ad88
+syscall pc=24dfc568 r0=190 r3=22396160 r4=223960a0 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/GMT result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24e5ad84 r0=327 r3=24ec0d5c r4=44f069a0 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24df88e8 res=ffffffff
+return r3=1 error=0 resume=24e5ad88
+syscall pc=24dfc568 r0=190 r3=223960f0 r4=22396030 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24dfdae8 r0=97 r3=00000001 r4=00000002 r5=00000000 r6=20776f72 r7=6b2e2e2e r8=72206469 lr=24dfda5c res=ffffffff
+return r3=5 error=0 resume=24dfdaec
+syscall pc=24df1648 r0=92 r3=00000005 r4=00000002 r5=00000001 r6=20776f72 r7=6b2e2e2e r8=72206469 lr=24dfda74 res=ffffffff
+return r3=0 error=0 resume=24df164c
+syscall pc=24dfdb28 r0=98 r3=00000005 r4=34df2570 r5=0000006a r6=20776f72 r7=6b2e2e2e r8=72206469 lr=24dfdaa8 res=ffffffff
+guest unix connect /var/tmp/jaguar/var/run/syslog
+return r3=2 error=2 resume=24dfdb28
+syscall pc=24df76a8 r0=6 r3=00000005 r4=ffffffff r5=0000006a r6=20776f72 r7=6b2e2e2e r8=72206469 lr=24dfdabc res=ffffffff
+return r3=0 error=0 resume=24df76ac
+syscall pc=24dffc08 r0=133 r3=ffffffff r4=223985e0 r5=000000b7 r6=00000000 r7=00000000 r8=00000000 lr=24dfee4c res=ffffffff
+return r3=9 error=9 resume=24dffc08
+syscall pc=24e60328 r0=4294967265 r3=223997d0 r4=00000001 r5=00000680 r6=00000000 r7=00000000 r8=00000000 lr=24df2670 res=ffffffff
+native Mach send id=0 destination=6b5 bytes=1664
+native application OOL send id=0 bytes=1104 copy=1 deallocate=1
+syscall pc=24e60328 r0=4294967265 r3=223997d0 r4=00000006 r5=00000000 r6=00000694 r7=00000407 r8=00000000 lr=24df2670 res=ffffffff
+native Mach trailer bytes=8 elements=0
+native Mach receive port=408 bytes=36 id=72
+syscall pc=24df1a88 r0=24 r3=00000000 r4=00000000 r5=00000000 r6=00000000 r7=00000407 r8=00000000 lr=000502e8 res=ffffffff
+return r3=0 error=0 resume=24df1a8c
+syscall pc=24e60328 r0=4294967265 r3=22399610 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 41726269 00000101 00000204 223996a0 00000d51 00000000 00000000 00000004
+syscall pc=24e60328 r0=4294967265 r3=223995a0 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000104 00000104 00000204 00000000 00000194 00000000 00000000 53797374 656d2043 6f6e6669 67757261 74696f6e 20536572 76657200 00000000 44f1b7c0 00000000 44f1b7a0 2583d498 22399650 48002449 24df7194 00000000 22399650 000001f8 00000000 00000000 80000012 00000028 00000204 00000000
+native bootstrap id=404 service=System Configuration Server result=1102
+syscall pc=24df1a88 r0=24 r3=fffffffe r4=00000000 r5=00000152 r6=00000080 r7=00000000 r8=44f00010 lr=000502e8 res=ffffffff
+return r3=0 error=0 resume=24df1a8c
+syscall pc=24e60328 r0=4294967265 r3=223995c0 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 656d2043 00000101 00000204 00000000 00000d51 00000000 00000000 00000004
+syscall pc=24e60328 r0=4294967265 r3=22399550 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 44f1b7c0 00000104 00000204 00000000 00000194 00000000 00000000 53797374 656d2043 6f6e6669 67757261 74696f6e 20536572 76657200 00000000 44f1b7c0 00000000 44f1b7a0 2583d498 22399600 48002449 24df7194 34f1e5b0 22399600 34f1cd68 00000000 00000000 80000012 00000028 00000204 00000000
+native bootstrap id=404 service=System Configuration Server result=1102
+syscall pc=24e01f48 r0=183 r3=00000000 r4=00000000 r5=00000152 r6=00000080 r7=00000000 r8=44f00010 lr=00050940 res=ffffffff
+return r3=0 error=0 resume=24e01f4c
+syscall pc=24df1a88 r0=24 r3=00000000 r4=00000000 r5=00000152 r6=00000080 r7=00000000 r8=44f00010 lr=0005094c res=ffffffff
+return r3=0 error=0 resume=24df1a8c
+syscall pc=24e01f48 r0=183 r3=00000001 r4=00000000 r5=00000152 r6=00000080 r7=00000000 r8=44f00010 lr=000458d4 res=ffffffff
+return r3=0 error=0 resume=24e01f4c
+syscall pc=24df1a88 r0=24 r3=00000000 r4=00000000 r5=00000152 r6=00000080 r7=00000000 r8=44f00010 lr=000458e0 res=ffffffff
+return r3=0 error=0 resume=24df1a8c
+syscall pc=24e60328 r0=4294967265 r3=223997d0 r4=00000006 r5=00000000 r6=00000694 r7=00000407 r8=00000000 lr=24df2670 res=ffffffff

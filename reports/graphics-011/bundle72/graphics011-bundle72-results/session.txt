@@ -1,0 +1,8 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/bun72.tgz graphics011-bundle72-results;sync;umount /exchange' 0
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-bundle72/bundle.c -framework CoreFoundation -o /var/tmp/graphics011-bundle72-results/bundle-i386
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/bun72.tgz graphics011-bundle72-results

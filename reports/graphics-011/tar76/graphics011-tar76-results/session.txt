@@ -1,0 +1,14 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/tar76.tgz graphics011-tar76-results;sync;umount /exchange' 0
++ gnutar xf /var/tmp/graphics011-resources75/boundary-old.tar -C /var/tmp/graphics011-tar76-results/old
++ gnutar xf /var/tmp/graphics011-resources75/boundary-safe.tar -C /var/tmp/graphics011-tar76-results/safe
++ test -f /var/tmp/graphics011-tar76-results/old/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/bbbbbbbbb
++ test '!' -e /var/tmp/graphics011-tar76-results/old/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/bbbbbbbbbb
++ test -f /var/tmp/graphics011-tar76-results/safe/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/bbbbbbbbbb
++ find /var/tmp/graphics011-tar76-results/old /var/tmp/graphics011-tar76-results/safe -type f
++ echo native_Darwin6_100_byte_header_truncation_reproduced_and_prefix_fix_verified
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/tar76.tgz graphics011-tar76-results

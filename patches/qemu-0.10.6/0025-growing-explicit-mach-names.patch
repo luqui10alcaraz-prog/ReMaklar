@@ -1,0 +1,77 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -699,7 +699,7 @@
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
+                 memset(native_ports,0,sizeof(native_ports));
+ #ifdef __APPLE__
+-                memset(native_sparse_ports,0,sizeof(native_sparse_ports));
++                if(native_sparse_capacity)memset(native_sparse_ports,0,native_sparse_capacity*sizeof(*native_sparse_ports));
+ #endif
+                 memset(native_processor_sets,0,sizeof(native_processor_sets));
+                 memset(native_notification_kind,0,sizeof(native_notification_kind));
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -9,12 +9,24 @@
+ extern kern_return_t mach_make_memory_entry_64(mach_port_t,unsigned long long *,unsigned long long,vm_prot_t,mach_port_t *,mach_port_t);
+ extern kern_return_t vm_map_64(mach_port_t,vm_address_t *,vm_size_t,vm_address_t,int,mach_port_t,unsigned long long,boolean_t,vm_prot_t,vm_prot_t,vm_inherit_t);
+ /* Explicit 32-bit names used by ATS as receive-port context keys. */
+-static struct {uint32_t name;mach_port_t port;} native_sparse_ports[128];
++static struct rm_sparse_port {uint32_t name;mach_port_t port;} *native_sparse_ports;
++static unsigned native_sparse_capacity;
++static unsigned native_sparse_slot(uint32_t oldname)
++{
++ unsigned i,old_capacity=native_sparse_capacity,new_capacity;void *grown;
++ for(i=0;i<native_sparse_capacity;i++)if(native_sparse_ports[i].name==oldname || !native_sparse_ports[i].port)return i;
++ if(old_capacity>0x7fffffffU/sizeof(*native_sparse_ports))qerror("explicit Mach name allocation overflow");
++ new_capacity=old_capacity?old_capacity*2:128;
++ grown=realloc(native_sparse_ports,new_capacity*sizeof(*native_sparse_ports));
++ if(!grown)qerror("explicit Mach name allocation failed");
++ native_sparse_ports=grown;memset(native_sparse_ports+old_capacity,0,(new_capacity-old_capacity)*sizeof(*native_sparse_ports));
++ native_sparse_capacity=new_capacity;return old_capacity;
++}
+ static mach_port_t native_sparse_port(uint32_t name)
+ {
+  unsigned i;
+  if(name<4096)return 0;
+- for(i=0;i<128;i++)if(native_sparse_ports[i].name==name)return native_sparse_ports[i].port;
++ for(i=0;i<native_sparse_capacity;i++)if(native_sparse_ports[i].name==name)return native_sparse_ports[i].port;
+  return 0;
+ }
+ static mach_port_t native_name(uint32_t name)
+@@ -40,7 +52,7 @@
+     mach_port_type_t type;mach_port_urefs_t refs;
+     if(guest>=4096) {
+         unsigned i;
+-        for(i=0;i<128;i++)if(native_sparse_ports[i].name==guest) {
++        for(i=0;i<native_sparse_capacity;i++)if(native_sparse_ports[i].name==guest) {
+             if(mach_port_type(mach_task_self(),native_sparse_ports[i].port,&type))memset(&native_sparse_ports[i],0,sizeof(native_sparse_ports[i]));
+             return;
+         }
+@@ -58,7 +70,7 @@
+ {
+     uint32_t guest;
+     if(!port || port==MACH_PORT_DEAD)return port;
+-    for(guest=0;guest<128;guest++)if(native_sparse_ports[guest].port==port)return native_sparse_ports[guest].name;
++    for(guest=0;guest<native_sparse_capacity;guest++)if(native_sparse_ports[guest].port==port)return native_sparse_ports[guest].name;
+     for(guest=0x200;guest<4096;guest++)if(native_ports[guest]==port){native_refresh(guest);return guest;}
+     if(next_port>=4096)qerror("native Mach capability table exhausted");
+     guest=next_port++;native_ports[guest]=port;native_refresh(guest);
+@@ -326,15 +338,14 @@
+         fprintf(stderr,"native shared map object=%u offset=%llu bytes=%u result=%u\n",port,offset,bytes,kr);*code=kr;return 1;
+     }
+     if(id==3202) {
+-        uint32_t oldname,newname,i,slot=128;mach_port_t oldport;
++        uint32_t oldname,newname,i,slot;mach_port_t oldport;
+         if(size!=40)qerror("invalid mach_port_rename wire");
+         oldname=ldl(g2h(a+32));newname=ldl(g2h(a+36));oldport=native_name(oldname);
+         if(newname<4096)qerror("low explicit Mach rename needs separate native-name allocation");
+-        for(i=0;i<128;i++)if(!native_sparse_ports[i].port && slot==128)slot=i;
+-        if(slot==128)qerror("explicit Mach name table exhausted");
++        slot=native_sparse_slot(oldname);
+         kr=mach_port_rename(mach_task_self(),oldport,newname);
+         if(!kr) {
+-            if(oldname>=4096){for(i=0;i<128;i++)if(native_sparse_ports[i].name==oldname){memset(&native_sparse_ports[i],0,sizeof(native_sparse_ports[i]));break;}}
++            if(oldname>=4096){for(i=0;i<native_sparse_capacity;i++)if(native_sparse_ports[i].name==oldname){memset(&native_sparse_ports[i],0,sizeof(native_sparse_ports[i]));break;}}
+             else native_refresh(oldname);
+             native_sparse_ports[slot].name=newname;native_sparse_ports[slot].port=newname;
+         }

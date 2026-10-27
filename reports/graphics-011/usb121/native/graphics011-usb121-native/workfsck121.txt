@@ -1,0 +1,11 @@
+21040 files, 1238277 used, 2824426 free ** /dev/rdisk2s1
+Reverse Byte order Filesystem Detected
+** Last Mounted on /private/var/tmp
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+(502 frags, 705981 blocks, 0.0% fragmentation)
+
+***** FILE SYSTEM MARKED CLEAN *****

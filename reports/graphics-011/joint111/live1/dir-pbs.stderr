@@ -1,0 +1,53 @@
+0001513 8fec544c 00000101 00000202 223ea770 00000c84 00000000 00000000 00000003
+native Mach capability guest=404 host=4099 receive=0 set=1 send=0
+syscall pc=24e60328 r0=4294967265 r3=22399600 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c9a 00000000 00000000 00000403 00000404
+syscall pc=24e60328 r0=4294967265 r3=22399740 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 00000001 00000ed9 00000000 00000000 ff000000 00c00000 1f000000
+syscall pc=24df7dc8 r0=188 r3=24fb442c r4=22399340 r5=17a9bc80 r6=80808080 r7=00000000 r8=002f5379 lr=24f39328 res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Support/LaunchCFMApp result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24df7dcc
+syscall pc=24df7dc8 r0=188 r3=223993a0 r4=223992e0 r5=17a9bc80 r6=80808080 r7=00000000 r8=002f5379 lr=24f3933c res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/CoreServices/pbs result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24df7dcc
+syscall pc=24dfcf68 r0=26 r3=0000c001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f19254 lr=24f91d48 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000c003 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f19254 lr=24f91d64 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24df7588 r0=24 r3=223997c0 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f19254 lr=24f996a0 res=ffffffff
+return r3=0 error=0 resume=24df758c
+syscall pc=24dfcf68 r0=26 r3=0000c0ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f19254 lr=24f91d80 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000b000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee5034 lr=25476a4c res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24e60328 r0=4294967265 r3=22399950 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 8fec9248 00000101 00000202 223999b0 00000ed9 00000000 00000000 22399acc 00004000 03000001
+syscall pc=24dfcf68 r0=26 r3=0000f000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=00000001 lr=255f3658 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000f100 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=00000001 lr=25600cb0 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000c100 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=00000001 lr=24f45c8c res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000c1ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=223ea010 lr=256010e8 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000f1ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34df2f48 lr=255f3794 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000f0ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34df2f48 lr=254768c0 res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfcf68 r0=26 r3=0000b00f r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=000007c8 lr=8fe8601c res=ffffffff
+return r3=1 error=1 resume=24dfcf68
+syscall pc=24dfbb08 r0=33 r3=00009750 r4=00000000 r5=22399fc8 r6=22399ff8 r7=8fec5550 r8=bfffff1f lr=00002cf0 res=ffffffff
+return r3=2 error=2 resume=24dfbb08
+syscall pc=24e2acc8 r0=266 r3=34f1c124 r4=00000202 r5=00000180 r6=38393764 r7=39626531 r8=897d9be1 lr=24f59aa0 res=ffffffff
+native shm syscall=266 name=CFPBS:000000d0897d9be1 flags=202 result=3 errno=0
+return r3=3 error=0 resume=24e2accc
+syscall pc=24e20d08 r0=201 r3=00000003 r4=00000000 r5=00bfc000 r6=38393764 r7=39626531 r8=897d9be1 lr=24f59ab4 res=ffffffff
+return r3=0 error=0 resume=24e20d0c
+syscall pc=24e02068 r0=197 r3=ff002000 r4=00bfc000 r5=00000003 r6=00000011 r7=00000003 r8=00000000 lr=24f59adc res=ffffffff
+real high map guest=ff002000 host=44fa8000 bytes=bfc000 offset=0 result=ff002000 errno=0
+return r3=4278198272 error=0 resume=24e0206c
+syscall pc=24df76a8 r0=6 r3=00000003 r4=00bfc000 r5=00000003 r6=00000011 r7=00000003 r8=00000000 lr=24f59ae4 res=ffffffff
+return r3=0 error=0 resume=24df76ac
+syscall pc=24e60328 r0=4294967265 r3=22399ca0 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 22399d50 00000c84 00000000 00000000 00000001
+native Mach capability guest=405 host=4355 receive=1 set=0 send=0

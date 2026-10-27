@@ -1,0 +1,11 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/joint132.tgz graphics011-joint132-results graphics011-joint132;sync;umount /exchange' 0
++ md5 /mach_kernel /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ mount
++ kextstat
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ export REMAKLAR_JOINT_SAMPLES=72
++ REMAKLAR_JOINT_SAMPLES=72
++ perl /var/tmp/graphics011-stage132/joint.pl /var/tmp/graphics011-joint132 /var/tmp/graphics011-build131/qemu-ppc /var/tmp/jaguar

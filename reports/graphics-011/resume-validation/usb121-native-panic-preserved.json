@@ -1,0 +1,36 @@
+{
+  "result": "native kernel panic, not translator execution",
+  "native_pid": 146,
+  "trap": 0,
+  "eip": "0x31a1866f",
+  "module": "original IOHIDFamily 1.2 loaded at 0x31a04000",
+  "operation": "IOHIDSystem enableEvents selector1, native i386 regression",
+  "ram_compression": "gzip; decompress to QEMU migration input",
+  "source_command": "logs/graphics-011-usb121/command.json",
+  "files": {
+    "build/011-usb121-native-panic-state.bin.gz": {
+      "bytes": 20875079,
+      "sha256": "e9f060b68ec74aad066c7e77c7ca7ab261bf40bceca5bdeb4a8c8e4b28248aa1"
+    },
+    "vm/darwin602-graphics-011-usb121.qcow2": {
+      "bytes": 4390912,
+      "sha256": "fd7fff92d21468f859ce902f5129cd5416c8a381f8003ff0983c04809d7f505c"
+    },
+    "vm/graphics011-usb121-work.qcow2": {
+      "bytes": 11534336,
+      "sha256": "80e848cd31b91a803cc6f8167f8312479e193fea0359ac764c7caa684c272290"
+    },
+    "build/graphics011-usb121-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "5a21124a5d916a328db545d3eaf97dd35fa0eb70d117b0a935874d740fa2ddd8"
+    },
+    "build/usb121-native-hang.png": {
+      "bytes": 32218,
+      "sha256": "296da21f6c3861961400c65c08c444f64018267f36e1b8afd4b2fd7c78f73abf"
+    },
+    "build/usb121-iohidfamily-loaded.bin": {
+      "bytes": 118784,
+      "sha256": "9f915e94a8153a62a1a41c20c6c8c29ab18da69d6e5240b25252c45a26ddf6b5"
+    }
+  }
+}

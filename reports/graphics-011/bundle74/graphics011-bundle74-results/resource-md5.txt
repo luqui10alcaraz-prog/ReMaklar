@@ -1,0 +1,4 @@
+MD5 (/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Info.plist) = ec7c5c58ffce7d673a36513510699d03
+MD5 (/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.ni) = 7645847ba6054239e2a11c26ae80a014
+MD5 (/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/info.nib) = 9c57221bb8b6e4b7cf5460196cbdccfa
+MD5 (/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.ni) = 6eccb7e72ce62b4fc686b4957d762a71

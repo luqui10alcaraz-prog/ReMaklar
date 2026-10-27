@@ -1,0 +1,96 @@
+ilesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   799993  3059575    20%    /exchange
++ test -e /var/tmp/graphics011-run4
++ echo 'COPY /var/tmp/graphics011-run4'
+COPY /var/tmp/graphics011-run4
++ cp -Rp /var/tmp/graphics011-run4 /exchange/
++ date
+Mon Oct 26 17:05:34 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   802746  3056822    20%    /exchange
++ test -e /var/tmp/graphics011-run41
++ echo 'COPY /var/tmp/graphics011-run41'
+COPY /var/tmp/graphics011-run41
++ cp -Rp /var/tmp/graphics011-run41 /exchange/
++ date
+Mon Oct 26 17:05:35 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   814590  3044978    21%    /exchange
++ test -e /var/tmp/graphics011-run43
++ echo 'COPY /var/tmp/graphics011-run43'
+COPY /var/tmp/graphics011-run43
++ cp -Rp /var/tmp/graphics011-run43 /exchange/
++ date
+Mon Oct 26 17:05:37 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   826571  3032997    21%    /exchange
++ test -e /var/tmp/graphics011-run48
++ echo 'COPY /var/tmp/graphics011-run48'
+COPY /var/tmp/graphics011-run48
++ cp -Rp /var/tmp/graphics011-run48 /exchange/
++ date
+Mon Oct 26 17:05:38 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   838693  3020875    21%    /exchange
++ test -e /var/tmp/graphics011-run5
++ echo 'COPY /var/tmp/graphics011-run5'
+COPY /var/tmp/graphics011-run5
++ cp -Rp /var/tmp/graphics011-run5 /exchange/
++ date
+Mon Oct 26 17:05:38 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   841450  3018118    21%    /exchange
++ test -e /var/tmp/graphics011-run50
++ echo 'COPY /var/tmp/graphics011-run50'
+COPY /var/tmp/graphics011-run50
++ cp -Rp /var/tmp/graphics011-run50 /exchange/
++ date
+Mon Oct 26 17:05:39 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   853086  3006482    22%    /exchange
++ test -e /var/tmp/graphics011-run51
++ echo 'COPY /var/tmp/graphics011-run51'
+COPY /var/tmp/graphics011-run51
++ cp -Rp /var/tmp/graphics011-run51 /exchange/
++ date
+Mon Oct 26 17:05:40 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   864752  2994816    22%    /exchange
++ test -e /var/tmp/graphics011-run53
++ echo 'COPY /var/tmp/graphics011-run53'
+COPY /var/tmp/graphics011-run53
++ cp -Rp /var/tmp/graphics011-run53 /exchange/
++ date
+Mon Oct 26 17:05:41 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   872894  2986674    22%    /exchange
++ test -e /var/tmp/graphics011-run55
++ echo 'COPY /var/tmp/graphics011-run55'
+COPY /var/tmp/graphics011-run55
++ cp -Rp /var/tmp/graphics011-run55 /exchange/
++ date
+Mon Oct 26 17:05:42 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   883512  2976056    22%    /exchange
++ test -e /var/tmp/graphics011-run57
++ echo 'COPY /var/tmp/graphics011-run57'
+COPY /var/tmp/graphics011-run57
++ cp -Rp /var/tmp/graphics011-run57 /exchange/
++ date
+Mon Oct 26 17:05:43 PST 2026
++ df -k /exchange
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk1s1   4062703   895261  2964307    23%    /exchange
++ test -e /var/tmp/graphics011-run59
++ echo 'COPY /var/tmp/graphics011-run59'
+COPY /var/tmp/graphics011-run59
++ cp -Rp /var/tmp/graphics011-run59 /exchange/

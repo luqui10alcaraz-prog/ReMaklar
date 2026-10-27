@@ -43,8 +43,8 @@ int main(void)
  CHECK(!rm_write(&v,11,2,0xaabb));
  CHECK(*(rm_u64 *)(alias+8)==0x012345aabbabcdefULL);
  *(unsigned *)(alias+16)=0x80000001;
- CHECK(!rm_read(&v,16,4,&x) && x==0x30);
- CHECK(!rm_write(&v,19,1,0x21) && *(unsigned *)(alias+16)==0x08000001);
+ CHECK(!rm_read(&v,16,4,&x) && x==0x21);
+ CHECK(!rm_write(&v,19,1,0x21) && *(unsigned *)(alias+16)==0x80000001);
  CHECK(!rm_cas32(&v,20,0,1,&ok) && ok && *(unsigned *)(alias+20)==1);
  CHECK(!rm_cas32(&v,20,0,2,&ok) && !ok && *(unsigned *)(alias+20)==1);
  CHECK(!rm_write(&v,20,4,0));

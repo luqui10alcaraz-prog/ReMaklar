@@ -1,0 +1,124 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;paths=graphics011-run89-results;if test -d graphics011-joint89;then paths="$paths graphics011-joint89";fi;gnutar czf /exchange/joint89.tgz $paths;sync;umount /exchange' 0
++ df -k
++ md5 /mach_kernel /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+++ md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaBold.otf
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/AquaKanaBold.otf) = 2be81c5fa145eeaead9d423d3dc8ec1c
+++ md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaRegular.otf
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/AquaKanaRegular.otf) = 982753f4b9ad18e864d69c7125e68fe0
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Courier.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Courier.dfont) = f1aaf9c362e1ebb7c639c655da4ff7f0
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Geneva.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Geneva.dfont) = 1135ee8b8a87b0b0f81149e22cbcd269
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont) = 0d7a674657b5839791bb22d674777431
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont) = 841d7659b013601caf42800970b7f71f
+++ md5 /var/tmp/jaguar/System/Library/Fonts/LastResort.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/LastResort.dfont) = 12b5fb6d3821bfa8d5567ecf1c221fa0
+++ md5 /var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont) = 58efe5f45290436b94780794d37eb04b
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Monaco.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Monaco.dfont) = 9df9f9a5cf7a6f841d5efc0f10e2c850
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Symbol.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Symbol.dfont) = 95a2f22c2b816d2d80c839e52224b330
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Times.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Times.dfont) = fc8f7e837ac111ce9ccf197650b3543b
+++ md5 /var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont) = 8372f6178401f758ff99bce3bbda60ff
++ cp /var/tmp/graphics011-stage89/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build89/qemu-ppc
++ exe=/var/tmp/graphics011-build89/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage89/utimes.c -o /var/tmp/graphics011-run89-results/utimes-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage89/utimes.c -o /var/tmp/graphics011-run89-results/utimes-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/utimes-native /var/tmp/graphics011-run89-results/utimes-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/utimes-previous /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run89-results/utimes-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-run89-results/utimes-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/utimes-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run89-results/utimes-ppc
++ cmp /var/tmp/graphics011-run89-results/utimes-native.stdout /var/tmp/graphics011-run89-results/utimes-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/utimes-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/utimes-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/utimes-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/utimes-jaguar.status
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage89/delete.c -o /var/tmp/graphics011-run89-results/delete-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage89/delete.c -o /var/tmp/graphics011-run89-results/delete-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/delete-native /var/tmp/graphics011-run89-results/delete-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/delete-previous /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run89-results/delete-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-run89-results/delete-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/delete-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run89-results/delete-ppc
++ cmp /var/tmp/graphics011-run89-results/delete-native.stdout /var/tmp/graphics011-run89-results/delete-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/delete-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/delete-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/delete-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/delete-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/vmcopy-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/vmcopy-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/vmcopy-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/vmcopy-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/rename-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/rename-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/rename-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/rename-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/fcntl-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/fcntl-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/fcntl-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/fcntl-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/taskthreads-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/taskthreads-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/taskthreads-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/taskthreads-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/priority-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/priority-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/priority-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/priority-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/forkio-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/forkio-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/forkio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/forkio-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/kinfo-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/kinfo-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/kinfo-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/kinfo-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/ool-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/ool-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/ool-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/ool-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/remoteio-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/remoteio-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/remoteio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/remoteio-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/remote-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/remote-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/remote-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/remote-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/shared-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/shared-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/shared-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/shared-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/high-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/high-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/high-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/high-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/timer-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/timer-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/timer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/timer-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/capability-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/capability-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/capability-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/capability-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/trailer-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/trailer-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/trailer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/trailer-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/threads-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/threads-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/threads-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/threads-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run89-results/fasttrap-jaguar /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/fasttrap-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run89-results/fasttrap-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run89-results/fasttrap-jaguar.status
++ echo probes_completed
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ export REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ perl /var/tmp/graphics011-stage89/joint.pl /var/tmp/graphics011-joint89 /var/tmp/graphics011-build89/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ paths=graphics011-run89-results
++ test -d graphics011-joint89
++ paths=graphics011-run89-results graphics011-joint89
++ gnutar czf /exchange/joint89.tgz graphics011-run89-results graphics011-joint89

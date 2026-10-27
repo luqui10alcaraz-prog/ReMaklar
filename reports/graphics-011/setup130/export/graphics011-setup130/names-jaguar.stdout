@@ -1,0 +1,10 @@
+real registry disk0s2 plane=IOService result=0 name=Untitled 2
+real registry disk0s2 plane= result=0 name=Untitled 2
+real registry disk0s2 plane=ReMaklar-No-Such-Plane result=0 name=Untitled 2
+real registry disk2s1 plane=IOService result=0 name=Untitled 1
+real registry disk2s1 plane= result=0 name=Untitled 1
+real registry disk2s1 plane=ReMaklar-No-Such-Plane result=0 name=Untitled 1
+real registry disk3s0 plane=IOService result=0 name=Untitled 0
+real registry disk3s0 plane= result=0 name=Untitled 0
+real registry disk3s0 plane=ReMaklar-No-Such-Plane result=0 name=Untitled 0
+native kernel registry names, empty and unknown planes observed OK

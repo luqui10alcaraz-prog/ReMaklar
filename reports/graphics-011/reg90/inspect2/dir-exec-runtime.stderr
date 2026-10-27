@@ -1,0 +1,28 @@
+4f2734c
+syscall pc=24f27528 r0=199 r3=00000004 r4=00000000 r5=00000000 r6=00000000 r7=6b6c6172 r8=24dea830 lr=24f27494 res=ffffffff
+return r3=0 error=0 resume=24f2752c
+syscall pc=24f266a8 r0=6 r3=00000004 r4=24dea800 r5=00000106 r6=00000000 r7=6b6c6172 r8=24dea010 lr=24f545d8 res=ffffffff
+return r3=0 error=0 resume=24f266ac
+syscall pc=24f2b568 r0=190 r3=24dea400 r4=22397ba0 r5=00000106 r6=00000000 r7=6b6c6172 r8=24dea010 lr=24f543f0 res=ffffffff
+return r3=0 error=0 resume=24f2b56c
+syscall pc=24f1c508 r0=3 r3=00000003 r4=22397ed4 r5=00000006 r6=65632d31 r7=36353000 r8=24dea010 lr=00002678 res=ffffffff
+return r3=6 error=0 resume=24f1c50c
+syscall pc=24f20648 r0=92 r3=00000004 r4=00000001 r5=00000006 r6=65632d31 r7=36353000 r8=24dea010 lr=000026d0 res=ffffffff
+return r3=9 error=9 resume=24f20648
+syscall pc=24f266a8 r0=6 r3=00000003 r4=ffffffff r5=00000006 r6=65632d31 r7=36353000 r8=24dea010 lr=00002708 res=ffffffff
+return r3=0 error=0 resume=24f266ac
+syscall pc=24f2b5a8 r0=10 r3=00002f54 r4=ffffffff r5=00000006 r6=65632d31 r7=36353000 r8=24dea010 lr=00002720 res=ffffffff
+return r3=0 error=0 resume=24f2b5ac
+syscall pc=24f2a0c8 r0=12 r3=00002f5c r4=ffffffff r5=00000006 r6=65632d31 r7=36353000 r8=24dea010 lr=00002738 res=ffffffff
+return r3=0 error=0 resume=24f2a0cc
+syscall pc=24f5f028 r0=137 r3=bfffff79 r4=ffffffff r5=00000006 r6=65632d31 r7=36353000 r8=24dea010 lr=00002750 res=ffffffff
+return r3=0 error=0 resume=24f5f02c
+syscall pc=24f20608 r0=189 r3=00000001 r4=22397b10 r5=22397bc4 r6=80808080 r7=00000000 r8=00000000 lr=24f268f8 res=ffffffff
+return r3=0 error=0 resume=24f2060c
+syscall pc=24f1efe8 r0=4 r3=00000001 r4=24dea400 r5=0000002d r6=0000000a r7=00000001 r8=94f1b000 lr=24f1c78c res=ffffffff
+return r3=45 error=0 resume=24f1efec
+syscall pc=24f20fc8 r0=1 r3=00000000 r4=24dea400 r5=0000002d r6=0000000a r7=00000001 r8=94f1b000 lr=00002420 res=ffffffff
+original PPC exit pid=1650 status=0 lr=00002420
+exit frame=22397f20 return=00002420
+exit frame=22397f80 return=0000229c
+exit frame=22397fc0 return=00000006

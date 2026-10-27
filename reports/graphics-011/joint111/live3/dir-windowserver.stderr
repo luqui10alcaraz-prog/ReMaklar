@@ -1,0 +1,55 @@
+86 bytes=36
+native Mach capability guest=488 host=19703 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=24 id=29327
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=0000002c r6=00008000 r7=00000407 r8=000003ba lr=24df2844 res=ffffffff
+native Mach send id=29427 destination=488 bytes=44
+native Mach capability guest=489 host=19707 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=36 id=29433
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=0000031f lr=24df2844 res=ffffffff
+native Mach send id=29533 destination=489 bytes=36
+native Mach capability guest=48a host=19711 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=44 id=29366
+syscall pc=24e60328 r0=4294967265 r3=22389530 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000204 00000000 00000ed9 00000000 00000000 00000000 0000002c 00000001
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000034 r6=00008000 r7=00000407 r8=000002e7 lr=24df2844 res=ffffffff
+native Mach send id=29466 destination=48a bytes=52
+native application OOL send id=29466 bytes=44 copy=1 deallocate=1
+native Mach capability guest=48b host=19459 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=48 id=29329
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000028 r6=00008000 r7=00000407 r8=000002d0 lr=24df2844 res=ffffffff
+native Mach send id=29429 destination=48b bytes=40
+native Mach capability guest=48c host=19463 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=40 id=29323
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=000002bd lr=24df2844 res=ffffffff
+native Mach send id=29423 destination=48c bytes=36
+native Mach capability guest=48d host=19467 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=40 id=29321
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=0000029c lr=24df2844 res=ffffffff
+native Mach send id=29421 destination=48d bytes=36
+native Mach capability guest=48e host=19471 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=48 id=29329
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000028 r6=00008000 r7=00000407 r8=00000238 lr=24df2844 res=ffffffff
+native Mach send id=29429 destination=48e bytes=40
+native Mach capability guest=48f host=19475 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=449 bytes=40 id=29360
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000028 r6=00008000 r7=00000407 r8=00000133 lr=24df2844 res=ffffffff
+native Mach send id=29460 destination=48f bytes=40
+native Mach message error=10004003 options=2000103 send=40 receive=32768
+syscall pc=24e60328 r0=4294967265 r3=223917e0 r4=02000102 r5=00000000 r6=00008000 r7=00000407 r8=000009b0 lr=24df2670 res=ffffffff
+native Mach trailer bytes=20 elements=2
+native Mach receive port=43d bytes=36 id=72
+syscall pc=24e0d0a8 r0=182 r3=00000001 r4=00000001 r5=00000001 r6=00008000 r7=00000000 r8=000009b0 lr=284e7620 res=ffffffff
+return r3=0 error=0 resume=24e0d0ac
+syscall pc=24e60328 r0=4294967265 r3=22391690 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3205 destination=101 send=36 recv=44: 00001513 44f9f350 00000101 00000204 22391720 00000c85 00000000 00000000 0f4d0000
+syscall pc=24e60328 r0=4294967265 r3=223917e0 r4=02000102 r5=00000000 r6=00008000 r7=00000407 r8=00000221 lr=24df2670 res=ffffffff
+native Mach message error=10004003 options=2000102 send=0 receive=32768
+syscall pc=24e60328 r0=4294967265 r3=223917e0 r4=02000102 r5=00000000 r6=00008000 r7=00000407 r8=00001387 lr=24df2670 res=ffffffff

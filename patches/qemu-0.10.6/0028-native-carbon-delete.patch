@@ -1,0 +1,26 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -236,7 +236,7 @@
+     case EIO: return 5; case EBADF: return 9; case ENOMEM: return 12;
+     case ESRCH: return 3; case ECHILD: return 10; case EAGAIN: return 35;
+     case E2BIG: return 7; case ENOEXEC: return 8;
+-    case EACCES: return 13; case EFAULT: return 14; case EEXIST: return 17;
++    case EACCES: return 13; case EFAULT: return 14; case EBUSY: return 16; case EEXIST: return 17;
+     case ENOTDIR: return 20; case EISDIR: return 21; case EINVAL: return 22;
+     case EMFILE: return 24; case EPIPE: return 32;
+     case ENOTSUP: return 45;
+@@ -1026,6 +1026,14 @@
+         }
+         break;
+     }
++    case 226: /* Private Carbon delete preserves the kernel's NODELETEBUSY. */
++        p=guest_path(a,path,sizeof(path));if(!p)break;
++#ifdef __APPLE__
++        r=syscall(226,p);
++#else
++        errno=ENOTSUP;
++#endif
++        break;
+     case 138: { /* Jaguar PPC32 has two big-endian timeval records. */
+         struct timeval times[2];unsigned j;
+         if(b) {

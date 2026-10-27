@@ -1,0 +1,52 @@
+{
+  "reason": "Native original ApplePS2Mouse unload PID519 blocked after real native pointer/keyboard tests. Source42 and all probe results retained. Stop before trying alternate original USB/OHCI driver; preserved original windows and direct66 untouched.",
+  "monitor": 4452,
+  "state": "stopped after complete migration; RAM includes guest filesystem cache and live kernel ports/locks",
+  "source_disks": {
+    "root": "vm/darwin602-graphics-011-input107.qcow2",
+    "fat": "build/graphics011-input107-exchange.img",
+    "work": "vm/graphics011-input107-work.qcow2"
+  },
+  "guest_mounts": {
+    "root": "/dev/disk0s2",
+    "work": "/dev/disk1s1 on /var/tmp",
+    "exchange": "/dev/disk2 on /exchange"
+  },
+  "files": {
+    "build/011-input120-kextunload-machine-state.bin": {
+      "bytes": 239324893,
+      "sha256": "6110ce5038363681266c656d33e23992d7a23bec12263a416eb6dfb97e7eadff"
+    },
+    "build/011-input120-kextunload-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "1d7519b6d1c06458837ff0ec297134374b3fb61820cb7b8c1e14d1c6e5bd5055"
+    },
+    "build/011-input120-kextunload-preserved.ppm": {
+      "bytes": 2359312,
+      "sha256": "6ffce25f324d4bc13e073e5bcf99a79bafa04cca46c814be897fd4f0fbdfd1c8"
+    },
+    "vm/darwin602-graphics-011-input120-kextunload-preserved.qcow2": {
+      "bytes": 12845056,
+      "sha256": "99b1726d9fda8a481a511e3e4b7516b1fc2aeef825322a27213c3158f0c06d9d"
+    },
+    "build/graphics011-input120-kextunload-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "99e58b104bd3d2d0016fe16360b509b2d621e44768d6df513edd66b71568147a"
+    },
+    "vm/graphics011-input120-kextunload-work-preserved.qcow2": {
+      "bytes": 1345585152,
+      "sha256": "3d7908ceb4556987912b6319e9e185867493e3f63bdda92697dced00a4fb42e1"
+    }
+  },
+  "cdrom": {
+    "file": "build/packages011-104.iso",
+    "bytes": 405262336,
+    "sha256": "bb733aee22caddffbeb3fe99b1f9e3223789704a805212b89ac6d21b48e05229"
+  },
+  "hardware_extra_args": [
+    "-usb",
+    "-device",
+    "usb-mouse"
+  ],
+  "mouse_device": "QEMU PS/2 Mouse"
+}

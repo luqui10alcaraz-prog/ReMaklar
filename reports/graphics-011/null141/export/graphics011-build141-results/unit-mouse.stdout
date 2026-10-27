@@ -1,0 +1,1 @@
+production mouse descriptors: seven types, first/last slot, mixed byte/uint16 prefix, signed deltas, partial RMW, opaque inactive bytes and fail-closed tablet/unknown types OK

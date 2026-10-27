@@ -1,0 +1,24 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -1014,7 +1014,20 @@
+         break;
+     }
+     case 92: /* Real descriptor and open-file status flags. */
+-        if(b==48) {
++        if(b>=7 && b<=9) {
++#ifdef __APPLE__
++            struct flock lock;int fd=host_fd(a),saved,command;
++            if(fd<0)break;
++            if(!remaklar_guest_access(c,24,PAGE_READ|(b==7?PAGE_WRITE:0))){errno=EFAULT;break;}
++            memset(&lock,0,sizeof(lock));lock.l_start=(int64_t)ldq(g2h(c));lock.l_len=(int64_t)ldq(g2h(c+8));
++            lock.l_pid=(int32_t)ldl(g2h(c+16));lock.l_type=(int16_t)lduw(g2h(c+20));lock.l_whence=(int16_t)lduw(g2h(c+22));
++            command=b==7?F_GETLK:b==8?F_SETLK:F_SETLKW;
++            remaklar_gate_leave();r=fcntl(fd,command,&lock);saved=errno;remaklar_gate_enter(env);errno=saved;
++            if(!r && b==7){stq(g2h(c),lock.l_start);stq(g2h(c+8),lock.l_len);stl(g2h(c+16),lock.l_pid);stw(g2h(c+20),lock.l_type);stw(g2h(c+22),lock.l_whence);}
++#else
++            errno=ENOTSUP;
++#endif
++        } else if(b==48) {
+ #ifdef __APPLE__
+             r=fcntl(host_fd(a),F_NOCACHE,c);
+ #else

@@ -1,0 +1,78 @@
+{
+  "source_iso": "media/Mac OS X Jaguar Install CD.iso",
+  "volume": "Mac OS X Install Disc 1",
+  "files": [
+    {
+      "path": "System/Library/Fonts/AquaKanaBold.otf",
+      "bytes": 67660,
+      "md5": "2be81c5fa145eeaead9d423d3dc8ec1c",
+      "sha256": "8abc7f3d4b2401bd487c4a4a17dcf4a6b7d5b889cbb34bebb3d1d8a5a3e01953"
+    },
+    {
+      "path": "System/Library/Fonts/AquaKanaRegular.otf",
+      "bytes": 67628,
+      "md5": "982753f4b9ad18e864d69c7125e68fe0",
+      "sha256": "551287e3fe434bfe60c93f53e09ea73d222c991c55610f909e47739b1da0757b"
+    },
+    {
+      "path": "System/Library/Fonts/Courier.dfont",
+      "bytes": 203500,
+      "md5": "f1aaf9c362e1ebb7c639c655da4ff7f0",
+      "sha256": "ff388f4ae4e4a9b0ce9dc8107b3fb2ea2aa869becb261702797da54b626873b8"
+    },
+    {
+      "path": "System/Library/Fonts/Geneva.dfont",
+      "bytes": 150550,
+      "md5": "1135ee8b8a87b0b0f81149e22cbcd269",
+      "sha256": "f6e9652f53ce966e0bad67bc067d82b70954e15d99bbfee8b18edc7cdfd60af8"
+    },
+    {
+      "path": "System/Library/Fonts/Helvetica.dfont",
+      "bytes": 218708,
+      "md5": "0d7a674657b5839791bb22d674777431",
+      "sha256": "9ced68524da8d3fd5437e938f10470923fbd1f94475f8efcdd886c0c0bd45124"
+    },
+    {
+      "path": "System/Library/Fonts/Keyboard.dfont",
+      "bytes": 21834,
+      "md5": "841d7659b013601caf42800970b7f71f",
+      "sha256": "9a7ed41b84d580b6ccaaab544666a7fbe2341d456f5e1d73b39bb48e3f88b706"
+    },
+    {
+      "path": "System/Library/Fonts/LastResort.dfont",
+      "bytes": 5937390,
+      "md5": "12b5fb6d3821bfa8d5567ecf1c221fa0",
+      "sha256": "9742db2fa343e4e3f559793ac959a68e208b0c846892999196d44917faafa048"
+    },
+    {
+      "path": "System/Library/Fonts/LucidaGrande.dfont",
+      "bytes": 2795041,
+      "md5": "58efe5f45290436b94780794d37eb04b",
+      "sha256": "597cf6bbe1b4d0b1486ef1109143e23776eb59ee99109e2e99079f25c58eac5b"
+    },
+    {
+      "path": "System/Library/Fonts/Monaco.dfont",
+      "bytes": 93925,
+      "md5": "9df9f9a5cf7a6f841d5efc0f10e2c850",
+      "sha256": "842b05fa0147a1f8e26367ac43f444c001b624a271a32762b9f497d14aa099a0"
+    },
+    {
+      "path": "System/Library/Fonts/Symbol.dfont",
+      "bytes": 75110,
+      "md5": "95a2f22c2b816d2d80c839e52224b330",
+      "sha256": "284b316dc86ad71089ebf6a05f787487b443a1a20ce8a64aba93008f1c447413"
+    },
+    {
+      "path": "System/Library/Fonts/Times.dfont",
+      "bytes": 412019,
+      "md5": "fc8f7e837ac111ce9ccf197650b3543b",
+      "sha256": "e9e9412e869b1eecdd9f4f3dfdfd8d709fb7e9d20044286dc3f63adff74b5856"
+    },
+    {
+      "path": "System/Library/Fonts/ZapfDingbats.dfont",
+      "bytes": 154474,
+      "md5": "8372f6178401f758ff99bce3bbda60ff",
+      "sha256": "ff73f294ef7231d96386fea42364beff97cf9bc556da66e9b51d873b8e0b5c9b"
+    }
+  ]
+}

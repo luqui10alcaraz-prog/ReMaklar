@@ -1,0 +1,58 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -171,11 +171,21 @@
+     }
+     stl(g2h(ptr),base);stl(g2h(flags),0);
+     if(preferred==0x93070000 && getenv("REMAKLAR_OBSERVE_APPKIT")) {
++        const char *custom=getenv("REMAKLAR_OBSERVE_APPKIT_OFFSETS");
+         /* Observe original NSApplicationMain branches; do not change results. */
+-        remaklar_observe_add(env,base+0x624e0);
+-        remaklar_observe_add(env,base+0x625c4);
+-        remaklar_observe_add(env,base+0x625e8);
+-        remaklar_observe_add(env,base+0x625fc);
++        if(custom && *custom) {
++            unsigned count=0;
++            while(*custom){char *end;unsigned long offset=strtoul(custom,&end,16);
++                if(end==custom || offset>=0x400000 || (offset&3) || ++count>8)qerror("invalid AppKit observation offset");
++                remaklar_observe_add(env,base+offset);
++                if(!*end)break;if(*end!=',')qerror("invalid AppKit observation separator");custom=end+1;
++            }
++        } else {
++            remaklar_observe_add(env,base+0x624e0);
++            remaklar_observe_add(env,base+0x625c4);
++            remaklar_observe_add(env,base+0x625e8);
++            remaklar_observe_add(env,base+0x625fc);
++        }
+     }
+     fprintf(stderr,"split-private preferred=%08x base=%08x mappings=%u\n",preferred,base,count);
+     return 0;
+@@ -1033,7 +1043,7 @@
+         attrs.commonattr=ldl(g2h(b+4));attrs.volattr=ldl(g2h(b+8));attrs.dirattr=ldl(g2h(b+12));attrs.fileattr=ldl(g2h(b+16));attrs.forkattr=ldl(g2h(b+20));
+         buffer=malloc(size?size:1);if(!buffer){errno=ENOMEM;break;}
+         r=getattrlist(p,&attrs,buffer,size,env->gpr[7]);i=errno;
+-        fprintf(stderr,"native getattrlist masks=%x/%x/%x/%x/%x result=%d errno=%d\n",attrs.commonattr,attrs.volattr,attrs.dirattr,attrs.fileattr,attrs.forkattr,r,r?i:0);
++        fprintf(stderr,"native getattrlist path=%s masks=%x/%x/%x/%x/%x result=%d errno=%d\n",p,attrs.commonattr,attrs.volattr,attrs.dirattr,attrs.fileattr,attrs.forkattr,r,r?i:0);
+         if(!r){
+             uint32_t bytes=*(uint32_t *)buffer;
+             if(attrs.commonattr==1 && !attrs.volattr && !attrs.dirattr && !attrs.fileattr && !attrs.forkattr && bytes>=12 && bytes<=size) {
+@@ -1166,6 +1176,9 @@
+         else {
+             p = guest_path(a, path, sizeof(path));
+             r = p ? (n == 188 ? stat(p, &st) : lstat(p, &st)) : -1;
++            if(p && getenv("REMAKLAR_TRACE_PATHS")) {int saved=errno;
++                fprintf(stderr,"native path syscall=%u path=%s result=%d errno=%d mode=%o\n",n,p,r,r?saved:0,r?0:st.st_mode);errno=saved;
++            }
+         }
+         if (!r) encode_stat(b, &st);
+         break;
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -49,7 +49,7 @@
+     for(i=0;i<8;i++)if(observed_points[i] && env->nip==observed_points[i]){
+         fprintf(stderr,"PPC observation pid=%ld pc=%08x lr=%08x\n",(long)getpid(),(unsigned)env->nip,(unsigned)env->lr);
+         for(j=3;j<32;j++)fprintf(stderr,"observe r%u=%08x\n",j,(unsigned)env->gpr[j]);
+-        for(j=26;j<32;j++){
++        for(j=23;j<32;j++){
+             uint32_t a=env->gpr[j];unsigned k;
+             if(remaklar_guest_access(a,64,PAGE_READ)){
+                 fprintf(stderr,"observe memory r%u:",j);

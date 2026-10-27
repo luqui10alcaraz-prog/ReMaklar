@@ -1,0 +1,64 @@
+﻿9375495c mflr     r0                          
+93754960 stmw     r29, -0xc(r1)               
+93754964 bdnzl    0x93754968                  __CGSOrderWindow+0xc
+93754968 stw      r0, 8(r1)                   
+9375496c stwu     r1, -0x80(r1)               
+93754970 mflr     r31                         
+93754974 addis    r9, r31, 0xffa              
+93754978 stw      r4, 0x60(r1)                
+9375497c addi     r29, r1, 0x40               
+93754980 lwz      r9, -0x28a0(r9)             
+93754984 stw      r5, 0x64(r1)                
+93754988 lwz      r0, 0(r9)                   
+9375498c lwz      r11, 4(r9)                  
+93754990 stw      r0, 0x58(r1)                
+93754994 li       r0, 0x1513                  
+93754998 stw      r6, 0x68(r1)                
+9375499c stw      r11, 0x5c(r1)               
+937549a0 stw      r0, 0x40(r1)                
+937549a4 stw      r3, 0x48(r1)                
+937549a8 bl       0x938b27b4                  rest_world_eh_r7r8+0x208c
+937549ac stw      r3, 0x4c(r1)                
+937549b0 mr       r7, r3                      
+937549b4 li       r0, 0x721a                  
+937549b8 li       r4, 3                       
+937549bc mr       r3, r29                     
+937549c0 stw      r0, 0x54(r1)                
+937549c4 li       r5, 0x2c                    
+937549c8 li       r6, 0x2c                    
+937549cc li       r8, 0                       
+937549d0 li       r9, 0                       
+937549d4 bl       0x938b1fd4                  rest_world_eh_r7r8+0x18ac
+937549d8 or.      r30, r3, r3                 
+937549dc beq      0x93754a3c                  __CGSOrderWindow+0xe0
+937549e0 lis      r0, 0x1000                  
+937549e4 ori      r0, r0, 0x4002              
+937549e8 cmpw     r30, r0                     
+937549ec beq      0x93754a20                  __CGSOrderWindow+0xc4
+937549f0 bgt      0x93754a00                  __CGSOrderWindow+0xa4
+937549f4 lis      r0, 0x1000                  
+937549f8 ori      r0, r0, 9                   
+937549fc b        0x93754a18                  __CGSOrderWindow+0xbc
+93754a00 lis      r0, 0x1000                  
+93754a04 ori      r0, r0, 0x4006              
+93754a08 cmpw     r30, r0                     
+93754a0c beq      0x93754a20                  __CGSOrderWindow+0xc4
+93754a10 lis      r0, 0x1000                  
+93754a14 ori      r0, r0, 0x4009              
+93754a18 cmpw     r30, r0                     
+93754a1c bne      0x93754a2c                  __CGSOrderWindow+0xd0
+93754a20 lwz      r3, 0xc(r29)                
+93754a24 bl       0x938b2790                  rest_world_eh_r7r8+0x2068
+93754a28 b        0x93754a34                  __CGSOrderWindow+0xd8
+93754a2c lwz      r3, 0xc(r29)                
+93754a30 bl       0x938b276c                  rest_world_eh_r7r8+0x2044
+93754a34 mr       r3, r30                     
+93754a38 b        0x93754a60                  __CGSOrderWindow+0x104
+93754a3c lwz      r0, 0x54(r1)                
+93754a40 cmpwi    r0, 0x727e                  
+93754a44 beq      0x93754a5c                  __CGSOrderWindow+0x100
+93754a48 cmpwi    r0, 0x47                    
+93754a4c li       r3, -0x134                  
+93754a50 beq      0x93754a60                  __CGSOrderWindow+0x104
+93754a54 li       r3, -0x12d                  
+93754a58 b        0x93754a60                  __CGSOrderWindow+0x104

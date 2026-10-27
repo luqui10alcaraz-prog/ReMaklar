@@ -1,0 +1,31 @@
+{
+  "reason": "New native 4GB UFS work volume mounted on /var/tmp. All 16808 original-root files, 464 symlinks, 2094 dirs and 1115241082 file bytes verified against source; original root remains underneath unchanged. 2.6GiB available. Original kernel/Installer MD5 unchanged. Before font restoration and joint89. Source direct66 never resumed.",
+  "monitor": 4449,
+  "guest_mounts": {
+    "root": "/dev/disk0s2",
+    "work": "/dev/disk1s1 on /var/tmp",
+    "exchange": "/dev/disk2 on /exchange (unmounted)"
+  },
+  "files": {
+    "build/011-storage88-machine-state.bin": {
+      "bytes": 527790780,
+      "sha256": "81a44dcaa4d455b2057151526795f12cd73c0b8d348e2501519a9b856990dc93"
+    },
+    "build/011-storage88-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "1d75bfb2b91a1978f7d49d3beff4ad9d1a030dac6239261e8563789cf9ff64d8"
+    },
+    "vm/darwin602-graphics-011-storage88-preserved.qcow2": {
+      "bytes": 12451840,
+      "sha256": "5fe00287a7edd937943e5937e9a995ac9dd5085598eba2b01697e626e2f7e909"
+    },
+    "build/graphics011-storage88-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "acd5893b179bc1d62e8ce14759a3384a05e420f9cdcda3e16165eb08f6566a7d"
+    },
+    "vm/graphics011-storage88-work-preserved.qcow2": {
+      "bytes": 1195114496,
+      "sha256": "359e929a5b66b8243ee73cae9f0acbd6ef194456870a622829de0f0d01536fdd"
+    }
+  }
+}

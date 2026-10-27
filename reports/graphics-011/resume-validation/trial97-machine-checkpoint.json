@@ -1,0 +1,41 @@
+{
+  "reason": "First real FontObjectsServer OOL replies consumed by original Installer after native filesystem and lock bridges. ATS, pbs, WindowServer and Installer alive; no verified application window yet. Preserve live ports, locks, UBC logs and framebuffer before proceeding.",
+  "monitor": 4449,
+  "state": "stopped after complete migration; RAM includes guest filesystem cache and live kernel ports/locks",
+  "source_disks": {
+    "root": "vm/darwin602-graphics-011-storage88.qcow2",
+    "fat": "build/graphics011-storage88-exchange.img",
+    "work": "vm/graphics011-storage88-work.raw"
+  },
+  "guest_mounts": {
+    "root": "/dev/disk0s2",
+    "work": "/dev/disk1s1 on /var/tmp",
+    "exchange": "/dev/disk2 on /exchange"
+  },
+  "files": {
+    "build/011-trial97-machine-state.bin": {
+      "bytes": 527504130,
+      "sha256": "bf1e43ce8d5b36b057dc334bbb440adca61bef7cbead6cb965a4a1ad4943b05c"
+    },
+    "build/011-trial97-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "cdfe04b3352f4429f0d43fe4dbeecec0e5e1131e3601d0dbff35c72c6f0e8b24"
+    },
+    "build/011-trial97-preserved.ppm": {
+      "bytes": 2359312,
+      "sha256": "91b4a47c9acf8c99a64f0796bc388f3b5afbb01fe4491716f0e81cd5412f4188"
+    },
+    "vm/darwin602-graphics-011-trial97-preserved.qcow2": {
+      "bytes": 12910592,
+      "sha256": "67d657b3a0041f5d2d62510e1f6225dd3742b351c685da372e1ff7d140c166bc"
+    },
+    "build/graphics011-trial97-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "b4da25feac8e90bf175fae2a59f85af568d9f72649013d8113e203633141ea57"
+    },
+    "vm/graphics011-trial97-work-preserved.qcow2": {
+      "bytes": 1252786176,
+      "sha256": "6a1ef24f98c4996317a988101c2ce1310bab9c47939c5a6c85c9da5f3b1578a9"
+    }
+  }
+}

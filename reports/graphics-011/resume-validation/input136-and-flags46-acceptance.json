@@ -1,0 +1,29 @@
+{
+  "n": {
+    "exit": 0,
+    "stdout": "reports/graphics-011/input136/n1/graphics011-input136-n1/probe.stdout"
+  },
+  "p": {
+    "exit": 8,
+    "stdout": "reports/graphics-011/input136/p1/graphics011-input136-p1/probe.stdout"
+  },
+  "j": {
+    "exit": 0,
+    "stdout": "reports/graphics-011/input136/j1/graphics011-input136-j1/probe.stdout"
+  },
+  "result": "PASS actual kernel type9/keyboard/move/button/auxiliary sequence native=PPC; previous executor loses tracking event",
+  "events_except_location": [
+    "event type=10 key=0 char=97 orig=97 repeat=0 keyboardType=1",
+    "event type=11 key=0 char=97 orig=97 repeat=0 keyboardType=1",
+    "event type=5 dx=10 dy=5 subtype=0",
+    "event type=9 tracking eventNum=0 number=0 userData=0",
+    "event type=14 auxiliary delta=1 buttons=1",
+    "event type=1 subxy=0,0 eventNum=14 click=1 pressure=255 subtype=0",
+    "event type=6 dx=1 dy=0 subtype=0",
+    "event type=14 auxiliary delta=1 buttons=0",
+    "event type=2 subxy=0,0 eventNum=14 click=0 pressure=0 subtype=0",
+    "event type=5 dx=1 dy=0 subtype=0"
+  ],
+  "native_compiler_flags_oracle": "reports/graphics-011/build135/export/graphics011-build135-results/unit-bits.stdout",
+  "pointer_VRAM_proof": "reports/graphics-011/resume-validation/pointer134-framebuffer-verification.json"
+}

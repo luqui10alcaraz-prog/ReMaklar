@@ -1,0 +1,38 @@
+{
+  "hardware_command": "mouse_move 40 30",
+  "mouse": "QEMU HID Mouse over original AppleUSBOHCI/IOUSBHIDDriver",
+  "framebuffer": "physical 0xfd000000, 1024x768x32 BGRX",
+  "frames": [
+    {
+      "ppm": "reports/graphics-011/joint134/captures/1793076709806847518.ppm",
+      "vram": "reports/graphics-011/joint134/captures/1793076709806847518.vram",
+      "png": "reports/graphics-011/joint134/captures/1793076709806847518.png",
+      "rgb_sha256": "48166f91f62de36dfd9c634f05b9f678cb7a03248d60d6106b26b55c7495f914",
+      "vram_sha256": "964551350f1243ba6382721247d9c6150aaa5a2ffb86ba3d8b6e27b667473ff4",
+      "pointer_bounds": [
+        49,
+        30,
+        59,
+        45
+      ],
+      "pointer_pixels": 97,
+      "different_pixels_from_physical_VRAM": 0
+    },
+    {
+      "ppm": "reports/graphics-011/joint134/captures/1793076731754132378.ppm",
+      "vram": "reports/graphics-011/joint134/captures/1793076731754132378.vram",
+      "png": "reports/graphics-011/joint134/captures/1793076731754132378.png",
+      "rgb_sha256": "9b261d36ae3271241004b28e2bb3287012498ab1ba4d513c87e4f4bf9d4816ca",
+      "vram_sha256": "7ed60e4a33a835165266181abcbba72bc0d041bbbfecd485ad47e5dce32caadf",
+      "pointer_bounds": [
+        89,
+        60,
+        99,
+        75
+      ],
+      "pointer_pixels": 97,
+      "different_pixels_from_physical_VRAM": 0
+    }
+  ],
+  "result": "PASS identical original pointer pixels translated exactly (40,30), all framebuffer pixels verified against physical VESA"
+}

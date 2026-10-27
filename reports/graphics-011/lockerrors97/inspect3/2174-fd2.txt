@@ -1,0 +1,198 @@
+fa8568
+syscall pc=24fa8568 r0=190 r3=22398030 r4=223984a0 r5=00000002 r6=00000091 r7=a1b1c1d3 r8=24e34010 lr=2577c0f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/InputManagers result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=24fa8f68 r0=26 r3=0000a202 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24e34010 lr=28061b4c res=ffffffff
+return r3=1 error=1 resume=24fa8f68
+syscall pc=2500c328 r0=4294967265 r3=22398d10 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 0000000d 00000101 00000202 0000000d 00000d51 00000000 00000000 00000004
+syscall pc=2500c328 r0=4294967265 r3=22398ca0 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000000 00000104 00000202 350ccbf0 00000194 00000000 00000000 61787365 72766572 2d323137 3400faac 22398d50 350ccbf0 24f9fb18 00000000 00000001 00000000 24e4d230 2513c454 22398d50 2800444d 2513c6d4 24e49064 00000000 0000000d 26ae985d 24f9d0b0 80000012 00000028 00000202 00000000
+native bootstrap id=404 service=axserver-2174 result=1102
+syscall pc=2500c328 r0=4294967265 r3=22398cb0 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 22398d60 00000c84 00000000 00000000 00000001
+native Mach capability guest=412 host=7939 receive=1 set=0 send=0
+syscall pc=2500c328 r0=4294967265 r3=22398ca0 r4=00000003 r5=00000034 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 00000000 00000101 00000202 00000012 00000c8e 00000001 00000412 00000000 00001400 00000000 00000000 00000412
+syscall pc=2500c328 r0=4294967265 r3=22398c00 r4=00000003 r5=0000003c r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3213 destination=101 send=60 recv=48: 80001513 22398dd4 00000101 00000202 22398c60 00000c8d 00000001 00000408 22398c70 00001500 00000000 00000000 00000412 00000048 00000000
+syscall pc=2500c328 r0=4294967265 r3=22398cc0 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 350cc404 00000d51 00000000 00000000 00000004
+syscall pc=2500c328 r0=4294967265 r3=22398c40 r4=00000003 r5=000000b0 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=403 destination=104 send=176 recv=44: 80001513 24e575c0 00000104 00000202 22398cf0 00000193 00000001 00000412 350cc404 350c1300 00000000 00000000 61787365 72766572 2d323137 3400faac 22398d00 24e59ab0 24f9fb18 250dfbb8 22398d00 00000000 2513c0bc ffffffff 24e6eab0 00000000 00000202 00000000 22398d00 00000000 00000000 00000000
+native bootstrap id=403 service=axserver-2174 result=0
+syscall pc=2500c328 r0=4294967265 r3=22398c60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000202 00000000 00000c9a 00000000 00000000 00000412 00000404
+syscall pc=2500c328 r0=4294967265 r3=22398c60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000202 24e4d230 00000c9a 00000000 00000000 00000412 00000405
+syscall pc=2500c328 r0=4294967265 r3=22398c60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000202 24e4d230 00000c9a 00000000 00000000 00000412 00000406
+syscall pc=2500c328 r0=4294967265 r3=22398d10 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 24ec47c0 00000101 00000202 00000000 00000c84 00000000 00000000 00000003
+native Mach capability guest=413 host=8195 receive=0 set=1 send=0
+syscall pc=2500c328 r0=4294967265 r3=22398d10 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c9a 00000000 00000000 00000403 00000413
+syscall pc=2500c328 r0=4294967265 r3=22398d40 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 24e73fd8 00000101 00000202 24e4d230 00000c9a 00000000 00000000 00000412 00000413
+syscall pc=2500c328 r0=4294967265 r3=22398ca0 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 22398d00 00000d51 00000000 00000000 00000004
+syscall pc=2500c328 r0=4294967265 r3=22398c30 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000000 00000104 00000202 24e55400 00000194 00000000 00000000 4170706c 65204346 4e6f7469 66696361 74696f6e 43656e74 65722053 65727665 72001fb0 24ec47c0 24ec47c0 250df8bc 22398d00 0000001b 250df99c 24f9d0b0 00000000 00000000 24f9d144 00000023 80000012 00000028 00000202 00000000
+native bootstrap id=404 service=Apple CFNotificationCenter Server result=1102
+syscall pc=24fa8f68 r0=26 r3=0000a203 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=000007c8 lr=28061b6c res=ffffffff
+return r3=1 error=1 resume=24fa8f68
+syscall pc=24fa8f68 r0=26 r3=0000a204 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24e34010 lr=28061be8 res=ffffffff
+return r3=1 error=1 resume=24fa8f68
+syscall pc=24fa8f68 r0=26 r3=0000a205 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=350ca5b0 lr=28061c38 res=ffffffff
+return r3=1 error=1 resume=24fa8f68
+syscall pc=24f9da88 r0=24 r3=350c95bc r4=350c957c r5=350c957c r6=22399430 r7=00000000 r8=350ca5b0 lr=250e48e0 res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=350c957c r6=22399430 r7=00000000 r8=350ca5b0 lr=250e48f4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=350c95bc r4=350c957c r5=350c957c r6=350c957c r7=00000000 r8=24e34010 lr=250e48e0 res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=350c957c r6=350c957c r7=00000000 r8=24e34010 lr=250e48f4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9dca8 r0=5 r3=22398740 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=350ca364 lr=250e62a4 res=ffffffff
+guest open /var/tmp/jaguar/var/root/Library/Preferences/.GlobalPreferences.plist
+return r3=2 error=2 resume=24f9dca8
+syscall pc=25003ae0 r0=116 r3=22398c10 r4=00000000 r5=00000000 r6=00000000 r7=250e05b4 r8=251805b4 lr=24f9d770 res=ffffffff
+return r3=1793065421 error=0 resume=25003ae4
+syscall pc=24fadba8 r0=220 r3=223988d0 r4=22397540 r5=223971f0 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Resources/Extras.rsrc masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24fadba8
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Resources result=0 errno=0 mode=120755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fce448 r0=58 r3=24ebcb70 r4=223968f0 r5=00000400 r6=80808080 r7=00000003 r8=73726300 lr=251d9504 res=ffffffff
+return r3=26 error=0 resume=24fce44c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=0000001a r6=00006573 r7=6f757263 r8=2f437572 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=0000001a r6=00006573 r7=6f757263 r8=2f437572 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/Current result=0 errno=0 mode=120755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fce448 r0=58 r3=24ebcb70 r4=223968f0 r5=00000400 r6=00006573 r7=6f757263 r8=2f437572 lr=251d9504 res=ffffffff
+return r3=1 error=0 resume=24fce44c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000001 r6=00000041 r7=6f757263 r8=65732f45 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000001 r6=00000041 r7=6f757263 r8=65732f45 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=22396890 r5=00000001 r6=00000041 r7=6f757263 r8=65732f45 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources/Extras.rsrc result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22396280 r4=22397e74 r5=33393080 r6=80808080 r7=00000000 r8=00667261 lr=251c7a40 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources/Extras.rsrc result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fadba8 r0=220 r3=223986f0 r4=22397360 r5=22397010 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Resources/Extras.rsrc masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24fadba8
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000003 r6=80808080 r7=00000003 r8=73726300 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Resources result=0 errno=0 mode=120755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fce448 r0=58 r3=24ebcb70 r4=22396710 r5=00000400 r6=80808080 r7=00000003 r8=73726300 lr=251d9504 res=ffffffff
+return r3=26 error=0 resume=24fce44c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=0000001a r6=00006573 r7=6f757263 r8=2f437572 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=0000001a r6=00006573 r7=6f757263 r8=2f437572 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/Current result=0 errno=0 mode=120755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fce448 r0=58 r3=24ebcb70 r4=22396710 r5=00000400 r6=00006573 r7=6f757263 r8=2f437572 lr=251d9504 res=ffffffff
+return r3=1 error=0 resume=24fce44c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000001 r6=00000041 r7=6f757263 r8=65732f45 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000001 r6=00000041 r7=6f757263 r8=65732f45 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24ebcb70 r4=223966b0 r5=00000001 r6=00000041 r7=6f757263 r8=65732f45 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources/Extras.rsrc result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22397b60 r4=22398834 r5=22397b60 r6=22397f60 r7=22397b30 r8=00000019 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources/Extras.rsrc result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=223973b0 r4=22398894 r5=223973b0 r6=223977b0 r7=22397380 r8=00004409 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources/Extras.rsrc result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24f9dca8 r0=5 r3=22397d60 r4=00000000 r5=000001b6 r6=00000001 r7=22398160 r8=22398164 lr=251dc698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Resources/Extras.rsrc
+return r3=3 error=0 resume=24f9dcac
+syscall pc=24fae068 r0=197 r3=00000000 r4=003e8c63 r5=00000001 r6=00000002 r7=00000003 r8=00000000 lr=251d5c18 res=ffffffff
+return r3=1176666112 error=0 resume=24fae06c
+syscall pc=2500c328 r0=4294967265 r3=22398e60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+native Mach send id=29402 destination=40d bytes=40
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=36 id=29502
+syscall pc=24f9da88 r0=24 r3=350c95bc r4=350c957c r5=350c957c r6=350c957c r7=00000010 r8=24e34010 lr=250e48e0 res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=350c957c r6=350c957c r7=00000010 r8=24e34010 lr=250e48f4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=2500c328 r0=4294967265 r3=223971f0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 22397250 00000ed9 00000000 00000000 00000007 00004000 03000001
+syscall pc=24f9dca8 r0=5 r3=2526c5ac r4=00000000 r5=00000000 r6=22398420 r7=22398440 r8=00000000 lr=251f9e70 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/checkfixlist
+return r3=2 error=2 resume=24f9dca8
+syscall pc=2500c328 r0=4294967265 r3=22397df0 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 014c014c 00000101 00000202 70786d23 00000c84 00000000 00000000 00000001
+native Mach capability guest=414 host=8451 receive=1 set=0 send=0
+syscall pc=2500c328 r0=4294967265 r3=22397de0 r4=00000003 r5=00000034 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 014b014b 00000101 00000202 00000012 00000c8e 00000001 00000414 00000000 00001400 00000000 00000000 00000414
+syscall pc=2500c328 r0=4294967265 r3=22397d80 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 ffffd96e 00000101 00000202 00000010 00000d51 00000000 00000000 00000004
+syscall pc=2500c328 r0=4294967265 r3=22397d10 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 01050105 00000104 00000202 22398af0 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007dc0 012c012c 24f9fb18 00000000 22397da0 012d012d 00000000 00000000 22397db0 01360136 00000000 00000000 70786d23 01370137 00000000 24e53c20 80000012 00000028 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=0
+native Mach capability guest=415 host=8707 receive=0 set=0 send=1
+syscall pc=2500c328 r0=4294967265 r3=223977d0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=0 destination=415 bytes=1664

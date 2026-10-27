@@ -1,0 +1,1 @@
+mailbox lifecycle: 8 fork/exec + 8 SIGKILL, CLOEXEC, page-aligned backing PASS

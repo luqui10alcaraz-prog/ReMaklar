@@ -1,0 +1,25 @@
++ df -k
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;paths=graphics011-filelock96-results;if test -d graphics011-joint96;then paths="$paths graphics011-joint96";fi;gnutar czf /exchange/flck96.tgz $paths;sync;umount /exchange' 0
++ cp /var/tmp/graphics011-stage96/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build96/qemu-ppc
++ exe=/var/tmp/graphics011-build96/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage96/filelock.c -o /var/tmp/graphics011-filelock96-results/filelock-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage96/filelock.c -o /var/tmp/graphics011-filelock96-results/filelock-ppc
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-filelock96-results/filelock-native /var/tmp/graphics011-filelock96-results/filelock-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-filelock96-results/filelock-previous /var/tmp/graphics011-build95/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-filelock96-results/filelock-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-filelock96-results/filelock-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-filelock96-results/filelock-jaguar /var/tmp/graphics011-build96/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-filelock96-results/filelock-ppc
++ cmp /var/tmp/graphics011-filelock96-results/filelock-native.stdout /var/tmp/graphics011-filelock96-results/filelock-jaguar.stdout
+cmp: EOF on /var/tmp/graphics011-filelock96-results/filelock-jaguar.stdout
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ paths=graphics011-filelock96-results
++ test -d graphics011-joint96
++ gnutar czf /exchange/flck96.tgz graphics011-filelock96-results

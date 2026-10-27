@@ -1,0 +1,119 @@
+emaklar-remote-map-943
++ test -e /var/tmp/remaklar-remote-map-943
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-943'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-943
++ cp -Rp /var/tmp/remaklar-remote-map-943 /exchange/
++ name=remaklar-remote-map-944
++ test -e /var/tmp/remaklar-remote-map-944
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-944'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-944
++ cp -Rp /var/tmp/remaklar-remote-map-944 /exchange/
++ name=remaklar-remote-map-947
++ test -e /var/tmp/remaklar-remote-map-947
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-947'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-947
++ cp -Rp /var/tmp/remaklar-remote-map-947 /exchange/
++ name=remaklar-remote-map-948
++ test -e /var/tmp/remaklar-remote-map-948
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-948'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-948
++ cp -Rp /var/tmp/remaklar-remote-map-948 /exchange/
++ name=remaklar-remote-map-951
++ test -e /var/tmp/remaklar-remote-map-951
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-951'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-951
++ cp -Rp /var/tmp/remaklar-remote-map-951 /exchange/
++ name=remaklar-remote-map-954
++ test -e /var/tmp/remaklar-remote-map-954
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-954'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-954
++ cp -Rp /var/tmp/remaklar-remote-map-954 /exchange/
++ name=remaklar-remote-map-957
++ test -e /var/tmp/remaklar-remote-map-957
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-957'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-957
++ cp -Rp /var/tmp/remaklar-remote-map-957 /exchange/
++ name=remaklar-remote-map-960
++ test -e /var/tmp/remaklar-remote-map-960
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-960'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-960
++ cp -Rp /var/tmp/remaklar-remote-map-960 /exchange/
++ name=remaklar-remote-map-963
++ test -e /var/tmp/remaklar-remote-map-963
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-963'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-963
++ cp -Rp /var/tmp/remaklar-remote-map-963 /exchange/
++ name=remaklar-remote-map-967
++ test -e /var/tmp/remaklar-remote-map-967
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-967'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-967
++ cp -Rp /var/tmp/remaklar-remote-map-967 /exchange/
++ name=remaklar-remote-map-968
++ test -e /var/tmp/remaklar-remote-map-968
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-968'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-968
++ cp -Rp /var/tmp/remaklar-remote-map-968 /exchange/
++ name=remaklar-remote-map-970
++ test -e /var/tmp/remaklar-remote-map-970
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-970'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-970
++ cp -Rp /var/tmp/remaklar-remote-map-970 /exchange/
++ name=remaklar-remote-map-973
++ test -e /var/tmp/remaklar-remote-map-973
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-973'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-973
++ cp -Rp /var/tmp/remaklar-remote-map-973 /exchange/
++ name=remaklar-remote-map-978
++ test -e /var/tmp/remaklar-remote-map-978
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-978'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-978
++ cp -Rp /var/tmp/remaklar-remote-map-978 /exchange/
++ name=remaklar-remote-map-981
++ test -e /var/tmp/remaklar-remote-map-981
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-981'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-981
++ cp -Rp /var/tmp/remaklar-remote-map-981 /exchange/
++ name=remaklar-remote-map-99
++ test -e /var/tmp/remaklar-remote-map-99
++ echo 'COPY_REMAINDER /var/tmp/remaklar-remote-map-99'
+COPY_REMAINDER /var/tmp/remaklar-remote-map-99
++ cp -Rp /var/tmp/remaklar-remote-map-99 /exchange/
++ name=repair75
++ test -e /var/tmp/repair75
++ echo 'COPY_REMAINDER /var/tmp/repair75'
+COPY_REMAINDER /var/tmp/repair75
++ cp -Rp /var/tmp/repair75 /exchange/
++ name=run96.sh
++ test -e /var/tmp/run96.sh
++ echo 'COPY_REMAINDER /var/tmp/run96.sh'
+COPY_REMAINDER /var/tmp/run96.sh
++ cp -Rp /var/tmp/run96.sh /exchange/
++ name=run97.sh
++ test -e /var/tmp/run97.sh
++ echo 'COPY_REMAINDER /var/tmp/run97.sh'
+COPY_REMAINDER /var/tmp/run97.sh
++ cp -Rp /var/tmp/run97.sh /exchange/
++ name=storage011-88.sh
++ test -e /var/tmp/storage011-88.sh
++ echo 'COPY_REMAINDER /var/tmp/storage011-88.sh'
+COPY_REMAINDER /var/tmp/storage011-88.sh
++ cp -Rp /var/tmp/storage011-88.sh /exchange/
++ name=storage011-88b.sh
++ test -e /var/tmp/storage011-88b.sh
++ echo 'COPY_REMAINDER /var/tmp/storage011-88b.sh'
+COPY_REMAINDER /var/tmp/storage011-88b.sh
++ cp -Rp /var/tmp/storage011-88b.sh /exchange/
++ name=tree011-compare.c
++ test -e /var/tmp/tree011-compare.c
++ echo 'COPY_REMAINDER /var/tmp/tree011-compare.c'
+COPY_REMAINDER /var/tmp/tree011-compare.c
++ cp -Rp /var/tmp/tree011-compare.c /exchange/
++ name=validation011-13.sh
++ test -e /var/tmp/validation011-13.sh
++ echo 'COPY_REMAINDER /var/tmp/validation011-13.sh'
+COPY_REMAINDER /var/tmp/validation011-13.sh
++ cp -Rp /var/tmp/validation011-13.sh /exchange/
++ name=.[!.]*
++ test -e '/var/tmp/.[!.]*'
++ test -L '/var/tmp/.[!.]*'
++ /exchange/storage88-complete/compare /var/tmp /exchange

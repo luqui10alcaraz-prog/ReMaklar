@@ -1,0 +1,116 @@
+ r4=00000002 r5=00000001 r6=0000005d r7=6f78792e r8=63000000 lr=24dfda74 res=ffffffff
+return r3=0 error=0 resume=24df164c
+syscall pc=24dfdb28 r0=98 r3=00000003 r4=34df2570 r5=0000006a r6=0000005d r7=6f78792e r8=63000000 lr=24dfdaa8 res=ffffffff
+guest unix connect /var/tmp/jaguar/var/run/syslog
+return r3=2 error=2 resume=24dfdb28
+syscall pc=24df76a8 r0=6 r3=00000003 r4=ffffffff r5=0000006a r6=0000005d r7=6f78792e r8=63000000 lr=24dfdabc res=ffffffff
+return r3=0 error=0 resume=24df76ac
+syscall pc=24dffc08 r0=133 r3=ffffffff r4=22398ca0 r5=00000043 r6=00000000 r7=00000000 r8=00000000 lr=24dfee4c res=ffffffff
+return r3=9 error=9 resume=24dffc08
+syscall pc=24e57ae0 r0=116 r3=22398ee0 r4=00000000 r5=22399c20 r6=ffffff88 r7=0000011e r8=00006bb4 lr=24df1770 res=ffffffff
+return r3=1793068280 error=0 resume=24e57ae4
+syscall pc=24dfc568 r0=190 r3=24ec0d38 r4=22396a60 r5=00000002 r6=0000003e r7=00000000 r8=00006bb4 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/etc/localtime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24e5ad84 r0=327 r3=24ebdc64 r4=224323b0 r5=00000002 r6=0000003e r7=00000000 r8=00006bb4 lr=24df88e8 res=ffffffff
+return r3=0 error=0 resume=24e5ad88
+syscall pc=24dfc568 r0=190 r3=22396ad0 r4=22396a10 r5=1cb5a000 r6=80808080 r7=00000000 r8=00396b40 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/GMT result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24e5ad84 r0=327 r3=24ec0d5c r4=224323b0 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24df88e8 res=ffffffff
+return r3=0 error=0 resume=24e5ad88
+syscall pc=24dfc568 r0=190 r3=22396a60 r4=223969a0 r5=00112100 r6=80808080 r7=00000000 r8=00002242 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24dfc568 r0=190 r3=24ec0d38 r4=22396a50 r5=00000002 r6=34df3530 r7=00000005 r8=24ecd898 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/etc/localtime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24e5ad84 r0=327 r3=24ebdc64 r4=224323b0 r5=00000002 r6=34df3530 r7=00000005 r8=24ecd898 lr=24df88e8 res=ffffffff
+return r3=0 error=0 resume=24e5ad88
+syscall pc=24dfc568 r0=190 r3=22396ac0 r4=22396a00 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/GMT result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24e5ad84 r0=327 r3=24ec0d5c r4=224323b0 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24df88e8 res=ffffffff
+return r3=0 error=0 resume=24e5ad88
+syscall pc=24dfc568 r0=190 r3=22396a50 r4=22396990 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24df89f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24dfc568
+syscall pc=24dfdae8 r0=97 r3=00000001 r4=00000002 r5=00000000 r6=0000005d r7=6f78792e r8=63000000 lr=24dfda5c res=ffffffff
+return r3=3 error=0 resume=24dfdaec
+syscall pc=24df1648 r0=92 r3=00000003 r4=00000002 r5=00000001 r6=0000005d r7=6f78792e r8=63000000 lr=24dfda74 res=ffffffff
+return r3=0 error=0 resume=24df164c
+syscall pc=24dfdb28 r0=98 r3=00000003 r4=34df2570 r5=0000006a r6=0000005d r7=6f78792e r8=63000000 lr=24dfdaa8 res=ffffffff
+guest unix connect /var/tmp/jaguar/var/run/syslog
+return r3=2 error=2 resume=24dfdb28
+syscall pc=24df76a8 r0=6 r3=00000003 r4=ffffffff r5=0000006a r6=0000005d r7=6f78792e r8=63000000 lr=24dfdabc res=ffffffff
+return r3=0 error=0 resume=24df76ac
+syscall pc=24dffc08 r0=133 r3=ffffffff r4=22398f40 r5=00000043 r6=00000000 r7=00000000 r8=00000000 lr=24dfee4c res=ffffffff
+return r3=9 error=9 resume=24dffc08
+syscall pc=24df1fc8 r0=1 r3=00000000 r4=00000000 r5=00000000 r6=00000000 r7=00000001 r8=94dec000 lr=000038c8 res=ffffffff
+original PPC exit pid=2549 status=0 lr=000038c8
+exit frame=22399e80 return=000038c8
+exit frame=22399ee0 return=00003464
+exit frame=22399f40 return=000032e4
+exit frame=22399f80 return=00000000
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00001038 lr=24df2844 res=ffffffff
+native Mach send id=29518 destination=45e bytes=36
+native Mach capability guest=45f host=19563 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=52 id=29418
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=0000102a lr=24df2844 res=ffffffff
+native Mach send id=29518 destination=45f bytes=36
+native Mach capability guest=460 host=19567 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=52 id=29418
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00001020 lr=24df2844 res=ffffffff
+native Mach send id=29518 destination=460 bytes=36
+native Mach capability guest=461 host=19571 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=0000100f lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=461 bytes=36
+native Mach capability guest=462 host=19575 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00001007 lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=462 bytes=36
+native Mach capability guest=463 host=19579 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00001000 lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=463 bytes=36
+native Mach capability guest=464 host=19583 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00000ffa lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=464 bytes=36
+native Mach capability guest=465 host=19587 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00000ff4 lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=465 bytes=36
+native Mach capability guest=466 host=19591 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00000fed lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=466 bytes=36
+native Mach capability guest=467 host=19595 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00000fe7 lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=467 bytes=36
+native Mach capability guest=468 host=19599 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29420
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00000fe1 lr=24df2844 res=ffffffff
+native Mach send id=29520 destination=468 bytes=36
+native Mach capability guest=469 host=19603 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=48 id=29329
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000028 r6=00008000 r7=00000407 r8=00000fb3 lr=24df2844 res=ffffffff
+native Mach send id=29429 destination=469 bytes=40
+native Mach capability guest=46a host=19607 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=24 id=29327
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=0000002c r6=00008000 r7=00000407 r8=00000fa3 lr=24df2844 res=ffffffff
+native Mach send id=29427 destination=46a bytes=44

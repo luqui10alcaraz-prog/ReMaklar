@@ -1,0 +1,77 @@
+3=22399430 r4=00000000 r5=000001b6 r6=00000001 r7=22399830 r8=22399834 lr=25032698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Courier.dfont
+return r3=5 error=0 resume=24df3cac
+syscall pc=24e04068 r0=197 r3=00000000 r4=00031aec r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=2502bc18 res=ffffffff
+return r3=1158344704 error=0 resume=24e0406c
+syscall pc=24e03fc8 r0=73 r3=450af000 r4=00031aec r5=00000001 r6=00000000 r7=69657220 r8=44f02010 lr=250316a8 res=ffffffff
+return r3=0 error=0 resume=24e03fcc
+syscall pc=24df96a8 r0=6 r3=00000005 r4=00000000 r5=3500e4fc r6=00000001 r7=69657220 r8=44f02010 lr=25028f64 res=ffffffff
+return r3=0 error=0 resume=24df96ac
+syscall pc=24dfe568 r0=190 r3=22398a80 r4=22399f64 r5=22398a80 r6=22398e80 r7=22398a50 r8=00004409 lr=25017774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Geneva.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfe56c
+syscall pc=24df3ca8 r0=5 r3=22399430 r4=00000000 r5=000001b6 r6=00000001 r7=22399830 r8=22399834 lr=25032698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Geneva.dfont
+return r3=5 error=0 resume=24df3cac
+syscall pc=24e04068 r0=197 r3=00000000 r4=00024c16 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=2502bc18 res=ffffffff
+return r3=1158344704 error=0 resume=24e0406c
+syscall pc=24e03fc8 r0=73 r3=450af000 r4=00024c16 r5=00000001 r6=00000000 r7=76612043 r8=44f02010 lr=250316a8 res=ffffffff
+return r3=0 error=0 resume=24e03fcc
+syscall pc=24df96a8 r0=6 r3=00000005 r4=00000000 r5=3500e4fc r6=00000001 r7=76612043 r8=44f02010 lr=25028f64 res=ffffffff
+return r3=0 error=0 resume=24df96ac
+syscall pc=24dfe568 r0=190 r3=22398a80 r4=22399f64 r5=22398a80 r6=22398e80 r7=22398a50 r8=00004409 lr=25017774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfe56c
+syscall pc=24df3ca8 r0=5 r3=22399430 r4=00000000 r5=000001b6 r6=00000001 r7=22399830 r8=22399834 lr=25032698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont
+return r3=5 error=0 resume=24df3cac
+syscall pc=24e04068 r0=197 r3=00000000 r4=00035654 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=2502bc18 res=ffffffff
+return r3=1158344704 error=0 resume=24e0406c
+syscall pc=24e03fc8 r0=73 r3=450af000 r4=00035654 r5=00000001 r6=00000000 r7=65746963 r8=44f02010 lr=250316a8 res=ffffffff
+return r3=0 error=0 resume=24e03fcc
+syscall pc=24df96a8 r0=6 r3=00000005 r4=00000000 r5=3500e4fc r6=00000001 r7=65746963 r8=44f02010 lr=25028f64 res=ffffffff
+return r3=0 error=0 resume=24df96ac
+syscall pc=24dfe568 r0=190 r3=22398a80 r4=22399f64 r5=22398a80 r6=22398e80 r7=22398a50 r8=00004409 lr=25017774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfe56c
+syscall pc=24df3ca8 r0=5 r3=22399430 r4=00000000 r5=000001b6 r6=00000001 r7=22399830 r8=22399834 lr=25032698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont
+return r3=5 error=0 resume=24df3cac
+syscall pc=24e04068 r0=197 r3=00000000 r4=0000554a r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=2502bc18 res=ffffffff
+return r3=1158258688 error=0 resume=24e0406c
+syscall pc=24e03fc8 r0=73 r3=4509a000 r4=0000554a r5=00000001 r6=00000000 r7=626f6172 r8=44f02010 lr=250316a8 res=ffffffff
+return r3=0 error=0 resume=24e03fcc
+syscall pc=24df96a8 r0=6 r3=00000005 r4=00000000 r5=3500e4fc r6=00000001 r7=626f6172 r8=44f02010 lr=25028f64 res=ffffffff
+return r3=0 error=0 resume=24df96ac
+syscall pc=24dfe568 r0=190 r3=22398a80 r4=22399f64 r5=22398a80 r6=22398e80 r7=22398a50 r8=00004409 lr=25017774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/LastResort.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfe56c
+syscall pc=24df3ca8 r0=5 r3=22399430 r4=00000000 r5=000001b6 r6=00000001 r7=22399830 r8=22399834 lr=25032698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/LastResort.dfont
+return r3=5 error=0 resume=24df3cac
+syscall pc=24e04068 r0=197 r3=00000000 r4=005a98ee r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=2502bc18 res=ffffffff
+return r3=1167495168 error=0 resume=24e0406c
+syscall pc=24e03fc8 r0=73 r3=45969000 r4=005a98ee r5=00000001 r6=00000000 r7=74526573 r8=44f02010 lr=250316a8 res=ffffffff
+return r3=0 error=0 resume=24e03fcc
+syscall pc=24df96a8 r0=6 r3=00000005 r4=00000000 r5=3500e4fc r6=00000001 r7=74526573 r8=44f02010 lr=25028f64 res=ffffffff
+return r3=0 error=0 resume=24df96ac
+syscall pc=24dfe568 r0=190 r3=22398a80 r4=22399f64 r5=22398a80 r6=22398e80 r7=22398a50 r8=00004409 lr=25017774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfe56c
+syscall pc=24df3ca8 r0=5 r3=22399430 r4=00000000 r5=000001b6 r6=00000001 r7=22399830 r8=22399834 lr=25032698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont
+return r3=5 error=0 resume=24df3cac
+syscall pc=24e04068 r0=197 r3=00000000 r4=002aa621 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=2502bc18 res=ffffffff
+return r3=1167495168 error=0 resume=24e0406c
+syscall pc=24e03fc8 r0=73 r3=45969000 r4=002aa621 r5=00000001 r6=00000000 r7=64612047 r8=44f02010 lr=250316a8 res=ffffffff
+return r3=0 error=0 resume=24e03fcc
+syscall pc=24df96a8 r0=6 r3=00000005 r4=00000000 r5=3500e4fc r6=00000001 r7=64612047 r8=44f02010 lr=25028f64 res=ffffffff
+return r3=0 error=0 resume=24df96ac
+syscall pc=24dfe568 r0=190 r3=22398a80 r4=22399f64 r5=22398a80 r6=22398e80 r7=22398a50 r8=00004409 lr=25017774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Monaco.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfe56c
+syscall pc=24df3ca8 r0=5 r3=22399430 r4=00000000 r5=000001b6 r6=00000001 r7=22399830 r8=22399834 lr=25032698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Monaco.dfont
+return r3=5 error=0 resume=24df3cac
+syscall pc=24e04068 r0=197 r3=00000000 r4=00016ee5 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=2502bc18 res=ffffffff
+return r3=1158344704 error=0 resume=24e0406c

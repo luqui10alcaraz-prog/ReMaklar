@@ -1,0 +1,35 @@
+Index Refs Address    Size       Wired      Name (Version) <Linked Against>
+    1    1 0x0        0x0        0x0        com.apple.kernel (6.0)
+    2    8 0x0        0x0        0x0        com.apple.kernel.bsd (6.0)
+    3   24 0x0        0x0        0x0        com.apple.kernel.iokit (6.0)
+    4   23 0x0        0x0        0x0        com.apple.kernel.libkern (6.0)
+    5   14 0x0        0x0        0x0        com.apple.kernel.mach (6.0)
+    6    1 0x0        0x0        0x0        com.apple.iokit.IOADBFamily (1.1)
+    7    1 0x0        0x0        0x0        com.apple.iokit.IONVRAMFamily (1.1)
+    8    1 0x0        0x0        0x0        com.apple.iokit.IOSystemManagementFamily (1.1)
+    9    1 0x0        0x0        0x0        com.apple.iokit.ApplePlatformFamily (1.0)
+   10    1 0x0        0x0        0x0        com.apple.driver.AppleNMI (1.0)
+   11    0 0x3195b000 0x5000     0x4000     com.apple.BootCache (7) <5 3 2>
+   12    3 0x31a04000 0x1d000    0x1c000    com.apple.iokit.IOHIDFamily (1.2) <4 3>
+   13    1 0x31a3f000 0x2000     0x1000     com.apple.iokit.IOHIDSystem (1.2) <12 4 3>
+   14    5 0x31a61000 0x6000     0x5000     com.apple.iokit.IOPCIFamily (1.2) <4 3>
+   15    1 0x31aec000 0x13000    0x12000    com.apple.iokit.IOGraphicsFamily (1.2) <14 4 3>
+   16    1 0x31b16000 0x4000     0x3000     com.apple.driver.ApplePS2Controller (1.0.0) <5 4 3>
+   17    0 0x31b50000 0x3000     0x2000     com.apple.driver.ApplePS2Keyboard (1.0.1) <16 13 12 5 4 3>
+   18    0 0x31b6b000 0x3000     0x2000     com.apple.driver.AppleI386PCI (1.1) <14 4 3>
+   19    3 0x31bac000 0xc000     0xb000     com.apple.iokit.IOATAFamily (1.5.2f1) <4 3>
+   20    0 0x31bf2000 0x6000     0x5000     com.apple.driver.AppleIntelPIIXATA (1.1) <19 14 4 3>
+   22    0 0x31c91000 0xb000     0xa000     com.apple.iokit.IONDRVSupport (1.2) <15 14 4 3>
+   23    4 0x31cfc000 0x13000    0x12000    com.apple.iokit.IOUSBFamily (1.9) <5 4 3>
+   24    0 0x31d46000 0x7000     0x6000     com.apple.driver.AppleUSBOHCI (1.9.1) <23 14 5 4 3>
+   25    0 0x31d7b000 0x6000     0x5000     com.apple.driver.AppleUSBHub (1.9) <23 5 4 3>
+   26    3 0x31dcd000 0xc000     0xb000     com.apple.iokit.IOSCSIArchitectureModelFamily (1.2.0) <5 4 3>
+   27    0 0x31e09000 0x4000     0x3000     com.apple.iokit.IOATAPIProtocolTransport (1.1.1) <26 19 5 4 3>
+   28    5 0x31e66000 0x11000    0x10000    com.apple.iokit.IOStorageFamily (1.2) <4 3 2>
+   29    0 0x31ec0000 0x8000     0x7000     com.apple.iokit.IOATABlockStorage (1.2.0) <28 19 4 3 2>
+   30    2 0x31f16000 0x9000     0x8000     com.apple.iokit.IOCDStorageFamily (1.2) <28 5 4 3 2>
+   31    1 0x31f82000 0xc000     0xb000     com.apple.iokit.IOSCSIBlockCommandsDevice (1.2.0) <28 26 5 4 3 2>
+   32    1 0x31fcd000 0x5000     0x4000     com.apple.iokit.IODVDStorageFamily (1.2) <30 28 5 4 3 2>
+   33    0 0x3206a000 0x10000    0xf000     com.apple.iokit.IOSCSIMultimediaCommandsDevice (1.2.0) <32 31 30 28 26 5 4 3 2>
+   35    0 0x320d4000 0x2000     0x1000     com.apple.driver.AppleUSBComposite (1.9) <23 5 4 3>
+   36    0 0x320de000 0x4000     0x3000     com.apple.iokit.IOUSBHIDDriver (1.9) <23 12>

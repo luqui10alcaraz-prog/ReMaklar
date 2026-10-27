@@ -1,0 +1,5 @@
+real allocate/destroy cycles=1000
+real allocate/destroy cycles=2000
+real allocate/destroy cycles=3000
+real allocate/destroy cycles=4000
+real extended capabilities: 4100 cycles, retired names, rename/collision, send refs, limits, port-set delivery, destroy and typed timer PASS

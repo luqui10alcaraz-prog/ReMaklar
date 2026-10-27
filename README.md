@@ -1,8 +1,12 @@
 # ReMaklar
 
-Estado actual: [ReMaklar 0.11 y punto exacto de continuacion](docs/remaklar-0.11.md). Mapeos Mach e IOKit remotos verificados; el ultimo ensayo dibuja la barra original de Aqua. Todavia no hay ventana del Installer verificada; checkpoint completo preservado durante un bloqueo de salida/UFS.
+Estado actual: **primera ventana auténtica del Installer original de Jaguar verificada en Darwin 6 i386**, ensayo102. La ventana muestra «Authorization» y «This software cannot be installed on this computer», con sus botones originales. La captura coincide píxel por píxel con la VRAM VESA; restaurar el checkpoint en otra VM reproduce exactamente la imagen. Ver [evidencia, regresiones y recuperación](docs/remaklar-0.11-continuacion.md). El [informe original de 0.11](docs/remaklar-0.11.md) conserva el estado histórico de direct66.
 
-Investigación independiente de Mac OS X Jaguar 10.2 sobre Intel x86 de 32 bits, partiendo de Darwin 6. El objetivo es conservar comportamiento y componentes originales cuando sea posible. Aqua queda para etapas posteriores.
+Para probarlo en Windows: doble clic en **[Probar-ReMaklar.bat](Probar-ReMaklar.bat)**. Abre una copia con ventana visible y registra CPU, memoria y capturas durante un máximo de tres minutos. Ver [uso y límites de la prueba](docs/probar-remaklar.md).
+
+Continuación del 27 de octubre: **movimiento del cursor Aqua verificado contra la VRAM**, entrada USB real comparada entre i386 y PPC y nuevas correcciones de IOKit, descriptores y estructuras HID. El Installer todavía no completa su flujo. El checkpoint local `input141-publication` conserva el estado para retomar; la prueba de datos de una ranura HID consumida y el siguiente arranque gráfico siguen pendientes. Ver [estado exacto, resultados y recuperación](docs/remaklar-0.11-entrada-installer.md).
+
+Investigación independiente de Mac OS X Jaguar 10.2 sobre Intel x86 de 32 bits, partiendo de Darwin 6. El objetivo es conservar comportamiento y componentes originales; la compatibilidad completa de Aqua y del Installer sigue en investigación.
 
 ## Avance 0.05: filesystem y preparación Objective-C
 

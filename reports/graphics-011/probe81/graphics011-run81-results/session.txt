@@ -1,0 +1,105 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/run81.tgz graphics011-run81-results graphics011-joint81;sync;umount /exchange' 0
++ df -k /
++ cp -Rp /var/tmp/graphics011-build77/build /var/tmp/graphics011-build81/build
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/kinfo.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/kinfo.inc
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/remote-maps.inc
++ cmp -s /var/tmp/graphics011-stage81/source/cpu-all.h /var/tmp/graphics011-run1/source/cpu-all.h
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/mmap.c /var/tmp/graphics011-run1/source/darwin-user/mmap.c
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/high-window.c
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run1/source/darwin-user/remaklar/high-window.h
++ cmp -s /var/tmp/graphics011-stage81/source/target-ppc/cpu.h /var/tmp/graphics011-run1/source/target-ppc/cpu.h
++ cmp -s /var/tmp/graphics011-stage81/source/target-ppc/translate.c /var/tmp/graphics011-run1/source/target-ppc/translate.c
++ cmp -s /var/tmp/graphics011-stage81/source/target-ppc/helper.h /var/tmp/graphics011-run1/source/target-ppc/helper.h
++ cmp -s /var/tmp/graphics011-stage81/source/target-ppc/op_helper.c /var/tmp/graphics011-run1/source/target-ppc/op_helper.c
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap-main.c
++ cp /var/tmp/graphics011-stage81/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap-main.c
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/qemu.h /var/tmp/graphics011-run1/source/darwin-user/qemu.h
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage81/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc
++ cp /var/tmp/graphics011-stage81/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/live-regions.inc
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/typed-live.c
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run1/source/darwin-user/remaklar/typed-live.h
++ cmp -s /var/tmp/graphics011-stage81/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build81/qemu-ppc
++ exe=/var/tmp/graphics011-build81/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage81/stress.c -o /var/tmp/graphics011-run81-results/stress-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage81/stress.c -o /var/tmp/graphics011-run81-results/stress-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/stress-native /var/tmp/graphics011-run81-results/stress-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/stress-previous /var/tmp/graphics011-build77/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run81-results/stress-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-run81-results/stress-previous.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/stress-previous.status
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/stress-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run81-results/stress-ppc
++ cmp /var/tmp/graphics011-run81-results/stress-native.stdout /var/tmp/graphics011-run81-results/stress-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/stress-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/stress-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/stress-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/vmcopy-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/vmcopy-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/vmcopy-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/vmcopy-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/rename-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/rename-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/rename-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/rename-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/fcntl-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/fcntl-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/fcntl-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/fcntl-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/taskthreads-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/taskthreads-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/taskthreads-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/taskthreads-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/priority-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/priority-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/priority-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/priority-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/forkio-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/forkio-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/forkio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/forkio-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/kinfo-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/kinfo-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/kinfo-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/kinfo-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/ool-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/ool-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/ool-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/ool-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/remoteio-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/remoteio-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/remoteio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/remoteio-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/remote-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/remote-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/remote-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/remote-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/shared-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/shared-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/shared-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/shared-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/high-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/high-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/high-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/high-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/timer-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/timer-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/timer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/timer-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/capability-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/capability-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/capability-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/capability-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/trailer-jaguar /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/trailer-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run81-results/trailer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run81-results/trailer-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/threads /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/threads-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run81-results/fasttrap /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/fasttrap-ppc
++ echo probes_completed
++ sync
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ export REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ perl /var/tmp/graphics011-stage81/joint.pl /var/tmp/graphics011-joint81 /var/tmp/graphics011-build81/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/run81.tgz graphics011-run81-results graphics011-joint81
++ sync
++ umount /exchange

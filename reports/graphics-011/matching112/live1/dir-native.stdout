@@ -1,0 +1,10 @@
+actual kernel BSD matching disk0s2: <dict ID="0"><key>IOProviderClass</key><string ID="1">IOService</string><key>BSD Name</key><string ID="2">disk0s2</string></dict>
+actual registry path disk0s2: IOService:/AppleI386PlatformExpert/pci/AppleI386PCI/pci8086,7010@1,1/AppleIntelPIIXMultiATADriver/AppleIntelPIIXATAController/AppleIntelPIIXATADriver/ATADeviceNub@0/IOATABlockStorageDriver/IOATABlockStorageDevice/IOBlockStorageDriver/QEMU HARDDISK Media/IOFDiskPartitionScheme/Untitled 2@2
+actual kernel BSD matching disk1s1: <dict ID="0"><key>IOProviderClass</key><string ID="1">IOService</string><key>BSD Name</key><string ID="2">disk1s1</string></dict>
+actual registry path disk1s1: IOService:/AppleI386PlatformExpert/pci/AppleI386PCI/pci8086,7010@1,1/AppleIntelPIIXMultiATADriver/AppleIntelPIIXATAController/AppleIntelPIIXATADriver/ATADeviceNub@1/IOATABlockStorageDriver/IOATABlockStorageDevice/IOBlockStorageDriver/QEMU HARDDISK Media/IOFDiskPartitionScheme/Untitled 1@1
+actual kernel BSD matching disk3s0: <dict ID="0"><key>IOProviderClass</key><string ID="1">IOService</string><key>BSD Name</key><string ID="2">disk3s0</string></dict>
+actual registry path disk3s0: IOService:/AppleI386PlatformExpert/pci/AppleI386PCI/pci8086,7010@1,1/AppleIntelPIIXMultiATADriver/AppleIntelPIIXATAController/AppleIntelPIIXATADriver/ATADeviceNub@0/IOATAPIProtocolTransport/IOSCSIPeripheralDeviceNub/IOSCSIPeripheralDeviceType05/IODVDServices/IODVDBlockStorageDriver/QEMU QEMU DVD-ROM Media/IOCDPartitionScheme/Untitled 0@0
+actual kernel BSD matching remaklar-no-such-disk: <dict ID="0"><key>IOProviderClass</key><string ID="1">IOService</string><key>BSD Name</key><string ID="2">remaklar-no-such-disk</string></dict>
+actual kernel general matching result=0 text=<dict ID="0"><key>IOProviderClass</key><string ID="1">IOService</string></dict>
+actual kernel unknown matching type result=3758097095
+real kernel dictionary serialization and device enumeration OK

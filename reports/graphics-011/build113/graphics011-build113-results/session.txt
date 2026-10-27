@@ -1,0 +1,34 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/build113.tgz graphics011-build113-results;sync;umount /exchange' 0
++ cp /var/tmp/graphics011-stage113/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage113/live-regions.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage113/typed-live.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage113/typed-live.h /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build113/qemu-ppc
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage113 /var/tmp/graphics011-stage113/hid-key-fields.c /var/tmp/graphics011-stage113/typed-live.c -o /var/tmp/graphics011-build113-results/fields-key-i386
++ /var/tmp/graphics011-build113-results/fields-key-i386
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage113 /var/tmp/graphics011-stage113/hid-mouse-fields.c /var/tmp/graphics011-stage113/typed-live.c -o /var/tmp/graphics011-build113-results/fields-mouse-i386
++ /var/tmp/graphics011-build113-results/fields-mouse-i386
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage113/hid.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build113-results/hid-i386
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage113/names.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build113-results/names-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage113/hid.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build113-results/hid-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage113/names.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build113-results/names-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build113-results/names-native /var/tmp/graphics011-build113-results/names-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build113-results/names-previous /var/tmp/graphics011-build112/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-build113-results/names-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-build113-results/names-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build113-results/names-jaguar /var/tmp/graphics011-build113/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-build113-results/names-ppc
++ cmp /var/tmp/graphics011-build113-results/names-native.stdout /var/tmp/graphics011-build113-results/names-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-build113-results/names-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-build113-results/names-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-build113-results/names-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-build113-results/names-jaguar.status
++ echo build_and_names_completed
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/RUNS/build113.tgz graphics011-build113-results

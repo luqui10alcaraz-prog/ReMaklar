@@ -1,0 +1,24 @@
+#!/bin/sh
+set -eu
+p=/var/tmp/graphics011-stage112
+out=/var/tmp/graphics011-matching112-results
+work=/var/tmp/graphics011-build112
+test ! -e "$out";test ! -e "$work";mkdir "$out" "$work";exec > "$out/session.txt" 2>&1
+set -x
+trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;paths=graphics011-matching112-results;if test -d graphics011-joint112;then paths="$paths graphics011-joint112";fi;gnutar czf /exchange/RUNS/match112.tgz $paths;sync;umount /exchange' 0
+cp "$p/darwin-kernel.c" /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
+make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user > "$out/build.txt" 2>&1
+cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc "$work/qemu-ppc"
+for arch in i386 ppc;do gcc2 -no-cpp-precomp -arch "$arch" "$p/matching.c" -framework IOKit -framework CoreFoundation -o "$out/matching-$arch" > "$out/build-$arch.txt" 2>&1;done
+probe=/var/tmp/graphics009-r8/run_graphics_008.pl
+export REMAKLAR_QUIET_TLS=1
+perl "$probe" "$out/native" "$out/matching-i386"
+perl "$probe" "$out/previous" /var/tmp/graphics011-build108/qemu-ppc --root /var/tmp/jaguar "$out/matching-ppc"
+grep -q '^leader_exit=125$' "$out/previous.status"
+perl "$probe" "$out/jaguar" "$work/qemu-ppc" --root /var/tmp/jaguar "$out/matching-ppc"
+cmp "$out/native.stdout" "$out/jaguar.stdout"
+for mode in native jaguar;do grep -q '^leader_exit=0$' "$out/$mode.status";grep -q '^timeout=0$' "$out/$mode.status";done
+echo probes_completed > "$out/phase.txt"
+export REMAKLAR_TRACE_PATHS=1
+export REMAKLAR_JOINT_SAMPLES=72
+perl "$p/joint.pl" /var/tmp/graphics011-joint112 "$work/qemu-ppc" /var/tmp/jaguar

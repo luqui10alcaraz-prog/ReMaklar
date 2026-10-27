@@ -1,0 +1,20 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/input119-$mode$attempt.tgz graphics011-input119-$mode$attempt;sync;umount /exchange' 0
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ bin=/var/tmp/graphics011-input118-results
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-input119-n1/probe /var/tmp/graphics011-input118-results/hid-i386 --mouse
++ cat /var/tmp/graphics011-input119-n1/probe.status
+leader_exit=8
+timeout=0
+remaining_group_after_leader=0
+descendant_seconds=0
+remaining_detached_children=0
++ test n = p
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-input119-n1/probe.status
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/RUNS/input119-n1.tgz graphics011-input119-n1

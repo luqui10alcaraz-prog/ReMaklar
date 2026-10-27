@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+mode=$1
+attempt=$2
+out=/var/tmp/graphics011-input119-$mode$attempt
+test ! -e "$out";mkdir "$out";exec > "$out/session.txt" 2>&1
+set -x
+trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/input119-$mode$attempt.tgz graphics011-input119-$mode$attempt;sync;umount /exchange' 0
+export REMAKLAR_QUIET_TLS=1
+probe=/var/tmp/graphics009-r8/run_graphics_008.pl
+bin=/var/tmp/graphics011-input118-results
+case "$mode" in
+n) perl "$probe" "$out/probe" "$bin/hid-i386" --mouse;;
+p) perl "$probe" "$out/probe" /var/tmp/graphics011-build112/qemu-ppc --root /var/tmp/jaguar "$bin/hid-ppc" --mouse;;
+j) perl "$probe" "$out/probe" /var/tmp/graphics011-build113/qemu-ppc --root /var/tmp/jaguar "$bin/hid-ppc" --mouse;;
+*) exit 2;;
+esac
+cat "$out/probe.status"
+if test "$mode" = p;then grep -q '^leader_exit=125$' "$out/probe.status";else grep -q '^leader_exit=0$' "$out/probe.status";grep -q '^timeout=0$' "$out/probe.status";fi

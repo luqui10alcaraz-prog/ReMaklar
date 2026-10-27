@@ -1,0 +1,28 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -1480,6 +1480,25 @@
+         qerror("IOKit matching dictionary requires Darwin");
+ #endif
+         break;
++    case 2843: /* io_registry_entry_get_name_in_plane: actual registry name. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*name_fn)(mach_port_t,const char *,char *);
++            mach_port_t endpoint;uint32_t count,bytes;char name[128]={0};
++            if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size<40)qerror("invalid registry name request");
++            count=ldl(g2h(a+36));
++            if(!count || count>128 || size!=40+((count+3)&~3) || ldub(g2h(a+40+count-1)))qerror("invalid registry name plane");
++            code=((name_fn)native_iokit_symbol("_io_registry_entry_get_name_in_plane"))(endpoint,g2h(a+40),name);
++            if(!code){
++                if(!memchr(name,0,sizeof(name)))qerror("native registry name not terminated");
++                bytes=strlen(name)+1;stl(answer+36,0);stl(answer+40,bytes);memcpy(answer+44,name,bytes);length=44+((bytes+3)&~3);
++            }
++            fprintf(stderr,"native IOKit registry name plane=%s result=%u name=%s\n",(char *)g2h(a+40),code,name);
++        }
++#else
++        qerror("IOKit registry name requires Darwin");
++#endif
++        break;
+     case 2826: /* io_registry_entry_get_path: bounded native registry path. */
+ #ifdef __APPLE__
+         {

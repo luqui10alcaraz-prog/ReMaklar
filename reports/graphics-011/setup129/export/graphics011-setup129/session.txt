@@ -1,0 +1,11 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/setup129.tgz graphics011-setup129;sync;umount /exchange' 0
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage129/mount-devfs.c -o /var/tmp/graphics011-setup129/mount-devfs
++ mkdir -p /var/tmp/jaguar/dev
++ /var/tmp/graphics011-setup129/mount-devfs /var/tmp/jaguar/dev
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage129/preferences.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-setup129/preferences
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/RUNS/setup129.tgz graphics011-setup129

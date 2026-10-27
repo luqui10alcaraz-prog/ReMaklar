@@ -1,0 +1,3 @@
+/var/tmp/graphics011-stage98/threadswitch.c: In function `main':
+/var/tmp/graphics011-stage98/threadswitch.c:23: too few arguments to function `semaphore_destroy'
+/var/tmp/graphics011-stage98/threadswitch.c:23: too few arguments to function `semaphore_destroy'

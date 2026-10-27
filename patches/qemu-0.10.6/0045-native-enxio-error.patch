@@ -1,0 +1,11 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -233,7 +233,7 @@
+     switch (err) {
+     case 0: return 0;
+     case EPERM: return 1; case ENOENT: return 2; case EINTR: return 4;
+-    case EIO: return 5; case EBADF: return 9; case ENOMEM: return 12;
++    case EIO: return 5; case ENXIO: return 6; case EBADF: return 9; case ENOMEM: return 12;
+     case ESRCH: return 3; case ECHILD: return 10; case EAGAIN: return 35;
+     case E2BIG: return 7; case ENOEXEC: return 8;
+     case EACCES: return 13; case EFAULT: return 14; case EBUSY: return 16; case EEXIST: return 17;

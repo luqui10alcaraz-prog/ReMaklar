@@ -1,0 +1,10 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -1007,6 +1007,7 @@
+         else r = readlink(p, g2h(b), c);
+         break;
+     case 60: r = umask(a); break;
++    case 124:r=fchmod(host_fd(a),b);break;
+     case 95: { /* Flush the real file held by this virtual descriptor. */
+         int fd=host_fd(a),saved;
+         remaklar_gate_leave();r=fsync(fd);saved=errno;remaklar_gate_enter(env);errno=saved;

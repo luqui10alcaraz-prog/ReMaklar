@@ -1,0 +1,803 @@
+sample=1793066632
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2345  ??  Rs     0:03.74 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer
+ 2346  ??  Rs     0:01.27 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.16 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2347  ??  R+     0:00.01 ps -axww
+sample=1793066637
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2345  ??  Rs     0:05.10 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer
+ 2346  ??  Rs     0:03.11 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2348  ??  Rs     0:01.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/WindowServer /var/tmp/jaguar/System/Library/CoreServices/WindowServer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.27 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2349  ??  R+     0:00.07 ps -axww
+sample=1793066642
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:05.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2348  ??  Rs     0:04.23 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/WindowServer /var/tmp/jaguar/System/Library/CoreServices/WindowServer
+ 2345 con- Z      0:00.00  (qemu-ppc)
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.38 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2350  ??  R+     0:00.01 ps -axww
+sample=1793066647
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:07.71 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  R      0:00.74 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2348 con- Z      0:00.00  (qemu-ppc)
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.46 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2352  ??  R+     0:00.01 ps -axww
+sample=1793066653
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:07.71 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:05.75 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.50 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2353  ??  R+     0:00.01 ps -axww
+sample=1793066658
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:07.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:10.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.56 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2354  ??  R+     0:00.01 ps -axww
+sample=1793066663
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:08.89 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:14.57 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.63 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2355  ??  R+     0:00.01 ps -axww
+sample=1793066668
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.64 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.67 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2356  ??  R+     0:00.01 ps -axww
+sample=1793066673
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.71 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:04.98 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.71 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2358  ??  R+     0:00.08 ps -axww
+sample=1793066678
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.72 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:07.86 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:02.17 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.74 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2360  ??  R+     0:00.10 ps -axww
+sample=1793066684
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:10.87 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:04.29 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.81 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2361  ??  R+     0:00.01 ps -axww
+sample=1793066689
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:13.17 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:06.99 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.85 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2362  ??  R+     0:00.02 ps -axww
+sample=1793066694
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:13.29 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:11.87 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.86 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2363  ??  R+     0:00.01 ps -axww
+sample=1793066699
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:13.29 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:16.88 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.89 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2364  ??  R+     0:00.01 ps -axww
+sample=1793066704
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:13.29 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:21.89 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.91 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2365  ??  R+     0:00.02 ps -axww
+sample=1793066709
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:13.30 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:26.88 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:00.95 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2366  ??  R+     0:00.01 ps -axww
+sample=1793066714
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:13.30 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:31.88 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.97 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2367  ??  R+     0:00.01 ps -axww
+sample=1793066719
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:13.30 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:36.89 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.97 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2368  ??  R+     0:00.02 ps -axww
+sample=1793066724
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:13.30 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:41.90 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.97 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2369  ??  R+     0:00.01 ps -axww
+sample=1793066729
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:13.30 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:46.91 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:00.97 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2370  ??  R+     0:00.02 ps -axww
+sample=1793066734
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.34 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:17.84 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:13.44 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:51.66 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:01.04 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2371  ??  R+     0:00.02 ps -axww
+sample=1793066739
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.35 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:18.47 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.00 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     0:54.47 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.07 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2372  ??  R+     0:00.01 ps -axww
+sample=1793066744
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.35 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:19.45 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.59 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     0:54.48 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+ 2374  ??  RNs    0:03.13 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 DMProxy --inherit-fds 0:0,1:1,2:2, --inherit-ports 5 --exec-env-count 15
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.14 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2375  ??  R+     0:00.01 ps -axww
+sample=1793066750
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:19.51 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.60 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:55.50 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+ 2374  ??  RNs    0:07.10 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 DMProxy --inherit-fds 0:0,1:1,2:2, --inherit-ports 5 --exec-env-count 15
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.22 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2376  ??  R+     0:00.04 ps -axww
+sample=1793066755
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:19.84 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.63 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     0:58.03 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+ 2374  ??  SNs    0:09.23 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 DMProxy --inherit-fds 0:0,1:1,2:2, --inherit-ports 5 --exec-env-count 15
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.30 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2377  ??  R+     0:00.01 ps -axww
+sample=1793066760
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:20.09 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.70 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     0:58.59 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+ 2374  ??  RNs    0:13.36 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 DMProxy --inherit-fds 0:0,1:1,2:2, --inherit-ports 5 --exec-env-count 15
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:01.32 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2378  ??  R+     0:00.01 ps -axww
+sample=1793066765
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.17 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.71 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:03.27 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.37 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2379  ??  R+     0:00.00 ps -axww
+sample=1793066770
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.17 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.71 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:08.28 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:01.38 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2380  ??  R+     0:00.01 ps -axww
+sample=1793066775
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:10.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.18 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.72 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:13.26 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.43 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2381  ??  R+     0:00.02 ps -axww
+sample=1793066780
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:11.92 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.18 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:15.98 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:16.91 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.50 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2382  ??  R+     0:00.01 ps -axww
+sample=1793066786
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:12.69 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.20 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:16.39 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:20.72 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.61 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2383  ??  R+     0:00.02 ps -axww
+sample=1793066791
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:13.29 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:20.54 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:16.78 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:24.40 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.71 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2384  ??  R+     0:00.02 ps -axww
+sample=1793066796
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:15.89 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.54 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:18.49 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:25.09 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:01.97 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2385  ??  R+     0:00.01 ps -axww
+sample=1793066801
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:18.39 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:20.57 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:19.82 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:26.23 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:02.31 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2386  ??  R+     0:00.01 ps -axww
+sample=1793066807
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:20.95 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.68 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:21.16 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:27.23 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:02.55 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2387  ??  R+     0:00.01 ps -axww
+sample=1793066812
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:23.84 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.69 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:22.84 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:27.68 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:03.01 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2388  ??  R+     0:00.01 ps -axww
+sample=1793066818
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:25.47 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.77 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:23.71 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:30.11 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:03.34 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2389  ??  R+     0:00.00 ps -axww
+sample=1793066823
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:28.49 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.77 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:25.09 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:30.72 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:03.96 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2390  ??  R+     0:00.00 ps -axww
+sample=1793066829
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:31.62 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:20.77 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:26.64 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:31.05 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:04.54 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2391  ??  R+     0:00.01 ps -axww
+sample=1793066834
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:31.95 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:23.59 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:27.81 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:31.74 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:04.63 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2392  ??  R+     0:00.01 ps -axww
+sample=1793066839
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:32.42 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:23.60 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:28.01 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:36.07 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:04.75 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2393  ??  R+     0:00.00 ps -axww
+sample=1793066845
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:33.59 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:23.72 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:28.59 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:39.37 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:04.96 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2394  ??  R+     0:00.01 ps -axww
+sample=1793066850
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:35.15 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:23.73 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:29.49 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:41.93 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:05.20 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2395  ??  R+     0:00.01 ps -axww
+sample=1793066855
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:36.46 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:24.57 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:30.52 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:43.77 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:05.44 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2396  ??  R+     0:00.01 ps -axww
+sample=1793066861
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:39.48 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:24.58 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:32.24 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:44.03 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:06.07 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2397  ??  R+     0:00.00 ps -axww
+sample=1793066866
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.36 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:41.40 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:25.54 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:34.06 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:44.34 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:06.45 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2398  ??  R+     0:00.01 ps -axww
+sample=1793066872
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.37 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:42.75 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:26.08 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:35.40 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:46.11 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:06.73 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2399  ??  R+     0:00.00 ps -axww
+sample=1793066877
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.37 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:43.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:26.17 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:36.07 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:49.62 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:06.94 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2400  ??  R+     0:00.01 ps -axww
+sample=1793066882
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.37 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:43.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:26.17 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:36.07 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:54.63 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:06.94 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2401  ??  R+     0:00.01 ps -axww
+sample=1793066887
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.37 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:43.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:28.45 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:37.15 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     1:56.28 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:06.95 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2402  ??  R+     0:00.05 ps -axww
+sample=1793066892
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.37 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:43.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:30.45 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:37.74 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     1:58.70 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:06.99 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2403  ??  R+     0:00.01 ps -axww
+sample=1793066897
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:43.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:30.45 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:37.78 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:03.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:07.01 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2404  ??  R+     0:00.00 ps -axww
+sample=1793066903
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:44.88 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:30.71 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:38.87 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:06.28 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:07.22 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2405  ??  R+     0:00.01 ps -axww
+sample=1793066908
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:46.37 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:31.39 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:39.48 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:08.70 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:07.49 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2406  ??  R+     0:00.01 ps -axww
+sample=1793066913
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:46.37 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:31.44 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:39.50 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:13.63 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:07.58 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2407  ??  R+     0:00.01 ps -axww
+sample=1793066919
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:46.37 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:31.44 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:39.50 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:18.64 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:07.64 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2408  ??  R+     0:00.01 ps -axww
+sample=1793066924
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:48.59 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Rs     0:31.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:41.06 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     2:19.68 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:08.05 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2409  ??  R+     0:00.01 ps -axww
+sample=1793066929
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:49.51 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.62 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:42.55 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:21.39 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:08.25 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2410  ??  R+     0:00.01 ps -axww
+sample=1793066935
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:50.77 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.63 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:44.59 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:23.09 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:08.50 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2411  ??  R+     0:00.01 ps -axww
+sample=1793066940
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:50.81 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.63 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:47.07 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     2:25.58 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  S+     0:08.51 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2412  ??  R+     0:00.01 ps -axww
+sample=1793066945
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:52.78 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.63 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:49.85 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     2:25.83 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:08.89 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2413  ??  R+     0:00.01 ps -axww
+sample=1793066951
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Ss     0:54.96 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.64 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Rs     0:52.22 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:26.28 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:09.35 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2414  ??  R+     0:00.01 ps -axww
+sample=1793066957
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Rs     0:58.03 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.64 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:53.34 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     2:27.10 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:10.09 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2415  ??  R+     0:00.01 ps -axww
+sample=1793066963
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Rs     1:02.06 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.64 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:53.34 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     2:28.07 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:11.13 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2416  ??  R+     0:00.01 ps -axww
+sample=1793066969
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Rs     1:05.36 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.75 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:53.34 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     2:29.67 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:12.01 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2417  ??  R+     0:00.01 ps -axww
+sample=1793066975
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2346  ??  Rs     1:09.52 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2351  ??  Ss     0:32.77 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:53.34 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Ss     2:30.49 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:13.09 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2418  ??  R+     0:00.01 ps -axww
+sample=1793066981
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2351  ??  Rs     0:33.63 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/CoreServices/WindowServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 13
+ 2357  ??  Ss     0:53.34 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/pbs /var/tmp/jaguar/System/Library/CoreServices/pbs
+ 2359  ??  Rs     2:32.38 /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:13.84 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2419  ??  R+     0:00.01 ps -axww
+sample=1793066981
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.38 /sbin/mach_init -s -v      
+ 2357 con- Z      0:00.00  (qemu-ppc)
+ 2359 con- Z      0:00.00  (qemu-ppc)
+   22  ??  Ss     0:01.14 -sh (sh)
+ 2304  ??  S+     0:00.08 sh /var/tmp/graphics011-stage100/run.sh
+ 2344  ??  R+     0:13.87 perl /var/tmp/graphics011-stage100/joint.pl /var/tmp/graphics011-joint100 /var/tmp/graphics011-build100/qemu-ppc /var/tmp/jaguar
+ 2421  ??  R+     0:00.01 ps -axww

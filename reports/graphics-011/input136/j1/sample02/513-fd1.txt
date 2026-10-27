@@ -1,0 +1,1 @@
+layout NXEvent=76 NXEQElement=84 NXEventData=48 lleq=224 data=36 time=20 key=8 repeat=2 keyboardType=16

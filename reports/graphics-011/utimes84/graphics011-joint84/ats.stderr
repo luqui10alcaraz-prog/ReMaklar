@@ -1,0 +1,1449 @@
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer'
+loaded entry=8fe960f0 stack=223d7fb4 cpu=750 host=i386 env=0x2233c000
+smc restored=8fe960fc
+syscall pc=8fea2168 r0=4294967268 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe9860c res=ffffffff
+syscall pc=8fea2178 r0=4294967267 r3=00000101 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe9861c res=ffffffff
+syscall pc=8fea2148 r0=4294967270 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8feac600 res=ffffffff
+syscall pc=8fea2198 r0=4294967264 r3=223d7e70 r4=00000003 r5=00000028 r6=00000060 r7=00000200 r8=00000000 lr=8feaba98 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000000 00000103 00000200 8fe7d570 000000c8 00000000 00000000 00000008 00000000
+syscall pc=8fea2188 r0=4294967265 r3=223d7eb0 r4=00000003 r5=00000018 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=202 destination=103 send=24 recv=48: 00001513 00000000 00000103 00000200 00000000 000000ca
+syscall pc=8fea2188 r0=4294967265 r3=223d7eb0 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000200 00000000 00000c86 00000000 00000000 00000103
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000200 8fec5770 00000d51 00000000 00000000 00000004
+syscall pc=8fea2188 r0=4294967265 r3=223d7e30 r4=00000003 r5=00000018 r6=0000003c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3404 destination=101 send=24 recv=60: 00001513 00000000 00000101 00000200 00000000 00000d4c
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00011102 00000101 00000200 00000003 00000eda 00000000 00000000 223e4000 0000000c
+syscall pc=8fea2178 r0=4294967267 r3=00000000 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feac960 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=206 destination=103 send=36 recv=48: 00001513 00000024 00000103 00000200 00000000 000000ce 00000000 00000000 00000000
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000200 00000000 00000c86 00000000 00000000 00000103
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000024 00000101 00000200 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=400 host=2819 receive=1 set=0 send=0
+syscall pc=8fea2188 r0=4294967265 r3=223d7e70 r4=00000003 r5=00000054 r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3812 destination=101 send=84 recv=48: 80001513 00000400 00000101 00000200 8fec5770 00000ee4 00000001 00000000 223d7ef0 00001300 00000000 00000000 00000000 00001000 00000000 00000000 00000000 00000001 00000000 00000000 00000001
+vm_map anonymous bytes=4096 mask=0 alias=0
+syscall pc=8fea2188 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000200 8fec5ca4 00000c86 00000000 00000000 00000000
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8fe91d74 res=ffffffff
+native Mach capability guest=401 host=519 receive=0 set=0 send=3
+syscall pc=8fea2178 r0=4294967267 r3=8fec53c0 r4=00000000 r5=00000000 r6=0000002c r7=00000200 r8=00000000 lr=8fe7e2bc res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d7e70 r4=00000003 r5=00000028 r6=00000060 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000028 00000103 00000200 00000000 000000c8 00000000 00000000 00000001 00000005
+syscall pc=8fea2188 r0=4294967265 r3=223d7eb0 r4=00000003 r5=00000024 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000001 00000101 00000200 00000001 00000c86 00000000 00000000 00000103
+syscall pc=8fea2508 r0=5 r3=000013d8 r4=00000000 r5=00000000 r6=00000000 r7=8fec83cc r8=002f7661 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7d40 r5=00000000 r6=00000000 r7=8fec83cc r8=002f7661 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7da0 r6=00000001 r7=00002278 r8=002f7661 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=000013d8 r4=223e4000 r5=00002278 r6=223d7b50 r7=00000003 r8=223d7ae0 lr=8fe81958 res=ffffffff
+split-private preferred=905c0000 base=253aa000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a60 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000200 00000000 00000eda 00000000 00000000 223e4000 00002278
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=0000143c r4=00000000 r5=00000000 r6=00000000 r7=8fec83d0 r8=253aa2e4 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libSystem.B.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7d40 r5=00000000 r6=00000000 r7=8fec83d0 r8=253aa2e4 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7da0 r6=00000001 r7=0013018c r8=253aa2e4 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=0000143c r4=44efa000 r5=0013018c r6=223d7b50 r7=00000004 r8=223d7ae0 lr=8fe81958 res=ffffffff
+split-private preferred=90000000 base=24dea000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a60 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 44efa000 0013018c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa360 r4=00000000 r5=00000000 r6=00000000 r7=8fec83d4 r8=24dea5d0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=8fec83d4 r8=24dea5d0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=00266630 r8=24dea5d0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa360 r4=4502f000 r5=00266630 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90220000 base=2500a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 0000000a 00000101 00000200 44efa598 00000eda 00000000 00000000 4502f000 00266630
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa3ec r4=00000000 r5=00000000 r6=00000000 r7=8fec83d8 r8=2500a724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=8fec83d8 r8=2500a724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=000ee748 r8=2500a724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa3ec r4=4502f000 r5=000ee748 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90130000 base=24f1a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 000ee748
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa454 r4=00000000 r5=00000000 r6=00000000 r7=8fec83dc r8=24f1a548 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=8fec83dc r8=24f1a548 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=000b7f1c r8=24f1a548 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa454 r4=4502f000 r5=000b7f1c r6=223d7af0 r7=00000004 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90510000 base=252fa000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 000b7f1c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa4e0 r4=00000000 r5=00000000 r6=00000000 r7=8fec83e0 r8=252fa724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=8fec83e0 r8=252fa724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=00021948 r8=252fa724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa4e0 r4=4502f000 r5=00021948 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=92b30000 base=2791a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 00021948
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa56c r4=00000000 r5=00000000 r6=00000000 r7=8fec83e4 r8=2791a4c0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=8fec83e4 r8=2791a4c0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=000238b8 r8=2791a4c0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa56c r4=4502f000 r5=000238b8 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=93ec0000 base=28caa000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 000238b8
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa604 r4=00000000 r5=00000000 r6=00000000 r7=8fec83e8 r8=28caa5d0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/system/libmathCommon.A.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=8fec83e8 r8=28caa5d0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=00006b84 r8=28caa5d0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa604 r4=4502f000 r5=00006b84 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=93a40000 base=2882a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 00006b84
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2188 r0=4294967265 r3=223d7b90 r4=00000003 r5=0000002c r6=00000030 r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000200 223d7c30 00000ed9 00000000 00000000 2882a36c 00040000 01000001
+syscall pc=8fea2508 r0=5 r3=252fa7c8 r4=00000000 r5=00000000 r6=00000000 r7=44efa2f0 r8=00000000 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2f0 r8=00000000 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=0002e85c r8=00000000 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252fa7c8 r4=4502f000 r5=0002e85c r6=223d7af0 r7=00000004 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90b10000 base=258fa000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 0002e85c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=252fa834 r4=00000000 r5=00000000 r6=00000000 r7=44efa2f4 r8=258fa548 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2f4 r8=258fa548 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=0007a238 r8=258fa548 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252fa834 r4=4502f000 r5=0007a238 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90490000 base=2527a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 0007a238
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=252fa888 r4=00000000 r5=00000000 r6=00000000 r7=44efa2f8 r8=2527a47c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Security.framework/Versions/A/Security
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2f8 r8=2527a47c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=003d28c4 r8=2527a47c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252fa888 r4=4502f000 r5=003d28c4 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=92410000 base=271fa000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 003d28c4
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=252fa8e4 r4=00000000 r5=00000000 r6=00000000 r7=44efa2fc r8=271fa614 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2fc r8=271fa614 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=000233b8 r8=271fa614 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252fa8e4 r4=4502f000 r5=000233b8 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90a50000 base=2583a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 000233b8
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=2527a5c0 r4=00000000 r5=00000000 r6=00000000 r7=44efa358 r8=2583a36c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libz.1.1.3.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa358 r8=2583a36c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=0000dc34 r8=2583a36c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=2527a5c0 r4=4502f000 r5=0000dc34 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=922a0000 base=2708a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000200 00000000 00000eda 00000000 00000000 4502f000 0000dc34
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000200 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+startup: entered original executable at 00001e48
+syscall pc=24df1588 r0=4294967268 r3=00000000 r4=223d7fbc r5=223d7fc4 r6=223d7e70 r7=223d7e74 r8=00000000 lr=24df1480 res=ffffffff
+syscall pc=24df15a8 r0=4294967267 r3=00000101 r4=223d7fbc r5=223d7fc4 r6=223d7e70 r7=223d7e74 r8=00000000 lr=24df1490 res=ffffffff
+syscall pc=24df1688 r0=4294967270 r3=00000000 r4=223d7fbc r5=223d7fc4 r6=223d7e70 r7=223d7e74 r8=00000000 lr=24df0d6c res=ffffffff
+syscall pc=24deb4e8 r0=4294967264 r3=223d7e10 r4=00000003 r5=00000028 r6=00000060 r7=00000201 r8=00000000 lr=24df068c res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000004 00000103 00000201 223d7e70 000000c8 00000000 00000000 00000008 00000000
+syscall pc=24e5e328 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000018 r6=00000030 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=202 destination=103 send=24 recv=48: 00001513 ddc281c8 00000103 00000201 34deb0a4 000000ca
+syscall pc=24e5e328 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=0000002c r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000030 00000101 00000201 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 0000002c 00000101 00000201 34df19ac 00000d51 00000000 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d7dd0 r4=00000003 r5=00000018 r6=0000003c r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3404 destination=101 send=24 recv=60: 00001513 0000002c 00000101 00000201 24ee20d4 00000d4c
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000028 r6=0000002c r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 0000003c 00000101 00000201 34df19ac 00000eda 00000000 00000000 223e4000 0000000c
+syscall pc=24df15a8 r0=4294967267 r3=00000000 r4=00000003 r5=00000028 r6=0000002c r7=00000201 r8=00000000 lr=24df1a3c res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=206 destination=103 send=36 recv=48: 00001513 0000002c 00000103 00000201 00000000 000000ce 00000000 00000000 00000000
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=0000002c r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000201 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 0000002c 00000101 00000201 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=402 host=3331 receive=1 set=0 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7e10 r4=00000003 r5=00000054 r6=00000030 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3812 destination=101 send=84 recv=48: 80001513 00000402 00000101 00000201 34deb0c8 00000ee4 00000001 00000000 223d7e90 00001300 00000000 00000000 00000000 00001000 00000000 00000000 00000000 00000001 00000000 00000000 00000001
+vm_map anonymous bytes=4096 mask=0 alias=0
+syscall pc=24df15a8 r0=4294967267 r3=00000000 r4=00000003 r5=00000054 r6=00000030 r7=00000201 r8=00000000 lr=24df23a4 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7dc0 r4=00000003 r5=00000028 r6=00000060 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000000 00000103 00000201 223d7e90 000000c8 00000000 00000000 00000005 00000008
+syscall pc=24df2648 r0=4294967269 r3=34deadec r4=00000000 r5=00000020 r6=00000050 r7=00000050 r8=24df25cc lr=24df2420 res=ffffffff
+syscall pc=24df1688 r0=4294967270 r3=34deadec r4=223d7dc4 r5=00000004 r6=0000001f r7=00000001 r8=24df25cc lr=24df1168 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7d20 r4=00000003 r5=00000030 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3616 destination=401 send=48 recv=44: 00001513 34dee6ec 00000401 00000202 223d7d80 00000e20 00000000 00000000 00000001 00000001 0000001f 00000001
+syscall pc=24df36a8 r0=202 r3=223d7ec8 r4=00000002 r5=223d7ed0 r6=223d7ed4 r7=00000000 r8=00000000 lr=24df246c res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=3
+return r3=0 error=0 resume=24df36ac
+syscall pc=24e5e328 r0=4294967265 r3=223d7e00 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223d7ed4 00000101 00000202 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24df36a8 r0=202 r3=223d7ec8 r4=00000002 r5=223d7ed8 r6=223d7ed4 r7=00000000 r8=00000000 lr=24df2538 res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=13
+return r3=0 error=0 resume=24df36ac
+syscall pc=24e5e328 r0=4294967265 r3=223d7b70 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 01000001 00000101 00000202 34deb0c8 00000ed9 00000000 00000000 223d7c70 00040000 01000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7a50 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 24f0455f 00000101 00000202 223d7b10 00000d51 00000000 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d79e0 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 8fec7dba 00000104 00000202 00002e68 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a90 8fec7e44 8fe7dec0 00000000 00000001 00000000 00000000 8fec7dce 8fec5414 ffffffff 24ed7cd0 34dea000 24f03739 8fec91b4 00000104 00002e54 223d7ed4 00000030 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24df00c0 r0=2 r3=8fec53c0 r4=00000000 r5=00000000 r6=8fec5600 r7=8fec5550 r8=00000016 lr=24df00b8 res=ffffffff
+fork real host_pid=176 child_pid=0 branch=child
+return r3=0 error=0 resume=24df00c4
+fork real host_pid=175 child_pid=176 branch=parent
+syscall pc=8fea2168 r0=4294967268 r3=8fe90240 r4=223d7a88 r5=8fec5550 r6=8fec5610 r7=8fec5550 r8=00000018 lr=8fe9025c res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d7910 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 8fec7e4e 00000101 00000202 00000401 00000c86 00000000 00000000 00000000
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+native Mach capability guest=400 host=515 receive=0 set=0 send=3
+syscall pc=24df1588 r0=4294967268 r3=00000001 r4=00000000 r5=00000000 r6=0000002c r7=00000202 r8=00000000 lr=24df1480 res=ffffffff
+syscall pc=24df15a8 r0=4294967267 r3=00000101 r4=00000000 r5=00000000 r6=0000002c r7=00000202 r8=00000000 lr=24df1490 res=ffffffff
+syscall pc=24df1688 r0=4294967270 r3=00000000 r4=00000000 r5=00000000 r6=0000002c r7=00000202 r8=00000000 lr=24df0d6c res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7920 r4=00000003 r5=00000028 r6=00000060 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000cea 00000103 00000202 00000000 000000c8 00000000 00000000 00000008 00000000
+syscall pc=24e5e328 r0=4294967265 r3=223d7960 r4=00000003 r5=00000018 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=202 destination=103 send=24 recv=48: 00001513 0000002c 00000103 00000202 8fec5720 000000ca
+syscall pc=24e5e328 r0=4294967265 r3=223d7960 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24e5e328 r0=4294967265 r3=223d7900 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 34deb0c8 00000d51 00000000 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d78e0 r4=00000003 r5=00000018 r6=0000003c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3404 destination=101 send=24 recv=60: 00001513 00000000 00000101 00000202 24ee19d8 00000d4c
+syscall pc=24e5e328 r0=4294967265 r3=223d7900 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00011102 00000101 00000202 00000003 00000eda 00000000 00000000 223e4000 0000000c
+syscall pc=24df15a8 r0=4294967267 r3=00000000 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24df1a3c res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7900 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=206 destination=103 send=36 recv=48: 00001513 00000024 00000103 00000202 00000000 000000ce 00000000 00000000 00000000
+syscall pc=24e5e328 r0=4294967265 r3=223d7900 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24e5e328 r0=4294967265 r3=223d7900 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000024 00000101 00000202 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=401 host=2307 receive=1 set=0 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7920 r4=00000003 r5=00000054 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3812 destination=101 send=84 recv=48: 80001513 00000401 00000101 00000202 34deb0c8 00000ee4 00000001 00000000 223d79a0 00001300 00000000 00000000 00000000 00001000 00000000 00000000 00000000 00000001 00000000 00000000 00000001
+vm_map anonymous bytes=4096 mask=0 alias=0
+syscall pc=24df2648 r0=4294967269 r3=44f3e010 r4=00000000 r5=00000054 r6=00000030 r7=00000202 r8=00000000 lr=24df0b84 res=ffffffff
+return r3=176 error=0 resume=24df00c4
+syscall pc=24defe0c r0=20 r3=00000000 r4=00000000 r5=34debec4 r6=00000030 r7=00000202 r8=00000000 lr=24df0a80 res=ffffffff
+return r3=176 error=0 resume=24defe10
+syscall pc=24df1688 r0=4294967270 r3=34deadec r4=00000004 r5=223d79a0 r6=00000030 r7=00000202 r8=00000000 lr=24df1168 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7920 r4=00000003 r5=00000024 r6=00000030 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000030 00000101 00000201 34deb0c8 00000d51 00000000 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d78b0 r4=00000003 r5=000000a0 r6=00000030 r7=00000201 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 8fec7dba 00000104 00000201 00002e68 00000194 00000000 00000000 6c6f6f6b 75702064 61656d6f 6e207632 003d7960 00000034 8fe7dec0 00000000 00000000 00000db0 00000000 223e4000 00000012 00000028 00000202 00000000 24ee17ec 8fec7db5 00000104 34deabe4 34deabe0 00000030 00000201 00000000
+native bootstrap id=404 service=lookup daemon v2 result=1102
+syscall pc=8fea2168 r0=4294967268 r3=8fec53c0 r4=00000000 r5=00000000 r6=8fec5618 r7=8fec5550 r8=00000019 lr=8fe902e4 res=ffffffff
+syscall pc=24df1288 r0=147 r3=00000000 r4=00000000 r5=00000000 r6=8fec5618 r7=8fec5550 r8=00000019 lr=00002834 res=ffffffff
+return r3=176 error=0 resume=24df128c
+syscall pc=24df90c8 r0=12 r3=00002f60 r4=00000000 r5=00000000 r6=8fec5618 r7=8fec5550 r8=00000019 lr=00002844 res=ffffffff
+return r3=0 error=0 resume=24df90cc
+syscall pc=24df1408 r0=59 r3=223d7ad0 r4=223d7fbc r5=223d7fc4 r6=80808080 r7=00000000 r8=00000401 lr=24df136c res=ffffffff
+execve requested path=/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer
+execve real replacement host_pid=176 argc=1 envc=12 cwd=/
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+warning: unkown command 0x10 in '/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer'
+loaded entry=8fe960f0 stack=223d7fac cpu=750 host=i386 env=0x2233c000
+smc restored=8fe960fc
+syscall pc=8fea2168 r0=4294967268 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe9860c res=ffffffff
+syscall pc=8fea2178 r0=4294967267 r3=00000101 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8fe9861c res=ffffffff
+syscall pc=8fea2148 r0=4294967270 r3=00000000 r4=8fef5f58 r5=00000000 r6=8fe7d68c r7=00000065 r8=8fe7d53c lr=8feac600 res=ffffffff
+syscall pc=8fea2198 r0=4294967264 r3=223d7e70 r4=00000003 r5=00000028 r6=00000060 r7=00000202 r8=00000000 lr=8feaba98 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000000 00000103 00000202 8fe7d570 000000c8 00000000 00000000 00000008 00000000
+syscall pc=8fea2188 r0=4294967265 r3=223d7eb0 r4=00000003 r5=00000018 r6=00000030 r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=202 destination=103 send=24 recv=48: 00001513 00000000 00000103 00000202 00000000 000000ca
+syscall pc=8fea2188 r0=4294967265 r3=223d7eb0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c86 00000000 00000000 00000103
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 8fec5770 00000d51 00000000 00000000 00000004
+syscall pc=8fea2188 r0=4294967265 r3=223d7e30 r4=00000003 r5=00000018 r6=0000003c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3404 destination=101 send=24 recv=60: 00001513 00000000 00000101 00000202 00000000 00000d4c
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00011102 00000101 00000202 00000003 00000eda 00000000 00000000 223e4000 0000000c
+syscall pc=8fea2178 r0=4294967267 r3=00000000 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feac960 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=206 destination=103 send=36 recv=48: 00001513 00000024 00000103 00000202 00000000 000000ce 00000000 00000000 00000000
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c86 00000000 00000000 00000103
+syscall pc=8fea2188 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000024 00000101 00000202 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=402 host=2819 receive=1 set=0 send=0
+syscall pc=8fea2188 r0=4294967265 r3=223d7e70 r4=00000003 r5=00000054 r6=00000030 r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3812 destination=101 send=84 recv=48: 80001513 00000402 00000101 00000202 8fec5770 00000ee4 00000001 00000000 223d7ef0 00001300 00000000 00000000 00000000 00001000 00000000 00000000 00000000 00000001 00000000 00000000 00000001
+vm_map anonymous bytes=4096 mask=0 alias=0
+syscall pc=8fea2188 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000202 8fec5ca4 00000c86 00000000 00000000 00000000
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+native Mach capability guest=403 host=1291 receive=0 set=0 send=3
+syscall pc=8fea2178 r0=4294967267 r3=8fec53c0 r4=00000000 r5=00000000 r6=0000002c r7=00000202 r8=00000000 lr=8fe7e2bc res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d7e70 r4=00000003 r5=00000028 r6=00000060 r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000028 00000103 00000202 00000000 000000c8 00000000 00000000 00000001 00000005
+syscall pc=8fea2188 r0=4294967265 r3=223d7eb0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000001 00000101 00000202 00000001 00000c86 00000000 00000000 00000103
+syscall pc=8fea2508 r0=5 r3=000016c4 r4=00000000 r5=00000000 r6=00000000 r7=8fec83cc r8=76657200 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7d40 r5=00000000 r6=00000000 r7=8fec83cc r8=76657200 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7da0 r6=00000001 r7=00002278 r8=76657200 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=000016c4 r4=223e4000 r5=00002278 r6=223d7b50 r7=00000003 r8=223d7ae0 lr=8fe81958 res=ffffffff
+split-private preferred=905c0000 base=253aa000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000202 00000000 00000eda 00000000 00000000 223e4000 00002278
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=00001728 r4=00000000 r5=00000000 r6=00000000 r7=8fec83d0 r8=253aa2e4 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7d40 r5=00000000 r6=00000000 r7=8fec83d0 r8=253aa2e4 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7da0 r6=00000001 r7=000233b8 r8=253aa2e4 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=00001728 r4=44efa000 r5=000233b8 r6=223d7b50 r7=00000003 r8=223d7ae0 lr=8fe81958 res=ffffffff
+split-private preferred=90a50000 base=2583a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 44efa000 000233b8
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=00001798 r4=00000000 r5=00000000 r6=00000000 r7=8fec83d4 r8=2583a36c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7d40 r5=00000000 r6=00000000 r7=8fec83d4 r8=2583a36c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7da0 r6=00000001 r7=000ee748 r8=2583a36c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=00001798 r4=44efa000 r5=000ee748 r6=223d7b50 r7=00000003 r8=223d7ae0 lr=8fe81958 res=ffffffff
+split-private preferred=90130000 base=24f1a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 44efa000 000ee748
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=00001800 r4=00000000 r5=00000000 r6=00000000 r7=8fec83d8 r8=24f1a548 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7d40 r5=00000000 r6=00000000 r7=8fec83d8 r8=24f1a548 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7da0 r6=00000001 r7=0007a238 r8=24f1a548 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=00001800 r4=44efa000 r5=0007a238 r6=223d7b50 r7=00000003 r8=223d7ae0 lr=8fe81958 res=ffffffff
+split-private preferred=90490000 base=2527a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 44efa000 0007a238
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=00001854 r4=00000000 r5=00000000 r6=00000000 r7=8fec83dc r8=2527a47c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libSystem.B.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7d40 r5=00000000 r6=00000000 r7=8fec83dc r8=2527a47c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7da0 r6=00000001 r7=0013018c r8=2527a47c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=00001854 r4=44efa000 r5=0013018c r6=223d7b50 r7=00000004 r8=223d7ae0 lr=8fe81958 res=ffffffff
+split-private preferred=90000000 base=24dea000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 44efa000 0013018c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2188 r0=4294967265 r3=223d7b90 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 0000183c 00000ed9 00000000 00000000 223d7c70 00040000 01000001
+syscall pc=8fea2508 r0=5 r3=253aa360 r4=00000000 r5=00000000 r6=00000000 r7=44efa2d0 r8=00000000 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2d0 r8=00000000 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=00266630 r8=00000000 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa360 r4=4502f000 r5=00266630 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90220000 base=2500a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 0000000a 00000101 00000202 44efa598 00000eda 00000000 00000000 4502f000 00266630
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa454 r4=00000000 r5=00000000 r6=00000000 r7=44efa2d8 r8=2500a724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2d8 r8=2500a724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=000b7f1c r8=2500a724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa454 r4=4502f000 r5=000b7f1c r6=223d7af0 r7=00000004 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90510000 base=252fa000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 4502f000 000b7f1c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa4e0 r4=00000000 r5=00000000 r6=00000000 r7=44efa2dc r8=252fa724 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2dc r8=252fa724 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=00021948 r8=252fa724 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa4e0 r4=4502f000 r5=00021948 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=92b30000 base=2791a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 4502f000 00021948
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa56c r4=00000000 r5=00000000 r6=00000000 r7=44efa2e0 r8=2791a4c0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2e0 r8=2791a4c0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=000238b8 r8=2791a4c0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa56c r4=4502f000 r5=000238b8 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=93ec0000 base=28caa000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 4502f000 000238b8
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=253aa604 r4=00000000 r5=00000000 r6=00000000 r7=44efa2e4 r8=28caa5d0 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/system/libmathCommon.A.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2e4 r8=28caa5d0 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=00006b84 r8=28caa5d0 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=253aa604 r4=4502f000 r5=00006b84 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=93a40000 base=2882a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 4502f000 00006b84
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=2527a5c0 r4=00000000 r5=00000000 r6=00000000 r7=44efa2f8 r8=2882a36c lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/usr/lib/libz.1.1.3.dylib
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa2f8 r8=2882a36c lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=0000dc34 r8=2882a36c lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=2527a5c0 r4=4502f000 r5=0000dc34 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=922a0000 base=2708a000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 4502f000 0000dc34
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=252fa7c8 r4=00000000 r5=00000000 r6=00000000 r7=44efa320 r8=2708a328 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa320 r8=2708a328 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=0002e85c r8=2708a328 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252fa7c8 r4=4502f000 r5=0002e85c r6=223d7af0 r7=00000004 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=90b10000 base=258fa000 mappings=4
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 4502f000 0002e85c
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=8fea2508 r0=5 r3=252fa888 r4=00000000 r5=00000000 r6=00000000 r7=44efa328 r8=258fa548 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Security.framework/Versions/A/Security
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=223d7ce0 r5=00000000 r6=00000000 r7=44efa328 r8=258fa548 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea2228 r0=4294967253 r3=00000003 r4=00000000 r5=223d7d40 r6=00000001 r7=003d28c4 r8=258fa548 lr=8fe8002c res=ffffffff
+syscall pc=8fea2070 r0=296 r3=252fa888 r4=4502f000 r5=003d28c4 r6=223d7af0 r7=00000003 r8=223d7a80 lr=8fe81958 res=ffffffff
+split-private preferred=92410000 base=271fa000 mappings=3
+return r3=0 error=0 resume=8fea2074
+syscall pc=8fea2188 r0=4294967265 r3=223d6a00 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 4502f000 003d28c4
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=8fe81dd4 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=24dfaf68 r0=26 r3=0000c000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee3034 lr=24f8f99c res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=8fea2188 r0=4294967265 r3=223d6ef0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223d6fe8 00000101 00000202 223d6fe0 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24dfb208 r0=4294967207 r3=223d7130 r4=00000a00 r5=44f3e010 r6=00000000 r7=00000000 r8=34f1b068 lr=24f1cd5c res=ffffffff
+syscall pc=24defe0c r0=20 r3=00000000 r4=00000a00 r5=34debec4 r6=00000000 r7=00000000 r8=24f1b144 lr=24f1d364 res=ffffffff
+return r3=175 error=0 resume=24defe10
+syscall pc=24e5e328 r0=4294967265 r3=223d7020 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000202 223d7090 00000c84 00000000 00000000 00000001
+native Mach capability guest=403 host=3843 receive=1 set=0 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7010 r4=00000003 r5=00000034 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 00000000 00000101 00000202 00000012 00000c8e 00000001 00000403 00000000 00001400 00000000 00000000 00000403
+syscall pc=24e5e328 r0=4294967265 r3=223d6fe0 r4=00000003 r5=00000030 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3218 destination=101 send=48 recv=44: 00001513 34f1b378 00000101 00000202 00000024 00000c92 00000000 00000000 00000403 00000001 00000001 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d6f80 r4=00000003 r5=00000024 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 25243428 00000101 00000202 44f3e890 00000c84 00000000 00000000 00000003
+native Mach capability guest=404 host=4099 receive=0 set=1 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d6f80 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c9a 00000000 00000000 00000403 00000404
+syscall pc=24e5e328 r0=4294967265 r3=223d70c0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 00000001 00000ed9 00000000 00000000 ff000000 00c00000 1f000000
+syscall pc=24df5dc8 r0=188 r3=24fb242c r4=223d6cc0 r5=b90017b2 r6=80808080 r7=00000002 r8=6572002f lr=24f37328 res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Support/LaunchCFMApp result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24df5dcc
+syscall pc=24df5dc8 r0=188 r3=223d6d20 r4=223d6c60 r5=b90017b2 r6=80808080 r7=00000002 r8=6572002f lr=24f3733c res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24df5dcc
+syscall pc=24dfaf68 r0=26 r3=0000c001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f8fd48 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24dfaf68 r0=26 r3=0000c003 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f8fd64 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24df5588 r0=24 r3=223d7140 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f976a0 res=ffffffff
+return r3=0 error=0 resume=24df558c
+syscall pc=24dfaf68 r0=26 r3=0000c0ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f8fd80 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=8fea2188 r0=4294967265 r3=223d74d0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 8fec54dc 00000101 00000202 24ee3058 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24dfaf68 r0=26 r3=00010000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee3034 lr=25046f98 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24dfb208 r0=4294967207 r3=223d74c0 r4=394709fe r5=00000000 r6=00000000 r7=2500ba0c r8=2521ba0c lr=2500c360 res=ffffffff
+syscall pc=24dfaf68 r0=26 r3=000100ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34df0f40 lr=8fe8601c res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24df15a8 r0=4294967267 r3=00000000 r4=2da25a54 r5=00000000 r6=00000000 r7=000028f4 r8=000028f4 lr=00002334 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7920 r4=00000003 r5=00000028 r6=00000060 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000000 00000103 00000202 00000104 000000c8 00000000 00000000 00000003 00000002
+syscall pc=24e5e328 r0=4294967265 r3=223d7960 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 8fec7e3b 00000101 00000202 223d79c0 00000c86 00000000 00000000 00000103
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=0000002c r7=00000202 r8=00000000 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 8fec7e4f 00000104 00000202 00000000 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da25a54 8fe7dec0 8fe91b30 223d7a00 00000001 223d7fbc 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da5396e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da5941e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da5e0de 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da630ba 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da691d5 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da7931b 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da80446 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da85739 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da8c900 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da93c6f 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2da9b7da 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2daa276e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2daa7589 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2daac820 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+startup: entered original executable at 000652bc
+syscall pc=24df1588 r0=4294967268 r3=00000000 r4=223d7fb4 r5=223d7fbc r6=223d7e70 r7=223d7e74 r8=00000000 lr=24df1480 res=ffffffff
+syscall pc=24df15a8 r0=4294967267 r3=00000101 r4=223d7fb4 r5=223d7fbc r6=223d7e70 r7=223d7e74 r8=00000000 lr=24df1490 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dab3919 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dab8852 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24df1688 r0=4294967270 r3=00000000 r4=223d7fb4 r5=223d7fbc r6=223d7e70 r7=223d7e74 r8=00000000 lr=24df0d6c res=ffffffff
+syscall pc=24deb4e8 r0=4294967264 r3=223d7e10 r4=00000003 r5=00000028 r6=00000060 r7=00000203 r8=00000000 lr=24df068c res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96:syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dabfce0 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dac78e0 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+ 00001513 00000000 00000103 00000203 223d7e70 000000c8 00000000 00000000 00000008 00000000
+syscall pc=24e5e328 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000018 r6=00000030 r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=202 destination=103 send=24 recv=48: 00001513 00000000 00000103 00000203 00000000 000000ca
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dacbe51 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7e50 r4=00000003 r5=00000024 r6=0000002c r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000203 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=00000030 r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000203 34deb0c8 00000d51 00000000 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dad0c20 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7dd0 r4=00000003 r5=00000018 r6=0000003c r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3404 destination=101 send=24 recv=60: 00001513 27485bd4 00000101 00000203 8fec9120 00000d4c
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000028 r6=0000002c r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00011102 00000101 00000203 00000003 00000eda 00000000 00000000 223e4000 0000000c
+syscall pc=24df15a8 r0=4294967267 r3=00000000 r4=00000003 r5=00000028 r6=0000002c r7=00000203 r8=00000000 lr=24df1a3c res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=00000030 r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=206 destination=103 send=36 recv=48: 00001513 00000024 00000103syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dad5bb9 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+ 00000203 00000000 000000ce 00000000 00000000 00000000
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=0000002c r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000203 00000000 00000c86 00000000 00000000 00000103
+syscall pc=24e5e328 r0=4294967265 r3=223d7df0 r4=00000003 r5=00000024 r6=00000030 r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000024 00000101 00000203 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=404 host=3331 receive=1 set=0 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7e10 r4=00000003 r5=00000054 r6=00000030 r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3812 destination=101 send=84 recv=48: 80001513 00000404 00000101 00000203 34deb0c8 00000ee4 00000001 00000000 223d7e90 00001300 00000000 00000000 00000000 00001000 00000000 00000000 00000000 00000001 00000000 00000000 00000001
+vm_map anonymous bytes=4096 mask=0 alias=0
+syscall pc=24df15a8 r0=4294967267 r3=00000000 r4=00000003 r5=00000054 r6=00000030 r7=00000203 r8=00000000 lr=24df23a4 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7dc0 r4=00000003 r5=00000028 r6=00000060 r7=00000203 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=200 destination=103 send=40 recv=96: 00001513 00000000 00000103 00000203 223d7e90 000000c8 00000000 00000000 00000005 00000008
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dadac19 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dae1e47 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24df2648 r0=4294967269 r3=34deadec r4=00000000 r5=00000020 r6=00000050 r7=00000050 r8=24df25cc lr=24df2420 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dae6cdd 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24df1688 r0=4294967270 r3=34deadec r4=223d7dc4 r5=00000004 r6=0000001f r7=00000001 r8=24df25cc lr=24df1168 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7d20 r4=00000003 r5=00000030 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3616 destination=403 send=48 recv=44: 00001513 ffffffff 00000403 00000204 223d7d80 00000e20 00000000 00000000 00000001 00000001 0000001f 00000001
+syscall pc=24df36a8 r0=202 r3=223d7ec8 r4=00000002 r5=223d7ed0 r6=223d7ed4 r7=00000000 r8=00000000 lr=24df246c res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=3
+return r3=0 error=0 resume=24df36ac
+syscall pc=24e5e328 r0=4294967265 r3=223d7e00 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 0000004f 00000101 00000204 00000012 00000c86 00000000 00000000 00000103
+syscall pc=24df36a8 r0=202 r3=223d7ec8 r4=00000002 r5=223d7ed8 r6=223d7ed4 r7=00000000 r8=00000000 lr=24df2538 res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=13
+return r3=0 error=0 resume=24df36ac
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2daebcdd 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2daf2efe 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2daf7ea1 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dafccd2 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db01b79 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db09192 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db10652 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db1538f 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db1a240 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db1f096 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db23f0c 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db2b412 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db32c6f 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db37bab 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db3ec5c 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db461be 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db4d7f0 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db54f0c 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db5c13e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db60f67 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db65e9e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db6d263 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db72215 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db7966b 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db80f33 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db881e1 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db8f802 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db97311 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2db9e139 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dba56be 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbad116 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbb3f76 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbb8f00 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbc0214 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbc514a 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbcc73c 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbd3dbb 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7b70 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 34debe9c 00000101 00000204 223d7bd0 00000ed9 00000000 00000000 00000403 00040000 01000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbdb157 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbe2876 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbe9b7c 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbf1018 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbf5db2 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dbfac9f 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc021a0 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc06f45 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc0bd54 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc132ff 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc180fd 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc1cffb 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc244f9 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc2bb5f 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc32f09 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc380ba 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc3f1f5 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc44066 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc49005 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc503a6 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc5517e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc5a173 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc614bd 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc66447 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc6dbd6 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc74d17 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc7a077 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc81057 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc85f59 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc8b2fc 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc9226e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc96ef7 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dc9be86 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dca1144 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dca824a 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcaf945 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcb71ff 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcbe0e9 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcc3613 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcca60b 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcd1c02 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcd8ebe 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcddd9b 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dce52bb 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcec8f7 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcf400c 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24dfaf68 r0=26 r3=0000c000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee3034 lr=24f8f99c res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dcfb36a 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd0289e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd09f5b 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd110e3 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd16050 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24dfb208 r0=4294967207 r3=223d77b0 r4=00000a00 r5=44f3e010 r6=00000000 r7=00000000 r8=34f1b068 lr=24f1cd5c res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd1d570 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd26258 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24defe0c r0=20 r3=00000000 r4=00000a00 r5=34debec4 r6=00000000 r7=00000000 r8=24f1b144 lr=24f1d364 res=ffffffff
+return r3=176 error=0 resume=24defe10
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b2 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd2c446 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd33493 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d76a0 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000204 223d7710 00000c84 00000000 00000000 00000001
+native Mach capability guest=405 host=3843 receive=1 set=0 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd382a9 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd3d823 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7690 r4=00000003 r5=00000034 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 00000000 00000101 00000204 00000012 00000c8e 00000001 00000405 00000000 00001400 00000000 00000000 00000405
+syscall pc=24e5e328 r0=4294967265 r3=223d7660 r4=00000003 r5=00000030 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3218 destination=101 send=48 recv=44: 00001513 34f1b378 00000101 00000204 00000024 00000c92 00000000 00000000 00000405 00000001 00000001 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd44867 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd4cd05 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd557ae 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd5a63e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd61b10 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd66a13 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd6dfb4 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7600 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 8fec544c 00000101 00000204 44f3e890 00000c84 00000000 00000000 00000003
+native Mach capability guest=406 host=4099 receive=0 set=1 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7600 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000028 00000101 00000204 00000000 00000c9a 00000000 00000000 00000405 00000406
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd752e4 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd7a0d7 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd7fd86 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd86573 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7740 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000204 00000001 00000ed9 00000000 00000000 ff000000 00c00000 1f000000
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd8de86 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd95085 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dd9c4b4 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dda3b14 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddaaf2e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddb2591 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24df5dc8 r0=188 r3=24fb242c r4=223d7340 r5=0017a9b9 r6=80808080 r7=00000001 r8=72002f53 lr=24f37328 res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Support/LaunchCFMApp result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24df5dcc
+syscall pc=24df5dc8 r0=188 r3=223d73a0 r4=223d72e0 r5=0017a9b9 r6=80808080 r7=00000001 r8=72002f53 lr=24f3733c res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer result=0 errno=0 mode=100755
+return r3=0 error=0 resume=24df5dcc
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddb9941 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddbe728 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24dfaf68 r0=26 r3=0000c001 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f8fd48 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24dfaf68 r0=26 r3=0000c003 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f8fd64 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24df5588 r0=24 r3=223d77c0 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f976a0 res=ffffffff
+return r3=0 error=0 resume=24df558c
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddc3ffd 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddcb937 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24dfaf68 r0=26 r3=0000c0ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34f17254 lr=24f8fd80 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddd3917 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddd9d43 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7750 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000204 223d77a0 00000c84 00000000 00000000 00000003
+native Mach capability guest=407 host=4355 receive=0 set=1 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7750 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dde0e8f 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2dde8719 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000028 00000101 00000204 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=408 host=4611 receive=1 set=0 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7750 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000028 00000101 00000204 00000000 00000c84 00000000 00000000 00000001
+native Mach capability guest=409 host=4867 receive=1 set=0 send=0
+syscall pc=24e5e328 r0=4294967265 r3=223d7740 r4=00000003 r5=00000034 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 8fec5470 00000101 00000204 00000012 00000c8e 00000001 00000409 00000000 00001400 00000000 00000000 00000409
+syscall pc=24e5e328 r0=4294967265 r3=223d7750 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3212 destination=101 send=40 recv=44: 00001513 0000002c 00000101 00000204 00000000 00000c8c 00000000 00000000 00000408 00000407
+syscall pc=24e5e328 r0=4294967265 r3=223d7750 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3212 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000204 00000000 00000c8c 00000000 00000000 00000409 00000407
+syscall pc=24e5e328 r0=4294967265 r3=223d7750 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000024 00000101 00000204 00000000 00000d51 00000000syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddef90e 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddf6d14 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=1102
+syscall pc=24dff408 r0=4294967235 r3=00000000 r4=00000001 r5=0000000a r6=00000000 r7=000028f4 r8=000028f4 lr=00002550 res=ffffffff
+ 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d76d0 r4=00000003 r5=000000b0 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=403 destination=104 send=176 recv=44: 80001513 00000000 00000104 00000204 24ee2494 00000193 00000001 00000409 00000000 00001300 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007790 00000004 24df1b18 00000001 34f1a3fc 34f1adc0 00000001 24f1d770 223d7780 00000000 24df5194 00000000 00000012 00000024 00000101 00000408
+syscall pc=24e5e328 r0=4294967265 r3=223d7970 r4=00000003 r5=000000a0 r6=00000030 r7=00000202 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000024 00000104 00000202 000000b3 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007a20 2ddfe161 8fe7dec0 8fe91b30 223d7a00 00000001 0000044e 0000225c 223d7a20 223d7ab8 0000226c 00000001 00000000 00000030 00000000 00000001 0000000a 0000002c 00000202 00000000
+native bootstrap id=404 service=FontObjectsServer result=0
+native Mach capability guest=405 host=4359 receive=0 set=0 send=1
+syscall pc=24deffc8 r0=1 r3=00000000 r4=00000000 r5=00000000 r6=00000000 r7=00000001 r8=94dea000 lr=00001ffc res=ffffffff
+original PPC exit pid=175 status=0 lr=00001ffc
+exit frame=223d7f00 return=00001ffc
+exit frame=223d7f60 return=00001e78
+exit frame=223d7fa0 return=00000000
+native bootstrap id=403 service=FontObjectsServer result=0
+syscall pc=24e5e328 r0=4294967265 r3=223d76e0 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 000001f7 00000104 00000204 00000000 00000194 00000000 00000000 466f6e74 4f626a65 63747353 65727665 72007790 00000004 24df1b18 00000001 34f1a3fc 34f1adc0 00000001 24f1d770 223d7780 00000000 24df5194 00000000 00000012 00000024 00000101 00000408 80000012 00000028 00000204 00000000
+native bootstrap id=404 service=FontObjectsServer result=0
+syscall pc=24defa88 r0=24 r3=00000000 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=000502e8 res=ffffffff
+return r3=0 error=0 resume=24defa8c
+syscall pc=24e5e328 r0=4294967265 r3=223d7610 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000204 34deb0c8 00000d51 00000000 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d75a0 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 8fec7e1f 00000104 00000204 00000000 00000194 00000000 00000000 53797374 656d2043 6f6e6669 67757261 74696f6e 20536572 76657200 00000000 44f3eb50 00000000 44f3eb30 2583b498 223d7650 82000484 24df5194 223d76e4 223d7650 8fec9370 00000104 2584cf0c 223d7694 00000030 00000204 00000000
+native bootstrap id=404 service=System Configuration Server result=1102
+syscall pc=24dfff48 r0=183 r3=00000001 r4=44f3eb30 r5=0000000f r6=00000080 r7=ffffffff r8=44f3e010 lr=000458d4 res=ffffffff
+return r3=0 error=0 resume=24dfff4c
+syscall pc=24defa88 r0=24 r3=00000000 r4=44f3eb30 r5=0000000f r6=00000080 r7=ffffffff r8=44f3e010 lr=000458e0 res=ffffffff
+return r3=0 error=0 resume=24defa8c
+syscall pc=24dfaf68 r0=26 r3=00010000 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=24ee3034 lr=25046f98 res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24dfb208 r0=4294967207 r3=223d7240 r4=b1af60c4 r5=00000000 r6=00000000 r7=2500ba0c r8=2521ba0c lr=2500c360 res=ffffffff
+syscall pc=24dfaf68 r0=26 r3=000100ff r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=34df0f48 lr=8fe8601c res=ffffffff
+return r3=1 error=1 resume=24dfaf68
+syscall pc=24e5e328 r0=4294967265 r3=223d7640 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 001167e4 00000101 00000204 00000000 00000ed9 00000000 00000000 00000000 00001000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7610 r4=00000003 r5=00000044 r6=00000040 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3825 destination=101 send=68 recv=64: 80001513 00125588 00000101 00000204 00000000 00000ef1 00000001 00000000 8fec9120 25041300 00000000 00000000 00000000 00001000 00000000 223e4000 00000001
+native Mach capability guest=40a host=5123 receive=0 set=0 send=1
+native memory entry offset=223e4000 bytes=4096 result=0
+syscall pc=24df36a8 r0=202 r3=223d7560 r4=00000002 r5=223d76b4 r6=223d7568 r7=00000000 r8=00000000 lr=25063aa8 res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=5
+return r3=0 error=0 resume=24df36ac
+syscall pc=24e5e328 r0=4294967265 r3=223d76a0 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000040 00000101 00000204 00000015 00000ed9 00000000 00000000 00000000 00800000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7640 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000101 00000101 00000204 001166f8 00000ed9 00000000 00000000 00000000 0005ffdc 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7530 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 223d7590 00000101 00000204 44f3e010 00000ed9 00000000 00000000 00000000 00001000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7540 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000f3d 00000101 00000204 00000000 00000ed9 00000000 00000000 0009b418 00001000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7540 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000028 00000101 00000204 00000000 00000ed9 00000000 00000000 00002eac 00001000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d75f0 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 223d7640 00000101 00000204 223d7680 00000ed9 00000000 00000000 00000000 00001000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7450 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000101 00000101 00000204 4502f098 00000ed9 00000000 00000000 223d7740 00004000 03000001
+syscall pc=24e5e328 r0=4294967265 r3=223d75f0 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000028 00000101 00000204 00000000 00000ed9 00000000 00000000 0011640c 00002000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d7640 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000028 00000101 00000204 00000000 00000ed9 00000000 00000000 00000000 00002000 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d6800 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000204 00000000 00000ed9 00000000 00000000 00000000 00001000 03000001
+syscall pc=24e5e328 r0=4294967265 r3=223d6970 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00002440 00000104 00000204 223d69e0 00000194 00000000 00000000 636f6d2e 6170706c 652e636f 72657365 72766963 65736400 00000003 24dff738 223d6a20 34debe38 24dff784 24dff738 223d6a30 223d6ad0 24dff784 25025a0c 223d6a90 00000001 ffffff80 223d6a30 223d6a40 34debe38 00000003 24dff738
+native bootstrap id=404 service=com.apple.coreservicesd result=1102
+syscall pc=24dffba8 r0=220 r3=250bcc70 r4=223d4d20 r5=223d49d0 r6=00000334 r7=00000000 r8=00000000 lr=25019db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/System masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24dffba8
+syscall pc=24dfa568 r0=190 r3=44f43980 r4=223d4070 r5=000002d2 r6=80808080 r7=00000003 r8=74656d00 lr=2502b418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dffbe8 r0=157 r3=250ba0ec r4=223d4c00 r5=ffffffff r6=80808080 r7=00000003 r8=44f3e010 lr=25052b04 res=ffffffff
+return r3=0 error=0 resume=24dffbec
+syscall pc=24dffd68 r0=18 r3=00000000 r4=00000000 r5=00000002 r6=80808080 r7=00000003 r8=44f3e010 lr=24dffc64 res=ffffffff
+return r3=2 error=0 resume=24dffd6c
+syscall pc=24dffd68 r0=18 r3=44f43980 r4=00000330 r5=00000002 r6=80808080 r7=00000003 r8=44f3e010 lr=24dffd14 res=ffffffff
+return r3=2 error=0 resume=24dffd6c
+syscall pc=8fea2188 r0=4294967265 r3=223d47f0 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000204 00000000 00000c86 00000000 00000000 00000403
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=8fea2188 r0=4294967265 r3=223d3e90 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000204 00000000 00000c86 00000000 00000000 00000403
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24e5e328 r0=4294967265 r3=223d4590 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000204 00000000 00000ed9 00000000 00000000 00000000 000000bf 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d46b0 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000204 00000000 00000eda 00000000 00000000 44feb000 000000bf
+syscall pc=24e55ae0 r0=116 r3=223d47a0 r4=00000000 r5=00000000 r6=00000080 r7=00000000 r8=44f3e010 lr=24def770 res=ffffffff
+return r3=1793062332 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=223d45d0 r4=00000000 r5=00000266 r6=00000124 r7=223d4930 r8=223d4934 lr=24def770 res=ffffffff
+return r3=1793062332 error=0 resume=24e55ae4
+syscall pc=24e5e328 r0=4294967265 r3=223d4650 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000204 00000000 00000ed9 00000000 00000000 00000000 00000004 00000001
+syscall pc=24e5e328 r0=4294967265 r3=223d4780 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000204 223d7190 00000eda 00000000 00000000 44feb000 00000004
+syscall pc=24e32e98 r0=191 r3=44f43d1f r4=00000004 r5=ffffffff r6=0000002c r7=00000204 r8=00000000 lr=2504585c res=ffffffff
+return r3=255 error=0 resume=24e32e9c
+syscall pc=24df5dc8 r0=188 r3=44f43d1f r4=223d4a40 r5=00000004 r6=0000002c r7=00000204 r8=00000000 lr=2504cbfc res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/ result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24df5dcc
+syscall pc=8fea2188 r0=4294967265 r3=223d4800 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 44f3e010 00000101 00000204 223d4860 00000c86 00000000 00000000 00000403
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24e55ae0 r0=116 r3=223d49c0 r4=00000000 r5=00000002 r6=00002f00 r7=00000000 r8=00000000 lr=24def770 res=ffffffff
+return r3=1793062333 error=0 resume=24e55ae4
+syscall pc=24dfa568 r0=190 r3=223d3a60 r4=223d5654 r5=1ea03800 r6=80808080 r7=00000000 r8=003d4070 lr=25019a40 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24df5588 r0=24 r3=3500ebbc r4=3500ebc0 r5=00000024 r6=00000000 r7=bb0bba90 r8=00000000 lr=2505b89c res=ffffffff
+return r3=0 error=0 resume=24df558c
+syscall pc=24dfa568 r0=190 r3=223d48e0 r4=223d5ab4 r5=223d48e0 r6=223d4ce0 r7=223d48b0 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d4d90 r4=223d5f64 r5=223d4d90 r6=223d5190 r7=223d4d60 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d5590 r4=223d6264 r5=223d5590 r6=223d5990 r7=223d5560 r8=00000019 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d4e10 r4=223d5fe4 r5=223d4e10 r6=223d5210 r7=223d4de0 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d52c0 r4=223d6494 r5=223d52c0 r6=223d56c0 r7=223d5290 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d5ac0 r4=223d6794 r5=223d5ac0 r6=223d5ec0 r7=223d5a90 r8=00000019 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d5340 r4=223d6514 r5=223d5340 r6=223d5740 r7=223d5310 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d58f0 r4=223d6ac4 r5=223d58f0 r6=223d5cf0 r7=223d58c0 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24defa88 r0=24 r3=00000000 r4=00000016 r5=223d6a30 r6=223d7040 r7=223d58c0 r8=00000016 lr=000502e8 res=ffffffff
+return r3=0 error=0 resume=24defa8c
+syscall pc=24e5e328 r0=4294967265 r3=223d7070 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 223d7168 00000101 00000204 00000403 00000d51 00000000 00000000 00000004
+syscall pc=24e5e328 r0=4294967265 r3=223d7000 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df0670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 8fec8001 00000104 00000204 00000000 00000194 00000000 00000000 53797374 656d2043 6f6e6669 67757261 74696f6e 20536572 76657200 00000000 44f446f0 00000000 44f446d0 2583b498 223d70b0 28002249 24df5194 223d7144 223d70b0 8fec9120 00127ba0 8fe8a460 80000012 00000028 00000204 00000000
+native bootstrap id=404 service=System Configuration Server result=1102
+syscall pc=24dfff48 r0=183 r3=00000000 r4=44f446d0 r5=0000021e r6=00000080 r7=ffffffff r8=44f3e010 lr=00050940 res=ffffffff
+return r3=0 error=0 resume=24dfff4c
+syscall pc=24defa88 r0=24 r3=00000000 r4=44f446d0 r5=0000021e r6=00000080 r7=ffffffff r8=44f3e010 lr=0005094c res=ffffffff
+return r3=0 error=0 resume=24defa8c
+syscall pc=24dfa568 r0=190 r3=223d5560 r4=223d6234 r5=223d5560 r6=223d5960 r7=223d5530 r8=00000019 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d52c0 r4=223d6494 r5=223d52c0 r6=223d56c0 r7=223d5290 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d5ac0 r4=223d6794 r5=223d5ac0 r6=223d5ec0 r7=223d5a90 r8=00000019 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Caches result=0 errno=0 mode=40777
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d5340 r4=223d6514 r5=223d5340 r6=223d5740 r7=223d5310 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Caches result=0 errno=0 mode=40777
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d58f0 r4=223d6ac4 r5=223d58f0 r6=223d5cf0 r7=223d58c0 r8=00000016 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Caches result=0 errno=0 mode=40777
+return r3=0 error=0 resume=24dfa56c
+syscall pc=8fea2188 r0=4294967265 r3=223d6ff0 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 28002249 00000101 00000204 223d7150 00000c86 00000000 00000000 00000403
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24dfa568 r0=190 r3=223d60b0 r4=223d6d84 r5=223d60b0 r6=223d64b0 r7=223d6080 r8=00000019 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Caches/ATSServerTmpWrtTst result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d60b0 r4=223d6d84 r5=223d60b0 r6=223d64b0 r7=223d6080 r8=00000019 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Caches/ATSServerTmpWrtTst result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24dfa568 r0=190 r3=223d60c0 r4=223d6d94 r5=223d60c0 r6=223d64c0 r7=223d6090 r8=00000019 lr=25013774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Caches/ATSServerTmpWrtTst result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfa56c
+syscall pc=24def828 r0=0 r3=000000e2 r4=223d6450 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=250a7034 res=ffffffff
+remaklar: unsupported Darwin syscall/trap 0 at 24def828

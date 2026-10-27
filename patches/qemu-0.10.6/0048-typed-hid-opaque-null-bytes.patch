@@ -1,0 +1,40 @@
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -105,6 +105,14 @@
+             }
+             qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
+         }
++        if(live_kind[i]==2 && f->kind==RM_BYTES && pos>=232 && pos<232+240*84) {
++            static unsigned observed_null_bytes;unsigned entry=232+((pos-232)/84)*84,j,nonzero=0;
++            volatile unsigned char *payload=(volatile unsigned char *)(uintptr_t)(native_iomappings[i].address+entry+36);
++            if(!observed_null_bytes && *(volatile uint32_t *)(uintptr_t)(native_iomappings[i].address+entry+8)==0) {
++                for(j=0;j<48;j++)nonzero|=payload[j];
++                if(nonzero){observed_null_bytes=1;fprintf(stderr,"native HID opaque null access=%s slot=%u actual_bytes=",write?"write":"read",(pos-232)/84);for(j=0;j<48;j++)fprintf(stderr,"%02x",payload[j]);fprintf(stderr,"\n");}
++            }
++        }
+         /* Compose only adjacent declared fields, never select a union by
+          * instruction width. A pair of shorts remains one atomic host word. */
+         if(n>=4 && !(pos&3) && f->offset==pos && f->kind==RM_NUMBER && (f->size==1 || f->size==2)) {
+--- a/darwin-user/remaklar/typed-live.c
++++ b/darwin-user/remaklar/typed-live.c
+@@ -70,17 +70,16 @@
+     f->kind=data<4?RM_PAIR16:RM_NUMBER;return 1;
+ }
+ 
+-/* Bulk reads of an original freshly initialized NX_NULLEVENT are valid in
+- * every union layout only while all its actual data bytes remain zero. */
++/* NX_NULLEVENT has no active union representation. Preserve its actual opaque
++ * bytes, including data left in a consumed slot; never replace them by zeros. */
+ int rm_hid_null_field(volatile unsigned char *base,unsigned bytes,unsigned pos,
+                      struct rm_field *f)
+ {
+-    unsigned entry,within,j;
++    unsigned entry,within;
+     if(pos<232 || pos>=bytes)return 0;
+     entry=232+((pos-232)/84)*84;within=(pos-232)%84;
+     if(entry>=232+240*84 || within<36 || bytes-entry<84)return 0;
+     if(*(volatile rm_u32 *)(base+entry+8)!=0)return 0;
+-    for(j=36;j<84;j++)if(base[entry+j])return 0;
+     f->offset=entry+36+((within-36)/4)*4;f->size=4;f->kind=RM_BYTES;return 1;
+ }
+ 

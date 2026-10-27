@@ -1,0 +1,11 @@
+verified files=1000 bytes=17600024
+verified files=2000 bytes=98180973
+verified files=3000 bytes=126687840
+verified files=4000 bytes=141604895
+verified files=5000 bytes=182567944
+verified files=6000 bytes=490901838
+verified files=7000 bytes=587521354
+verified files=8000 bytes=600062718
+verified files=9000 bytes=660674284
+verified files=10000 bytes=777756141
+verified files=11000 bytes=832636771

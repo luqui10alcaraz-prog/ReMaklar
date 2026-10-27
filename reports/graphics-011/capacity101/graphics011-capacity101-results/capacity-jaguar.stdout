@@ -1,0 +1,4 @@
+real allocate/destroy cycles=1000
+real allocate/destroy cycles=2000
+real allocate/destroy cycles=3000
+real allocate/destroy cycles=4000

@@ -1,0 +1,19 @@
+--- a/darwin-user/remaklar/bootstrap-main.c
++++ b/darwin-user/remaklar/bootstrap-main.c
+@@ -66,7 +66,7 @@
+ void qerror(const char *fmt, ...)
+ {
+     va_list ap;
+-    va_start(ap, fmt); vfprintf(stderr, fmt, ap); va_end(ap);
++      fputs("remaklar: ",stderr);va_start(ap, fmt); vfprintf(stderr, fmt, ap); va_end(ap);
+     fputc('\n', stderr); exit(125);
+ }
+ void gemu_log(const char *fmt, ...)
+@@ -234,6 +234,7 @@
+ {
+     uint32_t number = env->gpr[0];
+     int result, handled, guest_errno = 0;
++    if(!((number>=0x7ff1 && number<=0x7ff3) && getenv("REMAKLAR_QUIET_TLS")))
+     fprintf(stderr, "syscall pc=%08x r0=%u r3=%08x r4=%08x r5=%08x r6=%08x r7=%08x r8=%08x lr=%08x res=%08x\n",
+             (unsigned)env->nip, number, (unsigned)env->gpr[3],
+             (unsigned)env->gpr[4], (unsigned)env->gpr[5],

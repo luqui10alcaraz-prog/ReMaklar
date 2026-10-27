@@ -76,14 +76,18 @@ static const struct rm_field *field(const struct rm_view *v,unsigned pos,unsigne
 static rm_u64 logical(const struct rm_field *f,rm_u64 x)
 {
     /* PPC's first declared bitfield occupies the MSBs, i386's the LSBs. */
-    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x>>27)|((rm_u32)x<<5));
+    if(f->kind==RM_HID_BITS)return (rm_u32)((((rm_u32)x&0x07ffffffU)<<5)|
+        (((rm_u32)x>>31)&1)|(((rm_u32)x>>29)&2)|(((rm_u32)x>>27)&4)|
+        (((rm_u32)x>>25)&8)|(((rm_u32)x>>23)&16));
     if(f->kind==RM_PAIR16)return (rm_u32)(((rm_u32)x>>16)|((rm_u32)x<<16));
     if(f->kind==RM_BYTES){rm_u64 result=0;unsigned i;for(i=0;i<f->size;i++){result=(result<<8)|(x&255);x>>=8;}return result;}
     return x;
 }
 static rm_u64 physical(const struct rm_field *f,rm_u64 x)
 {
-    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x<<27)|((rm_u32)x>>5));
+    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x>>5)|
+        (((rm_u32)x&1)<<31)|(((rm_u32)x&2)<<29)|(((rm_u32)x&4)<<27)|
+        (((rm_u32)x&8)<<25)|(((rm_u32)x&16)<<23));
     if(f->kind==RM_PAIR16 || f->kind==RM_BYTES)return logical(f,x);
     return x;
 }

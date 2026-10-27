@@ -1,0 +1,6 @@
+FS bsize=1024 iosize=4096 blocks=4062703 type=1 flags=1000 fsid=e000005:1 owner=0 name=ufs mount=/private/var/tmp from=/dev/disk1s1
+VOLUME type=1 fsid=e000003:1 name=ufs mount=/ from=/dev/disk0s2
+VOLUME type=19 fsid=20bee104:13 name=devfs mount=/dev from=devfs
+VOLUME type=1 fsid=e000005:1 name=ufs mount=/private/var/tmp from=/dev/disk1s1
+getfsstat real volumes count list EFAULT OK
+statfs PPC32 real volume direct fd ENOENT EFAULT EBADF OK

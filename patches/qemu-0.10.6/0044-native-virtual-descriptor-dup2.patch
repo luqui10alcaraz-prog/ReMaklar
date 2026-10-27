@@ -1,0 +1,27 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -936,6 +936,24 @@
+                 directory_positions[i] = 0; r = i;
+             }
+         }
++        break;
++    }
++    case 90: { /* dup2 replaces a guest slot, never an executor-internal fd. */
++        int source=host_fd(a),copy,previous;char *name=NULL;
++        if(source<0 || b>=256){errno=EBADF;break;}
++        if(a==b){r=fcntl(source,F_GETFD)<0?-1:(int)b;break;}
++        if(directories[a])qerror("dup2 of an open directory cursor not implemented");
++        if(descriptor_paths[a]) {
++            name=strdup(descriptor_paths[a]);if(!name){errno=ENOMEM;break;}
++        }
++        copy=fcntl(source,F_DUPFD,3); /* Kernel shares offset/status; clears CLOEXEC. */
++        if(copy<0){free(name);break;}
++        previous=descriptors[b];
++        /* Host stdio also belongs to executor diagnostics; retain those refs. */
++        if(previous>2)close(previous);
++        if(directories[b])closedir(directories[b]);
++        free(descriptor_paths[b]);descriptor_paths[b]=name;
++        directories[b]=NULL;directory_positions[b]=0;descriptors[b]=copy;r=b;
+         break;
+     }
+     case 6:

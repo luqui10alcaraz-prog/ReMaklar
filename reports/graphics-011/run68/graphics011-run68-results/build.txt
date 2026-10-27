@@ -1,0 +1,63 @@
+  CC    ppc-darwin-user/bootstrap-main.o
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap-main.c:13:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap.h:14: warning: redundant redeclaration of `global_env' in same scope
+/var/tmp/graphics011-run1/source/darwin-user/qemu.h:107: warning: previous declaration of `global_env'
+  CC    ppc-darwin-user/darwin-kernel.o
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/kinfo.inc:6,
+                 from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:118:
+/usr/include/stddef.h:89: warning: `offsetof' redefined
+/var/tmp/graphics011-run1/source/osdep.h:35: warning: this is the location of the previous definition
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:38:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap.h:14: warning: redundant redeclaration of `global_env' in same scope
+/var/tmp/graphics011-run1/source/darwin-user/qemu.h:107: warning: previous declaration of `global_env'
+In file included from /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:115:
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:5: warning: redundant redeclaration of `bootstrap_port' in same scope
+/usr/include/mach/mach_init.h:77: warning: previous declaration of `bootstrap_port'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:9: warning: redundant redeclaration of `mach_make_memory_entry_64' in same scope
+/usr/include/mach/vm_map.h:433: warning: previous declaration of `mach_make_memory_entry_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/mach-native.inc:10: warning: redundant redeclaration of `vm_map_64' in same scope
+/usr/include/mach/vm_map.h:454: warning: previous declaration of `vm_map_64'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `exec_ppc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:561: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:562: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:563: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:564: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:565: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:566: warning: assignment discards qualifiers from pointer target type
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c: In function `rpc':
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1912: warning: implicit declaration of function `clock_get_time'
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1288: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1364: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1378: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1394: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1409: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1424: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1441: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1457: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1485: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1520: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1555: warning: `endpoint' might be used uninitialized in this function
+/var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c:1590: warning: `endpoint' might be used uninitialized in this function
+  CC    ppc-darwin-user/machload.o
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:98: warning: redundant redeclaration of `qerror' in same scope
+/var/tmp/graphics011-run1/source/darwin-user/qemu.h:103: warning: previous declaration of `qerror'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:190: warning: no previous prototype for `bswap_ppc_thread_state'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:249: warning: no previous prototype for `bswap_tc'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:262: warning: no previous prototype for `bswap_mh'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:273: warning: no previous prototype for `bswap_lc'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:280: warning: no previous prototype for `bswap_fh'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:286: warning: no previous prototype for `bswap_fa'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:295: warning: no previous prototype for `bswap_segcmd'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:307: warning: no previous prototype for `bswap_symtabcmd'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:317: warning: no previous prototype for `bswap_sym'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:324: warning: no previous prototype for `load_thread'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:367: warning: no previous prototype for `load_dylinker'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:389: warning: no previous prototype for `load_segment'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:452: warning: no previous prototype for `load_data'
+/var/tmp/graphics011-run1/source/darwin-user/machload.c:810: warning: no previous prototype for `setup_arg_pages'
+  CC    ppc-darwin-user/mmap.o
+/var/tmp/graphics011-run1/source/darwin-user/mmap.c:107: warning: no previous prototype for `mmap_frag'
+/var/tmp/graphics011-run1/source/darwin-user/mmap.c: In function `target_mremap':
+/var/tmp/graphics011-run1/source/darwin-user/mmap.c:408: warning: control reaches end of non-void function
+  CC    ppc-darwin-user/thunk.o
+  LINK  ppc-darwin-user/qemu-ppc

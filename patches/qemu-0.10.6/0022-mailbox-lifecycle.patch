@@ -1,0 +1,50 @@
+--- a/darwin-user/remaklar/remote-maps.inc
++++ b/darwin-user/remaklar/remote-maps.inc
+@@ -8,6 +8,7 @@
+ #define RM_REMOTE_EVENTS 256
+ struct rm_remote_event {uint32_t address,bytes,prot,kind,start,extent,remove;};
+ struct rm_remote_mailbox {uint32_t magic,pid;volatile uint32_t count;struct rm_remote_event events[RM_REMOTE_EVENTS];};
++#define RM_REMOTE_BYTES ((sizeof(struct rm_remote_mailbox)+4095U)&~4095U)
+ static struct rm_remote_mailbox *rm_remote_box;
+ static int rm_remote_fd=-1,rm_remote_pid;
+ static unsigned rm_remote_seen;
+@@ -22,16 +23,18 @@
+ {
+  char path[128];int pid=getpid();unsigned end,i;
+  if(pid!=rm_remote_pid) {
+-  if(rm_remote_box)munmap(rm_remote_box,sizeof(*rm_remote_box));
++  if(rm_remote_box)munmap(rm_remote_box,RM_REMOTE_BYTES);
+   if(rm_remote_fd>=0)close(rm_remote_fd);
+   sprintf(path,"/var/tmp/remaklar-remote-map-%d",pid);
+   /* PID reuse starts a fresh inode; a retained task right cannot designate
+    * a new task merely because its PID has been reused. */
+   unlink(path);rm_remote_fd=open(path,O_RDWR|O_CREAT|O_EXCL,0600);
+-  if(rm_remote_fd<0 || ftruncate(rm_remote_fd,sizeof(*rm_remote_box)))qerror("remote mapping mailbox creation errno=%d",errno);
+-  rm_remote_box=mmap(NULL,sizeof(*rm_remote_box),PROT_READ|PROT_WRITE,MAP_SHARED,rm_remote_fd,0);
++  /* Internal metadata must not survive exec as a leaked open description.
++   * Keep a full-page backing for Darwin 6 UFS's shared-map pageout. */
++  if(rm_remote_fd<0 || fcntl(rm_remote_fd,F_SETFD,FD_CLOEXEC) || ftruncate(rm_remote_fd,RM_REMOTE_BYTES))qerror("remote mapping mailbox creation errno=%d",errno);
++  rm_remote_box=mmap(NULL,RM_REMOTE_BYTES,PROT_READ|PROT_WRITE,MAP_SHARED,rm_remote_fd,0);
+   if(rm_remote_box==MAP_FAILED)qerror("remote mapping mailbox mmap");
+-  memset(rm_remote_box,0,sizeof(*rm_remote_box));rm_remote_box->pid=pid;rm_remote_box->magic=RM_REMOTE_MAGIC;
++  memset(rm_remote_box,0,RM_REMOTE_BYTES);rm_remote_box->pid=pid;rm_remote_box->magic=RM_REMOTE_MAGIC;
+   rm_remote_pid=pid;rm_remote_seen=0;
+  }
+  if(rm_remote_box->count==rm_remote_seen)return;
+@@ -59,13 +62,13 @@
+  if(pid_for_task(task,&pid) || pid<1)qerror("remote mapping task lost");
+  sprintf(path,"/var/tmp/remaklar-remote-map-%d",pid);fd=open(path,O_RDWR);
+  if(fd<0){if(errno==ENOENT)return;qerror("remote mapping mailbox open errno=%d",errno);}
+- if(fstat(fd,&st) || st.st_size!=sizeof(*box) || st.st_uid!=geteuid() || !S_ISREG(st.st_mode) || (st.st_mode&077))qerror("invalid remote mapping mailbox file");
+- box=mmap(NULL,sizeof(*box),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
++ if(fcntl(fd,F_SETFD,FD_CLOEXEC) || fstat(fd,&st) || st.st_size!=RM_REMOTE_BYTES || st.st_uid!=geteuid() || !S_ISREG(st.st_mode) || (st.st_mode&077))qerror("invalid remote mapping mailbox file");
++ box=mmap(NULL,RM_REMOTE_BYTES,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+  if(box==MAP_FAILED)qerror("remote mapping writer mmap");
+  rm_remote_lock(fd,1);n=box->count;
+  if(box->magic!=RM_REMOTE_MAGIC || box->pid!=pid || n>=RM_REMOTE_EVENTS)qerror("remote mapping mailbox identity/capacity");
+  box->events[n]=*event;__asm__ __volatile__("" ::: "memory");box->count=n+1;
+- rm_remote_lock(fd,0);munmap(box,sizeof(*box));close(fd);
++ rm_remote_lock(fd,0);munmap(box,RM_REMOTE_BYTES);close(fd);
+  fprintf(stderr,"real remote mapping metadata published pid=%d address=%x kind=%u remove=%u\n",pid,event->address,event->kind,event->remove);
+ }
+ #else

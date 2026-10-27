@@ -1,0 +1,58 @@
+[
+  {
+    "proc": "0x20c1b378",
+    "pid": 166,
+    "comm": "qemu-ppc",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b341f8"
+  },
+  {
+    "proc": "0x20c1b7a4",
+    "pid": 165,
+    "comm": "perl",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b344a8"
+  },
+  {
+    "proc": "0x20c1ba6c",
+    "pid": 146,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34758"
+  },
+  {
+    "proc": "0x20c1bbd0",
+    "pid": 22,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b348b0"
+  },
+  {
+    "proc": "0x20c1bd34",
+    "pid": 2,
+    "comm": "mach_init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34a08"
+  },
+  {
+    "proc": "0x20c1be98",
+    "pid": 1,
+    "comm": "init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34cb8"
+  },
+  {
+    "proc": "0x3e6900",
+    "pid": 0,
+    "comm": "kernel_task",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34e10"
+  }
+]

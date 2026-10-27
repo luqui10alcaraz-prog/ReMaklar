@@ -1,0 +1,53 @@
+{
+  "reason": "User requested commit/push before sleep. Native build141/source0048 and seven units plus initial kernel-null native/PPC oracle passed. Actual consumed-key payload regression142 and GUI joint143 remain pending; VM has no GUI services active.",
+  "monitor": 4454,
+  "state": "stopped after complete migration; RAM includes guest filesystem cache and live kernel ports/locks",
+  "source_disks": {
+    "root": "vm/darwin602-graphics-011-usb126.qcow2",
+    "fat": "build/graphics011-usb126-exchange.img",
+    "work": "vm/graphics011-usb126-work.qcow2"
+  },
+  "guest_mounts": {
+    "root": "/dev/disk0s2",
+    "work": "/dev/disk2s1 on /var/tmp",
+    "exchange": "/dev/disk1 on /exchange"
+  },
+  "files": {
+    "build/011-input141-publication-machine-state.bin": {
+      "bytes": 228826696,
+      "sha256": "83f860bef548cd604705469c202236bb7d50b177c1f8a25afd422f4627c9deb9"
+    },
+    "build/011-input141-publication-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "a4aab1c179868831931375a0a6e210339f515cc18e299af00dfe92127f8e8be4"
+    },
+    "build/011-input141-publication-preserved.ppm": {
+      "bytes": 2359312,
+      "sha256": "7b122d9568d04e35d1122261f47b74e7a0ca0e3a5f2cee9b0df4b1b49bfc3946"
+    },
+    "vm/darwin602-graphics-011-input141-publication-preserved.qcow2": {
+      "bytes": 6291456,
+      "sha256": "33b9ef80ffeffc6d150fd33ddc69799791ac4deb31583044e8e1092a2fb1560f"
+    },
+    "build/graphics011-input141-publication-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "f98d9c0767a478a918cd672962652a354a35655ab9ba9f5820b67bd986aada97"
+    },
+    "vm/graphics011-input141-publication-work-preserved.qcow2": {
+      "bytes": 238043648,
+      "sha256": "7c78ab621df08029b3be32513d3c745315384fb0a2faf3163a5649811f64c9f7"
+    }
+  },
+  "cdrom": {
+    "file": "build/packages011-104.iso",
+    "bytes": 405262336,
+    "sha256": "bb733aee22caddffbeb3fe99b1f9e3223789704a805212b89ac6d21b48e05229"
+  },
+  "hardware_extra_args": [
+    "-device",
+    "pci-ohci,id=ohci",
+    "-device",
+    "usb-mouse,bus=ohci.0"
+  ],
+  "mouse_device": "QEMU HID Mouse"
+}

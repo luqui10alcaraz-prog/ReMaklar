@@ -7,3 +7,6 @@ experiments/qemu-0.10.6/
 research/samples-local/
 research/jaguar-local/
 __pycache__/
+
+# Raw laboratory output remains local; selected evidence is explicitly tracked.
+/reports/graphics-011/

@@ -1,0 +1,1 @@
+MD5 (/var/tmp/graphics011-build138/qemu-ppc) = 10d14f3107803876bf78481c92606c7d

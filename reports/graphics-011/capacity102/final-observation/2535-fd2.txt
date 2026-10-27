@@ -1,0 +1,260 @@
+ r0=4294967265 r3=4737c6e0 r4=00000003 r5=00000028 r6=00000030 r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3418 destination=101 send=40 recv=48: 00001513 00000028 00000101 00000203 00000000 00000d5a 00000000 00000000 00000000 00000000
+native Mach capability guest=42e host=19715 receive=0 set=0 send=1
+syscall pc=24fad408 r0=4294967235 r3=00000000 r4=00000001 r5=00000001 r6=00000001 r7=00000000 r8=350ca5b0 lr=24fa2698 res=356180b8
+syscall pc=2500c328 r0=4294967265 r3=4737c6e0 r4=00000003 r5=00000028 r6=00000030 r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3418 destination=101 send=40 recv=48: 00001513 00000028 00000101 00000203 00000000 00000d5a 00000000 00000000 00000000 00000000
+native Mach capability guest=42f host=19971 receive=0 set=0 send=1
+syscall pc=24fad408 r0=4294967235 r3=00000000 r4=00000001 r5=00000001 r6=00000001 r7=00000000 r8=350ca5b0 lr=24fa2698 res=356180b8
+syscall pc=2500c328 r0=4294967265 r3=4737c6e0 r4=00000003 r5=00000028 r6=00000030 r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3418 destination=101 send=40 recv=48: 00001513 00000028 00000101 00000203 00000000 00000d5a 00000000 00000000 00000000 00000000
+native Mach capability guest=430 host=20227 receive=0 set=0 send=1
+syscall pc=24fad408 r0=4294967235 r3=00000000 r4=00000001 r5=00000001 r6=00000001 r7=00000000 r8=350ca5b0 lr=24fa2698 res=356180b8
+syscall pc=2500c328 r0=4294967265 r3=4737c6e0 r4=00000003 r5=00000028 r6=00000030 r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3418 destination=101 send=40 recv=48: 00001513 00000028 00000101 00000203 00000000 00000d5a 00000000 00000000 00000000 00000000
+native Mach capability guest=431 host=20483 receive=0 set=0 send=1
+syscall pc=24fccf28 r0=4294967260 r3=00000422 r4=00000000 r5=00000028 r6=00000030 r7=00000203 r8=34f99064 lr=24fa2418 res=ffffffff
+syscall pc=24fccf68 r0=4294967263 r3=00000422 r4=00000000 r5=00000000 r6=00000001 r7=00000000 r8=350ca5b0 lr=24fa2778 res=ffffffff
+syscall pc=2500c328 r0=4294967265 r3=4737c630 r4=00000003 r5=00000018 r6=0000003c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3402 destination=101 send=24 recv=60: 00001513 00000040 00000101 00000203 4737c690 00000d4a
+native task_threads real count=2 guest_array=24e79000
+syscall pc=2500c328 r0=4294967265 r3=4737c300 r4=00000003 r5=00000028 r6=00000270 r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+native Mach send id=3603 destination=401 bytes=40
+native Mach trailer bytes=8 elements=0
+native Mach receive port=203 bytes=36 id=3703
+syscall pc=2500c328 r0=4294967265 r3=4737c650 r4=00000003 r5=00000024 r6=0000002c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00011102 00000101 00000203 00000002 00000c86 00000000 00000000 00000401
+syscall pc=2500c328 r0=4294967265 r3=4737c650 r4=00000003 r5=00000024 r6=0000002c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000024 00000101 00000203 00000000 00000c86 00000000 00000000 00000421
+syscall pc=24fccf28 r0=4294967260 r3=00000422 r4=00000000 r5=00000000 r6=00000001 r7=00000000 r8=34f99064 lr=24fa2418 res=ffffffff
+syscall pc=2500c328 r0=4294967265 r3=4737c650 r4=00000003 r5=00000028 r6=0000002c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000203 00000000 00000eda 00000000 00000000 24e79000 00000008
+syscall pc=24fccf68 r0=4294967263 r3=00000422 r4=00000000 r5=00000000 r6=0000002c r7=00000203 r8=24e34010 lr=24fa2778 res=ffffffff
+syscall pc=2500c328 r0=4294967265 r3=4737c560 r4=00000003 r5=00000024 r6=00000030 r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 24f6d448 00000101 00000203 4737c5e0 00000c84 00000000 00000000 00000001
+native Mach capability guest=432 host=20739 receive=1 set=0 send=0
+syscall pc=2500c328 r0=4294967265 r3=4737c550 r4=00000003 r5=00000034 r6=0000002c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 24f779d4 00000101 00000203 00000012 00000c8e 00000001 00000432 00000000 00001400 00000000 00000000 00000432
+syscall pc=2500c328 r0=4294967265 r3=4737c520 r4=00000003 r5=00000030 r6=0000002c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3218 destination=101 send=48 recv=44: 00001513 34f9c2e0 00000101 00000203 24f75e60 00000c92 00000000 00000000 00000432 00000001 00000001 00000001
+syscall pc=2500c328 r0=4294967265 r3=4737c4c0 r4=00000003 r5=00000024 r6=00000030 r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 2564dbc0 00000101 00000203 24f6a3b0 00000c84 00000000 00000000 00000003
+native Mach capability guest=433 host=20995 receive=0 set=1 send=0
+syscall pc=2500c328 r0=4294967265 r3=4737c4c0 r4=00000003 r5=00000028 r6=0000002c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000028 00000101 00000203 00000000 00000c9a 00000000 00000000 00000432 00000433
+syscall pc=24fccf28 r0=4294967260 r3=00000422 r4=00000000 r5=00000000 r6=41a00000 r7=00000000 r8=34f99064 lr=24fa2418 res=ffffffff
+syscall pc=24fccf68 r0=4294967263 r3=00000422 r4=00000000 r5=00000000 r6=00000010 r7=00000010 r8=3561816c lr=24fa2778 res=ffffffff
+syscall pc=2500c328 r0=4294967265 r3=4737c2e0 r4=00000003 r5=00000028 r6=0000002c r7=00000203 r8=00000000 lr=24f9e670 res=ffffffff
+native Mach send id=29280 destination=40d bytes=40
+syscall pc=24fadba8 r0=220 r3=24f66790 r4=22397140 r5=22396df0 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/DotGrayDisabled.tif masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24fadba8
+syscall pc=24fa8568 r0=190 r3=47321ef0 r4=22396490 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=47321ef0 r4=22396490 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=47321ef0 r4=22396490 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=47321ef0 r4=22396490 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=47321ef0 r4=22396490 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=47321ef0 r4=22396490 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/DotGrayDisabled.tif result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22396d20 r4=22397ef4 r5=22396d20 r6=22397120 r7=22396cf0 r8=00000800 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/DotGrayDisabled.tif result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fadba8 r0=220 r3=47321ef0 r4=223970d0 r5=22396d80 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/DotGrayDisabled.tif masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24fadba8
+syscall pc=24fa8568 r0=190 r3=24f664e0 r4=22396420 r5=00000002 r6=80808080 r7=00000000 r8=00657374 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24f664e0 r4=22396420 r5=00000002 r6=80808080 r7=00000000 r8=00657374 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24f664e0 r4=22396420 r5=00000002 r6=80808080 r7=00000000 r8=00657374 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24f664e0 r4=22396420 r5=00000002 r6=80808080 r7=00000000 r8=00657374 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24f664e0 r4=22396420 r5=00000002 r6=80808080 r7=00000000 r8=00657374 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24f664e0 r4=22396420 r5=00000002 r6=80808080 r7=00000000 r8=00657374 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/DotGrayDisabled.tif result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22396cb0 r4=22397e84 r5=22396cb0 r6=223970b0 r7=22396c80 r8=00000800 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/DotGrayDisabled.tif result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24fa856c
+syscall pc=24f9dca8 r0=5 r3=223980d0 r4=00000000 r5=000001b6 r6=00000001 r7=00000000 r8=350ca364 lr=25794edc res=ffffffff
+guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/DotGrayDisabled.tif
+return r3=8 error=0 resume=24f9dcac
+syscall pc=24f9d608 r0=189 r3=00000008 r4=22398010 r5=000001b6 r6=00000001 r7=00000000 r8=350ca364 lr=25794ef0 res=ffffffff
+return r3=0 error=0 resume=24f9d60c
+syscall pc=24fabe28 r0=4294967253 r3=00000008 r4=00000000 r5=223984e0 r6=00000001 r7=0000031a r8=350ca364 lr=25794fbc res=ffffffff
+syscall pc=24fa36a8 r0=6 r3=00000008 r4=00000000 r5=223984e0 r6=00000001 r7=0000031a r8=350ca364 lr=2579507c res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=2500c328 r0=4294967265 r3=223975d0 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+native Mach send id=29280 destination=40d bytes=40
+native Mach trailer bytes=8 elements=0
+native Mach receive port=203 bytes=36 id=29380
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=36 id=29380
+syscall pc=24fd7188 r0=4294967259 r3=00000422 r4=00000423 r5=00000000 r6=00000000 r7=a1b1c1d3 r8=34f99064 lr=24fd6fa4 res=ffffffff
+syscall pc=24fccf28 r0=4294967260 r3=00000423 r4=00000000 r5=00000000 r6=22397bb4 r7=a1b1c1d3 r8=00000067 lr=24fa2418 res=ffffffff
+syscall pc=25003ae0 r0=116 r3=22397480 r4=00000000 r5=00000000 r6=00000000 r7=250e05b4 r8=251805b4 lr=24f9d770 res=ffffffff
+return r3=1793068445 error=0 resume=25003ae4
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=2500c328 r0=4294967265 r3=22395af0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=132 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ad0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=192 copy=1 deallocate=0
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395ab0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=28 destination=415 bytes=1664
+native application OOL send id=28 bytes=232 copy=1 deallocate=0
+native application OOL receive id=0 address=24e79000 bytes=1104
+native Mach trailer bytes=8 elements=0
+native Mach receive port=414 bytes=1664 id=0
+syscall pc=2500c328 r0=4294967265 r3=22395a30 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22395ad0 00000101 00000202 22395a90 00000eda 00000000 00000000 24e79000 00000450
+syscall pc=25003ae0 r0=116 r3=223974c0 r4=00000000 r5=00000000 r6=00000000 r7=250e05b4 r8=251805b4 lr=24f9d770 res=ffffffff
+return r3=1793068449 error=0 resume=25003ae4

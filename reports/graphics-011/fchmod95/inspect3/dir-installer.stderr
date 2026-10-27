@@ -1,0 +1,179 @@
+rary/Frameworks/Carbon.framework/Versions/Current/Frameworks/HIToolbox.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=6f726b00 lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/HTMLRendering.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000000 r8=00657273 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e5d3b0 r5=0000043f r6=80808080 r7=00000000 r8=00657273 lr=2523f5d0 res=ffffffff
+return r3=1087 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e5d3b0 r5=00000154 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000000 r8=00544d4c lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/HTMLRendering.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000002 r8=726b0072 lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/Help.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000003 r8=726b2f00 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e5d3b0 r5=000003de r6=80808080 r7=00000003 r8=726b2f00 lr=2523f5d0 res=ffffffff
+return r3=990 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e5d3b0 r5=00000154 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=726b2f00 lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/Help.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000001 r8=6b006e73 lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/CarbonSound.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000002 r8=6b2f0065 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e5d3b0 r5=00000490 r6=80808080 r7=00000002 r8=6b2f0065 lr=2523f5d0 res=ffffffff
+return r3=1168 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e5d3b0 r5=00000154 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000002 r8=6b2f0061 lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/CarbonSound.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000000 r8=006e732f lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/NavigationServices.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000001 r8=2f006572 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e5d3b0 r5=000003a3 r6=80808080 r7=00000001 r8=2f006572 lr=2523f5d0 res=ffffffff
+return r3=931 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e5d3b0 r5=00000154 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000001 r8=2f006176 lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/NavigationServices.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=6f726b00 lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/OpenScripting.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000000 r8=00657273 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e60270 r5=00002e12 r6=00000010 r7=00000010 r8=00657273 lr=2523f5d0 res=ffffffff
+return r3=11794 error=0 resume=24f9850c
+syscall pc=2500b328 r0=4294967265 r3=22395af0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 24e5f4e0 00000101 00000202 24e33010 00000ed9 00000000 00000000 350cc5c4 00006000 03000001
+syscall pc=2500b328 r0=4294967265 r3=22395c20 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 28002444 00000101 00000202 350cc5c4 00000eda 00000000 00000000 24e8f000 00006000
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e60270 r5=000002e2 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000000 r8=0070656e lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/OpenScripting.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=6f726b00 lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/Print.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000000 r8=00657273 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e5e570 r5=0000035c r6=80808080 r7=00000000 r8=00657273 lr=2523f5d0 res=ffffffff
+return r3=860 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e5e570 r5=00000036 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000000 r8=0072696e lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/Print.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000000 r8=00696f6e lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/SecurityHI.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000001 r8=2f006572 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e5e570 r5=00000324 r6=80808080 r7=00000001 r8=2f006572 lr=2523f5d0 res=ffffffff
+return r3=804 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e5e570 r5=00000036 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000001 r8=2f006563 lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/SecurityHI.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=6f726b00 lr=25241ee4 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/SpeechRecognition.framework/Versions/Current/Resources/Info.plist
+return r3=4 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000004 r4=22395e50 r5=24e5a310 r6=80808080 r7=00000000 r8=00657273 lr=2523f58c res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000004 r4=24e60270 r5=00000429 r6=80808080 r7=00000000 r8=00657273 lr=2523f5d0 res=ffffffff
+return r3=1065 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000004 r4=24e60270 r5=000002e2 r6=00000080 r7=ffffffff r8=24e33010 lr=25241f1c res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22395f20 r4=00000000 r5=00000000 r6=80808080 r7=00000000 r8=00706565 lr=25241f48 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/SpeechRecognition.framework/Versions/Current/Resources/Info-macos.plist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24fa3348 r0=196 r3=00000003 r4=22396380 r5=00001000 r6=22397380 r7=00000000 r8=00706565 lr=25242004 res=ffffffff
+return r3=0 error=0 resume=24fa334c
+syscall pc=24fa26a8 r0=6 r3=00000003 r4=22396380 r5=00001000 r6=22397380 r7=00000000 r8=00706565 lr=25242014 res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=2500b328 r0=4294967265 r3=22396800 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 22396860 00000ed9 00000000 00000000 22398020 00004000 03000001
+syscall pc=2500b328 r0=4294967265 r3=22396800 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000028 00000101 00000202 00000000 00000ed9 00000000 00000000 00000000 00008000 03000001
+syscall pc=2500b328 r0=4294967265 r3=22396890 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 34f977f0 00000101 00000202 24e93000 00000eda 00000000 00000000 24e8f000 00004000
+syscall pc=2500b328 r0=4294967265 r3=223969c0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 006d0008 00000101 00000202 00000008 00000ed9 00000000 00000000 22396aa0 00010000 03000001
+syscall pc=2500b328 r0=4294967265 r3=22396a50 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000007 00000101 00000202 24e33010 00000eda 00000000 00000000 24e93000 00008000
+syscall pc=8fea2188 r0=4294967265 r3=22395e40 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 22395f2f 00000101 00000202 0e000005 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=2500b328 r0=4294967265 r3=223973b0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000202 8fec5480 00000ed9 00000000 00000000 00000000 0000c923 00000001
+syscall pc=2500b328 r0=4294967265 r3=223972d0 r4=00000003 r5=0000002c r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3810 destination=101 send=44 recv=44: 00001513 00000009 00000101 00000202 00000000 00000ee2 00000000 00000000 24e9b000 00010000 00000008
+syscall pc=2500b328 r0=4294967265 r3=22397280 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 223972d0 00000101 00000202 22397310 00000eda 00000000 00000000 24e9b000 00010000
+syscall pc=2500b328 r0=4294967265 r3=22397780 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 27648cec 00000101 00000202 22397920 00000ed9 00000000 00000000 00000000 0000c923 00000001
+syscall pc=2500b328 r0=4294967265 r3=22397070 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000004 00000101 00000202 223970e0 00000ed9 00000000 00000000 22397140 0000d000 03000001
+syscall pc=2500b328 r0=4294967265 r3=223975c0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 350c3134 00000101 00000202 22397670 00000ed9 00000000 00000000 0072002e 0001a000 03000001
+syscall pc=2500b328 r0=4294967265 r3=223976e0 r4=00000003 r5=0000002c r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3810 destination=101 send=44 recv=44: 00001513 276329d8 00000101 00000202 00000001 00000ee2 00000000 00000000 24e9c000 0000d000 00000008
+syscall pc=2500b328 r0=4294967265 r3=22397690 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 223976e0 00000101 00000202 22397720 00000eda 00000000 00000000 24e9c000 0000d000
+syscall pc=2500b328 r0=4294967265 r3=22397740 r4=00000003 r5=0000002c r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3810 destination=101 send=44 recv=44: 00001513 28002444 00000101 00000202 223977b0 00000ee2 00000000 00000000 24eb8000 0001a000 00000008
+syscall pc=2500b328 r0=4294967265 r3=223976f0 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22397740 00000101 00000202 22397780 00000eda 00000000 00000000 24eb8000 0001a000
+syscall pc=2500b328 r0=4294967265 r3=223978a0 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9d670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 8fec9498 00000101 00000202 8fec5480 00000eda 00000000 00000000 24e8f000 0000c923
+syscall pc=8fea2188 r0=4294967265 r3=223975d0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 223976a0 00000101 00000202 24e66920 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=8fea2508 r0=5 r3=24e1ec50 r4=00000000 r5=00000000 r6=00000000 r7=22397770 r8=7800b1e4 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/Carbon.framework/Versions/Current/Frameworks/HIToolbox.framework/HIToolbox
+return r3=3 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000003 r4=22397630 r5=00000000 r6=00000000 r7=22397770 r8=7800b1e4 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea180c r0=6 r3=00000003 r4=00000000 r5=8fec9d44 r6=22397770 r7=22397770 r8=7800b1e4 lr=8fe7ff58 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=24f9cca8 r0=5 r3=223951a0 r4=00000000 r5=000001ff r6=00000046 r7=000003bd r8=223951e5 lr=250e5d7c res=ffffffff
+guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj
+return r3=3 error=0 resume=24f9ccac
+syscall pc=24fa3348 r0=196 r3=00000003 r4=223955b0 r5=00002000 r6=22397624 r7=000003bd r8=223951e5 lr=250e5ed8 res=ffffffff
+return r3=236 error=0 resume=24fa334c
+syscall pc=24fa3348 r0=196 r3=00000003 r4=223955b0 r5=00002000 r6=22397624 r7=ffffffff r8=350c95b0 lr=250e5ed8 res=ffffffff
+return r3=0 error=0 resume=24fa334c
+syscall pc=24fa26a8 r0=6 r3=00000003 r4=223955b0 r5=00002000 r6=22397624 r7=ffffffff r8=350c95b0 lr=250e5ee8 res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=22397b70 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=350c9364 lr=250e52a4 res=ffffffff
+guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/InfoPlist.strings
+return r3=3 error=0 resume=24f9ccac
+syscall pc=24f9c608 r0=189 r3=00000003 r4=22397b10 r5=000001b6 r6=00000000 r7=ffffffff r8=350c9364 lr=250e52b8 res=ffffffff
+return r3=0 error=0 resume=24f9c60c
+syscall pc=24f98508 r0=3 r3=00000003 r4=24e66ed0 r5=00000074 r6=00000000 r7=ffffffff r8=350c9364 lr=250e5388 res=ffffffff
+return r3=116 error=0 resume=24f9850c
+syscall pc=24fa26a8 r0=6 r3=00000003 r4=24e66ed0 r5=00000074 r6=00000000 r7=ffffffff r8=350c9364 lr=250e53b8 res=ffffffff
+return r3=0 error=0 resume=24fa26ac
+syscall pc=24f9cca8 r0=5 r3=2526b5ac r4=00000000 r5=00000000 r6=00000000 r7=ffffffff r8=350c9364 lr=251f8e70 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/checkfixlist
+return r3=2 error=2 resume=24f9cca8
+syscall pc=24f9ca88 r0=24 r3=24e5a230 r4=0000001e r5=00000010 r6=00000010 r7=351b8034 r8=27b3aaac lr=251ffa88 res=ffffffff
+return r3=0 error=0 resume=24f9ca8c
+syscall pc=24f9cca8 r0=5 r3=22396b60 r4=00000002 r5=000001a4 r6=80808080 r7=00000000 r8=00396d8b lr=251fa78c res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Caches/com.apple.IntlDataCache
+return r3=3 error=0 resume=24f9ccac
+syscall pc=24f9c648 r0=92 r3=00000003 r4=00000009 r5=22396af0 r6=80808080 r7=00000000 r8=00396d8b lr=251ff8f8 res=ffffffff
+remaklar: unsupported fcntl 9

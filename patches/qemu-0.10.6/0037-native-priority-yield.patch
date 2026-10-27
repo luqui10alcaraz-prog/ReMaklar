@@ -1,0 +1,15 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -2124,6 +2124,12 @@
+ #else
+         return 4;
+ #endif
++    case -59: /* Legacy scheduler yield used by Jaguar's original pthread join. */
++#ifdef __APPLE__
++        {boolean_t result;remaklar_gate_leave();result=swtch_pri(env->gpr[3]);remaklar_gate_enter(env);return result;}
++#else
++        qerror("swtch_pri requires original Darwin scheduler");
++#endif
+     case -61: /* thread_switch: hand off to the actual native scheduler. */
+ #ifdef __APPLE__
+         {

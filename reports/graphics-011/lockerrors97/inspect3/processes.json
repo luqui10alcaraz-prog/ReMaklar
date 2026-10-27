@@ -1,0 +1,97 @@
+[
+  {
+    "proc": "0x20c25378",
+    "pid": 2174,
+    "comm": "qemu-ppc",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x20e30878",
+        "file": "2174-fd1.txt",
+        "size": 0,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x20d83dac",
+        "file": "2174-fd2.txt",
+        "size": 21017,
+        "holes": []
+      }
+    ],
+    "task": "0x20b34600"
+  },
+  {
+    "proc": "0x20c25908",
+    "pid": 2172,
+    "comm": "qemu-ppc",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b341f8"
+  },
+  {
+    "proc": "0x20c25640",
+    "pid": 2166,
+    "comm": "qemu-ppc",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b340a0"
+  },
+  {
+    "proc": "0x20c254dc",
+    "pid": 2161,
+    "comm": "qemu-ppc",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34350"
+  },
+  {
+    "proc": "0x20c257a4",
+    "pid": 2159,
+    "comm": "perl",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b344a8"
+  },
+  {
+    "proc": "0x20c25a6c",
+    "pid": 2116,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34758"
+  },
+  {
+    "proc": "0x20c25bd0",
+    "pid": 22,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b348b0"
+  },
+  {
+    "proc": "0x20c25d34",
+    "pid": 2,
+    "comm": "mach_init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34a08"
+  },
+  {
+    "proc": "0x20c25e98",
+    "pid": 1,
+    "comm": "init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34cb8"
+  },
+  {
+    "proc": "0x3e6900",
+    "pid": 0,
+    "comm": "kernel_task",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b34e10"
+  }
+]

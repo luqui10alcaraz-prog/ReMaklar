@@ -1,0 +1,161 @@
+4 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=223974a0 r4=22398174 r5=223974a0 r6=223978a0 r7=22397470 r8=00000019 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Components result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=24fa8568 r0=190 r3=22396f40 r4=22397c14 r5=22396f40 r6=22397340 r7=22396f10 r8=00000019 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22396ca0 r4=22397e74 r5=22396ca0 r6=223970a0 r7=22396c70 r8=00000016 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=223974a0 r4=22398174 r5=223974a0 r6=223978a0 r7=22397470 r8=00000019 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/QuickTime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=24fa8568 r0=190 r3=223964e0 r4=223971b4 r5=223964e0 r6=223968e0 r7=223964b0 r8=00000019 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22396240 r4=22397414 r5=22396240 r6=22396640 r7=22396210 r8=00000016 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22396a40 r4=22397714 r5=22396a40 r6=22396e40 r7=22396a10 r8=00000019 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Audio result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=24fadba8 r0=220 r3=22398160 r4=22396d70 r5=22396a20 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/Library masks=381ab/0/0/0/0 result=-1 errno=2
+return r3=2 error=2 resume=24fadba8
+syscall pc=24fadba8 r0=220 r3=22398160 r4=22396d70 r5=22396a20 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/Library masks=381ab/0/0/0/0 result=-1 errno=2
+return r3=2 error=2 resume=24fadba8
+syscall pc=24fadba8 r0=220 r3=22397700 r4=22396310 r5=22395fc0 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/Library masks=381ab/0/0/0/0 result=-1 errno=2
+return r3=2 error=2 resume=24fadba8
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f53018 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f52af0 r5=00000058 r6=00000100 r7=00000100 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000100 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f52830 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=22398b70 r5=22397bd0 r6=22398b70 r7=00000000 r8=24e34010 lr=250e4f4c res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=22397bd0 r6=22398b70 r7=00000000 r8=24e34010 lr=250e4f60 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24fadba8 r0=220 r3=22397590 r4=22396200 r5=22395eb0 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/var/root masks=381ab/0/0/0/0 result=-1 errno=2
+return r3=2 error=2 resume=24fadba8
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f53070 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f52af0 r5=00000058 r6=00000100 r7=00000100 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000100 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f52830 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=22398b70 r5=22397bd0 r6=22398b70 r7=00000000 r8=24e34010 lr=250e4f4c res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=22397bd0 r6=22398b70 r7=00000000 r8=24e34010 lr=250e4f60 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24fadba8 r0=220 r3=22397590 r4=22396200 r5=22395eb0 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/var/root masks=381ab/0/0/0/0 result=-1 errno=2
+return r3=2 error=2 resume=24fadba8
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f53388 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f53330 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f53178 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f52af0 r5=00000058 r6=00000100 r7=00000100 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000100 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=24f52830 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03a4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=00000000 r5=00000058 r6=00000100 r7=00000000 r8=00000000 lr=251d03ac res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24f9da88 r0=24 r3=00000000 r4=22398b70 r5=22397170 r6=22398b70 r7=00000000 r8=24e34010 lr=250e4f4c res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=22397170 r6=22398b70 r7=00000000 r8=24e34010 lr=250e4f60 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24fadba8 r0=220 r3=22396b30 r4=223957a0 r5=22395450 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/var/root masks=381ab/0/0/0/0 result=-1 errno=2
+return r3=2 error=2 resume=24fadba8
+syscall pc=24fadf48 r0=183 r3=00000000 r4=00000008 r5=00000000 r6=00000010 r7=ffffffff r8=350ca5b0 lr=2520c6b0 res=ffffffff
+return r3=0 error=0 resume=24fadf4c
+syscall pc=2500c328 r0=4294967265 r3=22398cc0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 34f99e38 00000101 00000202 22398d40 00000ed9 00000000 00000000 00000000 00003910 00000001
+syscall pc=2500c328 r0=4294967265 r3=22398e40 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 48002243 00000101 00000202 00000000 00000eda 00000000 00000000 451d5000 00003910
+syscall pc=24f9da88 r0=24 r3=350c95bc r4=350c95ac r5=350c95ac r6=350c95ac r7=ffffffff r8=24e34010 lr=250e48e0 res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=350c95ac r6=350c95ac r7=ffffffff r8=24e34010 lr=250e48f4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24fa16a8 r0=202 r3=22398e70 r4=00000002 r5=22398ed0 r6=22398e78 r7=00000000 r8=00000000 lr=24fa533c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24fa16ac
+syscall pc=24f9da88 r0=24 r3=350c95bc r4=350c95ac r5=350c95ac r6=350c95ac r7=22398e00 r8=00000000 lr=250e48e0 res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24fa3588 r0=24 r3=00000000 r4=00000000 r5=350c95ac r6=350c95ac r7=22398e00 r8=00000000 lr=250e48f4 res=ffffffff
+return r3=0 error=0 resume=24fa358c
+syscall pc=24fa16a8 r0=202 r3=22398e70 r4=00000002 r5=22398ed0 r6=22398e78 r7=00000000 r8=00000000 lr=24fa533c res=ffffffff
+sysctl mib[0]=1
+sysctl mib[1]=10
+return r3=0 error=0 resume=24fa16ac
+syscall pc=24fa3dc8 r0=188 r3=22398e22 r4=223989f0 r5=b1003cb4 r6=80808080 r7=00000002 r8=69620079 lr=28721db4 res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Resources/libRIP.A.dylib result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24fa3dcc
+syscall pc=8fea2188 r0=4294967265 r3=22398850 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000202 223988c0 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=8fea2508 r0=5 r3=24e1fc50 r4=00000000 r5=00000000 r6=00000000 r7=223989f0 r8=00e34010 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Resources/libRIP.A.dylib
+return r3=8 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000008 r4=223988b0 r5=00000000 r6=00000000 r7=223989f0 r8=00e34010 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea180c r0=6 r3=00000008 r4=00000000 r5=8fecace0 r6=223989f0 r7=223989f0 r8=00e34010 lr=8fe7ff58 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=24fa3dc8 r0=188 r3=22398b00 r4=223986d0 r5=2634b100 r6=80808080 r7=00000000 r8=004c6962 lr=28721db4 res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Resources/libCSync.A.dylib result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24fa3dcc
+syscall pc=8fea2508 r0=5 r3=24e1fc50 r4=00000000 r5=00000000 r6=00000000 r7=223986d0 r8=00000000 lr=8fe7fce0 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Resources/libCSync.A.dylib
+return r3=8 error=0 resume=8fea250c
+syscall pc=8fea1844 r0=189 r3=00000008 r4=22398590 r5=00000000 r6=00000000 r7=223986d0 r8=00000000 lr=8fe7ff08 res=ffffffff
+return r3=0 error=0 resume=8fea1848
+syscall pc=8fea180c r0=6 r3=00000008 r4=00000000 r5=8fecab24 r6=223986d0 r7=223986d0 r8=00000000 lr=8fe7ff58 res=ffffffff
+return r3=0 error=0 resume=8fea1810
+syscall pc=2500c328 r0=4294967265 r3=22398e60 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+native Mach send id=29280 destination=40d bytes=40
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=36 id=29380
+syscall pc=24fd6cc8 r0=266 r3=26e858b8 r4=00000000 r5=00000124 r6=00000000 r7=ffffffff r8=24f564bc lr=26e814d4 res=ffffffff
+native shm syscall=266 name=_CGSYSPROFILE flags=0 result=8 errno=0
+return r3=8 error=0 resume=24fd6ccc
+syscall pc=24f9d608 r0=189 r3=00000008 r4=22398d40 r5=00000124 r6=00000000 r7=ffffffff r8=24f564bc lr=26e814e8 res=ffffffff
+return r3=0 error=0 resume=24f9d60c
+syscall pc=24fae068 r0=197 r3=00000000 r4=00001000 r5=00000001 r6=00000001 r7=00000008 r8=00000000 lr=26e81508 res=ffffffff
+return r3=620322816 error=0 resume=24fae06c
+syscall pc=24fa36a8 r0=6 r3=00000008 r4=00001000 r5=00000001 r6=00000001 r7=00000008 r8=00000000 lr=26e81514 res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=24fadfc8 r0=73 r3=24f96000 r4=00001000 r5=0000000b r6=00470042 r7=002063cf r8=24e34010 lr=26e8159c res=ffffffff
+return r3=0 error=0 resume=24fadfcc
+syscall pc=24f9dca8 r0=5 r3=2526c5ac r4=00000000 r5=00000000 r6=00000000 r7=3f800000 r8=00000000 lr=251f9e70 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/checkfixlist
+return r3=2 error=2 resume=24f9dca8

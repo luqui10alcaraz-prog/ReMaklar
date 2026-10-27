@@ -1,0 +1,311 @@
+{
+  "objective": "First authentic original Jaguar Installer window on original Darwin 6 i386 VESA",
+  "result": "ACHIEVED: original Install window, Authorization page with rejection text and original buttons",
+  "visible_text": [
+    "Installer",
+    "Install",
+    "Authorization",
+    "This software cannot be installed on this computer.",
+    "Go Back",
+    "Close"
+  ],
+  "scope": "First window verified. No installation success or full Installer workflow claimed. Reason for application rejection not established.",
+  "original_kernel_md5": "56da829d60b6b4353c25cca8b060b5f8",
+  "original_installer_md5": "1496d181829e74bd60de5fd3f9222185",
+  "runtime_executor": "/var/tmp/graphics011-build101/qemu-ppc",
+  "source_manifest": "patches/qemu-0.10.6/graphics-011-growing-native-capability-exports-manifest.json",
+  "source_files_match": {
+    "cpu-all.h": true,
+    "target-ppc/translate.c": true,
+    "target-ppc/helper.h": true,
+    "target-ppc/op_helper.c": true,
+    "darwin-user/remaklar/darwin-kernel.c": true,
+    "darwin-user/remaklar/mach-native.inc": true,
+    "darwin-user/remaklar/live-regions.inc": true,
+    "darwin-user/remaklar/typed-live.c": true,
+    "darwin-user/remaklar/typed-live.h": true,
+    "target-ppc/cpu.h": true,
+    "darwin-user/qemu.h": true,
+    "darwin-user/mmap.c": true,
+    "darwin-user/remaklar/bootstrap-main.c": true,
+    "darwin-user/remaklar/threads.inc": true,
+    "darwin-user/remaklar/high-window.c": true,
+    "darwin-user/remaklar/high-window.h": true,
+    "darwin-user/remaklar/remote-maps.inc": true,
+    "darwin-user/remaklar/kinfo.inc": true
+  },
+  "services": {
+    "ATS": 2523,
+    "WindowServer": 2528,
+    "pbs": 2533,
+    "Installer": 2535
+  },
+  "framebuffer": {
+    "ppm": "build/011-window102-painted-preserved.ppm",
+    "vram": "build/011-window102-painted-preserved-vram.bin",
+    "physical_address": "0xfd000000",
+    "format": "1024x768x32 BGRX",
+    "ppm_sha256": "7e9eef8dba2a1e1eee44cd8360a2fdc64bbcaab9c63ad9df39d7d91c3ac6b757",
+    "vram_sha256": "a19cc563a7849cd1f139fef927b2ddda8855d4daae2515ff077cbf80fcc7aa22",
+    "rgb_sha256": "b7e34c19cd42aec838237b12dde424a10580fc26b74c2b16c11cf6e542380bfe",
+    "decoded_vram_rgb_sha256": "b7e34c19cd42aec838237b12dde424a10580fc26b74c2b16c11cf6e542380bfe",
+    "different_pixels_whole_frame": 0,
+    "window_rectangle_xyxy": [
+      195,
+      120,
+      835,
+      585
+    ],
+    "different_pixels_window": 0,
+    "difference_bounds": null,
+    "png": "reports/graphics-011/capacity102/verified/verified-window.png",
+    "verification": "Actual stopped framebuffer; no synthetic graphics or pixel modifications"
+  },
+  "restored_checkpoint_identical": true,
+  "paused_monitors": {
+    "original_trial102": 4449,
+    "restored_verification": 4450,
+    "original_direct66": 4444
+  },
+  "direct66_checkpoint_unchanged": {
+    "build/011-upl66-machine-state.bin": true,
+    "vm/darwin602-graphics-011-upl66-preserved.qcow2": true,
+    "build/graphics011-upl66-preserved-exchange.img": true,
+    "build/011-upl66-vram.bin": true
+  },
+  "regression102": {
+    "native_and_ppc_capacity": "PASS, identical stdout; checked by set -e shell before joint launch",
+    "previous_executor_negative": "Expected exit125 at fixed capability ceiling",
+    "explicit_names_256_regression": "PASS exit0/timeout0 before joint launch",
+    "acceptance_evidence": "reports/graphics-011/capacity102/probes1/2484-fd1.txt",
+    "joint_trial": "Paused with live original services and authentic window, before harness cleanup; not claimed completed/exported"
+  },
+  "trace_events": {
+    "reports/graphics-011/capacity102/window-evidence/2535-fd2.txt": [
+      {
+        "line": 2915,
+        "text": "guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib"
+      },
+      {
+        "line": 4682,
+        "text": "native Mach send id=29206 destination=40d bytes=56"
+      },
+      {
+        "line": 4683,
+        "text": "native application OOL send id=29206 bytes=36 copy=1 deallocate=0"
+      },
+      {
+        "line": 4685,
+        "text": "native Mach receive port=202 bytes=52 id=29306"
+      },
+      {
+        "line": 8610,
+        "text": "native Mach send id=29210 destination=40d bytes=44"
+      },
+      {
+        "line": 8612,
+        "text": "native Mach receive port=202 bytes=36 id=29310"
+      },
+      {
+        "line": 8978,
+        "text": "guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PageUI.nib/objects.nib"
+      },
+      {
+        "line": 9724,
+        "text": "native Mach send id=29206 destination=40d bytes=56"
+      },
+      {
+        "line": 9725,
+        "text": "native application OOL send id=29206 bytes=36 copy=1 deallocate=0"
+      },
+      {
+        "line": 9727,
+        "text": "native Mach receive port=202 bytes=52 id=29306"
+      },
+      {
+        "line": 19914,
+        "text": "native Mach send id=29206 destination=40d bytes=56"
+      },
+      {
+        "line": 19915,
+        "text": "native application OOL send id=29206 bytes=36 copy=1 deallocate=0"
+      },
+      {
+        "line": 19917,
+        "text": "native Mach receive port=202 bytes=52 id=29306"
+      },
+      {
+        "line": 20008,
+        "text": "guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/background.tif"
+      },
+      {
+        "line": 20968,
+        "text": "guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.nib/objects.nib"
+      },
+      {
+        "line": 24172,
+        "text": "native Mach send id=29206 destination=40d bytes=56"
+      },
+      {
+        "line": 24173,
+        "text": "native application OOL send id=29206 bytes=36 copy=1 deallocate=0"
+      },
+      {
+        "line": 24175,
+        "text": "native Mach receive port=202 bytes=52 id=29306"
+      },
+      {
+        "line": 25321,
+        "text": "native Mach send id=29206 destination=40d bytes=56"
+      },
+      {
+        "line": 25322,
+        "text": "native application OOL send id=29206 bytes=36 copy=1 deallocate=0"
+      },
+      {
+        "line": 25331,
+        "text": "native Mach receive port=203 bytes=52 id=29306"
+      },
+      {
+        "line": 25491,
+        "text": "native Mach send id=29206 destination=40d bytes=56"
+      },
+      {
+        "line": 25492,
+        "text": "native application OOL send id=29206 bytes=36 copy=1 deallocate=0"
+      },
+      {
+        "line": 25494,
+        "text": "native Mach receive port=203 bytes=52 id=29306"
+      },
+      {
+        "line": 25598,
+        "text": "native Mach send id=29206 destination=40d bytes=56"
+      },
+      {
+        "line": 25599,
+        "text": "native application OOL send id=29206 bytes=36 copy=1 deallocate=0"
+      },
+      {
+        "line": 25606,
+        "text": "native Mach receive port=203 bytes=52 id=29306"
+      },
+      {
+        "line": 25742,
+        "text": "guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/English.lproj/Documents.nib/objects.nib"
+      }
+    ],
+    "reports/graphics-011/capacity102/window-evidence/2528-fd2.txt": [
+      {
+        "line": 3847,
+        "text": "native application OOL receive id=29206 address=223a6000 bytes=36"
+      },
+      {
+        "line": 3849,
+        "text": "native Mach receive port=447 bytes=56 id=29206"
+      },
+      {
+        "line": 3864,
+        "text": "native Mach send id=29306 destination=471 bytes=52"
+      },
+      {
+        "line": 3966,
+        "text": "native Mach receive port=447 bytes=44 id=29210"
+      },
+      {
+        "line": 3982,
+        "text": "native Mach send id=29310 destination=480 bytes=36"
+      },
+      {
+        "line": 4090,
+        "text": "native application OOL receive id=29206 address=223a6000 bytes=36"
+      },
+      {
+        "line": 4092,
+        "text": "native Mach receive port=447 bytes=56 id=29206"
+      },
+      {
+        "line": 4107,
+        "text": "native Mach send id=29306 destination=48f bytes=52"
+      },
+      {
+        "line": 4381,
+        "text": "native application OOL receive id=29206 address=223a6000 bytes=36"
+      },
+      {
+        "line": 4383,
+        "text": "native Mach receive port=447 bytes=56 id=29206"
+      },
+      {
+        "line": 4398,
+        "text": "native Mach send id=29306 destination=4b9 bytes=52"
+      },
+      {
+        "line": 4545,
+        "text": "native application OOL receive id=29206 address=223a6000 bytes=36"
+      },
+      {
+        "line": 4547,
+        "text": "native Mach receive port=447 bytes=56 id=29206"
+      },
+      {
+        "line": 4562,
+        "text": "native Mach send id=29306 destination=4c9 bytes=52"
+      },
+      {
+        "line": 4729,
+        "text": "native application OOL receive id=29206 address=223a6000 bytes=36"
+      },
+      {
+        "line": 4731,
+        "text": "native Mach receive port=447 bytes=56 id=29206"
+      },
+      {
+        "line": 4746,
+        "text": "native Mach send id=29306 destination=4e2 bytes=52"
+      },
+      {
+        "line": 4806,
+        "text": "native application OOL receive id=29206 address=223a6000 bytes=36"
+      },
+      {
+        "line": 4808,
+        "text": "native Mach receive port=447 bytes=56 id=29206"
+      },
+      {
+        "line": 4823,
+        "text": "native Mach send id=29306 destination=4ee bytes=52"
+      },
+      {
+        "line": 4883,
+        "text": "native application OOL receive id=29206 address=223a6000 bytes=36"
+      },
+      {
+        "line": 4885,
+        "text": "native Mach receive port=447 bytes=56 id=29206"
+      },
+      {
+        "line": 4900,
+        "text": "native Mach send id=29306 destination=4fa bytes=52"
+      }
+    ]
+  },
+  "evidence_sha256": {
+    "reports/graphics-011/capacity102/window-evidence/2535-fd2.txt": "3d65055c16f9cc4da394f7f71b4182dff33d1035a012b75ab70c6558128ef66b",
+    "reports/graphics-011/capacity102/window-evidence/2528-fd2.txt": "47330a2f022a85e92a988abf0b3753c3e934154f50f77868d4fa5f779778e027",
+    "reports/graphics-011/capacity102/window-evidence/dir-ats.stderr": "b31afbfb8371062337d955d6dad6dcd58db6fca0dad4cc206c80b4474eae1d68",
+    "reports/graphics-011/capacity102/window-evidence/dir-pbs.stderr": "fc12017ec16cd0aa00db8c7c65b9c628009d5629141528f12cf7107248eb02db",
+    "reports/graphics-011/capacity102/window-evidence/dir-processes.txt": "455cf12adbc42c4115e1070e835072413fe3d98cac1f14fcdd2efe25ee1111ad",
+    "reports/graphics-011/capacity102/window-evidence/processes.json": "f456558e8a0bcdba8e732ef3e5eb9edef5cd478e2f02b54ab52e2eab75dc88b4",
+    "reports/graphics-011/capacity102/probes1/2484-fd1.txt": "36906f17a38e37bb0377fc455ef5e06536c344fe661e730413ec946e39b3b09b",
+    "reports/graphics-011/capacity102/verified/verified-window.png": "cb6908a7104104536d5d4b8e213444defeb12183c01470c58ea2fc154952081c",
+    "reports/graphics-011/capacity102/verified/framebuffer-verification.json": "96dc5432b8d6426791825b1fcc20cb05235256803fb8b97df9a67cf17d04a1f2",
+    "reports/graphics-011/capacity102/restored-verification/framebuffer-verification.json": "a1cf9b2d81901ed9adad09a97dd41f3cfb5106a88b38f81b897edaa782d04aa4",
+    "reports/graphics-011/capacity102/verified/original-CGSCreateWindow-disassembly.txt": "67b6bb7a6a4900ce3a8b18b54544e31a1067482ae541039977eed247d7b176ae",
+    "reports/graphics-011/capacity102/verified/original-CGSOrderWindow-disassembly.txt": "d97a4e065dae0b23413c0fe845bf48b43db42014d201c8fd5ece8b1385fc0d37",
+    "reports/graphics-011/storage88/storage88-complete/original-md5.txt": "25e8b820da2527423e8049742a9050eb0ab90e2a85bed1d4931499fc42299ebd",
+    "reports/graphics-011/resume-validation/chain21-through38-reproduction.txt": "946ee11f72916d13db78aa40d07b9957ed2d42a2e938bfb4a195f5d6061dd19c",
+    "reports/graphics-011/resume-validation/window102-first-machine-checkpoint.json": "eeff439bcf0666898292034479acd5c1b8b81366ec4918bf584f1c7b1e95b10b",
+    "reports/graphics-011/resume-validation/window102-painted-machine-checkpoint.json": "8d830d22b9b2979ba18475d6c663325022d1010acf03695b778636582b78faf1"
+  }
+}

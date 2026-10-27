@@ -1,0 +1,43 @@
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -75,6 +75,8 @@
+         (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
+         native_iomappings[i].bytes,pos,f) || rm_hid_mouse_field(
+         (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
++        native_iomappings[i].bytes,pos,f) || rm_hid_auxmouse_field(
++        (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
+         native_iomappings[i].bytes,pos,f));
+ }
+ 
+--- a/darwin-user/remaklar/typed-live.c
++++ b/darwin-user/remaklar/typed-live.c
+@@ -40,6 +40,21 @@
+     if(type<=4 && data<4)f->kind=RM_MOUSE_PREFIX;
+     else if((data>=8 && data<12) || data>=16)f->kind=RM_BYTES;
+     return 1;
++}
++
++/* IOHIDSystem::updateButtons sends NX_SYSDEFINED/subtype7 using misc.L.
++ * Other compound subtypes may select S/C/F and remain fail-closed. */
++int rm_hid_auxmouse_field(volatile unsigned char *base,unsigned bytes,unsigned pos,
++                          struct rm_field *f)
++{
++    unsigned entry,within,data;
++    if(pos<232 || pos>=bytes)return 0;
++    entry=232+((pos-232)/84)*84;within=(pos-232)%84;
++    if(entry>=232+240*84 || within<36 || bytes-entry<84)return 0;
++    if(*(volatile rm_u32 *)(base+entry+8)!=14 ||
++       *(volatile unsigned short *)(base+entry+38)!=7)return 0;
++    data=within-36;f->offset=entry+36+(data/4)*4;f->size=4;
++    f->kind=data<4?RM_PAIR16:RM_NUMBER;return 1;
+ }
+ 
+ void rm_barrier(void)
+--- a/darwin-user/remaklar/typed-live.h
++++ b/darwin-user/remaklar/typed-live.h
+@@ -18,4 +18,5 @@
+ void rm_barrier(void);
+ int rm_hid_key_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
+ int rm_hid_mouse_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
++int rm_hid_auxmouse_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
+ #endif

@@ -1,0 +1,21 @@
+{
+  "reason": "utimes regression native/PPC passes. Carbon delete busy-file probe exposed missing EBUSY mapping, now compiled, but copy of executor86 hit ENOSPC. No trial86 GUI launch. Cold clone will add a separate work volume. Original direct66 untouched.",
+  "files": {
+    "build/011-trial86-machine-state.bin": {
+      "bytes": 186446453,
+      "sha256": "dd55178abce2295bcd9dfe9716f9e5e68bcbfcafa0cca8dd7fed800130315ff8"
+    },
+    "build/011-trial86-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "e4be931da9a6afdf6f50dbb9c96504c234ce13a77db6acfa2b9692a9e1ce8244"
+    },
+    "vm/darwin602-graphics-011-trial86-preserved.qcow2": {
+      "bytes": 34930688,
+      "sha256": "3ba1484b1d7efa57769438588e85448ddb0541ff287a6bbeae1b52aaca2959e8"
+    },
+    "build/graphics011-trial86-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "afec240a5182bba3db66e4a50890d39e826d0279de1b7477081771292d4c3175"
+    }
+  }
+}

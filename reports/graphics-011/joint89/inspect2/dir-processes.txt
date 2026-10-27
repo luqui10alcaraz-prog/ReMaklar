@@ -1,0 +1,21 @@
+sample=1793063844
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.21 /sbin/mach_init -s -v      
+ 1600  ??  Rs     0:03.68 /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer
+ 1601  ??  Rs     0:01.17 /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 12
+   22  ??  Ss     0:00.65 -sh (sh)
+ 1431  ??  S+     0:00.24 sh /var/tmp/graphics011-stage89/run.sh
+ 1599  ??  R+     0:00.12 perl /var/tmp/graphics011-stage89/joint.pl /var/tmp/graphics011-joint89 /var/tmp/graphics011-build89/qemu-ppc /var/tmp/jaguar
+ 1602  ??  R+     0:00.00 ps -axww
+sample=1793063849
+  PID  TT  STAT      TIME COMMAND
+    1  ??  Ss     0:00.15 /sbin/init -s -v       
+    2  ??  Ss     0:00.21 /sbin/mach_init -s -v      
+ 1600  ??  Rs     0:05.02 /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer /var/tmp/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/StartATSServer
+ 1601  ??  Rs     0:02.92 /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar --cwd / --exec-argv0 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/ATSServer --inherit-fds 0:0,1:1,2:2, --inherit-ports 4 --exec-env-count 12
+ 1603  ??  Rs     0:01.88 /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar --exec-argv0 /System/Library/CoreServices/WindowServer /var/tmp/jaguar/System/Library/CoreServices/WindowServer
+   22  ??  Ss     0:00.65 -sh (sh)
+ 1431  ??  S+     0:00.24 sh /var/tmp/graphics011-stage89/run.sh
+ 1599  ??  S+     0:00.14 perl /var/tmp/graphics011-stage89/joint.pl /var/tmp/graphics011-joint89 /var/tmp/graphics011-build89/qemu-ppc /var/tmp/jaguar
+ 1604  ??  R+     0:00.00 ps -axww

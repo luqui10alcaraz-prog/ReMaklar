@@ -1,0 +1,3 @@
+/dev/disk0s2 on / (local)
+devfs on /dev (local)
+/dev/disk1s1 on /private/var/tmp (local)

@@ -1,0 +1,9 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/setup127.tgz graphics011-setup127;sync;umount /exchange' 0
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage127/mount-devfs.c -o /var/tmp/graphics011-setup127/mount-devfs
++ /var/tmp/graphics011-setup127/mount-devfs /var/tmp/jaguar/dev
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/RUNS/setup127.tgz graphics011-setup127

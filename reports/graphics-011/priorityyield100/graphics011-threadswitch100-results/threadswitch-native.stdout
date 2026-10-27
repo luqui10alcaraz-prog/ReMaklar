@@ -1,0 +1,1 @@
+real thread_switch: self/worker hints, invalid and non-thread hints, wait timing, invalid options and worker completion PASS

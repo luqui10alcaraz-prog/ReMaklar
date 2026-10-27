@@ -1,0 +1,20 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;paths=graphics011-threadswitch99-results;if test -d graphics011-joint99;then paths="$paths graphics011-joint99";fi;gnutar czf /exchange/swch99.tgz $paths;sync;umount /exchange' 0
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage99/threadswitch.c -o /var/tmp/graphics011-threadswitch99-results/threadswitch-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage99/threadswitch.c -o /var/tmp/graphics011-threadswitch99-results/threadswitch-ppc
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-threadswitch99-results/threadswitch-native /var/tmp/graphics011-threadswitch99-results/threadswitch-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-threadswitch99-results/threadswitch-previous /var/tmp/graphics011-build97/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-threadswitch99-results/threadswitch-ppc
++ grep -q '^leader_exit=1$' /var/tmp/graphics011-threadswitch99-results/threadswitch-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-threadswitch99-results/threadswitch-jaguar /var/tmp/graphics011-build98/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-threadswitch99-results/threadswitch-ppc
++ cmp /var/tmp/graphics011-threadswitch99-results/threadswitch-native.stdout /var/tmp/graphics011-threadswitch99-results/threadswitch-jaguar.stdout
+cmp: EOF on /var/tmp/graphics011-threadswitch99-results/threadswitch-jaguar.stdout
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ paths=graphics011-threadswitch99-results
++ test -d graphics011-joint99
++ gnutar czf /exchange/swch99.tgz graphics011-threadswitch99-results

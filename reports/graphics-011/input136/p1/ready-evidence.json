@@ -1,0 +1,5 @@
+{
+  "pid": 499,
+  "file": "reports/graphics-011/input136/p1/sample04/499-fd1.txt",
+  "text": "layout NXEvent=76 NXEQElement=84 NXEventData=48 lleq=224 data=36 time=20 key=8 repeat=2 keyboardType=16\ndevices pointing=1 keyboard=1 ps2mouse=0 usbmouse=1\nopen=0\ncreate=0\nmap=0 bytes=20392\nshared version=3 size=20384 offsets=8,20392\nenable=0\nframebuffer open=3758097101\nframebuffer open=0\nnative cursor shared object=0\nnative register framebuffer=0\nnative enable cursor=0\nnative mouseRect tracking enabled around current pointer\nREADY real hardware input, 15 seconds\ntick=0 head=1 tail=1 cursor=102,66\n"
+}

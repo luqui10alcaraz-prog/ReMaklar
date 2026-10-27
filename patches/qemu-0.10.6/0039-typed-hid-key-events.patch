@@ -1,0 +1,85 @@
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -68,6 +68,14 @@
+     f->offset=start+((pos-start)/n)*n;f->size=n;return 1;
+ }
+ 
++static int live_mapped_field(unsigned i,unsigned pos,struct rm_field *f)
++{
++    if(live_field(live_kind[i],pos,f))return 1;
++    return live_kind[i]==2 && rm_hid_key_field(
++        (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
++        native_iomappings[i].bytes,pos,f);
++}
++
+ static int live_view(uintptr_t address,unsigned n,int write,struct rm_view *v,struct rm_field *f,unsigned *offset)
+ {
+     unsigned i;
+@@ -80,12 +88,12 @@
+             if(n>live_start[i]+live_extent[i]-pos)qerror("pixel access crosses verified front buffer");
+         }
+         if(!remaklar_guest_access(address,n,write?PAGE_WRITE:PAGE_READ))qerror("live shared memory protection violation address=%lx",(unsigned long)address);
+-        if(!live_field(live_kind[i],pos,f))qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
++        if(!live_mapped_field(i,pos,f))qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
+         /* Compose only adjacent declared fields, never select a union by
+          * instruction width. A pair of shorts remains one atomic host word. */
+         if(n>=4 && !(pos&3) && f->offset==pos && f->kind==RM_NUMBER && (f->size==1 || f->size==2)) {
+             struct rm_field next;unsigned j,unit=f->size,good=1;
+-            for(j=unit;j<4;j+=unit)if(!live_field(live_kind[i],pos+j,&next) || next.offset!=pos+j || next.size!=unit || next.kind!=RM_NUMBER)good=0;
++            for(j=unit;j<4;j+=unit)if(!live_mapped_field(i,pos+j,&next) || next.offset!=pos+j || next.size!=unit || next.kind!=RM_NUMBER)good=0;
+             if(good){f->size=4;f->kind=unit==2?RM_PAIR16:RM_BYTES;}
+         }
+         v->base=(volatile unsigned char *)(uintptr_t)native_iomappings[i].address;
+@@ -102,7 +110,7 @@
+         int error;
+         /* lfd/stfd may span two pixels. Each pixel is a native uint32,
+          * not half of a native uint64. PPC does not require an atomic pair. */
+-        if(n==8 && f.size==4 && v.base && (live_kind_at((uint32_t)(uintptr_t)v.base)==1 || live_kind_at((uint32_t)(uintptr_t)v.base)==3) && !(off&3) && v.bytes-off>=8) {
++        if(n==8 && f.size==4 && v.base && !(off&3) && v.bytes-off>=8) {
+             uint64_t hi=remaklar_live_load(address,4);
+             return (hi<<32)|remaklar_live_load(address+4,4);
+         }
+@@ -128,7 +136,7 @@
+     struct rm_view v;struct rm_field f;unsigned off;
+     if(live_view(address,n,1,&v,&f,&off)) {
+         int error;
+-        if(n==8 && f.size==4 && v.base && (live_kind_at((uint32_t)(uintptr_t)v.base)==1 || live_kind_at((uint32_t)(uintptr_t)v.base)==3) && !(off&3) && v.bytes-off>=8) {
++        if(n==8 && f.size==4 && v.base && !(off&3) && v.bytes-off>=8) {
+             remaklar_live_store(address,4,x>>32);
+             remaklar_live_store(address+4,4,x);
+             return;
+--- a/darwin-user/remaklar/typed-live.c
++++ b/darwin-user/remaklar/typed-live.c
+@@ -3,6 +3,24 @@
+  * SPDX-License-Identifier: MIT */
+ #include "typed-live.h"
+ #include <errno.h>
++
++/* IOHIDFamily-33 v3: EvOffsets(8), EvGlobals.lleq(224), NXEQElement(84).
++ * Select NXEventData.key by the actual native event discriminator, never by
++ * the width of a PPC load. The original consumer owns the slot's semaphore. */
++int rm_hid_key_field(volatile unsigned char *base,unsigned bytes,unsigned pos,
++                     struct rm_field *f)
++{
++    unsigned entry,within,data,type;
++    if(pos<232 || pos>=bytes)return 0;
++    entry=232+((pos-232)/84)*84;within=(pos-232)%84;
++    if(entry>=232+240*84 || within<36 || bytes-entry<84)return 0;
++    type=*(volatile rm_u32 *)(base+entry+8);
++    if(type!=10 && type!=11 && type!=12)return 0;
++    data=within-36;f->kind=RM_NUMBER;
++    if(data<12){f->offset=entry+36+(data/2)*2;f->size=2;}
++    else {f->offset=entry+48+((data-12)/4)*4;f->size=4;}
++    return 1;
++}
+ 
+ void rm_barrier(void)
+ {
+--- a/darwin-user/remaklar/typed-live.h
++++ b/darwin-user/remaklar/typed-live.h
+@@ -16,4 +16,5 @@
+ int rm_write(const struct rm_view *,unsigned,unsigned,rm_u64);
+ int rm_cas32(const struct rm_view *,unsigned,rm_u32,rm_u32,int *);
+ void rm_barrier(void);
++int rm_hid_key_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
+ #endif

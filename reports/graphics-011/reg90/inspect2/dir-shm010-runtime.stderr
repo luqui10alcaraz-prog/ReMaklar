@@ -1,0 +1,35 @@
+l pc=24f266a8 r0=6 r3=00000005 r4=00001000 r5=00000008 r6=61667465 r7=72313233 r8=00000000 lr=000024c4 res=ffffffff
+return r3=0 error=0 resume=24f266ac
+syscall pc=24f20608 r0=189 r3=00000001 r4=22397c20 r5=22397cd4 r6=80808080 r7=00000000 r8=00000000 lr=24f268f8 res=ffffffff
+return r3=0 error=0 resume=24f2060c
+syscall pc=24f1efe8 r0=4 r3=00000001 r4=24dea400 r5=00000025 r6=0000000a r7=00000001 r8=94f1b000 lr=24f1c78c res=ffffffff
+return r3=37 error=0 resume=24f1efec
+syscall pc=24f20fc8 r0=1 r3=00000000 r4=24dea400 r5=00000025 r6=0000000a r7=00000001 r8=94f1b000 lr=000022bc res=ffffffff
+original PPC exit pid=1700 status=0 lr=000022bc
+exit frame=22397f00 return=000022bc
+exit frame=22397f60 return=00002138
+exit frame=22397fa0 return=00000000
+return r3=1700 error=0 resume=24df000c
+syscall pc=24e32834 r0=267 r3=22397e78 r4=00002f6c r5=00000008 r6=00000000 r7=8fec5550 r8=00000017 lr=000029d0 res=ffffffff
+native shm syscall=267 name=RM010.1699 flags=2f6c result=0 errno=0
+return r3=0 error=0 resume=24e32838
+syscall pc=24e28cc8 r0=266 r3=22397e78 r4=00000000 r5=00000000 r6=00000000 r7=8fec5550 r8=00000017 lr=00002a28 res=ffffffff
+native shm syscall=266 name=RM010.1699 flags=0 result=-1 errno=2
+return r3=2 error=2 resume=24e28cc8
+syscall pc=24dfffc8 r0=73 r3=223e4000 r4=00002000 r5=00000008 r6=00000000 r7=8fec5550 r8=00000017 lr=00002adc res=ffffffff
+return r3=0 error=0 resume=24dfffcc
+syscall pc=24dfffc8 r0=73 r3=223e6000 r4=00001000 r5=00000008 r6=00000000 r7=8fec5550 r8=00000017 lr=00002af4 res=ffffffff
+return r3=0 error=0 resume=24dfffcc
+syscall pc=24df56a8 r0=6 r3=00000003 r4=00001000 r5=00000008 r6=00000000 r7=8fec5550 r8=00000017 lr=00002b08 res=ffffffff
+return r3=0 error=0 resume=24df56ac
+syscall pc=24df56a8 r0=6 r3=00000004 r4=00001000 r5=00000008 r6=00000000 r7=8fec5550 r8=00000017 lr=00002b1c res=ffffffff
+return r3=0 error=0 resume=24df56ac
+syscall pc=24def608 r0=189 r3=00000001 r4=22397c40 r5=22397cf4 r6=80808080 r7=00000002 r8=4f4b0000 lr=24df58f8 res=ffffffff
+return r3=0 error=0 resume=24def60c
+syscall pc=24dedfe8 r0=4 r3=00000001 r4=223a4400 r5=00000053 r6=0000000a r7=00000001 r8=94dea000 lr=24deb78c res=ffffffff
+return r3=83 error=0 resume=24dedfec
+syscall pc=24deffc8 r0=1 r3=00000000 r4=223a4400 r5=00000053 r6=0000000a r7=00000001 r8=94dea000 lr=000022bc res=ffffffff
+original PPC exit pid=1699 status=0 lr=000022bc
+exit frame=22397f20 return=000022bc
+exit frame=22397f80 return=00002138
+exit frame=22397fc0 return=bfffff49

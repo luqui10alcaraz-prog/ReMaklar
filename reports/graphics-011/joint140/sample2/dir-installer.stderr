@@ -1,0 +1,50 @@
+5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24fa0670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000028 00000101 00000202 00000000 00000c86 00000000 00000000 00000104
+syscall pc=2500e328 r0=4294967265 r3=2239b300 r4=00000103 r5=00000018 r6=00000034 r7=00000202 r8=0000c350 lr=24fa0670 res=ffffffff
+native Mach send id=29000 destination=40a bytes=24
+native Mach trailer bytes=8 elements=0
+native Mach receive port=202 bytes=24 id=71
+syscall pc=2500e328 r0=4294967265 r3=2239b320 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24fa0670 res=ffffffff
+mach_rpc id=3205 destination=101 send=36 recv=44: 00001513 0000009d 00000101 00000202 43300000 00000c85 00000000 00000000 0000040a
+syscall pc=24f9fca8 r0=5 r3=288578bc r4=00000002 r5=00000000 r6=696c6564 r7=72207072 r8=6f636573 lr=28752254 res=ffffffff
+guest open /var/tmp/jaguar/dev/tty
+return r3=6 error=6 resume=24f9fca8
+syscall pc=25005ae0 r0=116 r3=22399550 r4=00000000 r5=2239a290 r6=696c6564 r7=72207072 r8=6f636573 lr=24f9f770 res=ffffffff
+return r3=1793077450 error=0 resume=25005ae4
+syscall pc=24faa568 r0=190 r3=2506ed38 r4=223970d0 r5=00000010 r6=00000010 r7=00000010 r8=6f636573 lr=24fa69f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/etc/localtime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24faa568
+syscall pc=25008d84 r0=327 r3=2506bc64 r4=24e6e8b0 r5=00000010 r6=00000010 r7=00000010 r8=6f636573 lr=24fa68e8 res=ffffffff
+return r3=0 error=0 resume=25008d88
+syscall pc=24faa568 r0=190 r3=22397140 r4=22397080 r5=3bf69200 r6=80808080 r7=00000000 r8=0077ed24 lr=24fa69f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/GMT result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24faa568
+syscall pc=25008d84 r0=327 r3=2506ed5c r4=24e6e8b0 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24fa68e8 res=ffffffff
+return r3=0 error=0 resume=25008d88
+syscall pc=24faa568 r0=190 r3=223970d0 r4=22397010 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24fa69f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24faa568
+syscall pc=24faa568 r0=190 r3=2506ed38 r4=223970c0 r5=00000002 r6=34fa1530 r7=00000005 r8=2507b898 lr=24fa69f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/etc/localtime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24faa568
+syscall pc=25008d84 r0=327 r3=2506bc64 r4=24e6e8b0 r5=00000002 r6=34fa1530 r7=00000005 r8=2507b898 lr=24fa68e8 res=ffffffff
+return r3=0 error=0 resume=25008d88
+syscall pc=24faa568 r0=190 r3=22397130 r4=22397070 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24fa69f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/GMT result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24faa568
+syscall pc=25008d84 r0=327 r3=2506ed5c r4=24e6e8b0 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24fa68e8 res=ffffffff
+return r3=0 error=0 resume=25008d88
+syscall pc=24faa568 r0=190 r3=223970c0 r4=22397000 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24fa69f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24faa568
+syscall pc=24fabae8 r0=97 r3=00000001 r4=00000002 r5=00000000 r6=00000064 r7=61676572 r8=2070726f lr=24faba5c res=ffffffff
+return r3=3 error=0 resume=24fabaec
+syscall pc=24f9f648 r0=92 r3=00000003 r4=00000002 r5=00000001 r6=00000064 r7=61676572 r8=2070726f lr=24faba74 res=ffffffff
+return r3=0 error=0 resume=24f9f64c
+syscall pc=24fabb28 r0=98 r3=00000003 r4=34fa0570 r5=0000006a r6=00000064 r7=61676572 r8=2070726f lr=24fabaa8 res=ffffffff
+guest unix connect /var/tmp/jaguar/var/run/syslog
+return r3=2 error=2 resume=24fabb28
+syscall pc=24fa56a8 r0=6 r3=00000003 r4=ffffffff r5=0000006a r6=00000064 r7=61676572 r8=2070726f lr=24fababc res=ffffffff
+return r3=0 error=0 resume=24fa56ac
+syscall pc=24fadc08 r0=133 r3=ffffffff r4=223995b0 r5=0000008b r6=00000000 r7=00000000 r8=00000000 lr=24face4c res=ffffffff
+return r3=9 error=9 resume=24fadc08

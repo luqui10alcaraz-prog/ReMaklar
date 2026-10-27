@@ -1,0 +1,87 @@
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -71,9 +71,11 @@
+ static int live_mapped_field(unsigned i,unsigned pos,struct rm_field *f)
+ {
+     if(live_field(live_kind[i],pos,f))return 1;
+-    return live_kind[i]==2 && rm_hid_key_field(
++    return live_kind[i]==2 && (rm_hid_key_field(
+         (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
+-        native_iomappings[i].bytes,pos,f);
++        native_iomappings[i].bytes,pos,f) || rm_hid_mouse_field(
++        (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
++        native_iomappings[i].bytes,pos,f));
+ }
+ 
+ static int live_view(uintptr_t address,unsigned n,int write,struct rm_view *v,struct rm_field *f,unsigned *offset)
+--- a/darwin-user/remaklar/typed-live.c
++++ b/darwin-user/remaklar/typed-live.c
+@@ -19,6 +19,26 @@
+     data=within-36;f->kind=RM_NUMBER;
+     if(data<12){f->offset=entry+36+(data/2)*2;f->size=2;}
+     else {f->offset=entry+48+((data-12)/4)*4;f->size=4;}
++    return 1;
++}
++
++/* Default mouse variants of the same v3 union, selected by native type and
++ * subType. Inactive tablet bytes stay opaque; active tablet variants remain
++ * unsupported. The first mouse word is two bytes followed by one uint16. */
++int rm_hid_mouse_field(volatile unsigned char *base,unsigned bytes,unsigned pos,
++                       struct rm_field *f)
++{
++    unsigned entry,within,data,type,subtype;
++    if(pos<232 || pos>=bytes)return 0;
++    entry=232+((pos-232)/84)*84;within=(pos-232)%84;
++    if(entry>=232+240*84 || within<36 || bytes-entry<84)return 0;
++    type=*(volatile rm_u32 *)(base+entry+8);
++    if(type<1 || type>7)return 0;
++    data=within-36;subtype=base[entry+46];
++    if(data>=16 && subtype!=0)return 0;
++    f->offset=entry+36+(data/4)*4;f->size=4;f->kind=RM_NUMBER;
++    if(type<=4 && data<4)f->kind=RM_MOUSE_PREFIX;
++    else if((data>=8 && data<12) || data>=16)f->kind=RM_BYTES;
+     return 1;
+ }
+ 
+@@ -88,7 +108,7 @@
+         if(pos>=f->offset && pos-f->offset<f->size && n<=f->size-(pos-f->offset)) {
+             if((f->size!=1 && f->size!=2 && f->size!=4 && f->size!=8) ||
+                f->offset%(f->size==8?4:f->size) || f->offset>v->bytes || f->size>v->bytes-f->offset ||
+-               (f->kind!=RM_NUMBER && !(f->kind==RM_HID_BITS && f->size==4) && !(f->kind==RM_PAIR16 && f->size==4) && !(f->kind==RM_BYTES && (f->size==2 || f->size==4 || f->size==8))))return 0;
++               (f->kind!=RM_NUMBER && !(f->kind==RM_HID_BITS && f->size==4) && !(f->kind==RM_PAIR16 && f->size==4) && !(f->kind==RM_MOUSE_PREFIX && f->size==4) && !(f->kind==RM_BYTES && (f->size==2 || f->size==4 || f->size==8))))return 0;
+             return f;
+         }
+     }
+@@ -100,6 +120,7 @@
+     /* PPC's first declared bitfield occupies the MSBs, i386's the LSBs. */
+     if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x>>27)|((rm_u32)x<<5));
+     if(f->kind==RM_PAIR16)return (rm_u32)(((rm_u32)x>>16)|((rm_u32)x<<16));
++    if(f->kind==RM_MOUSE_PREFIX)return (rm_u32)(((x&255)<<24)|((x&65280)<<8)|((rm_u32)x>>16));
+     if(f->kind==RM_BYTES){rm_u64 result=0;unsigned i;for(i=0;i<f->size;i++){result=(result<<8)|(x&255);x>>=8;}return result;}
+     return x;
+ }
+@@ -107,6 +128,7 @@
+ {
+     if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x<<27)|((rm_u32)x>>5));
+     if(f->kind==RM_PAIR16 || f->kind==RM_BYTES)return logical(f,x);
++    if(f->kind==RM_MOUSE_PREFIX)return (rm_u32)(((rm_u32)x>>24)|(((rm_u32)x>>8)&65280)|((rm_u32)x<<16));
+     return x;
+ }
+ 
+--- a/darwin-user/remaklar/typed-live.h
++++ b/darwin-user/remaklar/typed-live.h
+@@ -3,7 +3,7 @@
+ #define RM_TYPED_LIVE_H
+ typedef unsigned int rm_u32;
+ typedef unsigned long long rm_u64;
+-enum { RM_NUMBER = 0, RM_HID_BITS = 1, RM_PAIR16 = 2, RM_BYTES = 3 };
++enum { RM_NUMBER = 0, RM_HID_BITS = 1, RM_PAIR16 = 2, RM_BYTES = 3, RM_MOUSE_PREFIX = 4 };
+ struct rm_field { unsigned offset, size, kind; };
+ struct rm_view {
+     volatile unsigned char *base;
+@@ -17,4 +17,5 @@
+ int rm_cas32(const struct rm_view *,unsigned,rm_u32,rm_u32,int *);
+ void rm_barrier(void);
+ int rm_hid_key_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
++int rm_hid_mouse_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
+ #endif

@@ -1,0 +1,79 @@
+verified files=1000 bytes=17600024
+restored mode /exchange/jaguar/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGATS.A.dylib 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPDFRIP.A.dylib 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libPSRIP.A.dylib 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/FindByContent.framework/Versions/A/FindByContent 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox 100755 -> 100644
+verified files=2000 bytes=98180973
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CFNetwork.framework/Versions/A/CFNetwork 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/WebServicesCore.framework/Versions/A/WebServicesCore 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/Security.framework/Versions/A/Security 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/PrivateFrameworks/DiskArbitration.framework/Versions/A/DiskArbitration 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/PrivateFrameworks/Installation.framework/Versions/A/Installation 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit 100755 -> 100644
+restored mode /exchange/jaguar/System/Library/PrivateFrameworks/NetInfo.framework/Versions/A/NetInfo 100755 -> 100644
+verified files=3000 bytes=126687840
+restored mode /exchange/jaguar/usr/lib/libBSDPClient.A.dylib 100755 -> 100555
+restored mode /exchange/jaguar/usr/lib/libDHCPServer.A.dylib 100755 -> 100555
+restored mode /exchange/jaguar/usr/lib/libSystem.B.dylib 100755 -> 100444
+restored mode /exchange/jaguar/usr/lib/libalias.A.dylib 100755 -> 100555
+restored mode /exchange/jaguar/usr/lib/libcrypto.0.9.dylib 100755 -> 100644
+restored mode /exchange/jaguar/usr/lib/libcups.2.dylib 100755 -> 100644
+restored mode /exchange/jaguar/usr/lib/libipsec.A.dylib 100755 -> 100555
+restored mode /exchange/jaguar/usr/lib/libobjc.A.dylib 100755 -> 100644
+restored mode /exchange/jaguar/usr/lib/libsasl2.2.0.1.dylib 100755 -> 100555
+restored mode /exchange/jaguar/usr/lib/libssl.0.9.dylib 100755 -> 100644
+restored mode /exchange/jaguar/usr/lib/libtcl8.3.dylib 100755 -> 100555
+restored mode /exchange/jaguar/usr/lib/libz.1.1.3.dylib 100755 -> 100644
+restored mode /exchange/jaguar/usr/lib/system/libmathCommon.A.dylib 100755 -> 100644
+restored mode /exchange/graphics009-r8/samples/fixtures/fs-list/alpha 100750 -> 100640
+verified files=4000 bytes=141604895
+verified files=5000 bytes=182567944
+verified files=6000 bytes=490901838
+verified files=7000 bytes=587521354
+verified files=8000 bytes=600062718
+verified files=9000 bytes=660674284
+verified files=10000 bytes=777756141
+verified files=11000 bytes=832636771
+verified files=12000 bytes=865932418
+verified files=13000 bytes=903823337
+verified files=14000 bytes=936230114
+verified files=15000 bytes=999685787
+verified files=16000 bytes=1042767192
+COPY_VERIFIED files=16808 links=464 dirs=2094 bytes=1115241082 restored_modes=62

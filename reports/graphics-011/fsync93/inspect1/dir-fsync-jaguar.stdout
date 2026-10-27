@@ -1,0 +1,1 @@
+real fsync: data and read-only descriptors, offset and bytes preserved, EBADF and pipe EINVAL PASS

@@ -1,0 +1,3 @@
+overlap result=0
+readonly result=2
+real kernel vm_copy overlap snapshot COW bidirectional isolation protection OK

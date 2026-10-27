@@ -1,0 +1,1 @@
+native mount devfs path=/var/tmp/jaguar/dev result=0 errno=0 OK

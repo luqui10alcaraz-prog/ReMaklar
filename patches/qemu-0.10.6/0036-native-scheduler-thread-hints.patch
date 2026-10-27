@@ -1,0 +1,20 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -2126,11 +2126,13 @@
+ #endif
+     case -61: /* thread_switch: hand off to the actual native scheduler. */
+ #ifdef __APPLE__
+-        if(env->gpr[3])return 4; /* No cross-task native thread capability yet. */
+-        {
++        {
++            static unsigned observed_hints;uint32_t guest=env->gpr[3];mach_port_t hint=native_name(guest);
+             kern_return_t result;remaklar_gate_leave();
+-            result=thread_switch(MACH_PORT_NULL,env->gpr[4],env->gpr[5]);
+-            remaklar_gate_enter(env);return result;
++            result=thread_switch(hint,env->gpr[4],env->gpr[5]);
++            remaklar_gate_enter(env);
++            if(guest && observed_hints++<16)fprintf(stderr,"native thread_switch guest=%x host=%x option=%u timeout=%u result=%u\n",guest,hint,(unsigned)env->gpr[4],(unsigned)env->gpr[5],result);
++            return result;
+         }
+ #else
+         return 4;

@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "mode": "p",
+  "attempt": 1,
+  "ready_observed": true,
+  "emulated_input": "PS/2 keyboard key a and selected QEMU mouse movement/complete click",
+  "expected_exit": 125,
+  "source_results": "reports/graphics-011/input123/p1/graphics011-input123-p1"
+}

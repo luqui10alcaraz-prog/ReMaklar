@@ -10,6 +10,7 @@ import time
 parser = argparse.ArgumentParser()
 parser.add_argument('text', nargs='?')
 parser.add_argument('--file', type=Path)
+parser.add_argument('--port', type=int, default=4444)
 parser.add_argument('--delay', type=float, default=.04)
 parser.add_argument('--hold-ms', type=int, default=10,
                     help='Key hold duration; use 100 with --delay .3 for slow guests')
@@ -34,7 +35,7 @@ for character in text:
     else:
         raise ValueError('Unsupported key: ' + repr(character))
 
-with socket.create_connection(('127.0.0.1', 4444), timeout=5) as connection:
+with socket.create_connection(('127.0.0.1', args.port), timeout=5) as connection:
     connection.settimeout(.1)
     for key in keys:
         connection.sendall(('sendkey ' + key + ' ' + str(args.hold_ms) + '\n').encode())

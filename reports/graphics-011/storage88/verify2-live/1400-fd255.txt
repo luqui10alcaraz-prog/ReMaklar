@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+out=/exchange/storage88-complete
+test ! -e "$out/verify2.txt"
+cp /var/tmp/tree011-compare.c /exchange/tree011-compare.c
+cp /var/tmp/storage011-88c.sh /exchange/storage011-88c.sh
+gcc2 -no-cpp-precomp -arch i386 /var/tmp/tree011-compare.c -o "$out/compare2" > "$out/build2.txt" 2>&1
+"$out/compare2" /var/tmp /exchange --repair-modes > "$out/verify2.txt" 2>&1
+"$out/compare2" /var/tmp /exchange > "$out/verify3-strict.txt" 2>&1
+md5 /mach_kernel /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer /exchange/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer > "$out/original-md5.txt"
+echo COPY_COMPLETE
+sync

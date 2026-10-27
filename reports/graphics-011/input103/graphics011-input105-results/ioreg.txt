@@ -1,0 +1,985 @@
++-o Root  <class IORegistryEntry>
+  | {
+  |   "IOCatalogue" = ({"IOProviderClass"="IOPlatformExpertDevice","IOClass"="IOPanicPlatform","IOProbeScore"="-1"},{"IOProviderClass"="IOPlatformExpertDevice","IOClass"="AppleI386PlatformExpert","top-level"=[]},{"IOProviderClass"="IOPlatformDevice","IONameMatch"="cpu","IOProbeScore"=100,"IOClass"="AppleI386CPU"},{"IOProviderClass"="IOPlatformDevice","IOClass"="AppleIntelClassicPIC","IONameMatch"="intel-pic"},{"IOProviderClass"="IOPlatformDevice","IOClass"="AppleIntelClock","IONameMatch"="intel-clock"},{"Physical Interconnect Location"="Internal","IOClass"="IOATAPIProtocolTransport","ata device type"="atapi","IOProbeScore"=5000,"ATAPI Mass Storage Characteristics"={"device model"="IOMEGA","UDMA Mode"=0,"DMA Mode"=0},"IOProviderClass"="IOATADevice","CFBundleIdentifier"="com.apple.iokit.IOATAPIProtocolTransport","Physical Interconnect"="ATAPI"},{"Physical Interconnect Location"="Internal","IOClass"="IOATAPIProtocolTransport","ata device type"="atapi","IOProbeScore"=5000,"ATAPI Mass Storage Characteristics"={"device model"="LS-120 SLIM   02              UHD Floppy","UDMA Mode"=0,"DMA Mode"=0},"IOProviderClass"="IOATADevice","CFBundleIdentifier"="com.apple.iokit.IOATAPIProtocolTransport","Physical Interconnect"="ATAPI"},{"IOProviderClass"="IOPCIDevice","IONameMatch"="pci-bridge","CFBundleIdentifier"="com.apple.iokit.IOPCIFamily","IOClass"="IOPCI2PCIBridge"},{"IOProviderClass"="IOPCIDevice","IOPCIMatch"="0x00261011","CFBundleIdentifier"="com.apple.iokit.IOPCIFamily","IOClass"="IOPCI2PCIBridge"},{"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.iokit.IOPCIFamily","IOClass"="IOPCI2PCIBridge","IOPCIClassMatch"="0x06040000&0xffff0000"},{"IOProviderClass"="IOPlatformDevice","IONameMatch"=("grackle","MOT,PPC106"),"CFBundleIdentifier"="com.apple.driver.AppleGracklePCI","IOClass"="AppleGracklePCI"},{"IOProviderClass"="AppleMacIODevice","IONameMatch"="media-bay","CFBundleIdentifier"="com.apple.iokit.AppleMediaBay","IOClass"="AppleMediaBay"},{"IOProviderClass"="AppleMacIODevice","IONameMatch"=("heathrow-ata","ata"),"CFBundleIdentifier"="com.apple.iokit.AppleMediaBay","IOClass"="AppleMediaBayATANub"},{"IOProviderClass"="ApplePS2KeyboardDevice","IOClass"="ApplePS2Keyboard","CFBundleIdentifier"="com.apple.driver.ApplePS2Keyboard"},{"IOProviderClass"="IOPCIDevice","IONameMatch"=("apple53C8xx","Apple53C875Card","ATTO,ExpressPCIProLVD","ATTO,ExpressPCIProUL2D","ATTO,ExpressPCIProUL3D"),"CFBundleIdentifier"="com.apple.driver.AppleSym8xx","IOClass"="Sym8xxSCSIController"},{"IOProviderClass"="IOResources","IOMatchCategory"="BootCache","CFBundleIdentifier"="com.apple.BootCache","IOResourceMatch"="IOKit","IOClass"="com_apple_BootCache"},{"IOProviderClass"="IOUSBDevice","bDeviceSubClass"=0,"CFBundleIdentifier"="com.apple.driver.AppleUSBComposite","bDeviceClass"=0,"IOClass"="AppleUSBComposite"},{"IOProviderClass"="IOUSBDevice","bDeviceSubClass"=0,"CFBundleIdentifier"="com.apple.driver.AppleUSBComposite","bDeviceClass"=7,"IOClass"="AppleUSBComposite"},{"IOProviderClass"="IOUSBDevice","bDeviceSubClass"=1,"CFBundleIdentifier"="com.apple.driver.AppleUSBComposite","bDeviceClass"=7,"IOClass"="AppleUSBComposite"},{"Physical Interconnect Location"="Internal","IOClass"="IOATABlockStorageDriver","ata device type"="ata","IOProviderClass"="IOATADevice","IOCommandPoolSize"=32,"CFBundleIdentifier"="com.apple.iokit.IOATABlockStorage","Physical Interconnect"="ATA"},{"IOProviderClass"="AppleMacIODevice","IONameMatch"="i2c","CFBundleIdentifier"="com.apple.driver.AppleI2C","IOClass"="PPCI2CInterface"},{"IOProbeScore"=10000,"IONameMatch"="pmu-i2c","IOProviderClass"="AppleMacIODevice","CFBundleIdentifier"="com.apple.driver.AppleI2C","IOClass"="PPCI2CInterface"},{"IOProviderClass"="IOPlatformDevice","IONameMatch"="i2c","CFBundleIdentifier"="com.apple.driver.AppleI2C","IOClass"="PPCI2CInterface"},{"IOClass"="AppleADBKeyboard","ADBVirtualKeys"="0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1A,0x1B,0x1C,0x1D,0x1E,0x1F,0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x28,0x29,0x2A,0x2B,0x2C,0x2D,0x2E,0x2F,0x30,0x31,0x32,0x33,0x34,0x35,0x3B,0x37,0x38,0x39,0x3A,0x7B,0x7C,0x7D,0x7E,0x3F,0x40,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5A,0x5B,0x5C,0x5D,0x5E,0x5F,0x60,0x61,0x62,0x63,0x64,0x65,0x66,0x67,0x68,0x69,0x6A,0x6B,0x6C,0x6D,0x6E,0x6F,0x70,0x71,0x72,0x73,0x74,0x75,0x76,0x77,0x78,0x79,0x7A,0x3C,0x3D,0x3E,0x36,0x7F","IOProbeScore"=1000,"IOProviderClass"="IOADBDevice","CFBundleIdentifier"="com.apple.driver.AppleADBKeyboard","ADB Match"="2","PowerBook fn Foward Delete"=1},{"IOProviderClass"="IOUSBDevice","bDeviceSubClass"=0,"CFBundleIdentifier"="com.apple.driver.AppleUSBHub","bDeviceClass"=9,"IOClass"="AppleUSBHub"},{"IOProviderClass"="IOUSBDevice","bDeviceSubClass"=1,"CFBundleIdentifier"="com.apple.driver.AppleUSBHub","bDeviceClass"=9,"IOClass"="AppleUSBHub"},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"AAPL,current-available"=3000},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBHub","IOClass"="AppleUSBHub","idProduct"=37139},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"AAPL,current-available"=3000},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBHub","IOClass"="AppleUSBHub","idProduct"=37142},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"AAPL,current-available"=3000},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBHub","IOClass"="AppleUSBHub","idProduct"=37141},{"IOProviderMergeProperties"={"AAPL,current-available"=1500},"kResetOnPowerStatusChange"=Yes,"idVendor"=1452,"IOClass"="AppleUSBHub","idProduct"=37143,"IOProviderClass"="IOUSBDevice","kStartupDelay"=200,"CFBundleIdentifier"="com.apple.driver.AppleUSBHub"},{"IOProviderClass"="IOResources","IOMatchCategory"="IOBSDConsole","CFBundleIdentifier"="com.apple.iokit.IOHIDSystem","IOResourceMatch"="IOBSD","IOClass"="IOBSDConsole"},{"IOProviderClass"="IOResources","IOMatchCategory"="IOHID","CFBundleIdentifier"="com.apple.iokit.IOHIDSystem","IOResourceMatch"="IOKit","IOClass"="IOHIDSystem"},{"IOProbeScore"=4096,"IOProviderClass"="IOFireWireUnit","Unit_Spec_ID"=24734,"CFBundleIdentifier"="com.apple.iokit.IOFireWireSBP2","IOClass"="IOFireWireSBP2Target","Unit_SW_Version"=66691},{"IOProviderClass"="IOFireWireSBP2LUN","IOProviderMergeProperties"={"IOCFPlugInTypes"={"A45B8156-B51B-11D4-AB4B-000A277E7234"="IOFireWireSBP2Lib.plugin"},"IOUserClientClass"="IOFireWireSBP2UserClient"},"IOMatchCategory"="IOFireWireSBP2UserClient","CFBundleIdentifier"="com.apple.iokit.IOFireWireFamily","IOClass"="IOFireWireUserClientIniter"},{"IOProviderClass"="IOADBDevice","modes850"=<000000dc0000008c0000009a0000009e000000aa000000d2000000d0000000fa000001060000010c000001180000011a0000011c0000011e>,"CFBundleIdentifier"="com.apple.driver.AppleADBDisplay","modes750"=<000000dc0000008c000000aa000000d2000000fa0000010600000118>,"modesStudio"=<000000d20000008c000000aa>,"adb5Modes"="modes750","IOClass"="AppleADBDisplay","IOProbeScore"=2000,"adb1Modes"="modes750","adb2Modes"="modes750","adb3Modes"="modes850","adb4Modes"="modes850","ADB Match"="*-c0","adb6Modes"="modesStudio"},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=37392},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=515},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=37394},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=37395},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=37396},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=37397},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=37398},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=37399},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=513},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"non-removable"="Yes"},"idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=514},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"kAllowZeroConfigValue"=Yes},"idVendor"=2284,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=16},{"IOProviderClass"="IOUSBDevice","idVendor"=1452,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOProviderParentUSBNubMergeProperties"={"AAPL,current-available"=3000},"IOClass"="AppleUSBMergeNub","idProduct"=37395},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"kAllowZeroConfigValue"=Yes},"idVendor"=2828,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=3},{"IOProviderClass"="IOUSBDevice","IOProviderMergeProperties"={"kAllowZeroNumConfigs"=Yes},"idVendor"=1857,"CFBundleIdentifier"="com.apple.driver.AppleUSBMergeNub","IOClass"="AppleUSBMergeNub","idProduct"=1},{"IOClass"="IOFireWireSerialBusProtocolTransport","Physical Interconnect Location"="External","Command_Set"=66776,"Command_Set_Spec_ID"=24734,"IOProbeScore"=4096,"IOProviderClass"="IOFireWireSBP2LUN","CFBundleIdentifier"="com.apple.iokit.IOFireWireSerialBusProtocolTransport","Physical Interconnect"="FireWire"},{"IOProviderClass"="IOPlatformDevice","IONameMatch"="ps2controller","CFBundleIdentifier"="com.apple.driver.ApplePS2Controller","IOClass"="ApplePS2Controller"},{"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","IOProviderClass"="IOUSBInterface","bInterfaceClass"=8,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceSubClass"=1,"Physical Interconnect"="USB"},{"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","IOProviderClass"="IOUSBInterface","bInterfaceClass"=8,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceSubClass"=2,"Physical Interconnect"="USB"},{"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","IOProviderClass"="IOUSBInterface","bInterfaceClass"=8,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceSubClass"=3,"Physical Interconnect"="USB"},{"SCSI Device Characteristics"={"Manual Eject"="true"},"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageUFISubclass","IOProviderClass"="IOUSBInterface","bInterfaceClass"=8,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","IOMediaIcon"={"IOBundleResourceFile"="Floppy.icns","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},"bInterfaceSubClass"=4,"Physical Interconnect"="USB"},{"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","IOProviderClass"="IOUSBInterface","bInterfaceClass"=8,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceSubClass"=5,"Physical Interconnect"="USB"},{"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","IOProviderClass"="IOUSBInterface","bInterfaceClass"=8,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceSubClass"=6,"Physical Interconnect"="USB"},{"IOMatchCategory"="IOStorage","Content Mask"="Apple_partition_scheme","IOClass"="IOApplePartitionScheme","IOProbeScore"=2000,"IOPropertyMatch"={"Whole"=Yes},"IOProviderClass"="IOMedia","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"},{"IOMatchCategory"="IOStorage","Content Mask"="Apple_partition_scheme","IOClass"="IOApplePartitionScheme","IOProbeScore"=2000,"IOPropertyMatch"={"Content Hint"="CD_ROM_Mode_1","Writable"=No},"IOProviderClass"="IOMedia","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"},{"IOMatchCategory"="IOStorage","Content Mask"="Apple_partition_scheme","IOClass"="IOApplePartitionScheme","IOProbeScore"=2000,"IOPropertyMatch"={"Content Hint"="CD_ROM_Mode_2_Form_1","Writable"=No},"IOProviderClass"="IOMedia","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"},{"IOProviderClass"="IOBlockStorageDevice","IOPropertyMatch"={"device-type"="Generic"},"CFBundleIdentifier"="com.apple.iokit.IOStorageFamily","IOClass"="IOBlockStorageDriver"},{"Content Table"={"0x0F"="Windows_Extended","0x07"="Windows_NTFS","0xA9"="NetBSD","0x1E"="Windows_FAT_16_Hidden","0xC7"="Windows_NTFS_FT_Corrupt","0x16"="DOS_FAT_16_Hidden","0x87"="Windows_NTFS_FT","0xA5"="FreeBSD","0x1B"="DOS_FAT_32_Hidden","0x0C"="Windows_FAT_32","0x04"="DOS_FAT_16_S","0xF2"="DOS_Secondary","0xA6"="OpenBSD","0x17"="Windows_NTFS_Hidden","0x83"="Linux_Ext2FS","0x84"="Hibernation","0x01"="DOS_FAT_12","0xAB"="Apple_Boot","0x1C"="Windows_FAT_32_Hidden","0x05"="DOS_Extended","0xC6"="Windows_FAT_16_FT_Corrupt","0xAF"="Apple_HFS","0x14"="DOS_FAT_16_S_Hidden","0x63"="UNIX","0x85"="Linux_Extended","0xEB"="BeOS","0x0A"="Boot_Manager","0x11"="DOS_FAT_12_Hidden","0xFD"="Linux_RAID","0x0E"="Windows_FAT_16","0x06"="DOS_FAT_16","0xA8"="Apple_UFS","0x82"="Linux_Swap","0xB7"="BSDI","0x86"="Windows_FAT_16_FT","0xB8"="BSDI_Swap","0x0B"="DOS_FAT_32","0xA7"="NeXTSTEP"},"IOMatchCategory"="IOStorage","Content Mask"="FDisk_partition_scheme","IOClass"="IOFDiskPartitionScheme","IOProbeScore"=3000,"IOPropertyMatch"={"Whole"=Yes},"IOProviderClass"="IOMedia","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"},{"IOProbeScore"=30000,"IOProviderClass"="IOMedia","IOMatchCategory"="IOMediaBSDClient","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily","IOResourceMatch"="IOBSD","IOClass"="IOMediaBSDClient"},{"Content Table"={"4.4LFS"="Unknown","4.1BSD"="Unknown","4.2BSD"="Unknown","4.4BSD"="Apple_UFS"},"IOMatchCategory"="IOStorage","Content Mask"="NeXT_partition_scheme","IOClass"="IONeXTPartitionScheme","IOProbeScore"=1000,"IOPropertyMatch"={"Whole"=Yes},"IOProviderClass"="IOMedia","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"},{"Content Table"={"4.4LFS"="Unknown","4.1BSD"="Unknown","4.2BSD"="Unknown","4.4BSD"="Apple_UFS"},"IOMatchCategory"="IOStorage","Content Mask"="NeXT_partition_scheme","IOClass"="IONeXTPartitionScheme","IOProbeScore"=1000,"IOPropertyMatch"={"Content Hint"="CD_ROM_Mode_1","Writable"=No},"IOProviderClass"="IOMedia","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"},{"Content Table"={"4.4LFS"="Unknown","4.1BSD"="Unknown","4.2BSD"="Unknown","4.4BSD"="Apple_UFS"},"IOMatchCategory"="IOStorage","Content Mask"="NeXT_partition_scheme","IOClass"="IONeXTPartitionScheme","IOProbeScore"=1000,"IOPropertyMatch"={"Content Hint"="Apple_Rhapsody_UFS"},"IOProviderClass"="IOMedia","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"},{"IOProviderClass"="IOFireWireNub","IOProviderMergeProperties"={"IOCFPlugInTypes"={"CDCFCA94-F197-11D4-87E6-000502072F80"="IOFireWireFamily.kext/Contents/PlugIns/IOFireWireLib.plugin"},"IOUserClientClass"="IOFireWireUserClient"},"IOMatchCategory"="IOFireWireUserClient","CFBundleIdentifier"="com.apple.iokit.IOFireWireFamily","IOClass"="IOFireWireUserClientIniter"},{"IOProviderClass"="IOCDBlockStorageDevice","IOPropertyMatch"={"device-type"="CDROM"},"CFBundleIdentifier"="com.apple.iokit.IOCDStorageFamily","IOClass"="IOCDBlockStorageDriver"},{"IOProbeScore"=31000,"IOProviderClass"="IOCDMedia","IOMatchCategory"="IOMediaBSDClient","CFBundleIdentifier"="com.apple.iokit.IOCDStorageFamily","IOClass"="IOCDMediaBSDClient"},{"Content Table"={"0x04"="CD_ROM_Mode_2_Form_1","0x05"="CD_ROM_Mode_2_Form_2","0x01"="CD_DA","0x02"="CD_ROM_Mode_1","0x03"="CD_ROM_Mode_2"},"IOProviderClass"="IOCDMedia","Content Mask"="CD_partition_scheme","CFBundleIdentifier"="com.apple.iokit.IOCDStorageFamily","IOClass"="IOCDPartitionScheme","IOMatchCategory"="IOStorage"},{"IOProviderClass"="IODVDBlockStorageDevice","IOPropertyMatch"={"device-type"="DVD"},"CFBundleIdentifier"="com.apple.iokit.IODVDStorageFamily","IOClass"="IODVDBlockStorageDriver"},{"IOProbeScore"=31000,"IOProviderClass"="IODVDMedia","IOMatchCategory"="IOMediaBSDClient","CFBundleIdentifier"="com.apple.iokit.IODVDStorageFamily","IOClass"="IODVDMediaBSDClient"},{"IOProviderClass"="IOPlatformExpertDevice","IONameMatch"=("AAPL,PowerMac G3"),"IOMatchCategory"="DTUpdate","CFBundleIdentifier"="com.apple.iokit.AudioDeviceTreeUpdater","DeviceTreePatches"=({"NodeData"={"#-outputs"=<00000002>,"#-features"=<00000000>,"#-inputs"=<00000007>,"#-detects"=<00000003>,"sound-objects"=<"input icon-id -16526 index 1 name-id -20520 port-connection 6 port-type 0x656D6963 zero-gain 0 model ExternalMic","input icon-id -16526 index 2 name-id -20528 port-connection 6 port-type 0x73696E6A zero-gain 0 model LineIn","input icon-id -16526 index 3 name-id -20520 port-connection 1 port-type 0x64766461 zero-gain 0 model DVD","input icon-id -16526 index 4 name-id -20528 port-connection 2 port-type 0x63642020 zero-gain 0 model InternalCD","input icon-id -20185 index 5 name-id -20541 port-connection 5 port-type 0x69726361 zero-gain 0 model RCAIn","input icon-id -20184 index 6 name-id -20530 port-connection 8 port-type 0x6D6F646D zero-gain 0 model Modem","input index 7 model NoInput","detect index 0 bit-mask 2 bit-match 2 device 4 registry-name extint-gpio15 model InSenseBitsDetect","detect index 1 bit-mask 4 bit-match 4 device 16 registry-name extint-gpio16 model InSenseBitsDetect","detect index 2 bit-mask 16 bit-match 16 device 256 registry-name extint-gpio16 model InSenseBitsDetect","output device-mask 6 device-match 0 icon-id -16563 index 0 name-id -20525 port-connection 4 port-type 0x6973706B model OutputPort","output device-mask 6 device-match 4 icon-id -16563 index 1 name-id -20524 port-connection 3 port-type 0x6864706E model OutputPort">},"Parent"="mac-io/davbus","Node"="sound"}),"IOClass"="AudioDeviceTreeUpdater"},{"IOProviderClass"="IOPlatformExpertDevice","IONameMatch"=("PowerBook"),"IOMatchCategory"="DTUpdate","CFBundleIdentifier"="com.apple.iokit.AudioDeviceTreeUpdater","DeviceTreePatches"=({"NodeData"={"#-outputs"=<00000002>,"#-features"=<00000001>,"#-inputs"=<00000008>,"sound-objects"=<"feature index 0 model Proj6PowerControl","detect bit-mask 4 bit-match 4 device 16 index 0 model InSenseBitsDetect","detect bit-mask 8 bit-match 0 device 32 index 1 model InSenseBitsDetect","detect bit-mask 1 bit-match 1 device 2 index 2 model InSenseBitsDetect","input icon-id -16527 index 0 name-id -20532 port-connection 1 port-type 0x696D6963 zero-gain 0 model InternalMic","input icon-id -16526 index 1 name-id -20520 port-connection 2 port-type 0x656D6963 zero-gain 0 model ExternalMic","input icon-id -16526 index 2 name-id -20528 port-connection 2 port-type 0x73696E6A zero-gain 0 model SoundIn","input icon-id -16526 index 3 name-id -20528 port-connection 4 port-type 0x70636D20 zero-gain 0 model NoRecordInput","input index 4 model NoInput","output device-mask 2 device-match 0 icon-id -16563 index 0 name-id -20525 port-connection 2 port-type 0x69736B70 model Proj3Speaker","output device-mask 2 device-match 2 icon-id -16563 index 1 name-id -20524 port-connection 1 port-type 0x6864706E model OutputPort","mux model Proj5Mux","input icon-id -16523 index 5 name-id -20539 port-connection 3 port-type 0x6D626179 zero-gain 0 model MuxedAnalogCD","input icon-id -20183 index 6 name-id -20540 port-connection 3 port-type 0x6D6F646D zero-gain 0 model MuxedIntModemInput","input icon-id -20184 index 7 name-id -20541 port-connection 3 port-type 0x7A767063 zero-gain 0 model MuxedZoomVideo">,"#-detects"=<00000003>,"model"=<"343S0184">},"Parent"="mac-io/davbus","Node"="sound"}),"IOClass"="AudioDeviceTreeUpdater"},{"IOProviderClass"="IOPlatformExpertDevice","IONameMatch"=("PowerBook1,1"),"IOMatchCategory"="DTUpdate","CFBundleIdentifier"="com.apple.iokit.AudioDeviceTreeUpdater","DeviceTreePatches"=({"NodeData"={"#-outputs"=<00000002>,"#-features"=<00000001>,"#-inputs"=<00000008>,"sound-objects"=<"feature index 0 model Proj6PowerControl","detect bit-mask 4 bit-match 4 device 16 index 0 model InSenseBitsDetect","detect bit-mask 8 bit-match 0 device 32 index 1 model InSenseBitsDetect","detect bit-mask 1 bit-match 1 device 2 index 2 model InSenseBitsDetect","input icon-id -16526 index 0 name-id -20520 port-connection 2 port-type 0x656D6963 zero-gain 0 model ExternalMic","input icon-id -16526 index 1 name-id -20528 port-connection 2 port-type 0x73696E6A zero-gain 0 model SoundIn","input icon-id -20184 index 2 name-id -20530 port-connection 4 port-type 0x70636D20 zero-gain 0 model NoRecordInput","input index 3 model NoInput","output device-mask 6 device-match 0 icon-id -16563 index 0 name-id -20525 port-connection 2 port-type 0x6973706B model OutputPort","output device-mask 2 device-match 2 icon-id -16563 index 1 name-id -20524 port-connection 1 port-type 0x6864706E model OutputPort","mux model Proj9Mux","input icon-id -16527 index 4 name-id -20532 port-connection 1 port-type 0x696D6963 zero-gain 0 model IntMicMuxedInput","input icon-id -16523 index 5 name-id -20539 port-connection 3 port-type 0x6D626179 zero-gain 0 model MuxedAnalogCD","input icon-id -20184 index 6 name-id -20541 port-connection 3 port-type 0x7A767063 zero-gain 0 model MuxedInput","input icon-id -20183 index 7 name-id -20540 port-connection 1 port-type 0x6D6F646D zero-gain 0 model MuxedIntModemInput">,"#-detects"=<00000003>,"model"=<"343S0184">},"Parent"="mac-io/davbus","Node"="sound"}),"IOClass"="AudioDeviceTreeUpdater"},{"IOProviderClass"="IOPlatformExpertDevice","IONameMatch"=("PowerBook3,1"),"IOMatchCategory"="DTUpdate","CFBundleIdentifier"="com.apple.iokit.AudioDeviceTreeUpdater","DeviceTreePatches"=({"NodeData"={"sound-objects"=<"feature index 0 model Proj10PowerControl","detect bit-mask 1 bit-match 1 device 2 index 0 model InSenseBitsDetect","detect bit-mask 4 bit-match 4 device 16 index 1 model InSenseBitsDetect","detect bit-mask 8 bit-match 0 device 32 index 2 model InSenseBitsDetect","input icon-id -16526 index 1 name-id -20520  port-connection 2 port-type 0x656D6963 zero-gain 0 model ExternalMic","input icon-id -16526 index 2 name-id -20528 port-connection 2 port-type 0x73696E6A zero-gain 0 model InputPort","input icon-id -20185 index 4 name-id -20541 port-connection 3 port-type 0x7A767063 zero-gain 0 model InputPort","input icon-id -20184 index 5 name-id -20530 port-connection 4 port-type 0x70636D20 zero-gain 0 model NoRecordInput","input index 5 model NoInput","output device-mask 2 device-match 0 icon-id -16563 index 0 name-id -20525 port-connection 2 port-type 0x6973706B model OutputPort","output device-mask 2 device-match 2 icon-id -16563 index 1 name-id -20524 port-connection 1 port-type 0x6864706E model OutputPort","mux model MuxProgOut source-map-count 2 source-map 696D696300000002000000006D6F646D0000000200000002","input icon-id -16525 index 0 name-id -20532 port-connection 1 port-type 0x696D6963 zero-gain 0x00138000 model IntMicMuxedInput","input icon-id -20184 index 3 name-id -20540 port-connection 1 port-type 0x6D6F646D zero-gain 0x00000000 model MuxedInput">},"Parent"="mac-io/davbus","Node"="sound"}),"IOClass"="AudioDeviceTreeUpdater"},{"IOProviderClass"="IOPlatformExpertDevice","IONameMatch"=("PowerMac1,1"),"IOMatchCategory"="DTUpdate","CFBundleIdentifier"="com.apple.iokit.AudioDeviceTreeUpdater","DeviceTreePatches"=({"NodeData"={"#-outputs"=<00000002>,"#-features"=<00000001>,"#-inputs"=<00000004>,"#-detects"=<00000003>,"sound-objects"=<"init operation 2 param 00000002","feature index 0 model Proj4PowerControl","detect bit-mask 2 bit-match 2 index 0 device 2 model InSenseBitsDetect","detect bit-mask 4 bit-match 4 index 1 device 16 model InSenseBitsDetect","detect bit-mask 16 bit-match 0 device 256 index 2 model InSenseBitsDetect","input icon-id -16526 index 0 name-id -20520 port-connection 6 port-type 0x656D6963 zero-gain 0 model ExternalMic","input icon-id -16526 index 1 name-id -20528 port-connection 6 port-type 0x73696E6A zero-gain 0 model SoundIn","input icon-id -16523 index 2 name-id -20698 port-connection 1 port-type 0x64766461 zero-gain 0 model InputPort","input index 3 model NoInput","output device-mask 6 device-match 0 icon-id -16563 index 0 name-id -20525 port-connection 4 port-type 0x0x6973706B model OutputPort","output device-mask 2 device-match 2 icon-id -16563 index 1 name-id -20524 port-connection 1 port-type 0x6864706e model OutputPort">},"Parent"="mac-io/davbus","Node"="sound"}),"IOClass"="AudioDeviceTreeUpdater"},{"IOProviderClass"="IOPlatformExpertDevice","IONameMatch"=("PowerMac3,4"),"IOMatchCategory"="DTUpdate","CFBundleIdentifier"="com.apple.iokit.AudioDeviceTreeUpdater","DeviceTreePatches"=({"NodeData"={"i2s-serial-format"=<00000001>},"Parent"="mac-io/i2s/i2s-a","Node"="sound"}),"IOClass"="AudioDeviceTreeUpdater"},{"IOProviderClass"="IOPlatformExpertDevice","IONameMatch"=("iMac,1"),"IOMatchCategory"="DTUpdate","CFBundleIdentifier"="com.apple.iokit.AudioDeviceTreeUpdater","DeviceTreePatches"=({"NodeData"={"#-outputs"=<00000003>,"#-features"=<00000001>,"#-inputs"=<00000004>,"#-detects"=<00000004>,"sound-objects"=<696e6974206f7065726174696f6e203220706172616d2030303030303030320f6665617475726520696e6465782030206d6f64656c2053525300646574656374206269742d6d61736b2032206269742d6d61746368203220646576696365203420696e6465782030206d6f64656c20496e53656e73654269747344657465637400646574656374206269742d6d61736b2034206269742d6d61746368203420696e646578203120646576696365203136206d6f64656c20496e53656e73654269747344657465637400646574656374206269742d6d61736b203136206269742d6d61746368203020696e64657820322064657669636520323536206d6f64656c20496e53656e73654269747344657465637400646574656374206269742d6d61736b203920696e6465782033206465766963652032206d6f64656c20416e79496e53656e73654269747344657465637400696e7075742069636f6e2d6964202d313635323620696e6465782030206e616d652d6964202d323035323020706f72742d636f6e6e656374696f6e203520706f72742d747970652030783635364436393633207a65726f2d6761696e2030206d6f64656c2045787465726e616c4d696300696e7075742069636f6e2d6964202d313635323620696e6465782031206e616d652d6964202d323035323820706f72742d636f6e6e656374696f6e203520706f72742d747970652030783733363936453641207a65726f2d6761696e2030206d6f64656c20536f756e64496e00696e7075742069636f6e2d6964202d313635323720696e6465782032206e616d652d6964202d323035333220706f72742d636f6e6e656374696f6e203720706f72742d747970652030783639364436393633207a65726f2d6761696e2030206d6f64656c20496e7465726e616c4d696300696e70757420696e6465782033206d6f64656c204e6f496e707574006f7574707574206465766963652d6d61736b2036206465766963652d6d6174636820302069636f6e2d6964202d313635363320696e6465782030206e616d652d6964202d323035323520706f72742d636f6e6e656374696f6e203120706f72742d7479706520307830783639373337303642206d6f64656c204f7574707574506f7274006f7574707574206465766963652d6d61736b2032206465766963652d6d6174636820322069636f6e2d6964202d313635363320696e6465782031206e616d652d6964202d323035323420706f72742d636f6e6e656374696f6e203320706f72742d7479706520307830783638363437303645206d6f64656c204f7574707574506f7274006f7574707574206465766963652d6d61736b2036206465766963652d6d6174636820342069636f6e2d6964202d313635363320696e6465782032206e616d652d6964202d323035323320706f72742d636f6e6e656374696f6e203220706f72742d7479706520307830783635373337303642206d6f64656c204f7574707574506f72740000>},"Parent"="mac-io/davbus","Node"="sound"}),"IOClass"="AudioDeviceTreeUpdater"},{"IOProbeScore"=20000,"IONameMatch"="display","IOMatchCategory"="IOFramebuffer","CFBundleIdentifier"="com.apple.iokit.IONDRVSupport","IOProviderClass"="IOPCIDevice","IOClass"="IONDRVFramebuffer"},{"IOProbeScore"=20000,"IONameMatch"="display","IOMatchCategory"="IOFramebuffer","CFBundleIdentifier"="com.apple.iokit.IONDRVSupport","IOProviderClass"="IOPlatformDevice","IOClass"="IONDRVFramebuffer"},{"IOProbeScore"=0,"IOProviderClass"="IOPCIDevice","IOMatchCategory"="IOFramebuffer","CFBundleIdentifier"="com.apple.iokit.IONDRVSupport","IOClass"="IONDRVFramebuffer","IOPCIClassMatch"="0x03000000&0xff000000"},{"IOPCIClassMatch"="0x01010000&0xffff0000","IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleGenericPCATA","IOClass"="AppleGenericPCMultiPCIATADriver","ATA Channels"=({"PIO Mode"=4,"Interrupt"=14,"Port Address"=496},{"PIO Mode"=4,"Interrupt"=15,"Port Address"=368})},{"IOProviderClass"="AppleGenericPCATAController","IOClass"="AppleGenericPCATADriver","CFBundleIdentifier"="com.apple.driver.AppleGenericPCATA"},{"IOProviderClass"="IOPlatformDevice","IONameMatch"="pci","CFBundleIdentifier"="com.apple.driver.AppleI386PCI","IOClass"="AppleI386PCI"},{"IOProviderClass"="IOUSBInterface","bInterfaceClass"=3,"CFBundleIdentifier"="com.apple.driver.AppleUSBKeyboard","IOClass"="AppleUSBKeyboard","bInterfaceSubClass"=1,"bInterfaceProtocol"=1},{"IOProviderClass"="IOSCSIProtocolServices","IOClass"="IOSCSIPeripheralDeviceNub","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},{"IOProviderClass"="IOATADevice","CFBundleIdentifier"="com.apple.iokit.IOATAPIProtocolTransport","Physical Interconnect Location"="Internal","IOClass"="IOATAPIProtocolTransport","Physical Interconnect"="ATAPI","ata device type"="atapi"},{"IOProbeScore"=3000,"IOProviderClass"="IODisplayConnect","CFBundleIdentifier"="com.apple.iokit.IOGraphicsFamily","IOClass"="AppleBacklightDisplay"},{"IOProbeScore"=2000,"IOProviderClass"="IODisplayConnect","CFBundleIdentifier"="com.apple.iokit.IOGraphicsFamily","IOClass"="AppleDisplay"},{"IOProviderClass"="IOResources","IOMatchCategory"="IOGraphics","CFBundleIdentifier"="com.apple.iokit.IOGraphicsFamily","IOResourceMatch"="IOKit","IOClass"="IODisplayWrangler"},{"IOClass"="AppleADBButtons","IOProbeScore"=1000,"IOProviderClass"="IOADBDevice","CFBundleIdentifier"="com.apple.driver.AppleADBButtons","Eject Delay Milliseconds"=250,"ADB Match"="7"},{"SCSI Device Characteristics"={"Manual Eject"="true"},"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=544,"IOProviderClass"="IOUSBInterface","idVendor"=2060,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=1,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Preferred Subclass"=5,"Preferred Protocol"=1},"idVendor"=1254,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"SCSI Device Characteristics"={"Manual Eject"="true"},"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=16,"IOProviderClass"="IOUSBInterface","idVendor"=2284,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=1794,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Reset On Resume"="true"},"idVendor"=1507,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"idVendor"=1435,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Preferred Subclass"=5,"Preferred Protocol"=1},"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceSubClass"=0,"Physical Interconnect"="USB","bInterfaceProtocol"=0},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=768,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Reset On Resume"="true"},"idVendor"=1972,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=2305,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Preferred Subclass"=5,"Preferred Protocol"=1},"idVendor"=1242,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=769,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Preferred Subclass"=5,"Preferred Protocol"=1},"idVendor"=1211,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"SCSI Device Characteristics"={"Manual Eject"="true"},"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=2,"IOProviderClass"="IOUSBInterface","idVendor"=1921,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=16,"bInterfaceNumber"=0,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Preferred Subclass"=5,"Preferred Protocol"=1},"idVendor"=1356,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","IOMediaIcon"={"IOBundleResourceFile"="MemoryStick.icns","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=45,"bInterfaceNumber"=0,"IOProviderClass"="IOUSBInterface","idVendor"=1356,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","IOMediaIcon"={"IOBundleResourceFile"="MemoryStick.icns","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=55,"bInterfaceNumber"=0,"IOProviderClass"="IOUSBInterface","idVendor"=1356,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","IOMediaIcon"={"IOBundleResourceFile"="MemoryStick.icns","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"bInterfaceNumber"=0,"IOProviderClass"="IOUSBInterface","idVendor"=1356,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","IOMediaIcon"={"IOBundleResourceFile"="MemoryStick.icns","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},"Physical Interconnect"="USB","SCSI Device Characteristics"={"Inquiry Length"=36},"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=37,"USB Mass Storage Characteristics"={"Preferred Subclass"=5,"Preferred Protocol"=1}},{"SCSI Device Characteristics"={"Inquiry Length"=56},"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=70,"bInterfaceNumber"=0,"IOProviderClass"="IOUSBInterface","idVendor"=1356,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","IOMediaIcon"={"IOBundleResourceFile"="MemoryStick.icns","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=46,"bInterfaceNumber"=0,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Preferred Subclass"=5,"Preferred Protocol"=1},"idVendor"=1356,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","IOMediaIcon"={"IOBundleResourceFile"="MemoryStick.icns","CFBundleIdentifier"="com.apple.iokit.IOSCSIArchitectureModelFamily"},"Physical Interconnect"="USB"},{"bConfigurationValue"=1,"Physical Interconnect Location"="External","IOClass"="IOUSBMassStorageClass","idProduct"=257,"IOProviderClass"="IOUSBInterface","USB Mass Storage Characteristics"={"Preferred Subclass"=2,"Preferred Protocol"=1},"idVendor"=1254,"CFBundleIdentifier"="com.apple.iokit.IOUSBMassStorageClass","bInterfaceNumber"=0,"Physical Interconnect"="USB"},{"Unit_Spec_ID"=57382,"Vendor_ID"=57382,"IOClass"="IOFireWireSBP2Target","IOProbeScore"=8193,"IOProviderClass"="IOFireWireUnit","CFBundleIdentifier"="com.apple.iokit.IOFireWireSBP2","Unit_SW_Version"=61},{"Unit_Spec_ID"=57382,"Vendor_ID"=57382,"IOClass"="IOFireWireSBP2Target","IOProbeScore"=8193,"IOProviderClass"="IOFireWireUnit","CFBundleIdentifier"="com.apple.iokit.IOFireWireSBP2","Unit_SW_Version"=62},{"IOProviderClass"="IOSCSIPeripheralDeviceNub","Peripheral Device Type"=0,"CFBundleIdentifier"="com.apple.iokit.IOSCSIBlockCommandsDevice","IOClass"="IOSCSIPeripheralDeviceType00"},{"IOProviderClass"="IOSCSIPeripheralDeviceNub","Peripheral Device Type"=7,"CFBundleIdentifier"="com.apple.iokit.IOSCSIBlockCommandsDevice","IOClass"="IOSCSIPeripheralDeviceType07"},{"IOProviderClass"="IOHIDDevice","IOProviderMergeProperties"={"IOCFPlugInTypes"={"FA12FA38-6F1A-11D4-BA0C-0005028F18D5"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin"},"IOUserClientClass"="IOHIDLibUserClient"},"CFBundleIdentifier"="com.apple.iokit.IOHIDFamily","IOClass"="IOHIDLibUserClientIniter"},{"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleUSBOHCI","IOUserClientClass"="IOUSBControllerUserClient","IOClass"="AppleUSBOHCI","IOPCIClassMatch"="0x0c031000"},{"IOProviderClass"="IOSCSIPeripheralDeviceNub","Peripheral Device Type"=5,"CFBundleIdentifier"="com.apple.iokit.IOSCSIMultimediaCommandsDevice","IOClass"="IOSCSIPeripheralDeviceType05"},{"IOProviderClass"="IOSCSIPeripheralDeviceNub","Peripheral Device Type"=14,"CFBundleIdentifier"="com.apple.iokit.IOSCSIReducedBlockCommandsDevice","IOClass"="IOSCSIPeripheralDeviceType0E"},{"IOProviderClass"="IOCompactDiscServices","IOProviderMergeProperties"={"IOCFPlugInTypes"={"97ABCF2C-23CC-11D5-A0E8-003065704866"="IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/SCSITaskUserClient.kext/Contents/PlugIns/SCSITaskLib.plugin"},"IOUserClientClass"="SCSITaskUserClient","SCSITaskDeviceCategory"="SCSITaskAuthoringDevice"},"IOMatchCategory"="SCSITaskUserClientIniter","CFBundleIdentifier"="com.apple.iokit.SCSITaskUserClient","IOClass"="SCSITaskUserClientIniter"},{"IOProviderClass"="IODVDServices","IOProviderMergeProperties"={"IOCFPlugInTypes"={"97ABCF2C-23CC-11D5-A0E8-003065704866"="IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/SCSITaskUserClient.kext/Contents/PlugIns/SCSITaskLib.plugin"},"IOUserClientClass"="SCSITaskUserClient","SCSITaskDeviceCategory"="SCSITaskAuthoringDevice"},"IOMatchCategory"="SCSITaskUserClientIniter","CFBundleIdentifier"="com.apple.iokit.SCSITaskUserClient","IOClass"="SCSITaskUserClientIniter"},{"IOProviderClass"="IOSCSIPeripheralDeviceNub","IOProviderMergeProperties"={"IOCFPlugInTypes"={"7D66678E-08A2-11D5-A1B8-0030657D052A"="IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/SCSITaskUserClient.kext/Contents/PlugIns/SCSITaskLib.plugin"},"IOUserClientClass"="SCSITaskUserClient","SCSITaskDeviceCategory"="SCSITaskUserClientDevice"},"IOMatchCategory"="SCSITaskUserClientIniter","CFBundleIdentifier"="com.apple.iokit.SCSITaskUserClient","IOClass"="SCSITaskUserClientIniter"},{"IOProviderClass"="AppleIntelPIIXATAController","IOClass"="AppleIntelPIIXATADriver","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA"},{"Ultra DMA Modes"=31,"IOPCIMatch"="0x24118086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="ICH","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"Ultra DMA Modes"=7,"IOPCIMatch"="0x24218086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="ICH0","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"Ultra DMA Modes"=63,"IOPCIMatch"="0x244A8086 0x244B8086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="ICH2 ATA/100","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"Ultra DMA Modes"=31,"IOPCIMatch"="0x24418086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="ICH2 ATA/66","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"Ultra DMA Modes"=63,"IOPCIMatch"="0x248A8086 0x248B8086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="ICH3 ATA/100","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"Ultra DMA Modes"=31,"IOPCIMatch"="0x24818086 0x24008086&0xff00ffff","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOPCIClassMatch"="0x01010000&0xffff0000","IOProbeScore"=1800,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="ICH3 ATA/66","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"Ultra DMA Modes"=63,"IOPCIMatch"="0x24CB8086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="ICH4 ATA/100","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"IOPCIMatch"="0x12308086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="PIIX","Per Channel Timings"=No,"ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"IOPCIMatch"="0x70108086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="PIIX3","ATA Channels"=({"Channel Number"=0,"IOInterruptControllers"=("intel-pic"),"IOInterruptSpecifiers"=(<0e000000>),"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"IOInterruptControllers"=("intel-pic"),"IOInterruptSpecifiers"=(<0f000000>),"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29},{"Ultra DMA Modes"=7,"IOPCIMatch"="0x71118086","DMA Modes"=6,"IOClass"="AppleIntelPIIXMultiATADriver","IOProbeScore"=2000,"IOProviderClass"="IOPCIDevice","CFBundleIdentifier"="com.apple.driver.AppleIntelPIIXATA","Device Name"="PIIX4","ATA Channels"=({"Channel Number"=0,"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"Interrupt"=15,"Port Address"=368}),"PIO Modes"=29})
+  |   "IOKitDiagnostics" = {"Instance allocation"=225284,"IOMalloc allocation"=351488,"Classes"={"IOATABusCommand"=113,"IOFDiskPartitionScheme"=2,"IOCDAudioControl"=0,"ApplePS2KeyboardDevice"=1,"ApplePS2Keyboard"=1,"IOAccelerator"=0,"IOSCSIBlockCommandsDevice"=0,"SCSIPrimaryCommands"=3,"IOPMchangeNoteList"=17,"IOSyncer"=7,"IOSCSIMultimediaCommandsDevice"=1,"IOEventSource"=4,"IOPMPagingPlexus"=0,"AppleIntelClassicPIC"=1,"OSString"=2656,"IODataQueue"=0,"IOCPU"=1,"IOATINDRV"=0,"IONDRVDevice"=0,"IOBlockStorageServices"=0,"IOFramebufferUserClient"=0,"IOCPUInterruptController"=1,"IOPMinformeeList"=17,"AppleI386CPUInterruptController"=1,"IOCatalogue"=1,"IOMemoryMap"=1,"ATASMARTUserClient"=0,"_IOOpenServiceIterator"=0,"AppleI386PlatformExpert"=1,"IODisplayParameterHandler"=0,"IOServiceUserNotification"=0,"IOBootFramebuffer"=0,"IOHIDElement"=267,"IOSCSIPeripheralDeviceType07"=0,"IOKitDiagnostics"=1,"ApplePS2Controller"=1,"_IOServiceNotifier"=14,"OSSerialize"=1,"IOPowerConnection"=16,"_IOServiceInterestNotifier"=13,"IOSCSIPeripheralDeviceNub"=1,"IODVDMedia"=0,"IOPCIBridge"=1,"IOHIKeyboard"=1,"IOApplePartitionScheme"=0,"SCSITask"=0,"AppleOnboardI2CInterface"=0,"IOCDBlockStorageDevice"=1,"IOStorage"=3,"IOGeneralMemoryDescriptor"=14,"IOHIDUserClient"=0,"IOHIPointing"=0,"IOBufferMemoryDescriptor"=4,"IOHIDEventQueue"=0,"IOPanicPlatform"=0,"IOHIDevice"=1,"SCSIMultimediaCommands"=1,"IODVDMediaBSDClient"=0,"_IOMemoryMap"=2,"IOMemoryCursor"=1,"AppleIntelPIIXATADriver"=2,"_IOFramebufferNotifier"=1,"IOBlockStorageDriver"=4,"IOBacklightDisplay"=0,"IORootParent"=1,"_IOConfigThread"=0,"IONDRVFramebuffer"=2,"IOWatchDogTimer"=0,"OSCollection"=4,"IOHIDLibUserClientIniter"=1,"IOATABlockStorageDevice"=3,"IOMachPort"=3,"IOHIDPointing"=0,"IODVDBlockStorageDevice"=1,"IOATADevice"=1,"IOHIDLibUserClient"=0,"IOHIDPointingDevice"=0,"IOHIDKeyboardDevice"=1,"AppleI386CPU"=1,"_IOServiceJob"=0,"AppleDisplay"=1,"IOConditionLock"=0,"IONDRV"=1,"IODisplayWrangler"=1,"IOHIDParamUserClient"=0,"IOPCI2PCIBridge"=0,"IOWorkLoop"=6,"IOServiceMessageUserNotification"=0,"OSData"=226,"AppleIntelClock"=1,"IOSCSIProtocolInterface"=2,"IORegistryPlane"=3,"IOATADevConfig"=1,"IOSCSILogicalUnitNub"=0,"OSIterator"=1,"IOPCIATA"=1,"IOCDPartitionScheme"=1,"IOPMpriv"=17,"OSObject"=36,"IOPMprot"=17,"IOHIKeyboardMapper"=1,"ATADeviceNub"=4,"ApplePS2MouseDevice"=1,"IOCDMedia"=1,"IOFramebuffer"=1,"IORegistryEntry"=2,"OSNumber"=573,"IOSCSIPeripheralDeviceType05"=1,"IOFramebufferSharedUserClient"=0,"OSSymbol"=788,"AppleIntelPIIXMultiATADriver"=1,"IOGraphicsDevice"=1,"IODTPlatformExpert"=0,"IOBlockStorageDevice"=2,"IOPMPowerSourceList"=0,"IOATABusInfo"=0,"IODVDBlockStorageDriver"=1,"OSSet"=54,"IORangeAllocator"=3,"IOATACommand"=1,"IOPlatformDevice"=6,"IOTimerEventSource"=8,"IOCompactDiscServices"=0,"IODisplayConnect"=1,"IOPlatformExpertDevice"=1,"AppleI386PCI"=1,"IOPartitionScheme"=2,"IOBSDConsole"=1,"OSCollectionIterator"=2,"IOUserNotification"=0,"AppleBacklightDisplay"=0,"IOHIDDevice"=1,"IOBreaker"=0,"IOResources"=1,"IOPMrootDomain"=1,"IOCommand"=1,"IORegistryIterator"=0,"IOPlatformExpert"=1,"IOATAIOReg8"=20,"IOCommandQueue"=1,"OSBoolean"=2,"IOSubMemoryDescriptor"=1,"IOFilterInterruptEventSource"=0,"IOI2CInterfaceUserClient"=0,"RootDomainUserClient"=0,"IOBootNDRV"=1,"IOService"=36,"IOInterruptEventSource"=6,"IODisplay"=1,"IOSharedInterruptController"=0,"IOMultiMemoryDescriptor"=0,"OSMetaClass"=0,"IONaturalMemoryCursor"=2,"IOLittleMemoryCursor"=0,"com_apple_BootCache"=1,"IOHIDTestDriver"=0,"IODeblocker"=0,"IOHITablet"=0,"IOInterruptController"=2,"IOATAIOReg32"=2,"IOPMinformee"=14,"IOATAIOReg16"=2,"IOMemoryDescriptor"=2,"OSOrderedSet"=4,"IOATAController"=1,"IOUserClient"=0,"IOExtendedLBA"=113,"IOCDMediaBSDClient"=1,"IONDRVI2CInterface"=0,"OSArray"=327,"IOFBGate"=1,"AppleIntelPIIXATAController"=2,"IOATI128NDRV"=0,"ATATimerEventSource"=2,"IODTNVRAM"=0,"IOMediaBSDClient"=8,"IOPMPowerSource"=0,"OSDictionary"=668,"IOSCSIPeripheralDeviceType00"=0,"IODVDServices"=1,"OSSerializer"=0,"IOBigMemoryCursor"=0,"IOAGPDevice"=0,"IOATAReg8"=1,"IOSCSIPrimaryCommandsDevice"=1,"IOPCIDevice"=5,"IOATABlockStorageDriver"=3,"SCSIBlockCommands"=1,"IONotifier"=3,"IOCommandGate"=37,"IOSCSIProtocolServices"=2,"IOATAPIProtocolTransport"=1,"IOCDBlockStorageDriver"=1,"IONeXTPartitionScheme"=0,"IOCDAudioControlUserClient"=0,"IOI2CInterface"=0,"IOATAReg16"=1,"IOATAReg32"=1,"IOHIDSystem"=1,"IOCommandPool"=4,"IOMedia"=8},"Container allocation"=194185}
+  |   "IOKitBuildVersion" = "IOKit Component Version 6.0:
+Mon Oct 21 12:39:31 PDT 2002; root(rcbuilder):RELEASE_I386/iokit/RELEASE
+"
+  |   "IORegistryPlanes" = {"IOPower"="IOPower","IODeviceTree"="IODeviceTree","IOService"="IOService"}
+  | }
+  | 
+  +-o X86PC  <class IOPlatformExpertDevice>
+    | {
+    |   "IOPlatformArgs" = <008ab220e0f638000000000000000000>
+    |   "compatible" = <"X86PC">
+    |   "name" = <"device-tree">
+    |   "clock-frequency" = <00e1f505>
+    | }
+    | 
+    +-o AppleI386PlatformExpert  <class AppleI386PlatformExpert>
+    | | {
+    | |   "IOProviderClass" = "IOPlatformExpertDevice"
+    | |   "top-level" = []
+    | |   "IOProbeScore" = 2000
+    | |   "Platform Memory Ranges" = (0,2147483647,18446744073692774400,18446744073709551615)
+    | |   "IOClass" = "AppleI386PlatformExpert"
+    | |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | | }
+    | | 
+    | +-o IOPMrootDomain  <class IOPMrootDomain>
+    | | | {
+    | | |   "Power Management protected data" = "{ theNumberOfPowerStates = 5, version 1, power state 0 = { capabilityFlags 00000200, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000080, inputPowerRequirement 00000080, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000004, outputPowerCharacter 00000001, inputPowerRequirement 00000020, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 3 = { capabilityFlags 00000400, outputPowerCharacter 00000400, inputPowerRequirement 00000400, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 4 = { capabilityFlags 00000082, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 4, parentsCurrentPowerFlags = 00000002, maxCapability = 4 }"
+    | | |   "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializable")
+    | | |   "Supported Features" = {}
+    | | |   "Power Management private data" = "{ this object = 20b8cd80, interested driver = 20b8cd80, driverDesire = 0, deviceDesire = 4, ourDesiredPowerState = 4, previousRequest = 66 }"
+    | | |   "IOPriorityPowerStateInterest" = ("_IOServiceInterestNotifier is not serializable","_IOServiceInterestNotifier is not serializable","_IOServiceInterestNotifier is not serializable","_IOServiceInterestNotifier is not serializable","_IOServiceInterestNotifier is not serializable","_IOServiceInterestNotifier is not serializable","_IOServiceInterestNotifier is not serializable")
+    | | |   "IOSleepSupported" = ""
+    | | | }
+    | | | 
+    | | +-o IORootParent  <class IORootParent>
+    | |     {
+    | |       "Power Management private data" = "{ this object = 20b8cd00 (root), interested driver = 20b8cd00, device overrides, driverDesire = 0, deviceDesire = 4, ourDesiredPowerState = 4, previousRequest = 0 }"
+    | |       "Power Management protected data" = "{ theNumberOfPowerStates = 5, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000080, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000000, outputPowerCharacter 00000020, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 3 = { capabilityFlags 00000000, outputPowerCharacter 00000400, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 4 = { capabilityFlags 00000080, outputPowerCharacter 00000002, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 4, parentsCurrentPowerFlags = 00000000, maxCapability = 0 }"
+    | |     }
+    | |     
+    | +-o cpu  <class IOPlatformDevice>
+    | | | {
+    | | |   "timebase-frequency" = <40787d01>
+    | | |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic")
+    | | |   "clock-frequency" = <00a3e111>
+    | | |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<03000000>,<04000000>,<05000000>,<06000000>,<07000000>,<08000000>,<09000000>,<0a000000>,<0b000000>,<0c000000>,<0d000000>,<0e000000>,<0f000000>)
+    | | |   "bus-frequency" = <00e1f505>
+    | | |   "IOName" = "cpu"
+    | | | }
+    | | | 
+    | | +-o AppleI386CPU  <class AppleI386CPU>
+    | |   | {
+    | |   |   "IONameMatch" = "cpu"
+    | |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   "IOCPUID" = 548980608
+    | |   |   "IOClass" = "AppleI386CPU"
+    | |   |   "IOProviderClass" = "IOPlatformDevice"
+    | |   |   "IOProbeScore" = 100
+    | |   |   "IOCPUState" = "Running"
+    | |   |   "IONameMatched" = "cpu"
+    | |   |   "IOCPUNumber" = 0
+    | |   | }
+    | |   | 
+    | |   +-o AppleI386CPUInterruptController  <class AppleI386CPUInterruptController>
+    | |       {
+    | |       }
+    | |       
+    | +-o intel-pic  <class IOPlatformDevice>
+    | | | {
+    | | |   "IOInterruptControllers" = ("IOPlatformInterruptController")
+    | | |   "IOInterruptSpecifiers" = (<00000000>)
+    | | |   "IOName" = "intel-pic"
+    | | | }
+    | | | 
+    | | +-o AppleIntelClassicPIC  <class AppleIntelClassicPIC>
+    | |     {
+    | |       "IOProviderClass" = "IOPlatformDevice"
+    | |       "IONameMatch" = "intel-pic"
+    | |       "IOProbeScore" = 0
+    | |       "IONameMatched" = "intel-pic"
+    | |       "IOClass" = "AppleIntelClassicPIC"
+    | |       "IOMatchCategory" = "IODefaultMatchCategory"
+    | |     }
+    | |     
+    | +-o intel-clock  <class IOPlatformDevice>
+    | | | {
+    | | |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic")
+    | | |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<03000000>,<04000000>,<05000000>,<06000000>,<07000000>,<08000000>,<09000000>,<0a000000>,<0b000000>,<0c000000>,<0d000000>,<0e000000>,<0f000000>)
+    | | |   "IOName" = "intel-clock"
+    | | | }
+    | | | 
+    | | +-o AppleIntelClock  <class AppleIntelClock>
+    | |     {
+    | |       "IOProviderClass" = "IOPlatformDevice"
+    | |       "IONameMatch" = "intel-clock"
+    | |       "IOProbeScore" = 0
+    | |       "IONameMatched" = "intel-clock"
+    | |       "IOClass" = "AppleIntelClock"
+    | |       "IOMatchCategory" = "IODefaultMatchCategory"
+    | |     }
+    | |     
+    | +-o ps2controller  <class IOPlatformDevice>
+    | | | {
+    | | |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic")
+    | | |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<03000000>,<04000000>,<05000000>,<06000000>,<07000000>,<08000000>,<09000000>,<0a000000>,<0b000000>,<0c000000>,<0d000000>,<0e000000>,<0f000000>)
+    | | |   "IOName" = "ps2controller"
+    | | | }
+    | | | 
+    | | +-o ApplePS2Controller  <class ApplePS2Controller>
+    | |   | {
+    | |   |   "IONameMatch" = "ps2controller"
+    | |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   "IOClass" = "ApplePS2Controller"
+    | |   |   "IOProviderClass" = "IOPlatformDevice"
+    | |   |   "IOProbeScore" = 0
+    | |   |   "CFBundleIdentifier" = "com.apple.driver.ApplePS2Controller"
+    | |   |   "IONameMatched" = "ps2controller"
+    | |   | }
+    | |   | 
+    | |   +-o ApplePS2KeyboardDevice  <class ApplePS2KeyboardDevice>
+    | |   | | {
+    | |   | | }
+    | |   | | 
+    | |   | +-o ApplePS2Keyboard  <class ApplePS2Keyboard>
+    | |   |   | {
+    | |   |   |   "HIDInterfaceID" = 2
+    | |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   "IOClass" = "ApplePS2Keyboard"
+    | |   |   |   "HIDKeyMapping" = <00000601013802013b03013a040137051552414c535455455857565b5c434b517b7d7e7c4e590601727f0d006100410001000100ca00c7000100010d007300530013001300fb00a7001300130d0064004400040004014401b6000400040d006600460006000600a601ac000600060d006800480008000800e300eb000018000d006700470007000700f100e1000700070d007a005a001a001a00cf0157001a001a0d007800580018001801b401ce001800180d006300430003000301e301d3000300030d007600560016001601d601e00016001602003c003e0d006200420002000201e501f2000200020d007100510011001100fa00ea001100110d007700570017001701c801c7001700170d006500450005000500c200c5000500050d007200520012001201e201d2001200120d007900590019001900a501db001900190d007400540014001401e401d4001400140a0031002101ad00a10e003200400032000000b200b3000000000a0033002300a301ba0a0034002400a200a80e0036005e0036001e00b600c3001e001e0a0035002501a500bd0a003d002b01b901b10a0039002800ac00ab0a0037002601b001ab0e002d005f001f001f00b100d0001f001f0a0038002a00b700b40a0030002900ad00bb0e005d007d001d001d002700ba001d001d0d006f004f000f000f00f900e9000f000f0d007500550015001500c800cd001500150e005b007b001b001b006000aa001b001b0d006900490009000900c100f5000900090d0070005000100010017001500010001010000d00030d006c004c000c000c00f800e8000c000c0d006a004a000a000a00c600ae000a000a0a0027002200a901ae0d006b004b000b000b00ce00af000b000b0a003b003a01b201a20e005c007c001c001c00e300eb001c001c0a002c003c00cb01a30a002f003f01b800bf0d006e004e000e000e00c401af000e000e0d006d004d000d000d016d01d8000d000d0a002e003e00bc01b302000900190c00200000008000000a0060007e006001bb02007f0008ff02001b007effffffffffffffffffffff00002eff00002aff00002bff00001bffffff0e002f005c002f001c002f005c00000a0000000dff00002dffff0e003d007c003d001c003d007c00001846000030000031000032000033000034000035000036000037ff000038000039ffffff00fe2400fe2500fe2600fe2200fe2700fe28ff00fe2aff00fe32ff00fe33ff00fe29ff00fe2bff00fe34ff00fe2e00fe3000fe2d00fe2300fe2f00fe2100fe3100fe200001ac0001ae0001af0001ad0f02ff04003102ff04003202ff04003302ff04003402ff04003502ff04003602ff04003702ff04003802ff04003902ff04003002ff04002d02ff04003d02ff04007002ff04005d02ff04005b0704390572067f074a087e097d0a47>
+    | |   |   |   "IOProviderClass" = "ApplePS2KeyboardDevice"
+    | |   |   |   "IOProbeScore" = 0
+    | |   |   |   "HIDSubinterfaceID" = 1
+    | |   |   |   "CFBundleIdentifier" = "com.apple.driver.ApplePS2Keyboard"
+    | |   |   |   "HIDKind" = 1
+    | |   |   | }
+    | |   |   | 
+    | |   |   +-o IOHIDSystem  <class IOHIDSystem>
+    | |   |   |   {
+    | |   |   |     "HIDAutoDimTime" = <00b864d945000000>
+    | |   |   |     "IOMatchCategory" = "IOHID"
+    | |   |   |     "IOClass" = "IOHIDSystem"
+    | |   |   |     "HIDParameters" = {"HIDStickyKeysDisabled"=<00000000>,"HIDStickyKeysShiftToggles"=<00000000>,"HIDKeyRepeat"=<d590f70400000000>,"HIDInitialKeyRepeat"=<0065cd1d00000000>,"HIDStickyKeysOn"=<00000000>,"HIDF12EjectDelay"=<fa000000>,"HIDAutoDimBrightness"=<00000000>,"HIDWaitCursorFrameInterval"=<01fca057>,"HIDPointerAcceleration"=<00800000>,"HIDClickSpace"=<00000000>,"HIDSlowKeysDelay"=<00000000>,"HIDClickTime"=<0065cd1d00000000>,"HIDScrollAcceleration"=<00500000>,"HIDPointerButtonMode"=<02000000>,"HIDAutoDimThreshold"=<00b864d945000000>}
+    | |   |   |     "HIDBrightness" = <"@">
+    | |   |   |     "IOProviderClass" = "IOResources"
+    | |   |   |     "IOProbeScore" = 0
+    | |   |   |     "HIDAutoDimState" = <00000000>
+    | |   |   |     "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+    | |   |   |     "IOResourceMatch" = "IOKit"
+    | |   |   |     "HIDIdleTime" = <0000000000000000>
+    | |   |   |   }
+    | |   |   |   
+    | |   |   +-o IOBSDConsole  <class IOBSDConsole>
+    | |   |   |   {
+    | |   |   |     "IOProviderClass" = "IOResources"
+    | |   |   |     "IOProbeScore" = 0
+    | |   |   |     "IOMatchCategory" = "IOBSDConsole"
+    | |   |   |     "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+    | |   |   |     "IOResourceMatch" = "IOBSD"
+    | |   |   |     "IOClass" = "IOBSDConsole"
+    | |   |   |   }
+    | |   |   |   
+    | |   |   +-o IOHIDKeyboardDevice  <class IOHIDKeyboardDevice>
+    | |   |     | {
+    | |   |     |   "Product" = "Generic Keyboard"
+    | |   |     |   "PrimaryUsage" = 6
+    | |   |     |   "IOCFPlugInTypes" = {"FA12FA38-6F1A-11D4-BA0C-0005028F18D5"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin"}
+    | |   |     |   "Elements" = ({"ElementCookie"=1,"Usage"=6,"UsagePage"=1,"Elements"=({"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6340,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=2,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=224,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6316,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=3,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=225,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6292,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=4,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=226,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6268,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=5,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=227,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6244,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=6,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=228,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6220,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=7,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=229,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6196,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=8,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=230,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6172,"HasNullState"=No,"Type"=2,"IsArray"=No,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=9,"HasPreferredState"=Yes,"Max"=1,"Unit"=0,"ScaledMin"=0,"Usage"=231,"UsagePage"=7,"UnitExponent"=0,"Min"=0},{"ReportSize"=8,"IsRelative"=No,"ValueLocation"=6144,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=255,"IsNonLinear"=No,"IsWrapping"=No,"Size"=48,"ReportCount"=6,"ElementCookie"=10,"HasPreferredState"=Yes,"Max"=255,"ScaledMin"=0,"Usage"=18446744073709551615,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6120,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=11,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=0,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6096,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=12,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=1,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6072,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=13,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=2,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6048,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=14,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=3,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6024,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=15,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=4,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=6000,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=16,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=5,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5976,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=17,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=6,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5952,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=18,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=7,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5928,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=19,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=8,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5904,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=20,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=9,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5880,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=21,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=10,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5856,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=22,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=11,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5832,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=23,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=12,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5808,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=24,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=13,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5784,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=25,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=14,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5760,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=26,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=15,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5736,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=27,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=16,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5712,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=28,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=17,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5688,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=29,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=18,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5664,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=30,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=19,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5640,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=31,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=20,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5616,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=32,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=21,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5592,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=33,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=22,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5568,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=34,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=23,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5544,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=35,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=24,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5520,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=36,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=25,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5496,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=37,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=26,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5472,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=38,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=27,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5448,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=39,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=28,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5424,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=40,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=29,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5400,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=41,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=30,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5376,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=42,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=31,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5352,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=43,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=32,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5328,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=44,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=33,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5304,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=45,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=34,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5280,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=46,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=35,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5256,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=47,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=36,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5232,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=48,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=37,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5208,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=49,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=38,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5184,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=50,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=39,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5160,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=51,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=40,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5136,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=52,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=41,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5112,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=53,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=42,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5088,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=54,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=43,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5064,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=55,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=44,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5040,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=56,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=45,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=5016,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=57,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=46,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4992,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=58,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=47,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4968,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=59,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=48,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4944,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=60,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=49,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4920,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=61,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=50,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4896,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=62,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=51,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4872,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=63,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=52,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4848,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=64,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=53,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4824,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=65,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=54,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4800,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=66,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=55,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4776,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=67,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=56,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4752,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=68,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=57,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4728,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=69,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=58,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4704,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=70,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=59,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4680,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=71,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=60,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4656,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=72,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=61,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4632,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=73,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=62,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4608,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=74,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=63,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4584,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=75,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=64,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4560,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=76,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=65,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4536,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=77,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=66,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4512,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=78,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=67,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4488,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=79,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=68,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4464,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=80,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=69,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4440,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=81,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=70,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4416,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=82,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=71,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4392,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=83,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=72,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4368,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=84,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=73,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4344,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=85,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=74,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4320,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=86,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=75,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4296,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=87,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=76,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4272,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=88,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=77,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4248,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=89,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=78,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4224,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=90,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=79,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4200,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=91,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=80,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4176,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=92,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=81,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4152,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=93,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=82,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4128,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=94,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=83,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4104,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=95,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=84,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4080,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=96,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=85,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4056,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=97,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=86,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4032,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=98,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=87,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=4008,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=99,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=88,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3984,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=100,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=89,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3960,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=101,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=90,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3936,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=102,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=91,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3912,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=103,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=92,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3888,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=104,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=93,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3864,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=105,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=94,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3840,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=106,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=95,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3816,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=107,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=96,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3792,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=108,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=97,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3768,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=109,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=98,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3744,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=110,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=99,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3720,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=111,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=100,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3696,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=112,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=101,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3672,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=113,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=102,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3648,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=114,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=103,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3624,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=115,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=104,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3600,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=116,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=105,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3576,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=117,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=106,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3552,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=118,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=107,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3528,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=119,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=108,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3504,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=120,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=109,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3480,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=121,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=110,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3456,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=122,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=111,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3432,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=123,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=112,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3408,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=124,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=113,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3384,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=125,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=114,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3360,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=126,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=115,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3336,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=127,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=116,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3312,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=128,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=117,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3288,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=129,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=118,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3264,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=130,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=119,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3240,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=131,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=120,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3216,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=132,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=121,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3192,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=133,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=122,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3168,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=134,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=123,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3144,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=135,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=124,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3120,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=136,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=125,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3096,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=137,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=126,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3072,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=138,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=127,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3048,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=139,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=128,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3024,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=140,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=129,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=3000,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=141,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=130,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2976,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=142,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=131,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2952,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=143,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=132,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2928,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=144,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=133,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2904,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=145,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=134,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2880,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=146,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=135,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2856,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=147,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=136,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2832,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=148,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=137,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2808,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=149,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=138,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2784,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=150,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=139,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2760,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=151,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=140,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2736,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=152,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=141,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2712,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=153,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=142,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2688,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=154,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=143,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2664,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=155,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=144,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2640,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=156,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=145,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2616,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=157,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=146,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2592,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=158,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=147,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2568,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=159,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=148,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2544,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=160,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=149,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2520,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=161,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=150,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2496,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=162,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=151,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2472,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=163,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=152,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2448,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=164,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=153,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2424,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=165,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=154,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2400,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=166,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=155,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2376,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=167,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=156,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2352,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=168,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=157,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2328,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=169,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=158,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2304,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=170,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=159,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2280,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=171,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=160,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2256,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=172,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=161,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2232,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=173,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=162,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2208,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=174,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=163,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2184,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=175,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=164,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2160,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=176,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=165,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2136,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=177,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=166,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2112,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=178,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=167,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2088,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=179,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=168,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2064,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=180,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=169,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2040,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=181,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=170,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=2016,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=182,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=171,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1992,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=183,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=172,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1968,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=184,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=173,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1944,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=185,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=174,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1920,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=186,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=175,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1896,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=187,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=176,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1872,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=188,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=177,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1848,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=189,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=178,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1824,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=190,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=179,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1800,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=191,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=180,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1776,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=192,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=181,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1752,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=193,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=182,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1728,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=194,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=183,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1704,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=195,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=184,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1680,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=196,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=185,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1656,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=197,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=186,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1632,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=198,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=187,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1608,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=199,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=188,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1584,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=200,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=189,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1560,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=201,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=190,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1536,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=202,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=191,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1512,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=203,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=192,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1488,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=204,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=193,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1464,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=205,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=194,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1440,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=206,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=195,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1416,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=207,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=196,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1392,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=208,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=197,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1368,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=209,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=198,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1344,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=210,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=199,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1320,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=211,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=200,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1296,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=212,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=201,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1272,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=213,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=202,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1248,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=214,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=203,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1224,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=215,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=204,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1200,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=216,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=205,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1176,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=217,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=206,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1152,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=218,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=207,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1128,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=219,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=208,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1104,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=220,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=209,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1080,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=221,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=210,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1056,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=222,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=211,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1032,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=223,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=212,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=1008,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=224,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=213,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=984,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=225,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=214,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=960,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=226,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=215,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=936,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=227,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=216,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=912,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=228,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=217,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=888,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=229,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=218,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=864,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=230,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=219,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=840,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=231,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=220,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=816,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=232,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=221,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=792,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=233,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=222,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=768,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=234,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=223,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=744,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=235,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=224,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=720,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=236,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=225,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=696,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=237,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=226,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=672,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=238,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=227,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=648,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=239,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=228,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=624,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=240,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=229,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=600,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=241,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=230,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=576,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=242,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=231,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=552,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=243,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=232,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=528,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=244,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=233,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=504,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=245,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=234,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=480,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=246,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=235,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=456,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=247,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=236,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=432,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=248,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=237,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=408,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=249,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=238,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=384,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=250,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=239,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=360,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=251,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=240,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=336,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=252,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=241,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=312,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=253,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=242,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=288,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=254,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=243,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=264,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=255,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=244,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=240,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=256,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=245,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=216,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=257,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=246,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=192,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=258,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=247,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=168,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=259,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=248,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=144,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=260,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=249,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=120,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=261,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=250,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=96,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=262,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=251,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=72,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=263,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=252,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=48,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=264,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=253,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=24,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=265,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=254,"UsagePage"=7,"Min"=0},{"ReportSize"=1,"IsRelative"=No,"ValueLocation"=0,"HasNullState"=No,"Type"=2,"IsArray"=Yes,"ScaledMax"=1,"IsNonLinear"=No,"IsWrapping"=No,"Size"=1,"ReportCount"=1,"ElementCookie"=266,"HasPreferredState"=Yes,"Max"=1,"ScaledMin"=0,"Usage"=255,"UsagePage"=7,"Min"=0}),"Type"=513})
+    | |   |     |   "PrimaryUsagePage" = 1
+    | |   |     |   "IOUserClientClass" = "IOHIDLibUserClient"
+    | |   |     | }
+    | |   |     | 
+    | |   |     +-o IOHIDLibUserClientIniter  <class IOHIDLibUserClientIniter>
+    | |   |         {
+    | |   |           "IOProviderClass" = "IOHIDDevice"
+    | |   |           "IOProviderMergeProperties" = {"IOCFPlugInTypes"={"FA12FA38-6F1A-11D4-BA0C-0005028F18D5"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin"},"IOUserClientClass"="IOHIDLibUserClient"}
+    | |   |           "IOProbeScore" = 0
+    | |   |           "CFBundleIdentifier" = "com.apple.iokit.IOHIDFamily"
+    | |   |           "IOClass" = "IOHIDLibUserClientIniter"
+    | |   |           "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |         }
+    | |   |         
+    | |   +-o ApplePS2MouseDevice  <class ApplePS2MouseDevice>
+    | |       {
+    | |       }
+    | |       
+    | +-o pci  <class IOPlatformDevice>
+    | | | {
+    | | |   "pci-bus-info" = <0100021001>
+    | | |   "IODTPersist" = <6676a7319e76a731>
+    | | |   "IOName" = "pci"
+    | | | }
+    | | | 
+    | | +-o AppleI386PCI  <class AppleI386PCI>
+    | |   | {
+    | |   |   "Bridge IO Ranges" = (0,65535)
+    | |   |   "IONameMatch" = "pci"
+    | |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   "Power Management protected data" = "{ theNumberOfPowerStates = 3, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000400, inputPowerRequirement 00000400, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000002, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 2, parentsCurrentPowerFlags = 00000002, maxCapability = 2 }"
+    | |   |   "IOClass" = "AppleI386PCI"
+    | |   |   "Bridge Memory Ranges" = (18446744071562067968,18446744073692774399)
+    | |   |   "IOProviderClass" = "IOPlatformDevice"
+    | |   |   "IOProbeScore" = 0
+    | |   |   "CFBundleIdentifier" = "com.apple.driver.AppleI386PCI"
+    | |   |   "IONameMatched" = "pci"
+    | |   |   "Power Management private data" = "{ this object = 20bc5b00, interested driver = 20bc5b00, driverDesire = 0, deviceDesire = 2, ourDesiredPowerState = 2, previousRequest = 2 }"
+    | |   | }
+    | |   | 
+    | |   +-o pci8086,1237@0  <class IOPCIDevice>
+    | |   |   {
+    | |   |     "name" = "pci8086,1237"
+    | |   |     "subsystem-vendor-id" = <f41a0000>
+    | |   |     "class-code" = <00000600>
+    | |   |     "reg" = <00000000>
+    | |   |     "compatible" = <"pci1af4,1100","pci8086,1237","pciclass,060000">
+    | |   |     "IOInterruptSpecifiers" = (<00000000>)
+    | |   |     "Power Management private data" = "{ this object = 20bd2b00, interested driver = 20bd2b00, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 2, previousRequest = 2 }"
+    | |   |     "vendor-id" = <86800000>
+    | |   |     "device-id" = <37120000>
+    | |   |     "revision-id" = <02000000>
+    | |   |     "subsystem-id" = <00110000>
+    | |   |     "Power Management protected data" = "{ theNumberOfPowerStates = 3, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000400, inputPowerRequirement 00000400, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000000, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 2, parentsCurrentPowerFlags = 00000002, maxCapability = 2 }"
+    | |   |     "IOInterruptControllers" = ("intel-pic")
+    | |   |     "IOName" = "pci8086,1237"
+    | |   |   }
+    | |   |   
+    | |   +-o pci8086,7000@1  <class IOPCIDevice>
+    | |   |   {
+    | |   |     "name" = "pci8086,7000"
+    | |   |     "subsystem-vendor-id" = <f41a0000>
+    | |   |     "class-code" = <00010600>
+    | |   |     "reg" = <00080000>
+    | |   |     "compatible" = <"pci1af4,1100","pci8086,7000","pciclass,060100">
+    | |   |     "IOInterruptSpecifiers" = (<00000000>)
+    | |   |     "Power Management private data" = "{ this object = 20bd2980, interested driver = 20bd2980, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 2, previousRequest = 2 }"
+    | |   |     "vendor-id" = <86800000>
+    | |   |     "device-id" = <00700000>
+    | |   |     "revision-id" = <00000000>
+    | |   |     "subsystem-id" = <00110000>
+    | |   |     "Power Management protected data" = "{ theNumberOfPowerStates = 3, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000400, inputPowerRequirement 00000400, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000000, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 2, parentsCurrentPowerFlags = 00000002, maxCapability = 2 }"
+    | |   |     "IOInterruptControllers" = ("intel-pic")
+    | |   |     "IOName" = "pci8086,7000"
+    | |   |   }
+    | |   |   
+    | |   +-o pci8086,7010@1,1  <class IOPCIDevice>
+    | |   | | {
+    | |   | |   "name" = "pci8086,7010"
+    | |   | |   "subsystem-vendor-id" = <f41a0000>
+    | |   | |   "class-code" = <80010100>
+    | |   | |   "reg" = <00090000>
+    | |   | |   "compatible" = <"pci1af4,1100","pci8086,7010","pciclass,010180">
+    | |   | |   "IOInterruptSpecifiers" = (<00000000>)
+    | |   | |   "Power Management private data" = "{ this object = 20bd2780, interested driver = 20bd2780, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 2, previousRequest = 2 }"
+    | |   | |   "IODeviceMemory" = ({"length"=16,"offset"=49152,"parent"=({"length"=65536,"address"=0})})
+    | |   | |   "vendor-id" = <86800000>
+    | |   | |   "device-id" = <10700000>
+    | |   | |   "revision-id" = <00000000>
+    | |   | |   "subsystem-id" = <00110000>
+    | |   | |   "Power Management protected data" = "{ theNumberOfPowerStates = 3, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000400, inputPowerRequirement 00000400, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000000, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 2, parentsCurrentPowerFlags = 00000002, maxCapability = 2 }"
+    | |   | |   "IOInterruptControllers" = ("intel-pic")
+    | |   | |   "assigned-addresses" = <200900010000000000c000000000000010000000>
+    | |   | |   "IOName" = "pci8086,7010"
+    | |   | | }
+    | |   | | 
+    | |   | +-o AppleIntelPIIXMultiATADriver  <class AppleIntelPIIXMultiATADriver>
+    | |   |   | {
+    | |   |   |   "PCI Timing Registers" = "0x40=8000e377 0x44=0000e1b7 0x48=00000000 0x54=0400"
+    | |   |   |   "IOPCIMatch" = "0x70108086"
+    | |   |   |   "DMA Modes" = 6
+    | |   |   |   "IOClass" = "AppleIntelPIIXMultiATADriver"
+    | |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   "IOProbeScore" = 2000
+    | |   |   |   "IOProviderClass" = "IOPCIDevice"
+    | |   |   |   "CFBundleIdentifier" = "com.apple.driver.AppleIntelPIIXATA"
+    | |   |   |   "Device Name" = "PIIX3"
+    | |   |   |   "ATA Channels" = ({"Channel Number"=0,"IOInterruptControllers"=("intel-pic"),"IOInterruptSpecifiers"=(<0e000000>),"Interrupt"=14,"Port Address"=496},{"Channel Number"=1,"IOInterruptControllers"=("intel-pic"),"IOInterruptSpecifiers"=(<0f000000>),"Interrupt"=15,"Port Address"=368})
+    | |   |   |   "PIO Modes" = 29
+    | |   |   | }
+    | |   |   | 
+    | |   |   +-o AppleIntelPIIXATAController  <class AppleIntelPIIXATAController>
+    | |   |   | | {
+    | |   |   | |   "Channel Number" = 0
+    | |   |   | |   "IOInterruptControllers" = ("intel-pic")
+    | |   |   | |   "IOInterruptSpecifiers" = (<0e000000>)
+    | |   |   | |   "Interrupt" = 14
+    | |   |   | |   "Port Address" = 496
+    | |   |   | | }
+    | |   |   | | 
+    | |   |   | +-o AppleIntelPIIXATADriver  <class AppleIntelPIIXATADriver>
+    | |   |   |   | {
+    | |   |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   |   "IOClass" = "AppleIntelPIIXATADriver"
+    | |   |   |   |   "Drive 0 PIO Mode" = 4
+    | |   |   |   |   "IOProviderClass" = "AppleIntelPIIXATAController"
+    | |   |   |   |   "IOProbeScore" = 0
+    | |   |   |   |   "Drive 1 PIO Mode" = 4
+    | |   |   |   |   "CFBundleIdentifier" = "com.apple.driver.AppleIntelPIIXATA"
+    | |   |   |   |   "Drive 0 Multi-Word DMA Mode" = 2
+    | |   |   |   |   "Drive 1 Multi-Word DMA Mode" = 2
+    | |   |   |   | }
+    | |   |   |   | 
+    | |   |   |   +-o ATADeviceNub@0  <class ATADeviceNub>
+    | |   |   |   | | {
+    | |   |   |   | |   "device serial" = "QM00001             "
+    | |   |   |   | |   "unit number" = 0
+    | |   |   |   | |   "socket type" = "internal"
+    | |   |   |   | |   "ata device type" = "ata"
+    | |   |   |   | |   "device model" = "QEMU HARDDISK                           "
+    | |   |   |   | |   "device revision" = "2.5+    "
+    | |   |   |   | |   "extended LBA capacity" = 4194304
+    | |   |   |   | |   "IOUnit" = 0
+    | |   |   |   | | }
+    | |   |   |   | | 
+    | |   |   |   | +-o IOATABlockStorageDriver  <class IOATABlockStorageDriver>
+    | |   |   |   |   | {
+    | |   |   |   |   |   "ATA Features" = 34
+    | |   |   |   |   |   "IOMaximumBlockCountRead" = 256
+    | |   |   |   |   |   "IOMaximumBlockCountWrite" = 256
+    | |   |   |   |   |   "IOMaximumSegmentCountRead" = 32
+    | |   |   |   |   |   "IOMaximumSegmentCountWrite" = 32
+    | |   |   |   |   |   "IOProviderClass" = "IOATADevice"
+    | |   |   |   |   |   "CFBundleIdentifier" = "com.apple.iokit.IOATABlockStorage"
+    | |   |   |   |   |   "Power Management private data" = "{ this object = 20be0000, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 0, previousRequest = 0 }"
+    | |   |   |   |   |   "Physical Interconnect" = "ATA"
+    | |   |   |   |   |   "Power Management protected data" = "{ theNumberOfPowerStates = 0, aggressiveness = 0, myCurrentState = 0, parentsCurrentPowerFlags = 00000002, maxCapability = 0 }"
+    | |   |   |   |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   |   |   "Physical Interconnect Location" = "Internal"
+    | |   |   |   |   |   "IOClass" = "IOATABlockStorageDriver"
+    | |   |   |   |   |   "ata device type" = "ata"
+    | |   |   |   |   |   "IOProbeScore" = 0
+    | |   |   |   |   |   "IOCommandPoolSize" = 32
+    | |   |   |   |   | }
+    | |   |   |   |   | 
+    | |   |   |   |   +-o IOATABlockStorageDevice  <class IOATABlockStorageDevice>
+    | |   |   |   |     | {
+    | |   |   |   |     |   "Protocol Characteristics" = {"Physical Interconnect Location"="Internal","Physical Interconnect"="ATA"}
+    | |   |   |   |     |   "device-type" = "Generic"
+    | |   |   |   |     |   "IOUserClientClass" = "ATASMARTUserClient"
+    | |   |   |   |     |   "IOCFPlugInTypes" = {"24514B7A-2804-11D6-8A02-003065704866"="IOATABlockStorage.kext/Contents/PlugIns/ATASMARTLib.plugin"}
+    | |   |   |   |     |   "Device Characteristics" = {"Product Revision Level"="2.5+    ","ATA Features"=34,"Product Name"="QEMU HARDDISK                           "}
+    | |   |   |   |     | }
+    | |   |   |   |     | 
+    | |   |   |   |     +-o IOBlockStorageDriver  <class IOBlockStorageDriver>
+    | |   |   |   |       | {
+    | |   |   |   |       |   "Statistics" = {"Bytes (Read)"=3548836352,"Latency Time (Write)"=0,"Total Time (Read)"=0,"Errors (Write)"=0,"Retries (Write)"=0,"Total Time (Write)"=0,"Bytes (Write)"=209805824,"Operations (Write)"=50613,"Operations (Read)"=182374,"Latency Time (Read)"=0,"Errors (Read)"=0,"Retries (Read)"=0}
+    | |   |   |   |       |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |   |       |   "IOClass" = "IOBlockStorageDriver"
+    | |   |   |   |       |   "IOProviderClass" = "IOBlockStorageDevice"
+    | |   |   |   |       |   "IOPropertyMatch" = {"device-type"="Generic"}
+    | |   |   |   |       |   "IOProbeScore" = 0
+    | |   |   |   |       |   "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |   |   |       |   "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializable")
+    | |   |   |   |       | }
+    | |   |   |   |       | 
+    | |   |   |   |       +-o QEMU HARDDISK Media  <class IOMedia>
+    | |   |   |   |         | {
+    | |   |   |   |         |   "BSD Unit" = 0
+    | |   |   |   |         |   "Content" = "FDisk_partition_scheme"
+    | |   |   |   |         |   "Whole" = Yes
+    | |   |   |   |         |   "IOMediaIcon" = {"IOBundleResourceFile"="Internal.icns","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"}
+    | |   |   |   |         |   "Removable" = No
+    | |   |   |   |         |   "Preferred Block Size" = 512
+    | |   |   |   |         |   "Ejectable" = No
+    | |   |   |   |         |   "Writable" = Yes
+    | |   |   |   |         |   "Size" = 2147483648
+    | |   |   |   |         |   "BSD Name" = "disk0"
+    | |   |   |   |         |   "BSD Minor" = 0
+    | |   |   |   |         |   "Content Hint" = ""
+    | |   |   |   |         |   "BSD Major" = 14
+    | |   |   |   |         |   "Leaf" = No
+    | |   |   |   |         | }
+    | |   |   |   |         | 
+    | |   |   |   |         +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |   |         |   {
+    | |   |   |   |         |     "IOProbeScore" = 30000
+    | |   |   |   |         |     "IOProviderClass" = "IOMedia"
+    | |   |   |   |         |     "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |   |         |     "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |   |   |         |     "IOResourceMatch" = "IOBSD"
+    | |   |   |   |         |     "IOClass" = "IOMediaBSDClient"
+    | |   |   |   |         |   }
+    | |   |   |   |         |   
+    | |   |   |   |         +-o IOFDiskPartitionScheme  <class IOFDiskPartitionScheme>
+    | |   |   |   |           | {
+    | |   |   |   |           |   "Content Table" = {"0x0F"="Windows_Extended","0x07"="Windows_NTFS","0xA9"="NetBSD","0x1E"="Windows_FAT_16_Hidden","0xC7"="Windows_NTFS_FT_Corrupt","0x16"="DOS_FAT_16_Hidden","0x87"="Windows_NTFS_FT","0xA5"="FreeBSD","0x1B"="DOS_FAT_32_Hidden","0x0C"="Windows_FAT_32","0x04"="DOS_FAT_16_S","0xF2"="DOS_Secondary","0xA6"="OpenBSD","0x17"="Windows_NTFS_Hidden","0x83"="Linux_Ext2FS","0x84"="Hibernation","0x01"="DOS_FAT_12","0xAB"="Apple_Boot","0x1C"="Windows_FAT_32_Hidden","0x05"="DOS_Extended","0xC6"="Windows_FAT_16_FT_Corrupt","0xAF"="Apple_HFS","0x14"="DOS_FAT_16_S_Hidden","0x63"="UNIX","0x85"="Linux_Extended","0xEB"="BeOS","0x0A"="Boot_Manager","0x11"="DOS_FAT_12_Hidden","0xFD"="Linux_RAID","0x0E"="Windows_FAT_16","0x06"="DOS_FAT_16","0xA8"="Apple_UFS","0x82"="Linux_Swap","0xB7"="BSDI","0x86"="Windows_FAT_16_FT","0xB8"="BSDI_Swap","0x0B"="DOS_FAT_32","0xA7"="NeXTSTEP"}
+    | |   |   |   |           |   "IOMatchCategory" = "IOStorage"
+    | |   |   |   |           |   "Content Mask" = "FDisk_partition_scheme"
+    | |   |   |   |           |   "IOClass" = "IOFDiskPartitionScheme"
+    | |   |   |   |           |   "IOProbeScore" = 3000
+    | |   |   |   |           |   "IOPropertyMatch" = {"Whole"=Yes}
+    | |   |   |   |           |   "IOProviderClass" = "IOMedia"
+    | |   |   |   |           |   "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |   |   |           | }
+    | |   |   |   |           | 
+    | |   |   |   |           +-o Untitled 1@1  <class IOMedia>
+    | |   |   |   |           | | {
+    | |   |   |   |           | |   "BSD Unit" = 0
+    | |   |   |   |           | |   "Content" = "Apple_Boot"
+    | |   |   |   |           | |   "Whole" = No
+    | |   |   |   |           | |   "Removable" = No
+    | |   |   |   |           | |   "Preferred Block Size" = 512
+    | |   |   |   |           | |   "Ejectable" = No
+    | |   |   |   |           | |   "Writable" = Yes
+    | |   |   |   |           | |   "Size" = 8372224
+    | |   |   |   |           | |   "BSD Name" = "disk0s1"
+    | |   |   |   |           | |   "Partition ID" = 1
+    | |   |   |   |           | |   "BSD Minor" = 1
+    | |   |   |   |           | |   "Content Hint" = "Apple_Boot"
+    | |   |   |   |           | |   "BSD Major" = 14
+    | |   |   |   |           | |   "Leaf" = Yes
+    | |   |   |   |           | | }
+    | |   |   |   |           | | 
+    | |   |   |   |           | +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |   |           |     {
+    | |   |   |   |           |       "IOProbeScore" = 30000
+    | |   |   |   |           |       "IOProviderClass" = "IOMedia"
+    | |   |   |   |           |       "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |   |           |       "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |   |   |           |       "IOResourceMatch" = "IOBSD"
+    | |   |   |   |           |       "IOClass" = "IOMediaBSDClient"
+    | |   |   |   |           |     }
+    | |   |   |   |           |     
+    | |   |   |   |           +-o Untitled 2@2  <class IOMedia>
+    | |   |   |   |             | {
+    | |   |   |   |             |   "BSD Unit" = 0
+    | |   |   |   |             |   "Content" = "Apple_UFS"
+    | |   |   |   |             |   "Whole" = No
+    | |   |   |   |             |   "Removable" = No
+    | |   |   |   |             |   "Preferred Block Size" = 512
+    | |   |   |   |             |   "Ejectable" = No
+    | |   |   |   |             |   "Writable" = Yes
+    | |   |   |   |             |   "Size" = 2139095040
+    | |   |   |   |             |   "BSD Name" = "disk0s2"
+    | |   |   |   |             |   "Partition ID" = 2
+    | |   |   |   |             |   "BSD Minor" = 3
+    | |   |   |   |             |   "Content Hint" = "Apple_UFS"
+    | |   |   |   |             |   "BSD Major" = 14
+    | |   |   |   |             |   "Leaf" = Yes
+    | |   |   |   |             | }
+    | |   |   |   |             | 
+    | |   |   |   |             +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |   |                 {
+    | |   |   |   |                   "IOProbeScore" = 30000
+    | |   |   |   |                   "IOProviderClass" = "IOMedia"
+    | |   |   |   |                   "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |   |                   "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |   |   |                   "IOResourceMatch" = "IOBSD"
+    | |   |   |   |                   "IOClass" = "IOMediaBSDClient"
+    | |   |   |   |                 }
+    | |   |   |   |                 
+    | |   |   |   +-o ATADeviceNub@1  <class ATADeviceNub>
+    | |   |   |     | {
+    | |   |   |     |   "device serial" = "QM00002             "
+    | |   |   |     |   "unit number" = 1
+    | |   |   |     |   "socket type" = "internal"
+    | |   |   |     |   "ata device type" = "ata"
+    | |   |   |     |   "device model" = "QEMU HARDDISK                           "
+    | |   |   |     |   "device revision" = "2.5+    "
+    | |   |   |     |   "extended LBA capacity" = 131072
+    | |   |   |     |   "IOUnit" = 1
+    | |   |   |     | }
+    | |   |   |     | 
+    | |   |   |     +-o IOATABlockStorageDriver  <class IOATABlockStorageDriver>
+    | |   |   |       | {
+    | |   |   |       |   "ATA Features" = 34
+    | |   |   |       |   "IOMaximumBlockCountRead" = 256
+    | |   |   |       |   "IOMaximumBlockCountWrite" = 256
+    | |   |   |       |   "IOMaximumSegmentCountRead" = 32
+    | |   |   |       |   "IOMaximumSegmentCountWrite" = 32
+    | |   |   |       |   "IOProviderClass" = "IOATADevice"
+    | |   |   |       |   "CFBundleIdentifier" = "com.apple.iokit.IOATABlockStorage"
+    | |   |   |       |   "Power Management private data" = "{ this object = 20bf0c00, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 0, previousRequest = 0 }"
+    | |   |   |       |   "Physical Interconnect" = "ATA"
+    | |   |   |       |   "Power Management protected data" = "{ theNumberOfPowerStates = 0, aggressiveness = 0, myCurrentState = 0, parentsCurrentPowerFlags = 00000002, maxCapability = 0 }"
+    | |   |   |       |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |       |   "Physical Interconnect Location" = "Internal"
+    | |   |   |       |   "IOClass" = "IOATABlockStorageDriver"
+    | |   |   |       |   "ata device type" = "ata"
+    | |   |   |       |   "IOProbeScore" = 0
+    | |   |   |       |   "IOCommandPoolSize" = 32
+    | |   |   |       | }
+    | |   |   |       | 
+    | |   |   |       +-o IOATABlockStorageDevice  <class IOATABlockStorageDevice>
+    | |   |   |         | {
+    | |   |   |         |   "Protocol Characteristics" = {"Physical Interconnect Location"="Internal","Physical Interconnect"="ATA"}
+    | |   |   |         |   "device-type" = "Generic"
+    | |   |   |         |   "IOUserClientClass" = "ATASMARTUserClient"
+    | |   |   |         |   "IOCFPlugInTypes" = {"24514B7A-2804-11D6-8A02-003065704866"="IOATABlockStorage.kext/Contents/PlugIns/ATASMARTLib.plugin"}
+    | |   |   |         |   "Device Characteristics" = {"Product Revision Level"="2.5+    ","ATA Features"=34,"Product Name"="QEMU HARDDISK                           "}
+    | |   |   |         | }
+    | |   |   |         | 
+    | |   |   |         +-o IOBlockStorageDriver  <class IOBlockStorageDriver>
+    | |   |   |           | {
+    | |   |   |           |   "Statistics" = {"Bytes (Read)"=6164992,"Latency Time (Write)"=0,"Total Time (Read)"=0,"Errors (Write)"=0,"Retries (Write)"=0,"Total Time (Write)"=0,"Bytes (Write)"=2799104,"Operations (Write)"=1256,"Operations (Read)"=2358,"Latency Time (Read)"=0,"Errors (Read)"=0,"Retries (Read)"=0}
+    | |   |   |           |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |   |           |   "IOClass" = "IOBlockStorageDriver"
+    | |   |   |           |   "IOProviderClass" = "IOBlockStorageDevice"
+    | |   |   |           |   "IOPropertyMatch" = {"device-type"="Generic"}
+    | |   |   |           |   "IOProbeScore" = 0
+    | |   |   |           |   "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |   |           |   "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializable")
+    | |   |   |           | }
+    | |   |   |           | 
+    | |   |   |           +-o QEMU HARDDISK Media  <class IOMedia>
+    | |   |   |             | {
+    | |   |   |             |   "BSD Unit" = 2
+    | |   |   |             |   "Content" = ""
+    | |   |   |             |   "Whole" = Yes
+    | |   |   |             |   "IOMediaIcon" = {"IOBundleResourceFile"="Internal.icns","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"}
+    | |   |   |             |   "Removable" = No
+    | |   |   |             |   "Preferred Block Size" = 512
+    | |   |   |             |   "Ejectable" = No
+    | |   |   |             |   "Writable" = Yes
+    | |   |   |             |   "Size" = 67108864
+    | |   |   |             |   "BSD Name" = "disk2"
+    | |   |   |             |   "BSD Minor" = 4
+    | |   |   |             |   "Content Hint" = ""
+    | |   |   |             |   "BSD Major" = 14
+    | |   |   |             |   "Leaf" = Yes
+    | |   |   |             | }
+    | |   |   |             | 
+    | |   |   |             +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |   |                 {
+    | |   |   |                   "IOProbeScore" = 30000
+    | |   |   |                   "IOProviderClass" = "IOMedia"
+    | |   |   |                   "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |   |                   "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |   |                   "IOResourceMatch" = "IOBSD"
+    | |   |   |                   "IOClass" = "IOMediaBSDClient"
+    | |   |   |                 }
+    | |   |   |                 
+    | |   |   +-o AppleIntelPIIXATAController  <class AppleIntelPIIXATAController>
+    | |   |     | {
+    | |   |     |   "Channel Number" = 1
+    | |   |     |   "IOInterruptControllers" = ("intel-pic")
+    | |   |     |   "IOInterruptSpecifiers" = (<0f000000>)
+    | |   |     |   "Interrupt" = 15
+    | |   |     |   "Port Address" = 368
+    | |   |     | }
+    | |   |     | 
+    | |   |     +-o AppleIntelPIIXATADriver  <class AppleIntelPIIXATADriver>
+    | |   |       | {
+    | |   |       |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |       |   "IOClass" = "AppleIntelPIIXATADriver"
+    | |   |       |   "Drive 0 PIO Mode" = 3
+    | |   |       |   "IOProviderClass" = "AppleIntelPIIXATAController"
+    | |   |       |   "IOProbeScore" = 0
+    | |   |       |   "Drive 1 PIO Mode" = 4
+    | |   |       |   "CFBundleIdentifier" = "com.apple.driver.AppleIntelPIIXATA"
+    | |   |       |   "Drive 0 Multi-Word DMA Mode" = 1
+    | |   |       |   "Drive 1 Multi-Word DMA Mode" = 2
+    | |   |       | }
+    | |   |       | 
+    | |   |       +-o ATADeviceNub@0  <class ATADeviceNub>
+    | |   |       | | {
+    | |   |       | |   "unit number" = 0
+    | |   |       | |   "socket type" = "internal"
+    | |   |       | |   "ata device type" = "atapi"
+    | |   |       | |   "device serial" = "QM00003             "
+    | |   |       | |   "device revision" = "2.5+    "
+    | |   |       | |   "device model" = "QEMU DVD-ROM                            "
+    | |   |       | |   "IOUnit" = 0
+    | |   |       | | }
+    | |   |       | | 
+    | |   |       | +-o IOATAPIProtocolTransport  <class IOATAPIProtocolTransport>
+    | |   |       |   | {
+    | |   |       |   |   "Protocol Characteristics" = {"unit number"=0,"Physical Interconnect Location"="Internal","Physical Interconnect"="ATAPI"}
+    | |   |       |   |   "Power Management protected data" = "{ theNumberOfPowerStates = 2, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 0000c000, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 1, parentsCurrentPowerFlags = 00000002, maxCapability = 1 }"
+    | |   |       |   |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |       |   |   "Physical Interconnect Location" = "Internal"
+    | |   |       |   |   "IOClass" = "IOATAPIProtocolTransport"
+    | |   |       |   |   "ata device type" = "atapi"
+    | |   |       |   |   "IOProviderClass" = "IOATADevice"
+    | |   |       |   |   "IOProbeScore" = 0
+    | |   |       |   |   "CFBundleIdentifier" = "com.apple.iokit.IOATAPIProtocolTransport"
+    | |   |       |   |   "Power Management private data" = "{ this object = 20be9400, interested driver = 20be9400, driverDesire = 1, deviceDesire = 0, ourDesiredPowerState = 1, previousRequest = 2 }"
+    | |   |       |   |   "Physical Interconnect" = "ATAPI"
+    | |   |       |   | }
+    | |   |       |   | 
+    | |   |       |   +-o IOSCSIPeripheralDeviceNub  <class IOSCSIPeripheralDeviceNub>
+    | |   |       |     | {
+    | |   |       |     |   "Protocol Characteristics" = {"unit number"=0,"Physical Interconnect Location"="Internal","Physical Interconnect"="ATAPI"}
+    | |   |       |     |   "IOMatchCategory" = "SCSITaskUserClientIniter"
+    | |   |       |     |   "Product Identification" = "QEMU DVD-ROM"
+    | |   |       |     |   "IOClass" = "IOSCSIPeripheralDeviceNub"
+    | |   |       |     |   "IOProviderClass" = "IOSCSIProtocolServices"
+    | |   |       |     |   "IOProbeScore" = 0
+    | |   |       |     |   "Peripheral Device Type" = 5
+    | |   |       |     |   "CFBundleIdentifier" = "com.apple.iokit.IOSCSIArchitectureModelFamily"
+    | |   |       |     |   "Vendor Identification" = "QEMU"
+    | |   |       |     |   "Product Revision Level" = "2.5+"
+    | |   |       |     | }
+    | |   |       |     | 
+    | |   |       |     +-o IOSCSIPeripheralDeviceType05  <class IOSCSIPeripheralDeviceType05>
+    | |   |       |       | {
+    | |   |       |       |   "CD Features" = 3
+    | |   |       |       |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |       |       |   "Power Management protected data" = "{ theNumberOfPowerStates = 5, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00008040, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 3 = { capabilityFlags 00008040, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 4 = { capabilityFlags 0000c040, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 1, parentsCurrentPowerFlags = 00000002, maxCapability = 4 }"
+    | |   |       |       |   "IOClass" = "IOSCSIPeripheralDeviceType05"
+    | |   |       |       |   "IOProviderClass" = "IOSCSIPeripheralDeviceNub"
+    | |   |       |       |   "Peripheral Device Type" = 5
+    | |   |       |       |   "IOProbeScore" = 5000
+    | |   |       |       |   "CFBundleIdentifier" = "com.apple.iokit.IOSCSIMultimediaCommandsDevice"
+    | |   |       |       |   "DVD Features" = 3
+    | |   |       |       |   "Power Management private data" = "{ this object = 20c2d300, interested driver = 20c2d300, driverDesire = 1, deviceDesire = 0, ourDesiredPowerState = 1, previousRequest = 2 }"
+    | |   |       |       | }
+    | |   |       |       | 
+    | |   |       |       +-o IODVDServices  <class IODVDServices>
+    | |   |       |         | {
+    | |   |       |         |   "Protocol Characteristics" = {"unit number"=0,"Physical Interconnect Location"="Internal","Physical Interconnect"="ATAPI"}
+    | |   |       |         |   "IOMaximumBlockCountRead" = 256
+    | |   |       |         |   "IOMaximumBlockCountWrite" = 256
+    | |   |       |         |   "IOMaximumSegmentCountRead" = 48
+    | |   |       |         |   "IOMaximumSegmentCountWrite" = 48
+    | |   |       |         |   "device-type" = "DVD"
+    | |   |       |         |   "Device Characteristics" = {"CD Features"=3,"Vendor Name"="QEMU","Low Power Polling"=No,"Product Revision Level"="2.5+","Product Name"="QEMU DVD-ROM","DVD Features"=3}
+    | |   |       |         | }
+    | |   |       |         | 
+    | |   |       |         +-o IODVDBlockStorageDriver  <class IODVDBlockStorageDriver>
+    | |   |       |           | {
+    | |   |       |           |   "Statistics" = {"Bytes (Read)"=14640,"Latency Time (Write)"=0,"Total Time (Read)"=0,"Errors (Write)"=0,"Retries (Write)"=0,"Total Time (Write)"=0,"Bytes (Write)"=0,"Operations (Write)"=0,"Operations (Read)"=4,"Latency Time (Read)"=0,"Errors (Read)"=0,"Retries (Read)"=0}
+    | |   |       |           |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |       |           |   "IOClass" = "IODVDBlockStorageDriver"
+    | |   |       |           |   "IOProviderClass" = "IODVDBlockStorageDevice"
+    | |   |       |           |   "IOPropertyMatch" = {"device-type"="DVD"}
+    | |   |       |           |   "IOProbeScore" = 0
+    | |   |       |           |   "CFBundleIdentifier" = "com.apple.iokit.IODVDStorageFamily"
+    | |   |       |           |   "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializable")
+    | |   |       |           | }
+    | |   |       |           | 
+    | |   |       |           +-o QEMU QEMU DVD-ROM Media  <class IOCDMedia>
+    | |   |       |             | {
+    | |   |       |             |   "BSD Unit" = 3
+    | |   |       |             |   "Content" = "CD_partition_scheme"
+    | |   |       |             |   "Whole" = Yes
+    | |   |       |             |   "IOMediaIcon" = {"IOBundleResourceFile"="CD.icns","CFBundleIdentifier"="com.apple.iokit.IOCDStorageFamily"}
+    | |   |       |             |   "Removable" = Yes
+    | |   |       |             |   "Preferred Block Size" = 2352
+    | |   |       |             |   "Ejectable" = Yes
+    | |   |       |             |   "Writable" = No
+    | |   |       |             |   "Size" = 68085696
+    | |   |       |             |   "TOC" = <002e0101011400a000000000010000011400a100000000010000011400a200000000061b490114000100000000000200>
+    | |   |       |             |   "Type" = "CD-ROM"
+    | |   |       |             |   "BSD Minor" = 6
+    | |   |       |             |   "BSD Name" = "disk3"
+    | |   |       |             |   "Content Hint" = ""
+    | |   |       |             |   "BSD Major" = 14
+    | |   |       |             |   "Leaf" = No
+    | |   |       |             | }
+    | |   |       |             | 
+    | |   |       |             +-o IOCDMediaBSDClient  <class IOCDMediaBSDClient>
+    | |   |       |             |   {
+    | |   |       |             |     "IOProbeScore" = 31000
+    | |   |       |             |     "IOProviderClass" = "IOCDMedia"
+    | |   |       |             |     "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |       |             |     "CFBundleIdentifier" = "com.apple.iokit.IOCDStorageFamily"
+    | |   |       |             |     "IOClass" = "IOCDMediaBSDClient"
+    | |   |       |             |   }
+    | |   |       |             |   
+    | |   |       |             +-o IOCDPartitionScheme  <class IOCDPartitionScheme>
+    | |   |       |               | {
+    | |   |       |               |   "Content Table" = {"0x04"="CD_ROM_Mode_2_Form_1","0x05"="CD_ROM_Mode_2_Form_2","0x01"="CD_DA","0x02"="CD_ROM_Mode_1","0x03"="CD_ROM_Mode_2"}
+    | |   |       |               |   "IOMatchCategory" = "IOStorage"
+    | |   |       |               |   "Content Mask" = "CD_partition_scheme"
+    | |   |       |               |   "IOClass" = "IOCDPartitionScheme"
+    | |   |       |               |   "IOProviderClass" = "IOCDMedia"
+    | |   |       |               |   "IOProbeScore" = 0
+    | |   |       |               |   "CFBundleIdentifier" = "com.apple.iokit.IOCDStorageFamily"
+    | |   |       |               | }
+    | |   |       |               | 
+    | |   |       |               +-o Untitled 0@0  <class IOMedia>
+    | |   |       |                 | {
+    | |   |       |                 |   "BSD Unit" = 3
+    | |   |       |                 |   "Content" = "CD_ROM_Mode_1"
+    | |   |       |                 |   "Whole" = No
+    | |   |       |                 |   "Removable" = Yes
+    | |   |       |                 |   "Preferred Block Size" = 2048
+    | |   |       |                 |   "Ejectable" = Yes
+    | |   |       |                 |   "Writable" = No
+    | |   |       |                 |   "Size" = 59285504
+    | |   |       |                 |   "BSD Name" = "disk3s0"
+    | |   |       |                 |   "BSD Major" = 14
+    | |   |       |                 |   "Partition ID" = 0
+    | |   |       |                 |   "BSD Minor" = 7
+    | |   |       |                 |   "Content Hint" = "CD_ROM_Mode_1"
+    | |   |       |                 |   "Session ID" = 1
+    | |   |       |                 |   "Leaf" = Yes
+    | |   |       |                 | }
+    | |   |       |                 | 
+    | |   |       |                 +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |       |                     {
+    | |   |       |                       "IOProbeScore" = 30000
+    | |   |       |                       "IOProviderClass" = "IOMedia"
+    | |   |       |                       "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |       |                       "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |       |                       "IOResourceMatch" = "IOBSD"
+    | |   |       |                       "IOClass" = "IOMediaBSDClient"
+    | |   |       |                     }
+    | |   |       |                     
+    | |   |       +-o ATADeviceNub@1  <class ATADeviceNub>
+    | |   |         | {
+    | |   |         |   "device serial" = "QM00004             "
+    | |   |         |   "unit number" = 1
+    | |   |         |   "socket type" = "internal"
+    | |   |         |   "ata device type" = "ata"
+    | |   |         |   "device model" = "QEMU HARDDISK                           "
+    | |   |         |   "device revision" = "2.5+    "
+    | |   |         |   "extended LBA capacity" = 8388608
+    | |   |         |   "IOUnit" = 1
+    | |   |         | }
+    | |   |         | 
+    | |   |         +-o IOATABlockStorageDriver  <class IOATABlockStorageDriver>
+    | |   |           | {
+    | |   |           |   "ATA Features" = 34
+    | |   |           |   "IOMaximumBlockCountRead" = 256
+    | |   |           |   "IOMaximumBlockCountWrite" = 256
+    | |   |           |   "IOMaximumSegmentCountRead" = 32
+    | |   |           |   "IOMaximumSegmentCountWrite" = 32
+    | |   |           |   "IOProviderClass" = "IOATADevice"
+    | |   |           |   "CFBundleIdentifier" = "com.apple.iokit.IOATABlockStorage"
+    | |   |           |   "Power Management private data" = "{ this object = 20bf4c00, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 0, previousRequest = 0 }"
+    | |   |           |   "Physical Interconnect" = "ATA"
+    | |   |           |   "Power Management protected data" = "{ theNumberOfPowerStates = 0, aggressiveness = 0, myCurrentState = 0, parentsCurrentPowerFlags = 00000002, maxCapability = 0 }"
+    | |   |           |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |           |   "Physical Interconnect Location" = "Internal"
+    | |   |           |   "IOClass" = "IOATABlockStorageDriver"
+    | |   |           |   "ata device type" = "ata"
+    | |   |           |   "IOProbeScore" = 0
+    | |   |           |   "IOCommandPoolSize" = 32
+    | |   |           | }
+    | |   |           | 
+    | |   |           +-o IOATABlockStorageDevice  <class IOATABlockStorageDevice>
+    | |   |             | {
+    | |   |             |   "Protocol Characteristics" = {"Physical Interconnect Location"="Internal","Physical Interconnect"="ATA"}
+    | |   |             |   "device-type" = "Generic"
+    | |   |             |   "IOUserClientClass" = "ATASMARTUserClient"
+    | |   |             |   "IOCFPlugInTypes" = {"24514B7A-2804-11D6-8A02-003065704866"="IOATABlockStorage.kext/Contents/PlugIns/ATASMARTLib.plugin"}
+    | |   |             |   "Device Characteristics" = {"Product Revision Level"="2.5+    ","ATA Features"=34,"Product Name"="QEMU HARDDISK                           "}
+    | |   |             | }
+    | |   |             | 
+    | |   |             +-o IOBlockStorageDriver  <class IOBlockStorageDriver>
+    | |   |               | {
+    | |   |               |   "Statistics" = {"Bytes (Read)"=2407861248,"Latency Time (Write)"=0,"Total Time (Read)"=0,"Errors (Write)"=0,"Retries (Write)"=0,"Total Time (Write)"=0,"Bytes (Write)"=1837632512,"Operations (Write)"=155302,"Operations (Read)"=135396,"Latency Time (Read)"=0,"Errors (Read)"=0,"Retries (Read)"=0}
+    | |   |               |   "IOMatchCategory" = "IODefaultMatchCategory"
+    | |   |               |   "IOClass" = "IOBlockStorageDriver"
+    | |   |               |   "IOProviderClass" = "IOBlockStorageDevice"
+    | |   |               |   "IOPropertyMatch" = {"device-type"="Generic"}
+    | |   |               |   "IOProbeScore" = 0
+    | |   |               |   "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |               |   "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializable")
+    | |   |               | }
+    | |   |               | 
+    | |   |               +-o QEMU HARDDISK Media  <class IOMedia>
+    | |   |                 | {
+    | |   |                 |   "BSD Unit" = 1
+    | |   |                 |   "Content" = "FDisk_partition_scheme"
+    | |   |                 |   "Whole" = Yes
+    | |   |                 |   "IOMediaIcon" = {"IOBundleResourceFile"="Internal.icns","CFBundleIdentifier"="com.apple.iokit.IOStorageFamily"}
+    | |   |                 |   "Removable" = No
+    | |   |                 |   "Preferred Block Size" = 512
+    | |   |                 |   "Ejectable" = No
+    | |   |                 |   "Writable" = Yes
+    | |   |                 |   "Size" = 4294967296
+    | |   |                 |   "BSD Name" = "disk1"
+    | |   |                 |   "BSD Minor" = 2
+    | |   |                 |   "Content Hint" = ""
+    | |   |                 |   "BSD Major" = 14
+    | |   |                 |   "Leaf" = No
+    | |   |                 | }
+    | |   |                 | 
+    | |   |                 +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |                 |   {
+    | |   |                 |     "IOProbeScore" = 30000
+    | |   |                 |     "IOProviderClass" = "IOMedia"
+    | |   |                 |     "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |                 |     "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |                 |     "IOResourceMatch" = "IOBSD"
+    | |   |                 |     "IOClass" = "IOMediaBSDClient"
+    | |   |                 |   }
+    | |   |                 |   
+    | |   |                 +-o IOFDiskPartitionScheme  <class IOFDiskPartitionScheme>
+    | |   |                   | {
+    | |   |                   |   "Content Table" = {"0x0F"="Windows_Extended","0x07"="Windows_NTFS","0xA9"="NetBSD","0x1E"="Windows_FAT_16_Hidden","0xC7"="Windows_NTFS_FT_Corrupt","0x16"="DOS_FAT_16_Hidden","0x87"="Windows_NTFS_FT","0xA5"="FreeBSD","0x1B"="DOS_FAT_32_Hidden","0x0C"="Windows_FAT_32","0x04"="DOS_FAT_16_S","0xF2"="DOS_Secondary","0xA6"="OpenBSD","0x17"="Windows_NTFS_Hidden","0x83"="Linux_Ext2FS","0x84"="Hibernation","0x01"="DOS_FAT_12","0xAB"="Apple_Boot","0x1C"="Windows_FAT_32_Hidden","0x05"="DOS_Extended","0xC6"="Windows_FAT_16_FT_Corrupt","0xAF"="Apple_HFS","0x14"="DOS_FAT_16_S_Hidden","0x63"="UNIX","0x85"="Linux_Extended","0xEB"="BeOS","0x0A"="Boot_Manager","0x11"="DOS_FAT_12_Hidden","0xFD"="Linux_RAID","0x0E"="Windows_FAT_16","0x06"="DOS_FAT_16","0xA8"="Apple_UFS","0x82"="Linux_Swap","0xB7"="BSDI","0x86"="Windows_FAT_16_FT","0xB8"="BSDI_Swap","0x0B"="DOS_FAT_32","0xA7"="NeXTSTEP"}
+    | |   |                   |   "IOMatchCategory" = "IOStorage"
+    | |   |                   |   "Content Mask" = "FDisk_partition_scheme"
+    | |   |                   |   "IOClass" = "IOFDiskPartitionScheme"
+    | |   |                   |   "IOProbeScore" = 3000
+    | |   |                   |   "IOPropertyMatch" = {"Whole"=Yes}
+    | |   |                   |   "IOProviderClass" = "IOMedia"
+    | |   |                   |   "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |                   | }
+    | |   |                   | 
+    | |   |                   +-o Untitled 1@1  <class IOMedia>
+    | |   |                     | {
+    | |   |                     |   "BSD Unit" = 1
+    | |   |                     |   "Content" = "Apple_UFS"
+    | |   |                     |   "Whole" = No
+    | |   |                     |   "Removable" = No
+    | |   |                     |   "Preferred Block Size" = 512
+    | |   |                     |   "Ejectable" = No
+    | |   |                     |   "Writable" = Yes
+    | |   |                     |   "Size" = 4293918720
+    | |   |                     |   "BSD Name" = "disk1s1"
+    | |   |                     |   "Partition ID" = 1
+    | |   |                     |   "BSD Minor" = 5
+    | |   |                     |   "Content Hint" = "Apple_UFS"
+    | |   |                     |   "BSD Major" = 14
+    | |   |                     |   "Leaf" = Yes
+    | |   |                     | }
+    | |   |                     | 
+    | |   |                     +-o IOMediaBSDClient  <class IOMediaBSDClient>
+    | |   |                         {
+    | |   |                           "IOProbeScore" = 30000
+    | |   |                           "IOProviderClass" = "IOMedia"
+    | |   |                           "IOMatchCategory" = "IOMediaBSDClient"
+    | |   |                           "CFBundleIdentifier" = "com.apple.iokit.IOStorageFamily"
+    | |   |                           "IOResourceMatch" = "IOBSD"
+    | |   |                           "IOClass" = "IOMediaBSDClient"
+    | |   |                         }
+    | |   |                         
+    | |   +-o pci8086,7113@1,3  <class IOPCIDevice>
+    | |   |   {
+    | |   |     "name" = "pci8086,7113"
+    | |   |     "subsystem-vendor-id" = <f41a0000>
+    | |   |     "class-code" = <00800600>
+    | |   |     "reg" = <000b0000>
+    | |   |     "compatible" = <"pci1af4,1100","pci8086,7113","pciclass,068000">
+    | |   |     "IOInterruptSpecifiers" = (<09000000>)
+    | |   |     "Power Management private data" = "{ this object = 20bd2680, interested driver = 20bd2680, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 2, previousRequest = 2 }"
+    | |   |     "vendor-id" = <86800000>
+    | |   |     "device-id" = <13710000>
+    | |   |     "revision-id" = <03000000>
+    | |   |     "subsystem-id" = <00110000>
+    | |   |     "Power Management protected data" = "{ theNumberOfPowerStates = 3, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000400, inputPowerRequirement 00000400, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000000, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 2, parentsCurrentPowerFlags = 00000002, maxCapability = 2 }"
+    | |   |     "IOInterruptControllers" = ("intel-pic")
+    | |   |     "IOName" = "pci8086,7113"
+    | |   |   }
+    | |   |   
+    | |   +-o display@2  <class IOPCIDevice>
+    | |     | {
+    | |     |   "name" = "display"
+    | |     |   "AAPL,iokit-ndrv" = <20eeca31>
+    | |     |   "subsystem-vendor-id" = <f41a0000>
+    | |     |   "class-code" = <00000300>
+    | |     |   "reg" = <00100000>
+    | |     |   "compatible" = <"pci1af4,1100","pci1234,1111","pciclass,030000">
+    | |     |   "IOInterruptSpecifiers" = (<00000000>)
+    | |     |   "Power Management private data" = "{ this object = 20bd2500, interested driver = 20bd2500, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 2, previousRequest = 2 }"
+    | |     |   "IODeviceMemory" = (({"length"=16777216,"address"=18446744073659219968}),({"length"=4096,"address"=18446744073688514560}))
+    | |     |   "vendor-id" = <34120000>
+    | |     |   "device-id" = <11110000>
+    | |     |   "revision-id" = <02000000>
+    | |     |   "subsystem-id" = <00110000>
+    | |     |   "AAPL,RegEntryID" = <0025bd20ffda42df656d69537a6c7552>
+    | |     |   "Power Management protected data" = "{ theNumberOfPowerStates = 3, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000400, inputPowerRequirement 00000400, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000000, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 2, parentsCurrentPowerFlags = 00000002, maxCapability = 2 }"
+    | |     |   "AAPL,ndrv-dev" = Yes
+    | |     |   "IOInterruptControllers" = ("intel-pic")
+    | |     |   "assigned-addresses" = <1010004200000000000000fd000000000000000118100002000000000000bffe0000000000100000>
+    | |     |   "IOName" = "display"
+    | |     | }
+    | |     | 
+    | |     +-o IONDRVFramebuffer  <class IONDRVFramebuffer>
+    | |         {
+    | |           "IONameMatch" = "display"
+    | |           "IOMatchCategory" = "IOFramebuffer"
+    | |           "Power Management protected data" = "{ theNumberOfPowerStates = 0, aggressiveness = 0, myCurrentState = 0, parentsCurrentPowerFlags = 00000002, maxCapability = 0 }"
+    | |           "IOClass" = "IONDRVFramebuffer"
+    | |           "IOProbeScore" = 20000
+    | |           "IOProviderClass" = "IOPCIDevice"
+    | |           "CFBundleIdentifier" = "com.apple.iokit.IONDRVSupport"
+    | |           "IONameMatched" = "display"
+    | |           "Power Management private data" = "{ this object = 20b3ac00, driverDesire = 0, deviceDesire = 0, ourDesiredPowerState = 0, previousRequest = 0 }"
+    | |         }
+    | |         
+    | +-o display  <class IOPlatformDevice>
+    |   | {
+    |   |   "AAPL,iokit-ndrv" = <20eeca31>
+    |   |   "IOPMIsPowerManaged" = Yes
+    |   |   "AAPL,RegEntryID" = <809fb3207f604cdf656d69537a6c7552>
+    |   |   "IOInterruptControllers" = ("intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic","intel-pic")
+    |   |   "IOInterruptSpecifiers" = (<00000000>,<01000000>,<02000000>,<03000000>,<04000000>,<05000000>,<06000000>,<07000000>,<08000000>,<09000000>,<0a000000>,<0b000000>,<0c000000>,<0d000000>,<0e000000>,<0f000000>)
+    |   |   "AAPL,ndrv-dev" = Yes
+    |   |   "AAPL,boot-display" = "Yes"
+    |   |   "IOName" = "display"
+    |   | }
+    |   | 
+    |   +-o .Display_boot  <class IONDRVFramebuffer>
+    |     | {
+    |     |   "IOFBConfig" = {"IOFBModes"=({"AID"=833637944,"ID"=100,"DF"=3,"DM"=<000004000000030000000000000000000000000300000000000000000000000000000000>}),"IODisplayConnectFlags"=0}
+    |     |   "IOFBMemorySize" = 16777216
+    |     |   "graphic-options" = 0
+    |     |   "IOProviderClass" = "IOPlatformDevice"
+    |     |   "IOFBCursorInfo" = ()
+    |     |   "CFBundleIdentifier" = "com.apple.iokit.IONDRVSupport"
+    |     |   "Power Management private data" = "{ this object = 20bdec00, interested driver = 20bdec00, driverDesire = 1, deviceDesire = 0, ourDesiredPowerState = 2, previousRequest = 18 }"
+    |     |   "IOFBWaitCursorPeriod" = 33333333
+    |     |   "IOGeneralInterest" = ()
+    |     |   "IONameMatch" = "display"
+    |     |   "IOMatchCategory" = "IOFramebuffer"
+    |     |   "Power Management protected data" = "{ theNumberOfPowerStates = 3, version 1, power state 0 = { capabilityFlags 00000010, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000010, outputPowerCharacter 00000000, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00008010, outputPowerCharacter 00000002, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 2, parentsCurrentPowerFlags = 00000002, maxCapability = 2 }"
+    |     |   "IOClass" = "IONDRVFramebuffer"
+    |     |   "IOFBGammaWidth" = 8
+    |     |   "IOProbeScore" = 20000
+    |     |   "IOFBWaitCursorFrames" = 15
+    |     |   "IOFBGammaCount" = 256
+    |     |   "IOFBI2CInterfaceIDs" = ()
+    |     |   "IONameMatched" = "display"
+    |     | }
+    |     | 
+    |     +-o display0  <class IODisplayConnect>
+    |       | {
+    |       | }
+    |       | 
+    |       +-o AppleDisplay  <class AppleDisplay>
+    |           {
+    |             "DisplayVendorID" = 1970170734
+    |             "Power Management protected data" = "{ theNumberOfPowerStates = 4, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00008000, outputPowerCharacter 00000000, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 3 = { capabilityFlags 0000c000, outputPowerCharacter 00000000, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 3, parentsCurrentPowerFlags = 00000002, maxCapability = 3 }"
+    |             "IOMatchCategory" = "IODefaultMatchCategory"
+    |             "IODisplayConnectFlags" = <00000000>
+    |             "DisplayProductID" = 1815
+    |             "IOClass" = "AppleDisplay"
+    |             "IOProbeScore" = 2000
+    |             "IOProviderClass" = "IODisplayConnect"
+    |             "CFBundleIdentifier" = "com.apple.iokit.IOGraphicsFamily"
+    |             "Power Management private data" = "{ this object = 20c5b000, interested driver = 20c5b000, driverDesire = 0, deviceDesire = 3, ourDesiredPowerState = 3, previousRequest = 2 }"
+    |           }
+    |           
+    +-o IOResources  <class IOResources>
+      | {
+      |   "IOKit" = "IOService"
+      |   "IORTC" = "AppleIntelClock is not serializable"
+      |   "IOBSD" = "IOService"
+      | }
+      | 
+      +-o com_apple_BootCache  <class com_apple_BootCache>
+      |   {
+      |     "IOProviderClass" = "IOResources"
+      |     "IOProbeScore" = 0
+      |     "IOMatchCategory" = "BootCache"
+      |     "CFBundleIdentifier" = "com.apple.BootCache"
+      |     "IOResourceMatch" = "IOKit"
+      |     "IOClass" = "com_apple_BootCache"
+      |   }
+      |   
+      +-o IOHIDSystem  <class IOHIDSystem>
+      |   {
+      |     "HIDAutoDimTime" = <00b864d945000000>
+      |     "IOMatchCategory" = "IOHID"
+      |     "IOClass" = "IOHIDSystem"
+      |     "HIDParameters" = {"HIDStickyKeysDisabled"=<00000000>,"HIDStickyKeysShiftToggles"=<00000000>,"HIDKeyRepeat"=<d590f70400000000>,"HIDInitialKeyRepeat"=<0065cd1d00000000>,"HIDStickyKeysOn"=<00000000>,"HIDF12EjectDelay"=<fa000000>,"HIDAutoDimBrightness"=<00000000>,"HIDWaitCursorFrameInterval"=<01fca057>,"HIDPointerAcceleration"=<00800000>,"HIDClickSpace"=<00000000>,"HIDSlowKeysDelay"=<00000000>,"HIDClickTime"=<0065cd1d00000000>,"HIDScrollAcceleration"=<00500000>,"HIDPointerButtonMode"=<02000000>,"HIDAutoDimThreshold"=<00b864d945000000>}
+      |     "HIDBrightness" = <"@">
+      |     "IOProviderClass" = "IOResources"
+      |     "IOProbeScore" = 0
+      |     "HIDAutoDimState" = <00000000>
+      |     "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+      |     "IOResourceMatch" = "IOKit"
+      |     "HIDIdleTime" = <0000000000000000>
+      |   }
+      |   
+      +-o IODisplayWrangler  <class IODisplayWrangler>
+      |   {
+      |     "Power Management protected data" = "{ theNumberOfPowerStates = 5, version 1, power state 0 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000000, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 1 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 2 = { capabilityFlags 00000000, outputPowerCharacter 00000000, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 3 = { capabilityFlags 00008040, outputPowerCharacter 00000000, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, power state 4 = { capabilityFlags 00008040, outputPowerCharacter 00000000, inputPowerRequirement 00000002, staticPower 0, unbudgetedPower 0, powerToAttain 0, timeToAttain 0, settleUpTime 0, timeToLower 0, settleDownTime 0, powerDomainBudget 0 }, aggressiveness = 0, myCurrentState = 4, parentsCurrentPowerFlags = 00000002, maxCapability = 4 }"
+      |     "IOMatchCategory" = "IOGraphics"
+      |     "IOClass" = "IODisplayWrangler"
+      |     "IOProviderClass" = "IOResources"
+      |     "IOProbeScore" = 0
+      |     "CFBundleIdentifier" = "com.apple.iokit.IOGraphicsFamily"
+      |     "IOResourceMatch" = "IOKit"
+      |     "Power Management private data" = "{ this object = 20b8ca80, interested driver = 20b56400, interested driver = 20b8ca80, driverDesire = 0, deviceDesire = 4, ourDesiredPowerState = 4, previousRequest = 66 }"
+      |     "IOGeneralInterest" = ("_IOServiceInterestNotifier is not serializable")
+      |   }
+      |   
+      +-o IOBSDConsole  <class IOBSDConsole>
+          {
+            "IOProviderClass" = "IOResources"
+            "IOProbeScore" = 0
+            "IOMatchCategory" = "IOBSDConsole"
+            "CFBundleIdentifier" = "com.apple.iokit.IOHIDSystem"
+            "IOResourceMatch" = "IOBSD"
+            "IOClass" = "IOBSDConsole"
+          }
+          

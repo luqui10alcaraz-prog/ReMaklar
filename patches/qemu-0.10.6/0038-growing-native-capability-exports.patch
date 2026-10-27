@@ -1,0 +1,199 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -706,7 +706,7 @@
+                 memset(native_iokit_ports,0,sizeof(native_iokit_ports));
+                 memset(native_ports,0,sizeof(native_ports));
+ #ifdef __APPLE__
+-                if(native_sparse_capacity)memset(native_sparse_ports,0,native_sparse_capacity*sizeof(*native_sparse_ports));
++                if(native_sparse_capacity)memset(native_sparse_ports,0,native_sparse_capacity*sizeof(*native_sparse_ports));native_extended_next=0x01000000U;
+ #endif
+                 memset(native_processor_sets,0,sizeof(native_processor_sets));
+                 memset(native_notification_kind,0,sizeof(native_notification_kind));
+@@ -1265,7 +1265,7 @@
+ #ifdef __APPLE__
+     if(size==24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+20))==3600 && rm_is_thread(ldl(g2h(a+8))))rm_thread_exit(env,ldl(g2h(a+8)));
+     if(!(env->gpr[4]&MACH_SEND_MSG) || (size>=24 && remaklar_guest_access(a,24,PAGE_READ) && ldl(g2h(a+8))<4096 && native_ports[ldl(g2h(a+8))] && !native_task_request(ldl(g2h(a+8)),ldl(g2h(a+20))) && !(ldl(g2h(a+20))==3616 && rm_is_thread(ldl(g2h(a+8)))) && !(native_processor_sets[ldl(g2h(a+8))] && ldl(g2h(a+20))>=4002 && ldl(g2h(a+20))<=4004)))return native_message(env);
+-    if(size>=24 && remaklar_guest_access(a,24,PAGE_READ) && native_sparse_port(ldl(g2h(a+8))) && !native_task_request(ldl(g2h(a+8)),ldl(g2h(a+20))))return native_message(env);
++    if(size>=24 && remaklar_guest_access(a,24,PAGE_READ) && native_sparse_port(ldl(g2h(a+8))) && !native_task_request(ldl(g2h(a+8)),ldl(g2h(a+20))) && !(ldl(g2h(a+20))==3616 && rm_is_thread(ldl(g2h(a+8)))) && !((native_metadata(ldl(g2h(a+8)))&0x100) && ldl(g2h(a+20))>=4002 && ldl(g2h(a+20))<=4004))return native_message(env);
+ #endif
+     if (size < 24 || size > 4096 || !remaklar_guest_access(a, size, PAGE_READ))
+         qerror("invalid Mach message request");
+@@ -1311,7 +1311,7 @@
+         mach_port_t port=0;
+         if(destination!=HOST_SELF || size!=40 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=19){code=4;break;}
+         code=host_processor_set_priv(mach_host_self(),native_name(ldl(g2h(a+28))),&port);
+-        if(!code){uint32_t guest=native_export(port);native_processor_sets[guest]=1;complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;length=40;}
++        if(!code){uint32_t guest=native_export(port);native_set_metadata(guest,0x100);complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;length=40;}
+ #else
+         code=4;
+ #endif
+@@ -1334,7 +1334,7 @@
+         mach_port_t port=0;
+         if(destination!=HOST_SELF || size!=24){code=4;break;}
+         code=processor_set_default(mach_host_self(),&port);
+-        if(!code){uint32_t guest=native_export(port);native_processor_sets[guest]=1;complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;length=40;}
++        if(!code){uint32_t guest=native_export(port);native_set_metadata(guest,0x100);complex=0x80000000;stl(answer+24,1);stl(answer+28,guest);answer[38]=17;length=40;}
+ #else
+         code=4;
+ #endif
+@@ -1497,7 +1497,7 @@
+             base=56+((namebytes+3)&~3);count=ldl(g2h(a+base));if(count>8 || size!=base+4+count*4)qerror("invalid interest reference count");
+             for(j=0;j<count;j++)refs[j]=ldl(g2h(a+base+4+j*4));guest=ldl(g2h(a+28));
+             code=((interest_fn)native_iokit_symbol("_io_service_add_interest_notification"))(endpoint,g2h(a+56),native_name(guest),refs,count,&notification);
+-            if(!code){if(guest<4096)native_notification_kind[guest]=2;complex=0x80000000;stl(answer+24,1);stl(answer+28,native_iokit_export(notification));answer[38]=17;length=40;}
++            if(!code){native_set_metadata(guest,2);complex=0x80000000;stl(answer+24,1);stl(answer+28,native_iokit_export(notification));answer[38]=17;length=40;}
+             fprintf(stderr,"native IOKit interest name=%s result=%u\n",(char *)g2h(a+56),code);
+         }
+ #else
+@@ -1512,7 +1512,7 @@
+             if(destination>=4096 || !(endpoint=native_iokit_ports[destination]) || size!=56 || ldl(g2h(a+24))!=1 || ldub(g2h(a+38))!=20)qerror("invalid IOKit notification request");
+             guest=ldl(g2h(a+28));
+             code=((notify_fn)native_iokit_symbol("_io_connect_set_notification_port"))(endpoint,ldl(g2h(a+48)),native_name(guest),ldl(g2h(a+52)));
+-            if(!code && guest<4096)native_notification_kind[guest]=1;
++            if(!code)native_set_metadata(guest,1);
+             fprintf(stderr,"native IOKit notification type=%u guest_port=%x result=%u\n",ldl(g2h(a+48)),guest,code);
+         }
+ #else
+@@ -2047,7 +2047,7 @@
+ #ifdef __APPLE__
+         {
+             mach_port_t port=mk_timer_create();uint32_t guest=native_export(port);
+-            if(guest && guest<4096)native_notification_kind[guest]=3;
++            if(guest)native_set_metadata(guest,3);
+             return guest;
+         }
+ #else
+--- a/darwin-user/remaklar/mach-native.inc
++++ b/darwin-user/remaklar/mach-native.inc
+@@ -9,8 +9,9 @@
+ extern kern_return_t mach_make_memory_entry_64(mach_port_t,unsigned long long *,unsigned long long,vm_prot_t,mach_port_t *,mach_port_t);
+ extern kern_return_t vm_map_64(mach_port_t,vm_address_t *,vm_size_t,vm_address_t,int,mach_port_t,unsigned long long,boolean_t,vm_prot_t,vm_prot_t,vm_inherit_t);
+ /* Explicit 32-bit names used by ATS as receive-port context keys. */
+-static struct rm_sparse_port {uint32_t name;mach_port_t port;} *native_sparse_ports;
++static struct rm_sparse_port {uint32_t name;mach_port_t port;uint32_t metadata;} *native_sparse_ports;
+ static unsigned native_sparse_capacity;
++static uint32_t native_extended_next=0x01000000U;
+ static unsigned native_sparse_slot(uint32_t oldname)
+ {
+  unsigned i,old_capacity=native_sparse_capacity,new_capacity;void *grown;
+@@ -39,6 +40,21 @@
+     if(name<4096 && native_ports[name])return native_ports[name];
+     return name<4096 && native_iokit_ports[name]?native_iokit_ports[name]:MACH_PORT_DEAD;
+ }
++/* Typed metadata follows the capability even beyond the fixed fast table. */
++static uint32_t native_metadata(uint32_t name)
++{
++ unsigned i;
++ if(name<4096)return native_notification_kind[name]|(native_processor_sets[name]?0x100U:0);
++ for(i=0;i<native_sparse_capacity;i++)if(native_sparse_ports[i].name==name)return native_sparse_ports[i].metadata;
++ return 0;
++}
++static void native_set_metadata(uint32_t name,uint32_t value)
++{
++ unsigned i;
++ if(name<4096){native_notification_kind[name]=value&255;native_processor_sets[name]=(value&0x100)!=0;return;}
++ for(i=0;i<native_sparse_capacity;i++)if(native_sparse_ports[i].name==name && native_sparse_ports[i].port){native_sparse_ports[i].metadata=value;return;}
++ qerror("metadata for unknown native capability %x",name);
++}
+ /* pid_for_task is an in-kernel trap: unlike probing an RPC, it never
+  * sends a message to an application endpoint. Native reference kobj40. */
+ static int native_task_request(uint32_t guest,uint32_t id)
+@@ -72,7 +88,14 @@
+     if(!port || port==MACH_PORT_DEAD)return port;
+     for(guest=0;guest<native_sparse_capacity;guest++)if(native_sparse_ports[guest].port==port)return native_sparse_ports[guest].name;
+     for(guest=0x200;guest<4096;guest++)if(native_ports[guest]==port){native_refresh(guest);return guest;}
+-    if(next_port>=4096)qerror("native Mach capability table exhausted");
++    if(next_port>=4096) {
++        unsigned slot;
++        while(native_extended_next!=0xffffffffU && native_sparse_port(native_extended_next))native_extended_next++;
++        if(native_extended_next==0xffffffffU)qerror("native Mach name space exhausted");
++        guest=native_extended_next++;slot=native_sparse_slot(guest);
++        native_sparse_ports[slot].name=guest;native_sparse_ports[slot].port=port;native_sparse_ports[slot].metadata=0;
++        fprintf(stderr,"native extended capability guest=%x host=%u\n",guest,port);return guest;
++    }
+     guest=next_port++;native_ports[guest]=port;native_refresh(guest);
+     fprintf(stderr,"native Mach capability guest=%x host=%u receive=%u set=%u send=%u\n",guest,port,receive_rights[guest],port_sets[guest],send_refs[guest]);
+     return guest;
+@@ -150,7 +173,7 @@
+         uint32_t length=h->msgh_size,remote,local;
+         if(length>cap || length<24)qerror("native Mach receive bounds");
+         local=native_export(h->msgh_local_port);
+-        if(local<4096 && native_notification_kind[local]==2 && h->msgh_id==53) {
++        if((native_metadata(local)&255)==2 && h->msgh_id==53) {
+             uint32_t type=*(uint32_t *)(buffer+28);
+             if(length<64)qerror("short IOKit notification");
+             if(type==160 && length!=72)qerror("structured IOKit interest argument needs typed conversion, bytes=%u",length);
+@@ -187,7 +210,7 @@
+         }
+         stl(buffer,h->msgh_bits);stl(buffer+4,length);stl(buffer+8,remote);stl(buffer+12,local);
+         stl(buffer+16,h->msgh_reserved);stl(buffer+20,h->msgh_id);
+-        if(local<4096 && native_notification_kind[local]==3) {
++        if((native_metadata(local)&255)==3) {
+             unsigned j;
+             if(length!=48 || (h->msgh_bits&MACH_MSGH_BITS_COMPLEX))qerror("unexpected native mk_timer message layout");
+             for(j=24;j<48;j+=8){uint64_t value;memcpy(&value,buffer+j,8);stq(buffer+j,value);}
+@@ -338,38 +361,29 @@
+         fprintf(stderr,"native shared map object=%u offset=%llu bytes=%u result=%u\n",port,offset,bytes,kr);*code=kr;return 1;
+     }
+     if(id==3202) {
+-        uint32_t oldname,newname,i,slot;mach_port_t oldport;
++        uint32_t oldname,newname,i,slot,metadata;mach_port_t oldport;
+         if(size!=40)qerror("invalid mach_port_rename wire");
+         oldname=ldl(g2h(a+32));newname=ldl(g2h(a+36));oldport=native_name(oldname);
+         if(newname<4096)qerror("low explicit Mach rename needs separate native-name allocation");
++        if(oldname==newname){*code=mach_port_rename(mach_task_self(),oldport,oldport);return 1;}
++        native_refresh(newname);
++        if(native_sparse_port(newname)){*code=KERN_NAME_EXISTS;return 1;}
++        metadata=native_metadata(oldname);
+         slot=native_sparse_slot(oldname);
+         kr=mach_port_rename(mach_task_self(),oldport,newname);
+         if(!kr) {
+             if(oldname>=4096){for(i=0;i<native_sparse_capacity;i++)if(native_sparse_ports[i].name==oldname){memset(&native_sparse_ports[i],0,sizeof(native_sparse_ports[i]));break;}}
+             else native_refresh(oldname);
+-            native_sparse_ports[slot].name=newname;native_sparse_ports[slot].port=newname;
++            native_sparse_ports[slot].name=newname;native_sparse_ports[slot].port=newname;native_sparse_ports[slot].metadata=metadata;
+         }
+         fprintf(stderr,"native explicit Mach rename old=%x new=%x result=%u\n",oldname,newname,kr);*code=kr;return 1;
+-    }
+-    if(id>=3201 && id<=3227 && size>=36 && ldl(g2h(a+32))>=4096 && native_sparse_port(ldl(g2h(a+32)))) {
+-        uint32_t name=ldl(g2h(a+32));port=native_name(name);
+-        switch(id) {
+-        case 3201:kr=mach_port_type(mach_task_self(),port,&type);if(!kr){stl(answer+36,type);*length=40;}break;
+-        case 3205:kr=mach_port_destroy(mach_task_self(),port);break;
+-        case 3206:kr=mach_port_deallocate(mach_task_self(),port);break;
+-        case 3207:kr=mach_port_get_refs(mach_task_self(),port,ldl(g2h(a+36)),&refs);if(!kr){stl(answer+36,refs);*length=40;}break;
+-        case 3208:kr=mach_port_mod_refs(mach_task_self(),port,ldl(g2h(a+36)),(int32_t)ldl(g2h(a+40)));break;
+-        case 3212:kr=mach_port_move_member(mach_task_self(),port,native_name(ldl(g2h(a+36))));break;
+-        default:qerror("explicit Mach name RPC %u requires native conversion",id);
+-        }
+-        native_refresh(name);*code=kr;return 1;
+     }
+     if(id==3214) {
+         uint32_t name,right;
+         if(size!=52 || ldl(g2h(a+24))!=1)qerror("native insert right wire");
+         name=ldl(g2h(a+48));right=ldl(g2h(a+28));
+-        if(name!=right || name>=4096 || !native_ports[name]){*code=KERN_INVALID_RIGHT;return 1;}
+-        *code=mach_port_insert_right(mach_task_self(),native_ports[name],native_name(right),ldub(g2h(a+38)));native_refresh(name);return 1;
++        if(name!=right || native_name(name)==MACH_PORT_DEAD){*code=KERN_INVALID_RIGHT;return 1;}
++        *code=mach_port_insert_right(mach_task_self(),native_name(name),native_name(right),ldub(g2h(a+38)));native_refresh(name);return 1;
+     }
+     if(id==3213) {
+         uint32_t name,notify;
+@@ -388,7 +402,7 @@
+     /* Preserve the older typed treatment of synthetic task/host and IOKit
+      * capabilities until those paths explicitly acquire native rights. */
+     if(g<4096 && native_iokit_ports[g])return 0;
+-    if(g>=4096 || !native_ports[g]) {
++    if((g>=4096 && !native_sparse_port(g)) || (g<4096 && !native_ports[g])) {
+         if(g && g!=0xffffffffU){if(g>=0x200){*code=KERN_INVALID_NAME;return 1;}return 0;}
+     }
+     port=native_name(g);
+@@ -414,7 +428,7 @@
+         mach_port_limits_t limits;limits.mpl_qlimit=ldl(g2h(a+44));kr=mach_port_set_attributes(mach_task_self(),port,ldl(g2h(a+36)),(mach_port_info_t)&limits,1);break;
+     }
+     case 3226:case 3227:set=ldl(g2h(a+36));kr=id==3226?mach_port_insert_member(mach_task_self(),port,native_name(set)):mach_port_extract_member(mach_task_self(),port,native_name(set));break;
+-    default:return 0;
++    default:if(g>=4096)qerror("native extended-name RPC %u requires conversion",id);return 0;
+     }
+     native_refresh(g);*code=kr;return 1;
+ }

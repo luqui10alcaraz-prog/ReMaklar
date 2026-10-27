@@ -1,0 +1,80 @@
+--- a/darwin-user/remaklar/live-regions.inc
++++ b/darwin-user/remaklar/live-regions.inc
+@@ -77,6 +77,8 @@
+         (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
+         native_iomappings[i].bytes,pos,f) || rm_hid_auxmouse_field(
+         (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
++        native_iomappings[i].bytes,pos,f) || rm_hid_tracking_field(
++        (volatile unsigned char *)(uintptr_t)native_iomappings[i].address,
+         native_iomappings[i].bytes,pos,f));
+ }
+ 
+@@ -92,7 +94,15 @@
+             if(n>live_start[i]+live_extent[i]-pos)qerror("pixel access crosses verified front buffer");
+         }
+         if(!remaklar_guest_access(address,n,write?PAGE_WRITE:PAGE_READ))qerror("live shared memory protection violation address=%lx",(unsigned long)address);
+-        if(!live_mapped_field(i,pos,f))qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
++        if(!live_mapped_field(i,pos,f)) {
++            if(live_kind[i]==2 && pos>=232 && pos<232+240*84) {
++                unsigned entry=232+((pos-232)/84)*84;
++                if(native_iomappings[i].bytes-entry>=84)fprintf(stderr,"native HID unsupported union slot=%u type=%u subtype16=%u\n",(pos-232)/84,
++                    *(volatile uint32_t *)(uintptr_t)(native_iomappings[i].address+entry+8),
++                    *(volatile unsigned short *)(uintptr_t)(native_iomappings[i].address+entry+38));
++            }
++            qerror("unverified live shared field kind=%u offset=%u width=%u",live_kind[i],pos,n);
++        }
+         /* Compose only adjacent declared fields, never select a union by
+          * instruction width. A pair of shorts remains one atomic host word. */
+         if(n>=4 && !(pos&3) && f->offset==pos && f->kind==RM_NUMBER && (f->size==1 || f->size==2)) {
+--- a/darwin-user/remaklar/typed-live.c
++++ b/darwin-user/remaklar/typed-live.c
+@@ -53,6 +53,19 @@
+     if(entry>=232+240*84 || within<36 || bytes-entry<84)return 0;
+     if(*(volatile rm_u32 *)(base+entry+8)!=14 ||
+        *(volatile unsigned short *)(base+entry+38)!=7)return 0;
++    data=within-36;f->offset=entry+36+(data/4)*4;f->size=4;
++    f->kind=data<4?RM_PAIR16:RM_NUMBER;return 1;
++}
++
++/* Native tracking union: two int16 fields, followed by eleven int32 fields. */
++int rm_hid_tracking_field(volatile unsigned char *base,unsigned bytes,unsigned pos,
++                         struct rm_field *f)
++{
++    unsigned entry,within,data,type;
++    if(pos<232 || pos>=bytes)return 0;
++    entry=232+((pos-232)/84)*84;within=(pos-232)%84;
++    if(entry>=232+240*84 || within<36 || bytes-entry<84)return 0;
++    type=*(volatile rm_u32 *)(base+entry+8);if(type!=8 && type!=9)return 0;
+     data=within-36;f->offset=entry+36+(data/4)*4;f->size=4;
+     f->kind=data<4?RM_PAIR16:RM_NUMBER;return 1;
+ }
+@@ -133,7 +146,9 @@
+ static rm_u64 logical(const struct rm_field *f,rm_u64 x)
+ {
+     /* PPC's first declared bitfield occupies the MSBs, i386's the LSBs. */
+-    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x>>27)|((rm_u32)x<<5));
++    if(f->kind==RM_HID_BITS)return (rm_u32)((((rm_u32)x&0x07ffffffU)<<5)|
++        (((rm_u32)x>>31)&1)|(((rm_u32)x>>29)&2)|(((rm_u32)x>>27)&4)|
++        (((rm_u32)x>>25)&8)|(((rm_u32)x>>23)&16));
+     if(f->kind==RM_PAIR16)return (rm_u32)(((rm_u32)x>>16)|((rm_u32)x<<16));
+     if(f->kind==RM_MOUSE_PREFIX)return (rm_u32)(((x&255)<<24)|((x&65280)<<8)|((rm_u32)x>>16));
+     if(f->kind==RM_BYTES){rm_u64 result=0;unsigned i;for(i=0;i<f->size;i++){result=(result<<8)|(x&255);x>>=8;}return result;}
+@@ -141,7 +156,9 @@
+ }
+ static rm_u64 physical(const struct rm_field *f,rm_u64 x)
+ {
+-    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x<<27)|((rm_u32)x>>5));
++    if(f->kind==RM_HID_BITS)return (rm_u32)(((rm_u32)x>>5)|
++        (((rm_u32)x&1)<<31)|(((rm_u32)x&2)<<29)|(((rm_u32)x&4)<<27)|
++        (((rm_u32)x&8)<<25)|(((rm_u32)x&16)<<23));
+     if(f->kind==RM_PAIR16 || f->kind==RM_BYTES)return logical(f,x);
+     if(f->kind==RM_MOUSE_PREFIX)return (rm_u32)(((rm_u32)x>>24)|(((rm_u32)x>>8)&65280)|((rm_u32)x<<16));
+     return x;
+--- a/darwin-user/remaklar/typed-live.h
++++ b/darwin-user/remaklar/typed-live.h
+@@ -19,4 +19,5 @@
+ int rm_hid_key_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
+ int rm_hid_mouse_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
+ int rm_hid_auxmouse_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
++int rm_hid_tracking_field(volatile unsigned char *,unsigned,unsigned,struct rm_field *);
+ #endif

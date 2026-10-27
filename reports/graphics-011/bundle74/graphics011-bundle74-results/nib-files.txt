@@ -1,0 +1,6 @@
+total 14
+drwxr-xr-x  2 1000  1000  1024 Jul 29  2002 .
+drwxr-xr-x  6 1000  1000  1024 Jul 29  2002 ..
+-rw-r--r--  1 1000  1000   936 Jul 27  2002 classes.ni
+-rw-r--r--  1 1000  1000   563 Jul 27  2002 info.nib
+-rw-r--r--  1 1000  1000  2848 Jul 27  2002 objects.ni

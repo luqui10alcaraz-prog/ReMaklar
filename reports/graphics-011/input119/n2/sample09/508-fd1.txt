@@ -1,0 +1,31 @@
+layout NXEvent=76 NXEQElement=84 NXEventData=48 lleq=224 data=36 time=20 key=8 repeat=2 keyboardType=16
+devices pointing=1 keyboard=1 ps2mouse=1 usbmouse=0
+open=0
+create=0
+map=0 bytes=20392
+shared version=3 size=20384 offsets=8,20392
+enable=0
+framebuffer open=3758097101
+framebuffer open=0
+native cursor shared object=0
+native register framebuffer=0
+native enable cursor=0
+READY real hardware input, 15 seconds
+tick=0 head=1 tail=1 cursor=214,767
+tick=1 head=1 tail=1 cursor=214,767
+event type=10 location=214,767 key=0 char=97 orig=97 repeat=0 keyboardType=1
+event type=11 location=214,767 key=0 char=97 orig=97 repeat=0 keyboardType=1
+event type=14 location=214,767
+event type=1 location=214,767 subxy=0,0 eventNum=14 click=1 pressure=255 subtype=0
+event type=6 location=258,545 dx=44 dy=-222 subtype=0
+tick=2 head=6 tail=6 cursor=258,545
+event type=6 location=327,483 dx=69 dy=-62 subtype=0
+tick=3 head=7 tail=7 cursor=327,483
+tick=4 head=7 tail=7 cursor=327,483
+tick=5 head=7 tail=7 cursor=327,483
+tick=6 head=7 tail=7 cursor=327,483
+tick=7 head=7 tail=7 cursor=327,483
+tick=8 head=7 tail=7 cursor=327,483
+tick=9 head=7 tail=7 cursor=327,483
+tick=10 head=7 tail=7 cursor=327,483
+tick=11 head=7 tail=7 cursor=327,483

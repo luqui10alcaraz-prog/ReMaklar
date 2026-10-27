@@ -1,0 +1,63 @@
+ch receive port=409 bytes=56 id=29029
+syscall pc=24e60328 r0=4294967265 r3=223894d0 r4=00000003 r5=00000058 r6=00000030 r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3826 destination=44a send=88 recv=48: 80001513 44f9a5f0 0000044a 00000204 00000000 00000ef2 00000001 000004ba 384dfa98 00001300 00000000 00000000 45004000 00001000 00000000 00000001 00000000 00000000 00000000 00000003 00000003 00000002
+native remote task map task=44a object=21763 address=47124000 bytes=4096 result=0
+syscall pc=24e60328 r0=4294967265 r3=22389590 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000002 00000101 00000204 47124000 00000c86 00000000 00000000 0000044a
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=0000002c r6=00008000 r7=00000407 r8=0000133a lr=24df2844 res=ffffffff
+native Mach send id=29129 destination=4bb bytes=44
+native Mach capability guest=4bc host=19655 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=36 id=29278
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000034 r6=00008000 r7=00000407 r8=00001330 lr=24df2844 res=ffffffff
+native Mach send id=29378 destination=4bc bytes=52
+native Mach capability guest=4bd host=19659 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29221
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00001324 lr=24df2844 res=ffffffff
+native Mach send id=29321 destination=4bd bytes=36
+native Mach capability guest=4be host=19663 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29219
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=00001317 lr=24df2844 res=ffffffff
+native Mach send id=29319 destination=4be bytes=36
+native Mach capability guest=4bf host=19667 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=80 id=29247
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=0000130f lr=24df2844 res=ffffffff
+native Mach send id=29347 destination=4bf bytes=36
+native Mach capability guest=4c0 host=19671 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29400
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=000012f7 lr=24df2844 res=ffffffff
+native Mach send id=29500 destination=4c0 bytes=36
+native Mach capability guest=4c1 host=19675 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=36 id=29259
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000028 r6=00008000 r7=00000407 r8=000012f1 lr=24df2844 res=ffffffff
+native Mach send id=29359 destination=4c1 bytes=40
+native Mach capability guest=4c2 host=19679 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29280
+syscall pc=24ded4e8 r0=4294967264 r3=4517a000 r4=02000103 r5=00000024 r6=00008000 r7=00000407 r8=0000121b lr=24df2844 res=ffffffff
+native Mach send id=29380 destination=4c2 bytes=36
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=76 id=29275
+syscall pc=24e60328 r0=4294967265 r3=223917e0 r4=02000102 r5=00000000 r6=00008000 r7=00000407 r8=00000f12 lr=24df2670 res=ffffffff
+native Mach message error=10004003 options=2000102 send=0 receive=32768
+syscall pc=24e60328 r0=4294967265 r3=223917e0 r4=02000102 r5=00000000 r6=00008000 r7=00000407 r8=000009af lr=24df2670 res=ffffffff
+native Mach message error=10004003 options=2000102 send=0 receive=32768
+syscall pc=24e60328 r0=4294967265 r3=223917e0 r4=02000102 r5=00000000 r6=00008000 r7=00000407 r8=00001373 lr=24df2670 res=ffffffff
+native Mach message error=10004003 options=2000102 send=0 receive=32768
+syscall pc=24e60328 r0=4294967265 r3=22399420 r4=00000003 r5=0000002c r6=00000030 r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 00000000 00000101 00000204 44f9cbd8 00000ed9 00000000 00000000 00000000 00193000 00000001
+syscall pc=24e60328 r0=4294967265 r3=223993d0 r4=00000003 r5=0000002c r6=0000002c r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3810 destination=101 send=44 recv=44: 00001513 22399420 00000101 00000204 22399460 00000ee2 00000000 00000000 462f8000 0010f000 00000008
+syscall pc=24e60328 r0=4294967265 r3=22399420 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 4640da30 00000101 00000204 46407000 00000eda 00000000 00000000 4640e000 0018c000
+syscall pc=24e60328 r0=4294967265 r3=22399480 r4=00000003 r5=00000030 r6=0000002c r7=00000204 r8=00000000 lr=24df2670 res=ffffffff
+mach_rpc id=3803 destination=101 send=48 recv=44: 00001513 00000024 00000101 00000204 00000000 00000edb 00000000 00000000 46407000 00007000 00000000 00000001
+syscall pc=24e60328 r0=4294967265 r3=223917e0 r4=02000102 r5=00000000 r6=00008000 r7=00000407 r8=00001373 lr=24df2670 res=ffffffff
+native Mach capability guest=4c3 host=19683 receive=0 set=0 send=0
+native Mach trailer bytes=20 elements=2
+native Mach receive port=447 bytes=40 id=29280

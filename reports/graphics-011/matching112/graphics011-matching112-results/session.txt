@@ -1,0 +1,33 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;paths=graphics011-matching112-results;if test -d graphics011-joint112;then paths="$paths graphics011-joint112";fi;gnutar czf /exchange/RUNS/match112.tgz $paths;sync;umount /exchange' 0
++ cp /var/tmp/graphics011-stage112/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build112/qemu-ppc
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage112/matching.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-matching112-results/matching-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage112/matching.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-matching112-results/matching-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-matching112-results/native /var/tmp/graphics011-matching112-results/matching-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-matching112-results/previous /var/tmp/graphics011-build108/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-matching112-results/matching-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-matching112-results/previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-matching112-results/jaguar /var/tmp/graphics011-build112/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-matching112-results/matching-ppc
++ cmp /var/tmp/graphics011-matching112-results/native.stdout /var/tmp/graphics011-matching112-results/jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-matching112-results/native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-matching112-results/native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-matching112-results/jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-matching112-results/jaguar.status
++ echo probes_completed
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ export REMAKLAR_JOINT_SAMPLES=72
++ REMAKLAR_JOINT_SAMPLES=72
++ perl /var/tmp/graphics011-stage112/joint.pl /var/tmp/graphics011-joint112 /var/tmp/graphics011-build112/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ paths=graphics011-matching112-results
++ test -d graphics011-joint112
++ paths=graphics011-matching112-results graphics011-joint112
++ gnutar czf /exchange/RUNS/match112.tgz graphics011-matching112-results graphics011-joint112

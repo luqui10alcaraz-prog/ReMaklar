@@ -1,0 +1,118 @@
+9734572 726f7200
+observe memory r27: 70617468 466f7252 65736f75 7263653a 6f665479 70653a00 70617468 466f7252 65736f75 7263653a 6f665479 70653a69 6e446972 6563746f 72793a00 70617468
+observe memory r28: 35788868 357855f8 258646b4 00000000 00000101 00000024 357982bc 24e47b20 24e6fe30 00000000 00000000 00000000 35788898 35786708 2586c564 00000000
+observe memory r29: 35785e38 00e00000 00500061 00670065 00640049 006e0073 00740061 006c006c 00650072 00000000 00000000 00000002 350c8d40 000207c0 283aaf10 0000000d
+observe memory r31: 7c0802a6 3c8c0fe6 90010008 3c6c0fe6 808449e8 bee1ffdc 80635068 7d9f6378 9421ff90 7cbd2b78 38a00000 7cd93378 481acb05 3c9f0fe6 80844a08 481acaf9
+PPC observation pid=2535 pc=281cf79c lr=281cf798
+observe r3=24e71ba0
+observe r4=256405c8
+observe r5=0000000c
+observe r6=00000080
+observe r7=ffffffff
+observe r8=24e34010
+observe r9=00000060
+observe r10=35778278
+observe r11=00000013
+observe r12=24f995c0
+observe r13=00000000
+observe r14=00000000
+observe r15=00000000
+observe r16=00000000
+observe r17=00000000
+observe r18=00000000
+observe r19=00000000
+observe r20=00000000
+observe r21=00000000
+observe r22=00000000
+observe r23=24e3b0c0
+observe r24=3802f684
+observe r25=24e4db30
+observe r26=256565a0
+observe r27=2565e5d0
+observe r28=35785958
+observe r29=24e6e150
+observe r30=24e71ba0
+observe r31=281cf684
+observe memory r23: 357853b8 00000001 00000000 00000000 00000000 00000000 00000000 00000002 00000003 00000002 24e552e8 24e552f4 00000000 00000000 00000000 00000002
+observe memory r24: 256767c4 2563341c 256769fc 25676670 2567685c 25643b58 283d4d8c 2563d7b0 256517c4 256279d0 283d283c 283d2810 25652db8 2563da48 2566bc1c 25632400
+observe memory r25: 380349ec 00000000 00000000 24e6db30 00000000 00000000 00000000 00000000 00000000 00000447 00000000 00000000 00000000 20000000 00000000 00000000
+observe memory r26: 69734571 75616c54 6f537472 696e673a 00000000 69734571 75616c54 6f54696d 655a6f6e 653a0000 69734571 75616c54 6f56616c 75653a00 69734572 726f7200
+observe memory r27: 70617468 466f7252 65736f75 7263653a 6f665479 70653a00 70617468 466f7252 65736f75 7263653a 6f665479 70653a69 6e446972 6563746f 72793a00 70617468
+observe memory r28: 35788868 357855f8 258646b4 00000000 00000101 00000024 357982bc 24e47b20 24e6fe30 00000000 00000000 00000000 35788898 35786708 2586c564 00000000
+observe memory r29: 35785e38 00e00000 00500061 00670065 00640049 006e0073 00740061 006c006c 00650072 00000000 00000000 00000002 350c8d40 000207c0 283aaf10 0000000d
+observe memory r30: 350c8d40 0001078c 592f4170 706c6963 6174696f 6e732f55 74696c69 74696573 2f496e73 74616c6c 65722e61 70702f43 6f6e7465 6e74732f 5265736f 75726365
+observe memory r31: 7c0802a6 3c8c0fe6 90010008 3c6c0fe6 808449e8 bee1ffdc 80635068 7d9f6378 9421ff90 7cbd2b78 38a00000 7cd93378 481acb05 3c9f0fe6 80844a08 481acaf9
+syscall pc=2500c328 r0=4294967265 r3=22399490 r4=00000003 r5=00000018 r6=0000003c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3402 destination=101 send=24 recv=60: 00001513 223994f0 00000101 00000202 223994f0 00000d4a
+native task_threads real count=1 guest_array=24ea2000
+syscall pc=2500c328 r0=4294967265 r3=223994b0 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00011102 00000101 00000202 00000001 00000c86 00000000 00000000 00000401
+syscall pc=2500c328 r0=4294967265 r3=223994b0 r4=00000003 r5=00000028 r6=0000002c r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 00000024 00000101 00000202 00000000 00000eda 00000000 00000000 24ea2000 00000004
+syscall pc=8fea2188 r0=4294967265 r3=22399820 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 00000000 00000101 00000202 350ca364 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24fa3dc8 r0=188 r3=22399230 r4=22399640 r5=00000000 r6=22399230 r7=00000400 r8=22399110 lr=257af88c res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Frameworks/AppKit.framework result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa3dcc
+syscall pc=24fa7b08 r0=33 r3=22399230 r4=00000004 r5=00000000 r6=22399230 r7=00000400 r8=22399110 lr=257af8b4 res=ffffffff
+return r3=0 error=0 resume=24fa7b0c
+syscall pc=24fa8568 r0=190 r3=22398ff0 r4=22399460 r5=00000002 r6=000000e1 r7=a1b1c1d3 r8=24e34010 lr=2577c0f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fadbe8 r0=157 r3=24e71e30 r4=22399320 r5=24e71e30 r6=0000005a r7=00000000 r8=00000001 lr=257a5d18 res=ffffffff
+return r3=0 error=0 resume=24fadbec
+syscall pc=24fadba8 r0=220 r3=24e70f10 r4=223980f0 r5=22397da0 r6=00000334 r7=00000000 r8=00000000 lr=251c7db4 res=ffffffff
+native getattrlist path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib masks=381ab/0/0/0/0 result=-1 errno=45
+return r3=45 error=45 resume=24fadba8
+syscall pc=24fa8568 r0=190 r3=24e71150 r4=22397440 r5=0000003e r6=80808080 r7=00000001 r8=6200d144 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24e71150 r4=22397440 r5=0000003e r6=80808080 r7=00000001 r8=6200d144 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24e71150 r4=22397440 r5=0000003e r6=80808080 r7=00000001 r8=6200d144 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24e71150 r4=22397440 r5=0000003e r6=80808080 r7=00000001 r8=6200d144 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24e71150 r4=22397440 r5=0000003e r6=80808080 r7=00000001 r8=6200d144 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24e71150 r4=22397440 r5=0000003e r6=80808080 r7=00000001 r8=6200d144 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=24e71150 r4=22397440 r5=0000003e r6=80808080 r7=00000001 r8=6200d144 lr=251d9418 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22396e30 r4=22398a24 r5=373a3280 r6=80808080 r7=00000000 r8=006e7465 lr=251c7a40 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24fa8568 r0=190 r3=22394050 r4=22394f24 r5=22394050 r6=22394450 r7=22394020 r8=00000058 lr=251c1774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa856c
+syscall pc=24f9dca8 r0=5 r3=2238e070 r4=00000000 r5=000001ff r6=80808080 r7=00000000 r8=00000028 lr=251cfaa0 res=ffffffff
+guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib
+return r3=3 error=0 resume=24f9dcac
+syscall pc=24f9d608 r0=189 r3=00000003 r4=2238e470 r5=000001ff r6=80808080 r7=00000000 r8=00000028 lr=251cfac8 res=ffffffff
+return r3=0 error=0 resume=24f9d60c
+syscall pc=25003ae0 r0=116 r3=2238e4d0 r4=00000000 r5=0000005a r6=00006200 r7=722e6e69 r8=61676564 lr=24f9d770 res=ffffffff
+return r3=1793068284 error=0 resume=25003ae4
+syscall pc=24fa4348 r0=196 r3=00000003 r4=2238bf70 r5=00002000 r6=2238df70 r7=722e6e69 r8=61676564 lr=251d5f88 res=ffffffff
+return r3=124 error=0 resume=24fa434c
+syscall pc=24fa4348 r0=196 r3=00000003 r4=2238bf70 r5=00002000 r6=2238df70 r7=6374732e r8=0008c7a2 lr=251d5f88 res=ffffffff
+return r3=0 error=0 resume=24fa434c
+syscall pc=24fa36a8 r0=6 r3=00000003 r4=24e71150 r5=0000005f r6=0000002f r7=0000000c r8=24e34010 lr=251cfb74 res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=24f9dca8 r0=5 r3=22399830 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=350ca364 lr=25794edc res=ffffffff
+guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib
+return r3=3 error=0 resume=24f9dcac
+syscall pc=24f9d608 r0=189 r3=00000003 r4=22399770 r5=000001b6 r6=00000000 r7=ffffffff r8=350ca364 lr=25794ef0 res=ffffffff
+return r3=0 error=0 resume=24f9d60c
+syscall pc=24f99508 r0=3 r3=00000003 r4=24e72730 r5=00000b20 r6=00000000 r7=ffffffff r8=350ca364 lr=25795018 res=ffffffff
+return r3=2848 error=0 resume=24f9950c
+syscall pc=24fa36a8 r0=6 r3=00000003 r4=24e72730 r5=00000b20 r6=00000000 r7=ffffffff r8=350ca364 lr=2579507c res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=2500c328 r0=4294967265 r3=223999b0 r4=00000003 r5=0000002c r6=00000030 r7=00000202 r8=00000000 lr=24f9e670 res=ffffffff
+mach_rpc id=3801 destination=101 send=44 recv=48: 00001513 4400024e 00000101 00000202 22399b90 00000ed9 00000000 00000000 00000003 00040000 02000001

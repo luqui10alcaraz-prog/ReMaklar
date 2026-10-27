@@ -1,0 +1,54 @@
+ r0=24 r3=24f59ac0 r4=0000001e r5=00000010 r6=00000000 r7=22398290 r8=00000000 lr=25200a88 res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24f9dca8 r0=5 r3=223968e0 r4=00000002 r5=000001a4 r6=80808080 r7=00000000 r8=003968e0 lr=251fb78c res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Caches/com.apple.IntlDataCache
+return r3=8 error=0 resume=24f9dcac
+syscall pc=24f9d648 r0=92 r3=00000008 r4=00000009 r5=22396870 r6=80808080 r7=00000000 r8=003968e0 lr=252008f8 res=ffffffff
+return r3=0 error=0 resume=24f9d64c
+syscall pc=24f99508 r0=3 r3=00000008 r4=24f59acc r5=0000000c r6=80808080 r7=00000000 r8=003968e0 lr=251ff48c res=ffffffff
+return r3=12 error=0 resume=24f9950c
+syscall pc=24fa4528 r0=199 r3=00000008 r4=00000000 r5=0000000c r6=00000000 r7=22397670 r8=22396a51 lr=251ff540 res=ffffffff
+return r3=0 error=0 resume=24fa452c
+syscall pc=24f99508 r0=3 r3=00000008 r4=223969c0 r5=00000008 r6=00000000 r7=22397670 r8=22396a51 lr=251ff558 res=ffffffff
+return r3=8 error=0 resume=24f9950c
+syscall pc=24fa4528 r0=199 r3=00000008 r4=00000000 r5=00000014 r6=00000000 r7=22397670 r8=22396a51 lr=251f3744 res=ffffffff
+return r3=0 error=0 resume=24fa452c
+syscall pc=24f99508 r0=3 r3=00000008 r4=22397670 r5=00000b74 r6=00000000 r7=22397670 r8=22396a51 lr=251f3784 res=ffffffff
+return r3=2932 error=0 resume=24f9950c
+syscall pc=24fa4528 r0=199 r3=00000008 r4=00000000 r5=00000b88 r6=00000000 r7=22397670 r8=22396a51 lr=251f3744 res=ffffffff
+return r3=0 error=0 resume=24fa452c
+syscall pc=24f99508 r0=3 r3=00000008 r4=22397670 r5=00000b74 r6=00000000 r7=22397670 r8=22396a51 lr=251f3784 res=ffffffff
+return r3=2932 error=0 resume=24f9950c
+syscall pc=24fa3dc8 r0=188 r3=2239767e r4=22397420 r5=22397480 r6=00000000 r7=00000000 r8=223981f8 lr=251fa498 res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/TextEncodings result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa3dc8
+syscall pc=24fa36a8 r0=6 r3=00000008 r4=24f59ae0 r5=00000068 r6=00000000 r7=00000000 r8=24e34010 lr=251ff6b4 res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=24f9da88 r0=24 r3=24f59ac0 r4=0000001e r5=00000010 r6=00000000 r7=223982d0 r8=00000002 lr=25200a88 res=ffffffff
+return r3=0 error=0 resume=24f9da8c
+syscall pc=24f9dca8 r0=5 r3=22396920 r4=00000002 r5=000001a4 r6=80808080 r7=00000000 r8=00000000 lr=251fb78c res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Caches/com.apple.IntlDataCache
+return r3=8 error=0 resume=24f9dcac
+syscall pc=24f9d648 r0=92 r3=00000008 r4=00000009 r5=223968b0 r6=80808080 r7=00000000 r8=00000000 lr=252008f8 res=ffffffff
+return r3=0 error=0 resume=24f9d64c
+syscall pc=24f99508 r0=3 r3=00000008 r4=24f59acc r5=0000000c r6=80808080 r7=00000000 r8=00000000 lr=251ff48c res=ffffffff
+return r3=12 error=0 resume=24f9950c
+syscall pc=24fa4528 r0=199 r3=00000008 r4=00000000 r5=0000000c r6=00000000 r7=223976b0 r8=22396a91 lr=251ff540 res=ffffffff
+return r3=0 error=0 resume=24fa452c
+syscall pc=24f99508 r0=3 r3=00000008 r4=22396a00 r5=00000008 r6=00000000 r7=223976b0 r8=22396a91 lr=251ff558 res=ffffffff
+return r3=8 error=0 resume=24f9950c
+syscall pc=24fa4528 r0=199 r3=00000008 r4=00000000 r5=00000014 r6=00000000 r7=223976b0 r8=22396a91 lr=251f3744 res=ffffffff
+return r3=0 error=0 resume=24fa452c
+syscall pc=24f99508 r0=3 r3=00000008 r4=223976b0 r5=00000b74 r6=00000000 r7=223976b0 r8=22396a91 lr=251f3784 res=ffffffff
+return r3=2932 error=0 resume=24f9950c
+syscall pc=24fa4528 r0=199 r3=00000008 r4=00000000 r5=00000b88 r6=00000000 r7=223976b0 r8=22396a91 lr=251f3744 res=ffffffff
+return r3=0 error=0 resume=24fa452c
+syscall pc=24f99508 r0=3 r3=00000008 r4=223976b0 r5=00000b74 r6=00000000 r7=223976b0 r8=22396a91 lr=251f3784 res=ffffffff
+return r3=2932 error=0 resume=24f9950c
+syscall pc=24fa3dc8 r0=188 r3=223976be r4=22397460 r5=223974c0 r6=00000000 r7=00000000 r8=22398238 lr=251fa498 res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/TextEncodings result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa3dc8
+syscall pc=24fa36a8 r0=6 r3=00000008 r4=24f59ae0 r5=00000068 r6=00000000 r7=00000000 r8=24e34010 lr=251ff6b4 res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=2500c328 r0=4294967265 r3=22397ea0 r4=00000003 r5=00000680 r6=00000694 r7=00000414 r8=00001388 lr=24f9e670 res=ffffffff
+native Mach send id=22 destination=415 bytes=1664

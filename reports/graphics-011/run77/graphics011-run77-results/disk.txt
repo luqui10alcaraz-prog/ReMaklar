@@ -1,0 +1,2 @@
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk0s2   2023918  1954976   -32253   101%    /

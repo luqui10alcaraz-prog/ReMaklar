@@ -1,0 +1,88 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/run67.tgz graphics011-run67/*.txt graphics011-run67/*.status graphics011-run67/*.stdout graphics011-run67/*.stderr graphics011-joint67;sync;umount /exchange' 0
++ ln -s /var/tmp/graphics011-run1/source /var/tmp/graphics011-run67/source
++ cp -Rp /var/tmp/graphics011-run65/build /var/tmp/graphics011-run67/build
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/kinfo.inc /var/tmp/graphics011-run67/source/darwin-user/remaklar/kinfo.inc
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run67/source/darwin-user/remaklar/remote-maps.inc
++ cp /var/tmp/graphics011-stage67/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run67/source/darwin-user/remaklar/remote-maps.inc
++ cmp -s /var/tmp/graphics011-stage67/source/cpu-all.h /var/tmp/graphics011-run67/source/cpu-all.h
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/mmap.c /var/tmp/graphics011-run67/source/darwin-user/mmap.c
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/high-window.c /var/tmp/graphics011-run67/source/darwin-user/remaklar/high-window.c
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/high-window.h /var/tmp/graphics011-run67/source/darwin-user/remaklar/high-window.h
++ cmp -s /var/tmp/graphics011-stage67/source/target-ppc/cpu.h /var/tmp/graphics011-run67/source/target-ppc/cpu.h
++ cmp -s /var/tmp/graphics011-stage67/source/target-ppc/translate.c /var/tmp/graphics011-run67/source/target-ppc/translate.c
++ cmp -s /var/tmp/graphics011-stage67/source/target-ppc/helper.h /var/tmp/graphics011-run67/source/target-ppc/helper.h
++ cmp -s /var/tmp/graphics011-stage67/source/target-ppc/op_helper.c /var/tmp/graphics011-run67/source/target-ppc/op_helper.c
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run67/source/darwin-user/remaklar/bootstrap-main.c
++ cp /var/tmp/graphics011-stage67/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run67/source/darwin-user/remaklar/bootstrap-main.c
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/qemu.h /var/tmp/graphics011-run67/source/darwin-user/qemu.h
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run67/source/darwin-user/remaklar/darwin-kernel.c
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/mach-native.inc /var/tmp/graphics011-run67/source/darwin-user/remaklar/mach-native.inc
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/live-regions.inc /var/tmp/graphics011-run67/source/darwin-user/remaklar/live-regions.inc
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/typed-live.c /var/tmp/graphics011-run67/source/darwin-user/remaklar/typed-live.c
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/typed-live.h /var/tmp/graphics011-run67/source/darwin-user/remaklar/typed-live.h
++ cmp -s /var/tmp/graphics011-stage67/source/darwin-user/remaklar/threads.inc /var/tmp/graphics011-run67/source/darwin-user/remaklar/threads.inc
++ make -C /var/tmp/graphics011-run67/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ exe=/var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc
++ cp /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-run67/qemu-ppc
++ gcc2 -no-cpp-precomp -arch i386 -O2 -I/var/tmp/graphics011-stage67/source/darwin-user/remaklar /var/tmp/graphics011-stage67/mailbox.c -o /var/tmp/graphics011-run67/mailbox-native
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/mailbox-native /var/tmp/graphics011-run67/mailbox-native
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/mailbox-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/mailbox-native.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/vmcopy-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/vmcopy-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/vmcopy-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/vmcopy-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/rename-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/rename-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/rename-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/rename-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/fcntl-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/fcntl-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/fcntl-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/fcntl-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/taskthreads-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/taskthreads-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/taskthreads-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/taskthreads-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/priority-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/priority-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/priority-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/priority-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/forkio-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/forkio-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/forkio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/forkio-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/kinfo-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/kinfo-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/kinfo-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/kinfo-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/ool-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/ool-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/ool-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/ool-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/remoteio-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/remoteio-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/remoteio-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/remoteio-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/remote-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/remote-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/remote-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/remote-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/shared-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/shared-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/shared-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/shared-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/high-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/high-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/high-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/high-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/timer-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/timer-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/timer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/timer-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/capability-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/capability-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/capability-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/capability-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/trailer-jaguar /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/trailer-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-run67/trailer-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run67/trailer-jaguar.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/threads /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/threads-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run67/fasttrap /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-run65/fasttrap-ppc
++ sync
++ echo probes_completed
++ perl /var/tmp/graphics011-stage67/joint.pl /var/tmp/graphics011-joint67 /var/tmp/graphics011-run67/build/ppc-darwin-user/qemu-ppc /var/tmp/jaguar
++ echo joint_trial_completed
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/run67.tgz graphics011-run67/build.txt graphics011-run67/mailbox-build.txt graphics011-run67/phase.txt graphics011-run67/script-status.txt graphics011-run67/session.txt graphics011-run67/capability-jaguar.status graphics011-run67/fasttrap.status graphics011-run67/fcntl-jaguar.status graphics011-run67/forkio-jaguar.status graphics011-run67/high-jaguar.status graphics011-run67/kinfo-jaguar.status graphics011-run67/mailbox-native.status graphics011-run67/ool-jaguar.status graphics011-run67/priority-jaguar.status graphics011-run67/remote-jaguar.status graphics011-run67/remoteio-jaguar.status graphics011-run67/rename-jaguar.status graphics011-run67/shared-jaguar.status graphics011-run67/taskthreads-jaguar.status graphics011-run67/threads.status graphics011-run67/timer-jaguar.status graphics011-run67/trailer-jaguar.status graphics011-run67/vmcopy-jaguar.status graphics011-run67/capability-jaguar.stdout graphics011-run67/fasttrap.stdout graphics011-run67/fcntl-jaguar.stdout graphics011-run67/forkio-jaguar.stdout graphics011-run67/high-jaguar.stdout graphics011-run67/kinfo-jaguar.stdout graphics011-run67/mailbox-native.stdout graphics011-run67/ool-jaguar.stdout graphics011-run67/priority-jaguar.stdout graphics011-run67/remote-jaguar.stdout graphics011-run67/remoteio-jaguar.stdout graphics011-run67/rename-jaguar.stdout graphics011-run67/shared-jaguar.stdout graphics011-run67/taskthreads-jaguar.stdout graphics011-run67/threads.stdout graphics011-run67/timer-jaguar.stdout graphics011-run67/trailer-jaguar.stdout graphics011-run67/vmcopy-jaguar.stdout graphics011-run67/capability-jaguar.stderr graphics011-run67/fasttrap.stderr graphics011-run67/fcntl-jaguar.stderr graphics011-run67/forkio-jaguar.stderr graphics011-run67/high-jaguar.stderr graphics011-run67/kinfo-jaguar.stderr graphics011-run67/mailbox-native.stderr graphics011-run67/ool-jaguar.stderr graphics011-run67/priority-jaguar.stderr graphics011-run67/remote-jaguar.stderr graphics011-run67/remoteio-jaguar.stderr graphics011-run67/rename-jaguar.stderr graphics011-run67/shared-jaguar.stderr graphics011-run67/taskthreads-jaguar.stderr graphics011-run67/threads.stderr graphics011-run67/timer-jaguar.stderr graphics011-run67/trailer-jaguar.stderr graphics011-run67/vmcopy-jaguar.stderr graphics011-joint67

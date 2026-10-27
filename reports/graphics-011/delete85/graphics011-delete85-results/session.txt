@@ -1,0 +1,25 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;paths=graphics011-delete85-results;if test -d graphics011-joint85;then paths="$paths graphics011-joint85";fi;gnutar czf /exchange/dele85.tgz $paths;sync;umount /exchange' 0
++ df -k /
++ cp /var/tmp/graphics011-stage85/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build85/qemu-ppc
++ exe=/var/tmp/graphics011-build85/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage85/delete.c -o /var/tmp/graphics011-delete85-results/delete-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage85/delete.c -o /var/tmp/graphics011-delete85-results/delete-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-delete85-results/delete-native /var/tmp/graphics011-delete85-results/delete-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-delete85-results/delete-previous /var/tmp/graphics011-build83/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-delete85-results/delete-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-delete85-results/delete-previous.status
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-delete85-results/delete-jaguar /var/tmp/graphics011-build85/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-delete85-results/delete-ppc
++ cmp /var/tmp/graphics011-delete85-results/delete-native.stdout /var/tmp/graphics011-delete85-results/delete-jaguar.stdout
+cmp: EOF on /var/tmp/graphics011-delete85-results/delete-jaguar.stdout
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ paths=graphics011-delete85-results
++ test -d graphics011-joint85
++ gnutar czf /exchange/dele85.tgz graphics011-delete85-results

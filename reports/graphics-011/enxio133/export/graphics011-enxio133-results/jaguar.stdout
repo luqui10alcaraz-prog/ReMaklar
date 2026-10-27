@@ -1,0 +1,3 @@
+real detached tty attempt=0 errno=6 ENXIO
+real detached tty attempt=1 errno=6 ENXIO
+real devfs /dev/null succeeds; /dev/tty without controlling terminal preserves native ENXIO PASS

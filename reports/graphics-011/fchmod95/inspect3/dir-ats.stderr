@@ -1,0 +1,199 @@
+id=3801 destination=101 send=44 recv=48: 00001513 00000012 00000101 00000204 22397a90 00000ed9 00000000 00000000 22397ae0 0000a000 03000001
+syscall pc=24dfb568 r0=190 r3=22396530 r4=22397704 r5=22396530 r6=22396930 r7=22396500 r8=00002000 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396530 r4=00000000 r5=000001ff r6=22397704 r7=22396500 r8=00002000 lr=2504182c res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts
+return r3=5 error=0 resume=24df0cac
+syscall pc=24df7348 r0=196 r3=00000005 r4=22394090 r5=00002000 r6=223960f4 r7=22396500 r8=00002000 lr=250418d4 res=ffffffff
+return r3=328 error=0 resume=24df734c
+syscall pc=24df7348 r0=196 r3=00000005 r4=22394090 r5=00002000 r6=223960f4 r7=22396500 r8=00002000 lr=250418d4 res=ffffffff
+return r3=0 error=0 resume=24df734c
+syscall pc=24df66a8 r0=6 r3=00000005 r4=22394090 r5=00002000 r6=223960f4 r7=22396500 r8=00002000 lr=250418ec res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24e56ae0 r0=116 r3=22394020 r4=00000000 r5=ffffffff r6=22397704 r7=22396500 r8=00002000 lr=24df0770 res=ffffffff
+return r3=1793064828 error=0 resume=24e56ae4
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Courier.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Courier.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=00031aec r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158332416 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=450ac000 r4=00031aec r5=00000001 r6=00000000 r7=69657220 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=69657220 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Geneva.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Geneva.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=00024c16 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158332416 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=450ac000 r4=00024c16 r5=00000001 r6=00000000 r7=76612043 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=76612043 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=00035654 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158332416 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=450ac000 r4=00035654 r5=00000001 r6=00000000 r7=65746963 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=65746963 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=0000554a r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158246400 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=45097000 r4=0000554a r5=00000001 r6=00000000 r7=626f6172 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=626f6172 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/LastResort.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/LastResort.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=005a98ee r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1167482880 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=45966000 r4=005a98ee r5=00000001 r6=00000000 r7=74526573 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=74526573 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=002aa621 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1167482880 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=45966000 r4=002aa621 r5=00000001 r6=00000000 r7=64612047 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=64612047 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Monaco.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Monaco.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=00016ee5 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158332416 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=450ac000 r4=00016ee5 r5=00000001 r6=00000000 r7=636f2043 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=636f2043 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Symbol.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Symbol.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=00012566 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158332416 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=450ac000 r4=00012566 r5=00000001 r6=00000000 r7=ffffffce r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=ffffffce r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/Times.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/Times.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=00064973 r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158332416 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=450ac000 r4=00064973 r5=00000001 r6=00000000 r7=73204345 r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=73204345 r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22395a80 r4=22396f64 r5=22395a80 r6=22395e80 r7=22395a50 r8=00004409 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df0ca8 r0=5 r3=22396430 r4=00000000 r5=000001b6 r6=00000001 r7=22396830 r8=22396834 lr=2502f698 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont
+return r3=5 error=0 resume=24df0cac
+syscall pc=24e01068 r0=197 r3=00000000 r4=00025b6a r5=00000001 r6=00000002 r7=00000005 r8=00000000 lr=25028c18 res=ffffffff
+return r3=1158332416 error=0 resume=24e0106c
+syscall pc=24e00fc8 r0=73 r3=450ac000 r4=00025b6a r5=00000001 r6=00000000 r7=2044696e r8=44eff010 lr=2502e6a8 res=ffffffff
+return r3=0 error=0 resume=24e00fcc
+syscall pc=24df66a8 r0=6 r3=00000005 r4=00000000 r5=3500b4fc r6=00000001 r7=2044696e r8=44eff010 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24df0648 r0=92 r3=00000003 r4=00000030 r5=00000001 r6=00000000 r7=000014d8 r8=000014d8 lr=2505bc6c res=ffffffff
+return r3=0 error=0 resume=24df064c
+syscall pc=24deefe8 r0=4 r3=00000003 r4=450a2000 r5=000014d8 r6=00000000 r7=000014d8 r8=000014d8 lr=25027a98 res=ffffffff
+return r3=5336 error=0 resume=24deefec
+syscall pc=24df7528 r0=199 r3=00000003 r4=00000000 r5=00000000 r6=00000000 r7=22397b60 r8=000014d8 lr=2501dbe8 res=ffffffff
+return r3=0 error=0 resume=24df752c
+syscall pc=24deefe8 r0=4 r3=00000003 r4=450a2000 r5=0000000c r6=00000000 r7=00000000 r8=0000000c lr=25027a98 res=ffffffff
+return r3=12 error=0 resume=24deefec
+syscall pc=24e5f328 r0=4294967265 r3=22397b80 r4=00000003 r5=0000002c r6=0000002c r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3810 destination=101 send=44 recv=44: 00001513 22397d30 00000101 00000204 450a2000 00000ee2 00000000 00000000 450a2000 0000a000 00000008
+syscall pc=24e5f328 r0=4294967265 r3=22397b30 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3802 destination=101 send=40 recv=44: 00001513 22397b80 00000101 00000204 22397bc0 00000eda 00000000 00000000 450a2000 0000a000
+syscall pc=24df66a8 r0=6 r3=00000003 r4=00000000 r5=3500b4fc r6=00000001 r7=00000204 r8=00000000 lr=25025f64 res=ffffffff
+return r3=0 error=0 resume=24df66ac
+syscall pc=24dfb568 r0=190 r3=22396bf0 r4=223978c4 r5=22396bf0 r6=22396ff0 r7=22396bc0 r8=00000019 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Caches/com.apple.ATSServer.FODB_System result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24df6dc8 r0=188 r3=44f087f0 r4=22398120 r5=29bcb980 r6=80808080 r7=00000000 r8=00537973 lr=0009431c res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/System/Library/Caches/com.apple.ATSServer.FODB_System result=0 errno=0 mode=100644
+return r3=0 error=0 resume=24df6dcc
+syscall pc=24df0a88 r0=24 r3=44eff048 r4=00000000 r5=000002be r6=80808080 r7=00000000 r8=44eff010 lr=000502e8 res=ffffffff
+return r3=0 error=0 resume=24df0a8c
+syscall pc=24e5f328 r0=4294967265 r3=22397c10 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 000014d8 00000101 00000204 00000403 00000d51 00000000 00000000 00000004
+syscall pc=24e5f328 r0=4294967265 r3=22397ba0 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 0000a000 00000104 00000204 00000000 00000194 00000000 00000000 53797374 656d2043 6f6e6669 67757261 74696f6e 20536572 76657200 00000000 44f0c730 00000000 44f07820 2583c498 22397c50 48004249 24df6194 22397ce4 22397c50 8fec9120 00127b80 8fe8a460 80000012 00000028 00000204 00000000
+native bootstrap id=404 service=System Configuration Server result=1102
+syscall pc=24e00f48 r0=183 r3=00000001 r4=00000000 r5=00000004 r6=00000080 r7=00000000 r8=44eff010 lr=000458d4 res=ffffffff
+return r3=0 error=0 resume=24e00f4c
+syscall pc=24df0a88 r0=24 r3=00000000 r4=00000000 r5=00000004 r6=00000080 r7=00000000 r8=44eff010 lr=000458e0 res=ffffffff
+return r3=0 error=0 resume=24df0a8c
+syscall pc=8fea2188 r0=4294967265 r3=22397ff0 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8feaba7c res=ffffffff
+mach_rpc id=3206 destination=101 send=36 recv=44: 00001513 28002249 00000101 00000204 45097000 00000c86 00000000 00000000 00000403
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000204 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24dfb568 r0=190 r3=223969f0 r4=22397bc4 r5=223969f0 r6=22396df0 r7=223969c0 r8=00000002 lr=25014774 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/System/Library/Fonts result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24dfb56c
+syscall pc=24e5f328 r0=4294967265 r3=22397e60 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000204 22397ec0 00000c84 00000000 00000000 00000001
+native Mach capability guest=40f host=10251 receive=1 set=0 send=0
+syscall pc=24e5f328 r0=4294967265 r3=22397e50 r4=00000003 r5=00000034 r6=0000002c r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3214 destination=101 send=52 recv=44: 80001513 00000000 00000101 00000204 00000012 00000c8e 00000001 0000040f 00000000 00001400 00000000 00000000 0000040f
+syscall pc=24e5f328 r0=4294967265 r3=22397dc0 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3204 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000204 22397e20 00000c84 00000000 00000000 00000001
+native Mach capability guest=410 host=10499 receive=1 set=0 send=0
+syscall pc=24e5f328 r0=4294967265 r3=22397db0 r4=00000003 r5=0000003c r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3213 destination=101 send=60 recv=48: 80001513 0000e705 00000101 00000204 00000012 00000c8d 00000001 00000410 00000000 00001500 00000000 00000000 0000040f 00000048 00000000
+syscall pc=24e5f328 r0=4294967265 r3=22397bf0 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000204 00000000 00000c9a 00000000 00000000 00000410 00000406
+syscall pc=24e5f328 r0=4294967265 r3=22397e90 r4=00000003 r5=00000030 r6=0000002c r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3218 destination=101 send=48 recv=44: 00001513 00000000 00000101 00000204 22397f10 00000c92 00000000 00000000 0000040f 00000001 00000001 00000010
+syscall pc=24e5f328 r0=4294967265 r3=22397d00 r4=00000003 r5=00000028 r6=0000002c r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3226 destination=101 send=40 recv=44: 00001513 00000000 00000101 00000204 00000000 00000c9a 00000000 00000000 0000040f 00000406
+syscall pc=24e5f328 r0=4294967265 r3=22397ed0 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 24f911ec 00000101 00000204 44eff810 00000d51 00000000 00000000 00000004
+syscall pc=24e5f328 r0=4294967265 r3=22397e60 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 44f05718 00000104 00000204 44f0c7a0 00000194 00000000 00000000 4170706c 65204346 4e6f7469 66696361 74696f6e 43656e74 65722053 65727665 72000000 00000cf6 00000000 24f3c0a5 22397f10 00000001 00000001 00000010 00000001 44f089b0 24f1d34c 24f1d598 80000012 00000028 00000204 00000000
+native bootstrap id=404 service=Apple CFNotificationCenter Server result=1102
+syscall pc=24e5f328 r0=4294967265 r3=22397ed0 r4=00000003 r5=00000024 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=3409 destination=101 send=36 recv=48: 00001513 00000000 00000101 00000204 22397f30 00000d51 00000000 00000000 00000004
+syscall pc=24e5f328 r0=4294967265 r3=22397e60 r4=00000003 r5=000000a0 r6=00000030 r7=00000204 r8=00000000 lr=24df1670 res=ffffffff
+mach_rpc id=404 destination=104 send=160 recv=48: 00001513 00000000 00000104 00000204 44f0c7a0 00000194 00000000 00000000 4170706c 65204346 4e6f7469 66696361 74696f6e 43656e74 65722053 65727665 72008860 44f088c0 44f088c0 24f328bc 22397f30 00000005 24f3299c 24def4b0 00000000 00000000 34df01ac 00000037 80000012 00000028 00000204 00000000
+native bootstrap id=404 service=Apple CFNotificationCenter Server result=1102
+syscall pc=24e5f328 r0=4294967265 r3=223987d0 r4=00000006 r5=00000000 r6=00000694 r7=00000407 r8=00000000 lr=24df1670 res=ffffffff

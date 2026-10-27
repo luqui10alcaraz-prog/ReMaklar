@@ -1,0 +1,64 @@
+﻿9375b288 mflr     r0                          
+9375b28c stmw     r26, -0x18(r1)              
+9375b290 bdnzl    0x9375b294                  __CGSCreateWindow+0xc
+9375b294 stw      r0, 8(r1)                   
+9375b298 stwu     r1, -0xa0(r1)               
+9375b29c mflr     r31                         
+9375b2a0 addis    r11, r31, 0xff9             
+9375b2a4 lis      r29, -0x8000                
+9375b2a8 lwz      r11, 0x6e34(r11)            
+9375b2ac li       r10, 1                      
+9375b2b0 stw      r5, 0x5c(r1)                
+9375b2b4 li       r0, 0                       
+9375b2b8 addi     r30, r1, 0x40               
+9375b2bc ori      r29, r29, 0x1513            
+9375b2c0 lwz      r5, 4(r11)                  
+9375b2c4 mr       r26, r7                     
+9375b2c8 lwz      r11, 0(r11)                 
+9375b2cc mr       r27, r8                     
+9375b2d0 stw      r4, 0x70(r1)                
+9375b2d4 mr       r28, r9                     
+9375b2d8 stb      r0, 0x64(r1)                
+9375b2dc stb      r10, 0x67(r1)               
+9375b2e0 stw      r11, 0x68(r1)               
+9375b2e4 stw      r5, 0x6c(r1)                
+9375b2e8 stw      r6, 0x74(r1)                
+9375b2ec stw      r29, 0x40(r1)               
+9375b2f0 stw      r10, 0x58(r1)               
+9375b2f4 stw      r6, 0x60(r1)                
+9375b2f8 stb      r10, 0x65(r1)               
+9375b2fc stw      r3, 0x48(r1)                
+9375b300 bl       0x938b27b4                  rest_world_eh_r7r8+0x208c
+9375b304 stw      r3, 0x4c(r1)                
+9375b308 mr       r7, r3                      
+9375b30c li       r0, 0x7216                  
+9375b310 li       r4, 3                       
+9375b314 mr       r3, r30                     
+9375b318 stw      r0, 0x54(r1)                
+9375b31c li       r5, 0x38                    
+9375b320 li       r6, 0x3c                    
+9375b324 li       r8, 0                       
+9375b328 li       r9, 0                       
+9375b32c bl       0x938b1fd4                  rest_world_eh_r7r8+0x18ac
+9375b330 or.      r29, r3, r3                 
+9375b334 beq      0x9375b394                  __CGSCreateWindow+0x10c
+9375b338 lis      r0, 0x1000                  
+9375b33c ori      r0, r0, 0x4002              
+9375b340 cmpw     r29, r0                     
+9375b344 beq      0x9375b378                  __CGSCreateWindow+0xf0
+9375b348 bgt      0x9375b358                  __CGSCreateWindow+0xd0
+9375b34c lis      r0, 0x1000                  
+9375b350 ori      r0, r0, 9                   
+9375b354 b        0x9375b370                  __CGSCreateWindow+0xe8
+9375b358 lis      r0, 0x1000                  
+9375b35c ori      r0, r0, 0x4006              
+9375b360 cmpw     r29, r0                     
+9375b364 beq      0x9375b378                  __CGSCreateWindow+0xf0
+9375b368 lis      r0, 0x1000                  
+9375b36c ori      r0, r0, 0x4009              
+9375b370 cmpw     r29, r0                     
+9375b374 bne      0x9375b384                  __CGSCreateWindow+0xfc
+9375b378 lwz      r3, 0xc(r30)                
+9375b37c bl       0x938b2790                  rest_world_eh_r7r8+0x2068
+9375b380 b        0x9375b38c                  __CGSCreateWindow+0x104
+9375b384 lwz      r3, 0xc(r30)                

@@ -1,0 +1,24 @@
+layout NXEvent=76 NXEQElement=84 NXEventData=48 lleq=224 data=36 time=20 key=8 repeat=2 keyboardType=16
+devices pointing=1 keyboard=1 ps2mouse=1 usbmouse=0
+open=0
+create=0
+map=0 bytes=20392
+shared version=3 size=20384 offsets=8,20392
+enable=0
+READY real hardware input, 15 seconds
+tick=0 head=1 tail=1 cursor=16,16
+tick=1 head=1 tail=1 cursor=16,16
+tick=2 head=1 tail=1 cursor=16,16
+tick=3 head=1 tail=1 cursor=16,16
+tick=4 head=1 tail=1 cursor=16,16
+tick=5 head=1 tail=1 cursor=16,16
+tick=6 head=1 tail=1 cursor=16,16
+tick=7 head=1 tail=1 cursor=16,16
+tick=8 head=1 tail=1 cursor=16,16
+tick=9 head=1 tail=1 cursor=16,16
+tick=10 head=1 tail=1 cursor=16,16
+tick=11 head=1 tail=1 cursor=16,16
+tick=12 head=1 tail=1 cursor=16,16
+tick=13 head=1 tail=1 cursor=16,16
+tick=14 head=1 tail=1 cursor=16,16
+DONE keys=0 letter_a=0 mice=0 initial_tail=1 final_tail=1

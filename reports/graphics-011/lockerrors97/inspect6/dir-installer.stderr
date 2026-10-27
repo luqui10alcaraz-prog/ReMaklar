@@ -1,0 +1,28 @@
+01 send=36 recv=44: 00001513 40a00000 00000101 00000202 00000000 00000c86 00000000 00000000 00000401
+syscall pc=8fea2158 r0=4294967269 r3=00000000 r4=00000003 r5=00000024 r6=0000002c r7=00000202 r8=00000000 lr=8fe91d74 res=ffffffff
+syscall pc=24fa8568 r0=190 r3=2506cd38 r4=22392380 r5=00000029 r6=0000003e r7=00000000 r8=696e6720 lr=24fa49f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/etc/localtime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=25006d84 r0=327 r3=25069c64 r4=471631a0 r5=00000029 r6=0000003e r7=00000000 r8=696e6720 lr=24fa48e8 res=ffffffff
+return r3=0 error=0 resume=25006d88
+syscall pc=24fa8568 r0=190 r3=223923f0 r4=22392330 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24fa49f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/GMT result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=25006d84 r0=327 r3=2506cd5c r4=471631a0 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24fa48e8 res=ffffffff
+return r3=0 error=0 resume=25006d88
+syscall pc=24fa8568 r0=190 r3=22392380 r4=223922c0 r5=00000000 r6=80808080 r7=00000000 r8=00000000 lr=24fa49f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=24fa8568 r0=190 r3=2506cd38 r4=22392370 r5=00000002 r6=34f9f530 r7=00000005 r8=25079898 lr=24fa49f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/etc/localtime result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=25006d84 r0=327 r3=25069c64 r4=471631a0 r5=00000002 r6=34f9f530 r7=00000005 r8=25079898 lr=24fa48e8 res=ffffffff
+return r3=0 error=0 resume=25006d88
+syscall pc=24fa8568 r0=190 r3=223923e0 r4=22392320 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24fa49f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/GMT result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568
+syscall pc=25006d84 r0=327 r3=2506cd5c r4=471631a0 r5=a6aa0023 r6=80808080 r7=00000003 r8=474d5400 lr=24fa48e8 res=ffffffff
+return r3=0 error=0 resume=25006d88
+syscall pc=24fa8568 r0=190 r3=22392370 r4=223922b0 r5=39b43080 r6=80808080 r7=00000000 r8=00736861 lr=24fa49f0 res=ffffffff
+native path syscall=190 path=/var/tmp/jaguar/usr/share/zoneinfo/posixrules result=-1 errno=2 mode=0
+return r3=2 error=2 resume=24fa8568

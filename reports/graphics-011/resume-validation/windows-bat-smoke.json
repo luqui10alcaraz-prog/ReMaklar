@@ -1,0 +1,16 @@
+﻿{
+    "bat":  "Probar-ReMaklar.bat",
+    "desktop_launcher":  "C:/Users/Chicos/Desktop/ReMaklar/Probar-ReMaklar.bat",
+    "preflight":  "PASS through cmd.exe and WSL",
+    "visible_qemu":  "PASS GTK through WSLg",
+    "stopped_before_load_completed":  "Restorer now waits until inmigrate finishes and checks PPM/VRAM byte equality before resuming",
+    "default_checkpoint_trial":  "logs/graphics-011-restore-prueba-20261027-040248-9570",
+    "active_seconds":  20.658,
+    "host_cpu_mean_percent_one_core":  91.97,
+    "host_rss_peak_mb":  778.07,
+    "final_diagnostics":  "PASS: four original service logs, process inventory, VM counters, physical VRAM and capture",
+    "qemu_after_test":  "exited",
+    "research_monitors_4449_4450":  "both still paused",
+    "limitations":  "HID input experimental; trace-enabled build; sampled frames do not measure FPS",
+    "failed_development_trials":  "Earlier smoke logs retained; premature resume and absolute HMP diagnostic path were corrected before accepted trial"
+}

@@ -1,0 +1,24 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/build122.tgz graphics011-build122-results;sync;umount /exchange' 0
++ cp /var/tmp/graphics011-stage122/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage122/live-regions.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage122/typed-live.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage122/typed-live.h /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build122/qemu-ppc
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage122 /var/tmp/graphics011-stage122/hid-key-fields.c /var/tmp/graphics011-stage122/typed-live.c -o /var/tmp/graphics011-build122-results/fields-key-i386
++ /var/tmp/graphics011-build122-results/fields-key-i386
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage122 /var/tmp/graphics011-stage122/hid-mouse-fields.c /var/tmp/graphics011-stage122/typed-live.c -o /var/tmp/graphics011-build122-results/fields-mouse-i386
++ /var/tmp/graphics011-build122-results/fields-mouse-i386
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage122 /var/tmp/graphics011-stage122/hid-auxmouse-fields.c /var/tmp/graphics011-stage122/typed-live.c -o /var/tmp/graphics011-build122-results/fields-auxmouse-i386
++ /var/tmp/graphics011-build122-results/fields-auxmouse-i386
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage122/hid.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build122-results/hid-i386
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage122/names.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build122-results/names-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage122/hid.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build122-results/hid-ppc
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage122/names.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build122-results/names-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build122-results/names-native /var/tmp/graphics011-build122-results/names-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build122-results/names-previous /var/tmp/graphics011-build112/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-build122-results/names-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-build122-results/names-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build122-results/names-jaguar /var/tmp/graphics011-build122/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-build122-results/names-ppc

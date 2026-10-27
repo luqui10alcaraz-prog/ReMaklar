@@ -1,0 +1,32 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -1457,6 +1457,29 @@
+         qerror("IOKit set properties requires Darwin");
+ #endif
+         break;
++    case 2835: /* io_make_matching: original kernel serializes the dictionary. */
++#ifdef __APPLE__
++        {
++            typedef kern_return_t (*matching_fn)(mach_port_t,uint32_t,uint32_t,const char *,uint32_t,char *);
++            mach_port_t endpoint;uint32_t type,options,count,bytes;char matching[512]={0};
++            endpoint=destination==IO_MASTER_PORT ? native_io_master :
++                (destination<4096 ? native_iokit_ports[destination] : 0);
++            if(!endpoint || size<44)qerror("invalid io_make_matching endpoint/header");
++            type=ldl(g2h(a+32));options=ldl(g2h(a+36));count=ldl(g2h(a+40));
++            if(count>4096 || size!=44+((count+3)&~3))qerror("invalid io_make_matching input size");
++            if((type==101 || type==102) && (!count || !memchr(g2h(a+44),0,count)))qerror("unterminated io_make_matching name");
++            code=((matching_fn)native_iokit_symbol("_io_make_matching"))(endpoint,type,options,g2h(a+44),count,matching);
++            if(!code){
++                if(!memchr(matching,0,sizeof(matching)))qerror("native matching dictionary not terminated");
++                bytes=strlen(matching)+1;stl(answer+36,0);stl(answer+40,bytes);
++                memcpy(answer+44,matching,bytes);length=44+((bytes+3)&~3);
++            }
++            fprintf(stderr,"native IOKit make matching type=%u options=%u input=%u result=%u\n",type,options,count,code);
++        }
++#else
++        qerror("IOKit matching dictionary requires Darwin");
++#endif
++        break;
+     case 2826: /* io_registry_entry_get_path: bounded native registry path. */
+ #ifdef __APPLE__
+         {

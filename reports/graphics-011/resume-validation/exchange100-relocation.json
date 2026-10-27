@@ -1,0 +1,10 @@
+{
+  "precondition": "VM at shell; FAT unmounted after failed missing input100 attempt",
+  "backup": "build/graphics011-before-subdir100-exchange.img",
+  "backup_sha256": "8570b7f63bfff37935dd5647f5a2e0fb0104502d3a64f9fe925af21aad21efa8",
+  "relocated_from": "/sw98i.tgz",
+  "relocated_to": "/RUNS/sw98i.tgz",
+  "relocated_file_sha256": "9de7362d3a475be5d1e468088506e64e95cfd190ebc22db8e6f2202c5cca29e4",
+  "original_source": "build/threadswitch011-98.tgz",
+  "reason": "Fixed-size FAT16 root directory slots exhausted; preserve all file contents and use expandable subdirectory for subsequent transfers/results"
+}

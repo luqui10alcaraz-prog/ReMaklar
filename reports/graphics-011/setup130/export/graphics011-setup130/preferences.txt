@@ -1,0 +1,1 @@
+native IOHIDSystem user preferences: pointer/mouse/scroll acceleration=-65536 result=0

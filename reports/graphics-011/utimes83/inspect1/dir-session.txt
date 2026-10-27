@@ -1,0 +1,25 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/utim83.tgz graphics011-utimes83-results graphics011-joint83;sync;umount /exchange' 0
++ df -k /
++ cp /var/tmp/graphics011-stage83/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build83/qemu-ppc
++ exe=/var/tmp/graphics011-build83/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage83/utimes.c -o /var/tmp/graphics011-utimes83-results/utimes-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage83/utimes.c -o /var/tmp/graphics011-utimes83-results/utimes-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-utimes83-results/utimes-native /var/tmp/graphics011-utimes83-results/utimes-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-utimes83-results/utimes-previous /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-utimes83-results/utimes-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-utimes83-results/utimes-previous.status
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-utimes83-results/utimes-jaguar /var/tmp/graphics011-build83/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-utimes83-results/utimes-ppc
++ cmp /var/tmp/graphics011-utimes83-results/utimes-native.stdout /var/tmp/graphics011-utimes83-results/utimes-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-utimes83-results/utimes-native.status
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/utim83.tgz graphics011-utimes83-results graphics011-joint83
+gnutar: Cannot add file graphics011-joint83: No such file or directory
+gnutar: Error exit delayed from previous errors

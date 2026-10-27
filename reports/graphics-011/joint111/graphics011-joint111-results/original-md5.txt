@@ -1,0 +1,2 @@
+MD5 (/mach_kernel) = 56da829d60b6b4353c25cca8b060b5f8
+MD5 (/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer) = 1496d181829e74bd60de5fd3f9222185

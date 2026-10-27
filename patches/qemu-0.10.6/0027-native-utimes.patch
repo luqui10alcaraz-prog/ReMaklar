@@ -1,0 +1,21 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -1025,6 +1025,18 @@
+             if(a){r=tv.tv_sec;env->gpr[4]=tv.tv_usec;}
+         }
+         break;
++    }
++    case 138: { /* Jaguar PPC32 has two big-endian timeval records. */
++        struct timeval times[2];unsigned j;
++        if(b) {
++            if(!remaklar_guest_access(b,16,PAGE_READ)){errno=EFAULT;break;}
++            for(j=0;j<2;j++){
++                times[j].tv_sec=(int32_t)ldl(g2h(b+8*j));
++                times[j].tv_usec=(int32_t)ldl(g2h(b+8*j+4));
++            }
++        }
++        p=guest_path(a,path,sizeof(path));if(!p)break;
++        r=utimes(p,b?times:NULL);break;
+     }
+     case 128: {
+         char second[8192]; const char *q;

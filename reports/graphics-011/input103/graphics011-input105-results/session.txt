@@ -1,0 +1,18 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/input105.tgz graphics011-input105-results;sync;umount /exchange' 0
++ mount
++ ioreg -l -w 0
++ umount /dev/disk3s0
++ true
++ mkdir -p /var/tmp/jaguar/Volumes/CD104 /var/tmp/jaguar/System/Installation
++ mount -t cd9660 /dev/disk3s0 /var/tmp/jaguar/Volumes/CD104
++ test '!' -e /var/tmp/jaguar/System/Installation/Packages
++ ln -s ../../Volumes/CD104/Packages /var/tmp/jaguar/System/Installation/Packages
++ md5 /var/tmp/jaguar/System/Installation/Packages/OSInstall.mpkg/Contents/Info.plist
+md5: /var/tmp/jaguar/System/Installation/Packages/OSInstall.mpkg/Contents/Info.plist: No such file or directory
++ grep -q ' = 839f63c9c9366ff0c88d97934d774865$' /var/tmp/graphics011-input105-results/osinstall-md5.txt
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/RUNS/input105.tgz graphics011-input105-results

@@ -1,0 +1,21 @@
+{
+  "reason": "Trial78 ATSServer translator exhausted 128 explicit Mach names; Installer alive retrying invalid destination. Stopped to bound trace growth before cold recovery. Original direct66 untouched.",
+  "files": {
+    "build/011-trial78-machine-state.bin": {
+      "bytes": 245918514,
+      "sha256": "9bcaf66ede210eeb04a07be2b8d2264186e5437a8fc59714f18326b5fd459002"
+    },
+    "build/011-trial78-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "b453ccef4f6fdc00d1e88826eba9929ea6b5a2f317a7bd90c0ee7e2f029fd37a"
+    },
+    "vm/darwin602-graphics-011-trial78-preserved.qcow2": {
+      "bytes": 102367232,
+      "sha256": "30e0cdbc769a41313a8ffa5ba4f0a702252ef18befcaea919c665f988af7676b"
+    },
+    "build/graphics011-trial78-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "f71a30f3cfc06b597c77a3aebb1398acc77866bd62f8342f09aebb894c135db1"
+    }
+  }
+}

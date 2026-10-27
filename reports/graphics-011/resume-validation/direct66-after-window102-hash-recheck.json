@@ -1,0 +1,6 @@
+{
+  "build/011-upl66-machine-state.bin": true,
+  "vm/darwin602-graphics-011-upl66-preserved.qcow2": true,
+  "build/graphics011-upl66-preserved-exchange.img": true,
+  "build/011-upl66-vram.bin": true
+}

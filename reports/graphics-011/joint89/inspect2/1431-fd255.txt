@@ -1,0 +1,50 @@
+#!/bin/sh
+set -eu
+p=/var/tmp/graphics011-stage89
+out=/var/tmp/graphics011-run89-results
+work=/var/tmp/graphics011-build89
+test ! -e "$out";test ! -e "$work";mkdir "$out" "$work";exec > "$out/session.txt" 2>&1
+set -x
+trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;paths=graphics011-run89-results;if test -d graphics011-joint89;then paths="$paths graphics011-joint89";fi;gnutar czf /exchange/joint89.tgz $paths;sync;umount /exchange' 0
+df -k > "$out/disk.txt"
+md5 /mach_kernel /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer > "$out/original-md5.txt"
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaBold.otf);case "$got" in *" = 2be81c5fa145eeaead9d423d3dc8ec1c") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaRegular.otf);case "$got" in *" = 982753f4b9ad18e864d69c7125e68fe0") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/Courier.dfont);case "$got" in *" = f1aaf9c362e1ebb7c639c655da4ff7f0") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/Geneva.dfont);case "$got" in *" = 1135ee8b8a87b0b0f81149e22cbcd269") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont);case "$got" in *" = 0d7a674657b5839791bb22d674777431") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont);case "$got" in *" = 841d7659b013601caf42800970b7f71f") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/LastResort.dfont);case "$got" in *" = 12b5fb6d3821bfa8d5567ecf1c221fa0") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont);case "$got" in *" = 58efe5f45290436b94780794d37eb04b") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/Monaco.dfont);case "$got" in *" = 9df9f9a5cf7a6f841d5efc0f10e2c850") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/Symbol.dfont);case "$got" in *" = 95a2f22c2b816d2d80c839e52224b330") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/Times.dfont);case "$got" in *" = fc8f7e837ac111ce9ccf197650b3543b") ;; *) exit 30;;esac
+got=$(md5 /var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont);case "$got" in *" = 8372f6178401f758ff99bce3bbda60ff") ;; *) exit 30;;esac
+cp "$p/darwin-kernel.c" /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
+make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user > "$out/build.txt" 2>&1
+cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc "$work/qemu-ppc"
+exe="$work/qemu-ppc"
+probe=/var/tmp/graphics009-r8/run_graphics_008.pl
+export REMAKLAR_QUIET_TLS=1
+for name in utimes delete;do
+ for arch in i386 ppc;do gcc2 -no-cpp-precomp -arch "$arch" "$p/$name.c" -o "$out/$name-$arch" > "$out/$name-$arch-build.txt" 2>&1;done
+ perl "$probe" "$out/$name-native" "$out/$name-i386"
+ perl "$probe" "$out/$name-previous" /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar "$out/$name-ppc"
+ grep -q '^leader_exit=125$' "$out/$name-previous.status"
+ perl "$probe" "$out/$name-jaguar" "$exe" --root /var/tmp/jaguar "$out/$name-ppc"
+ cmp "$out/$name-native.stdout" "$out/$name-jaguar.stdout"
+ for mode in native jaguar;do
+  grep -q '^leader_exit=0$' "$out/$name-$mode.status"
+  grep -q '^timeout=0$' "$out/$name-$mode.status"
+ done
+done
+for name in vmcopy rename fcntl taskthreads priority forkio kinfo ool remoteio remote shared high timer capability trailer threads fasttrap;do
+ perl "$probe" "$out/$name-jaguar" "$exe" --root /var/tmp/jaguar "/var/tmp/graphics011-run65/$name-ppc"
+ grep -q '^leader_exit=0$' "$out/$name-jaguar.status"
+ grep -q '^timeout=0$' "$out/$name-jaguar.status"
+done
+echo probes_completed > "$out/phase.txt"
+export REMAKLAR_OBSERVE_APPKIT=1
+export REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
+export REMAKLAR_TRACE_PATHS=1
+perl "$p/joint.pl" /var/tmp/graphics011-joint89 "$exe" /var/tmp/jaguar

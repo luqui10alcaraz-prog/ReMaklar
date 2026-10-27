@@ -1,0 +1,117 @@
+[
+  {
+    "proc": "0x20c18908",
+    "pid": 508,
+    "comm": "hid-i386",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x20fc35c8",
+        "file": "508-fd1.txt",
+        "size": 1038,
+        "source_size": 1038,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x20caff08",
+        "file": "508-fd2.txt",
+        "size": 0,
+        "source_size": 0,
+        "holes": []
+      }
+    ],
+    "task": "0x20b24600"
+  },
+  {
+    "proc": "0x20c187a4",
+    "pid": 507,
+    "comm": "perl",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x21045970",
+        "file": "507-fd1.txt",
+        "size": 530,
+        "source_size": 530,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x21045970",
+        "file": "507-fd2.txt",
+        "size": 530,
+        "source_size": 530,
+        "holes": []
+      }
+    ],
+    "task": "0x20b244a8"
+  },
+  {
+    "proc": "0x20c18a6c",
+    "pid": 505,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x21045970",
+        "file": "505-fd1.txt",
+        "size": 530,
+        "source_size": 530,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x21045970",
+        "file": "505-fd2.txt",
+        "size": 530,
+        "source_size": 530,
+        "holes": []
+      },
+      {
+        "fd": 255,
+        "vnode": "0x20cada98",
+        "file": "505-fd255.txt",
+        "size": 1023,
+        "source_size": 1023,
+        "holes": []
+      }
+    ],
+    "task": "0x20b24758"
+  },
+  {
+    "proc": "0x20c18bd0",
+    "pid": 22,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b248b0"
+  },
+  {
+    "proc": "0x20c18d34",
+    "pid": 2,
+    "comm": "mach_init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b24a08"
+  },
+  {
+    "proc": "0x20c18e98",
+    "pid": 1,
+    "comm": "init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b24cb8"
+  },
+  {
+    "proc": "0x3e6900",
+    "pid": 0,
+    "comm": "kernel_task",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b24e10"
+  }
+]

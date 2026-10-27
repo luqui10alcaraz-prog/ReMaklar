@@ -1,0 +1,35 @@
+{
+  "real_input": {
+    "n2": {
+      "acceptance": "reports/graphics-011/input123/n2/acceptance.json",
+      "stdout_sha256": "6a52789c0b20f1420ade6bf00bd246e3b1bbf5c6598bb5b79d38b7ac8d6cd408"
+    },
+    "p1": {
+      "acceptance": "reports/graphics-011/input123/p1/acceptance.json",
+      "stdout_sha256": "d070a7de56f769365d33a66a7e26453a895daae004b42b2323f4c46d96439cef"
+    },
+    "j1": {
+      "acceptance": "reports/graphics-011/input123/j1/acceptance.json",
+      "stdout_sha256": "e4ca2000f17862e40a41c00d874010690e7eb4635015451a8fbd394c9789f5c5"
+    }
+  },
+  "dup2": {
+    "result": "PASS native/PPC byte-identical output, prior executor exits125",
+    "directory": "reports/graphics-011/dup131/export/graphics011-dup131-results"
+  },
+  "native_and_PPC_event_sequence_identical_except_initial_location": [
+    "event type=10 key=0 char=97 orig=97 repeat=0 keyboardType=1",
+    "event type=11 key=0 char=97 orig=97 repeat=0 keyboardType=1",
+    "event type=5 dx=10 dy=5 subtype=0",
+    "event type=14 auxiliary delta=1 buttons=1",
+    "event type=1 subxy=0,0 eventNum=14 click=1 pressure=255 subtype=0",
+    "event type=6 dx=1 dy=0 subtype=0",
+    "event type=14 auxiliary delta=1 buttons=0",
+    "event type=2 subxy=0,0 eventNum=14 click=0 pressure=0 subtype=0",
+    "event type=5 dx=1 dy=0 subtype=0"
+  ],
+  "native_USB_panic_preserved": "reports/graphics-011/resume-validation/usb121-native-panic-preserved.json",
+  "native_preferences_and_registry_names": "reports/graphics-011/setup130/export/graphics011-setup130",
+  "kernel_md5": "56da829d60b6b4353c25cca8b060b5f8",
+  "installer_md5": "1496d181829e74bd60de5fd3f9222185"
+}

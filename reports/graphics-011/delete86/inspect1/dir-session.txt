@@ -1,0 +1,16 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;paths=graphics011-delete86-results;if test -d graphics011-joint86;then paths="$paths graphics011-joint86";fi;gnutar czf /exchange/dele86.tgz $paths;sync;umount /exchange' 0
++ df -k /
++ cp /var/tmp/graphics011-stage86/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build86/qemu-ppc
+cp: /var/tmp/graphics011-build86/qemu-ppc: No space left on device
++ status=1
++ echo script_exit=1
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ paths=graphics011-delete86-results
++ test -d graphics011-joint86
++ gnutar czf /exchange/dele86.tgz graphics011-delete86-results
++ sync
++ umount /exchange

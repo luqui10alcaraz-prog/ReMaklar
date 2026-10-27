@@ -1,0 +1,66 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/font82.tgz graphics011-fonts82-results graphics011-joint82;sync;umount /exchange' 0
++ mkdir -p /var/tmp/jaguar/System/Library/Fonts
++ df -k /
++ dest=/var/tmp/jaguar/System/Library/Fonts/AquaKanaBold.otf
+++ md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaBold.otf
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/AquaKanaBold.otf) = 2be81c5fa145eeaead9d423d3dc8ec1c
++ md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaBold.otf
++ dest=/var/tmp/jaguar/System/Library/Fonts/AquaKanaRegular.otf
+++ md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaRegular.otf
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/AquaKanaRegular.otf) = 982753f4b9ad18e864d69c7125e68fe0
++ md5 /var/tmp/jaguar/System/Library/Fonts/AquaKanaRegular.otf
++ dest=/var/tmp/jaguar/System/Library/Fonts/Courier.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Courier.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Courier.dfont) = f1aaf9c362e1ebb7c639c655da4ff7f0
++ md5 /var/tmp/jaguar/System/Library/Fonts/Courier.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/Geneva.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Geneva.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Geneva.dfont) = 1135ee8b8a87b0b0f81149e22cbcd269
++ md5 /var/tmp/jaguar/System/Library/Fonts/Geneva.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont) = 0d7a674657b5839791bb22d674777431
++ md5 /var/tmp/jaguar/System/Library/Fonts/Helvetica.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont) = 841d7659b013601caf42800970b7f71f
++ md5 /var/tmp/jaguar/System/Library/Fonts/Keyboard.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/LastResort.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/LastResort.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/LastResort.dfont) = 12b5fb6d3821bfa8d5567ecf1c221fa0
++ md5 /var/tmp/jaguar/System/Library/Fonts/LastResort.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont) = 58efe5f45290436b94780794d37eb04b
++ md5 /var/tmp/jaguar/System/Library/Fonts/LucidaGrande.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/Monaco.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Monaco.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Monaco.dfont) = 9df9f9a5cf7a6f841d5efc0f10e2c850
++ md5 /var/tmp/jaguar/System/Library/Fonts/Monaco.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/Symbol.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Symbol.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Symbol.dfont) = 95a2f22c2b816d2d80c839e52224b330
++ md5 /var/tmp/jaguar/System/Library/Fonts/Symbol.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/Times.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/Times.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/Times.dfont) = fc8f7e837ac111ce9ccf197650b3543b
++ md5 /var/tmp/jaguar/System/Library/Fonts/Times.dfont
++ dest=/var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont
+++ md5 /var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont
++ got=MD5 (/var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont) = 8372f6178401f758ff99bce3bbda60ff
++ md5 /var/tmp/jaguar/System/Library/Fonts/ZapfDingbats.dfont
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ export REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ perl /var/tmp/graphics011-fonts82/joint.pl /var/tmp/graphics011-joint82 /var/tmp/graphics011-build81/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/font82.tgz graphics011-fonts82-results graphics011-joint82

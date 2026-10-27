@@ -1,0 +1,21 @@
+{
+  "reason": "Trial81 native/PPC 256-name stress passed and ATSServer stays alive; original System/Library/Fonts absent. Stopped before a cold font restoration trial. Original direct66 untouched.",
+  "files": {
+    "build/011-trial81-machine-state.bin": {
+      "bytes": 236192639,
+      "sha256": "57107ac57885581b792e76bf3e45f961ab3ca5917de58e98ceb97361263385d1"
+    },
+    "build/011-trial81-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "c66670f9e3adbb2aa89adad833251343c1be27d01173c7771ae17b6521a8766c"
+    },
+    "vm/darwin602-graphics-011-trial81-preserved.qcow2": {
+      "bytes": 47841280,
+      "sha256": "9ab540ce653b1187e278ebbaa9487c2727fc7a0ae7ff87b1d6b56380bdce7897"
+    },
+    "build/graphics011-trial81-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "310f5dcc52354b36590305dd399960dc5fcdd3e4ede2f1ffa0ef2099dd36c89f"
+    }
+  }
+}

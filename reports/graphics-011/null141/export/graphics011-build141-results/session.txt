@@ -1,0 +1,43 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/build141.tgz graphics011-build141-results;sync;umount /exchange' 0
++ cp /var/tmp/graphics011-stage141/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage141/live-regions.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage141/typed-live.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ cp /var/tmp/graphics011-stage141/typed-live.h /var/tmp/graphics011-run1/source/darwin-user/remaklar/
++ make -C /var/tmp/graphics011-build81/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build81/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build141/qemu-ppc
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage141 /var/tmp/graphics011-stage141/bits.c /var/tmp/graphics011-stage141/typed-live.c -o /var/tmp/graphics011-build141-results/unit-bits
++ /var/tmp/graphics011-build141-results/unit-bits
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage141 /var/tmp/graphics011-stage141/tracking.c /var/tmp/graphics011-stage141/typed-live.c -o /var/tmp/graphics011-build141-results/unit-tracking
++ /var/tmp/graphics011-build141-results/unit-tracking
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage141 /var/tmp/graphics011-stage141/key.c /var/tmp/graphics011-stage141/typed-live.c -o /var/tmp/graphics011-build141-results/unit-key
++ /var/tmp/graphics011-build141-results/unit-key
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage141 /var/tmp/graphics011-stage141/mouse.c /var/tmp/graphics011-stage141/typed-live.c -o /var/tmp/graphics011-build141-results/unit-mouse
++ /var/tmp/graphics011-build141-results/unit-mouse
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage141 /var/tmp/graphics011-stage141/auxmouse.c /var/tmp/graphics011-stage141/typed-live.c -o /var/tmp/graphics011-build141-results/unit-auxmouse
++ /var/tmp/graphics011-build141-results/unit-auxmouse
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage141 /var/tmp/graphics011-stage141/shared.c /var/tmp/graphics011-stage141/typed-live.c -o /var/tmp/graphics011-build141-results/unit-shared
++ /var/tmp/graphics011-build141-results/unit-shared
++ gcc2 -no-cpp-precomp -arch i386 -I/var/tmp/graphics011-stage141 /var/tmp/graphics011-stage141/null.c /var/tmp/graphics011-stage141/typed-live.c -o /var/tmp/graphics011-build141-results/unit-null
++ /var/tmp/graphics011-build141-results/unit-null
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage141/hid.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build141-results/hid-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage141/hid.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-build141-results/hid-ppc
++ md5 /var/tmp/graphics011-build141/qemu-ppc
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build141-results/native /var/tmp/graphics011-build141-results/hid-i386 --null-only
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build141-results/previous /var/tmp/graphics011-build135/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-build141-results/hid-ppc --null-only
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-build141-results/previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-build141-results/jaguar /var/tmp/graphics011-build141/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-build141-results/hid-ppc --null-only
++ cmp /var/tmp/graphics011-build141-results/native.stdout /var/tmp/graphics011-build141-results/jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-build141-results/native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-build141-results/native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-build141-results/jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-build141-results/jaguar.status
++ echo build47_and_real_kernel_null_complete
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/RUNS/build141.tgz graphics011-build141-results

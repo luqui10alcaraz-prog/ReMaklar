@@ -1,0 +1,41 @@
+{
+  "reason": "Primera ventana original Installer: titulo y marco Aqua parcialmente pintados; candidato detenido para verificacion antes de continuar el repintado",
+  "monitor": 4449,
+  "state": "stopped after complete migration; RAM includes guest filesystem cache and live kernel ports/locks",
+  "source_disks": {
+    "root": "vm/darwin602-graphics-011-storage88.qcow2",
+    "fat": "build/graphics011-storage88-exchange.img",
+    "work": "vm/graphics011-storage88-work.raw"
+  },
+  "guest_mounts": {
+    "root": "/dev/disk0s2",
+    "work": "/dev/disk1s1 on /var/tmp",
+    "exchange": "/dev/disk2 on /exchange"
+  },
+  "files": {
+    "build/011-window102-first-machine-state.bin": {
+      "bytes": 527319999,
+      "sha256": "1bf990a3773a7e4ebfd9198eaaae5067a194a985fd88182b601e8e521fd797a1"
+    },
+    "build/011-window102-first-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "bf1dafb44e10d7dccb464f6b0b8a83222eaeb7c8b1e866683b23a4206a997a73"
+    },
+    "build/011-window102-first-preserved.ppm": {
+      "bytes": 2359312,
+      "sha256": "ecdb65f34860abd2af54eebfe8d0bad46a150fc5d04305e17d13c0df4cea93f4"
+    },
+    "vm/darwin602-graphics-011-window102-first-preserved.qcow2": {
+      "bytes": 13107200,
+      "sha256": "f87b3a9ca97e92383a466a8e00b0d3c99813496a1e83461fce9c453e3d9b2016"
+    },
+    "build/graphics011-window102-first-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "9baa2d00ffcbf2d5c6c9db66fe5fd1895b51a72ffde084bebb3cc0551cf0f961"
+    },
+    "vm/graphics011-window102-first-work-preserved.qcow2": {
+      "bytes": 1323761664,
+      "sha256": "26ef497c6b84dcb5216886d9f072cdaf3ec479bb6cb1866d5c4cdaae372476eb"
+    }
+  }
+}

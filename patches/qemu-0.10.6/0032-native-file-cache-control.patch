@@ -1,0 +1,17 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -1013,7 +1013,13 @@
+         break;
+     }
+     case 92: /* Real descriptor and open-file status flags. */
+-        if(b==1 || b==2)r=fcntl(host_fd(a),b==1?F_GETFD:F_SETFD,c&1);
++        if(b==48) {
++#ifdef __APPLE__
++            r=fcntl(host_fd(a),F_NOCACHE,c);
++#else
++            errno=ENOTSUP;
++#endif
++        } else if(b==1 || b==2)r=fcntl(host_fd(a),b==1?F_GETFD:F_SETFD,c&1);
+         else if(b==3 || b==4) {
+ #ifdef __APPLE__
+             r=fcntl(host_fd(a),b==3?F_GETFL:F_SETFL,c);

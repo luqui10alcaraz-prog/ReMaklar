@@ -1,0 +1,37 @@
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;gnutar czf /exchange/reg90.tgz graphics011-regression90;sync;umount /exchange' 0
++ md5 /var/tmp/graphics011-build89/qemu-ppc
++ '[' signals-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/signals-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/signals-runtime-ppc /tmp/signals-009-r10.ppc
++ '[' statfs-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/statfs-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/statfs-runtime-ppc
++ '[' iokit-open-runtime = signals-runtime ']'
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/iokit-open-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/iokit-open-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/system /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run12/system-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/process-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/process-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/access-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/access-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/iokit-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/iokit-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/exec-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics009-run10/exec-runtime-ppc /tmp/exec-009-r10.ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/objc /var/tmp/graphics009-run10/objc-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/cf /var/tmp/graphics009-run10/cf-i386
++ perl /var/tmp/graphics009-r8/run_utilities.pl /var/tmp/graphics011-build89/qemu-ppc /var/tmp/graphics009-r8/samples /var/tmp/graphics009-r8/utility-cases.tsv /var/tmp/graphics011-regression90/utilities
++ perl /var/tmp/graphics009-r8/run_filesystem.pl /var/tmp/graphics011-build89/qemu-ppc /var/tmp/graphics009-r8/samples /var/tmp/graphics009-r8/filesystem-probe.macho /var/tmp/graphics011-regression90/filesystem
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/mach010-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run7/mach010-runtime-ppc /tmp/mach010-runtime-r7.ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/shm010-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run7/shm010-runtime-ppc /tmp/shm010-runtime-r7.ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/credentials010-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run7/credentials010-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/mmap010-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/mmap010-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/iokit-cstring-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/iokit-cstring-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/iokit010-open-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run4/iokit010-open-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/clock010-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run19/clock010-runtime-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-regression90/framebuffer010-runtime /var/tmp/graphics011-build89/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics010-run19/framebuffer010-runtime-ppc
++ echo REGRESSION010_COMPLETE
+REGRESSION010_COMPLETE
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk2 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/reg90.tgz graphics011-regression90
++ sync
++ umount /exchange

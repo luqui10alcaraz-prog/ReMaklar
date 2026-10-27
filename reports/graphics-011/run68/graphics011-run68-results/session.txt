@@ -1,0 +1,22 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/run68.tgz graphics011-run68-results graphics011-joint68;sync;umount /exchange' 0
++ cp -Rp /var/tmp/graphics011-run67/build /var/tmp/graphics011-build68/build
++ cp /var/tmp/graphics011-stage68/source/darwin-user/qemu.h /var/tmp/graphics011-run1/source/darwin-user/qemu.h
++ cp /var/tmp/graphics011-stage68/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap-main.c
++ cp /var/tmp/graphics011-stage68/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ cp /var/tmp/graphics011-stage68/source/darwin-user/remaklar/remote-maps.inc /var/tmp/graphics011-run1/source/darwin-user/remaklar/remote-maps.inc
++ make -C /var/tmp/graphics011-build68/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build68/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build68/qemu-ppc
++ gcc2 -no-cpp-precomp -arch i386 -O2 -I/var/tmp/graphics011-stage68/previous /var/tmp/graphics011-stage68/mailbox.c -o /var/tmp/graphics011-build68/mailbox-previous
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-run68-results/mailbox-previous /var/tmp/graphics011-build68/mailbox-previous
++ grep -q '^leader_exit=1$' /var/tmp/graphics011-run68-results/mailbox-previous.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-run68-results/mailbox-previous.status
++ md5 /mach_kernel /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer /var/tmp/graphics011-build68/qemu-ppc
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ perl /var/tmp/graphics011-stage68/joint.pl /var/tmp/graphics011-joint68 /var/tmp/graphics011-build68/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/run68.tgz graphics011-run68-results graphics011-joint68

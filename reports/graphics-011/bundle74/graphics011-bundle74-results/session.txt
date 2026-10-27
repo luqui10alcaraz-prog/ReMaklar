@@ -1,0 +1,15 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/bun74.tgz graphics011-bundle74-results;sync;umount /exchange' 0
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-bundle74/bundle.c -framework CoreFoundation -o /var/tmp/graphics011-bundle74-results/bundle-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-bundle74/bundle.c -framework CoreFoundation -o /var/tmp/graphics011-bundle74-results/bundle-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ app=/var/tmp/jaguar/Applications/Utilities/Installer.app
++ ls -la /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Info.plist /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.ni /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/info.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.ni
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-bundle74-results/bundle-native /var/tmp/graphics011-bundle74-results/bundle-i386 /var/tmp/jaguar/Applications/Utilities/Installer.app
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-bundle74-results/bundle-jaguar /var/tmp/graphics011-build68/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-bundle74-results/bundle-ppc /var/tmp/jaguar/Applications/Utilities/Installer.app
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/bun74.tgz graphics011-bundle74-results

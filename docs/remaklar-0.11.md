@@ -1,5 +1,7 @@
 # ReMaklar 0.11: estado guardado
 
+Continuación del 26 de octubre: **la primera ventana auténtica del Installer se verificó en el ensayo102**. El diagnóstico de direct66, las capturas, la comparación con VRAM y la restauración reproducible están en [remaklar-0.11-continuacion.md](remaklar-0.11-continuacion.md). Este documento conserva el estado histórico anterior a esa investigación.
+
 Fecha: 26 de octubre de 2026, Buenos Aires.
 
 El ensayo direct66, con 512 MB y WindowServer listo antes de iniciar Installer, llego a dibujar la barra original de Aqua y el cursor de espera. **Todavia no hay una ventana del Installer verificada.** No se simularon ventanas ni se sustituyeron componentes Apple.

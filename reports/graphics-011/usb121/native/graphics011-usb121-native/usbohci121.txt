@@ -1,0 +1,12 @@
+kextload: extension /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOHCI.kext appears to be valid
+kextload: loading extension /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOHCI.kext
+kextload: extension /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOHCI.kext is already loaded
+kextload: extension /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriver.kext appears to be valid
+kextload: loading extension /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriver.kext
+kextload: /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriver.kext loaded successfully
+kextload: loading personalities named:
+kextload:     Generic Mouse
+kextload:     IOUSBHIDDriver0
+kextload:     IOUSBHIDDriver1
+kextload: sending 3 personalities to the kernel
+kextload: matching started for /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriver.kext

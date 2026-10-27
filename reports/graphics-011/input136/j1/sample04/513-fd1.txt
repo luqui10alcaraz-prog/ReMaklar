@@ -1,0 +1,15 @@
+layout NXEvent=76 NXEQElement=84 NXEventData=48 lleq=224 data=36 time=20 key=8 repeat=2 keyboardType=16
+devices pointing=1 keyboard=1 ps2mouse=0 usbmouse=1
+open=0
+create=0
+map=0 bytes=20392
+shared version=3 size=20384 offsets=8,20392
+enable=0
+framebuffer open=3758097101
+framebuffer open=0
+native cursor shared object=0
+native register framebuffer=0
+native enable cursor=0
+native mouseRect tracking enabled around current pointer
+READY real hardware input, 15 seconds
+tick=0 head=1 tail=1 cursor=114,71

@@ -1,0 +1,17 @@
+verified files=1000 bytes=17600024
+verified files=2000 bytes=98180973
+verified files=3000 bytes=126687840
+verified files=4000 bytes=141604895
+verified files=5000 bytes=182567944
+verified files=6000 bytes=490901838
+verified files=7000 bytes=587521354
+verified files=8000 bytes=600062718
+verified files=9000 bytes=660674284
+verified files=10000 bytes=777756141
+verified files=11000 bytes=832636771
+verified files=12000 bytes=865932418
+verified files=13000 bytes=903823337
+verified files=14000 bytes=936230114
+verified files=15000 bytes=999685787
+verified files=16000 bytes=1042767192
+COPY_VERIFIED files=16808 links=464 dirs=2094 bytes=1115241082 restored_modes=0

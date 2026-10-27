@@ -1,0 +1,2 @@
+verified files=1000 bytes=17600024
+mode mismatch /var/tmp/jaguar/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit 100644 100755

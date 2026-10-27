@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "mode": "p",
+  "attempt": 1,
+  "ready_observed": true,
+  "emulated_input": "PS/2 keyboard key a, actual kernel IOHID event",
+  "expected_exit": 125,
+  "source_results": "reports/graphics-011/input110/p1/graphics011-input110-p1"
+}

@@ -1,0 +1,11 @@
+FAIL exit42 exit=125
+FAIL write exit=125
+FAIL write-ebadf exit=125
+FAIL write-efault exit=125
+FAIL load-be exit=125
+FAIL unsupported-syscall exit=125
+PASS illegal-instruction exit=125
+PASS memory-fault exit=125
+PASS truncated exit=125
+PASS bad-command exit=125
+PASS needs-dyld exit=125

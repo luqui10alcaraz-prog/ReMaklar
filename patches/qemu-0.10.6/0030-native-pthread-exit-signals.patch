@@ -1,0 +1,16 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -645,6 +645,13 @@
+         if(!a){errno=EFAULT;break;}
+         for(i=0;i<256;i++){if(!remaklar_guest_access(a+i,1,PAGE_READ)){errno=EFAULT;break;}path[i]=ldub(g2h(a+i));if(!path[i])break;}
+         if(errno)break;if(i==256){errno=EINVAL;break;}r=setlogin(path);
++#else
++        errno=ENOTSUP;
++#endif
++        break;
++    case 331: /* Original pthread exit disables signals on this kernel thread. */
++#ifdef __APPLE__
++        r=syscall(331,a);
+ #else
+         errno=ENOTSUP;
+ #endif

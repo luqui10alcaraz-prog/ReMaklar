@@ -1,0 +1,4 @@
+Filesystem   1K-blocks     Used    Avail Capacity  Mounted on
+/dev/disk0s2   2023918  2004717   -81994   104%    /
+devfs               90       90        0   100%    /dev
+/dev/disk1s1   4062703  1120069  2739499    29%    /private/var/tmp

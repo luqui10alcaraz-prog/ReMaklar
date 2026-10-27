@@ -1,0 +1,27 @@
+--- a/darwin-user/remaklar/darwin-kernel.c
++++ b/darwin-user/remaklar/darwin-kernel.c
+@@ -903,8 +903,13 @@
+         else {int fd=host_fd(a),saved;void *buffer=g2h(b);remaklar_gate_leave();r=read(fd,buffer,c);saved=errno;remaklar_gate_enter(env);errno=saved;}
+         break;
+     case 5: { /* Translate Darwin flags instead of passing Linux bit values. */
+-        int flags = b & 3;
+-        if (b & ~(3 | 4 | 8 | 0x200 | 0x400 | 0x800)) qerror("unsupported Darwin open flags %x", b);
++        int flags = b & 3,allowed=3 | 4 | 8 | 0x200 | 0x400 | 0x800,saved;
++#ifdef __APPLE__
++        allowed|=0x30;
++        if(b&0x10)flags|=O_SHLOCK;
++        if(b&0x20)flags|=O_EXLOCK;
++#endif
++        if (b & ~allowed) qerror("unsupported Darwin open flags %x", b);
+         if (b & 4) flags |= O_NONBLOCK;
+         if (b & 8) flags |= O_APPEND;
+         if (b & 0x200) flags |= O_CREAT;
+@@ -913,7 +918,7 @@
+         p = guest_path(a, path, sizeof(path));
+         if (!p) { r = -1; break; }
+         fprintf(stderr, "guest open %s\n", p);
+-        r = open(p, flags, c);
++        remaklar_gate_leave();r=open(p,flags,c);saved=errno;remaklar_gate_enter(env);errno=saved;
+         if (r >= 0) {
+             host_fd(0);
+             for (i = 3; i < 256 && descriptors[i] >= 0; i++);

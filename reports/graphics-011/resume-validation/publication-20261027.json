@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-27",
+  "checkpoint": "input141-publication",
+  "source_patch": 48,
+  "native_executor_md5": "8ea0af3748c5c6dbe19be84f4db5e9c3",
+  "verified": [
+    "authentic Installer window102 and independent restore",
+    "physical VESA pointer displacement134",
+    "native/PPC actual key, pointer, click, auxiliary and tracking events123/136",
+    "native dup2 and ENXIO comparisons131/133",
+    "build141: seven native memory tests and initialized kernel-null oracle"
+  ],
+  "pending": [
+    "actual consumed-key null payload probes142",
+    "original GUI joint143 with executor141",
+    "independent restore of input141-publication",
+    "Installer installation flow remains blocked"
+  ],
+  "published_new_evidence_files": 4559,
+  "published_new_evidence_bytes": 72992635,
+  "local_only": "Original media, RAM, VM disks, FAT exchange files, compiled executables and raw framebuffer dumps are preserved locally and excluded from this commit."
+}

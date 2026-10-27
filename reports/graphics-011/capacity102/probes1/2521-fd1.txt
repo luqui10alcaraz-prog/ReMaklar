@@ -1,0 +1,29 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk2 /exchange;cd /var/tmp;paths=graphics011-capacity102-results;if test -d graphics011-joint102;then paths="$paths graphics011-joint102";fi;gnutar czf /exchange/RUNS/cap102.tgz $paths;sync;umount /exchange' 0
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage102/capacity.c -o /var/tmp/graphics011-capacity102-results/capacity-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage102/capacity.c -o /var/tmp/graphics011-capacity102-results/capacity-ppc
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-capacity102-results/capacity-native /var/tmp/graphics011-capacity102-results/capacity-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-capacity102-results/capacity-previous /var/tmp/graphics011-build100/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-capacity102-results/capacity-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-capacity102-results/capacity-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-capacity102-results/capacity-jaguar /var/tmp/graphics011-build101/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-capacity102-results/capacity-ppc
++ cmp /var/tmp/graphics011-capacity102-results/capacity-native.stdout /var/tmp/graphics011-capacity102-results/capacity-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-capacity102-results/capacity-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-capacity102-results/capacity-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-capacity102-results/capacity-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-capacity102-results/capacity-jaguar.status
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage102/stress.c -o /var/tmp/graphics011-capacity102-results/names-stress-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-capacity102-results/names-stress /var/tmp/graphics011-build101/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-capacity102-results/names-stress-ppc
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-capacity102-results/names-stress.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-capacity102-results/names-stress.status
++ echo probes_completed
++ export REMAKLAR_JOINT_SAMPLES=72
++ REMAKLAR_JOINT_SAMPLES=72
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ export REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ perl /var/tmp/graphics011-stage102/joint.pl /var/tmp/graphics011-joint102 /var/tmp/graphics011-build101/qemu-ppc /var/tmp/jaguar

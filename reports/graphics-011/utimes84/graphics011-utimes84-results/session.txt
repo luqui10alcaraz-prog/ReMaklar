@@ -1,0 +1,34 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;paths=graphics011-utimes84-results;if test -d graphics011-joint84;then paths="$paths graphics011-joint84";fi;gnutar czf /exchange/utim84.tgz $paths;sync;umount /exchange' 0
++ exe=/var/tmp/graphics011-build83/qemu-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage84/utimes.c -o /var/tmp/graphics011-utimes84-results/utimes-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage84/utimes.c -o /var/tmp/graphics011-utimes84-results/utimes-ppc
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-utimes84-results/utimes-native /var/tmp/graphics011-utimes84-results/utimes-i386
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-utimes84-results/utimes-previous /var/tmp/graphics011-build81/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-utimes84-results/utimes-ppc
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-utimes84-results/utimes-previous.status
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-utimes84-results/utimes-jaguar /var/tmp/graphics011-build83/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-utimes84-results/utimes-ppc
++ cmp /var/tmp/graphics011-utimes84-results/utimes-native.stdout /var/tmp/graphics011-utimes84-results/utimes-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-utimes84-results/utimes-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-utimes84-results/utimes-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-utimes84-results/utimes-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-utimes84-results/utimes-jaguar.status
++ df -k /
++ echo probes_completed
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ export REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7758,1c779c,1c7800
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ perl /var/tmp/graphics011-stage84/joint.pl /var/tmp/graphics011-joint84 /var/tmp/graphics011-build83/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ paths=graphics011-utimes84-results
++ test -d graphics011-joint84
++ paths=graphics011-utimes84-results graphics011-joint84
++ gnutar czf /exchange/utim84.tgz graphics011-utimes84-results graphics011-joint84

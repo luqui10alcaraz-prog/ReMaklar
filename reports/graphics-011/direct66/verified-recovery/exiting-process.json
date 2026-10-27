@@ -1,0 +1,24 @@
+{
+  "pid": 3846,
+  "p_xstat": 9,
+  "mailbox_magic": "0x524d0043",
+  "mailbox_pid": 3846,
+  "mailbox": {
+    "vnode": "0x20d9c5c8",
+    "object": "0x21227a00",
+    "bytes": 7180,
+    "resident_pages": [
+      {
+        "page": "0x20563a90",
+        "offset": 0,
+        "physical": "0x9338000"
+      },
+      {
+        "page": "0x204bf984",
+        "offset": 4096,
+        "physical": "0x578f000"
+      }
+    ],
+    "holes": []
+  }
+}

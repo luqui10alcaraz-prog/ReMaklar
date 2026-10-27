@@ -1,0 +1,41 @@
+{
+  "reason": "Ventana autentica Installer completa en marco y fondo, contenido textual aun incompleto; ATS WindowServer pbs e Installer vivos. Detenida antes de limpieza del arnes.",
+  "monitor": 4449,
+  "state": "stopped after complete migration; RAM includes guest filesystem cache and live kernel ports/locks",
+  "source_disks": {
+    "root": "vm/darwin602-graphics-011-storage88.qcow2",
+    "fat": "build/graphics011-storage88-exchange.img",
+    "work": "vm/graphics011-storage88-work.raw"
+  },
+  "guest_mounts": {
+    "root": "/dev/disk0s2",
+    "work": "/dev/disk1s1 on /var/tmp",
+    "exchange": "/dev/disk2 on /exchange"
+  },
+  "files": {
+    "build/011-window102-painted-machine-state.bin": {
+      "bytes": 527270715,
+      "sha256": "66ee24a3b93ec202001c582a86f6924494b648b0e8e093dbace6740d03db0373"
+    },
+    "build/011-window102-painted-preserved-vram.bin": {
+      "bytes": 3145728,
+      "sha256": "a19cc563a7849cd1f139fef927b2ddda8855d4daae2515ff077cbf80fcc7aa22"
+    },
+    "build/011-window102-painted-preserved.ppm": {
+      "bytes": 2359312,
+      "sha256": "7e9eef8dba2a1e1eee44cd8360a2fdc64bbcaab9c63ad9df39d7d91c3ac6b757"
+    },
+    "vm/darwin602-graphics-011-window102-painted-preserved.qcow2": {
+      "bytes": 13107200,
+      "sha256": "f87b3a9ca97e92383a466a8e00b0d3c99813496a1e83461fce9c453e3d9b2016"
+    },
+    "build/graphics011-window102-painted-preserved-exchange.img": {
+      "bytes": 67108864,
+      "sha256": "9baa2d00ffcbf2d5c6c9db66fe5fd1895b51a72ffde084bebb3cc0551cf0f961"
+    },
+    "vm/graphics011-window102-painted-work-preserved.qcow2": {
+      "bytes": 1330708480,
+      "sha256": "5ff89df5048d7d0da69ebfd9e3235213f6ffc144bc1215c33c1fce0924ae4f44"
+    }
+  }
+}

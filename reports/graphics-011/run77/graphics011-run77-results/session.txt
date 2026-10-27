@@ -1,0 +1,20 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/run77.tgz graphics011-run77-results graphics011-joint77;sync;umount /exchange' 0
++ df -k /
++ cp -Rp /var/tmp/graphics011-build68/build /var/tmp/graphics011-build77/build
++ cp /var/tmp/graphics011-stage77/source/darwin-user/remaklar/bootstrap-main.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/bootstrap-main.c
++ cp /var/tmp/graphics011-stage77/source/darwin-user/remaklar/darwin-kernel.c /var/tmp/graphics011-run1/source/darwin-user/remaklar/darwin-kernel.c
++ make -C /var/tmp/graphics011-build77/build SRC_PATH=/var/tmp/graphics011-run1/source subdir-ppc-darwin-user
++ cp /var/tmp/graphics011-build77/build/ppc-darwin-user/qemu-ppc /var/tmp/graphics011-build77/qemu-ppc
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ export REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7684,1c7758,1c779c,1c7800
++ REMAKLAR_OBSERVE_APPKIT_OFFSETS=624e0,1c7684,1c7758,1c779c,1c7800
++ export REMAKLAR_TRACE_PATHS=1
++ REMAKLAR_TRACE_PATHS=1
++ perl /var/tmp/graphics011-stage77/joint.pl /var/tmp/graphics011-joint77 /var/tmp/graphics011-build77/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/run77.tgz graphics011-run77-results graphics011-joint77

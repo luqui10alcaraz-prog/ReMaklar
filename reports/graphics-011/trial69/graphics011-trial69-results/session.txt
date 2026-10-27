@@ -1,0 +1,10 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/trial69.tgz graphics011-trial69-results graphics011-joint69;sync;umount /exchange' 0
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ perl /var/tmp/graphics011-trial69/joint.pl /var/tmp/graphics011-joint69 /var/tmp/graphics011-build68/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/trial69.tgz graphics011-trial69-results graphics011-joint69

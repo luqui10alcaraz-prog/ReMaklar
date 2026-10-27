@@ -1,0 +1,4 @@
+layout NXEvent=76 NXEQElement=84 NXEventData=48 lleq=224 data=36 time=20 key=8 repeat=2 keyboardType=16
+devices pointing=1 keyboard=1 ps2mouse=0 usbmouse=1
+open=0
+create=0

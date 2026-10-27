@@ -1,0 +1,36 @@
+e=24fa8f68
+syscall pc=24fa8f68 r0=26 r3=0000a100 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=bffffefb lr=2806a3f8 res=ffffffff
+return r3=1 error=1 resume=24fa8f68
+syscall pc=24fa8f68 r0=26 r3=0000a101 r4=00000000 r5=00000000 r6=00000000 r7=00000000 r8=35778275 lr=2806a438 res=ffffffff
+return r3=1 error=1 resume=24fa8f68
+syscall pc=24f9dca8 r0=5 r3=22398f50 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=25148110 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/CharacterSets/CFUnicodeData-B.mapping
+return r3=3 error=0 resume=24f9dcac
+syscall pc=24f9d608 r0=189 r3=00000003 r4=22398ea0 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=25148124 res=ffffffff
+return r3=0 error=0 resume=24f9d60c
+syscall pc=24fabe28 r0=4294967253 r3=00000003 r4=00000000 r5=223993c0 r6=00000001 r7=0001356c r8=74732f00 lr=25148144 res=ffffffff
+syscall pc=24fa36a8 r0=6 r3=00000003 r4=00000000 r5=223993c0 r6=00000001 r7=0001356c r8=74732f00 lr=25148164 res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=24f9dca8 r0=5 r3=22398ef0 r4=00000000 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=25148110 res=ffffffff
+guest open /var/tmp/jaguar/System/Library/CoreServices/CharacterSets/CFCharacterSetBitmaps.bitmap
+return r3=3 error=0 resume=24f9dcac
+syscall pc=24f9d608 r0=189 r3=00000003 r4=22398e40 r5=00000000 r6=80808080 r7=00000003 r8=74732f00 lr=25148124 res=ffffffff
+return r3=0 error=0 resume=24f9d60c
+syscall pc=24fabe28 r0=4294967253 r3=00000003 r4=00000000 r5=22399360 r6=00000001 r7=000480aa r8=74732f00 lr=25148144 res=ffffffff
+syscall pc=24fa36a8 r0=6 r3=00000003 r4=00000000 r5=22399360 r6=00000001 r7=000480aa r8=74732f00 lr=25148164 res=ffffffff
+return r3=0 error=0 resume=24fa36ac
+syscall pc=24fa3dc8 r0=188 r3=22399380 r4=22399320 r5=0000000b r6=00000080 r7=00000000 r8=24e34010 lr=250e9d5c res=ffffffff
+native path syscall=188 path=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents result=0 errno=0 mode=40755
+return r3=0 error=0 resume=24fa3dcc
+syscall pc=24f9dca8 r0=5 r3=22398a30 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=350ca364 lr=250e62a4 res=ffffffff
+guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Info-macos.plist
+return r3=2 error=2 resume=24f9dca8
+syscall pc=24f9dca8 r0=5 r3=22398a30 r4=00000000 r5=000001b6 r6=00000000 r7=ffffffff r8=350ca364 lr=250e62a4 res=ffffffff
+guest open /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Info.plist
+return r3=3 error=0 resume=24f9dcac
+syscall pc=24f9d608 r0=189 r3=00000003 r4=223989d0 r5=000001b6 r6=00000000 r7=ffffffff r8=350ca364 lr=250e62b8 res=ffffffff
+return r3=0 error=0 resume=24f9d60c
+syscall pc=24f99508 r0=3 r3=00000003 r4=24e48130 r5=00000a07 r6=00000010 r7=00000010 r8=350ca364 lr=250e6388 res=ffffffff
+return r3=2567 error=0 resume=24f9950c
+syscall pc=24fa36a8 r0=6 r3=00000003 r4=24e48130 r5=00000a07 r6=00000010 r7=00000010 r8=350ca364 lr=250e63b8 res=ffffffff
+return r3=0 error=0 resume=24fa36ac

@@ -1,0 +1,343 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/res75.tgz graphics011-resources75-results graphics011-joint75;sync;umount /exchange' 0
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings) = f6066d55a2bae0f14b90c40d37ee83af
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist) = dafe614c79e61c388bdc3ea8773719c5
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings) = 26d85e4faf7e9924ee3aea56377d9d3d
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings) = 499d95d69cebf449b8414a321b3138f9
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib) = ceaa30e9875f938011f562beee08192a
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib) = 88a98a432b5174b2b38caad5e719209c
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist) = 9b3da3f3dec084ab21510441bc10ceca
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist) = db662bdd9e62add759c4a04393277e74
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib) = 7645847ba6054239e2a11c26ae80a014
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib) = 6eccb7e72ce62b4fc686b4957d762a71
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings) = 02f41d3372061d132d0511779296118e
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib) = 126a2af2f0b9f001ad690a3df0c437bd
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib) = aa70fc0f682fa16f39c79de36e3fac70
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings) = 7ca6cf15c8a5ea522005c81376fc9585
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings) = 697cff9b9e2792b2734a12a93094dc6b
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib) = 7645847ba6054239e2a11c26ae80a014
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib) = 6dc737796c8398bafbeb1a97139c020a
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib) = e066ecd0e0d0a988e948b4be9b3798d1
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings) = 7714fc9f197a8162e82e5417c6c70a46
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings) = c82a4b9b30d8a1ebad4fd19522aee9de
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib) = 7645847ba6054239e2a11c26ae80a014
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib) = 8e91e9522ed439bbfe144b541a037bd6
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib) = 34b68ecd9a7462538a7986783d1792a5
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib) = 0ac6fe888cb6b3d4fc810c8fb61e57c4
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf) = 42829099512b170bbc5a1345183f0bab
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf) = cfd86daa4ee2e6894ee369f4f845b4d6
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings) = 7624b0056291929424ff646a9dfce555
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib) = c4de76b45e0e04eb8daffac0a197025a
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf) = 10becfb0ab682edeeacea0b58a8d5b1e
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib) = 22490e9aac9dc140ab61575b60eb1776
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib) = 489bc9f6a0c892e79b263c0b10bfb95b
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist) = 9f4eb66002fd5ee3edd4eccb1cb5424f
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib) = 2a0c9599aa111fc1e94056168f7f63eb
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib) = 89a4a3bb9e86ac6a55d6afb7db1385a8
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib) = 2a0c9599aa111fc1e94056168f7f63eb
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib) = 675e297ad4bbd90a134a5506d40569d2
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib) = 2a0c9599aa111fc1e94056168f7f63eb
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib) = 90c43c04cab256859201b75dcd1efc4e
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings) = 42b4d60847035da9daa0e08b72f8c9fd
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings) = aa950d4678c26721ccb1fe98d0a5ab5b
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings) = 6921a3e40411d13c72f4cf1082a8244c
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings) = ae8438532eba0fe27a671f80d4bd0ada
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings) = 0c3941530b347fd341691a5b05055167
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings) = 15cee0fa64d6774dc42d4ad76642952c
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings
++ cmp /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib) = e4be0884167756f4cf9cb5f5690622e5
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib
++ source=/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib
++ dest=/var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib
+++ md5 /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib
++ got=MD5 (/var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib) = 261cfae1b9c9856c6c6b77a242a6f776
++ test -e /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib
++ mkdir -p /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib
++ cp -p /var/tmp/repair75/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib
++ md5 /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib
++ export REMAKLAR_OBSERVE_APPKIT=1
++ REMAKLAR_OBSERVE_APPKIT=1
++ perl /var/tmp/graphics011-resources75/joint.pl /var/tmp/graphics011-joint75 /var/tmp/graphics011-build68/qemu-ppc /var/tmp/jaguar
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/res75.tgz graphics011-resources75-results graphics011-joint75

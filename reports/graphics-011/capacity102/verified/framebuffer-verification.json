@@ -1,0 +1,21 @@
+{
+  "ppm": "build/011-window102-painted-preserved.ppm",
+  "vram": "build/011-window102-painted-preserved-vram.bin",
+  "physical_address": "0xfd000000",
+  "format": "1024x768x32 BGRX",
+  "ppm_sha256": "7e9eef8dba2a1e1eee44cd8360a2fdc64bbcaab9c63ad9df39d7d91c3ac6b757",
+  "vram_sha256": "a19cc563a7849cd1f139fef927b2ddda8855d4daae2515ff077cbf80fcc7aa22",
+  "rgb_sha256": "b7e34c19cd42aec838237b12dde424a10580fc26b74c2b16c11cf6e542380bfe",
+  "decoded_vram_rgb_sha256": "b7e34c19cd42aec838237b12dde424a10580fc26b74c2b16c11cf6e542380bfe",
+  "different_pixels_whole_frame": 0,
+  "window_rectangle_xyxy": [
+    195,
+    120,
+    835,
+    585
+  ],
+  "different_pixels_window": 0,
+  "difference_bounds": null,
+  "png": "reports/graphics-011/capacity102/verified/verified-window.png",
+  "verification": "Actual stopped framebuffer; no synthetic graphics or pixel modifications"
+}

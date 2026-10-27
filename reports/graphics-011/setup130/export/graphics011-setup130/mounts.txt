@@ -1,0 +1,5 @@
+/dev/disk0s2 on / (local)
+devfs on /dev (local)
+/dev/disk2s1 on /private/var/tmp (local)
+/dev/disk3s0 on /private/var/tmp/jaguar/Volumes/CD104 (local, read-only)
+devfs on /var/tmp/jaguar/dev (local)

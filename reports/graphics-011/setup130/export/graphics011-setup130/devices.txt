@@ -1,0 +1,9 @@
+crw--w--w-  1 root  wheel      0, 0 Oct 26 20:36 /var/tmp/jaguar/dev/console
+crw-r-----  1 root  operator  14, 0 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk0
+crw-r-----  1 root  operator  14, 1 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk0s1
+crw-r-----  1 root  operator  14, 2 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk0s2
+crw-r-----  1 root  operator  14, 3 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk1
+crw-r-----  1 root  operator  14, 4 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk2
+crw-r-----  1 root  operator  14, 5 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk2s1
+cr--r-----  1 root  operator  14, 6 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk3
+cr--r-----  1 root  operator  14, 7 Oct 26 20:36 /var/tmp/jaguar/dev/rdisk3s0

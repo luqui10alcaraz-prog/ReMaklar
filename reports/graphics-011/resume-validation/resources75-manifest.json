@@ -1,0 +1,282 @@
+{
+  "source": "build\\installer-originals-008.tgz",
+  "archive_sha256": "1a33650c11a107fe5400789a9c2698cafffb72acd568760f59ddca12de861394",
+  "files": [
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Dutch.lproj/Localizable.strings",
+      "bytes": 3152,
+      "md5": "f6066d55a2bae0f14b90c40d37ee83af",
+      "sha256": "34547b5216e0287fee9b0f56ae6e698acb9c615c7d2e4b76aa942e74bdb75f93"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/Japanese.lproj/locversion.plist",
+      "bytes": 367,
+      "md5": "dafe614c79e61c388bdc3ea8773719c5",
+      "sha256": "dd31989eb447a17892dbbaa070fd1d8cba22dbe3bff94e472e52db5f378e1d83"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_CN.lproj/Localizable.strings",
+      "bytes": 2382,
+      "md5": "26d85e4faf7e9924ee3aea56377d9d3d",
+      "sha256": "3e1b477b9e0554b3902a9aec0c55911b04e4338a9a3427b4bb488856a8a63e4b"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Documents.bundle/Contents/Resources/zh_TW.lproj/Localizable.strings",
+      "bytes": 2388,
+      "md5": "499d95d69cebf449b8414a321b3138f9",
+      "sha256": "8476c6fdab95f3193a05ba98112f0b3a2150b058c87bfa29706541bba9ff1fc8"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/classes.nib",
+      "bytes": 730,
+      "md5": "ceaa30e9875f938011f562beee08192a",
+      "sha256": "e6f112a4e644d65d8edca02fc0c9b129cc0016493ba93f3fe6c595cb51ae9dda"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Dutch.lproj/InstallLanguages.nib/objects.nib",
+      "bytes": 2461,
+      "md5": "88a98a432b5174b2b38caad5e719209c",
+      "sha256": "5690a29f9ef7eab0dee8d628b03b2a38aec3e1ff1be0cdcffc0617b72881d3cb"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Italian.lproj/locversion.plist",
+      "bytes": 365,
+      "md5": "9b3da3f3dec084ab21510441bc10ceca",
+      "sha256": "3d4dcc2636f35a9cb0b08badb7f01fe327c5e34b4c50f5daeef414a821e5ee47"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/EasyCustom.bundle/Contents/Resources/Spanish.lproj/locversion.plist",
+      "bytes": 365,
+      "md5": "db662bdd9e62add759c4a04393277e74",
+      "sha256": "7c8447e05fe1af34512c9c88c5c06dc3dfad5959441fff6a9dd5776764b72ddc"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/classes.nib",
+      "bytes": 936,
+      "md5": "7645847ba6054239e2a11c26ae80a014",
+      "sha256": "650c70d1c522b62d87d3f0c04ac0dc5069e3699a5f605d4c271dbbe825aa0be3"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/English.lproj/PagedInstaller.nib/objects.nib",
+      "bytes": 2848,
+      "md5": "6eccb7e72ce62b4fc686b4957d762a71",
+      "sha256": "f9ac952969753a408f3b1c5721ecf298e4b88963de2300b7c609e4a8db3a55e6"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/English.lproj/Localizable.strings",
+      "bytes": 1412,
+      "md5": "02f41d3372061d132d0511779296118e",
+      "sha256": "71f8ebe408d5990f30dd7c4e832c2937c5fc1d7660ad41d15329b139c97fbe50"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/French.lproj/FileLog.nib/info.nib",
+      "bytes": 351,
+      "md5": "126a2af2f0b9f001ad690a3df0c437bd",
+      "sha256": "21e427d7519a8c8d5938d09fa65d19bfe2e8bea20eff1e0f66961c5b2dd5389d"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/German.lproj/FileLog.nib/info.nib",
+      "bytes": 351,
+      "md5": "aa70fc0f682fa16f39c79de36e3fac70",
+      "sha256": "f47e92d764eedcc17862c0509cfa2d5a8d67264906a7154f7e60bfa44ab94ca6"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Italian.lproj/Localizable.strings",
+      "bytes": 1524,
+      "md5": "7ca6cf15c8a5ea522005c81376fc9585",
+      "sha256": "4a690669639bd510ffc55c06b9becd6f5b1a25e7d936564d295bd33056954ef8"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/FileLog.bundle/Contents/Resources/Spanish.lproj/Localizable.strings",
+      "bytes": 1504,
+      "md5": "697cff9b9e2792b2734a12a93094dc6b",
+      "sha256": "0c5d67879f2473d711355044b9d386a69f46ca896365667b72675be5d58da2d1"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/classes.nib",
+      "bytes": 936,
+      "md5": "7645847ba6054239e2a11c26ae80a014",
+      "sha256": "650c70d1c522b62d87d3f0c04ac0dc5069e3699a5f605d4c271dbbe825aa0be3"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Italian.lproj/PagedInstaller.nib/objects.nib",
+      "bytes": 2905,
+      "md5": "6dc737796c8398bafbeb1a97139c020a",
+      "sha256": "16390c6095a588008ce7345f2ce9bccbce869ba09f49ba9027117a297c29663a"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Japanese.lproj/InstallLanguages.nib/info.nib",
+      "bytes": 273,
+      "md5": "e066ecd0e0d0a988e948b4be9b3798d1",
+      "sha256": "f7ef590c34022297e5b1230e24a34ede2eb3afa04746857150ee5dc25e673544"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/French.lproj/Localizable.strings",
+      "bytes": 6920,
+      "md5": "7714fc9f197a8162e82e5417c6c70a46",
+      "sha256": "3f90d3fe87a21f8b8cfbabdb5d5c06cd7850d9e412a12247773176c1e6e087f3"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Progress.bundle/Contents/Resources/German.lproj/Localizable.strings",
+      "bytes": 7222,
+      "md5": "c82a4b9b30d8a1ebad4fd19522aee9de",
+      "sha256": "da2765b4a5f6e8461e991b81a67079b51b16ba2fa38efb13ec81aaede47a79f6"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/classes.nib",
+      "bytes": 936,
+      "md5": "7645847ba6054239e2a11c26ae80a014",
+      "sha256": "650c70d1c522b62d87d3f0c04ac0dc5069e3699a5f605d4c271dbbe825aa0be3"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Spanish.lproj/PagedInstaller.nib/objects.nib",
+      "bytes": 2906,
+      "md5": "8e91e9522ed439bbfe144b541a037bd6",
+      "sha256": "83567315c65a5c65709028f346fb8ed796c633785a7ee4dd714197d3f8496086"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/classes.nib",
+      "bytes": 1494,
+      "md5": "34b68ecd9a7462538a7986783d1792a5",
+      "sha256": "231ce8a851874085f46d1c03a9b6549df1685b939b0f68da5128a67e4ebfa85f"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Dutch.lproj/Splash.nib/objects.nib",
+      "bytes": 4320,
+      "md5": "0ac6fe888cb6b3d4fc810c8fb61e57c4",
+      "sha256": "e3c0ce754cc6c20bf94eea9fcd8a19dc05ba62e0f194dd337719c8cbce4a6da4"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/English.lproj/Splash.rtf",
+      "bytes": 353,
+      "md5": "42829099512b170bbc5a1345183f0bab",
+      "sha256": "51eeb864565c959c49e7091193f0a6f04e5bae8d022a9076b8ffffc065bc30f4"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Italian.lproj/Splash.rtf",
+      "bytes": 398,
+      "md5": "cfd86daa4ee2e6894ee369f4f845b4d6",
+      "sha256": "231a76c8d7dc3500852fb23b7cc94fafd6bbf8277d9a7250abf8a6d18e174b7a"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Localizable.strings",
+      "bytes": 4432,
+      "md5": "7624b0056291929424ff646a9dfce555",
+      "sha256": "de101c7ad903a676aa8ae0bd1b67fda7a6f76b71d603bcfbfe08def98ed3066c"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Japanese.lproj/Splash.nib/info.nib",
+      "bytes": 352,
+      "md5": "c4de76b45e0e04eb8daffac0a197025a",
+      "sha256": "77e3274084e3b1772d3e059ec57f4f3c9d46062b1d94af323431f3be25bf8791"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/Spanish.lproj/Splash.rtf",
+      "bytes": 401,
+      "md5": "10becfb0ab682edeeacea0b58a8d5b1e",
+      "sha256": "9982acdaed105f4c9cb0b68b6fd9ce0631e98cf907095ec4c2503f05411935b2"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_CN.lproj/Splash.nib/objects.nib",
+      "bytes": 4334,
+      "md5": "22490e9aac9dc140ab61575b60eb1776",
+      "sha256": "858194c91989f3e821c04bfd671d1e2fa488960fba58125940a25ec3bcd4f3c3"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/Splash.bundle/Contents/Resources/zh_TW.lproj/Splash.nib/objects.nib",
+      "bytes": 4431,
+      "md5": "489bc9f6a0c892e79b263c0b10bfb95b",
+      "sha256": "b990f0a1df8bbf7e257e983f1969b0fef5ee6a9399f006d0db799302d75e54b4"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Dutch.lproj/locversion.plist",
+      "bytes": 365,
+      "md5": "9f4eb66002fd5ee3edd4eccb1cb5424f",
+      "sha256": "bff861a3d696c755ff101002d2e5750a43add34820cf3d88474202109785ea58"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/classes.nib",
+      "bytes": 3033,
+      "md5": "2a0c9599aa111fc1e94056168f7f63eb",
+      "sha256": "22c62d85926acc38114f07dff1af5a0b7ff2a9dec20203977d51ef01d1d4c726"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/English.lproj/TargetSelect.nib/objects.nib",
+      "bytes": 12462,
+      "md5": "89a4a3bb9e86ac6a55d6afb7db1385a8",
+      "sha256": "cd5edb0d0023355cc623f48541534d3e93eaca9c7e8e8dd4b7e6a4d7ff3a7b5b"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/classes.nib",
+      "bytes": 3033,
+      "md5": "2a0c9599aa111fc1e94056168f7f63eb",
+      "sha256": "22c62d85926acc38114f07dff1af5a0b7ff2a9dec20203977d51ef01d1d4c726"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Italian.lproj/TargetSelect.nib/objects.nib",
+      "bytes": 12487,
+      "md5": "675e297ad4bbd90a134a5506d40569d2",
+      "sha256": "3f17bbe06f70d56596184322f38c2c78a00a9e509818f78ed8bb06618b931809"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/classes.nib",
+      "bytes": 3033,
+      "md5": "2a0c9599aa111fc1e94056168f7f63eb",
+      "sha256": "22c62d85926acc38114f07dff1af5a0b7ff2a9dec20203977d51ef01d1d4c726"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/Spanish.lproj/TargetSelect.nib/objects.nib",
+      "bytes": 12478,
+      "md5": "90c43c04cab256859201b75dcd1efc4e",
+      "sha256": "8d18debeec7658a34d48d6e161afecca12c0ee94e1be069e6cc1ec2759e97e69"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/da.lproj/Localizable.strings",
+      "bytes": 11254,
+      "md5": "42b4d60847035da9daa0e08b72f8c9fd",
+      "sha256": "7ac1e745a826fab70ebd13c65d4aeece05ef6ed675a6bf3eeae7c75063a7aa8f"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/fi.lproj/Localizable.strings",
+      "bytes": 11238,
+      "md5": "aa950d4678c26721ccb1fe98d0a5ab5b",
+      "sha256": "c34b9dbc440514e725b6eb43db32d95110ca18cdd0d2f2ff6d9d6bb558769ea5"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/ko.lproj/Localizable.strings",
+      "bytes": 8444,
+      "md5": "6921a3e40411d13c72f4cf1082a8244c",
+      "sha256": "c191e804f683c23b699bf38ded683cc3e279c09a3ca39032b653b19023dc993d"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/no.lproj/Localizable.strings",
+      "bytes": 11562,
+      "md5": "ae8438532eba0fe27a671f80d4bd0ada",
+      "sha256": "aa69ce1850dbbc01e4dc914a187611ebed89e1150ec1de1e595eeba98d15b586"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/pt.lproj/Localizable.strings",
+      "bytes": 11906,
+      "md5": "0c3941530b347fd341691a5b05055167",
+      "sha256": "ab70c6c0f676e29a2c8e681bc54c37f4eb7bfd4bd1948993ddf786f7fd4f22ad"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/TargetSelect.bundle/Contents/Resources/sv.lproj/Localizable.strings",
+      "bytes": 11594,
+      "md5": "15cee0fa64d6774dc42d4ad76642952c",
+      "sha256": "5a1162de33a7e4b0471b00f16a813f1d5c688eba26b4911cf93e9df261ad8774"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/zh_CN.lproj/InstallLanguages.nib/objects.nib",
+      "bytes": 2495,
+      "md5": "e4be0884167756f4cf9cb5f5690622e5",
+      "sha256": "1576fbbd882bd44ac63f375a68f7510a615b918b461a5bc1e6a364217397be78"
+    },
+    {
+      "path": "Applications/Utilities/Installer.app/Contents/Resources/zh_TW.lproj/InstallLanguages.nib/objects.nib",
+      "bytes": 2527,
+      "md5": "261cfae1b9c9856c6c6b77a242a6f776",
+      "sha256": "2cb5887fa9bb189d621ea1d62f47a99628c4e156193e306addec958863ff9951"
+    }
+  ]
+}

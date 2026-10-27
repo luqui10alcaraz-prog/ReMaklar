@@ -1,0 +1,37 @@
+6 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24e55ae0 r0=116 r3=22397ef0 r4=00000000 r5=22397fd4 r6=22397ff8 r7=8fec5550 r8=bfffff7b lr=24def770 res=ffffffff
+return r3=1793064145 error=0 resume=24e55ae4
+syscall pc=24df36a8 r0=202 r3=22397f04 r4=00000002 r5=22397f00 r6=22397f0c r7=00000000 r8=00000000 lr=00001d3c res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=4
+return r3=0 error=0 resume=24df36ac
+syscall pc=24df36a8 r0=202 r3=22397f04 r4=00000002 r5=22397f00 r6=22397f0c r7=00000000 r8=00000000 lr=00001dac res=ffffffff
+sysctl mib[0]=6
+sysctl mib[1]=5
+return r3=0 error=0 resume=24df36ac
+syscall pc=24def608 r0=189 r3=00000001 r4=223979c0 r5=22397a74 r6=22397f0c r7=00000000 r8=00000000 lr=24df58f8 res=ffffffff
+return r3=0 error=0 resume=24def60c
+syscall pc=24dedfe8 r0=4 r3=00000001 r4=223a4400 r5=00000059 r6=0000000a r7=00000001 r8=94dea000 lr=24deb78c res=ffffffff
+return r3=89 error=0 resume=24dedfec
+syscall pc=24deffc8 r0=1 r3=00000000 r4=223a4400 r5=00000059 r6=0000000a r7=00000001 r8=94dea000 lr=00001b3c res=ffffffff
+original PPC exit pid=1716 status=0 lr=00001b3c
+exit frame=22397f20 return=00001b3c
+exit frame=22397f80 return=000019b8
+exit frame=22397fc0 return=00000001

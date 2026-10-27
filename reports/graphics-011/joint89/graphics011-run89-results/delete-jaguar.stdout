@@ -1,0 +1,2 @@
+open-file delete: result=-1 errno=16
+real Carbon delete: busy file, closed file, ENOENT, EFAULT and directory EPERM PASS

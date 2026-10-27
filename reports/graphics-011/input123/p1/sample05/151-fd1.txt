@@ -1,0 +1,6 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/input123-$mode$attempt.tgz graphics011-input123-$mode$attempt;sync;umount /exchange' 0
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ bin=/var/tmp/graphics011-build122-results
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-input123-p1/probe /var/tmp/graphics011-build113/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-build122-results/hid-ppc --mouse

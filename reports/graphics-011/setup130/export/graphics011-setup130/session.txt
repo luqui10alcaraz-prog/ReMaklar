@@ -1,0 +1,28 @@
++ trap 'status=$?;echo script_exit=$status > "$out/script-status.txt";sync;mount -t msdos /dev/disk1 /exchange;cd /var/tmp;gnutar czf /exchange/RUNS/setup130.tgz graphics011-setup130;sync;umount /exchange' 0
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage130/preferences.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-setup130/preferences
++ /var/tmp/graphics011-setup130/preferences
++ ls -l /var/tmp/jaguar/dev/rdisk0 /var/tmp/jaguar/dev/rdisk0s1 /var/tmp/jaguar/dev/rdisk0s2 /var/tmp/jaguar/dev/rdisk1 /var/tmp/jaguar/dev/rdisk2 /var/tmp/jaguar/dev/rdisk2s1 /var/tmp/jaguar/dev/rdisk3 /var/tmp/jaguar/dev/rdisk3s0 /var/tmp/jaguar/dev/console
++ mount
++ ioreg -l -w 0
++ md5 /mach_kernel /var/tmp/jaguar/Applications/Utilities/Installer.app/Contents/MacOS/Installer
++ gcc2 -no-cpp-precomp -arch i386 /var/tmp/graphics011-stage130/names.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-setup130/names-i386
++ gcc2 -no-cpp-precomp -arch ppc /var/tmp/graphics011-stage130/names.c -framework IOKit -framework CoreFoundation -o /var/tmp/graphics011-setup130/names-ppc
++ probe=/var/tmp/graphics009-r8/run_graphics_008.pl
++ export REMAKLAR_QUIET_TLS=1
++ REMAKLAR_QUIET_TLS=1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-setup130/names-native /var/tmp/graphics011-setup130/names-i386 disk2s1
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-setup130/names-previous /var/tmp/graphics011-build112/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-setup130/names-ppc disk2s1
++ grep -q '^leader_exit=125$' /var/tmp/graphics011-setup130/names-previous.status
++ perl /var/tmp/graphics009-r8/run_graphics_008.pl /var/tmp/graphics011-setup130/names-jaguar /var/tmp/graphics011-build122/qemu-ppc --root /var/tmp/jaguar /var/tmp/graphics011-setup130/names-ppc disk2s1
++ cmp /var/tmp/graphics011-setup130/names-native.stdout /var/tmp/graphics011-setup130/names-jaguar.stdout
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-setup130/names-native.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-setup130/names-native.status
++ grep -q '^leader_exit=0$' /var/tmp/graphics011-setup130/names-jaguar.status
++ grep -q '^timeout=0$' /var/tmp/graphics011-setup130/names-jaguar.status
++ echo setup_and_names_complete
++ status=0
++ echo script_exit=0
++ sync
++ mount -t msdos /dev/disk1 /exchange
++ cd /var/tmp
++ gnutar czf /exchange/RUNS/setup130.tgz graphics011-setup130

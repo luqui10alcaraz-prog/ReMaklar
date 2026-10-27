@@ -1,0 +1,142 @@
+[
+  {
+    "proc": "0x20c2a908",
+    "pid": 192,
+    "comm": "qemu-ppc",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x20e45818",
+        "file": "192-fd1.txt",
+        "size": 0,
+        "source_size": 0,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x20e45784",
+        "file": "192-fd2.txt",
+        "size": 5173,
+        "source_size": 103477,
+        "holes": []
+      }
+    ],
+    "task": "0x20b24600"
+  },
+  {
+    "proc": "0x20c2a640",
+    "pid": 187,
+    "comm": "qemu-ppc",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x20e460c4",
+        "file": "187-fd1.txt",
+        "size": 0,
+        "source_size": 0,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x20e46030",
+        "file": "187-fd2.txt",
+        "size": 5676,
+        "source_size": 222764,
+        "holes": []
+      }
+    ],
+    "task": "0x20b24350"
+  },
+  {
+    "proc": "0x20c2a7a4",
+    "pid": 185,
+    "comm": "perl",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x20cb6c84",
+        "file": "185-fd1.txt",
+        "size": 657,
+        "source_size": 657,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x20cb6c84",
+        "file": "185-fd2.txt",
+        "size": 657,
+        "source_size": 657,
+        "holes": []
+      }
+    ],
+    "task": "0x20b244a8"
+  },
+  {
+    "proc": "0x20c2aa6c",
+    "pid": 180,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [
+      {
+        "fd": 1,
+        "vnode": "0x20cb6c84",
+        "file": "180-fd1.txt",
+        "size": 657,
+        "source_size": 657,
+        "holes": []
+      },
+      {
+        "fd": 2,
+        "vnode": "0x20cb6c84",
+        "file": "180-fd2.txt",
+        "size": 657,
+        "source_size": 657,
+        "holes": []
+      },
+      {
+        "fd": 255,
+        "vnode": "0x20d27ac8",
+        "file": "180-fd255.txt",
+        "size": 768,
+        "source_size": 768,
+        "holes": []
+      }
+    ],
+    "task": "0x20b24758"
+  },
+  {
+    "proc": "0x20c2abd0",
+    "pid": 22,
+    "comm": "sh",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b248b0"
+  },
+  {
+    "proc": "0x20c2ad34",
+    "pid": 2,
+    "comm": "mach_init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b24a08"
+  },
+  {
+    "proc": "0x20c2ae98",
+    "pid": 1,
+    "comm": "init",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b24cb8"
+  },
+  {
+    "proc": "0x3e6900",
+    "pid": 0,
+    "comm": "kernel_task",
+    "xstat": 0,
+    "fds": [],
+    "task": "0x20b24e10"
+  }
+]
